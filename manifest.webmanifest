@@ -1,0 +1,14 @@
+{
+  "name": "Rootwork — visual etymology",
+  "short_name": "Rootwork",
+  "description": "Type a word and watch it break into roots and affixes, see where each piece comes from, and how they build its meaning.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0f1a",
+  "theme_color": "#0b0f1a",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
