@@ -29,7 +29,7 @@ The site auto-publishes to GitHub Pages via the workflow in
    nothing private in this code.
 2. Settings → **Pages** → **Build and deployment** → **Source: GitHub Actions**.
 3. The workflow deploys automatically (and re-deploys on every push). Your URL:
-   **https://williamrrob.github.io/claude_apps/**
+   **https://williamrrob.github.io/Claude_apps/**
 4. Open that URL and tap the **Add to Home Screen** button in the app — or:
    - **iPhone/iPad (Safari):** Share → *Add to Home Screen*.
    - **Mac (Safari):** File → *Add to Dock*. (Chrome/Edge show an install icon.)
