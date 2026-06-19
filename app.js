@@ -1,6 +1,6 @@
-// Rootwork UI controller: takes a word, runs the local engine (or Claude in AI
-// mode), and choreographs the reveal — word in, split into morphemes, spread
-// apart, detail cards, then the assembled meaning.
+// Rootwork UI controller: takes a word, runs the offline etymology engine, and
+// choreographs the reveal — word in, split into morphemes, spread apart, detail
+// cards, then the assembled meaning.
 
 (function () {
   "use strict";
@@ -8,7 +8,6 @@
   const $ = function (id) { return document.getElementById(id); };
   const form = $("searchForm");
   const input = $("wordInput");
-  const submitBtn = form.querySelector(".search-btn");
   const stage = $("stage");
   const hint = $("hint");
   const wordLine = $("wordLine");
@@ -50,41 +49,9 @@
 
     const token = ++runToken;
     input.value = word;
-    submitBtn.disabled = true;
     hint.hidden = true;
 
-    let result;
-    const cfg = window.RootworkAI.getConfig();
-    try {
-      if (cfg.enabled && cfg.key) {
-        showStatus('<div class="spinner"></div><p>Asking Claude about “' + escapeHtml(word) + '”…</p>');
-        result = await window.RootworkAI.analyze(word);
-      } else {
-        result = window.EtymologyEngine.decompose(word);
-        // If the offline engine learned almost nothing and AI is on (key set),
-        // fall back to Claude automatically.
-        if (cfg.enabled && cfg.key && (!result || !result.hasRoot)) {
-          showStatus('<div class="spinner"></div><p>Asking Claude about “' + escapeHtml(word) + '”…</p>');
-          result = await window.RootworkAI.analyze(word);
-        }
-      }
-    } catch (err) {
-      if (token !== runToken) return;
-      // Fall back to the offline engine if AI failed.
-      const local = window.EtymologyEngine.decompose(word);
-      if (local) {
-        result = local;
-        result.aiError = err.message;
-      } else {
-        submitBtn.disabled = false;
-        showStatus("Couldn’t analyze that. " + escapeHtml(err.message), true);
-        return;
-      }
-    }
-
-    if (token !== runToken) return;
-    submitBtn.disabled = false;
-
+    const result = window.EtymologyEngine.decompose(word);
     if (!result || !result.parts || !result.parts.length) {
       showStatus("Hmm, nothing to break down there. Try another word.", true);
       return;
@@ -172,7 +139,7 @@
     }
     const meaning = document.createElement("div");
     meaning.className = "card-meaning";
-    meaning.textContent = p.meaning ? p.meaning : "Origin not in the offline dictionary — turn on AI mode for a full trace.";
+    meaning.textContent = p.meaning ? p.meaning : "Not a classical root in the built-in dictionary — likely a native English or modern stem.";
     card.appendChild(meaning);
 
     return card;
@@ -204,16 +171,9 @@
       box.appendChild(sent);
     }
 
-    if (result.aiError) {
-      const note = document.createElement("p");
-      note.className = "def-note";
-      note.textContent = "AI mode couldn’t be reached (" + result.aiError + "), so this is the offline reading.";
-      box.appendChild(note);
-    }
-
     const tag = document.createElement("span");
     tag.className = "def-source-tag";
-    tag.textContent = result.ai ? "Analyzed by Claude" : "Offline root dictionary";
+    tag.textContent = "Built-in root dictionary";
     box.appendChild(tag);
 
     return box;
@@ -234,32 +194,6 @@
 
   document.querySelectorAll(".example").forEach(function (btn) {
     btn.addEventListener("click", function () { run(btn.dataset.word); });
-  });
-
-  // ---------- settings ----------
-  const backdrop = $("sheetBackdrop");
-  const aiToggle = $("aiToggle");
-  const apiKey = $("apiKey");
-  const modelId = $("modelId");
-
-  function openSheet() {
-    const cfg = window.RootworkAI.getConfig();
-    aiToggle.checked = cfg.enabled;
-    apiKey.value = cfg.key;
-    modelId.value = cfg.model || window.RootworkAI.DEFAULT_MODEL;
-    modelId.placeholder = window.RootworkAI.DEFAULT_MODEL;
-    backdrop.hidden = false;
-  }
-  function closeSheet() { backdrop.hidden = true; }
-
-  $("settingsBtn").addEventListener("click", openSheet);
-  $("sheetClose").addEventListener("click", closeSheet);
-  backdrop.addEventListener("click", function (e) { if (e.target === backdrop) closeSheet(); });
-  $("saveSettings").addEventListener("click", function () {
-    localStorage.setItem("rootwork.ai", aiToggle.checked ? "1" : "0");
-    localStorage.setItem("rootwork.apiKey", apiKey.value.trim());
-    localStorage.setItem("rootwork.model", modelId.value.trim() || window.RootworkAI.DEFAULT_MODEL);
-    closeSheet();
   });
 
   // ---------- install to Home Screen ----------

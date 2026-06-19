@@ -22,7 +22,6 @@
       </div>
       <div class="topbar-actions">
         <button id="installBtn" class="install-btn" hidden>Add to Home Screen</button>
-        <button id="settingsBtn" class="icon-btn" aria-label="Settings" title="Settings">⚙</button>
       </div>
     </header>
 
@@ -68,42 +67,6 @@
     </footer>
   </div>
 
-  <!-- Settings sheet -->
-  <div class="sheet-backdrop" id="sheetBackdrop" hidden>
-    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
-      <div class="sheet-head">
-        <h2 id="sheetTitle">Settings</h2>
-        <button id="sheetClose" class="icon-btn" aria-label="Close">✕</button>
-      </div>
-
-      <label class="toggle">
-        <input type="checkbox" id="aiToggle" />
-        <span>AI mode — analyze <em>any</em> word with Claude</span>
-      </label>
-      <p class="muted small">
-        The built-in engine knows hundreds of Latin &amp; Greek roots and works
-        offline, instantly. AI mode sends the word to Claude for words the engine
-        doesn’t recognize (modern, Germanic, or proper-noun origins). It uses your
-        own API key, stored only in this browser.
-      </p>
-
-      <div class="field">
-        <label for="apiKey">Anthropic API key</label>
-        <input type="password" id="apiKey" placeholder="sk-ant-…" autocomplete="off" />
-      </div>
-      <div class="field">
-        <label for="modelId">Model</label>
-        <input type="text" id="modelId" placeholder="claude-fable-5" />
-      </div>
-      <p class="muted small">
-        Get a key at <strong>console.anthropic.com</strong>. The key stays on this
-        device (localStorage) and is sent only to Anthropic’s API.
-      </p>
-
-      <button id="saveSettings" class="primary">Save</button>
-    </div>
-  </div>
-
   <!-- iOS install instructions (Safari has no programmatic install) -->
   <div class="sheet-backdrop" id="iosBackdrop" hidden>
     <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="iosTitle">
@@ -123,7 +86,6 @@
 
   <script src="data.js"></script>
   <script src="engine.js"></script>
-  <script src="ai.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
