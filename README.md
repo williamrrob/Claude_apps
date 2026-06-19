@@ -3,21 +3,35 @@
 Type a word and watch it break apart on a canvas: the whole word appears, then
 splits into its **prefixes, root(s), and suffixes**, which spread out in space.
 Each piece reveals where it comes from (its source language and original form)
-and what it means — and those meanings assemble into a literal reading of the
-whole word.
+and what it means — and then those pieces **fuse into the word's real, modern
+meaning** from a dictionary.
 
-It's a single static web app — **no build step, no server, no network, no
-accounts, nothing sensitive**. Everything runs in your browser. It installs to
-the Home Screen on iPhone & iPad and to the Dock on Mac.
+It's a static web app — runs entirely in your browser, no server or accounts. It
+installs to the Home Screen on iPhone & iPad and to the Dock on Mac.
 
 ## How it works
 
 A curated dictionary of ~250 Latin and Greek roots, prefixes, and suffixes
 (`data.js`) plus a scored segmentation search (`engine.js`) break the word down
-instantly, entirely offline. It's strongest on classical/academic vocabulary —
-*biography, incredible, democracy, photosynthesis, circumnavigate, manuscript*.
-Words of Old-English/Germanic or very modern origin may only partly resolve;
-those pieces are shown as a neutral "stem".
+instantly. It's strongest on classical/academic vocabulary — *biography,
+incredible, democracy, photosynthesis, circumnavigate, manuscript*. Words of
+Old-English/Germanic or very modern origin may only partly resolve; those pieces
+are shown as a neutral "stem".
+
+Because words rarely mean *exactly* the sum of their roots, the literal
+construction then fuses into the **actual definition**, looked up from a vendored
+**WordNet** dictionary (`dictionary.json`, ~77k words). The dictionary loads
+asynchronously — the breakdown shows instantly and the meaning fills in a moment
+later (and is cached after first load).
+
+### Features
+
+- **Animated reveal** — the word fades in, splits into coloured morphemes, detail
+  cards rise one by one, then the pieces fuse downward into the meaning.
+- **Tap a card** to see other words that share that root/prefix/suffix; tap any
+  of those to analyse it in turn.
+- **Search history** — recent words are remembered (in `localStorage`) as quick
+  chips under the search bar.
 
 ## Getting it on your iPhone / iPad / Mac
 
@@ -72,11 +86,26 @@ git config core.hooksPath .githooks
 | `styles.css` | dark, mobile-first styling and animations |
 | `data.js` | the morpheme dictionary (roots, prefixes, suffixes) |
 | `engine.js` | offline decomposition + literal-meaning synthesis |
-| `app.js` | UI controller and the reveal animation |
+| `app.js` | UI controller, reveal animation, related words, history |
+| `dictionary.json` | vendored WordNet definitions (~77k words) |
+| `morpheme-index.json` | morpheme → related words (built from the engine) |
+| `scripts/build-data.js` | regenerates the two data files (`npm run build:data`) |
 | `manifest.webmanifest`, `icon.svg` | installable-app metadata |
 | `test/integration.test.js` | browser-style integration test (run via `npm test`) |
 | `.githooks/pre-commit` | runs the test before each commit |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages auto-deploy |
+
+## Regenerating the dictionary
+
+`dictionary.json` and `morpheme-index.json` are generated, not hand-written. The
+definitions come from the [`wordnet`](https://www.npmjs.com/package/wordnet) npm
+package (a dev dependency); the morpheme index is built by running this project's
+own engine over that vocabulary. To rebuild:
+
+```bash
+npm install        # pulls in the wordnet dev dependency
+npm run build:data
+```
 
 ## Extending the dictionary
 

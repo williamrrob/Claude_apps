@@ -1,27 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#121a2e"/>
-      <stop offset="1" stop-color="#0b0f1a"/>
+      <stop offset="0" stop-color="#161a24"/>
+      <stop offset="1" stop-color="#0a0b0e"/>
     </linearGradient>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffb454"/>
-      <stop offset="0.5" stop-color="#5ad1c0"/>
-      <stop offset="1" stop-color="#9d8cff"/>
+    <linearGradient id="meaning" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5ad1c0"/>
+      <stop offset="1" stop-color="#0a84ff"/>
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="112" fill="url(#bg)"/>
-  <!-- a stem splitting into roots -->
-  <g fill="none" stroke="url(#g)" stroke-width="22" stroke-linecap="round">
-    <path d="M256 132 V232"/>
-    <path d="M256 232 C256 300 180 300 150 360"/>
-    <path d="M256 232 C256 300 332 300 362 360"/>
-    <path d="M256 232 C256 320 256 320 256 384"/>
+
+  <!-- the word, split into prefix / root / suffix -->
+  <g>
+    <rect x="96"  y="128" width="86"  height="62" rx="22" fill="#ff9f0a"/>
+    <rect x="198" y="128" width="116" height="62" rx="22" fill="#0a84ff"/>
+    <rect x="330" y="128" width="86"  height="62" rx="22" fill="#bf5af2"/>
   </g>
-  <g fill="url(#g)">
-    <circle cx="256" cy="120" r="26"/>
-    <circle cx="146" cy="376" r="22"/>
-    <circle cx="256" cy="398" r="22"/>
-    <circle cx="366" cy="376" r="22"/>
+
+  <!-- they converge downward and fuse into one meaning -->
+  <g fill="none" stroke-width="14" stroke-linecap="round" opacity="0.9">
+    <path d="M139 198 C139 268 256 250 256 322" stroke="#ff9f0a"/>
+    <path d="M256 198 V322" stroke="#0a84ff"/>
+    <path d="M373 198 C373 268 256 250 256 322" stroke="#bf5af2"/>
   </g>
+
+  <circle cx="256" cy="368" r="44" fill="url(#meaning)"/>
+  <circle cx="256" cy="368" r="44" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
 </svg>

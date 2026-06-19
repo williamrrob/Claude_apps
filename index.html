@@ -11,7 +11,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <div class="app">
@@ -42,6 +42,8 @@
       </button>
     </form>
 
+    <div class="history" id="history" hidden aria-label="Recent searches"></div>
+
     <main class="stage" id="stage">
       <div class="hint" id="hint">
         <p class="hint-title">Enter a word.</p>
@@ -58,6 +60,7 @@
 
       <div class="word-line" id="wordLine" aria-live="polite"></div>
       <div class="cards" id="cards"></div>
+      <div class="related" id="related" hidden aria-live="polite"></div>
       <div class="definition" id="definition"></div>
     </main>
 
@@ -69,8 +72,8 @@
     </footer>
   </div>
 
-  <script src="data.js?v=3"></script>
-  <script src="engine.js?v=3"></script>
-  <script src="app.js?v=3"></script>
+  <script src="data.js?v=4"></script>
+  <script src="engine.js?v=4"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
