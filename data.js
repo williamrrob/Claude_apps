@@ -270,6 +270,11 @@ const MORPHEMES = {
   ]
 };
 
+// Expose on the global object. A top-level `const` does not attach to `window`
+// in the browser, so do it explicitly — otherwise engine.js can't see the data
+// and the app reports "the dictionary didn't load".
+(typeof window !== "undefined" ? window : globalThis).MORPHEMES = MORPHEMES;
+
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { MORPHEMES };
 }

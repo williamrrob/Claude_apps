@@ -1,0 +1,14 @@
+#!/bin/sh
+# Run the integration test before every commit. Because the app is uncompiled
+# JavaScript, this is the safety net that catches runtime wiring breakage (like
+# the data/engine globals not connecting) before it reaches a browser.
+#
+# Enable once per clone with:  git config core.hooksPath .githooks
+
+echo "Running Rootwork integration tests..."
+node test/integration.test.js || {
+  echo
+  echo "Integration tests failed — commit aborted."
+  echo "Run 'npm test' to see the failure."
+  exit 1
+}

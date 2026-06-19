@@ -1,0 +1,9 @@
+{
+  "name": "rootwork",
+  "version": "1.0.0",
+  "description": "Rootwork — a visual etymology app that breaks words into their roots and affixes.",
+  "private": true,
+  "scripts": {
+    "test": "node test/integration.test.js"
+  }
+}
