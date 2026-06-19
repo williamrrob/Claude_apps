@@ -41,6 +41,29 @@ python3 -m http.server 8099
 # open http://localhost:8099  (or http://<your-computer-ip>:8099 from a phone on the same Wi-Fi)
 ```
 
+## Tests
+
+The app is uncompiled JavaScript loaded as three `<script>` tags, so the bugs
+that bite are runtime wiring problems the browser only finds when the page runs
+(e.g. a top-level `const` in `data.js` that never reaches `window`, leaving the
+engine without its data and the UI saying *"the dictionary didn't load"*).
+
+`test/integration.test.js` guards against exactly that: using Node's `vm`, it
+loads `data.js`, `engine.js`, and `app.js` the same way a browser does (separate
+scripts sharing one `window`, on a tiny DOM shim), then simulates clicking a
+word and asserts real morphemes render with no error banner. No dependencies.
+
+```bash
+npm test          # or: node test/integration.test.js
+```
+
+The test runs automatically before every commit via a git hook. **Enable it
+once per clone** (hooks aren't shared by git itself):
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ## Files
 
 | file | purpose |
@@ -51,6 +74,8 @@ python3 -m http.server 8099
 | `engine.js` | offline decomposition + literal-meaning synthesis |
 | `app.js` | UI controller and the reveal animation |
 | `manifest.webmanifest`, `icon.svg` | installable-app metadata |
+| `test/integration.test.js` | browser-style integration test (run via `npm test`) |
+| `.githooks/pre-commit` | runs the test before each commit |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages auto-deploy |
 
 ## Extending the dictionary
