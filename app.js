@@ -8,7 +8,6 @@
   const $ = function (id) { return document.getElementById(id); };
   const form = $("searchForm");
   const input = $("wordInput");
-  const stage = $("stage");
   const hint = $("hint");
   const wordLine = $("wordLine");
   const cardsEl = $("cards");
@@ -51,13 +50,20 @@
     input.value = word;
     hint.hidden = true;
 
-    const result = window.EtymologyEngine.decompose(word);
-    if (!result || !result.parts || !result.parts.length) {
-      showStatus("Hmm, nothing to break down there. Try another word.", true);
-      return;
+    try {
+      if (!window.EtymologyEngine || typeof window.EtymologyEngine.decompose !== "function") {
+        showStatus("The dictionary didn’t load. Pull down to refresh the page.", true);
+        return;
+      }
+      const result = window.EtymologyEngine.decompose(word);
+      if (!result || !result.parts || !result.parts.length) {
+        showStatus("Hmm, nothing to break down there. Try another word.", true);
+        return;
+      }
+      await reveal(result, token);
+    } catch (err) {
+      showStatus("Something went wrong: " + escapeHtml(String(err && err.message || err)), true);
     }
-
-    await reveal(result, token);
   }
 
   async function reveal(result, token) {
@@ -186,53 +192,21 @@
   }
 
   // ---------- events ----------
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  function submit() {
     input.blur();
     run(input.value);
+  }
+  form.addEventListener("submit", function (e) { e.preventDefault(); submit(); });
+  // Belt-and-suspenders: also handle a direct tap on the arrow in case the
+  // form's submit event doesn't fire (some mobile keyboards / edge cases).
+  form.querySelector(".search-btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    submit();
   });
 
   document.querySelectorAll(".example").forEach(function (btn) {
     btn.addEventListener("click", function () { run(btn.dataset.word); });
   });
-
-  // ---------- install to Home Screen ----------
-  const installBtn = $("installBtn");
-  const iosBackdrop = $("iosBackdrop");
-  let deferredPrompt = null;
-
-  const isStandalone =
-    window.matchMedia("(display-mode: standalone)").matches ||
-    window.navigator.standalone === true;
-  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
-
-  if (!isStandalone) {
-    // Chrome / Edge / Android: capture the native prompt for a real one-tap install.
-    window.addEventListener("beforeinstallprompt", function (e) {
-      e.preventDefault();
-      deferredPrompt = e;
-      installBtn.hidden = false;
-    });
-    // iOS Safari has no prompt event — offer instructions instead.
-    if (isIOS) installBtn.hidden = false;
-  }
-
-  installBtn.addEventListener("click", async function () {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-      installBtn.hidden = true;
-    } else {
-      iosBackdrop.hidden = false;
-    }
-  });
-  window.addEventListener("appinstalled", function () { installBtn.hidden = true; });
-
-  $("iosClose").addEventListener("click", function () { iosBackdrop.hidden = true; });
-  $("iosGot").addEventListener("click", function () { iosBackdrop.hidden = true; });
-  iosBackdrop.addEventListener("click", function (e) { if (e.target === iosBackdrop) iosBackdrop.hidden = true; });
 
   // Deep link: #word=...
   const m = location.hash.match(/word=([a-zA-Z]+)/);

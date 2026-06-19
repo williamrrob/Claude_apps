@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0b0f1a" />
+  <meta name="theme-color" content="#0a0b0e" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Rootwork" />
@@ -11,7 +11,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <div class="app">
@@ -20,9 +20,6 @@
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-name">Rootwork</span>
       </div>
-      <div class="topbar-actions">
-        <button id="installBtn" class="install-btn" hidden>Add to Home Screen</button>
-      </div>
     </header>
 
     <form id="searchForm" class="search" autocomplete="off">
@@ -30,14 +27,19 @@
         id="wordInput"
         class="search-input"
         type="text"
-        inputmode="latin"
+        enterkeyhint="search"
         autocapitalize="none"
         autocorrect="off"
         spellcheck="false"
-        placeholder="Type a word…  (try “photosynthesis”)"
+        placeholder="Type a word…"
         aria-label="Word to analyze"
       />
-      <button type="submit" class="search-btn" aria-label="Analyze">→</button>
+      <button type="submit" class="search-btn" aria-label="Analyze">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor"
+                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </form>
 
     <main class="stage" id="stage">
@@ -63,29 +65,12 @@
       <span class="key key-prefix">prefix</span>
       <span class="key key-root">root</span>
       <span class="key key-suffix">suffix</span>
-      <span class="key key-unknown">stem / unknown</span>
+      <span class="key key-unknown">stem</span>
     </footer>
   </div>
 
-  <!-- iOS install instructions (Safari has no programmatic install) -->
-  <div class="sheet-backdrop" id="iosBackdrop" hidden>
-    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="iosTitle">
-      <div class="sheet-head">
-        <h2 id="iosTitle">Add to Home Screen</h2>
-        <button id="iosClose" class="icon-btn" aria-label="Close">✕</button>
-      </div>
-      <p class="muted small">On your iPhone or iPad, this becomes a full-screen app in two taps:</p>
-      <ol class="steps">
-        <li>Tap the <strong>Share</strong> button <span class="ios-share" aria-hidden="true"></span> in Safari’s toolbar.</li>
-        <li>Scroll down and tap <strong>“Add to Home Screen.”</strong></li>
-        <li>Tap <strong>Add</strong> — Rootwork now lives on your Home Screen.</li>
-      </ol>
-      <button id="iosGot" class="primary">Got it</button>
-    </div>
-  </div>
-
-  <script src="data.js"></script>
-  <script src="engine.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js?v=3"></script>
+  <script src="engine.js?v=3"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
