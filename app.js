@@ -262,6 +262,44 @@
     closeSheet();
   });
 
+  // ---------- install to Home Screen ----------
+  const installBtn = $("installBtn");
+  const iosBackdrop = $("iosBackdrop");
+  let deferredPrompt = null;
+
+  const isStandalone =
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true;
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
+
+  if (!isStandalone) {
+    // Chrome / Edge / Android: capture the native prompt for a real one-tap install.
+    window.addEventListener("beforeinstallprompt", function (e) {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.hidden = false;
+    });
+    // iOS Safari has no prompt event — offer instructions instead.
+    if (isIOS) installBtn.hidden = false;
+  }
+
+  installBtn.addEventListener("click", async function () {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      installBtn.hidden = true;
+    } else {
+      iosBackdrop.hidden = false;
+    }
+  });
+  window.addEventListener("appinstalled", function () { installBtn.hidden = true; });
+
+  $("iosClose").addEventListener("click", function () { iosBackdrop.hidden = true; });
+  $("iosGot").addEventListener("click", function () { iosBackdrop.hidden = true; });
+  iosBackdrop.addEventListener("click", function (e) { if (e.target === iosBackdrop) iosBackdrop.hidden = true; });
+
   // Deep link: #word=...
   const m = location.hash.match(/word=([a-zA-Z]+)/);
   if (m) run(m[1]);

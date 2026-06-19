@@ -20,7 +20,10 @@
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-name">Rootwork</span>
       </div>
-      <button id="settingsBtn" class="icon-btn" aria-label="Settings" title="Settings">⚙</button>
+      <div class="topbar-actions">
+        <button id="installBtn" class="install-btn" hidden>Add to Home Screen</button>
+        <button id="settingsBtn" class="icon-btn" aria-label="Settings" title="Settings">⚙</button>
+      </div>
     </header>
 
     <form id="searchForm" class="search" autocomplete="off">
@@ -98,6 +101,23 @@
       </p>
 
       <button id="saveSettings" class="primary">Save</button>
+    </div>
+  </div>
+
+  <!-- iOS install instructions (Safari has no programmatic install) -->
+  <div class="sheet-backdrop" id="iosBackdrop" hidden>
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="iosTitle">
+      <div class="sheet-head">
+        <h2 id="iosTitle">Add to Home Screen</h2>
+        <button id="iosClose" class="icon-btn" aria-label="Close">✕</button>
+      </div>
+      <p class="muted small">On your iPhone or iPad, this becomes a full-screen app in two taps:</p>
+      <ol class="steps">
+        <li>Tap the <strong>Share</strong> button <span class="ios-share" aria-hidden="true"></span> in Safari’s toolbar.</li>
+        <li>Scroll down and tap <strong>“Add to Home Screen.”</strong></li>
+        <li>Tap <strong>Add</strong> — Rootwork now lives on your Home Screen.</li>
+      </ol>
+      <button id="iosGot" class="primary">Got it</button>
     </div>
   </div>
 

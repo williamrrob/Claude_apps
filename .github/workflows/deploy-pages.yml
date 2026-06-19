@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+# Publishes the static site to GitHub Pages. Because this branch is the
+# repository's default branch, the workflow runs on every push to it.
+# `enablement: true` turns Pages on automatically the first time it runs,
+# so no manual settings toggle is required.
+
+on:
+  push:
+    branches: ["claude/visual-etymology-app-093c1d"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+          cp index.html styles.css data.js engine.js ai.js app.js \
+             manifest.webmanifest icon.svg _site/
+
+      - name: Configure Pages (auto-enable)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

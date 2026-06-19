@@ -66,6 +66,39 @@ body {
 }
 .brand-name { font-weight: 700; letter-spacing: 0.2px; font-size: 18px; }
 
+.topbar-actions { display: flex; align-items: center; gap: 8px; }
+.install-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 0 14px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--root-ink);
+  background: linear-gradient(135deg, var(--root), #7ee8d8);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s var(--ease), filter 0.15s;
+}
+.install-btn:active { transform: scale(0.94); }
+
+.steps { margin: 8px 0 18px; padding-left: 20px; line-height: 1.7; }
+.steps li { margin: 6px 0; }
+.ios-share {
+  display: inline-block; width: 16px; height: 18px; vertical-align: -4px;
+  border: 2px solid var(--root); border-top: none; border-radius: 0 0 4px 4px;
+  position: relative;
+}
+.ios-share::before {
+  content: ""; position: absolute; left: 50%; top: -9px;
+  width: 2px; height: 12px; background: var(--root); transform: translateX(-50%);
+}
+.ios-share::after {
+  content: ""; position: absolute; left: 50%; top: -9px;
+  width: 7px; height: 7px; border-top: 2px solid var(--root); border-left: 2px solid var(--root);
+  transform: translateX(-50%) rotate(45deg); transform-origin: top;
+}
+
 .icon-btn {
   background: var(--card);
   border: 1px solid var(--line);
