@@ -8,6 +8,7 @@
     "build:data": "node scripts/build-data.js"
   },
   "devDependencies": {
+    "cmu-pronouncing-dictionary": "^3.0.0",
     "wordnet": "^2.0.0"
   }
 }

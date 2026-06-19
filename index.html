@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a0b0e" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0c0f" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Rootwork" />
@@ -11,7 +12,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
   <div class="app">
@@ -20,60 +21,55 @@
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-name">Rootwork</span>
       </div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark">◐</button>
     </header>
 
-    <form id="searchForm" class="search" autocomplete="off">
-      <input
-        id="wordInput"
-        class="search-input"
-        type="text"
-        enterkeyhint="search"
-        autocapitalize="none"
-        autocorrect="off"
-        spellcheck="false"
-        placeholder="Type a word…"
-        aria-label="Word to analyze"
-      />
-      <button type="submit" class="search-btn" aria-label="Analyze">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-          <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor"
-                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </form>
-
-    <div class="history" id="history" hidden aria-label="Recent searches"></div>
-
-    <main class="stage" id="stage">
+    <main class="content" id="content">
       <div class="hint" id="hint">
         <p class="hint-title">Enter a word.</p>
-        <p class="hint-sub">Watch it break into its roots and affixes, see where each piece comes from, and how they build its meaning.</p>
+        <p class="hint-sub">Watch it break into its roots and affixes, see where each piece comes from, how it's pronounced, and how it all builds into meaning.</p>
         <div class="chips">
           <button class="example" data-word="biography">biography</button>
           <button class="example" data-word="incredible">incredible</button>
           <button class="example" data-word="democracy">democracy</button>
-          <button class="example" data-word="transportation">transportation</button>
+          <button class="example" data-word="prescription">prescription</button>
           <button class="example" data-word="philosophy">philosophy</button>
           <button class="example" data-word="microscope">microscope</button>
         </div>
       </div>
 
       <div class="word-line" id="wordLine" aria-live="polite"></div>
-      <div class="cards" id="cards"></div>
-      <div class="related" id="related" hidden aria-live="polite"></div>
-      <div class="definition" id="definition"></div>
+      <div class="pron" id="pron"></div>
+      <div class="tiles" id="tiles"></div>
+      <div class="panels" id="panels"></div>
     </main>
 
-    <footer class="legend" id="legend" hidden>
-      <span class="key key-prefix">prefix</span>
-      <span class="key key-root">root</span>
-      <span class="key key-suffix">suffix</span>
-      <span class="key key-unknown">stem</span>
+    <footer class="dock">
+      <div class="recent" id="recent" hidden aria-label="Recent searches"></div>
+      <form id="searchForm" class="search" autocomplete="off">
+        <input
+          id="wordInput"
+          class="search-input"
+          type="text"
+          enterkeyhint="search"
+          autocapitalize="none"
+          autocorrect="off"
+          spellcheck="false"
+          placeholder="Type a word…"
+          aria-label="Word to analyze"
+        />
+        <button type="submit" class="search-btn" aria-label="Analyze">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor"
+                  stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
     </footer>
   </div>
 
-  <script src="data.js?v=4"></script>
-  <script src="engine.js?v=4"></script>
-  <script src="app.js?v=4"></script>
+  <script src="data.js?v=5"></script>
+  <script src="engine.js?v=5"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

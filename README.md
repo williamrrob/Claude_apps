@@ -19,19 +19,24 @@ Old-English/Germanic or very modern origin may only partly resolve; those pieces
 are shown as a neutral "stem".
 
 Because words rarely mean *exactly* the sum of their roots, the literal
-construction then fuses into the **actual definition**, looked up from a vendored
-**WordNet** dictionary (`dictionary.json`, ~77k words). The dictionary loads
-asynchronously — the breakdown shows instantly and the meaning fills in a moment
-later (and is cached after first load).
+construction then fuses into the **actual definition**, plus **pronunciation**
+(IPA + a plain respelling), **synonyms/antonyms**, and an **origin** line — all
+from vendored, offline data. It loads asynchronously: the breakdown shows
+instantly and the rest fills in a moment later (cached after first load).
 
 ### Features
 
-- **Animated reveal** — the word fades in, splits into coloured morphemes, detail
-  cards rise one by one, then the pieces fuse downward into the meaning.
-- **Tap a card** to see other words that share that root/prefix/suffix; tap any
-  of those to analyse it in turn.
-- **Search history** — recent words are remembered (in `localStorage`) as quick
-  chips under the search bar.
+- **Animated reveal** — the word fades in with dots between parts, a tile rises
+  for each morpheme, then panels resolve the meaning, thesaurus, and origin.
+- **Pronunciation** — IPA and a Merriam-Webster-style respelling.
+- **Tap a morpheme tile** — it expands in place to list other words built on that
+  piece (for common affixes, a sample of the most *and* least common); tap any to
+  analyse it next.
+- **Synonyms & antonyms** in their own card.
+- **Silent final “e”** is shown as its own morpheme (microscope = micro·scop·e).
+- **Light & dark** following your system setting, with a corner toggle to override.
+- **Search history** — recent words (in `localStorage`) sit above the bottom
+  search bar.
 
 ## Getting it on your iPhone / iPad / Mac
 
@@ -83,29 +88,38 @@ git config core.hooksPath .githooks
 | file | purpose |
 |------|---------|
 | `index.html` | markup, install prompt, PWA tags |
-| `styles.css` | dark, mobile-first styling and animations |
+| `styles.css` | mobile-first styling, light/dark themes, animations |
 | `data.js` | the morpheme dictionary (roots, prefixes, suffixes) |
 | `engine.js` | offline decomposition + literal-meaning synthesis |
-| `app.js` | UI controller, reveal animation, related words, history |
+| `app.js` | UI controller, reveal animation, tile expansion, history, theme |
 | `dictionary.json` | vendored WordNet definitions (~77k words) |
 | `morpheme-index.json` | morpheme → related words (built from the engine) |
-| `scripts/build-data.js` | regenerates the two data files (`npm run build:data`) |
+| `pronunciation.json` | IPA + respelling (from the CMU dictionary) |
+| `thesaurus.json` | synonyms & antonyms (from WordNet) |
+| `scripts/build-data.js` | regenerates the four data files (`npm run build:data`) |
+| `scripts/arpabet.js` | ARPAbet → IPA + respelling converter |
 | `manifest.webmanifest`, `icon.svg` | installable-app metadata |
 | `test/integration.test.js` | browser-style integration test (run via `npm test`) |
 | `.githooks/pre-commit` | runs the test before each commit |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages auto-deploy |
 
-## Regenerating the dictionary
+## Regenerating the data
 
-`dictionary.json` and `morpheme-index.json` are generated, not hand-written. The
-definitions come from the [`wordnet`](https://www.npmjs.com/package/wordnet) npm
-package (a dev dependency); the morpheme index is built by running this project's
-own engine over that vocabulary. To rebuild:
+`dictionary.json`, `morpheme-index.json`, `pronunciation.json`, and
+`thesaurus.json` are generated, not hand-written. Definitions and the thesaurus
+come from [`wordnet`](https://www.npmjs.com/package/wordnet); pronunciations from
+[`cmu-pronouncing-dictionary`](https://www.npmjs.com/package/cmu-pronouncing-dictionary)
+(both dev dependencies). The morpheme index is built by running this project's own
+engine over that vocabulary. To rebuild:
 
 ```bash
-npm install        # pulls in the wordnet dev dependency
+npm install        # pulls in the dev dependencies
 npm run build:data
 ```
+
+> The “Origin” card is currently derived from the roots we already have (no dates
+> yet). First-recorded dates / fuller etymologies from Wiktionary are a planned
+> follow-up.
 
 ## Extending the dictionary
 
