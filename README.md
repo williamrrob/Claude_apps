@@ -18,21 +18,23 @@ incredible, democracy, photosynthesis, circumnavigate, manuscript*. Words of
 Old-English/Germanic or very modern origin may only partly resolve; those pieces
 are shown as a neutral "stem".
 
-Because words rarely mean *exactly* the sum of their roots, the literal
-construction then fuses into the **actual definition**, plus **pronunciation**
-(IPA + a plain respelling), **synonyms/antonyms**, and an **origin** line — all
-from vendored, offline data. It loads asynchronously: the breakdown shows
-instantly and the rest fills in a moment later (cached after first load).
+Because words rarely mean *exactly* the sum of their roots, the breakdown is
+joined by **real definitions with example sentences, pronunciation (IPA + plain
+respelling), etymology, and synonyms/antonyms/related terms**. This rich data is
+vendored from **Wiktionary** (via Wiktextract) and the **CMU** pronouncing
+dictionary, and is **loaded lazily, one shard at a time** — only a tiny index
+loads up front, then the data for the searched word's shard is fetched on demand.
 
 ### Features
 
-- **Animated reveal** — the word fades in with dots between parts, a tile rises
-  for each morpheme, then panels resolve the meaning, thesaurus, and origin.
+- **Animated reveal** — pieces pop in tight (reading as the whole word), then
+  *split*: gaps open, dots and labels appear, and tiles rise for each morpheme.
 - **Pronunciation** — IPA and a Merriam-Webster-style respelling.
+- **Definitions with examples**, **etymology**, and **synonyms / antonyms /
+  related** words, each in its own card.
 - **Tap a morpheme tile** — it expands in place to list other words built on that
   piece (for common affixes, a sample of the most *and* least common); tap any to
   analyse it next.
-- **Synonyms & antonyms** in their own card.
 - **Silent final “e”** is shown as its own morpheme (microscope = micro·scop·e).
 - **Light & dark** following your system setting, with a corner toggle to override.
 - **Search history** — recent words (in `localStorage`) sit above the bottom
@@ -91,35 +93,44 @@ git config core.hooksPath .githooks
 | `styles.css` | mobile-first styling, light/dark themes, animations |
 | `data.js` | the morpheme dictionary (roots, prefixes, suffixes) |
 | `engine.js` | offline decomposition + literal-meaning synthesis |
-| `app.js` | UI controller, reveal animation, tile expansion, history, theme |
-| `dictionary.json` | vendored WordNet definitions (~77k words) |
-| `morpheme-index.json` | morpheme → related words (built from the engine) |
-| `pronunciation.json` | IPA + respelling (from the CMU dictionary) |
-| `thesaurus.json` | synonyms & antonyms (from WordNet) |
-| `scripts/build-data.js` | regenerates the four data files (`npm run build:data`) |
+| `app.js` | UI controller, reveal animation, lazy data, tile expansion, theme |
+| `morpheme-index.json` | morpheme → related words (built from the engine); loaded up front |
+| `words/<xx>.json` | rich per-word data, sharded by first two letters; loaded on demand |
+| `scripts/build-data.js` | builds `morpheme-index.json` (+ dictionary/thesaurus inputs) |
+| `scripts/build-rich.js` | streams Wiktextract → `words/` shards (`npm run build:rich`) |
 | `scripts/arpabet.js` | ARPAbet → IPA + respelling converter |
 | `manifest.webmanifest`, `icon.svg` | installable-app metadata |
 | `test/integration.test.js` | browser-style integration test (run via `npm test`) |
 | `.githooks/pre-commit` | runs the test before each commit |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages auto-deploy |
 
+Each `words/<xx>.json` maps a word to
+`{ d:[{p,g,x?}], e:etymology, s:[syn], a:[ant], r:[related], i:ipa, rs:respelling }`.
+
 ## Regenerating the data
 
-`dictionary.json`, `morpheme-index.json`, `pronunciation.json`, and
-`thesaurus.json` are generated, not hand-written. Definitions and the thesaurus
-come from [`wordnet`](https://www.npmjs.com/package/wordnet); pronunciations from
-[`cmu-pronouncing-dictionary`](https://www.npmjs.com/package/cmu-pronouncing-dictionary)
-(both dev dependencies). The morpheme index is built by running this project's own
-engine over that vocabulary. To rebuild:
+The shipped data (`morpheme-index.json`, `words/`) is generated, not
+hand-written. `dictionary.json` / `thesaurus.json` are build intermediates (from
+WordNet) used as fallbacks and are git-ignored. Two steps:
 
 ```bash
-npm install        # pulls in the dev dependencies
+npm install        # dev dependencies: wordnet, cmu-pronouncing-dictionary
+
+# 1) WordNet base + morpheme index (writes dictionary.json, thesaurus.json, morpheme-index.json)
 npm run build:data
+
+# 2) rich per-word shards from Wiktionary (definitions, examples, etymology, relations)
+curl -s https://kaikki.org/dictionary/English/kaikki.org-dictionary-English.jsonl | npm run build:rich
 ```
 
-> The “Origin” card is currently derived from the roots we already have (no dates
-> yet). First-recorded dates / fuller etymologies from Wiktionary are a planned
-> follow-up.
+Pronunciation respellings come from
+[`cmu-pronouncing-dictionary`](https://www.npmjs.com/package/cmu-pronouncing-dictionary);
+definitions / etymology / relations from
+[Wiktextract / kaikki.org](https://kaikki.org/dictionary/English/index.html);
+WordNet ([`wordnet`](https://www.npmjs.com/package/wordnet)) is the fallback.
+
+> Some etymologies arrive as ancestor "trees" rather than prose — cleaning those
+> up is a planned refinement.
 
 ## Extending the dictionary
 

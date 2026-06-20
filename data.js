@@ -88,7 +88,7 @@ const MORPHEMES = {
     { id: "bell", forms: ["belli", "bell"], origin: "Latin", source: "bellum", meaning: "war" },
     { id: "bio", forms: ["bio", "bi"], origin: "Greek", source: "bios", meaning: "life" },
     { id: "brev", forms: ["brevi", "brev"], origin: "Latin", source: "brevis", meaning: "short" },
-    { id: "cap", forms: ["capt", "cept", "cip", "cap"], origin: "Latin", source: "capere", meaning: "to take, seize" },
+    { id: "cap", forms: ["ceive", "ceipt", "ceit", "ceiv", "capt", "cept", "cip", "cap"], origin: "Latin", source: "capere", meaning: "to take, seize" },
     { id: "cardi", forms: ["cardio", "cardi"], origin: "Greek", source: "kardia", meaning: "heart" },
     { id: "carn", forms: ["carni", "carn"], origin: "Latin", source: "caro", meaning: "flesh" },
     { id: "ced", forms: ["cess", "ceed", "ced"], origin: "Latin", source: "cedere", meaning: "to go, yield" },

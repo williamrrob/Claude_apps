@@ -14,6 +14,7 @@
   --dock: rgba(14, 15, 19, 0.85);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --pop: cubic-bezier(0.34, 1.56, 0.64, 1);
   --pad: max(16px, env(safe-area-inset-left));
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -81,6 +82,9 @@ body {
   padding: 6px var(--pad) 14px;
   display: flex; flex-direction: column; align-items: center;
 }
+/* children must not shrink, or a flex column will collapse them when the
+   content overflows (this is what was crushing the pronunciation row to 0). */
+.content > * { flex-shrink: 0; }
 
 .hint { text-align: center; margin: auto 0; max-width: 460px; animation: fade 0.5s var(--ease); }
 .hint-title { font-size: 24px; font-weight: 750; letter-spacing: -0.02em; margin: 0 0 8px; }
@@ -95,52 +99,65 @@ body {
 .example:active { transform: scale(0.94); }
 
 /* ---------- word line (morphemes with dots) ---------- */
+/* The reveal is a two-beat move: pieces pop in tight so they read as the whole
+   word, then `.split` opens the gaps, grows the dots, draws the underlines and
+   reveals the part labels. */
 .word-line {
   display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
-  gap: 5px; margin: 12px 0 10px;
+  gap: 0; margin: 14px 0 12px;
+  transition: gap 0.38s var(--ease);
 }
+.word-line.split { gap: 7px; }
 .morph {
   --c: var(--stem);
   position: relative;
   font-size: 25px; font-weight: 700; letter-spacing: -0.01em;
-  padding-bottom: 11px; text-align: center; color: var(--c);
-  opacity: 0; transform: translateY(10px);
-  transition: opacity 0.4s var(--ease), transform 0.45s var(--ease);
+  padding-bottom: 26px; text-align: center; color: var(--c);
+  opacity: 0; transform: translateY(14px) scale(0.9);
+  transition: opacity 0.34s var(--ease), transform 0.42s var(--pop);
 }
 .morph.in { opacity: 1; transform: none; }
-.morph::after {
-  content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 100%;
+/* underline hugs the letters, well above the label (its own element so the
+   pseudo-elements are free for the affix hyphens). */
+.morph .ul {
+  position: absolute; left: 0; bottom: 19px; height: 3px; width: 100%;
   border-radius: 2px; background: var(--c);
-  transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease) 0.15s;
+  transform: scaleX(0); transform-origin: center; transition: transform 0.4s var(--pop);
 }
-.morph.in::after { transform: scaleX(1); }
+.word-line.split .morph .ul { transform: scaleX(1); }
+/* hyphens appear with the split: prefixes get a trailing -, suffixes a leading - */
+.word-line.split .morph[data-kind="prefix"]::after { content: "-"; color: var(--c); }
+.word-line.split .morph[data-kind="suffix"]::before { content: "-"; color: var(--c); }
 .morph .tag {
-  position: absolute; left: 0; bottom: -13px; width: 100%;
+  position: absolute; left: 0; bottom: 0; width: 100%;
   font-size: 9.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--muted);
+  opacity: 0; transform: translateY(-3px); transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
 }
+.word-line.split .morph .tag { opacity: 1; transform: none; }
 .morph[data-kind="prefix"] { --c: var(--prefix); }
 .morph[data-kind="root"]   { --c: var(--root); }
 .morph[data-kind="suffix"] { --c: var(--suffix); }
 .morph[data-kind="linker"] { --c: var(--stem); font-size: 19px; opacity: 0.6; }
 .morph[data-kind="unknown"]{ --c: var(--stem); }
 .dot {
-  color: var(--muted); font-size: 22px; font-weight: 700; line-height: 25px;
-  opacity: 0; transition: opacity 0.4s var(--ease);
+  color: var(--muted); font-weight: 700; line-height: 25px; align-self: center;
+  font-size: 0; opacity: 0;
+  transition: font-size 0.34s var(--pop), opacity 0.3s var(--ease);
 }
-.dot.in { opacity: 1; }
+.word-line.split .dot { font-size: 22px; opacity: 1; }
 
 /* ---------- pronunciation ---------- */
 .pron {
-  display: flex; gap: 9px; justify-content: center; align-items: center; flex-wrap: wrap;
-  margin: 16px 0 16px; font-size: 14.5px; min-height: 0;
+  display: flex; gap: 8px; justify-content: center; align-items: baseline; flex-wrap: wrap;
+  margin: 4px 0 14px; font-size: 15px;
   opacity: 0; transform: translateY(6px); transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
 }
 .pron.in { opacity: 1; transform: none; }
 .pron:empty { display: none; }
 .pron .ipa { color: var(--muted); }
-.pron .resp { color: var(--ink); font-weight: 500; }
-.pron .pdot { color: var(--bd); }
+.pron .resp { color: var(--ink); font-weight: 600; }
+.pron .pdot { color: var(--muted); opacity: 0.5; }
 
 /* ---------- morpheme tiles ---------- */
 .tiles { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; width: 100%; }
@@ -148,8 +165,8 @@ body {
   --c: var(--stem);
   flex: 0 1 120px; border-radius: 12px; padding: 10px 11px;
   border: 1px solid var(--bd); background: transparent;
-  opacity: 0; transform: translateY(12px) scale(0.98);
-  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease), border-color 0.15s, background 0.15s;
+  opacity: 0; transform: translateY(14px) scale(0.92);
+  transition: opacity 0.36s var(--ease), transform 0.42s var(--pop), border-color 0.15s, background 0.15s;
 }
 .tile.in { opacity: 1; transform: none; }
 .tile[data-kind="prefix"] { --c: var(--prefix); }
@@ -197,6 +214,7 @@ body {
 .related-chip[data-kind="suffix"] { --c: var(--suffix); }
 .related-chip.thes-syn { --c: var(--root); }
 .related-chip.thes-ant { --c: var(--prefix); }
+.related-chip.thes-rel { --c: var(--stem); }
 .related-chip:active { transform: scale(0.93); }
 @keyframes chipIn { to { opacity: 1; transform: none; } }
 
@@ -217,6 +235,7 @@ body {
 .sense { display: grid; grid-template-columns: 16px 1fr; gap: 8px; margin-top: 9px; font-size: 15px; line-height: 1.45; }
 .sense .num { color: var(--muted); font-size: 13px; font-weight: 600; }
 .sense .pos { font-style: italic; color: var(--suffix); font-size: 13px; margin-right: 6px; }
+.sense-ex { display: block; margin-top: 3px; color: var(--muted); font-style: italic; font-size: 13.5px; }
 .def-loading { color: var(--muted); font-style: italic; }
 .hist { font-size: 15px; line-height: 1.5; margin-top: 7px; }
 .hist i { color: var(--ink); font-style: italic; }

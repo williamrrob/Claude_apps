@@ -1,2 +1,5 @@
 node_modules/
 package-lock.json
+dictionary.json
+thesaurus.json
+pronunciation.json

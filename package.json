@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "node test/integration.test.js",
-    "build:data": "node scripts/build-data.js"
+    "build:data": "node scripts/build-data.js",
+    "build:rich": "node scripts/build-rich.js"
   },
   "devDependencies": {
     "cmu-pronouncing-dictionary": "^3.0.0",
