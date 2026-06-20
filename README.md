@@ -3,21 +3,40 @@
 Type a word and watch it break apart on a canvas: the whole word appears, then
 splits into its **prefixes, root(s), and suffixes**, which spread out in space.
 Each piece reveals where it comes from (its source language and original form)
-and what it means — and those meanings assemble into a literal reading of the
-whole word.
+and what it means — and then those pieces **fuse into the word's real, modern
+meaning** from a dictionary.
 
-It's a single static web app — **no build step, no server, no network, no
-accounts, nothing sensitive**. Everything runs in your browser. It installs to
-the Home Screen on iPhone & iPad and to the Dock on Mac.
+It's a static web app — runs entirely in your browser, no server or accounts. It
+installs to the Home Screen on iPhone & iPad and to the Dock on Mac.
 
 ## How it works
 
 A curated dictionary of ~250 Latin and Greek roots, prefixes, and suffixes
 (`data.js`) plus a scored segmentation search (`engine.js`) break the word down
-instantly, entirely offline. It's strongest on classical/academic vocabulary —
-*biography, incredible, democracy, photosynthesis, circumnavigate, manuscript*.
-Words of Old-English/Germanic or very modern origin may only partly resolve;
-those pieces are shown as a neutral "stem".
+instantly. It's strongest on classical/academic vocabulary — *biography,
+incredible, democracy, photosynthesis, circumnavigate, manuscript*. Words of
+Old-English/Germanic or very modern origin may only partly resolve; those pieces
+are shown as a neutral "stem".
+
+Because words rarely mean *exactly* the sum of their roots, the literal
+construction then fuses into the **actual definition**, plus **pronunciation**
+(IPA + a plain respelling), **synonyms/antonyms**, and an **origin** line — all
+from vendored, offline data. It loads asynchronously: the breakdown shows
+instantly and the rest fills in a moment later (cached after first load).
+
+### Features
+
+- **Animated reveal** — the word fades in with dots between parts, a tile rises
+  for each morpheme, then panels resolve the meaning, thesaurus, and origin.
+- **Pronunciation** — IPA and a Merriam-Webster-style respelling.
+- **Tap a morpheme tile** — it expands in place to list other words built on that
+  piece (for common affixes, a sample of the most *and* least common); tap any to
+  analyse it next.
+- **Synonyms & antonyms** in their own card.
+- **Silent final “e”** is shown as its own morpheme (microscope = micro·scop·e).
+- **Light & dark** following your system setting, with a corner toggle to override.
+- **Search history** — recent words (in `localStorage`) sit above the bottom
+  search bar.
 
 ## Getting it on your iPhone / iPad / Mac
 
@@ -69,14 +88,38 @@ git config core.hooksPath .githooks
 | file | purpose |
 |------|---------|
 | `index.html` | markup, install prompt, PWA tags |
-| `styles.css` | dark, mobile-first styling and animations |
+| `styles.css` | mobile-first styling, light/dark themes, animations |
 | `data.js` | the morpheme dictionary (roots, prefixes, suffixes) |
 | `engine.js` | offline decomposition + literal-meaning synthesis |
-| `app.js` | UI controller and the reveal animation |
+| `app.js` | UI controller, reveal animation, tile expansion, history, theme |
+| `dictionary.json` | vendored WordNet definitions (~77k words) |
+| `morpheme-index.json` | morpheme → related words (built from the engine) |
+| `pronunciation.json` | IPA + respelling (from the CMU dictionary) |
+| `thesaurus.json` | synonyms & antonyms (from WordNet) |
+| `scripts/build-data.js` | regenerates the four data files (`npm run build:data`) |
+| `scripts/arpabet.js` | ARPAbet → IPA + respelling converter |
 | `manifest.webmanifest`, `icon.svg` | installable-app metadata |
 | `test/integration.test.js` | browser-style integration test (run via `npm test`) |
 | `.githooks/pre-commit` | runs the test before each commit |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages auto-deploy |
+
+## Regenerating the data
+
+`dictionary.json`, `morpheme-index.json`, `pronunciation.json`, and
+`thesaurus.json` are generated, not hand-written. Definitions and the thesaurus
+come from [`wordnet`](https://www.npmjs.com/package/wordnet); pronunciations from
+[`cmu-pronouncing-dictionary`](https://www.npmjs.com/package/cmu-pronouncing-dictionary)
+(both dev dependencies). The morpheme index is built by running this project's own
+engine over that vocabulary. To rebuild:
+
+```bash
+npm install        # pulls in the dev dependencies
+npm run build:data
+```
+
+> The “Origin” card is currently derived from the roots we already have (no dates
+> yet). First-recorded dates / fuller etymologies from Wiktionary are a planned
+> follow-up.
 
 ## Extending the dictionary
 

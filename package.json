@@ -4,6 +4,11 @@
   "description": "Rootwork — a visual etymology app that breaks words into their roots and affixes.",
   "private": true,
   "scripts": {
-    "test": "node test/integration.test.js"
+    "test": "node test/integration.test.js",
+    "build:data": "node scripts/build-data.js"
+  },
+  "devDependencies": {
+    "cmu-pronouncing-dictionary": "^3.0.0",
+    "wordnet": "^2.0.0"
   }
 }

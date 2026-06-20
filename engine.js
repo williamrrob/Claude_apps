@@ -42,6 +42,7 @@
       source: entry ? entry.source : null,
       meaning: entry ? entry.meaning : null,
       id: entry ? entry.id : null,
+      forms: entry ? entry.forms : null,
       start: start
     };
   }
@@ -136,12 +137,33 @@
     return out;
   }
 
+  // A silent final "e" is its own morpheme (microscope = micro + scop + e). When
+  // the last piece is a root that ends in "e" and the same root also exists
+  // without it (a known shorter form), peel the "e" off as a linker.
+  function peelSilentE(parts) {
+    if (!parts.length) return parts;
+    const last = parts[parts.length - 1];
+    if (last.kind === "root" && last.forms && last.surface.length >= 4 &&
+        last.surface.charAt(last.surface.length - 1) === "e") {
+      const stem = last.surface.slice(0, -1);
+      if (last.forms.indexOf(stem) !== -1) {
+        const trimmed = Object.assign({}, last, { surface: stem });
+        const e = {
+          kind: "linker", surface: "e", origin: null, source: null,
+          meaning: null, id: null, forms: null, start: last.start + stem.length
+        };
+        return parts.slice(0, -1).concat([trimmed, e]);
+      }
+    }
+    return parts;
+  }
+
   function decompose(rawWord) {
     const word = String(rawWord || "").trim().toLowerCase().replace(/[^a-z]/g, "");
     if (!word) return null;
 
     const parsed = bestParse(word);
-    const parts = mergeUnknowns(parsed.parts);
+    const parts = peelSilentE(mergeUnknowns(parsed.parts));
 
     let known = 0;
     parts.forEach(function (p) {
