@@ -31,6 +31,7 @@
   let runToken = 0;
   let currentWord = "";
   let pronEl = null;
+  let thumbHandle = null, thumbRail = null, thumbCloseRail = null;
 
   function delay(ms) { return new Promise(function (r) { setTimeout(r, ms * step); }); }
   function el(tag, cls, text) {
@@ -122,7 +123,11 @@
       result.parts.some(function (p) { return p.kind === "unknown"; }) ||
       (result.confidence || 0) < 0.6;
     if (bad && rec && rec.b && rec.b.length >= 2) return rec.b.map(hybridPart);
-    if (bad && !result.hasRoot) {
+    // No Wiktionary rescue available: a split with no real root, or one carrying a
+    // big unknown chunk (e.g. colpomicroscope → col·pomicr·o·scop·e), is worse than
+    // showing the word whole.
+    const bigUnknown = result.parts.some(function (p) { return p.kind === "unknown" && p.surface.length >= 4; });
+    if (bad && (!result.hasRoot || bigUnknown)) {
       return [{ kind: "word", surface: result.word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
     }
     return result.parts;
@@ -134,21 +139,24 @@
   function loadHistory() { const s = store(); if (!s) return []; try { return JSON.parse(s.getItem(HKEY)) || []; } catch (e) { return []; } }
   function saveHistory(h) { const s = store(); if (s) try { s.setItem(HKEY, JSON.stringify(h)); } catch (e) {} }
   function pushHistory(w) { let h = loadHistory().filter(function (x) { return x !== w; }); h.unshift(w); saveHistory(h.slice(0, 20)); renderHistory(); }
+  // The recent row is built here but stays hidden until the user taps an empty
+  // search bar (showRecent); a search or typing dismisses it.
   function renderHistory() {
     const h = loadHistory();
     recentEl.innerHTML = "";
     if (!h.length) { recentEl.hidden = true; return; }
-    recentEl.hidden = false;
     recentEl.appendChild(el("span", "recent-label", "Recent"));
     h.forEach(function (w) {
       const b = el("button", "history-chip", w);
-      b.addEventListener("click", function () { run(w); });
+      b.addEventListener("click", function () { hideRecent(); run(w); });
       recentEl.appendChild(b);
     });
     const clr = el("button", "history-clear", "Clear");
-    clr.addEventListener("click", function () { saveHistory([]); renderHistory(); });
+    clr.addEventListener("click", function () { saveHistory([]); renderHistory(); hideRecent(); });
     recentEl.appendChild(clr);
   }
+  function showRecent() { if (loadHistory().length) { hideSuggest(); recentEl.hidden = false; } }
+  function hideRecent() { recentEl.hidden = true; }
 
   // ---------- back / forward navigation ----------
   let navStack = [], navIndex = -1, navigating = false;
@@ -179,10 +187,12 @@
     runToken++;
     clearStage();
     hideSuggest();
+    hideRecent();
     if (!browseEl.hidden) closeBrowse();
     currentWord = "";
     input.value = "";
     hint.hidden = false;
+    if (themeToggle) themeToggle.hidden = false; // toggle returns on the home screen
     if (contentEl) contentEl.scrollTop = 0;
     highlightThumb("");
   }
@@ -208,6 +218,9 @@
     const token = ++runToken;
     input.value = word;
     hideSuggest();
+    hideRecent();
+    if (thumbCloseRail) thumbCloseRail();
+    if (themeToggle) themeToggle.hidden = true; // toggle lives on the home screen only
     if (!browseEl.hidden) closeBrowse();
     hint.hidden = true;
     loadData();
@@ -220,6 +233,14 @@
       const result = window.EtymologyEngine.decompose(word);
       if (!result || !result.parts || !result.parts.length) {
         showStatus("Hmm, nothing to break down there. Try another word.", true);
+        return;
+      }
+      // If we have neither a dictionary definition nor a Wiktionary etymology,
+      // there's nothing trustworthy to show — don't invent a breakdown.
+      const rec0 = await getWord(result.word);
+      if (token !== runToken) return;
+      if (!rec0 || (!(rec0.d && rec0.d.length) && !rec0.e)) {
+        showStatus("“" + escapeHtml(result.word) + "” isn’t in the dictionary.", true);
         return;
       }
       currentWord = result.word;
@@ -318,11 +339,29 @@
     cardsEl.appendChild(bdCard);
     requestAnimationFrame(function () { bdCard.classList.add("in"); });
 
+    // 1) pop each piece in as a tight row — boom boom boom
     for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(60); }
-    await delay(280); if (token !== runToken) return;
-    flipMove(bpEls, function () { bd.classList.add("stacked"); });
-    await delay(300); if (token !== runToken) return;
-    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("open"); await delay(95); }
+    await delay(260); if (token !== runToken) return;
+
+    if (reduceMotion) {
+      bd.classList.add("stacked");
+      bpEls.forEach(function (bp) { bp.classList.add("open"); });
+    } else {
+      // 2) slide them off the left edge, leftmost first
+      bd.classList.add("exiting");
+      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(70); }
+      await delay(200); if (token !== runToken) return;
+      // 3) restack while off-screen, then bring each back from the left as an
+      //    acrostic — top (leftmost) first — unfolding its info as it lands.
+      bd.classList.add("stacked");
+      void bd.offsetWidth; // flush the new layout before animating back in
+      for (let i = 0; i < bpEls.length; i++) {
+        if (token !== runToken) return;
+        bpEls[i].classList.remove("exit");
+        bpEls[i].classList.add("open");
+        await delay(110);
+      }
+    }
 
     // 3) Definition
     await delay(120); if (token !== runToken) return;
@@ -332,7 +371,7 @@
 
     // 4) divider + Word history
     const divider = fleuron();
-    const histCard = buildHistoryCard(recP, result, token, divider);
+    const histCard = buildHistoryCard(recP, parts, token, divider);
     cardsEl.appendChild(divider);
     cardsEl.appendChild(histCard);
     requestAnimationFrame(function () { divider.classList.add("in"); histCard.classList.add("in"); });
@@ -352,6 +391,7 @@
   function buildBP(p, rec) {
     const bp = el("div", "bp");
     bp.dataset.kind = p.kind;
+    const inner = el("div", "bp-inner"); // wrapper so the row height can animate
     const main = el("div", "bp-main");
     main.appendChild(el("span", "bp-vline")); // vertical accent to the left
     main.appendChild(el("span", "mw", p.surface));
@@ -373,7 +413,8 @@
       info.appendChild(src);
     }
     main.appendChild(info);
-    bp.appendChild(main);
+    inner.appendChild(main);
+    bp.appendChild(inner);
 
     // Tap a morpheme to drop down other words built on it (no visible label).
     if (p.id) {
@@ -409,7 +450,7 @@
     list.appendChild(el("div", "related-empty", "finding words…"));
     box.appendChild(list);
     bp.classList.add("expanded");
-    bp.appendChild(box);
+    (bp.querySelector(".bp-inner") || bp).appendChild(box);
 
     const token = runToken;
     loadData().then(function () {
@@ -542,7 +583,6 @@
         const rb = el("button", "resp speakable", resp || word);
         rb.type = "button";
         rb.setAttribute("aria-label", "Pronounce " + word);
-        rb.appendChild(el("span", "spk-ico", "▶"));
         rb.addEventListener("click", function () { speak(word); });
         pronEl.appendChild(rb);
       } else if (resp) {
@@ -716,7 +756,7 @@
     return tl;
   }
 
-  function buildHistoryCard(recP, result, token, divider) {
+  function buildHistoryCard(recP, parts, token, divider) {
     const card = el("div", "card");
     card.appendChild(el("div", "cap", "Word history"));
     recP.then(function (rec) {
@@ -724,7 +764,7 @@
       const e = rec && rec.e;
       const tl = e ? buildTimeline(e) : null;
       const prose = (e && !looksLikeTree(e)) ? e : null;
-      const known = result.parts.filter(function (p) { return p.origin && p.source; });
+      const known = parts.filter(function (p) { return p.origin && p.source; });
       if (!tl && !prose && !known.length) { card.remove(); if (divider) divider.remove(); return; }
 
       if (tl) card.appendChild(tl);
@@ -765,17 +805,52 @@
   const ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   function buildThumb() {
     thumbEl.innerHTML = "";
+    const handle = el("div", "thumb-handle", "A");
+    thumbEl.appendChild(handle);
+    const rail = el("div", "thumb-rail");
     ALPHA.split("").forEach(function (c) {
-      const t = el("button", "thumb-tab", c);
-      t.type = "button"; t.dataset.letter = c;
-      t.addEventListener("click", function () { browseLetter(c); });
-      thumbEl.appendChild(t);
+      const t = el("div", "thumb-tab", c);
+      t.dataset.letter = c;
+      t.addEventListener("click", function () { closeRail(); browseLetter(c); });
+      rail.appendChild(t);
     });
+    thumbEl.appendChild(rail);
+    thumbHandle = handle; thumbRail = rail;
+
+    function openRail() { thumbEl.classList.add("open"); }
+    function closeRail() { thumbEl.classList.remove("open"); clearDrag(); }
+    function clearDrag() { Array.prototype.forEach.call(rail.children, function (t) { t.classList.remove("drag-active"); }); }
+    function tabAt(x, y) { const e = document.elementFromPoint(x, y); return (e && e.dataset && e.dataset.letter) ? e : null; }
+    thumbCloseRail = closeRail;
+
+    let dragging = false, moved = false;
+    handle.addEventListener("pointerdown", function (e) {
+      e.preventDefault();
+      if (thumbEl.classList.contains("open")) { closeRail(); return; } // tap again to close
+      dragging = true; moved = false; openRail();
+      try { handle.setPointerCapture(e.pointerId); } catch (_) {}
+    });
+    if (typeof document.addEventListener === "function") {
+      document.addEventListener("pointermove", function (e) {
+        if (!dragging) return;
+        moved = true; clearDrag();
+        const t = tabAt(e.clientX, e.clientY); if (t) t.classList.add("drag-active");
+      });
+      document.addEventListener("pointerup", function (e) {
+        if (!dragging) return; dragging = false;
+        const t = tabAt(e.clientX, e.clientY);
+        if (t) { const L = t.dataset.letter; closeRail(); browseLetter(L); }
+        else if (moved) { closeRail(); } // released off the rail after dragging
+        // a plain tap (no drag) leaves the rail open so letters can be tapped
+      });
+    }
   }
   function highlightThumb(word) {
     const L = String(word || "").charAt(0).toUpperCase();
-    Array.prototype.forEach.call(thumbEl.children, function (t) {
-      if (t.dataset && t.dataset.letter === L) t.classList.add("on"); else t.classList.remove("on");
+    const cur = /[A-Z]/.test(L) ? L : "A";
+    if (thumbHandle) thumbHandle.textContent = cur;
+    if (thumbRail) Array.prototype.forEach.call(thumbRail.children, function (t) {
+      if (t.dataset.letter === cur) t.classList.add("on"); else t.classList.remove("on");
     });
   }
 
@@ -808,7 +883,8 @@
       if (words.length >= cap) break;
       const sh = await fetchShard(lc + seconds[i]);
       if (token !== browseToken) return;
-      if (sh) for (const w in sh) words.push(w);
+      // only list words we actually know (definition or etymology)
+      if (sh) for (const w in sh) { const r = sh[w]; if (r && ((r.d && r.d.length) || r.e)) words.push(w); }
     }
     if (token !== browseToken) return;
     words.sort();
@@ -828,14 +904,17 @@
   function hideSuggest() { suggestEl.hidden = true; suggestEl.innerHTML = ""; }
   function onType() {
     const v = input.value.trim().toLowerCase();
+    if (!v) { hideSuggest(); showRecent(); return; } // empty bar → recent words
+    hideRecent();
     const key = v.slice(0, 2);
     if (v.length < 2 || !/^[a-z]{2}$/.test(key)) { hideSuggest(); return; }
     const token = ++suggestToken;
     fetchShard(key).then(function (sh) {
       if (token !== suggestToken || !sh) return;
       if (input.value.trim().toLowerCase() !== v) return;
+      // Only suggest words we actually have a definition for.
       const matches = Object.keys(sh)
-        .filter(function (w) { return w.indexOf(v) === 0 && w !== v; })
+        .filter(function (w) { return w.indexOf(v) === 0 && w !== v && sh[w] && sh[w].d && sh[w].d.length; })
         .sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
         .slice(0, 8);
       renderSuggest(matches, v);
@@ -860,7 +939,8 @@
   form.addEventListener("submit", function (e) { e.preventDefault(); submit(); });
   form.querySelector(".search-btn").addEventListener("click", function (e) { e.preventDefault(); submit(); });
   input.addEventListener("input", onType);
-  input.addEventListener("blur", function () { setTimeout(hideSuggest, 150); });
+  input.addEventListener("focus", function () { if (!input.value.trim()) showRecent(); });
+  input.addEventListener("blur", function () { setTimeout(function () { hideSuggest(); hideRecent(); }, 150); });
   if (navHome) navHome.addEventListener("click", goHome);
   if (navBack) navBack.addEventListener("click", goBack);
   if (navFwd) navFwd.addEventListener("click", goFwd);
