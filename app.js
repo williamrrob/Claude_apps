@@ -15,6 +15,7 @@
   const noteEl = $("note");
   const tilesEl = $("tiles");
   const panelsEl = $("panels");
+  const relatedEl = $("related");
   const recentEl = $("recent");
   const form = $("searchForm");
   const input = $("wordInput");
@@ -24,6 +25,7 @@
   let runToken = 0;
   let currentWord = "";
   let meaningEl = null;
+  let relatedFor = null; // which morpheme id the bottom "more words" is showing
 
   function delay(ms) { return new Promise(function (r) { setTimeout(r, ms * step); }); }
   function el(tag, cls, text) {
@@ -61,7 +63,7 @@
   // Only the small morpheme index loads up front (for the "more words" lists).
   // Rich per-word data (definitions, pronunciation, etymology, relations) is
   // fetched lazily, one shard at a time, keyed by the word's first two letters.
-  const DATA_V = "8";
+  const DATA_V = "9";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -114,6 +116,8 @@
     noteEl.hidden = true; noteEl.textContent = "";
     tilesEl.innerHTML = "";
     panelsEl.innerHTML = "";
+    relatedEl.hidden = true; relatedEl.className = "related"; relatedEl.innerHTML = "";
+    relatedFor = null;
     meaningEl = null;
   }
   function showStatus(html, isError) {
@@ -246,45 +250,55 @@
     }
     tile.appendChild(el("div", "mean", meaning));
 
-    // Tappable pieces expand to list words sharing them.
+    // Tappable pieces reveal their word families in the section at the bottom.
     if (p.id) {
       tile.classList.add("tappable");
       tile.setAttribute("role", "button");
       tile.setAttribute("tabindex", "0");
       tile.appendChild(el("div", "tile-more", "more words ▾"));
-      const toggle = function () { toggleTileWords(tile, p); };
-      tile.addEventListener("click", toggle);
+      const open = function () { showRelated(p, tile); };
+      tile.addEventListener("click", open);
       tile.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
       });
     }
     return tile;
   }
 
-  function collapseTile(tile) {
-    if (!tile.classList.contains("expanded")) return;
-    tile.classList.remove("expanded");
-    const box = tile.querySelector(".tile-words"); if (box) box.remove();
-    const more = tile.querySelector(".tile-more"); if (more) more.textContent = "more words ▾";
+  function clearTileActive() {
+    Array.prototype.slice.call(tilesEl.children).forEach(function (t) { t.classList.remove("active"); });
   }
 
-  function toggleTileWords(tile, p) {
-    if (tile.classList.contains("expanded")) { collapseTile(tile); return; }
-    Array.prototype.slice.call(tilesEl.children).forEach(collapseTile);
-    tile.classList.add("expanded");
-    const more = tile.querySelector(".tile-more"); if (more) more.textContent = "fewer words ▴";
+  function showRelated(p, tile) {
+    // Tapping the active piece again closes the section.
+    if (relatedFor === p.id) {
+      relatedFor = null; clearTileActive();
+      relatedEl.hidden = true; relatedEl.className = "related"; relatedEl.innerHTML = "";
+      return;
+    }
+    relatedFor = p.id;
+    clearTileActive();
+    if (tile) tile.classList.add("active");
 
-    const box = el("div", "tile-words");
-    box.innerHTML = '<span class="related-empty">finding words…</span>';
-    tile.appendChild(box);
+    relatedEl.hidden = false;
+    relatedEl.className = "related in";
+    relatedEl.innerHTML = "";
+    const head = el("div", "related-head");
+    head.innerHTML = "Words built on the " + kindLabel(p.kind) + " “<b>" + escapeHtml(p.surface) + "</b>”" +
+      (p.meaning ? " — <span class=\"related-gloss\">" + escapeHtml(p.meaning) + "</span>" : "");
+    relatedEl.appendChild(head);
+    const box = el("div", "related-body");
+    box.appendChild(el("div", "related-empty", "finding words…"));
+    relatedEl.appendChild(box);
 
     const token = runToken;
     loadData().then(function () {
-      if (token !== runToken || !tile.classList.contains("expanded")) return;
+      if (token !== runToken || relatedFor !== p.id) return;
       const words = (MORPH[p.id] || []).filter(function (w) { return w !== currentWord; });
       box.innerHTML = "";
       if (!words.length) { box.appendChild(el("div", "related-empty", "No other words with this piece yet.")); return; }
       renderWordGroups(box, words, p.kind);
+      relatedEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
   }
 
