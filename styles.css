@@ -112,26 +112,25 @@ body {
 .word-line.split { gap: 7px; }
 .morph {
   --c: var(--stem);
-  position: relative;
-  font-size: 25px; font-weight: 700; letter-spacing: -0.01em;
-  padding-bottom: 26px; text-align: center; color: var(--c);
+  display: inline-flex; flex-direction: column; align-items: center;
   opacity: 0; transform: translateY(14px) scale(0.9);
   transition: opacity 0.34s var(--ease), transform 0.42s var(--pop);
 }
 .morph.in { opacity: 1; transform: none; }
-/* underline hugs the letters, well above the label (its own element so the
-   pseudo-elements are free for the affix hyphens). */
+.morph .mw {
+  position: relative;
+  font-size: 25px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.05;
+  color: var(--c); padding-bottom: 5px;
+}
+/* underline sits tight under the letters */
 .morph .ul {
-  position: absolute; left: 0; bottom: 19px; height: 3px; width: 100%;
+  position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
   border-radius: 2px; background: var(--c);
   transform: scaleX(0); transform-origin: center; transition: transform 0.4s var(--pop);
 }
 .word-line.split .morph .ul { transform: scaleX(1); }
-/* hyphens appear with the split: prefixes get a trailing -, suffixes a leading - */
-.word-line.split .morph[data-kind="prefix"]::after { content: "-"; color: var(--c); }
-.word-line.split .morph[data-kind="suffix"]::before { content: "-"; color: var(--c); }
 .morph .tag {
-  position: absolute; left: 0; bottom: 0; width: 100%;
+  margin-top: 5px;
   font-size: 9.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--muted);
   opacity: 0; transform: translateY(-3px); transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
@@ -140,10 +139,11 @@ body {
 .morph[data-kind="prefix"] { --c: var(--prefix); }
 .morph[data-kind="root"]   { --c: var(--root); }
 .morph[data-kind="suffix"] { --c: var(--suffix); }
-.morph[data-kind="linker"] { --c: var(--stem); font-size: 19px; opacity: 0.6; }
+.morph[data-kind="linker"] .mw { font-size: 19px; opacity: 0.6; }
 .morph[data-kind="unknown"]{ --c: var(--stem); }
 .dot {
-  color: var(--muted); font-weight: 700; line-height: 25px; align-self: center;
+  align-self: flex-start; margin-top: 8px;
+  color: var(--muted); font-weight: 700; line-height: 1;
   font-size: 0; opacity: 0;
   transition: font-size 0.34s var(--pop), opacity 0.3s var(--ease);
 }

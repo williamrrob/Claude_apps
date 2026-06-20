@@ -124,7 +124,7 @@ async function main() {
   examples[0].dispatch("click"); // biography
   await settle();
   assert.ok(!find(ids.wordLine, hasClass("error")), "no error banner after a search");
-  const morphs = findAll(ids.wordLine, hasClass("morph")).map((c) => c.textContent);
+  const morphs = findAll(ids.wordLine, hasClass("mw")).map((c) => c.textContent);
   assert.deepStrictEqual(morphs, ["bio", "graph", "y"], "renders morphemes bio · graph · y");
   assert.ok(/class="resp"/.test(ids.pron.innerHTML), "pronunciation respelling is shown");
   const meaning = find(ids.panels, hasClass("def-meaning"));
