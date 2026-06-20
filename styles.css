@@ -403,12 +403,19 @@ body {
 .cap { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
 
 /* breakdown — row that stacks into a left-justified acrostic */
-.bd { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0; }
+/* .bd clips to its own (content) box, so pieces vanish at the card's inner
+   margin, not the screen edge */
+.bd { display: flex; flex-wrap: nowrap; align-items: flex-end; gap: 0; overflow: hidden; }
 .bd.stacked { flex-direction: column; align-items: stretch; gap: 0; }
-.bd-dot { align-self: flex-end; color: var(--muted); font-weight: 700; padding: 0 6px 5px; }
+/* dots stay collapsed until the word "breathes" apart, then ride out with the pieces */
+.bd-dot { align-self: flex-end; color: var(--muted); font-weight: 700; line-height: 1;
+  font-size: 0; opacity: 0; padding: 0 0 6px;
+  transition: font-size .55s var(--pop), opacity .45s var(--ease), padding .55s var(--ease), transform .6s var(--ease); }
+.bd.split .bd-dot { font-size: 22px; opacity: 1; padding: 0 6px 6px; }
 .bd.stacked .bd-dot { display: none; }
+.bd-dot.exit { transform: translateX(-500px); opacity: 0; }
 .bp { --c: var(--stem); display: inline-flex; flex-direction: column;
-  opacity: 0; transform: translateY(12px) scale(.92);
+  opacity: 0; transform: scale(.9);
   transition: opacity .34s var(--ease), transform .42s var(--pop); }
 .bp.in { opacity: 1; transform: none; }
 .bp[data-kind="prefix"] { --c: var(--prefix-ink); }
@@ -444,13 +451,9 @@ body {
 .bp.tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .bp-words { width: 100%; margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--bd);
   animation: cardOpen .4s var(--pop) both; }
-/* the breakdown card clips its own bounds, so pieces vanish at the card's
-   left edge (not the screen) as they slide out */
-.bd-card { overflow: hidden; }
-/* exit stage-left, then re-enter from the card's left edge as the acrostic */
+/* sweep out toward the card's inner-left edge (clipped by .bd's own bounds) */
 .bp.exit { transform: translateX(-500px); opacity: 0;
-  transition: transform .55s var(--ease), opacity .45s var(--ease); }
-.bd.exiting .bd-dot { opacity: 0; transition: opacity .25s var(--ease); }
+  transition: transform .6s var(--ease), opacity .5s var(--ease); }
 
 /* fleuron divider between sections */
 .divider { display: flex; align-items: center; gap: 14px; color: var(--suffix); margin: 2px 2px;

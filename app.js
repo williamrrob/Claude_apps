@@ -339,36 +339,39 @@
     cardsEl.appendChild(bdCard);
     requestAnimationFrame(function () { bdCard.classList.add("in"); });
 
-    // 1) pop each piece in as a tight row — boom boom boom
-    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(80); }
-    await delay(340); if (token !== runToken) return;
+    // 1) assemble — pieces pop in tight so they read as the whole word
+    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(130); }
 
     if (reduceMotion) {
-      bd.classList.add("stacked");
+      bd.classList.add("split"); bd.classList.add("stacked");
       bpEls.forEach(function (bp) { bp.classList.add("open"); });
     } else {
-      // 2) slide them off the left edge, leftmost first
-      bd.classList.add("exiting");
-      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(120); }
-      await delay(300); if (token !== runToken) return;
-      // 3) restack while off-screen, then bring each back from the left as an
-      //    acrostic — top (leftmost) first — unfolding its info as it lands.
+      // 2) breathe apart: gaps open and the dots grow in between the pieces
+      await delay(380); if (token !== runToken) return;
+      bd.classList.add("split");
+      await delay(760); if (token !== runToken) return;
+      // 3) sweep out toward the card's inner-left edge (clipped there), leftmost
+      //    first; the dots ride out with the pieces
+      const flow = Array.prototype.slice.call(bd.children);
+      for (let i = 0; i < flow.length; i++) { if (token !== runToken) return; flow[i].classList.add("exit"); await delay(150); }
+      await delay(380); if (token !== runToken) return;
+      // 4) restack, then float each piece back in from the inner-left edge, top
+      //    first, growing the card a row at a time
       bd.classList.add("stacked");
-      void bd.offsetWidth; // flush the new layout before animating back in
+      void bd.offsetWidth;
       for (let i = 0; i < bpEls.length; i++) {
         if (token !== runToken) return;
         const bp = bpEls[i];
         bp.classList.remove("exit");
-        // start just inside the card's left edge, then slide into place
         bp.style.transition = "none";
-        bp.style.transform = "translateX(-36px)";
+        bp.style.transform = "translateX(-28px)";
         bp.style.opacity = "0";
         void bp.offsetWidth;
         bp.style.transition = "";
         bp.classList.add("open");
         bp.style.transform = "";
         bp.style.opacity = "";
-        await delay(170);
+        await delay(200);
       }
     }
 
