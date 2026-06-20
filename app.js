@@ -325,7 +325,7 @@
     // 2) Breakdown — pop in split, then stack into an acrostic, then unfold info.
     await delay(120); if (token !== runToken) return;
     const shown = isWhole ? parts : parts.filter(function (p) { return !(p.kind === "unknown" && p.surface.length < 3); });
-    const bdCard = el("div", "card");
+    const bdCard = el("div", "card bd-card");
     bdCard.appendChild(el("div", "cap", "Breakdown"));
     const bd = el("div", "bd");
     const bpEls = [];
@@ -340,8 +340,8 @@
     requestAnimationFrame(function () { bdCard.classList.add("in"); });
 
     // 1) pop each piece in as a tight row — boom boom boom
-    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(60); }
-    await delay(260); if (token !== runToken) return;
+    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(80); }
+    await delay(340); if (token !== runToken) return;
 
     if (reduceMotion) {
       bd.classList.add("stacked");
@@ -349,17 +349,26 @@
     } else {
       // 2) slide them off the left edge, leftmost first
       bd.classList.add("exiting");
-      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(70); }
-      await delay(200); if (token !== runToken) return;
+      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(120); }
+      await delay(300); if (token !== runToken) return;
       // 3) restack while off-screen, then bring each back from the left as an
       //    acrostic — top (leftmost) first — unfolding its info as it lands.
       bd.classList.add("stacked");
       void bd.offsetWidth; // flush the new layout before animating back in
       for (let i = 0; i < bpEls.length; i++) {
         if (token !== runToken) return;
-        bpEls[i].classList.remove("exit");
-        bpEls[i].classList.add("open");
-        await delay(110);
+        const bp = bpEls[i];
+        bp.classList.remove("exit");
+        // start just inside the card's left edge, then slide into place
+        bp.style.transition = "none";
+        bp.style.transform = "translateX(-36px)";
+        bp.style.opacity = "0";
+        void bp.offsetWidth;
+        bp.style.transition = "";
+        bp.classList.add("open");
+        bp.style.transform = "";
+        bp.style.opacity = "";
+        await delay(170);
       }
     }
 

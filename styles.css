@@ -419,7 +419,7 @@ body {
 .bp.tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 /* stacked: each row animates its height (0fr → 1fr) so the card grows as pieces land */
 .bd.stacked .bp { width: 100%; display: grid; grid-template-rows: 0fr;
-  transition: grid-template-rows .45s var(--ease), opacity .35s var(--ease), transform .45s var(--ease); }
+  transition: grid-template-rows .5s var(--ease), opacity .4s var(--ease), transform .5s var(--ease); }
 .bd.stacked .bp.open { grid-template-rows: 1fr; }
 .bp-inner { min-width: 0; overflow: hidden; }
 .bd.stacked .bp-inner { padding-top: 13px; }
@@ -444,10 +444,13 @@ body {
 .bp.tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .bp-words { width: 100%; margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--bd);
   animation: cardOpen .4s var(--pop) both; }
-/* exit stage-left, then re-enter from the left as the stacked acrostic */
-.bp.exit { transform: translateX(-130%); opacity: 0;
-  transition: transform .4s var(--ease), opacity .3s var(--ease); }
-.bd.exiting .bd-dot { opacity: 0; transition: opacity .2s var(--ease); }
+/* the breakdown card clips its own bounds, so pieces vanish at the card's
+   left edge (not the screen) as they slide out */
+.bd-card { overflow: hidden; }
+/* exit stage-left, then re-enter from the card's left edge as the acrostic */
+.bp.exit { transform: translateX(-500px); opacity: 0;
+  transition: transform .55s var(--ease), opacity .45s var(--ease); }
+.bd.exiting .bd-dot { opacity: 0; transition: opacity .25s var(--ease); }
 
 /* fleuron divider between sections */
 .divider { display: flex; align-items: center; gap: 14px; color: var(--suffix); margin: 2px 2px;
