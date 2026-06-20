@@ -136,7 +136,8 @@
     clearStage();
     const parts = result.parts;
 
-    // 1) the word, split with interpunct dots.
+    // 1) lay down morphemes (tight) and the dots between them.
+    const morphEls = [];
     parts.forEach(function (p, i) {
       if (i) wordLine.appendChild(el("span", "dot", "·"));
       const span = el("span", "morph");
@@ -144,21 +145,29 @@
       span.textContent = p.surface;
       span.appendChild(el("span", "tag", kindLabel(p.kind)));
       wordLine.appendChild(span);
+      morphEls.push(span);
     });
-    const seq = Array.prototype.slice.call(wordLine.children);
-    for (let i = 0; i < seq.length; i++) { if (token !== runToken) return; seq[i].classList.add("in"); await delay(55); }
 
-    // 2) pronunciation (fills when the data arrives).
+    // 2) pop each piece in, tight, so it reads as the whole word — boom boom boom.
+    for (let i = 0; i < morphEls.length; i++) { if (token !== runToken) return; morphEls[i].classList.add("in"); await delay(45); }
+
+    // 3) beat, then SPLIT: gaps open, dots grow, underlines draw, labels appear.
+    await delay(300);
+    if (token !== runToken) return;
+    wordLine.classList.add("split");
+
+    // 4) pronunciation (fills when the data arrives).
+    await delay(160);
     fillPron(result.word, token);
 
-    // 3) a tile per morpheme — boom, boom, boom.
-    await delay(220);
+    // 5) a tile per morpheme — staggered pop.
+    await delay(140);
     parts.forEach(function (p) { tilesEl.appendChild(buildTile(p)); });
     const tileEls = Array.prototype.slice.call(tilesEl.children);
-    for (let i = 0; i < tileEls.length; i++) { if (token !== runToken) return; tileEls[i].classList.add("in"); await delay(85); }
+    for (let i = 0; i < tileEls.length; i++) { if (token !== runToken) return; tileEls[i].classList.add("in"); await delay(70); }
 
-    // 4) panels: meaning, thesaurus, origin.
-    await delay(200);
+    // 6) panels: meaning, thesaurus, origin.
+    await delay(180);
     if (token !== runToken) return;
     const meaningPanel = buildMeaningPanel(result);
     const thesPanel = el("div", "panel");
