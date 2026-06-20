@@ -87,7 +87,48 @@ rl.on("line", function (line) {
   r.s = r.s.concat(pickWords(o.synonyms, 12, w));
   r.a = r.a.concat(pickWords(o.antonyms, 8, w));
   r.r = r.r.concat(pickWords(o.related, 12, w)).concat(pickWords(o.derived, 12, w));
+  if (!r.b && o.etymology_templates) { const b = extractBreakdown(o.etymology_templates, w); if (b) r.b = b; }
 });
+
+// Wiktionary's own morphological analysis (affix/prefix/suffix/confix/compound),
+// as ordered parts [{ s: surface, k: kind, g: gloss }]. This is the authoritative
+// split the app uses to rescue words the heuristic engine mangles.
+function stripAnno(s) { return String(s).replace(/<[^>]*>/g, "").trim(); }
+function extractBreakdown(templates, word) {
+  const want = { prefix: 1, suffix: 1, confix: 1, affix: 1, compound: 1, blend: 1 };
+  const t = templates.find((x) => want[x.name] && x.args);
+  if (!t) return null;
+  const a = t.args;
+  const keys = Object.keys(a).filter((k) => /^[0-9]+$/.test(k) && Number(k) >= 2).sort((x, y) => x - y);
+  const raw = keys.map((k) => stripAnno(a[k])).filter(Boolean);
+  if (raw.length < 2) return null;
+
+  function gloss(i) { // i: 1-based part index
+    if (a["t" + i]) return a["t" + i];
+    if (a["gloss" + i]) return a["gloss" + i];
+    if (a["pos" + i]) { const m = a["pos" + i].match(/[‘'"“]([^’'"”]+)[’'"”]/); return m ? m[1] : null; }
+    return null;
+  }
+  const n = raw.length;
+  const parts = raw.map(function (s, idx) {
+    let k;
+    if (t.name === "compound" || t.name === "blend") k = "root";
+    else if (t.name === "prefix") k = idx === 0 ? "prefix" : "root";
+    else if (t.name === "suffix") k = idx === n - 1 ? "suffix" : "root";
+    else if (t.name === "confix") k = idx === 0 ? "prefix" : idx === n - 1 ? "suffix" : "root";
+    else k = s.charAt(0) === "-" ? "suffix" : s.charAt(s.length - 1) === "-" ? "prefix" : "root";
+    const out = { s: s.replace(/^-|-$/g, ""), k: k };
+    const g = gloss(idx + 1);
+    if (g) out.g = g;
+    return out;
+  }).filter((p) => p.s);
+
+  // Only keep it if the surfaces actually tile the word (so the breakdown line
+  // still reads as the word); otherwise the engine's segmentation is better.
+  if (parts.length < 2) return null;
+  if (parts.map((p) => p.s).join("").toLowerCase() !== word.toLowerCase()) return null;
+  return parts;
+}
 
 rl.on("close", function () {
   const dedupe = (a, m, w) => {
@@ -120,6 +161,7 @@ rl.on("close", function () {
     const ipa = r.i || (c && c.ipa);
     if (ipa) out.i = ipa;
     if (c) out.rs = c.resp;
+    if (r.b) out.b = r.b;
 
     if (!Object.keys(out).length) continue;
     withData++;

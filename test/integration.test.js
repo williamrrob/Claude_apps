@@ -126,7 +126,7 @@ async function main() {
   assert.ok(!find(ids.wordLine, hasClass("error")), "no error banner after a search");
   const morphs = findAll(ids.wordLine, hasClass("mw")).map((c) => c.textContent);
   assert.deepStrictEqual(morphs, ["bio", "graph", "y"], "renders morphemes bio · graph · y");
-  assert.ok(/class="resp"/.test(ids.pron.innerHTML), "pronunciation respelling is shown");
+  assert.ok(find(ids.pron, hasClass("resp")), "pronunciation respelling is shown");
   const meaning = find(ids.panels, hasClass("def-meaning"));
   assert.ok(meaning && /account of the series of events|life/i.test(deepText(meaning)),
     "meaning is filled from WordNet, got: " + (meaning && deepText(meaning)));

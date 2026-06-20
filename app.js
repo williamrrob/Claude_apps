@@ -61,7 +61,7 @@
   // Only the small morpheme index loads up front (for the "more words" lists).
   // Rich per-word data (definitions, pronunciation, etymology, relations) is
   // fetched lazily, one shard at a time, keyed by the word's first two letters.
-  const DATA_V = "11";
+  const DATA_V = "13";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -83,6 +83,37 @@
         .catch(function () { return {}; });
     }
     return shardCache[key].then(function (sh) { return sh[word] || null; });
+  }
+
+  // ---------- hybrid breakdown ----------
+  // Prefer Wiktionary's own morphological split (rec.b) when the heuristic engine
+  // produced junk (unknown stems / low confidence) and the real split tiles the
+  // word. Enrich each part from our morpheme data so known roots keep their
+  // Greek/Latin etymon; otherwise fall back to Wiktionary's gloss.
+  let MFORMS = null;
+  function morphFind(s) {
+    if (!MFORMS) {
+      MFORMS = {};
+      const M = window.MORPHEMES || {};
+      ["prefixes", "roots", "suffixes"].forEach(function (cat) {
+        (M[cat] || []).forEach(function (e) {
+          (e.forms || []).forEach(function (f) { if (!MFORMS[f]) MFORMS[f] = e; });
+        });
+      });
+    }
+    return MFORMS[s] || MFORMS[s.replace(/^-|-$/g, "")] || null;
+  }
+  function hybridPart(x) {
+    const e = morphFind(x.s);
+    if (e) return { kind: x.k, surface: x.s, origin: e.origin, source: e.source, meaning: e.meaning, id: e.id, forms: e.forms };
+    return { kind: x.k, surface: x.s, origin: null, source: null, meaning: x.g || null, id: null, forms: null };
+  }
+  function chooseBreakdown(result, rec) {
+    const bad = !result.hasRoot ||
+      result.parts.some(function (p) { return p.kind === "unknown"; }) ||
+      (result.confidence || 0) < 0.6;
+    if (bad && rec && rec.b && rec.b.length >= 2) return rec.b.map(hybridPart);
+    return result.parts;
   }
 
   // ---------- search history ----------
@@ -150,18 +181,17 @@
 
   async function reveal(result, token) {
     clearStage();
-    const parts = result.parts;
     const recP = getWord(result.word); // one fetch, shared by every panel
+    const rec = await recP;
+    if (token !== runToken) return;
+    const parts = chooseBreakdown(result, rec);
 
     // Flag words we can't find a definition for: the engine will segment any
     // string, so without this a made-up word gets a confident-looking breakdown.
-    recP.then(function (rec) {
-      if (token !== runToken) return;
-      if (!rec || !rec.d || !rec.d.length) {
-        noteEl.textContent = "“" + result.word + "” isn’t in the dictionary — here’s how its parts would break down.";
-        noteEl.hidden = false;
-      }
-    });
+    if (!rec || !rec.d || !rec.d.length) {
+      noteEl.textContent = "“" + result.word + "” isn’t in the dictionary — here’s how its parts would break down.";
+      noteEl.hidden = false;
+    }
 
     // 1) lay down morphemes (tight) and the dots between them.
     const morphEls = [];
@@ -187,7 +217,7 @@
 
     // 4) pronunciation (fills when the data arrives).
     await delay(160);
-    fillPron(recP, token);
+    fillPron(recP, result.word, token);
 
     // 5) a tile per meaningful morpheme — skip lone junk stems (a stray "g").
     await delay(140);
@@ -200,7 +230,7 @@
     // 6) panels: meaning, thesaurus, origin.
     await delay(180);
     if (token !== runToken) return;
-    const meaningPanel = buildMeaningPanel(result);
+    const meaningPanel = buildMeaningPanel(result, parts);
     const thesPanel = el("div", "panel");
     const originPanel = el("div", "panel");
     panelsEl.appendChild(meaningPanel);
@@ -215,14 +245,33 @@
     fillOrigin(recP, result, originPanel, token);
   }
 
-  function fillPron(recP, token) {
+  const canSpeak = typeof window !== "undefined" && "speechSynthesis" in window;
+  function speak(word) {
+    try {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(word);
+      u.lang = "en-US"; u.rate = 0.95;
+      window.speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+
+  function fillPron(recP, word, token) {
     recP.then(function (rec) {
       if (token !== runToken) return;
-      if (!rec || (!rec.i && !rec.rs)) { pronEl.innerHTML = ""; return; }
-      const ipa = rec.i ? '<span class="ipa">' + escapeHtml(rec.i) + "</span>" : "";
-      const resp = rec.rs ? '<span class="resp">' + escapeHtml(rec.rs) + "</span>" : "";
-      pronEl.innerHTML = ipa + (ipa && resp ? '<span class="pdot">•</span>' : "") + resp;
-      requestAnimationFrame(function () { pronEl.classList.add("in"); });
+      pronEl.innerHTML = "";
+      if (rec && rec.i) pronEl.appendChild(el("span", "ipa", rec.i));
+      if (canSpeak) {
+        const btn = el("button", "spk", "▶");
+        btn.type = "button";
+        btn.setAttribute("aria-label", "Pronounce " + word);
+        btn.addEventListener("click", function () { speak(word); });
+        pronEl.appendChild(btn);
+      }
+      if (rec && rec.rs) {
+        if (rec.i || canSpeak) pronEl.appendChild(el("span", "pdot", "•"));
+        pronEl.appendChild(el("span", "resp", rec.rs));
+      }
+      if (pronEl.children.length) requestAnimationFrame(function () { pronEl.classList.add("in"); });
     });
   }
 
@@ -336,11 +385,11 @@
   }
 
   // ---------- panels ----------
-  function buildMeaningPanel(result) {
+  function buildMeaningPanel(result, parts) {
     currentWord = result.word;
     const panel = el("div", "panel");
 
-    const glossable = result.parts.filter(function (p) { return p.meaning; });
+    const glossable = parts.filter(function (p) { return p.meaning; });
     if (glossable.length) {
       panel.appendChild(el("div", "lab", "Built from"));
       const built = el("div", "built");
@@ -417,32 +466,119 @@
   }
 
   // Some Wiktionary etymologies are a bare "tree" of ancestor forms rather than
-  // a readable sentence; skip those and use the clean root chain instead.
+  // a readable sentence; skip those for the prose but still use them for the
+  // language journey below.
   function looksLikeTree(e) {
     return /(Proto-|-der\.)/.test(e) && !/\bfrom\b/i.test(e);
   }
 
-  // Real etymology when it reads as prose; otherwise the root chain from the engine.
+  // Languages we can place on a timeline, with a rough chronological rank and
+  // the language's own historical period (we can't get exact crossing dates).
+  const LANGS = {
+    "Proto-Indo-European": { rank: -4500, short: "PIE", era: "ancestor" },
+    "Proto-Hellenic": { rank: -2000, era: "prehistoric" },
+    "Proto-Italic": { rank: -1500, era: "prehistoric" },
+    "Proto-Germanic": { rank: -500, era: "c. 500 BCE" },
+    "Proto-West Germanic": { rank: -100, era: "c. 1 CE" },
+    "Ancient Greek": { rank: -800, era: "c. 800 BCE–300 CE" },
+    "Hellenistic Greek": { rank: -300, era: "c. 300 BCE" },
+    "Koine Greek": { rank: -200, era: "c. 300 BCE–300 CE" },
+    "Byzantine Greek": { rank: 600, era: "4th–15th c." },
+    "Greek": { rank: 1700, era: "modern" },
+    "Latin": { rank: -75, era: "c. 75 BCE–200 CE" },
+    "Classical Latin": { rank: -75, era: "c. 75 BCE–200 CE" },
+    "Vulgar Latin": { rank: 200, era: "1st–7th c." },
+    "Late Latin": { rank: 300, era: "3rd–6th c." },
+    "Ecclesiastical Latin": { rank: 400, era: "4th c.+" },
+    "Medieval Latin": { rank: 900, era: "9th–15th c." },
+    "New Latin": { rank: 1550, era: "16th c.+" },
+    "Old English": { rank: 700, era: "5th–11th c." },
+    "Middle English": { rank: 1200, era: "1150–1500" },
+    "Old French": { rank: 1000, era: "9th–14th c." },
+    "Anglo-Norman": { rank: 1100, era: "11th–14th c." },
+    "Middle French": { rank: 1450, era: "14th–17th c." },
+    "French": { rank: 1700, era: "modern" },
+    "Old Norse": { rank: 800, era: "8th–14th c." },
+    "Italian": { rank: 1400, era: "modern" },
+    "Spanish": { rank: 1400, era: "modern" },
+    "Portuguese": { rank: 1400, era: "modern" },
+    "Dutch": { rank: 1500, era: "modern" },
+    "German": { rank: 1500, era: "modern" },
+    "Arabic": { rank: 600, era: "7th c.+" },
+    "Sanskrit": { rank: -1500, era: "ancient" },
+    "Hebrew": { rank: -900, era: "ancient" },
+    "Persian": { rank: 800, era: "medieval+" },
+    "English": { rank: 1500, era: "1500–today" },
+  };
+
+  function parseChain(e) {
+    const names = Object.keys(LANGS).sort(function (a, b) { return b.length - a.length; });
+    let work = " " + e + " ";
+    const found = {};
+    names.forEach(function (name) {
+      let idx;
+      while ((idx = work.indexOf(name)) >= 0) {
+        if (found[name] === undefined) found[name] = idx;
+        work = work.slice(0, idx) + new Array(name.length + 1).join(" ") + work.slice(idx + name.length);
+      }
+    });
+    let chain = Object.keys(found).sort(function (a, b) { return LANGS[a].rank - LANGS[b].rank; });
+    if (chain.length > 5) chain = chain.slice(0, 4).concat(chain.slice(-1));
+    return chain;
+  }
+
+  function extractYear(e) {
+    let m = e.match(/\b(1[0-9]{3}|20[0-2][0-9])\b/);
+    if (m) return "c. " + m[1];
+    m = e.match(/\b\d{1,2}(?:st|nd|rd|th)\s+century\b/i);
+    return m ? m[0] : null;
+  }
+
+  function buildTimeline(e) {
+    const chain = parseChain(e);
+    if (chain.length < 2) return null;
+    const colors = ["var(--root)", "var(--suffix)", "var(--prefix)", "var(--stem)", "var(--ink)"];
+    const tl = el("div", "tl");
+    chain.forEach(function (name, i) {
+      const node = el("div", "node");
+      const dot = el("div", "dot");
+      dot.style.background = colors[i % colors.length];
+      node.appendChild(dot);
+      node.appendChild(el("div", "lang", LANGS[name].short || name));
+      node.appendChild(el("div", "era", LANGS[name].era));
+      tl.appendChild(node);
+    });
+    return tl;
+  }
+
   function fillOrigin(recP, result, panel, token) {
     recP.then(function (rec) {
       if (token !== runToken) return;
       panel.innerHTML = "";
-      if (rec && rec.e && !looksLikeTree(rec.e)) {
-        panel.appendChild(el("div", "lab", "Origin"));
-        panel.appendChild(el("div", "hist", rec.e));
-        return;
-      }
+      const e = rec && rec.e;
+      const tl = e ? buildTimeline(e) : null;
+      const prose = (e && !looksLikeTree(e)) ? e : null;
       const known = result.parts.filter(function (p) { return p.origin && p.source; });
-      if (!known.length) { panel.remove(); return; }
-      const origins = [];
-      known.forEach(function (p) { if (origins.indexOf(p.origin) === -1) origins.push(p.origin); });
-      const chain = known.map(function (p) {
-        return "<i>" + escapeHtml(p.source) + '</i> (“' + escapeHtml(firstSense(p.meaning)) + "”)";
-      }).join(" + ");
+      if (!tl && !prose && !known.length) { panel.remove(); return; }
+
       panel.appendChild(el("div", "lab", "Origin"));
-      const h = el("div", "hist");
-      h.innerHTML = "Formed from <span class=\"origin\">" + escapeHtml(origins.join(" and ")) + "</span> — " + chain + ".";
-      panel.appendChild(h);
+      if (tl) {
+        panel.appendChild(tl);
+        const yr = extractYear(e);
+        if (yr) panel.appendChild(el("div", "tl-year", "earliest record · " + yr));
+      }
+      if (prose) {
+        panel.appendChild(el("div", "hist", prose));
+      } else if (known.length) {
+        const origins = [];
+        known.forEach(function (p) { if (origins.indexOf(p.origin) === -1) origins.push(p.origin); });
+        const chain = known.map(function (p) {
+          return "<i>" + escapeHtml(p.source) + '</i> (“' + escapeHtml(firstSense(p.meaning)) + "”)";
+        }).join(" + ");
+        const h = el("div", "hist");
+        h.innerHTML = "Formed from <span class=\"origin\">" + escapeHtml(origins.join(" and ")) + "</span> — " + chain + ".";
+        panel.appendChild(h);
+      }
     });
   }
 
