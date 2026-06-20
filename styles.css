@@ -20,6 +20,7 @@
   --glass-blur: blur(20px) saturate(135%);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --chase: cubic-bezier(0.5, 0, 0.9, 0.35); /* slow start, then darts off (catch-up) */
   --pad: max(16px, env(safe-area-inset-left));
   --font: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
 }
@@ -409,11 +410,12 @@ body {
 .bd.stacked { flex-direction: column; align-items: stretch; gap: 0; }
 /* dots stay collapsed until the word "breathes" apart, then ride out with the pieces */
 .bd-dot { align-self: flex-end; color: var(--muted); font-weight: 700; line-height: 1;
-  font-size: 0; opacity: 0; padding: 0 0 6px;
-  transition: font-size .55s var(--pop), opacity .45s var(--ease), padding .55s var(--ease), transform .6s var(--ease); }
-.bd.split .bd-dot { font-size: 22px; opacity: 1; padding: 0 6px 6px; }
+  font-size: 0; opacity: 0; padding: 0;
+  transition: font-size .5s var(--pop), opacity .45s var(--ease), padding .5s var(--ease), transform .65s var(--chase); }
+.bd.split .bd-dot { font-size: 16px; opacity: 1; padding: 0 5px 6px; }
 .bd.stacked .bd-dot { display: none; }
-.bd-dot.exit { transform: translateX(-500px); opacity: 0; }
+.bd-dot.exit { transform: translateX(-500px); opacity: 0;
+  transition: transform .65s var(--chase), opacity .5s var(--ease); }
 .bp { --c: var(--stem); display: inline-flex; flex-direction: column;
   opacity: 0; transform: scale(.9);
   transition: opacity .34s var(--ease), transform .42s var(--pop); }
@@ -451,9 +453,10 @@ body {
 .bp.tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .bp-words { width: 100%; margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--bd);
   animation: cardOpen .4s var(--pop) both; }
-/* sweep out toward the card's inner-left edge (clipped by .bd's own bounds) */
+/* sweep out toward the card's inner-left edge (clipped by .bd's own bounds);
+   the chase easing makes each piece dart off after the one before it */
 .bp.exit { transform: translateX(-500px); opacity: 0;
-  transition: transform .6s var(--ease), opacity .5s var(--ease); }
+  transition: transform .65s var(--chase), opacity .5s var(--ease); }
 
 /* fleuron divider between sections */
 .divider { display: flex; align-items: center; gap: 14px; color: var(--suffix); margin: 2px 2px;

@@ -148,6 +148,8 @@
     recentEl.appendChild(el("span", "recent-label", "Recent"));
     h.forEach(function (w) {
       const b = el("button", "history-chip", w);
+      // pointerdown fires before the input's blur-hide so the tap isn't lost
+      b.addEventListener("pointerdown", function (e) { e.preventDefault(); hideRecent(); run(w); });
       b.addEventListener("click", function () { hideRecent(); run(w); });
       recentEl.appendChild(b);
     });
@@ -217,6 +219,7 @@
     if (!word) return;
     const token = ++runToken;
     input.value = word;
+    input.blur(); // dismiss the keyboard so the dock returns to the bottom
     hideSuggest();
     hideRecent();
     if (thumbCloseRail) thumbCloseRail();
@@ -346,16 +349,18 @@
       bd.classList.add("split"); bd.classList.add("stacked");
       bpEls.forEach(function (bp) { bp.classList.add("open"); });
     } else {
-      // 2) breathe apart: gaps open and the dots grow in between the pieces
-      await delay(380); if (token !== runToken) return;
+      // 2) breathe out: gaps open and the dots grow in between the pieces
+      await delay(360); if (token !== runToken) return;
       bd.classList.add("split");
-      await delay(760); if (token !== runToken) return;
-      // 3) sweep out toward the card's inner-left edge (clipped there), leftmost
-      //    first; the dots ride out with the pieces
-      const flow = Array.prototype.slice.call(bd.children);
-      for (let i = 0; i < flow.length; i++) { if (token !== runToken) return; flow[i].classList.add("exit"); await delay(150); }
-      await delay(380); if (token !== runToken) return;
-      // 4) restack, then float each piece back in from the inner-left edge, top
+      await delay(680); if (token !== runToken) return;
+      // 3) breathe in: pieces draw back together and the dots fade away
+      bd.classList.remove("split");
+      await delay(560); if (token !== runToken) return;
+      // 4) chase out toward the card's inner-left edge, leftmost first — each
+      //    piece darts after the one before it
+      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(210); }
+      await delay(420); if (token !== runToken) return;
+      // 5) restack, then float each piece back in from the inner-left edge, top
       //    first, growing the card a row at a time
       bd.classList.add("stacked");
       void bd.offsetWidth;
@@ -939,6 +944,8 @@
       const li = document.createElement("li");
       const b = el("button", "suggest-item"); b.type = "button";
       b.innerHTML = '<span class="hl">' + escapeHtml(w.slice(0, q.length)) + "</span>" + escapeHtml(w.slice(q.length));
+      // pointerdown fires before the input's blur-hide, so the tap always lands
+      b.addEventListener("pointerdown", function (e) { e.preventDefault(); hideSuggest(); run(w); });
       b.addEventListener("click", function () { hideSuggest(); run(w); });
       li.appendChild(b);
       suggestEl.appendChild(li);
