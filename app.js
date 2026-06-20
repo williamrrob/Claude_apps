@@ -38,7 +38,7 @@
     });
   }
   function kindLabel(k) {
-    return { prefix: "prefix", root: "root", suffix: "suffix", linker: "link", unknown: "stem" }[k] || k;
+    return { prefix: "prefix", root: "root", suffix: "suffix", linker: "link", unknown: "stem", word: "word" }[k] || k;
   }
   function firstSense(m) { return m.split(",")[0].trim(); }
 
@@ -61,7 +61,7 @@
   // Only the small morpheme index loads up front (for the "more words" lists).
   // Rich per-word data (definitions, pronunciation, etymology, relations) is
   // fetched lazily, one shard at a time, keyed by the word's first two letters.
-  const DATA_V = "13";
+  const DATA_V = "15";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -113,6 +113,11 @@
       result.parts.some(function (p) { return p.kind === "unknown"; }) ||
       (result.confidence || 0) < 0.6;
     if (bad && rec && rec.b && rec.b.length >= 2) return rec.b.map(hybridPart);
+    // No recognized root and no real breakdown: don't force a garbage split
+    // (etymon ≠ ety + mon). Present the word as a single unit.
+    if (bad && !result.hasRoot) {
+      return [{ kind: "word", surface: result.word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
+    }
     return result.parts;
   }
 
@@ -185,11 +190,13 @@
     const rec = await recP;
     if (token !== runToken) return;
     const parts = chooseBreakdown(result, rec);
+    const isWhole = parts.length === 1 && parts[0].whole;
 
-    // Flag words we can't find a definition for: the engine will segment any
-    // string, so without this a made-up word gets a confident-looking breakdown.
+    // Flag words we can't find a definition for.
     if (!rec || !rec.d || !rec.d.length) {
-      noteEl.textContent = "“" + result.word + "” isn’t in the dictionary — here’s how its parts would break down.";
+      noteEl.textContent = isWhole
+        ? "“" + result.word + "” isn’t in the dictionary."
+        : "“" + result.word + "” isn’t in the dictionary — here’s how its parts would break down.";
       noteEl.hidden = false;
     }
 
@@ -202,7 +209,7 @@
       const mw = el("span", "mw", p.surface);
       mw.appendChild(el("span", "ul")); // underline
       span.appendChild(mw);
-      span.appendChild(el("span", "tag", kindLabel(p.kind)));
+      if (!p.whole) span.appendChild(el("span", "tag", kindLabel(p.kind)));
       wordLine.appendChild(span);
       morphEls.push(span);
     });
@@ -219,11 +226,14 @@
     await delay(160);
     fillPron(recP, result.word, token);
 
-    // 5) a tile per meaningful morpheme — skip lone junk stems (a stray "g").
+    // 5) a tile per meaningful morpheme — skipped for a single-unit word, and
+    //    skip lone junk stems (a stray "g").
     await delay(140);
-    parts.filter(function (p) {
-      return !(p.kind === "unknown" && p.surface.length < 3);
-    }).forEach(function (p) { tilesEl.appendChild(buildTile(p)); });
+    if (!isWhole) {
+      parts.filter(function (p) {
+        return !(p.kind === "unknown" && p.surface.length < 3);
+      }).forEach(function (p) { tilesEl.appendChild(buildTile(p)); });
+    }
     const tileEls = Array.prototype.slice.call(tilesEl.children);
     for (let i = 0; i < tileEls.length; i++) { if (token !== runToken) return; tileEls[i].classList.add("in"); await delay(70); }
 
@@ -439,30 +449,23 @@
       const s = rec && rec.s, a = rec && rec.a, r = rec && rec.r;
       if (!(s && s.length) && !(a && a.length) && !(r && r.length)) { panel.remove(); return; }
       panel.innerHTML = "";
-      let first = true;
+      // Each group is one wrapping line: an inline label, then the chips.
       function group(label, words, cls) {
         if (!words || !words.length) return;
-        const l = el("div", "lab", label);
-        if (!first) l.style.marginTop = "12px";
-        first = false;
-        panel.appendChild(l);
-        panel.appendChild(thesRow(words, cls));
+        const row = el("div", "thes-group");
+        row.appendChild(el("span", "thes-label", label));
+        words.forEach(function (w, i) {
+          const c = el("button", "related-chip thes-" + cls, w);
+          c.style.setProperty("--i", i);
+          c.addEventListener("click", function () { run(w); });
+          row.appendChild(c);
+        });
+        panel.appendChild(row);
       }
       group("Synonyms", s, "syn");
       group("Antonyms", a, "ant");
       group("Related", r, "rel");
     });
-  }
-
-  function thesRow(words, cls) {
-    const list = el("div", "related-list");
-    words.forEach(function (w, i) {
-      const c = el("button", "related-chip thes-" + cls, w);
-      c.style.setProperty("--i", i);
-      c.addEventListener("click", function () { run(w); });
-      list.appendChild(c);
-    });
-    return list;
   }
 
   // Some Wiktionary etymologies are a bare "tree" of ancestor forms rather than
@@ -527,6 +530,19 @@
     return chain;
   }
 
+  // Strip leading wiktextract "ancestor tree" junk (der./bor./*roots) and keep
+  // the readable sentence.
+  function cleanProse(e) {
+    const m = e.match(/(Borrowed from|Inherited from|Calque of|Univerbation of|Back-formation of|Clipping of|Abbreviation of|Blend of|Derived from|From)\b/);
+    let s = (m && m.index > 0) ? e.slice(m.index) : e;
+    s = s.replace(/\b(der|bor|inh|cog|cal|abbr|clip)\.\s*\??/g, " ")
+         .replace(/\*[^\s,;()]+/g, "")
+         .replace(/\s{2,}/g, " ")
+         .replace(/\s+([,;.])/g, "$1")
+         .trim();
+    return s;
+  }
+
   function extractYear(e) {
     let m = e.match(/\b(1[0-9]{3}|20[0-2][0-9])\b/);
     if (m) return "c. " + m[1];
@@ -561,23 +577,30 @@
       const known = result.parts.filter(function (p) { return p.origin && p.source; });
       if (!tl && !prose && !known.length) { panel.remove(); return; }
 
-      panel.appendChild(el("div", "lab", "Origin"));
-      if (tl) {
-        panel.appendChild(tl);
-        const yr = extractYear(e);
-        if (yr) panel.appendChild(el("div", "tl-year", "earliest record · " + yr));
-      }
+      panel.appendChild(el("div", "lab", "Word history"));
+      if (tl) panel.appendChild(tl);
+
       if (prose) {
-        panel.appendChild(el("div", "hist", prose));
+        panel.appendChild(el("div", "sub", "Etymology"));
+        panel.appendChild(el("div", "hist", cleanProse(prose)));
       } else if (known.length) {
+        panel.appendChild(el("div", "sub", "Etymology"));
         const origins = [];
         known.forEach(function (p) { if (origins.indexOf(p.origin) === -1) origins.push(p.origin); });
         const chain = known.map(function (p) {
           return "<i>" + escapeHtml(p.source) + '</i> (“' + escapeHtml(firstSense(p.meaning)) + "”)";
         }).join(" + ");
         const h = el("div", "hist");
-        h.innerHTML = "Formed from <span class=\"origin\">" + escapeHtml(origins.join(" and ")) + "</span> — " + chain + ".";
+        h.innerHTML = "From <span class=\"origin\">" + escapeHtml(origins.join(" and ")) + "</span> — " + chain + ".";
         panel.appendChild(h);
+      }
+
+      // First recorded — only when the source actually states a date.
+      const yr = e ? extractYear(e) : null;
+      if (yr) {
+        const fr = el("div", "first-rec");
+        fr.innerHTML = '<span class="sub">First recorded</span> ' + escapeHtml(yr);
+        panel.appendChild(fr);
       }
     });
   }

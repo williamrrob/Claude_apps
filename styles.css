@@ -141,6 +141,7 @@ body {
 .morph[data-kind="suffix"] { --c: var(--suffix); }
 .morph[data-kind="linker"] .mw { font-size: 19px; opacity: 0.6; }
 .morph[data-kind="unknown"]{ --c: var(--stem); }
+.morph[data-kind="word"]{ --c: var(--ink); }
 .dot {
   align-self: flex-start; margin-top: 8px;
   color: var(--muted); font-weight: 700; line-height: 1;
@@ -230,6 +231,10 @@ body {
 .related-chip.thes-syn { --c: var(--root); }
 .related-chip.thes-ant { --c: var(--prefix); }
 .related-chip.thes-rel { --c: var(--stem); }
+/* inline label + chips on one wrapping line */
+.thes-group { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+.thes-group + .thes-group { margin-top: 9px; }
+.thes-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
 .related-chip:active { transform: scale(0.93); }
 @keyframes chipIn { to { opacity: 1; transform: none; } }
 
@@ -268,8 +273,9 @@ body {
 .tl .dot { width: 13px; height: 13px; border-radius: 50%; margin: 0 auto 7px; position: relative; z-index: 1; border: 2px solid var(--bg2); }
 .tl .lang { font-size: 11.5px; font-weight: 600; line-height: 1.2; }
 .tl .era { font-size: 10px; color: var(--muted); margin-top: 2px; }
-.tl-year { font-size: 12px; color: var(--muted); margin-top: 9px; }
-.tl-year::before { content: "🕮 "; }
+.sub { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--suffix); margin-top: 13px; }
+.first-rec { font-size: 14.5px; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--bd); }
+.first-rec .sub { color: var(--muted); margin: 0 6px 0 0; }
 
 /* ---------- bottom dock ---------- */
 .dock {
