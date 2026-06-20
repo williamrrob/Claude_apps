@@ -60,7 +60,7 @@
   // Only the small morpheme index loads up front (for the "more words" lists).
   // Rich per-word data (definitions, pronunciation, etymology, relations) is
   // fetched lazily, one shard at a time, keyed by the word's first two letters.
-  const DATA_V = "6";
+  const DATA_V = "7";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -380,12 +380,18 @@
     return list;
   }
 
-  // Real etymology when we have it; otherwise the root chain from the engine.
+  // Some Wiktionary etymologies are a bare "tree" of ancestor forms rather than
+  // a readable sentence; skip those and use the clean root chain instead.
+  function looksLikeTree(e) {
+    return /(Proto-|-der\.)/.test(e) && !/\bfrom\b/i.test(e);
+  }
+
+  // Real etymology when it reads as prose; otherwise the root chain from the engine.
   function fillOrigin(recP, result, panel, token) {
     recP.then(function (rec) {
       if (token !== runToken) return;
       panel.innerHTML = "";
-      if (rec && rec.e) {
+      if (rec && rec.e && !looksLikeTree(rec.e)) {
         panel.appendChild(el("div", "lab", "Origin"));
         panel.appendChild(el("div", "hist", rec.e));
         return;
