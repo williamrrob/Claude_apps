@@ -44,7 +44,7 @@ function makeDom() {
     return node;
   }
   const ids = {};
-  ["searchForm", "wordInput", "hint", "wordLine", "pron", "note", "tiles", "panels", "related", "recent", "content", "themeToggle"]
+  ["searchForm", "wordInput", "hint", "wordLine", "pron", "ipaKey", "note", "tiles", "panels", "related", "recent", "content", "themeToggle"]
     .forEach((id) => { ids[id] = el(id === "searchForm" ? "form" : "div"); });
   ids.searchForm.querySelector = () => el("button"); // .search-btn lookup
   const examples = ["biography", "incredible", "democracy"].map((w) => { const b = el("button"); b.dataset.word = w; return b; });

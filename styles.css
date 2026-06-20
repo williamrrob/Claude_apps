@@ -158,15 +158,32 @@ body {
 }
 .pron.in { opacity: 1; transform: none; }
 .pron:empty { display: none; }
-.pron .ipa { color: var(--muted); }
-.pron .resp { color: var(--ink); font-weight: 600; }
-.pron .spk {
-  width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
-  border: 1px solid var(--bd); background: var(--field); color: var(--root);
-  display: grid; place-items: center; font-size: 11px; padding-left: 1px;
-  -webkit-tap-highlight-color: transparent; transition: transform 0.12s var(--ease), filter 0.12s;
+.pron .ipa {
+  color: var(--muted); background: none; border: 0; font: inherit; cursor: pointer;
+  padding: 2px 0; border-bottom: 1px dotted color-mix(in srgb, var(--muted) 60%, transparent);
+  -webkit-tap-highlight-color: transparent;
 }
-.pron .spk:active { transform: scale(0.88); filter: brightness(1.1); }
+.pron .resp {
+  color: var(--ink); font-weight: 600; background: none; border: 0; font: inherit; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px; -webkit-tap-highlight-color: transparent;
+}
+.pron .resp .spk-ico {
+  font-size: 9px; color: var(--root); border: 1px solid var(--bd); background: var(--field);
+  width: 19px; height: 19px; border-radius: 50%; display: inline-grid; place-items: center; padding-left: 1px;
+}
+.pron .resp:active { transform: scale(0.96); }
+
+/* IPA pronunciation key */
+.ipa-key {
+  width: 100%; max-width: 520px; margin: -6px auto 12px;
+  border: 1px solid var(--bd); border-radius: 14px; padding: 13px 15px; background: var(--panel);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+}
+.ipa-key-list { display: flex; flex-direction: column; gap: 7px; margin-top: 9px; }
+.ipa-key-row { display: flex; align-items: baseline; gap: 8px; font-size: 13.5px; line-height: 1.35; }
+.ipa-key-row .ipa-sym { color: var(--root); font-weight: 700; min-width: 24px; }
+.ipa-key-row .ipa-name { color: var(--suffix); font-style: italic; flex: 0 0 auto; }
+.ipa-key-row .ipa-desc { color: var(--muted); }
 .pron .pdot { color: var(--muted); opacity: 0.5; }
 
 /* ---------- not-a-word notice ---------- */
