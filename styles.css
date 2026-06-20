@@ -112,19 +112,24 @@ body {
   --c: var(--stem);
   position: relative;
   font-size: 25px; font-weight: 700; letter-spacing: -0.01em;
-  padding-bottom: 12px; text-align: center; color: var(--c);
+  padding-bottom: 26px; text-align: center; color: var(--c);
   opacity: 0; transform: translateY(14px) scale(0.9);
   transition: opacity 0.34s var(--ease), transform 0.42s var(--pop);
 }
 .morph.in { opacity: 1; transform: none; }
-.morph::after {
-  content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 100%;
+/* underline hugs the letters, well above the label (its own element so the
+   pseudo-elements are free for the affix hyphens). */
+.morph .ul {
+  position: absolute; left: 0; bottom: 19px; height: 3px; width: 100%;
   border-radius: 2px; background: var(--c);
   transform: scaleX(0); transform-origin: center; transition: transform 0.4s var(--pop);
 }
-.word-line.split .morph::after { transform: scaleX(1); }
+.word-line.split .morph .ul { transform: scaleX(1); }
+/* hyphens appear with the split: prefixes get a trailing -, suffixes a leading - */
+.word-line.split .morph[data-kind="prefix"]::after { content: "-"; color: var(--c); }
+.word-line.split .morph[data-kind="suffix"]::before { content: "-"; color: var(--c); }
 .morph .tag {
-  position: absolute; left: 0; bottom: -13px; width: 100%;
+  position: absolute; left: 0; bottom: 0; width: 100%;
   font-size: 9.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--muted);
   opacity: 0; transform: translateY(-3px); transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);

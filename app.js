@@ -158,6 +158,7 @@
       span.dataset.kind = p.kind;
       span.textContent = p.surface;
       span.appendChild(el("span", "tag", kindLabel(p.kind)));
+      span.appendChild(el("span", "ul")); // underline (pseudo-elements hold hyphens)
       wordLine.appendChild(span);
       morphEls.push(span);
     });
@@ -213,17 +214,16 @@
   function buildTile(p) {
     const tile = el("div", "tile");
     tile.dataset.kind = p.kind;
-    tile.appendChild(el("div", "rk", p.kind === "linker" && p.surface === "e" ? "silent e" : kindLabel(p.kind)));
-    tile.appendChild(el("div", "surf", p.surface));
 
-    if (p.forms) {
-      const others = p.forms.filter(function (f) { return f !== p.surface; });
-      if (others.length) tile.appendChild(el("div", "forms", "also: " + others.join(", ")));
-    }
-    if (p.origin) {
-      const org = el("div", "org");
-      org.innerHTML = escapeHtml(p.origin) + (p.source ? ' · <i>' + escapeHtml(p.source) + "</i>" : "");
-      tile.appendChild(org);
+    // Lead with the actual root/affix (the etymon), since the surface fragment is
+    // already shown in the breakdown at the top. Fold origin into the label.
+    const isSilentE = p.kind === "linker" && p.surface === "e";
+    const label = isSilentE ? "silent e" : kindLabel(p.kind) + (p.origin ? " · " + p.origin : "");
+    tile.appendChild(el("div", "rk", label));
+    tile.appendChild(el("div", "surf", p.source || p.surface));
+
+    if (p.forms && p.forms.length) {
+      tile.appendChild(el("div", "forms", "appears as: " + p.forms.join(", ")));
     }
     let meaning = p.meaning;
     if (!meaning) {
