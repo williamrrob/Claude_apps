@@ -44,7 +44,8 @@ function makeDom() {
     return node;
   }
   const ids = {};
-  ["searchForm", "wordInput", "hint", "wordLine", "pron", "ipaKey", "note", "tiles", "panels", "related", "recent", "content", "themeToggle"]
+  ["searchForm", "wordInput", "hint", "entry", "miniHead", "note", "ipaKey", "cards",
+   "browse", "thumb", "suggest", "recent", "content", "themeToggle", "navHome", "navBack", "navFwd"]
     .forEach((id) => { ids[id] = el(id === "searchForm" ? "form" : "div"); });
   ids.searchForm.querySelector = () => el("button"); // .search-btn lookup
   const examples = ["biography", "incredible", "democracy"].map((w) => { const b = el("button"); b.dataset.word = w; return b; });
@@ -86,7 +87,7 @@ function loadApp() {
   sandbox.location = { hash: "" };
   sandbox.setTimeout = setTimeout;
   sandbox.requestAnimationFrame = (fn) => setTimeout(fn, 0);
-  sandbox.matchMedia = (q) => ({ matches: /reduce/.test(q) }); // reduced motion → zero delays
+  sandbox.matchMedia = (q) => ({ matches: /reduce/.test(q) }); // reduced motion → zero delays, no FLIP
   sandbox.fetch = (url) => {
     const file = String(url).split("?")[0];
     try { const body = read(file); return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(body)) }); }
@@ -120,25 +121,27 @@ async function main() {
   assert.ok(last.kind === "suffix" && last.surface === "e" && last.silentE,
     "the final 'e' in microscope is its own (suffix) morpheme");
 
-  // --- Layer 3: search renders morphemes, pronunciation and meaning. ---
+  // --- Layer 3: a search renders headword, breakdown, pronunciation and meaning. ---
   examples[0].dispatch("click"); // biography
   await settle();
-  assert.ok(!find(ids.wordLine, hasClass("error")), "no error banner after a search");
-  const morphs = findAll(ids.wordLine, hasClass("mw")).map((c) => c.textContent);
-  assert.deepStrictEqual(morphs, ["bio", "graph", "y"], "renders morphemes bio · graph · y");
-  assert.ok(find(ids.pron, hasClass("resp")), "pronunciation respelling is shown");
-  const meaning = find(ids.panels, hasClass("def-meaning"));
+  assert.ok(!find(ids.entry, hasClass("error")), "no error banner after a search");
+  const word = find(ids.entry, hasClass("entry-word"));
+  assert.ok(word && word.textContent === "biography", "headword renders the whole word");
+  const morphs = findAll(ids.cards, hasClass("mw")).map((c) => c.textContent);
+  assert.deepStrictEqual(morphs, ["bio", "graph", "y"], "breakdown lists morphemes bio · graph · y");
+  assert.ok(find(ids.entry, hasClass("resp")), "pronunciation respelling is shown under the word");
+  const meaning = find(ids.cards, hasClass("def-meaning"));
   assert.ok(meaning && /account of the series of events|life/i.test(deepText(meaning)),
     "meaning is filled from WordNet, got: " + (meaning && deepText(meaning)));
 
-  // --- Layer 4: tapping a card drops down words sharing the piece, in the card. ---
-  const rootTile = find(ids.tiles, (c) => c.dataset && c.dataset.kind === "root");
-  assert.ok(rootTile, "a root tile exists");
-  rootTile.dispatch("click");
+  // --- Layer 4: tapping a morpheme drops down words sharing the piece. ---
+  const rootBP = find(ids.cards, (c) => c.dataset && c.dataset.kind === "root");
+  assert.ok(rootBP, "a root morpheme exists in the breakdown");
+  rootBP.dispatch("click");
   await settle();
-  assert.ok(rootTile.classList.contains("expanded"), "tapped card expands");
-  const chips = findAll(rootTile, hasClass("related-chip"));
-  assert.ok(chips.length > 0, "expanded card lists words sharing the morpheme");
+  assert.ok(rootBP.classList.contains("expanded"), "tapped morpheme expands");
+  const chips = findAll(rootBP, hasClass("related-chip"));
+  assert.ok(chips.length > 0, "expanded morpheme lists words sharing the piece");
   assert.ok(!chips.map((c) => c.textContent).includes("biography"), "current word excluded from related words");
 
   // --- Layer 5: following a related word runs a fresh analysis. ---
@@ -146,8 +149,8 @@ async function main() {
   next.dispatch("click");
   await settle();
   assert.strictEqual(ids.wordInput.value, next.textContent, "clicking a related word loads it");
-  assert.ok(findAll(ids.wordLine, hasClass("morph")).length > 0 && !find(ids.wordLine, hasClass("error")),
-    "followed word re-renders cleanly");
+  const word2 = find(ids.entry, hasClass("entry-word"));
+  assert.ok(word2 && !find(ids.entry, hasClass("error")), "followed word re-renders cleanly");
 
   // --- Layer 6: searches are remembered. ---
   const history = JSON.parse(sandbox.localStorage.getItem("rootwork.history"));
@@ -155,12 +158,16 @@ async function main() {
     "history records both searches, got: " + JSON.stringify(history));
   assert.ok(findAll(ids.recent, hasClass("history-chip")).length >= 2, "recent row renders chips");
 
+  // --- Layer 7: the thumb index is built A–Z. ---
+  assert.ok(findAll(ids.thumb, hasClass("thumb-tab")).length === 26, "thumb index has a tab per letter A–Z");
+
   console.log("ok - dictionary exposed to window");
   console.log("ok - engine decomposes with a root; silent 'e' is its own morpheme");
-  console.log("ok - search renders morphemes, pronunciation and meaning");
-  console.log("ok - tapping a tile expands it with related words");
+  console.log("ok - search renders headword, breakdown, pronunciation and meaning");
+  console.log("ok - tapping a morpheme expands it with related words");
   console.log("ok - following a related word runs a fresh analysis");
   console.log("ok - searches are saved to history");
+  console.log("ok - thumb index renders A–Z");
   console.log("\nAll integration tests passed.");
 }
 

@@ -12,7 +12,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="stylesheet" href="styles.css?v=21" />
 </head>
 <body>
   <div class="app">
@@ -21,7 +21,10 @@
     </header>
 
     <main class="content" id="content">
+      <div class="minihead" id="miniHead" hidden></div>
       <div class="hint" id="hint">
+        <img class="splash-mark" src="icon.svg" alt="" width="78" height="78" />
+        <p class="splash-name">Rootwork</p>
         <p class="hint-title">Enter a word.</p>
         <p class="hint-sub">Watch it break into its roots and affixes, see where each piece comes from, how it's pronounced, and how it all builds into meaning.</p>
         <div class="chips">
@@ -34,40 +37,50 @@
         </div>
       </div>
 
-      <div class="word-line" id="wordLine" aria-live="polite"></div>
-      <div class="pron" id="pron"></div>
-      <div class="ipa-key" id="ipaKey" hidden></div>
+      <section class="entry" id="entry" aria-live="polite"></section>
       <div class="note" id="note" hidden></div>
-      <div class="tiles" id="tiles"></div>
-      <div class="panels" id="panels"></div>
+      <div class="ipa-key" id="ipaKey" hidden></div>
+      <div class="cards" id="cards"></div>
     </main>
+
+    <section class="browse" id="browse" hidden aria-label="Browse words"></section>
+
+    <nav class="thumb" id="thumb" aria-label="Jump to letter"></nav>
 
     <footer class="dock">
       <div class="recent" id="recent" hidden aria-label="Recent searches"></div>
-      <form id="searchForm" class="search" autocomplete="off">
-        <input
-          id="wordInput"
-          class="search-input"
-          type="text"
-          enterkeyhint="search"
-          autocapitalize="none"
-          autocorrect="off"
-          spellcheck="false"
-          placeholder="Type a word…"
-          aria-label="Word to analyze"
-        />
-        <button type="submit" class="search-btn" aria-label="Analyze">
-          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor"
-                  stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </form>
+      <ul class="suggest" id="suggest" hidden aria-label="Suggestions"></ul>
+      <div class="dock-row">
+        <div class="nav-pair">
+          <button id="navHome" class="nav-btn" type="button" aria-label="Home">⌂</button>
+          <button id="navBack" class="nav-btn" type="button" aria-label="Back" disabled>‹</button>
+          <button id="navFwd" class="nav-btn" type="button" aria-label="Forward" disabled>›</button>
+        </div>
+        <form id="searchForm" class="search" autocomplete="off">
+          <input
+            id="wordInput"
+            class="search-input"
+            type="text"
+            enterkeyhint="search"
+            autocapitalize="none"
+            autocorrect="off"
+            spellcheck="false"
+            placeholder="Type a word…"
+            aria-label="Word to analyze"
+          />
+          <button type="submit" class="search-btn" aria-label="Analyze">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor"
+                    stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+      </div>
     </footer>
   </div>
 
-  <script src="data.js?v=19"></script>
-  <script src="engine.js?v=19"></script>
-  <script src="app.js?v=19"></script>
+  <script src="data.js?v=21"></script>
+  <script src="engine.js?v=21"></script>
+  <script src="app.js?v=21"></script>
 </body>
 </html>

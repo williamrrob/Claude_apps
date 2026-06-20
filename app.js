@@ -1,7 +1,8 @@
 // Rootwork UI controller: takes a word, runs the offline etymology engine, and
-// choreographs the reveal — word with dots, pronunciation, a tile per morpheme,
-// then panels for meaning, synonyms/antonyms, and origin. Tiles expand in place
-// to show other words built on the same piece. Searches are remembered.
+// choreographs the reveal — a pinned headword, a Breakdown card whose pieces pop
+// in split then slide into a left-justified acrostic and unfold their etymology,
+// then Definition / Word history / Thesaurus cards. Plus typeahead, browse-by-
+// letter (the right-edge tabs), and Safari-style back/forward over viewed words.
 
 (function () {
   "use strict";
@@ -10,13 +11,18 @@
   const themeToggle = $("themeToggle");
   const contentEl = $("content");
   const hint = $("hint");
-  const wordLine = $("wordLine");
-  const pronEl = $("pron");
-  const ipaKeyEl = $("ipaKey");
+  const entryEl = $("entry");
+  const miniHead = $("miniHead");
   const noteEl = $("note");
-  const tilesEl = $("tiles");
-  const panelsEl = $("panels");
+  const ipaKeyEl = $("ipaKey");
+  const cardsEl = $("cards");
+  const browseEl = $("browse");
+  const thumbEl = $("thumb");
+  const suggestEl = $("suggest");
   const recentEl = $("recent");
+  const navHome = $("navHome");
+  const navBack = $("navBack");
+  const navFwd = $("navFwd");
   const form = $("searchForm");
   const input = $("wordInput");
 
@@ -24,7 +30,7 @@
   const step = reduceMotion ? 0 : 1;
   let runToken = 0;
   let currentWord = "";
-  let meaningEl = null;
+  let pronEl = null;
 
   function delay(ms) { return new Promise(function (r) { setTimeout(r, ms * step); }); }
   function el(tag, cls, text) {
@@ -37,9 +43,6 @@
     return String(s).replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
     });
-  }
-  function kindLabel(k) {
-    return { prefix: "prefix", root: "root", suffix: "suffix", linker: "link", unknown: "stem", word: "word" }[k] || k;
   }
   function firstSense(m) { return m.split(",")[0].trim(); }
 
@@ -58,10 +61,7 @@
     try { localStorage.setItem("rootwork.theme", next); } catch (e) {}
   });
 
-  // ---------- vendored data (loaded once, async) ----------
-  // Only the small morpheme index loads up front (for the "more words" lists).
-  // Rich per-word data (definitions, pronunciation, etymology, relations) is
-  // fetched lazily, one shard at a time, keyed by the word's first two letters.
+  // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
   const DATA_V = "19";
   let MORPH = null, dataPromise = null;
   function loadData() {
@@ -75,22 +75,22 @@
   }
 
   const shardCache = {};
-  function getWord(word) {
-    const key = String(word || "").slice(0, 2).toLowerCase();
+  function fetchShard(key) {
+    key = String(key || "").toLowerCase();
     if (!/^[a-z]{2}$/.test(key) || typeof fetch !== "function") return Promise.resolve(null);
     if (!shardCache[key]) {
       shardCache[key] = fetch("words/" + key + ".json?v=" + DATA_V)
         .then(function (r) { return r.ok ? r.json() : {}; })
         .catch(function () { return {}; });
     }
-    return shardCache[key].then(function (sh) { return sh[word] || null; });
+    return shardCache[key];
+  }
+  function getWord(word) {
+    const key = String(word || "").slice(0, 2).toLowerCase();
+    return fetchShard(key).then(function (sh) { return sh ? (sh[word] || null) : null; });
   }
 
   // ---------- hybrid breakdown ----------
-  // Prefer Wiktionary's own morphological split (rec.b) when the heuristic engine
-  // produced junk (unknown stems / low confidence) and the real split tiles the
-  // word. Enrich each part from our morpheme data so known roots keep their
-  // Greek/Latin etymon; otherwise fall back to Wiktionary's gloss.
   let MFORMS = null;
   function morphFind(s) {
     if (!MFORMS) {
@@ -110,12 +110,18 @@
     return { kind: x.k, surface: x.s, origin: null, source: null, meaning: x.g || null, id: null, forms: null };
   }
   function chooseBreakdown(result, rec) {
+    // Eponyms / place names aren't built from roots — "davenport" is a surname,
+    // not a·ven·port. When the etymology says so (and Wiktionary offers no real
+    // affix split), present the word whole instead of force-splitting it.
+    const ety = (rec && rec.e) || "";
+    const eponym = /named after|\bsurname\b|\beponym|place name|toponym|genericized trademark/i.test(ety);
+    if (eponym && !(rec && rec.b && rec.b.length >= 2)) {
+      return [{ kind: "word", surface: result.word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
+    }
     const bad = !result.hasRoot ||
       result.parts.some(function (p) { return p.kind === "unknown"; }) ||
       (result.confidence || 0) < 0.6;
     if (bad && rec && rec.b && rec.b.length >= 2) return rec.b.map(hybridPart);
-    // No recognized root and no real breakdown: don't force a garbage split
-    // (etymon ≠ ety + mon). Present the word as a single unit.
     if (bad && !result.hasRoot) {
       return [{ kind: "word", surface: result.word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
     }
@@ -144,20 +150,56 @@
     recentEl.appendChild(clr);
   }
 
+  // ---------- back / forward navigation ----------
+  let navStack = [], navIndex = -1, navigating = false;
+  function updateNav() {
+    if (navBack) navBack.disabled = navIndex <= 0;
+    if (navFwd) navFwd.disabled = navIndex >= navStack.length - 1;
+  }
+  function pushNav(word) {
+    if (navigating) { updateNav(); return; }
+    if (navStack[navIndex] === word) { updateNav(); return; }
+    navStack = navStack.slice(0, navIndex + 1);
+    navStack.push(word);
+    navIndex = navStack.length - 1;
+    updateNav();
+  }
+  function goBack() {
+    if (navIndex <= 0) return;
+    navIndex--; navigating = true; updateNav();
+    Promise.resolve(run(navStack[navIndex])).then(function () { navigating = false; });
+  }
+  function goFwd() {
+    if (navIndex >= navStack.length - 1) return;
+    navIndex++; navigating = true; updateNav();
+    Promise.resolve(run(navStack[navIndex])).then(function () { navigating = false; });
+  }
+  // exit the current word back to the splash (history/nav are kept).
+  function goHome() {
+    runToken++;
+    clearStage();
+    hideSuggest();
+    if (!browseEl.hidden) closeBrowse();
+    currentWord = "";
+    input.value = "";
+    hint.hidden = false;
+    if (contentEl) contentEl.scrollTop = 0;
+    highlightThumb("");
+  }
+
   // ---------- stage ----------
   function clearStage() {
-    wordLine.className = "word-line"; wordLine.innerHTML = "";
-    pronEl.className = "pron"; pronEl.innerHTML = "";
-    ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = "";
+    entryEl.className = "entry"; entryEl.innerHTML = "";
     noteEl.hidden = true; noteEl.textContent = "";
-    tilesEl.innerHTML = "";
-    panelsEl.innerHTML = "";
-    meaningEl = null;
+    ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = "";
+    cardsEl.innerHTML = "";
+    miniHead.hidden = true; miniHead.innerHTML = "";
+    pronEl = null;
   }
   function showStatus(html, isError) {
     clearStage(); hint.hidden = true;
     const d = el("div", "status" + (isError ? " error" : "")); d.innerHTML = html;
-    wordLine.appendChild(d);
+    entryEl.appendChild(d);
   }
 
   async function run(rawWord) {
@@ -165,6 +207,8 @@
     if (!word) return;
     const token = ++runToken;
     input.value = word;
+    hideSuggest();
+    if (!browseEl.hidden) closeBrowse();
     hint.hidden = true;
     loadData();
     if (contentEl) contentEl.scrollTop = 0;
@@ -180,21 +224,69 @@
       }
       currentWord = result.word;
       pushHistory(result.word);
+      pushNav(result.word);
       await reveal(result, token);
     } catch (err) {
       showStatus("Something went wrong: " + escapeHtml(String(err && err.message || err)), true);
     }
   }
 
+  // FLIP (translate only): run `mutate`, then glide each element from its old box
+  // to its new one — used to slide the split pieces into the stacked acrostic.
+  function flipMove(els, mutate) {
+    if (reduceMotion) { mutate(); return; }
+    const first = els.map(function (e) { return e.getBoundingClientRect(); });
+    mutate();
+    const last = els.map(function (e) { return e.getBoundingClientRect(); });
+    els.forEach(function (e, i) {
+      const dx = first[i].left - last[i].left, dy = first[i].top - last[i].top;
+      if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
+      e.style.transition = "none";
+      e.style.transform = "translate(" + dx + "px," + dy + "px)";
+    });
+    requestAnimationFrame(function () {
+      els.forEach(function (e) {
+        if (!e.style.transform) return;
+        e.style.transition = "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)";
+        e.style.transform = "";
+        const done = function () { e.style.transition = ""; e.removeEventListener("transitionend", done); };
+        e.addEventListener("transitionend", done);
+      });
+    });
+  }
+
+  function shortGloss(g) {
+    let s = String(g).split(/;| — /)[0].trim();
+    if (s.length > 90) s = s.slice(0, 88).trim() + "…";
+    return s;
+  }
+
+  function buildEntry(word, rec) {
+    entryEl.className = "entry"; entryEl.innerHTML = "";
+    const ruleRow = el("div", "entry-rule-row");
+    ruleRow.appendChild(el("span", "entry-rule"));
+    const pos = rec && rec.d && rec.d[0] && rec.d[0].p;
+    if (pos) ruleRow.appendChild(el("span", "entry-pos", pos));
+    entryEl.appendChild(ruleRow);
+    entryEl.appendChild(el("div", "entry-word", word));
+    pronEl = el("div", "pron");
+    entryEl.appendChild(pronEl);
+    const gloss = rec && rec.d && rec.d[0] && rec.d[0].g;
+    if (gloss) entryEl.appendChild(el("div", "entry-gloss", shortGloss(gloss)));
+    // compact pinned header (revealed on scroll)
+    miniHead.innerHTML = "";
+    miniHead.appendChild(el("span", "minihead-word", word));
+    if (pos) miniHead.appendChild(el("span", "minihead-pos", pos));
+  }
+
   async function reveal(result, token) {
     clearStage();
-    const recP = getWord(result.word); // one fetch, shared by every panel
+    const recP = getWord(result.word);
     const rec = await recP;
     if (token !== runToken) return;
     const parts = chooseBreakdown(result, rec);
     const isWhole = parts.length === 1 && parts[0].whole;
 
-    // Flag words we can't find a definition for.
     if (!rec || !rec.d || !rec.d.length) {
       noteEl.textContent = isWhole
         ? "“" + result.word + "” isn’t in the dictionary."
@@ -202,66 +294,135 @@
       noteEl.hidden = false;
     }
 
-    // 1) lay down morphemes (tight) and the dots between them.
-    const morphEls = [];
-    parts.forEach(function (p, i) {
-      if (i) wordLine.appendChild(el("span", "dot", "·"));
-      const span = el("span", "morph");
-      span.dataset.kind = p.kind;
-      const mw = el("span", "mw", p.surface);
-      mw.appendChild(el("span", "ul")); // underline
-      span.appendChild(mw);
-      if (!p.whole) span.appendChild(el("span", "tag", kindLabel(p.kind)));
-      wordLine.appendChild(span);
-      morphEls.push(span);
-    });
-
-    // 2) pop each piece in, tight, so it reads as the whole word — boom boom boom.
-    for (let i = 0; i < morphEls.length; i++) { if (token !== runToken) return; morphEls[i].classList.add("in"); await delay(45); }
-
-    // 3) beat, then SPLIT: gaps open, dots grow, underlines draw, labels appear.
-    await delay(300);
-    if (token !== runToken) return;
-    wordLine.classList.add("split");
-
-    // 4) pronunciation (fills when the data arrives).
-    await delay(160);
+    // 1) headword
+    buildEntry(result.word, rec);
+    highlightThumb(result.word);
+    requestAnimationFrame(function () { entryEl.classList.add("in"); });
+    await delay(110); if (token !== runToken) return;
     fillPron(recP, result.word, token);
 
-    // 5) a tile per meaningful morpheme — skipped for a single-unit word, and
-    //    skip lone junk stems (a stray "g").
-    await delay(140);
-    if (!isWhole) {
-      parts.filter(function (p) {
-        return !(p.kind === "unknown" && p.surface.length < 3);
-      }).forEach(function (p) { tilesEl.appendChild(buildTile(p)); });
-    } else if (rec && rec.e) {
-      // Single-unit word: still show the original source word (parity).
-      const src = extractSource(cleanProse(rec.e));
-      if (src) tilesEl.appendChild(originTile(src));
+    // 2) Breakdown — pop in split, then stack into an acrostic, then unfold info.
+    await delay(120); if (token !== runToken) return;
+    const shown = isWhole ? parts : parts.filter(function (p) { return !(p.kind === "unknown" && p.surface.length < 3); });
+    const bdCard = el("div", "card");
+    bdCard.appendChild(el("div", "cap", "Breakdown"));
+    const bd = el("div", "bd");
+    const bpEls = [];
+    shown.forEach(function (p, i) {
+      if (i) bd.appendChild(el("span", "bd-dot", "·"));
+      const bp = buildBP(p, rec);
+      bd.appendChild(bp);
+      bpEls.push(bp);
+    });
+    bdCard.appendChild(bd);
+    cardsEl.appendChild(bdCard);
+    requestAnimationFrame(function () { bdCard.classList.add("in"); });
+
+    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(60); }
+    await delay(280); if (token !== runToken) return;
+    flipMove(bpEls, function () { bd.classList.add("stacked"); });
+    await delay(300); if (token !== runToken) return;
+    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("open"); await delay(95); }
+
+    // 3) Definition
+    await delay(120); if (token !== runToken) return;
+    const defCard = buildDefinitionCard(recP, token);
+    cardsEl.appendChild(defCard);
+    requestAnimationFrame(function () { defCard.classList.add("in"); });
+
+    // 4) divider + Word history
+    const divider = fleuron();
+    const histCard = buildHistoryCard(recP, result, token, divider);
+    cardsEl.appendChild(divider);
+    cardsEl.appendChild(histCard);
+    requestAnimationFrame(function () { divider.classList.add("in"); histCard.classList.add("in"); });
+
+    // 5) Thesaurus
+    const thesCard = buildThesaurusCard(recP, token);
+    cardsEl.appendChild(thesCard);
+    requestAnimationFrame(function () { thesCard.classList.add("in"); });
+  }
+
+  function defaultGloss(p) {
+    if (p.silentE) return "silent “magic” e — a spelling marker, not a sound";
+    if (p.kind === "linker") return "connecting vowel — joins the roots";
+    return null;
+  }
+
+  function buildBP(p, rec) {
+    const bp = el("div", "bp");
+    bp.dataset.kind = p.kind;
+    const main = el("div", "bp-main");
+    main.appendChild(el("span", "bp-vline")); // vertical accent to the left
+    main.appendChild(el("span", "mw", p.surface));
+    const info = el("span", "bp-info");
+
+    let g = p.meaning ? firstSense(p.meaning) : defaultGloss(p);
+    let origin = p.origin, source = p.source;
+    if ((!origin || !source) && p.whole && rec && rec.e) {
+      const s = extractSource(cleanProse(rec.e));
+      if (s) { origin = s.lang; source = s.word + (s.translit ? " (" + s.translit + ")" : ""); if (!g && s.gloss) g = s.gloss; }
     }
-    const tileEls = Array.prototype.slice.call(tilesEl.children);
-    for (let i = 0; i < tileEls.length; i++) { if (token !== runToken) return; tileEls[i].classList.add("in"); await delay(70); }
+    if (g) info.appendChild(el("span", "gl", g));
+    if (origin && source) {
+      const src = el("span", "src");
+      let h = escapeHtml(origin) + " <b>" + escapeHtml(source) + "</b>";
+      const alts = (p.forms || []).filter(function (f) { return f !== p.surface; });
+      if (alts.length) h += ' <span class="alt">· also ' + escapeHtml(alts.join(", ")) + "</span>";
+      src.innerHTML = h;
+      info.appendChild(src);
+    }
+    main.appendChild(info);
+    bp.appendChild(main);
 
-    // 6) panels: meaning, thesaurus, origin.
-    await delay(180);
-    if (token !== runToken) return;
-    const meaningPanel = buildMeaningPanel(result, parts);
-    const thesPanel = el("div", "panel");
-    const originPanel = el("div", "panel");
-    panelsEl.appendChild(meaningPanel);
-    panelsEl.appendChild(thesPanel);
-    panelsEl.appendChild(originPanel);
-
-    const panels = [meaningPanel, thesPanel, originPanel];
-    for (let i = 0; i < panels.length; i++) { if (token !== runToken) return; panels[i].classList.add("in"); await delay(100); }
-
-    fillMeaning(recP, token);
-    fillThesaurus(recP, thesPanel, token);
-    fillOrigin(recP, result, originPanel, token);
+    // Tap a morpheme to drop down other words built on it (no visible label).
+    if (p.id) {
+      bp.classList.add("tappable");
+      bp.setAttribute("role", "button");
+      bp.setAttribute("tabindex", "0");
+      const open = function () { togglePartWords(p, bp); };
+      bp.addEventListener("click", open);
+      bp.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+    }
+    return bp;
   }
 
   const canSpeak = typeof window !== "undefined" && "speechSynthesis" in window;
+  function togglePartWords(p, bp) {
+    if (bp.classList.contains("expanded")) {
+      bp.classList.remove("expanded");
+      const box = bp.querySelector(".bp-words"); if (box) box.remove();
+      return;
+    }
+    const box = el("div", "bp-words");
+    const say = p.source || p.surface;
+    if (canSpeak && say) {
+      const sayRow = el("div", "card-say");
+      const btn = el("button", "spk", "▶"); btn.type = "button";
+      btn.setAttribute("aria-label", "Pronounce " + say);
+      btn.addEventListener("click", function (e) { e.stopPropagation(); speak(say); });
+      sayRow.appendChild(btn);
+      sayRow.appendChild(el("span", "card-say-word", say));
+      box.appendChild(sayRow);
+    }
+    const list = el("div", "card-related");
+    list.appendChild(el("div", "related-empty", "finding words…"));
+    box.appendChild(list);
+    bp.classList.add("expanded");
+    bp.appendChild(box);
+
+    const token = runToken;
+    loadData().then(function () {
+      if (token !== runToken || !bp.classList.contains("expanded")) return;
+      const words = (MORPH[p.id] || []).filter(function (w) { return w !== currentWord; });
+      list.innerHTML = "";
+      if (!words.length) { list.appendChild(el("div", "related-empty", "No other words with this piece yet.")); return; }
+      list.appendChild(el("div", "lab", "More words"));
+      renderWordGroups(list, words, p.kind);
+    });
+  }
+
+  // ---------- speech ----------
   function speak(word) {
     try {
       window.speechSynthesis.cancel();
@@ -271,7 +432,46 @@
     } catch (e) {}
   }
 
-  // Tap the IPA → a pronunciation key for the symbols in this word.
+  // ---------- related word families ----------
+  function commonPrefix(a, b) { let i = 0; while (i < a.length && i < b.length && a[i] === b[i]) i++; return i; }
+  function clusterFamilies(words) {
+    const sorted = words.slice().sort();
+    const groups = [];
+    sorted.forEach(function (w) {
+      const g = groups[groups.length - 1];
+      if (g && commonPrefix(g[g.length - 1], w) >= 4) g.push(w);
+      else groups.push([w]);
+    });
+    groups.sort(function (a, b) { return b.length - a.length || a[0].localeCompare(b[0]); });
+    return groups;
+  }
+  function renderWordGroups(box, words, kind) {
+    const MAX = 15;
+    const clean = words.filter(function (w) { return w.length <= 12; });
+    const pick = (clean.length ? clean : words)
+      .slice().sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
+      .slice(0, 20);
+    let shown = 0;
+    clusterFamilies(pick).slice(0, 4).forEach(function (fam) {
+      if (shown >= MAX) return;
+      const row = fam.slice(0, Math.max(2, MAX - shown));
+      shown += row.length;
+      box.appendChild(chipRow(row, kind));
+    });
+  }
+  function chipRow(words, kind) {
+    const list = el("div", "related-list");
+    words.forEach(function (w, i) {
+      const c = el("button", "related-chip", w);
+      if (kind) c.dataset.kind = kind;
+      c.style.setProperty("--i", i);
+      c.addEventListener("click", function (e) { e.stopPropagation(); run(w); });
+      list.appendChild(c);
+    });
+    return list;
+  }
+
+  // ---------- IPA pronunciation key ----------
   const IPA_KEY = {
     "ˈ": "primary stress — say this syllable loudest",
     "ˌ": "secondary stress — a lighter beat",
@@ -289,7 +489,6 @@
     "l": "“l”, as in let", "m": "“m”, as in man", "n": "“n”, as in net", "p": "“p”, as in pen", "s": "“s”, as in sun",
     "t": "“t”, as in top", "v": "“v”, as in van", "w": "“w”, as in win", "z": "“z”, as in zoo",
   };
-  // Names for the symbols that have them.
   const IPA_NAME = {
     "ə": "schwa", "ɚ": "r-colored schwa", "ɝ": "r-colored vowel",
     "æ": "ash", "ð": "eth", "θ": "theta", "ʃ": "esh", "ʒ": "ezh", "ŋ": "eng",
@@ -327,7 +526,7 @@
 
   function fillPron(recP, word, token) {
     recP.then(function (rec) {
-      if (token !== runToken) return;
+      if (token !== runToken || !pronEl) return;
       pronEl.innerHTML = "";
       ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = "";
       const ipa = rec && rec.i, resp = rec && rec.rs;
@@ -339,7 +538,6 @@
         pronEl.appendChild(ib);
       }
       if (canSpeak) {
-        // Tap the plain-language respelling (or a speaker) to hear the word.
         if (ipa) pronEl.appendChild(el("span", "pdot", "•"));
         const rb = el("button", "resp speakable", resp || word);
         rb.type = "button";
@@ -355,209 +553,15 @@
     });
   }
 
-  // ---------- tiles ----------
-  function originTile(src) {
-    const t = el("div", "tile");
-    t.dataset.kind = "root";
-    t.appendChild(el("div", "rk", src.lang));
-    t.appendChild(el("div", "surf", src.word));
-    if (src.translit) t.appendChild(el("div", "forms", src.translit));
-    if (src.gloss) t.appendChild(el("div", "mean", src.gloss));
-    return t;
-  }
-
-  // ---------- tiles ----------
-  function buildTile(p) {
-    const tile = el("div", "tile");
-    tile.dataset.kind = p.kind;
-
-    // Lead with the actual root/affix (the etymon), since the surface fragment is
-    // already shown in the breakdown at the top. Fold origin into the label.
-    const label = kindLabel(p.kind) + (p.origin ? " · " + p.origin : "");
-    tile.appendChild(el("div", "rk", label));
-    tile.appendChild(el("div", "surf", p.source || p.surface));
-
-    let meaning = p.meaning;
-    if (!meaning) {
-      meaning = p.silentE
-        ? "the silent “magic” e — lengthens the vowel before it; a spelling marker, not a sound"
-        : p.kind === "linker" ? "connecting vowel — joins the roots"
-        : "a native English or modern stem";
-    }
-    tile.appendChild(el("div", "mean", meaning));
-
-    // Tappable pieces drop down their word families inside the card itself.
-    if (p.id) {
-      tile.classList.add("tappable");
-      tile.setAttribute("role", "button");
-      tile.setAttribute("tabindex", "0");
-      tile.appendChild(el("div", "tile-more", "more ▾"));
-      const open = function () { toggleCardWords(p, tile); };
-      tile.addEventListener("click", open);
-      tile.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
-      });
-    }
-    return tile;
-  }
-
-  // FLIP: run `mutate`, then animate every tile from its old box to its new one
-  // so the grid feels physical — cards slide around the one that grew/shrank.
-  function flipTiles(mutate) {
-    const tiles = Array.prototype.slice.call(tilesEl.children);
-    if (reduceMotion) { mutate(); return; }
-    const first = tiles.map(function (t) { return t.getBoundingClientRect(); });
-    mutate();
-    const last = tiles.map(function (t) { return t.getBoundingClientRect(); });
-    tiles.forEach(function (t, i) {
-      const dx = first[i].left - last[i].left, dy = first[i].top - last[i].top;
-      const sx = last[i].width ? first[i].width / last[i].width : 1;
-      if (Math.abs(dx) < 1 && Math.abs(dy) < 1 && Math.abs(sx - 1) < 0.02) return;
-      t.style.transformOrigin = "top left";
-      t.style.transition = "none";
-      t.style.transform = "translate(" + dx + "px," + dy + "px) scaleX(" + sx + ")";
-    });
-    requestAnimationFrame(function () {
-      tiles.forEach(function (t) {
-        if (!t.style.transform) return;
-        t.style.transition = "transform 0.44s cubic-bezier(0.22, 1, 0.36, 1)";
-        t.style.transform = "";
-        const done = function () { t.style.transition = ""; t.style.transformOrigin = ""; t.removeEventListener("transitionend", done); };
-        t.addEventListener("transitionend", done);
-      });
-    });
-  }
-
-  function collapseCard(tile) {
-    if (!tile.classList.contains("expanded")) return;
-    flipTiles(function () {
-      tile.classList.remove("expanded");
-      const box = tile.querySelector(".card-words"); if (box) box.remove();
-      const more = tile.querySelector(".tile-more"); if (more) more.textContent = "more ▾";
-    });
-  }
-
-  function toggleCardWords(p, tile) {
-    if (tile.classList.contains("expanded")) { collapseCard(tile); return; }
-    const more = tile.querySelector(".tile-more"); if (more) more.textContent = "less ▴";
-
-    const box = el("div", "card-words");
-    const say = p.source || p.surface;
-
-    // Hear the piece (plain spelling fed to TTS for now).
-    if (canSpeak && say) {
-      const sayRow = el("div", "card-say");
-      const btn = el("button", "spk", "▶");
-      btn.type = "button";
-      btn.setAttribute("aria-label", "Pronounce " + say);
-      btn.addEventListener("click", function (e) { e.stopPropagation(); speak(say); });
-      sayRow.appendChild(btn);
-      sayRow.appendChild(el("span", "card-say-word", say));
-      box.appendChild(sayRow);
-    }
-    // Alternate spellings (moved here from the collapsed card).
-    if (p.forms && p.forms.length) {
-      box.appendChild(el("div", "forms", "appears as: " + p.forms.join(", ")));
-    }
-
-    const list = el("div", "card-related");
-    list.appendChild(el("div", "related-empty", "finding words…"));
-    box.appendChild(list);
-
-    // Grow this card and let the others slide around it.
-    flipTiles(function () {
-      tile.classList.add("expanded");
-      tile.appendChild(box);
-    });
-
-    const token = runToken;
-    loadData().then(function () {
-      if (token !== runToken || !tile.classList.contains("expanded")) return;
-      const words = (MORPH[p.id] || []).filter(function (w) { return w !== currentWord; });
-      flipTiles(function () {
-        list.innerHTML = "";
-        if (!words.length) { list.appendChild(el("div", "related-empty", "No other words with this piece yet.")); return; }
-        list.appendChild(el("div", "lab", "More words"));
-        renderWordGroups(list, words, p.kind);
-      });
-    });
-  }
-
-  // Group the related words into families of close relatives (discredit,
-  // discreditable, discredited… / deceit, deceitful, deception, deceptive…)
-  // rather than an arbitrary common-vs-rare split, and drop absurdly long
-  // entries that read as non-words.
-  function commonPrefix(a, b) { let i = 0; while (i < a.length && i < b.length && a[i] === b[i]) i++; return i; }
-  function clusterFamilies(words) {
-    const sorted = words.slice().sort();
-    const groups = [];
-    sorted.forEach(function (w) {
-      const g = groups[groups.length - 1];
-      if (g && commonPrefix(g[g.length - 1], w) >= 4) g.push(w);
-      else groups.push([w]);
-    });
-    groups.sort(function (a, b) { return b.length - a.length || a[0].localeCompare(b[0]); });
-    return groups;
-  }
-  // Keep it short: prefer everyday (shorter) words, drop the absurdly long
-  // ones, and cap the total shown across a few families.
-  function renderWordGroups(box, words, kind) {
-    const MAX = 15;
-    const clean = words.filter(function (w) { return w.length <= 12; });
-    const pick = (clean.length ? clean : words)
-      .slice().sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
-      .slice(0, 20);
-    let shown = 0;
-    clusterFamilies(pick).slice(0, 4).forEach(function (fam) {
-      if (shown >= MAX) return;
-      const row = fam.slice(0, Math.max(2, MAX - shown));
-      shown += row.length;
-      box.appendChild(chipRow(row, kind));
-    });
-  }
-
-  function chipRow(words, kind) {
-    const list = el("div", "related-list");
-    words.forEach(function (w, i) {
-      const c = el("button", "related-chip", w);
-      if (kind) c.dataset.kind = kind;
-      c.style.setProperty("--i", i);
-      c.addEventListener("click", function (e) { e.stopPropagation(); run(w); });
-      list.appendChild(c);
-    });
-    return list;
-  }
-
-  // ---------- panels ----------
-  function buildMeaningPanel(result, parts) {
-    currentWord = result.word;
-    const panel = el("div", "panel");
-
-    const glossable = parts.filter(function (p) { return p.meaning; });
-    if (glossable.length) {
-      panel.appendChild(el("div", "lab", "Built from"));
-      const built = el("div", "built");
-      glossable.forEach(function (p, i) {
-        if (i) built.appendChild(el("span", "op", "+"));
-        const g = el("span", "g", firstSense(p.meaning));
-        g.dataset.kind = p.kind;
-        built.appendChild(g);
-      });
-      panel.appendChild(built);
-      panel.appendChild(el("div", "arrow", "↓"));
-    }
-
-    panel.appendChild(el("div", "lab", "Meaning"));
-    meaningEl = el("div", "def-meaning");
-    meaningEl.innerHTML = '<span class="def-loading">looking it up…</span>';
-    panel.appendChild(meaningEl);
-    return panel;
-  }
-
-  function fillMeaning(recP, token) {
-    const slot = meaningEl;
+  // ---------- definition ----------
+  function buildDefinitionCard(recP, token) {
+    const card = el("div", "card");
+    card.appendChild(el("div", "cap", "Definition"));
+    const slot = el("div", "def-meaning");
+    slot.innerHTML = '<span class="def-loading">looking it up…</span>';
+    card.appendChild(slot);
     recP.then(function (rec) {
-      if (token !== runToken || !slot) return;
+      if (token !== runToken) return;
       const senses = rec && rec.d;
       if (senses && senses.length) {
         slot.innerHTML = "";
@@ -572,18 +576,21 @@
           slot.appendChild(row);
         });
       } else {
-        slot.innerHTML = '<span class="def-loading">No dictionary entry — the build above is your best read.</span>';
+        // no dictionary entry — the note up top already explains; drop the card.
+        card.remove();
       }
     });
+    return card;
   }
 
-  function fillThesaurus(recP, panel, token) {
+  // ---------- thesaurus ----------
+  function buildThesaurusCard(recP, token) {
+    const card = el("div", "card");
+    card.appendChild(el("div", "cap", "Thesaurus"));
     recP.then(function (rec) {
       if (token !== runToken) return;
       const s = rec && rec.s, a = rec && rec.a, r = rec && rec.r;
-      if (!(s && s.length) && !(a && a.length) && !(r && r.length)) { panel.remove(); return; }
-      panel.innerHTML = "";
-      // Each group is one wrapping line: an inline label, then the chips.
+      if (!(s && s.length) && !(a && a.length) && !(r && r.length)) { card.remove(); return; }
       function group(label, words, cls) {
         if (!words || !words.length) return;
         const row = el("div", "thes-group");
@@ -594,58 +601,57 @@
           c.addEventListener("click", function () { run(w); });
           row.appendChild(c);
         });
-        panel.appendChild(row);
+        card.appendChild(row);
       }
       group("Synonyms", s, "syn");
       group("Antonyms", a, "ant");
       group("Related", r, "rel");
     });
+    return card;
   }
 
-  // Some Wiktionary etymologies are a bare "tree" of ancestor forms rather than
-  // a readable sentence; skip those for the prose but still use them for the
-  // language journey below.
+  // ---------- etymology / word history ----------
   function looksLikeTree(e) {
     return /(Proto-|-der\.)/.test(e) && !/\bfrom\b/i.test(e);
   }
 
-  // Languages we can place on a timeline, with a rough chronological rank and
-  // the language's own historical period (we can't get exact crossing dates).
+  // Languages we can place on a timeline, with a rough chronological rank and the
+  // period the language was in use (modern ones show when they began). BC/AD.
   const LANGS = {
-    "Proto-Indo-European": { rank: -4500, short: "PIE", era: "ancestor" },
-    "Proto-Hellenic": { rank: -2000, era: "prehistoric" },
-    "Proto-Italic": { rank: -1500, era: "prehistoric" },
-    "Proto-Germanic": { rank: -500, era: "c. 500 BCE" },
-    "Proto-West Germanic": { rank: -100, era: "c. 1 CE" },
-    "Ancient Greek": { rank: -800, era: "c. 800 BCE–300 CE" },
-    "Hellenistic Greek": { rank: -300, era: "c. 300 BCE" },
-    "Koine Greek": { rank: -200, era: "c. 300 BCE–300 CE" },
+    "Proto-Indo-European": { rank: -4500, short: "PIE", era: "c. 4500 BC" },
+    "Proto-Hellenic": { rank: -2000, era: "c. 2000 BC" },
+    "Proto-Italic": { rank: -1500, era: "c. 1500 BC" },
+    "Proto-Germanic": { rank: -500, era: "c. 500 BC" },
+    "Proto-West Germanic": { rank: -100, era: "c. 1 AD" },
+    "Ancient Greek": { rank: -800, era: "c. 800 BC–300 AD" },
+    "Hellenistic Greek": { rank: -300, era: "c. 300 BC" },
+    "Koine Greek": { rank: -200, era: "c. 300 BC–300 AD" },
     "Byzantine Greek": { rank: 600, era: "4th–15th c." },
-    "Greek": { rank: 1700, era: "modern" },
-    "Latin": { rank: -75, era: "c. 75 BCE–200 CE" },
-    "Classical Latin": { rank: -75, era: "c. 75 BCE–200 CE" },
+    "Greek": { rank: 1700, era: "from c. 1500" },
+    "Latin": { rank: -75, era: "c. 75 BC–200 AD" },
+    "Classical Latin": { rank: -75, era: "c. 75 BC–200 AD" },
     "Vulgar Latin": { rank: 200, era: "1st–7th c." },
     "Late Latin": { rank: 300, era: "3rd–6th c." },
     "Ecclesiastical Latin": { rank: 400, era: "4th c.+" },
     "Medieval Latin": { rank: 900, era: "9th–15th c." },
-    "New Latin": { rank: 1550, era: "16th c.+" },
+    "New Latin": { rank: 1550, era: "from c. 1500" },
     "Old English": { rank: 700, era: "5th–11th c." },
     "Middle English": { rank: 1200, era: "1150–1500" },
     "Old French": { rank: 1000, era: "9th–14th c." },
     "Anglo-Norman": { rank: 1100, era: "11th–14th c." },
     "Middle French": { rank: 1450, era: "14th–17th c." },
-    "French": { rank: 1700, era: "modern" },
+    "French": { rank: 1700, era: "from c. 1600" },
     "Old Norse": { rank: 800, era: "8th–14th c." },
-    "Italian": { rank: 1400, era: "modern" },
-    "Spanish": { rank: 1400, era: "modern" },
-    "Portuguese": { rank: 1400, era: "modern" },
-    "Dutch": { rank: 1500, era: "modern" },
-    "German": { rank: 1500, era: "modern" },
+    "Italian": { rank: 1400, era: "from c. 1400" },
+    "Spanish": { rank: 1400, era: "from c. 1400" },
+    "Portuguese": { rank: 1400, era: "from c. 1400" },
+    "Dutch": { rank: 1500, era: "from c. 1500" },
+    "German": { rank: 1500, era: "from c. 1500" },
     "Arabic": { rank: 600, era: "7th c.+" },
-    "Sanskrit": { rank: -1500, era: "ancient" },
-    "Hebrew": { rank: -900, era: "ancient" },
+    "Sanskrit": { rank: -1500, era: "c. 1500 BC" },
+    "Hebrew": { rank: -900, era: "c. 900 BC" },
     "Persian": { rank: 800, era: "medieval+" },
-    "English": { rank: 1500, era: "1500–today" },
+    "English": { rank: 1500, era: "from c. 1500" },
   };
 
   function parseChain(e) {
@@ -664,8 +670,6 @@
     return chain;
   }
 
-  // Strip leading wiktextract "ancestor tree" junk (der./bor./*roots) and keep
-  // the readable sentence.
   function cleanProse(e) {
     const m = e.match(/(Borrowed from|Inherited from|Calque of|Univerbation of|Back-formation of|Clipping of|Abbreviation of|Blend of|Derived from|From)\b/);
     let s = (m && m.index > 0) ? e.slice(m.index) : e;
@@ -677,8 +681,6 @@
     return s;
   }
 
-  // The immediate source word from the etymology — e.g. etymon → Ancient Greek
-  // ἔτυμον (étymon). Used to keep the original word visible for single-unit words.
   const SRC_LANGS = "Ancient Greek|Hellenistic Greek|Koine Greek|Byzantine Greek|Greek|Late Latin|Medieval Latin|New Latin|Vulgar Latin|Latin|Old French|Anglo-Norman|Middle French|French|Middle English|Old English|Proto-Indo-European|Proto-Germanic|Sanskrit|Arabic|Hebrew|Old Norse|Italian|Spanish|Portuguese|German|Persian";
   function extractSource(e) {
     const re = new RegExp("\\b(" + SRC_LANGS + ")\\s+(\\S+?)\\s*\\(([^)]+)\\)");
@@ -700,7 +702,7 @@
   function buildTimeline(e) {
     const chain = parseChain(e);
     if (chain.length < 2) return null;
-    const colors = ["var(--root)", "var(--suffix)", "var(--prefix)", "var(--stem)", "var(--ink)"];
+    const colors = ["var(--root)", "var(--suffix)", "var(--prefix-ink)", "var(--stem)", "var(--ink)"];
     const tl = el("div", "tl");
     chain.forEach(function (name, i) {
       const node = el("div", "node");
@@ -714,24 +716,23 @@
     return tl;
   }
 
-  function fillOrigin(recP, result, panel, token) {
+  function buildHistoryCard(recP, result, token, divider) {
+    const card = el("div", "card");
+    card.appendChild(el("div", "cap", "Word history"));
     recP.then(function (rec) {
       if (token !== runToken) return;
-      panel.innerHTML = "";
       const e = rec && rec.e;
       const tl = e ? buildTimeline(e) : null;
       const prose = (e && !looksLikeTree(e)) ? e : null;
       const known = result.parts.filter(function (p) { return p.origin && p.source; });
-      if (!tl && !prose && !known.length) { panel.remove(); return; }
+      if (!tl && !prose && !known.length) { card.remove(); if (divider) divider.remove(); return; }
 
-      panel.appendChild(el("div", "lab", "Word history"));
-      if (tl) panel.appendChild(tl);
-
+      if (tl) card.appendChild(tl);
       if (prose) {
-        panel.appendChild(el("div", "sub", "Etymology"));
-        panel.appendChild(el("div", "hist", cleanProse(prose)));
+        card.appendChild(el("div", "sub", "Etymology"));
+        card.appendChild(el("div", "hist", cleanProse(prose)));
       } else if (known.length) {
-        panel.appendChild(el("div", "sub", "Etymology"));
+        card.appendChild(el("div", "sub", "Etymology"));
         const origins = [];
         known.forEach(function (p) { if (origins.indexOf(p.origin) === -1) origins.push(p.origin); });
         const chain = known.map(function (p) {
@@ -739,29 +740,147 @@
         }).join(" + ");
         const h = el("div", "hist");
         h.innerHTML = "From <span class=\"origin\">" + escapeHtml(origins.join(" and ")) + "</span> — " + chain + ".";
-        panel.appendChild(h);
+        card.appendChild(h);
       }
 
-      // First recorded — only when the source actually states a date.
       const yr = e ? extractYear(e) : null;
       if (yr) {
         const fr = el("div", "first-rec");
         fr.innerHTML = '<span class="sub">First recorded</span> ' + escapeHtml(yr);
-        panel.appendChild(fr);
+        card.appendChild(fr);
       }
+    });
+    return card;
+  }
+
+  function fleuron() {
+    const d = el("div", "divider");
+    d.appendChild(el("span", "dln"));
+    d.appendChild(el("span", "orn", "❧"));
+    d.appendChild(el("span", "dln"));
+    return d;
+  }
+
+  // ---------- thumb index + browse-by-letter ----------
+  const ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  function buildThumb() {
+    thumbEl.innerHTML = "";
+    ALPHA.split("").forEach(function (c) {
+      const t = el("button", "thumb-tab", c);
+      t.type = "button"; t.dataset.letter = c;
+      t.addEventListener("click", function () { browseLetter(c); });
+      thumbEl.appendChild(t);
+    });
+  }
+  function highlightThumb(word) {
+    const L = String(word || "").charAt(0).toUpperCase();
+    Array.prototype.forEach.call(thumbEl.children, function (t) {
+      if (t.dataset && t.dataset.letter === L) t.classList.add("on"); else t.classList.remove("on");
     });
   }
 
+  let browseToken = 0;
+  function openBrowse(letter) {
+    browseEl.hidden = false; browseEl.innerHTML = "";
+    const head = el("div", "browse-head");
+    const title = el("div", "browse-title");
+    title.innerHTML = "Words · <b>" + escapeHtml(letter) + "</b>";
+    head.appendChild(title);
+    const close = el("button", "browse-close", "✕"); close.type = "button";
+    close.addEventListener("click", closeBrowse);
+    head.appendChild(close);
+    browseEl.appendChild(head);
+    const list = el("div", "browse-list");
+    list.appendChild(el("div", "browse-note", "Loading…"));
+    browseEl.appendChild(list);
+    return list;
+  }
+  function closeBrowse() { browseEl.hidden = true; browseEl.innerHTML = ""; browseToken++; }
+  async function browseLetter(letter) {
+    const L = letter.toUpperCase(), lc = letter.toLowerCase();
+    highlightThumb(letter);
+    const token = ++browseToken;
+    const list = openBrowse(L);
+    const cap = 600;
+    const words = [];
+    const seconds = "abcdefghijklmnopqrstuvwxyz".split("");
+    for (let i = 0; i < seconds.length; i++) {
+      if (words.length >= cap) break;
+      const sh = await fetchShard(lc + seconds[i]);
+      if (token !== browseToken) return;
+      if (sh) for (const w in sh) words.push(w);
+    }
+    if (token !== browseToken) return;
+    words.sort();
+    list.innerHTML = "";
+    if (!words.length) { list.appendChild(el("div", "browse-empty", "No words found for " + L + ".")); return; }
+    const show = words.slice(0, cap);
+    show.forEach(function (w) {
+      const b = el("button", "browse-word", w); b.type = "button";
+      b.addEventListener("click", function () { closeBrowse(); run(w); });
+      list.appendChild(b);
+    });
+    if (words.length > cap) list.appendChild(el("div", "browse-note", "Showing the first " + cap + " of " + words.length + " words."));
+  }
+
+  // ---------- typeahead ----------
+  let suggestToken = 0;
+  function hideSuggest() { suggestEl.hidden = true; suggestEl.innerHTML = ""; }
+  function onType() {
+    const v = input.value.trim().toLowerCase();
+    const key = v.slice(0, 2);
+    if (v.length < 2 || !/^[a-z]{2}$/.test(key)) { hideSuggest(); return; }
+    const token = ++suggestToken;
+    fetchShard(key).then(function (sh) {
+      if (token !== suggestToken || !sh) return;
+      if (input.value.trim().toLowerCase() !== v) return;
+      const matches = Object.keys(sh)
+        .filter(function (w) { return w.indexOf(v) === 0 && w !== v; })
+        .sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
+        .slice(0, 8);
+      renderSuggest(matches, v);
+    });
+  }
+  function renderSuggest(words, q) {
+    suggestEl.innerHTML = "";
+    if (!words.length) { hideSuggest(); return; }
+    words.forEach(function (w) {
+      const li = document.createElement("li");
+      const b = el("button", "suggest-item"); b.type = "button";
+      b.innerHTML = '<span class="hl">' + escapeHtml(w.slice(0, q.length)) + "</span>" + escapeHtml(w.slice(q.length));
+      b.addEventListener("click", function () { hideSuggest(); run(w); });
+      li.appendChild(b);
+      suggestEl.appendChild(li);
+    });
+    suggestEl.hidden = false;
+  }
+
   // ---------- events ----------
-  function submit() { input.blur(); run(input.value); }
+  function submit() { input.blur(); hideSuggest(); run(input.value); }
   form.addEventListener("submit", function (e) { e.preventDefault(); submit(); });
   form.querySelector(".search-btn").addEventListener("click", function (e) { e.preventDefault(); submit(); });
+  input.addEventListener("input", onType);
+  input.addEventListener("blur", function () { setTimeout(hideSuggest, 150); });
+  if (navHome) navHome.addEventListener("click", goHome);
+  if (navBack) navBack.addEventListener("click", goBack);
+  if (navFwd) navFwd.addEventListener("click", goFwd);
   document.querySelectorAll(".example").forEach(function (btn) {
     btn.addEventListener("click", function () { run(btn.dataset.word); });
   });
 
+  buildThumb();
   loadData();
   renderHistory();
+  updateNav();
+
+  // pin the word to the top: show the compact header once the full one scrolls off
+  miniHead.hidden = true;
+  if (typeof IntersectionObserver === "function") {
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { miniHead.hidden = en.isIntersecting || !currentWord; });
+    }, { root: contentEl, threshold: 0 });
+    io.observe(entryEl);
+  }
 
   const m = location.hash.match(/word=([a-zA-Z]+)/);
   if (m) run(m[1]);
