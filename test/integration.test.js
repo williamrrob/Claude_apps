@@ -39,12 +39,12 @@ function makeDom() {
       addEventListener(t, fn) { const m = listeners.get(node) || {}; (m[t] = m[t] || []).push(fn); listeners.set(node, m); },
       dispatch(t, ev) { const m = listeners.get(node) || {}; (m[t] || []).forEach((fn) => fn(ev || { preventDefault() {}, stopPropagation() {}, key: "" })); },
       querySelector() { return null; }, querySelectorAll() { return []; },
-      focus() {}, blur() {},
+      focus() {}, blur() {}, scrollIntoView() {},
     };
     return node;
   }
   const ids = {};
-  ["searchForm", "wordInput", "hint", "wordLine", "pron", "tiles", "panels", "recent", "content", "themeToggle"]
+  ["searchForm", "wordInput", "hint", "wordLine", "pron", "note", "tiles", "panels", "related", "recent", "content", "themeToggle"]
     .forEach((id) => { ids[id] = el(id === "searchForm" ? "form" : "div"); });
   ids.searchForm.querySelector = () => el("button"); // .search-btn lookup
   const examples = ["biography", "incredible", "democracy"].map((w) => { const b = el("button"); b.dataset.word = w; return b; });
@@ -117,7 +117,8 @@ async function main() {
   assert.ok(bio.parts.some((p) => p.kind === "root"), "biography decomposes with a root");
   const micro = sandbox.EtymologyEngine.decompose("microscope");
   const last = micro.parts[micro.parts.length - 1];
-  assert.ok(last.kind === "linker" && last.surface === "e", "the final 'e' in microscope is its own morpheme");
+  assert.ok(last.kind === "suffix" && last.surface === "e" && last.silentE,
+    "the final 'e' in microscope is its own (suffix) morpheme");
 
   // --- Layer 3: search renders morphemes, pronunciation and meaning. ---
   examples[0].dispatch("click"); // biography
@@ -130,14 +131,15 @@ async function main() {
   assert.ok(meaning && /account of the series of events|life/i.test(deepText(meaning)),
     "meaning is filled from WordNet, got: " + (meaning && deepText(meaning)));
 
-  // --- Layer 4: tapping a tile expands it to list words sharing the piece. ---
+  // --- Layer 4: tapping a tile lists words sharing the piece in the bottom section. ---
   const rootTile = find(ids.tiles, (c) => c.dataset && c.dataset.kind === "root");
   assert.ok(rootTile, "a root tile exists");
   rootTile.dispatch("click");
   await settle();
-  assert.ok(rootTile.classList.contains("expanded"), "tapped tile grows");
-  const chips = findAll(rootTile, hasClass("related-chip"));
-  assert.ok(chips.length > 0, "expanded tile lists related words");
+  assert.ok(rootTile.classList.contains("active"), "tapped tile is marked active");
+  assert.strictEqual(ids.related.hidden, false, "related section opens at the bottom");
+  const chips = findAll(ids.related, hasClass("related-chip"));
+  assert.ok(chips.length > 0, "related section lists words sharing the morpheme");
   assert.ok(!chips.map((c) => c.textContent).includes("biography"), "current word excluded from related words");
 
   // --- Layer 5: following a related word runs a fresh analysis. ---

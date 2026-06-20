@@ -106,9 +106,9 @@
           const rest = rec(pos + m.form.length, 2);
           consider(part("suffix", m.form, m.entry, pos), rest, m.form.length * W_KNOWN + AFFIX_BONUS);
         });
-        // A lone trailing "e" is usually a silent connector (revolve, provoke).
+        // A lone trailing "e" is the silent "magic e" suffix (revolve, provoke).
         if (word[pos] === "e" && pos === word.length - 1) {
-          consider(part("linker", "e", null, pos), { parts: [], score: 0 }, LINK_SCORE);
+          consider(silentE(pos), { parts: [], score: 0 }, LINK_SCORE);
         }
       }
 
@@ -137,9 +137,18 @@
     return out;
   }
 
-  // A silent final "e" is its own morpheme (microscope = micro + scop + e). When
-  // the last piece is a root that ends in "e" and the same root also exists
-  // without it (a known shorter form), peel the "e" off as a linker.
+  // The silent final "e" is its own morpheme — not a connector but a suffix-like
+  // spelling marker (the "magic e"). Kept meaning-less so it doesn't pollute the
+  // literal gloss; the UI describes it.
+  function silentE(start) {
+    return {
+      kind: "suffix", surface: "e", origin: null, source: null,
+      meaning: null, id: null, forms: null, silentE: true, start: start
+    };
+  }
+
+  // microscope = micro + scop + e: when the last piece is a root ending in "e"
+  // and the same root also exists without it (a known shorter form), peel it off.
   function peelSilentE(parts) {
     if (!parts.length) return parts;
     const last = parts[parts.length - 1];
@@ -148,11 +157,7 @@
       const stem = last.surface.slice(0, -1);
       if (last.forms.indexOf(stem) !== -1) {
         const trimmed = Object.assign({}, last, { surface: stem });
-        const e = {
-          kind: "linker", surface: "e", origin: null, source: null,
-          meaning: null, id: null, forms: null, start: last.start + stem.length
-        };
-        return parts.slice(0, -1).concat([trimmed, e]);
+        return parts.slice(0, -1).concat([trimmed, silentE(last.start + stem.length)]);
       }
     }
     return parts;
@@ -191,10 +196,13 @@
       };
     }
 
+    const withGloss = function (kind) {
+      return parts.filter(function (p) { return p.kind === kind && p.meaning; }).map(function (p) { return firstSense(p.meaning); });
+    };
     const literal = glossable.map(function (p) { return firstSense(p.meaning); }).join(" + ");
-    const prefixG = parts.filter(function (p) { return p.kind === "prefix"; }).map(function (p) { return firstSense(p.meaning); });
-    const rootG = parts.filter(function (p) { return p.kind === "root"; }).map(function (p) { return firstSense(p.meaning); });
-    const suffixG = parts.filter(function (p) { return p.kind === "suffix"; }).map(function (p) { return firstSense(p.meaning); });
+    const prefixG = withGloss("prefix");
+    const rootG = withGloss("root");
+    const suffixG = withGloss("suffix");
 
     let sentence;
     if (rootG.length) {

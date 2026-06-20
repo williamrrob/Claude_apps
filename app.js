@@ -12,8 +12,10 @@
   const hint = $("hint");
   const wordLine = $("wordLine");
   const pronEl = $("pron");
+  const noteEl = $("note");
   const tilesEl = $("tiles");
   const panelsEl = $("panels");
+  const relatedEl = $("related");
   const recentEl = $("recent");
   const form = $("searchForm");
   const input = $("wordInput");
@@ -23,6 +25,7 @@
   let runToken = 0;
   let currentWord = "";
   let meaningEl = null;
+  let relatedFor = null; // which morpheme id the bottom "more words" is showing
 
   function delay(ms) { return new Promise(function (r) { setTimeout(r, ms * step); }); }
   function el(tag, cls, text) {
@@ -60,7 +63,7 @@
   // Only the small morpheme index loads up front (for the "more words" lists).
   // Rich per-word data (definitions, pronunciation, etymology, relations) is
   // fetched lazily, one shard at a time, keyed by the word's first two letters.
-  const DATA_V = "7";
+  const DATA_V = "9";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -95,6 +98,7 @@
     recentEl.innerHTML = "";
     if (!h.length) { recentEl.hidden = true; return; }
     recentEl.hidden = false;
+    recentEl.appendChild(el("span", "recent-label", "Recent"));
     h.forEach(function (w) {
       const b = el("button", "history-chip", w);
       b.addEventListener("click", function () { run(w); });
@@ -109,8 +113,11 @@
   function clearStage() {
     wordLine.className = "word-line"; wordLine.innerHTML = "";
     pronEl.className = "pron"; pronEl.innerHTML = "";
+    noteEl.hidden = true; noteEl.textContent = "";
     tilesEl.innerHTML = "";
     panelsEl.innerHTML = "";
+    relatedEl.hidden = true; relatedEl.className = "related"; relatedEl.innerHTML = "";
+    relatedFor = null;
     meaningEl = null;
   }
   function showStatus(html, isError) {
@@ -149,6 +156,16 @@
     clearStage();
     const parts = result.parts;
     const recP = getWord(result.word); // one fetch, shared by every panel
+
+    // Flag words we can't find a definition for: the engine will segment any
+    // string, so without this a made-up word gets a confident-looking breakdown.
+    recP.then(function (rec) {
+      if (token !== runToken) return;
+      if (!rec || !rec.d || !rec.d.length) {
+        noteEl.textContent = "“" + result.word + "” isn’t in the dictionary — here’s how its parts would break down.";
+        noteEl.hidden = false;
+      }
+    });
 
     // 1) lay down morphemes (tight) and the dots between them.
     const morphEls = [];
@@ -217,8 +234,7 @@
 
     // Lead with the actual root/affix (the etymon), since the surface fragment is
     // already shown in the breakdown at the top. Fold origin into the label.
-    const isSilentE = p.kind === "linker" && p.surface === "e";
-    const label = isSilentE ? "silent e" : kindLabel(p.kind) + (p.origin ? " · " + p.origin : "");
+    const label = kindLabel(p.kind) + (p.origin ? " · " + p.origin : "");
     tile.appendChild(el("div", "rk", label));
     tile.appendChild(el("div", "surf", p.source || p.surface));
 
@@ -227,64 +243,86 @@
     }
     let meaning = p.meaning;
     if (!meaning) {
-      meaning = p.kind === "linker"
-        ? (p.surface === "e" ? "silent final e — lengthens the vowel before it; no sound of its own"
-                             : "connecting vowel — joins the roots")
+      meaning = p.silentE
+        ? "the silent “magic” e — lengthens the vowel before it; a spelling marker, not a sound"
+        : p.kind === "linker" ? "connecting vowel — joins the roots"
         : "a native English or modern stem";
     }
     tile.appendChild(el("div", "mean", meaning));
 
-    // Tappable pieces expand to list words sharing them.
+    // Tappable pieces reveal their word families in the section at the bottom.
     if (p.id) {
       tile.classList.add("tappable");
       tile.setAttribute("role", "button");
       tile.setAttribute("tabindex", "0");
       tile.appendChild(el("div", "tile-more", "more words ▾"));
-      const toggle = function () { toggleTileWords(tile, p); };
-      tile.addEventListener("click", toggle);
+      const open = function () { showRelated(p, tile); };
+      tile.addEventListener("click", open);
       tile.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
       });
     }
     return tile;
   }
 
-  function collapseTile(tile) {
-    if (!tile.classList.contains("expanded")) return;
-    tile.classList.remove("expanded");
-    const box = tile.querySelector(".tile-words"); if (box) box.remove();
-    const more = tile.querySelector(".tile-more"); if (more) more.textContent = "more words ▾";
+  function clearTileActive() {
+    Array.prototype.slice.call(tilesEl.children).forEach(function (t) { t.classList.remove("active"); });
   }
 
-  function toggleTileWords(tile, p) {
-    if (tile.classList.contains("expanded")) { collapseTile(tile); return; }
-    Array.prototype.slice.call(tilesEl.children).forEach(collapseTile);
-    tile.classList.add("expanded");
-    const more = tile.querySelector(".tile-more"); if (more) more.textContent = "fewer words ▴";
+  function showRelated(p, tile) {
+    // Tapping the active piece again closes the section.
+    if (relatedFor === p.id) {
+      relatedFor = null; clearTileActive();
+      relatedEl.hidden = true; relatedEl.className = "related"; relatedEl.innerHTML = "";
+      return;
+    }
+    relatedFor = p.id;
+    clearTileActive();
+    if (tile) tile.classList.add("active");
 
-    const box = el("div", "tile-words");
-    box.innerHTML = '<span class="related-empty">finding words…</span>';
-    tile.appendChild(box);
+    relatedEl.hidden = false;
+    relatedEl.className = "related in";
+    relatedEl.innerHTML = "";
+    const head = el("div", "related-head");
+    head.innerHTML = "Words built on the " + kindLabel(p.kind) + " “<b>" + escapeHtml(p.surface) + "</b>”" +
+      (p.meaning ? " — <span class=\"related-gloss\">" + escapeHtml(p.meaning) + "</span>" : "");
+    relatedEl.appendChild(head);
+    const box = el("div", "related-body");
+    box.appendChild(el("div", "related-empty", "finding words…"));
+    relatedEl.appendChild(box);
 
     const token = runToken;
     loadData().then(function () {
-      if (token !== runToken || !tile.classList.contains("expanded")) return;
+      if (token !== runToken || relatedFor !== p.id) return;
       const words = (MORPH[p.id] || []).filter(function (w) { return w !== currentWord; });
       box.innerHTML = "";
       if (!words.length) { box.appendChild(el("div", "related-empty", "No other words with this piece yet.")); return; }
       renderWordGroups(box, words, p.kind);
+      relatedEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
   }
 
-  // The index is stored shortest→longest. For a common affix that means the
-  // front is everyday words and the tail is rare ones — show a bit of each.
+  // Group the related words into families of close relatives (discredit,
+  // discreditable, discredited… / deceit, deceitful, deception, deceptive…)
+  // rather than an arbitrary common-vs-rare split, and drop absurdly long
+  // entries that read as non-words.
+  function commonPrefix(a, b) { let i = 0; while (i < a.length && i < b.length && a[i] === b[i]) i++; return i; }
+  function clusterFamilies(words) {
+    const sorted = words.slice().sort();
+    const groups = [];
+    sorted.forEach(function (w) {
+      const g = groups[groups.length - 1];
+      if (g && commonPrefix(g[g.length - 1], w) >= 4) g.push(w);
+      else groups.push([w]);
+    });
+    groups.sort(function (a, b) { return b.length - a.length || a[0].localeCompare(b[0]); });
+    return groups;
+  }
   function renderWordGroups(box, words, kind) {
-    if (words.length <= 22) { box.appendChild(chipRow(words, kind)); return; }
-    box.appendChild(el("div", "lab", "Common"));
-    box.appendChild(chipRow(words.slice(0, 14), kind));
-    const l = el("div", "lab", "Rarer"); l.style.marginTop = "12px";
-    box.appendChild(l);
-    box.appendChild(chipRow(words.slice(-8), kind));
+    const clean = words.filter(function (w) { return w.length <= 14; });
+    clusterFamilies(clean.length ? clean : words).forEach(function (fam) {
+      box.appendChild(chipRow(fam, kind));
+    });
   }
 
   function chipRow(words, kind) {
