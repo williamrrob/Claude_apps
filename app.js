@@ -61,7 +61,7 @@
   // Only the small morpheme index loads up front (for the "more words" lists).
   // Rich per-word data (definitions, pronunciation, etymology, relations) is
   // fetched lazily, one shard at a time, keyed by the word's first two letters.
-  const DATA_V = "12";
+  const DATA_V = "13";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -83,6 +83,37 @@
         .catch(function () { return {}; });
     }
     return shardCache[key].then(function (sh) { return sh[word] || null; });
+  }
+
+  // ---------- hybrid breakdown ----------
+  // Prefer Wiktionary's own morphological split (rec.b) when the heuristic engine
+  // produced junk (unknown stems / low confidence) and the real split tiles the
+  // word. Enrich each part from our morpheme data so known roots keep their
+  // Greek/Latin etymon; otherwise fall back to Wiktionary's gloss.
+  let MFORMS = null;
+  function morphFind(s) {
+    if (!MFORMS) {
+      MFORMS = {};
+      const M = window.MORPHEMES || {};
+      ["prefixes", "roots", "suffixes"].forEach(function (cat) {
+        (M[cat] || []).forEach(function (e) {
+          (e.forms || []).forEach(function (f) { if (!MFORMS[f]) MFORMS[f] = e; });
+        });
+      });
+    }
+    return MFORMS[s] || MFORMS[s.replace(/^-|-$/g, "")] || null;
+  }
+  function hybridPart(x) {
+    const e = morphFind(x.s);
+    if (e) return { kind: x.k, surface: x.s, origin: e.origin, source: e.source, meaning: e.meaning, id: e.id, forms: e.forms };
+    return { kind: x.k, surface: x.s, origin: null, source: null, meaning: x.g || null, id: null, forms: null };
+  }
+  function chooseBreakdown(result, rec) {
+    const bad = !result.hasRoot ||
+      result.parts.some(function (p) { return p.kind === "unknown"; }) ||
+      (result.confidence || 0) < 0.6;
+    if (bad && rec && rec.b && rec.b.length >= 2) return rec.b.map(hybridPart);
+    return result.parts;
   }
 
   // ---------- search history ----------
@@ -150,18 +181,17 @@
 
   async function reveal(result, token) {
     clearStage();
-    const parts = result.parts;
     const recP = getWord(result.word); // one fetch, shared by every panel
+    const rec = await recP;
+    if (token !== runToken) return;
+    const parts = chooseBreakdown(result, rec);
 
     // Flag words we can't find a definition for: the engine will segment any
     // string, so without this a made-up word gets a confident-looking breakdown.
-    recP.then(function (rec) {
-      if (token !== runToken) return;
-      if (!rec || !rec.d || !rec.d.length) {
-        noteEl.textContent = "“" + result.word + "” isn’t in the dictionary — here’s how its parts would break down.";
-        noteEl.hidden = false;
-      }
-    });
+    if (!rec || !rec.d || !rec.d.length) {
+      noteEl.textContent = "“" + result.word + "” isn’t in the dictionary — here’s how its parts would break down.";
+      noteEl.hidden = false;
+    }
 
     // 1) lay down morphemes (tight) and the dots between them.
     const morphEls = [];
@@ -200,7 +230,7 @@
     // 6) panels: meaning, thesaurus, origin.
     await delay(180);
     if (token !== runToken) return;
-    const meaningPanel = buildMeaningPanel(result);
+    const meaningPanel = buildMeaningPanel(result, parts);
     const thesPanel = el("div", "panel");
     const originPanel = el("div", "panel");
     panelsEl.appendChild(meaningPanel);
@@ -355,11 +385,11 @@
   }
 
   // ---------- panels ----------
-  function buildMeaningPanel(result) {
+  function buildMeaningPanel(result, parts) {
     currentWord = result.word;
     const panel = el("div", "panel");
 
-    const glossable = result.parts.filter(function (p) { return p.meaning; });
+    const glossable = parts.filter(function (p) { return p.meaning; });
     if (glossable.length) {
       panel.appendChild(el("div", "lab", "Built from"));
       const built = el("div", "built");
