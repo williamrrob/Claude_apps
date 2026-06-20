@@ -57,18 +57,31 @@
   });
 
   // ---------- vendored data (loaded once, async) ----------
-  let DICT = null, MORPH = null, PRON = null, THES = null, dataPromise = null;
+  // Only the small morpheme index loads up front (for the "more words" lists).
+  // Rich per-word data (definitions, pronunciation, etymology, relations) is
+  // fetched lazily, one shard at a time, keyed by the word's first two letters.
+  const DATA_V = "6";
+  let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
-    function grab(url) {
-      if (typeof fetch !== "function") return Promise.resolve(null);
-      return fetch(url).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
-    }
-    dataPromise = Promise.all([
-      grab("dictionary.json?v=5"), grab("morpheme-index.json?v=5"),
-      grab("pronunciation.json?v=5"), grab("thesaurus.json?v=5")
-    ]).then(function (o) { DICT = o[0] || {}; MORPH = o[1] || {}; PRON = o[2] || {}; THES = o[3] || {}; });
+    if (typeof fetch !== "function") { dataPromise = Promise.resolve(); MORPH = {}; return dataPromise; }
+    dataPromise = fetch("morpheme-index.json?v=" + DATA_V)
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .catch(function () { return {}; })
+      .then(function (m) { MORPH = m || {}; });
     return dataPromise;
+  }
+
+  const shardCache = {};
+  function getWord(word) {
+    const key = String(word || "").slice(0, 2).toLowerCase();
+    if (!/^[a-z]{2}$/.test(key) || typeof fetch !== "function") return Promise.resolve(null);
+    if (!shardCache[key]) {
+      shardCache[key] = fetch("words/" + key + ".json?v=" + DATA_V)
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .catch(function () { return {}; });
+    }
+    return shardCache[key].then(function (sh) { return sh[word] || null; });
   }
 
   // ---------- search history ----------
@@ -135,6 +148,7 @@
   async function reveal(result, token) {
     clearStage();
     const parts = result.parts;
+    const recP = getWord(result.word); // one fetch, shared by every panel
 
     // 1) lay down morphemes (tight) and the dots between them.
     const morphEls = [];
@@ -158,7 +172,7 @@
 
     // 4) pronunciation (fills when the data arrives).
     await delay(160);
-    fillPron(result.word, token);
+    fillPron(recP, token);
 
     // 5) a tile per morpheme — staggered pop.
     await delay(140);
@@ -171,25 +185,26 @@
     if (token !== runToken) return;
     const meaningPanel = buildMeaningPanel(result);
     const thesPanel = el("div", "panel");
-    const originPanel = buildOriginPanel(result);
+    const originPanel = el("div", "panel");
     panelsEl.appendChild(meaningPanel);
     panelsEl.appendChild(thesPanel);
-    if (originPanel) panelsEl.appendChild(originPanel);
+    panelsEl.appendChild(originPanel);
 
-    const panels = [meaningPanel, thesPanel].concat(originPanel ? [originPanel] : []);
+    const panels = [meaningPanel, thesPanel, originPanel];
     for (let i = 0; i < panels.length; i++) { if (token !== runToken) return; panels[i].classList.add("in"); await delay(100); }
 
-    fillMeaning(result.word, token);
-    fillThesaurus(thesPanel, result.word, token);
+    fillMeaning(recP, token);
+    fillThesaurus(recP, thesPanel, token);
+    fillOrigin(recP, result, originPanel, token);
   }
 
-  function fillPron(word, token) {
-    loadData().then(function () {
+  function fillPron(recP, token) {
+    recP.then(function (rec) {
       if (token !== runToken) return;
-      const p = PRON[word];
-      if (!p) { pronEl.innerHTML = ""; return; }
-      pronEl.innerHTML = '<span class="ipa">' + escapeHtml(p[0]) + '</span>' +
-        '<span class="pdot">•</span><span class="resp">' + escapeHtml(p[1]) + "</span>";
+      if (!rec || (!rec.i && !rec.rs)) { pronEl.innerHTML = ""; return; }
+      const ipa = rec.i ? '<span class="ipa">' + escapeHtml(rec.i) + "</span>" : "";
+      const resp = rec.rs ? '<span class="resp">' + escapeHtml(rec.rs) + "</span>" : "";
+      pronEl.innerHTML = ipa + (ipa && resp ? '<span class="pdot">•</span>' : "") + resp;
       requestAnimationFrame(function () { pronEl.classList.add("in"); });
     });
   }
@@ -310,43 +325,47 @@
     return panel;
   }
 
-  function fillMeaning(word, token) {
+  function fillMeaning(recP, token) {
     const slot = meaningEl;
-    loadData().then(function () {
+    recP.then(function (rec) {
       if (token !== runToken || !slot) return;
-      const senses = DICT[word];
+      const senses = rec && rec.d;
       if (senses && senses.length) {
         slot.innerHTML = "";
         senses.forEach(function (s, i) {
           const row = el("div", "sense");
           row.appendChild(el("span", "num", String(i + 1)));
           const body = el("span");
-          body.innerHTML = '<span class="pos">' + escapeHtml(s.p) + "</span>" + escapeHtml(s.d);
+          let html = '<span class="pos">' + escapeHtml(s.p) + "</span>" + escapeHtml(s.g);
+          if (s.x) html += '<span class="sense-ex">“' + escapeHtml(s.x) + "”</span>";
+          body.innerHTML = html;
           row.appendChild(body);
           slot.appendChild(row);
         });
       } else {
-        slot.innerHTML = '<span class="def-loading">No exact dictionary entry — the build above is your best read.</span>';
+        slot.innerHTML = '<span class="def-loading">No dictionary entry — the build above is your best read.</span>';
       }
     });
   }
 
-  function fillThesaurus(panel, word, token) {
-    loadData().then(function () {
+  function fillThesaurus(recP, panel, token) {
+    recP.then(function (rec) {
       if (token !== runToken) return;
-      const t = THES[word];
-      if (!t || (!t.s && !t.a)) { panel.remove(); return; }
+      const s = rec && rec.s, a = rec && rec.a, r = rec && rec.r;
+      if (!(s && s.length) && !(a && a.length) && !(r && r.length)) { panel.remove(); return; }
       panel.innerHTML = "";
-      if (t.s && t.s.length) {
-        panel.appendChild(el("div", "lab", "Synonyms"));
-        panel.appendChild(thesRow(t.s, "syn"));
-      }
-      if (t.a && t.a.length) {
-        const l = el("div", "lab", "Antonyms");
-        if (t.s && t.s.length) l.style.marginTop = "12px";
+      let first = true;
+      function group(label, words, cls) {
+        if (!words || !words.length) return;
+        const l = el("div", "lab", label);
+        if (!first) l.style.marginTop = "12px";
+        first = false;
         panel.appendChild(l);
-        panel.appendChild(thesRow(t.a, "ant"));
+        panel.appendChild(thesRow(words, cls));
       }
+      group("Synonyms", s, "syn");
+      group("Antonyms", a, "ant");
+      group("Related", r, "rel");
     });
   }
 
@@ -361,21 +380,28 @@
     return list;
   }
 
-  function buildOriginPanel(result) {
-    const known = result.parts.filter(function (p) { return p.origin && p.source; });
-    if (!known.length) return null;
-    const panel = el("div", "panel");
-    panel.appendChild(el("div", "lab", "Origin"));
-    const origins = [];
-    known.forEach(function (p) { if (origins.indexOf(p.origin) === -1) origins.push(p.origin); });
-    const chain = known.map(function (p) {
-      return "<i>" + escapeHtml(p.source) + '</i> (“' + escapeHtml(firstSense(p.meaning)) + "”)";
-    }).join(" + ");
-    const h = el("div", "hist");
-    h.innerHTML = "Formed from <span class=\"origin\">" + escapeHtml(origins.join(" and ")) +
-      "</span> — " + chain + ".";
-    panel.appendChild(h);
-    return panel;
+  // Real etymology when we have it; otherwise the root chain from the engine.
+  function fillOrigin(recP, result, panel, token) {
+    recP.then(function (rec) {
+      if (token !== runToken) return;
+      panel.innerHTML = "";
+      if (rec && rec.e) {
+        panel.appendChild(el("div", "lab", "Origin"));
+        panel.appendChild(el("div", "hist", rec.e));
+        return;
+      }
+      const known = result.parts.filter(function (p) { return p.origin && p.source; });
+      if (!known.length) { panel.remove(); return; }
+      const origins = [];
+      known.forEach(function (p) { if (origins.indexOf(p.origin) === -1) origins.push(p.origin); });
+      const chain = known.map(function (p) {
+        return "<i>" + escapeHtml(p.source) + '</i> (“' + escapeHtml(firstSense(p.meaning)) + "”)";
+      }).join(" + ");
+      panel.appendChild(el("div", "lab", "Origin"));
+      const h = el("div", "hist");
+      h.innerHTML = "Formed from <span class=\"origin\">" + escapeHtml(origins.join(" and ")) + "</span> — " + chain + ".";
+      panel.appendChild(h);
+    });
   }
 
   // ---------- events ----------

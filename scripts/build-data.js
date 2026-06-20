@@ -2,15 +2,13 @@
 //
 //   dictionary.json      word -> [{ p: part-of-speech, d: definition }, ...]
 //   morpheme-index.json  morphemeId -> [related words, ...]  (short→long)
-//   pronunciation.json   word -> [IPA, respelling]
 //   thesaurus.json       word -> { s: [synonyms], a: [antonyms] }
 //
-// Definitions come from WordNet via the `wordnet` npm package; pronunciations
-// from the CMU Pronouncing Dictionary (`cmu-pronouncing-dictionary`), converted
-// to IPA + a Merriam-Webster style respelling. Both are dev dependencies — we do
-// NOT hand-write this data. The morpheme index is produced by running this
-// project's own decomposition engine over the dictionary's vocabulary, so "other
-// words with this root" stays consistent with what the app shows.
+// morpheme-index.json ships and is loaded by the app; dictionary.json and
+// thesaurus.json are inputs to scripts/build-rich.js (definition / synonym
+// fallbacks) and are not shipped. Definitions and the thesaurus come from WordNet
+// (the `wordnet` dev dependency) — we do NOT hand-write this data. The morpheme
+// index is produced by running this project's own engine over that vocabulary.
 //
 // Run with:  npm run build:data
 
@@ -19,8 +17,6 @@
 const fs = require("fs");
 const path = require("path");
 const wordnet = require("wordnet");
-const cmudict = require("cmu-pronouncing-dictionary").dictionary;
-const { convert } = require("./arpabet.js");
 const engine = require("../engine.js");
 
 const ROOT = path.join(__dirname, "..");
@@ -113,25 +109,13 @@ async function main() {
   }
   console.log("indexed morphemes:", Object.keys(indexOut).length);
 
-  // Pronunciation for the words we actually define (IPA + respelling).
-  const pron = {};
-  for (const w of dictWords) {
-    const arp = cmudict[w];
-    if (!arp) continue;
-    const c = convert(arp);
-    if (c) pron[w] = [c.ipa, c.resp];
-  }
-  console.log("pronunciations:", Object.keys(pron).length);
-
   fs.writeFileSync(path.join(ROOT, "dictionary.json"), JSON.stringify(dict));
   fs.writeFileSync(path.join(ROOT, "morpheme-index.json"), JSON.stringify(indexOut));
-  fs.writeFileSync(path.join(ROOT, "pronunciation.json"), JSON.stringify(pron));
   fs.writeFileSync(path.join(ROOT, "thesaurus.json"), JSON.stringify(thes));
 
   const mb = (f) => (fs.statSync(path.join(ROOT, f)).size / 1048576).toFixed(2);
   console.log("wrote dictionary.json (" + mb("dictionary.json") + " MB)");
   console.log("wrote morpheme-index.json (" + mb("morpheme-index.json") + " MB)");
-  console.log("wrote pronunciation.json (" + mb("pronunciation.json") + " MB)");
   console.log("wrote thesaurus.json (" + mb("thesaurus.json") + " MB)");
 }
 

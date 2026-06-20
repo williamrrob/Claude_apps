@@ -209,6 +209,7 @@ body {
 .related-chip[data-kind="suffix"] { --c: var(--suffix); }
 .related-chip.thes-syn { --c: var(--root); }
 .related-chip.thes-ant { --c: var(--prefix); }
+.related-chip.thes-rel { --c: var(--stem); }
 .related-chip:active { transform: scale(0.93); }
 @keyframes chipIn { to { opacity: 1; transform: none; } }
 
@@ -229,6 +230,7 @@ body {
 .sense { display: grid; grid-template-columns: 16px 1fr; gap: 8px; margin-top: 9px; font-size: 15px; line-height: 1.45; }
 .sense .num { color: var(--muted); font-size: 13px; font-weight: 600; }
 .sense .pos { font-style: italic; color: var(--suffix); font-size: 13px; margin-right: 6px; }
+.sense-ex { display: block; margin-top: 3px; color: var(--muted); font-style: italic; font-size: 13.5px; }
 .def-loading { color: var(--muted); font-style: italic; }
 .hist { font-size: 15px; line-height: 1.5; margin-top: 7px; }
 .hist i { color: var(--ink); font-style: italic; }
