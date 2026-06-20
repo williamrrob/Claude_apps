@@ -12,6 +12,7 @@
   const hint = $("hint");
   const wordLine = $("wordLine");
   const pronEl = $("pron");
+  const ipaKeyEl = $("ipaKey");
   const noteEl = $("note");
   const tilesEl = $("tiles");
   const panelsEl = $("panels");
@@ -61,7 +62,7 @@
   // Only the small morpheme index loads up front (for the "more words" lists).
   // Rich per-word data (definitions, pronunciation, etymology, relations) is
   // fetched lazily, one shard at a time, keyed by the word's first two letters.
-  const DATA_V = "15";
+  const DATA_V = "17";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -147,6 +148,7 @@
   function clearStage() {
     wordLine.className = "word-line"; wordLine.innerHTML = "";
     pronEl.className = "pron"; pronEl.innerHTML = "";
+    ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = "";
     noteEl.hidden = true; noteEl.textContent = "";
     tilesEl.innerHTML = "";
     panelsEl.innerHTML = "";
@@ -233,6 +235,10 @@
       parts.filter(function (p) {
         return !(p.kind === "unknown" && p.surface.length < 3);
       }).forEach(function (p) { tilesEl.appendChild(buildTile(p)); });
+    } else if (rec && rec.e) {
+      // Single-unit word: still show the original source word (parity).
+      const src = extractSource(cleanProse(rec.e));
+      if (src) tilesEl.appendChild(originTile(src));
     }
     const tileEls = Array.prototype.slice.call(tilesEl.children);
     for (let i = 0; i < tileEls.length; i++) { if (token !== runToken) return; tileEls[i].classList.add("in"); await delay(70); }
@@ -265,24 +271,99 @@
     } catch (e) {}
   }
 
+  // Tap the IPA → a pronunciation key for the symbols in this word.
+  const IPA_KEY = {
+    "ˈ": "primary stress — say this syllable loudest",
+    "ˌ": "secondary stress — a lighter beat",
+    "ɑ": "broad “ah”, as in father", "æ": "short “a”, as in cat",
+    "ʌ": "short “u”, as in cup", "ɔ": "open “aw”, as in thought",
+    "aʊ": "“ow”, as in now", "aɪ": "long “i”, as in price",
+    "ɛ": "short “e”, as in dress", "ɝ": "“ur” (r-colored), as in nurse", "ɚ": "“er” (r-colored), as in letter",
+    "eɪ": "long “a”, as in face", "ɪ": "short “i”, as in kit", "i": "long “e”, as in fleece",
+    "oʊ": "long “o”, as in goat", "ɔɪ": "“oy”, as in choice",
+    "ʊ": "short “oo”, as in foot", "u": "long “oo”, as in goose", "ə": "the neutral “uh”, as in about",
+    "tʃ": "“ch”, as in church", "dʒ": "“j”, as in judge", "ð": "voiced “th”, as in this", "θ": "voiceless “th”, as in thin",
+    "ʃ": "“sh”, as in ship", "ʒ": "“zh”, as in measure", "ŋ": "“ng”, as in sing", "j": "“y”, as in yes",
+    "ɹ": "“r”, as in red", "r": "“r”, as in red", "ɡ": "hard “g”, as in go", "g": "hard “g”, as in go",
+    "b": "“b”, as in bat", "d": "“d”, as in dog", "f": "“f”, as in fan", "h": "“h”, as in hat", "k": "“k”, as in cat",
+    "l": "“l”, as in let", "m": "“m”, as in man", "n": "“n”, as in net", "p": "“p”, as in pen", "s": "“s”, as in sun",
+    "t": "“t”, as in top", "v": "“v”, as in van", "w": "“w”, as in win", "z": "“z”, as in zoo",
+  };
+  // Names for the symbols that have them.
+  const IPA_NAME = {
+    "ə": "schwa", "ɚ": "r-colored schwa", "ɝ": "r-colored vowel",
+    "æ": "ash", "ð": "eth", "θ": "theta", "ʃ": "esh", "ʒ": "ezh", "ŋ": "eng",
+    "ɪ": "small capital I", "ʊ": "upsilon", "ɔ": "open o", "ɑ": "script a",
+    "ɡ": "script g", "ɹ": "turned r", "tʃ": "ch-affricate", "dʒ": "j-affricate",
+    "aɪ": "diphthong", "aʊ": "diphthong", "eɪ": "diphthong", "oʊ": "diphthong", "ɔɪ": "diphthong",
+    "ˈ": "stress mark", "ˌ": "stress mark",
+  };
+  function tokenizeIPA(ipa) {
+    const s = ipa.replace(/[\/\[\].]/g, "");
+    const out = [], seen = {};
+    for (let i = 0; i < s.length;) {
+      let sym = null;
+      if (IPA_KEY[s.substr(i, 2)]) { sym = s.substr(i, 2); i += 2; }
+      else { if (IPA_KEY[s[i]]) sym = s[i]; i += 1; }
+      if (sym && !seen[sym]) { seen[sym] = 1; out.push(sym); }
+    }
+    return out;
+  }
+  function toggleIpaKey(ipa) {
+    if (!ipaKeyEl.hidden) { ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = ""; return; }
+    ipaKeyEl.innerHTML = "";
+    ipaKeyEl.appendChild(el("div", "lab", "Pronunciation key"));
+    const list = el("div", "ipa-key-list");
+    tokenizeIPA(ipa).forEach(function (sym) {
+      const row = el("div", "ipa-key-row");
+      row.appendChild(el("span", "ipa-sym", sym));
+      if (IPA_NAME[sym]) row.appendChild(el("span", "ipa-name", IPA_NAME[sym]));
+      row.appendChild(el("span", "ipa-desc", IPA_KEY[sym]));
+      list.appendChild(row);
+    });
+    ipaKeyEl.appendChild(list);
+    ipaKeyEl.hidden = false;
+  }
+
   function fillPron(recP, word, token) {
     recP.then(function (rec) {
       if (token !== runToken) return;
       pronEl.innerHTML = "";
-      if (rec && rec.i) pronEl.appendChild(el("span", "ipa", rec.i));
-      if (canSpeak) {
-        const btn = el("button", "spk", "▶");
-        btn.type = "button";
-        btn.setAttribute("aria-label", "Pronounce " + word);
-        btn.addEventListener("click", function () { speak(word); });
-        pronEl.appendChild(btn);
+      ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = "";
+      const ipa = rec && rec.i, resp = rec && rec.rs;
+      if (ipa) {
+        const ib = el("button", "ipa", ipa);
+        ib.type = "button";
+        ib.setAttribute("aria-label", "Show pronunciation key");
+        ib.addEventListener("click", function () { toggleIpaKey(ipa); });
+        pronEl.appendChild(ib);
       }
-      if (rec && rec.rs) {
-        if (rec.i || canSpeak) pronEl.appendChild(el("span", "pdot", "•"));
-        pronEl.appendChild(el("span", "resp", rec.rs));
+      if (canSpeak) {
+        // Tap the plain-language respelling (or a speaker) to hear the word.
+        if (ipa) pronEl.appendChild(el("span", "pdot", "•"));
+        const rb = el("button", "resp speakable", resp || word);
+        rb.type = "button";
+        rb.setAttribute("aria-label", "Pronounce " + word);
+        rb.appendChild(el("span", "spk-ico", "▶"));
+        rb.addEventListener("click", function () { speak(word); });
+        pronEl.appendChild(rb);
+      } else if (resp) {
+        if (ipa) pronEl.appendChild(el("span", "pdot", "•"));
+        pronEl.appendChild(el("span", "resp", resp));
       }
       if (pronEl.children.length) requestAnimationFrame(function () { pronEl.classList.add("in"); });
     });
+  }
+
+  // ---------- tiles ----------
+  function originTile(src) {
+    const t = el("div", "tile");
+    t.dataset.kind = "root";
+    t.appendChild(el("div", "rk", src.lang));
+    t.appendChild(el("div", "surf", src.word));
+    if (src.translit) t.appendChild(el("div", "forms", src.translit));
+    if (src.gloss) t.appendChild(el("div", "mean", src.gloss));
+    return t;
   }
 
   // ---------- tiles ----------
@@ -541,6 +622,19 @@
          .replace(/\s+([,;.])/g, "$1")
          .trim();
     return s;
+  }
+
+  // The immediate source word from the etymology — e.g. etymon → Ancient Greek
+  // ἔτυμον (étymon). Used to keep the original word visible for single-unit words.
+  const SRC_LANGS = "Ancient Greek|Hellenistic Greek|Koine Greek|Byzantine Greek|Greek|Late Latin|Medieval Latin|New Latin|Vulgar Latin|Latin|Old French|Anglo-Norman|Middle French|French|Middle English|Old English|Proto-Indo-European|Proto-Germanic|Sanskrit|Arabic|Hebrew|Old Norse|Italian|Spanish|Portuguese|German|Persian";
+  function extractSource(e) {
+    const re = new RegExp("\\b(" + SRC_LANGS + ")\\s+(\\S+?)\\s*\\(([^)]+)\\)");
+    const m = e.match(re);
+    if (!m) return null;
+    const inner = m[3].split(",");
+    const translit = inner[0].trim();
+    const gloss = inner.slice(1).join(",").replace(/[“”"]/g, "").trim();
+    return { lang: m[1], word: m[2], translit: translit, gloss: gloss };
   }
 
   function extractYear(e) {
