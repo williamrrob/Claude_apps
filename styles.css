@@ -198,29 +198,24 @@ body {
 .tile .mean { font-size: 14.5px; margin-top: 2px; }
 .tile .tile-more { font-size: 12px; font-weight: 600; color: var(--c); margin-top: 9px; opacity: 0.85; }
 
-/* ---------- related words (one section, at the bottom) ---------- */
-.related {
-  width: 100%; margin-top: 11px;
-  border: 1px solid var(--bd); border-radius: 16px; padding: 15px 16px; background: var(--panel);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-hi), var(--glass-shadow);
-  opacity: 0; transform: translateY(10px); transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
-}
-.related.in { opacity: 1; transform: none; }
-.related .related-list + .related-list { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--bd); }
-.related-head { font-size: 14px; margin-bottom: 11px; }
-.related-head b { font-weight: 700; }
+/* in-card "more words" dropdown: the card takes the full width and lists the
+   word families beneath its own info. */
+.tile.expanded { flex-basis: 100%; }
+.card-words { margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--bd); }
+.card-words .related-list + .related-list { margin-top: 7px; padding-top: 7px; border-top: 1px solid var(--bd); }
+
+/* ---------- related/synonym/antonym chips ---------- */
 .related-gloss { color: var(--muted); }
-.related-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.related-list { display: flex; flex-wrap: wrap; gap: 7px; }
 .related-empty { color: var(--muted); font-size: 14px; }
 .related-chip {
   --c: var(--root);
   border: 1px solid color-mix(in srgb, var(--c) 42%, var(--bd));
-  color: var(--ink); background: transparent;
-  border-radius: 999px; padding: 7px 13px; font-size: 14px; font-weight: 500; cursor: pointer;
+  color: var(--ink); background: var(--field);
+  border-radius: 999px; padding: 5px 12px; font-size: 13.5px; font-weight: 500; cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   opacity: 0; transform: translateY(7px) scale(0.97);
-  animation: chipIn 0.34s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 26ms);
+  animation: chipIn 0.34s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 24ms);
 }
 .related-chip[data-kind="prefix"] { --c: var(--prefix); }
 .related-chip[data-kind="root"]   { --c: var(--root); }

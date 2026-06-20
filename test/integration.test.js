@@ -131,15 +131,14 @@ async function main() {
   assert.ok(meaning && /account of the series of events|life/i.test(deepText(meaning)),
     "meaning is filled from WordNet, got: " + (meaning && deepText(meaning)));
 
-  // --- Layer 4: tapping a tile lists words sharing the piece in the bottom section. ---
+  // --- Layer 4: tapping a card drops down words sharing the piece, in the card. ---
   const rootTile = find(ids.tiles, (c) => c.dataset && c.dataset.kind === "root");
   assert.ok(rootTile, "a root tile exists");
   rootTile.dispatch("click");
   await settle();
-  assert.ok(rootTile.classList.contains("active"), "tapped tile is marked active");
-  assert.strictEqual(ids.related.hidden, false, "related section opens at the bottom");
-  const chips = findAll(ids.related, hasClass("related-chip"));
-  assert.ok(chips.length > 0, "related section lists words sharing the morpheme");
+  assert.ok(rootTile.classList.contains("expanded"), "tapped card expands");
+  const chips = findAll(rootTile, hasClass("related-chip"));
+  assert.ok(chips.length > 0, "expanded card lists words sharing the morpheme");
   assert.ok(!chips.map((c) => c.textContent).includes("biography"), "current word excluded from related words");
 
   // --- Layer 5: following a related word runs a fresh analysis. ---
