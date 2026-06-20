@@ -62,7 +62,7 @@
   // Only the small morpheme index loads up front (for the "more words" lists).
   // Rich per-word data (definitions, pronunciation, etymology, relations) is
   // fetched lazily, one shard at a time, keyed by the word's first two letters.
-  const DATA_V = "17";
+  const DATA_V = "19";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -377,9 +377,6 @@
     tile.appendChild(el("div", "rk", label));
     tile.appendChild(el("div", "surf", p.source || p.surface));
 
-    if (p.forms && p.forms.length) {
-      tile.appendChild(el("div", "forms", "appears as: " + p.forms.join(", ")));
-    }
     let meaning = p.meaning;
     if (!meaning) {
       meaning = p.silentE
@@ -394,7 +391,7 @@
       tile.classList.add("tappable");
       tile.setAttribute("role", "button");
       tile.setAttribute("tabindex", "0");
-      tile.appendChild(el("div", "tile-more", "more words ▾"));
+      tile.appendChild(el("div", "tile-more", "more ▾"));
       const open = function () { toggleCardWords(p, tile); };
       tile.addEventListener("click", open);
       tile.addEventListener("keydown", function (e) {
@@ -404,29 +401,85 @@
     return tile;
   }
 
+  // FLIP: run `mutate`, then animate every tile from its old box to its new one
+  // so the grid feels physical — cards slide around the one that grew/shrank.
+  function flipTiles(mutate) {
+    const tiles = Array.prototype.slice.call(tilesEl.children);
+    if (reduceMotion) { mutate(); return; }
+    const first = tiles.map(function (t) { return t.getBoundingClientRect(); });
+    mutate();
+    const last = tiles.map(function (t) { return t.getBoundingClientRect(); });
+    tiles.forEach(function (t, i) {
+      const dx = first[i].left - last[i].left, dy = first[i].top - last[i].top;
+      const sx = last[i].width ? first[i].width / last[i].width : 1;
+      if (Math.abs(dx) < 1 && Math.abs(dy) < 1 && Math.abs(sx - 1) < 0.02) return;
+      t.style.transformOrigin = "top left";
+      t.style.transition = "none";
+      t.style.transform = "translate(" + dx + "px," + dy + "px) scaleX(" + sx + ")";
+    });
+    requestAnimationFrame(function () {
+      tiles.forEach(function (t) {
+        if (!t.style.transform) return;
+        t.style.transition = "transform 0.44s cubic-bezier(0.22, 1, 0.36, 1)";
+        t.style.transform = "";
+        const done = function () { t.style.transition = ""; t.style.transformOrigin = ""; t.removeEventListener("transitionend", done); };
+        t.addEventListener("transitionend", done);
+      });
+    });
+  }
+
   function collapseCard(tile) {
     if (!tile.classList.contains("expanded")) return;
-    tile.classList.remove("expanded");
-    const box = tile.querySelector(".card-words"); if (box) box.remove();
-    const more = tile.querySelector(".tile-more"); if (more) more.textContent = "more words ▾";
+    flipTiles(function () {
+      tile.classList.remove("expanded");
+      const box = tile.querySelector(".card-words"); if (box) box.remove();
+      const more = tile.querySelector(".tile-more"); if (more) more.textContent = "more ▾";
+    });
   }
 
   function toggleCardWords(p, tile) {
     if (tile.classList.contains("expanded")) { collapseCard(tile); return; }
-    tile.classList.add("expanded");
-    const more = tile.querySelector(".tile-more"); if (more) more.textContent = "fewer words ▴";
+    const more = tile.querySelector(".tile-more"); if (more) more.textContent = "less ▴";
 
     const box = el("div", "card-words");
-    box.appendChild(el("div", "related-empty", "finding words…"));
-    tile.appendChild(box);
+    const say = p.source || p.surface;
+
+    // Hear the piece (plain spelling fed to TTS for now).
+    if (canSpeak && say) {
+      const sayRow = el("div", "card-say");
+      const btn = el("button", "spk", "▶");
+      btn.type = "button";
+      btn.setAttribute("aria-label", "Pronounce " + say);
+      btn.addEventListener("click", function (e) { e.stopPropagation(); speak(say); });
+      sayRow.appendChild(btn);
+      sayRow.appendChild(el("span", "card-say-word", say));
+      box.appendChild(sayRow);
+    }
+    // Alternate spellings (moved here from the collapsed card).
+    if (p.forms && p.forms.length) {
+      box.appendChild(el("div", "forms", "appears as: " + p.forms.join(", ")));
+    }
+
+    const list = el("div", "card-related");
+    list.appendChild(el("div", "related-empty", "finding words…"));
+    box.appendChild(list);
+
+    // Grow this card and let the others slide around it.
+    flipTiles(function () {
+      tile.classList.add("expanded");
+      tile.appendChild(box);
+    });
 
     const token = runToken;
     loadData().then(function () {
       if (token !== runToken || !tile.classList.contains("expanded")) return;
       const words = (MORPH[p.id] || []).filter(function (w) { return w !== currentWord; });
-      box.innerHTML = "";
-      if (!words.length) { box.appendChild(el("div", "related-empty", "No other words with this piece yet.")); return; }
-      renderWordGroups(box, words, p.kind);
+      flipTiles(function () {
+        list.innerHTML = "";
+        if (!words.length) { list.appendChild(el("div", "related-empty", "No other words with this piece yet.")); return; }
+        list.appendChild(el("div", "lab", "More words"));
+        renderWordGroups(list, words, p.kind);
+      });
     });
   }
 

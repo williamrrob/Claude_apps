@@ -41,8 +41,12 @@
 
 * { box-sizing: border-box; margin: 0; }
 html, body { height: 100%; }
+/* Paint the root (and the overscroll / safe-area behind Safari's bars) the
+   theme colour so there are no white strips top and bottom. */
+html { background: var(--bg); }
 body {
-  background: radial-gradient(125% 90% at 50% 0%, var(--bg2), var(--bg) 70%);
+  background: var(--bg);
+  background: radial-gradient(125% 90% at 50% 0%, var(--bg2), var(--bg) 70%) fixed;
   color: var(--ink);
   font: 16px/1.5 var(--font);
   -webkit-font-smoothing: antialiased;
@@ -226,8 +230,23 @@ body {
 /* in-card "more words" dropdown: the card takes the full width and lists the
    word families beneath its own info. */
 .tile.expanded { flex-basis: 100%; }
-.card-words { margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--bd); }
+.card-words {
+  margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--bd);
+  animation: cardOpen 0.4s var(--pop) both;
+}
+@keyframes cardOpen { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 .card-words .related-list + .related-list { margin-top: 7px; padding-top: 7px; border-top: 1px solid var(--bd); }
+.card-say { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; }
+.card-say .spk {
+  width: 24px; height: 24px; border-radius: 50%; cursor: pointer; flex: 0 0 auto;
+  border: 1px solid var(--bd); background: var(--field); color: var(--root);
+  display: grid; place-items: center; font-size: 9px; padding-left: 1px;
+  -webkit-tap-highlight-color: transparent;
+}
+.card-say .spk:active { transform: scale(0.88); }
+.card-say-word { font-weight: 600; font-style: italic; }
+.card-related { margin-top: 10px; }
+.card-related .lab { margin-bottom: 7px; }
 
 /* ---------- related/synonym/antonym chips ---------- */
 .related-gloss { color: var(--muted); }
