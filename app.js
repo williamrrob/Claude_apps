@@ -61,7 +61,7 @@
   // Only the small morpheme index loads up front (for the "more words" lists).
   // Rich per-word data (definitions, pronunciation, etymology, relations) is
   // fetched lazily, one shard at a time, keyed by the word's first two letters.
-  const DATA_V = "10";
+  const DATA_V = "11";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -169,9 +169,10 @@
       if (i) wordLine.appendChild(el("span", "dot", "·"));
       const span = el("span", "morph");
       span.dataset.kind = p.kind;
-      span.textContent = p.surface;
+      const mw = el("span", "mw", p.surface);
+      mw.appendChild(el("span", "ul")); // underline
+      span.appendChild(mw);
       span.appendChild(el("span", "tag", kindLabel(p.kind)));
-      span.appendChild(el("span", "ul")); // underline (pseudo-elements hold hyphens)
       wordLine.appendChild(span);
       morphEls.push(span);
     });
@@ -188,9 +189,11 @@
     await delay(160);
     fillPron(recP, token);
 
-    // 5) a tile per morpheme — staggered pop.
+    // 5) a tile per meaningful morpheme — skip lone junk stems (a stray "g").
     await delay(140);
-    parts.forEach(function (p) { tilesEl.appendChild(buildTile(p)); });
+    parts.filter(function (p) {
+      return !(p.kind === "unknown" && p.surface.length < 3);
+    }).forEach(function (p) { tilesEl.appendChild(buildTile(p)); });
     const tileEls = Array.prototype.slice.call(tilesEl.children);
     for (let i = 0; i < tileEls.length; i++) { if (token !== runToken) return; tileEls[i].classList.add("in"); await delay(70); }
 
@@ -303,10 +306,20 @@
     groups.sort(function (a, b) { return b.length - a.length || a[0].localeCompare(b[0]); });
     return groups;
   }
+  // Keep it short: prefer everyday (shorter) words, drop the absurdly long
+  // ones, and cap the total shown across a few families.
   function renderWordGroups(box, words, kind) {
-    const clean = words.filter(function (w) { return w.length <= 14; });
-    clusterFamilies(clean.length ? clean : words).forEach(function (fam) {
-      box.appendChild(chipRow(fam, kind));
+    const MAX = 15;
+    const clean = words.filter(function (w) { return w.length <= 12; });
+    const pick = (clean.length ? clean : words)
+      .slice().sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
+      .slice(0, 20);
+    let shown = 0;
+    clusterFamilies(pick).slice(0, 4).forEach(function (fam) {
+      if (shown >= MAX) return;
+      const row = fam.slice(0, Math.max(2, MAX - shown));
+      shown += row.length;
+      box.appendChild(chipRow(row, kind));
     });
   }
 
