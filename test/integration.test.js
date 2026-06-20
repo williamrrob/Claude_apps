@@ -44,7 +44,7 @@ function makeDom() {
     return node;
   }
   const ids = {};
-  ["searchForm", "wordInput", "hint", "wordLine", "pron", "tiles", "panels", "recent", "content", "themeToggle"]
+  ["searchForm", "wordInput", "hint", "wordLine", "pron", "note", "tiles", "panels", "recent", "content", "themeToggle"]
     .forEach((id) => { ids[id] = el(id === "searchForm" ? "form" : "div"); });
   ids.searchForm.querySelector = () => el("button"); // .search-btn lookup
   const examples = ["biography", "incredible", "democracy"].map((w) => { const b = el("button"); b.dataset.word = w; return b; });
@@ -117,7 +117,8 @@ async function main() {
   assert.ok(bio.parts.some((p) => p.kind === "root"), "biography decomposes with a root");
   const micro = sandbox.EtymologyEngine.decompose("microscope");
   const last = micro.parts[micro.parts.length - 1];
-  assert.ok(last.kind === "linker" && last.surface === "e", "the final 'e' in microscope is its own morpheme");
+  assert.ok(last.kind === "suffix" && last.surface === "e" && last.silentE,
+    "the final 'e' in microscope is its own (suffix) morpheme");
 
   // --- Layer 3: search renders morphemes, pronunciation and meaning. ---
   examples[0].dispatch("click"); // biography

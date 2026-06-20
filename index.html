@@ -12,15 +12,11 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
   <div class="app">
     <header class="topbar">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">Rootwork</span>
-      </div>
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark">◐</button>
     </header>
 
@@ -40,6 +36,7 @@
 
       <div class="word-line" id="wordLine" aria-live="polite"></div>
       <div class="pron" id="pron"></div>
+      <div class="note" id="note" hidden></div>
       <div class="tiles" id="tiles"></div>
       <div class="panels" id="panels"></div>
     </main>
@@ -68,8 +65,8 @@
     </footer>
   </div>
 
-  <script src="data.js?v=7"></script>
-  <script src="engine.js?v=7"></script>
-  <script src="app.js?v=7"></script>
+  <script src="data.js?v=8"></script>
+  <script src="engine.js?v=8"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

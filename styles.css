@@ -58,8 +58,8 @@ body {
 
 /* ---------- top bar ---------- */
 .topbar {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: calc(env(safe-area-inset-top) + 14px) var(--pad) 6px;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: calc(env(safe-area-inset-top) + 12px) var(--pad) 4px;
 }
 .brand { display: flex; align-items: center; gap: 9px; }
 .brand-mark {
@@ -159,6 +159,15 @@ body {
 .pron .resp { color: var(--ink); font-weight: 600; }
 .pron .pdot { color: var(--muted); opacity: 0.5; }
 
+/* ---------- not-a-word notice ---------- */
+.note {
+  width: 100%; margin: 0 0 12px;
+  font-size: 13.5px; line-height: 1.45; color: var(--prefix);
+  background: color-mix(in srgb, var(--prefix) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--prefix) 35%, transparent);
+  border-radius: 12px; padding: 10px 13px; text-align: center;
+}
+
 /* ---------- morpheme tiles ---------- */
 .tiles { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; width: 100%; }
 .tile {
@@ -187,6 +196,8 @@ body {
 .tile.expanded { flex-basis: 100%; background: color-mix(in srgb, var(--c) 6%, transparent); }
 .tile-words { margin-top: 11px; }
 .tile-words .lab { margin-bottom: 7px; }
+/* each word family on its own line, lightly separated */
+.tile-words .related-list + .related-list { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--bd); }
 
 /* ---------- related words ---------- */
 .related {
@@ -247,8 +258,9 @@ body {
   -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%);
   padding: 9px var(--pad) calc(12px + env(safe-area-inset-bottom));
 }
-.recent { display: flex; gap: 7px; overflow-x: auto; margin-bottom: 9px; scrollbar-width: none; }
+.recent { display: flex; align-items: center; gap: 7px; overflow-x: auto; margin-bottom: 9px; scrollbar-width: none; }
 .recent::-webkit-scrollbar { display: none; }
+.recent-label { flex: 0 0 auto; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 .recent .history-clear {
   flex: 0 0 auto; margin-left: auto; background: none; border: none;
   color: var(--muted); font-size: 12px; cursor: pointer; padding: 5px 6px;
