@@ -636,9 +636,6 @@
     const main = el("div", "bp-main");
     main.appendChild(el("span", "bp-vline")); // vertical accent to the left
     const col = el("div", "bp-col");
-    // the surface fragment spells the word during the animation; in the acrostic
-    // it's swapped for the actual Greek/Latin source word (see swapToSource).
-    col.appendChild(el("span", "mw", p.surface));
 
     let g = p.meaning ? firstSense(p.meaning) : defaultGloss(p);
     let origin = p.origin, source = p.source;
@@ -648,11 +645,18 @@
     }
     bp.dataset.src = source || "";
 
+    // Two rows: row 1 is the source word + its meaning (right-justified); row 2
+    // is "Latin · root" + "shows up as …" (right-justified). The .mw fragment
+    // spells the word during the animation, then swaps to the source (swapToSource).
+    const r1 = el("div", "bp-r1");
+    r1.appendChild(el("span", "mw", p.surface));
+    if (g) r1.appendChild(el("span", "gl", g));
+    col.appendChild(r1);
+
     const info = el("span", "bp-info");
     const kind = p.whole ? null : kindLabel(p.kind);
     const sub = [origin, kind].filter(Boolean).join(" · "); // e.g. "Latin · root"
     if (sub) info.appendChild(el("span", "bp-origin", sub));
-    if (g) info.appendChild(el("span", "gl", g));
     if (source) {
       const forms = [p.surface].concat((p.forms || []).filter(function (f) { return f !== p.surface; }));
       info.appendChild(el("span", "appears", "shows up as: " + forms.join(", ")));
@@ -778,18 +782,12 @@
     return groups;
   }
   function renderWordGroups(box, words, kind) {
-    const MAX = 15;
-    const clean = words.filter(function (w) { return w.length <= 12; });
+    const clean = words.filter(function (w) { return w.length <= 14; });
     const pick = (clean.length ? clean : words)
       .slice().sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
-      .slice(0, 20);
-    let shown = 0;
-    clusterFamilies(pick).slice(0, 4).forEach(function (fam) {
-      if (shown >= MAX) return;
-      const row = fam.slice(0, Math.max(2, MAX - shown));
-      shown += row.length;
-      box.appendChild(chipRow(row, kind));
-    });
+      .slice(0, 18);
+    // one wrapping list so chips fill rows naturally (no ragged per-family rows)
+    box.appendChild(chipRow(pick, kind));
   }
   function chipRow(words, kind) {
     const list = el("div", "related-list");

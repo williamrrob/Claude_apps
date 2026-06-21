@@ -86,7 +86,7 @@ body {
 
 /* ---------- scrolling content ---------- */
 .content {
-  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  flex: 1; overflow-y: auto; overflow-x: clip; -webkit-overflow-scrolling: touch;
   padding: 6px var(--pad) 14px var(--pad);
   display: flex; flex-direction: column; align-items: stretch;
 }
@@ -269,13 +269,13 @@ body {
 
 /* ---------- related/synonym/antonym chips ---------- */
 .related-gloss { color: var(--muted); }
-.related-list { display: flex; flex-wrap: wrap; gap: 5px; }
+.related-list { display: flex; flex-wrap: wrap; gap: 4px; }
 .related-empty { color: var(--muted); font-size: 14px; }
 .related-chip {
   --c: var(--root);
   border: 1px solid color-mix(in srgb, var(--c) 42%, var(--bd));
   color: var(--ink); background: var(--field);
-  border-radius: 8px; padding: 3px 9px; font-size: 13px; font-weight: 500; line-height: 1.45; cursor: pointer;
+  border-radius: 6px; padding: 2px 7px; font-size: 12.5px; font-weight: 500; line-height: 1.3; cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   opacity: 0; transform: translateY(7px) scale(0.97);
   animation: chipIn 0.34s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 24ms);
@@ -426,11 +426,11 @@ body {
 .entry-gloss { font-size: 15px; font-style: italic; color: var(--muted); margin-top: 7px; }
 /* half-circle letter badge by the word — tap to browse that letter */
 .entry-letter {
-  position: absolute; top: 2px; right: 0; z-index: 2;
-  width: 44px; height: 22px; padding-bottom: 1px;
+  position: absolute; top: 0; right: calc(-1 * var(--pad)); z-index: 2;
+  width: 40px; height: 26px;
   display: flex; align-items: center; justify-content: center;
   font-size: 13px; font-weight: 700; color: #f3e7d2;
-  background: var(--prefix); border: none; border-radius: 0 0 24px 24px;
+  background: var(--prefix); border: none; border-radius: 0 0 0 12px;
   cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
 .entry-letter:active { transform: scale(0.94); }
@@ -480,15 +480,23 @@ body {
   margin-right: 13px; transform: scaleY(0); transform-origin: top; transition: transform .35s var(--ease); }
 .bd.stacked .bp-vline { display: block; }
 .bp.open .bp-vline { transform: scaleY(1); }
-/* the source word + meaning + "shows up as" stack under the headword fragment;
-   the row height is animated by the grid above, so this just fades in */
-.bp-info { display: none; flex-direction: column; gap: 1px; opacity: 0;
+/* Two-row layout. Row 1: source word (left) + meaning (right). Row 2:
+   "Latin · root" (left) + "shows up as …" (right). Meaning / row 2 are hidden
+   during the assembly animation and fade in once the piece lands in the stack. */
+.bp-r1 { display: flex; align-items: baseline; min-width: 0; }
+.bd.stacked .bp-r1 { justify-content: space-between; gap: 12px; }
+.bp .gl { display: none; flex: 1; min-width: 0; text-align: right;
+  font-size: 15px; color: var(--ink); opacity: 0; transition: opacity .35s var(--ease); }
+.bd.stacked .bp-col .gl { display: block; }
+.bp.open .gl { opacity: 1; }
+.bp-info { display: none; align-items: baseline; gap: 12px; margin-top: 5px; opacity: 0;
   transition: opacity .35s var(--ease); }
-.bd.stacked .bp-col .bp-info { display: flex; }
+.bd.stacked .bp-col .bp-info { display: flex; justify-content: space-between; }
 .bp.open .bp-info { opacity: 1; }
-.bp-origin { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
-.bp .gl { font-size: 14.5px; color: var(--ink); margin-top: 4px; }
-.bp .appears { font-size: 12.5px; font-style: italic; color: var(--muted); margin-top: 3px; }
+.bp-origin { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); flex: 0 0 auto; }
+.bp .appears { flex: 1; min-width: 0; text-align: right;
+  font-size: 12.5px; font-style: italic; color: var(--muted); }
 .bp-words { width: 100%; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--bd);
   animation: cardOpen .4s var(--pop) both; }
 /* sweep out to the card's inner-left edge (clipped by .bd's bounds); pure clip
