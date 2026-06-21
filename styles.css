@@ -435,6 +435,9 @@ body {
   display: flex; align-items: center; justify-content: center;
   font-size: 13px; font-weight: 700; color: #f3e7d2;
   background: var(--prefix); border: none; border-radius: 22px 0 0 22px;
+  /* page sits above the cutout: the page lip casts a shadow onto the tab */
+  box-shadow: inset 4px 0 6px -2px rgba(0,0,0,0.55), inset 0 5px 6px -3px rgba(0,0,0,0.5),
+    inset 0 -5px 6px -3px rgba(0,0,0,0.5);
   cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
 .entry-letter:active { transform: scale(0.94); }
