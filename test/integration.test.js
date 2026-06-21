@@ -129,7 +129,7 @@ async function main() {
   assert.ok(word && deepText(word).replace(/[·\s]/g, "") === "biography", "headword renders the word (with subtle dots)");
   const morphs = findAll(ids.cards, hasClass("mw")).map((c) => c.textContent);
   assert.deepStrictEqual(morphs, ["bio", "graph", "y"], "breakdown lists morphemes bio · graph · y");
-  assert.ok(find(ids.cards, hasClass("part-kind")), "each part says what kind it is");
+  assert.ok(find(ids.cards, hasClass("bp-origin")), "each part says its origin and kind");
   assert.ok(find(ids.entry, hasClass("resp")), "pronunciation respelling is shown under the word");
   const meaning = find(ids.cards, hasClass("def-meaning"));
   assert.ok(meaning && /account of the series of events|life/i.test(deepText(meaning)),

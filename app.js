@@ -361,9 +361,10 @@
     // 1) assemble — pieces pop in tight so they read as the whole word
     for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(130); }
 
-    if (reduceMotion) {
+    // Single-unit words (e.g. "ism") have nothing to split — skip the animation.
+    if (reduceMotion || bpEls.length <= 1) {
       bd.classList.add("split"); bd.classList.add("stacked");
-      bpEls.forEach(function (bp) { bp.classList.add("open"); });
+      bpEls.forEach(function (bp) { swapToSource(bp); bp.classList.add("open"); });
     } else {
       // 2) breathe out: gaps open and the dots grow in between the pieces
       await delay(360); if (token !== runToken) return;
@@ -384,6 +385,7 @@
         if (token !== runToken) return;
         const bp = bpEls[i];
         bp.classList.remove("exit");
+        swapToSource(bp); // surface → Greek/Latin source word as it lands
         bp.style.transition = "none";
         bp.style.transform = "translateX(-40px)";
         void bp.offsetWidth;
@@ -425,8 +427,10 @@
     const inner = el("div", "bp-inner"); // wrapper so the row height can animate
     const main = el("div", "bp-main");
     main.appendChild(el("span", "bp-vline")); // vertical accent to the left
-    main.appendChild(el("span", "mw", p.surface));
-    const info = el("span", "bp-info");
+    const col = el("div", "bp-col");
+    // the surface fragment spells the word during the animation; in the acrostic
+    // it's swapped for the actual Greek/Latin source word (see swapToSource).
+    col.appendChild(el("span", "mw", p.surface));
 
     let g = p.meaning ? firstSense(p.meaning) : defaultGloss(p);
     let origin = p.origin, source = p.source;
@@ -434,23 +438,36 @@
       const s = extractSource(cleanProse(rec.e));
       if (s) { origin = s.lang; source = s.word + (s.translit ? " (" + s.translit + ")" : ""); if (!g && s.gloss) g = s.gloss; }
     }
-    // say what this part is: prefix / root / suffix, and where it's from
+    bp.dataset.src = source || "";
+
+    const info = el("span", "bp-info");
     const kind = p.whole ? null : kindLabel(p.kind);
-    const klabel = [kind, origin].filter(Boolean).join(" · ");
-    if (klabel) info.appendChild(el("span", "part-kind", klabel));
+    const sub = [origin, kind].filter(Boolean).join(" · "); // e.g. "Latin · root"
+    if (sub) info.appendChild(el("span", "bp-origin", sub));
     if (g) info.appendChild(el("span", "gl", g));
-    if (source) { // the actual Greek/Latin word it comes from
-      const src = el("span", "src");
-      let h = "<b>" + escapeHtml(source) + "</b>";
-      const alts = (p.forms || []).filter(function (f) { return f !== p.surface; });
-      if (alts.length) h += ' <span class="alt">· also ' + escapeHtml(alts.join(", ")) + "</span>";
-      src.innerHTML = h;
-      info.appendChild(src);
+    if (source) {
+      const forms = [p.surface].concat((p.forms || []).filter(function (f) { return f !== p.surface; }));
+      info.appendChild(el("span", "appears", "shows up as: " + forms.join(", ")));
     }
-    main.appendChild(info);
+    col.appendChild(info);
+    main.appendChild(col);
     inner.appendChild(main);
     bp.appendChild(inner);
+
+    // tap a morpheme to hear the root and see other words built on it
+    if (p.id) {
+      bp.classList.add("tappable");
+      bp.setAttribute("role", "button");
+      bp.setAttribute("tabindex", "0");
+      const open = function () { togglePartWords(p, bp); };
+      bp.addEventListener("click", open);
+      bp.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+    }
     return bp;
+  }
+  function swapToSource(bp) {
+    const s = bp.dataset && bp.dataset.src;
+    if (s) { const m = bp.querySelector(".mw"); if (m) m.textContent = s; }
   }
 
   const canSpeak = typeof window !== "undefined" && "speechSynthesis" in window;
@@ -478,14 +495,32 @@
     (bp.querySelector(".bp-inner") || bp).appendChild(box);
 
     const token = runToken;
-    loadData().then(function () {
+    loadData().then(async function () {
       if (token !== runToken || !bp.classList.contains("expanded")) return;
-      const words = (MORPH[p.id] || []).filter(function (w) { return w !== currentWord; });
+      const cand = (MORPH[p.id] || [])
+        .filter(function (w) { return w !== currentWord && w.length <= 12; })
+        .sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
+        .slice(0, 40);
+      const valid = await validateWords(cand, 18); // only words with real entries
+      if (token !== runToken || !bp.classList.contains("expanded")) return;
       list.innerHTML = "";
-      if (!words.length) { list.appendChild(el("div", "related-empty", "No other words with this piece yet.")); return; }
+      if (!valid.length) { list.appendChild(el("div", "related-empty", "No common words share this piece.")); return; }
       list.appendChild(el("div", "lab", "More words"));
-      renderWordGroups(list, words, p.kind);
+      renderWordGroups(list, valid, p.kind);
     });
+  }
+  // Keep only candidate words that actually have a dictionary entry, so tapping
+  // one never lands on a blank page.
+  async function validateWords(words, cap) {
+    const byKey = {};
+    words.forEach(function (w) { const k = w.slice(0, 2).toLowerCase(); if (/^[a-z]{2}$/.test(k)) (byKey[k] = byKey[k] || []).push(w); });
+    const out = [];
+    const keys = Object.keys(byKey);
+    for (let i = 0; i < keys.length && out.length < cap; i++) {
+      const sh = await fetchShard(keys[i]);
+      if (sh) byKey[keys[i]].forEach(function (w) { if (sh[w] && sh[w].d && sh[w].d.length) out.push(w); });
+    }
+    return out.slice(0, cap);
   }
 
   // ---------- speech ----------

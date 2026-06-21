@@ -439,32 +439,33 @@ body {
 .bp[data-kind="suffix"] { --c: var(--suffix); }
 .bp[data-kind="word"] { --c: var(--ink); }
 .bp-main { display: inline-flex; align-items: flex-end; }
+.bp-col { display: flex; flex-direction: column; min-width: 0; }
 .bp.tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 /* stacked: each row animates its height (0fr → 1fr) so the card grows as pieces land */
 .bd.stacked .bp { width: 100%; display: grid; grid-template-rows: 0fr;
   transition: grid-template-rows .5s var(--ease), transform .6s var(--chase-in); }
 .bd.stacked .bp.open { grid-template-rows: 1fr; }
 .bp-inner { min-width: 0; overflow: hidden; }
-.bd.stacked .bp-inner { padding-top: 13px; }
+.bd.stacked .bp-inner { padding-top: 14px; }
 .bd.stacked .bp:first-child .bp-inner { padding-top: 0; }
-.bd.stacked .bp-main { align-items: flex-start; gap: 0; }
+.bd.stacked .bp-main { align-items: stretch; gap: 0; }
 .bp .mw { font-size: 22px; font-weight: 700; color: var(--c); line-height: 1.1; flex: 0 0 auto; }
-.bd.stacked .bp .mw { min-width: 84px; }
 /* vertical accent rule to the left of each stacked morpheme */
 .bp-vline { display: none; width: 2px; border-radius: 2px; background: var(--c); align-self: stretch;
   margin-right: 13px; transform: scaleY(0); transform-origin: top; transition: transform .35s var(--ease); }
 .bd.stacked .bp-vline { display: block; }
 .bp.open .bp-vline { transform: scaleY(1); }
-.bp-info { display: none; flex-direction: column; gap: 2px; overflow: hidden;
-  max-width: 0; opacity: 0; transform: translateX(-6px);
-  transition: max-width .45s var(--ease), opacity .35s var(--ease), transform .35s var(--ease); }
-.bd.stacked .bp-main .bp-info { display: flex; }
-.bp.open .bp-info { max-width: 560px; opacity: 1; transform: none; }
-.bp .part-kind { font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
-.bp .gl { font-size: 14px; color: var(--ink); }
-.bp .src { font-size: 13px; font-style: italic; color: var(--muted); line-height: 1.4; }
-.bp .src b { font-style: italic; font-weight: 700; color: var(--c); }
-.bp .src .alt { font-style: normal; color: var(--suffix); }
+/* the source word + meaning + "shows up as" stack under the headword fragment;
+   the row height is animated by the grid above, so this just fades in */
+.bp-info { display: none; flex-direction: column; gap: 1px; opacity: 0;
+  transition: opacity .35s var(--ease); }
+.bd.stacked .bp-col .bp-info { display: flex; }
+.bp.open .bp-info { opacity: 1; }
+.bp-origin { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+.bp .gl { font-size: 14.5px; color: var(--ink); margin-top: 4px; }
+.bp .appears { font-size: 12.5px; font-style: italic; color: var(--muted); margin-top: 3px; }
+.bp-words { width: 100%; margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--bd);
+  animation: cardOpen .4s var(--pop) both; }
 /* sweep out to the card's inner-left edge (clipped by .bd's bounds); pure clip
    means every piece disappears at the same edge, not after a fixed travel.
    --chase out / --chase-in back read at matching speed at the crossing. */
