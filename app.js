@@ -342,9 +342,17 @@
 
     const card = el("div", "card");
     card.appendChild(el("div", "cap", "Source word"));
-    card.appendChild(el("div", "src-note", r.online
-      ? "Looked up live from Wiktionary."
-      : "A " + r.lang + " word English vocabulary is built on."));
+    // language: name + era + one-line description (same info the morphemes show)
+    if (LANGS[r.lang]) {
+      const head = el("div", "bpw-origin-head");
+      head.appendChild(el("span", "bpw-origin-lang", r.lang));
+      head.appendChild(el("span", "bpw-origin-era", LANGS[r.lang].era));
+      card.appendChild(head);
+      if (LANGS[r.lang].desc) card.appendChild(el("div", "bpw-origin-desc", LANGS[r.lang].desc));
+    } else {
+      card.appendChild(el("div", "src-note", "A source word English vocabulary is built on."));
+    }
+    if (r.online) card.appendChild(el("div", "src-note", "Looked up live from Wiktionary."));
     cardsEl.appendChild(card);
     requestAnimationFrame(function () { card.classList.add("in"); });
 
