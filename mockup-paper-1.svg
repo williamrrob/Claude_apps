@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" font-family="Georgia,'Times New Roman',serif">
+
+  <defs><filter id="g1" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="t"/>
+    <feColorMatrix in="t" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+  </filter></defs>
+  <rect width="320" height="300" fill="#1b1712"/>
+  <rect width="320" height="300" filter="url(#g1)"/>
+<line x1="22" y1="58" x2="298" y2="58" stroke="#9c7a2b" stroke-width="1.4" opacity="0.7"/>
+  <line x1="22" y1="62" x2="298" y2="62" stroke="#9c7a2b" stroke-width="0.8" opacity="0.5"/>
+  <text x="22" y="98" font-size="30" font-weight="700" fill="#ece0cc">philo·soph·y</text>
+  <text x="22" y="120" font-size="12" font-style="italic" fill="#a99a83">/fɪˈlɒsəfi/ · fuh-LAH-suh-fee</text>
+  <rect x="20" y="140" width="280" height="86" rx="14" fill="rgba(245,238,222,0.06)" stroke="rgba(245,235,215,0.16)"/>
+  <text x="34" y="162" font-size="10" letter-spacing="1.2" fill="#a99a83">BREAKDOWN</text>
+  <text x="36" y="190" font-size="18" font-weight="700" fill="#7fae7a">philos</text>
+  <text x="36" y="210" font-size="11" fill="#a99a83">GREEK · ROOT · loving</text>
+  <text x="20" y="288" font-size="10" font-style="italic" fill="#a99a83">Version 1 · dark, fine grain</text>
+</svg>
