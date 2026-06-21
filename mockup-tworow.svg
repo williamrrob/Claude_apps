@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 280" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="380" height="280" fill="#1b1712"/>
+
+  <!-- headword for context -->
+  <text x="22" y="34" font-size="22" font-weight="700" fill="#ece0cc">scriptural <tspan font-size="13" font-style="italic" fill="#a99a83">adj.</tspan></text>
+
+  <!-- breakdown card -->
+  <rect x="16" y="50" width="348" height="212" rx="16" fill="#262017" stroke="rgba(245,235,215,0.14)"/>
+  <text x="34" y="76" font-size="11" letter-spacing="1.4" fill="#a99a83">BREAKDOWN</text>
+
+  <!-- morpheme 1: scribere (root / green) -->
+  <rect x="30" y="92" width="3" height="46" rx="1.5" fill="#7fae7a"/>
+  <!-- row 1: source word + meaning -->
+  <text x="46" y="112" font-size="22" font-weight="700" fill="#7fae7a">scribere<tspan dx="12" font-size="15" font-weight="400" fill="#ece0cc">to write</tspan></text>
+  <!-- row 2: origin·kind + shows up as -->
+  <text x="46" y="132" font-size="10.5" letter-spacing="0.8" fill="#a99a83">LATIN · ROOT<tspan dx="14" font-size="12.5" font-style="italic" letter-spacing="0" fill="#a99a83">shows up as: script, scrib</tspan></text>
+
+  <!-- morpheme 2: -alis (suffix / gold) -->
+  <rect x="30" y="160" width="3" height="46" rx="1.5" fill="#d2b15c"/>
+  <text x="46" y="180" font-size="22" font-weight="700" fill="#d2b15c">-alis<tspan dx="12" font-size="15" font-weight="400" fill="#ece0cc">relating to</tspan></text>
+  <text x="46" y="200" font-size="10.5" letter-spacing="0.8" fill="#a99a83">LATIN · SUFFIX<tspan dx="14" font-size="12.5" font-style="italic" letter-spacing="0" fill="#a99a83">shows up as: al</tspan></text>
+
+  <!-- divider note -->
+  <text x="46" y="240" font-size="11.5" font-style="italic" fill="#6f6452">Two rows per part instead of four — tighter, less vertical space.</text>
+</svg>
