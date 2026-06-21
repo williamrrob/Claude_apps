@@ -20,7 +20,8 @@
   --glass-blur: blur(20px) saturate(135%);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --pop: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --chase: cubic-bezier(0.5, 0, 0.9, 0.35); /* slow start, then darts off (catch-up) */
+  --chase: cubic-bezier(0.5, 0, 0.9, 0.35);     /* accelerate out */
+  --chase-in: cubic-bezier(0.1, 0.65, 0.5, 1);  /* mirror: decelerate in (same speed) */
   --pad: max(16px, env(safe-area-inset-left));
   --font: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
 }
@@ -67,7 +68,7 @@ body {
 /* ---------- top bar ---------- */
 .topbar {
   display: flex; align-items: center; justify-content: flex-end;
-  padding: calc(env(safe-area-inset-top) + 12px) calc(var(--pad) + 30px) 4px var(--pad);
+  padding: calc(env(safe-area-inset-top) + 12px) var(--pad) 4px var(--pad);
 }
 .brand { display: flex; align-items: center; gap: 9px; }
 .brand-mark {
@@ -86,7 +87,7 @@ body {
 /* ---------- scrolling content ---------- */
 .content {
   flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
-  padding: 6px calc(var(--pad) + 30px) 14px var(--pad);
+  padding: 6px var(--pad) 14px var(--pad);
   display: flex; flex-direction: column; align-items: stretch;
 }
 /* children must not shrink, or a flex column will collapse them when the
@@ -325,7 +326,7 @@ body {
   position: relative; z-index: 5;
   border-top: 1px solid var(--bd); background: var(--dock);
   -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%);
-  padding: 9px calc(var(--pad) + 30px) calc(12px + env(safe-area-inset-bottom)) var(--pad);
+  padding: 9px var(--pad) calc(12px + env(safe-area-inset-bottom)) var(--pad);
 }
 .recent { display: flex; align-items: center; gap: 7px; overflow-x: auto; margin-bottom: 9px; scrollbar-width: none; }
 .recent::-webkit-scrollbar { display: none; }
@@ -374,25 +375,40 @@ body {
 
 /* ===================== redesign (v21): dictionary look ===================== */
 
-/* sticky mini header — keeps the word visible while scrolling */
+/* mini header — a non-layout overlay (so toggling it can't feed back into the
+   layout and flicker); slides down when the word scrolls off */
 .minihead {
-  position: sticky; top: 0; z-index: 4;
+  position: absolute; top: 0; left: 0; right: 0; z-index: 6;
   display: flex; align-items: baseline; gap: 9px;
-  padding: 9px 0 10px; background: var(--bg); border-bottom: 1px solid var(--bd);
+  padding: calc(env(safe-area-inset-top) + 9px) var(--pad) 10px var(--pad);
+  background: var(--bg); border-bottom: 1px solid var(--bd);
+  transform: translateY(-105%); transition: transform .25s var(--ease);
 }
+.minihead.show { transform: translateY(0); }
 .minihead-word { font-size: 18px; font-weight: 700; }
 .minihead-pos { font-size: 12px; font-style: italic; color: var(--suffix); }
 
 /* headword entry */
-.entry { margin: 8px 0 4px; opacity: 0; transform: translateY(8px);
+.entry { position: relative; margin: 8px 0 4px; opacity: 0; transform: translateY(8px);
   transition: opacity .4s var(--ease), transform .4s var(--ease); }
 .entry.in { opacity: 1; transform: none; }
-.entry-rule-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.entry-rule-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; padding-right: 50px; }
 .entry-rule { flex: 1; border-top: 1px solid var(--suffix); border-bottom: 1px solid var(--suffix); height: 5px; }
 .entry-pos { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
 .entry-word { font-size: 38px; font-weight: 700; letter-spacing: .01em; line-height: 1.06; }
+.entry-word .entry-dot { color: var(--muted); opacity: .4; font-weight: 400; margin: 0 .1em; }
 .entry .pron { justify-content: flex-start; margin: 9px 0 0; }
 .entry-gloss { font-size: 15px; font-style: italic; color: var(--muted); margin-top: 7px; }
+/* half-circle letter badge by the word — tap to browse that letter */
+.entry-letter {
+  position: absolute; top: 2px; right: 0; z-index: 2;
+  width: 44px; height: 22px; padding-bottom: 1px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: #f3e7d2;
+  background: var(--prefix); border: none; border-radius: 0 0 24px 24px;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.entry-letter:active { transform: scale(0.94); }
 
 /* cards */
 .cards { display: flex; flex-direction: column; gap: 11px; margin-top: 14px; }
@@ -411,11 +427,9 @@ body {
 /* dots stay collapsed until the word "breathes" apart, then ride out with the pieces */
 .bd-dot { align-self: flex-end; color: var(--muted); font-weight: 700; line-height: 1;
   font-size: 0; opacity: 0; padding: 0;
-  transition: font-size .5s var(--pop), opacity .45s var(--ease), padding .5s var(--ease), transform .65s var(--chase); }
+  transition: font-size .5s var(--ease), opacity .45s var(--ease), padding .5s var(--ease); }
 .bd.split .bd-dot { font-size: 16px; opacity: 1; padding: 0 5px 6px; }
 .bd.stacked .bd-dot { display: none; }
-.bd-dot.exit { transform: translateX(-500px); opacity: 0;
-  transition: transform .65s var(--chase), opacity .5s var(--ease); }
 .bp { --c: var(--stem); display: inline-flex; flex-direction: column;
   opacity: 0; transform: scale(.9);
   transition: opacity .34s var(--ease), transform .42s var(--pop); }
@@ -428,7 +442,7 @@ body {
 .bp.tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 /* stacked: each row animates its height (0fr → 1fr) so the card grows as pieces land */
 .bd.stacked .bp { width: 100%; display: grid; grid-template-rows: 0fr;
-  transition: grid-template-rows .5s var(--ease), opacity .4s var(--ease), transform .5s var(--ease); }
+  transition: grid-template-rows .5s var(--ease), transform .6s var(--chase-in); }
 .bd.stacked .bp.open { grid-template-rows: 1fr; }
 .bp-inner { min-width: 0; overflow: hidden; }
 .bd.stacked .bp-inner { padding-top: 13px; }
@@ -446,17 +460,16 @@ body {
   transition: max-width .45s var(--ease), opacity .35s var(--ease), transform .35s var(--ease); }
 .bd.stacked .bp-main .bp-info { display: flex; }
 .bp.open .bp-info { max-width: 560px; opacity: 1; transform: none; }
+.bp .part-kind { font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
 .bp .gl { font-size: 14px; color: var(--ink); }
-.bp .src { font-size: 12.5px; font-style: italic; color: var(--muted); line-height: 1.4; }
-.bp .src b { font-style: normal; font-weight: 600; color: var(--ink); }
+.bp .src { font-size: 13px; font-style: italic; color: var(--muted); line-height: 1.4; }
+.bp .src b { font-style: italic; font-weight: 700; color: var(--c); }
 .bp .src .alt { font-style: normal; color: var(--suffix); }
-.bp.tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
-.bp-words { width: 100%; margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--bd);
-  animation: cardOpen .4s var(--pop) both; }
-/* sweep out toward the card's inner-left edge (clipped by .bd's own bounds);
-   the chase easing makes each piece dart off after the one before it */
-.bp.exit { transform: translateX(-500px); opacity: 0;
-  transition: transform .65s var(--chase), opacity .5s var(--ease); }
+/* sweep out to the card's inner-left edge (clipped by .bd's bounds); pure clip
+   means every piece disappears at the same edge, not after a fixed travel.
+   --chase out / --chase-in back read at matching speed at the crossing. */
+.bp.exit { transform: translateX(-260px);
+  transition: transform .6s var(--chase); }
 
 /* fleuron divider between sections */
 .divider { display: flex; align-items: center; gap: 14px; color: var(--suffix); margin: 2px 2px;
@@ -465,33 +478,15 @@ body {
 .divider .dln { flex: 1; height: 1px; background: color-mix(in srgb, var(--suffix) 45%, transparent); }
 .divider .orn { font-size: 17px; line-height: 1; }
 
-/* thumb index — a half-circle handle showing the current letter; press-hold to
-   reveal the A–Z rail and drag to a letter. */
-.thumb { position: absolute; top: 0; right: 0; bottom: 0; z-index: 3;
-  display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
-  pointer-events: none; }
-.thumb-handle {
-  pointer-events: auto; touch-action: none; cursor: pointer;
-  width: 26px; height: 52px; display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 700; color: #f3e7d2;
-  background: var(--prefix); border: 1px solid var(--prefix); border-right: none;
-  border-radius: 26px 0 0 26px; /* left half-circle */
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3); -webkit-tap-highlight-color: transparent;
-}
-.thumb.open .thumb-handle { display: none; }
-.thumb-rail { pointer-events: auto; touch-action: none; display: none;
-  flex-direction: column; align-items: flex-end; gap: 2px; padding: 6px 0; }
-.thumb.open .thumb-rail { display: flex; }
-.thumb-tab {
-  width: 28px; height: 21px; display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; color: var(--muted); cursor: pointer;
-  background: var(--field); border: 1px solid var(--bd); border-right: none;
-  border-radius: 21px 0 0 21px; /* half-circle */
-  transition: width .12s var(--ease), background .12s, color .12s;
+/* home-screen A–Z browse strip */
+.alpha { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 24px; }
+.alpha-tab {
+  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: var(--muted); cursor: pointer;
+  background: var(--field); border: 1px solid var(--bd); border-radius: 8px;
   -webkit-tap-highlight-color: transparent;
 }
-.thumb-tab.on { color: #f3e7d2; background: var(--prefix); border-color: var(--prefix); }
-.thumb-tab.drag-active { color: #f3e7d2; background: var(--prefix); border-color: var(--prefix); width: 44px; }
+.alpha-tab:active { transform: scale(0.9); }
 
 /* typeahead suggestions */
 .suggest { list-style: none; margin: 0 0 9px; padding: 6px; display: flex; flex-direction: column; gap: 2px;

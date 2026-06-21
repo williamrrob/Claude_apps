@@ -12,16 +12,16 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=27" />
+  <link rel="stylesheet" href="styles.css?v=29" />
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark">◐</button>
     </header>
+    <div class="minihead" id="miniHead"></div>
 
     <main class="content" id="content">
-      <div class="minihead" id="miniHead" hidden></div>
       <div class="hint" id="hint">
         <div class="splash-book" aria-hidden="true">
           <svg viewBox="0 0 128 104" xmlns="http://www.w3.org/2000/svg">
@@ -49,6 +49,7 @@
           <button class="example" data-word="philosophy">philosophy</button>
           <button class="example" data-word="microscope">microscope</button>
         </div>
+        <div class="alpha" id="alpha" aria-label="Browse by letter"></div>
       </div>
 
       <section class="entry" id="entry" aria-live="polite"></section>
@@ -58,8 +59,6 @@
     </main>
 
     <section class="browse" id="browse" hidden aria-label="Browse words"></section>
-
-    <nav class="thumb" id="thumb" aria-label="Jump to letter"></nav>
 
     <footer class="dock">
       <div class="recent" id="recent" hidden aria-label="Recent searches"></div>
@@ -93,8 +92,8 @@
     </footer>
   </div>
 
-  <script src="data.js?v=27"></script>
-  <script src="engine.js?v=27"></script>
-  <script src="app.js?v=27"></script>
+  <script src="data.js?v=29"></script>
+  <script src="engine.js?v=29"></script>
+  <script src="app.js?v=29"></script>
 </body>
 </html>

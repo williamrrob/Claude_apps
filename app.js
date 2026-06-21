@@ -17,7 +17,6 @@
   const ipaKeyEl = $("ipaKey");
   const cardsEl = $("cards");
   const browseEl = $("browse");
-  const thumbEl = $("thumb");
   const suggestEl = $("suggest");
   const recentEl = $("recent");
   const navHome = $("navHome");
@@ -31,7 +30,6 @@
   let runToken = 0;
   let currentWord = "";
   let pronEl = null;
-  let thumbHandle = null, thumbRail = null, thumbCloseRail = null;
 
   function delay(ms) { return new Promise(function (r) { setTimeout(r, ms * step); }); }
   function el(tag, cls, text) {
@@ -46,6 +44,9 @@
     });
   }
   function firstSense(m) { return m.split(",")[0].trim(); }
+  function kindLabel(k) {
+    return { prefix: "prefix", root: "root", suffix: "suffix", linker: "link", unknown: "stem", word: "word" }[k] || k;
+  }
 
   // ---------- theme ----------
   function storedTheme() { try { return localStorage.getItem("rootwork.theme"); } catch (e) { return null; } }
@@ -196,7 +197,6 @@
     hint.hidden = false;
     if (themeToggle) themeToggle.hidden = false; // toggle returns on the home screen
     if (contentEl) contentEl.scrollTop = 0;
-    highlightThumb("");
   }
 
   // ---------- stage ----------
@@ -205,7 +205,7 @@
     noteEl.hidden = true; noteEl.textContent = "";
     ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = "";
     cardsEl.innerHTML = "";
-    miniHead.hidden = true; miniHead.innerHTML = "";
+    miniHead.classList.remove("show"); miniHead.innerHTML = "";
     pronEl = null;
   }
   function showStatus(html, isError) {
@@ -222,7 +222,6 @@
     input.blur(); // dismiss the keyboard so the dock returns to the bottom
     hideSuggest();
     hideRecent();
-    if (thumbCloseRail) thumbCloseRail();
     if (themeToggle) themeToggle.hidden = true; // toggle lives on the home screen only
     if (!browseEl.hidden) closeBrowse();
     hint.hidden = true;
@@ -285,14 +284,32 @@
     return s;
   }
 
-  function buildEntry(word, rec) {
+  function buildEntry(word, rec, parts) {
     entryEl.className = "entry"; entryEl.innerHTML = "";
     const ruleRow = el("div", "entry-rule-row");
     ruleRow.appendChild(el("span", "entry-rule"));
     const pos = rec && rec.d && rec.d[0] && rec.d[0].p;
     if (pos) ruleRow.appendChild(el("span", "entry-pos", pos));
     entryEl.appendChild(ruleRow);
-    entryEl.appendChild(el("div", "entry-word", word));
+
+    // headword with subtle dots between its parts
+    const wordEl = el("div", "entry-word");
+    const surfaces = (parts && parts.length > 1 && !parts[0].whole) ? parts.map(function (p) { return p.surface; }) : [word];
+    surfaces.forEach(function (s, i) {
+      if (i) wordEl.appendChild(el("span", "entry-dot", "·"));
+      wordEl.appendChild(el("span", "ew-part", s));
+    });
+    entryEl.appendChild(wordEl);
+
+    // half-circle letter badge by the word — tap to browse that letter
+    const L = String(word).charAt(0).toUpperCase();
+    if (/[A-Z]/.test(L)) {
+      const badge = el("button", "entry-letter", L); badge.type = "button";
+      badge.setAttribute("aria-label", "Browse words starting with " + L);
+      badge.addEventListener("click", function () { browseLetter(L); });
+      entryEl.appendChild(badge);
+    }
+
     pronEl = el("div", "pron");
     entryEl.appendChild(pronEl);
     const gloss = rec && rec.d && rec.d[0] && rec.d[0].g;
@@ -319,8 +336,7 @@
     }
 
     // 1) headword
-    buildEntry(result.word, rec);
-    highlightThumb(result.word);
+    buildEntry(result.word, rec, parts);
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
     await delay(110); if (token !== runToken) return;
     fillPron(recP, result.word, token);
@@ -369,14 +385,12 @@
         const bp = bpEls[i];
         bp.classList.remove("exit");
         bp.style.transition = "none";
-        bp.style.transform = "translateX(-28px)";
-        bp.style.opacity = "0";
+        bp.style.transform = "translateX(-40px)";
         void bp.offsetWidth;
         bp.style.transition = "";
         bp.classList.add("open");
         bp.style.transform = "";
-        bp.style.opacity = "";
-        await delay(200);
+        await delay(180);
       }
     }
 
@@ -420,10 +434,14 @@
       const s = extractSource(cleanProse(rec.e));
       if (s) { origin = s.lang; source = s.word + (s.translit ? " (" + s.translit + ")" : ""); if (!g && s.gloss) g = s.gloss; }
     }
+    // say what this part is: prefix / root / suffix, and where it's from
+    const kind = p.whole ? null : kindLabel(p.kind);
+    const klabel = [kind, origin].filter(Boolean).join(" · ");
+    if (klabel) info.appendChild(el("span", "part-kind", klabel));
     if (g) info.appendChild(el("span", "gl", g));
-    if (origin && source) {
+    if (source) { // the actual Greek/Latin word it comes from
       const src = el("span", "src");
-      let h = escapeHtml(origin) + " <b>" + escapeHtml(source) + "</b>";
+      let h = "<b>" + escapeHtml(source) + "</b>";
       const alts = (p.forms || []).filter(function (f) { return f !== p.surface; });
       if (alts.length) h += ' <span class="alt">· also ' + escapeHtml(alts.join(", ")) + "</span>";
       src.innerHTML = h;
@@ -432,16 +450,6 @@
     main.appendChild(info);
     inner.appendChild(main);
     bp.appendChild(inner);
-
-    // Tap a morpheme to drop down other words built on it (no visible label).
-    if (p.id) {
-      bp.classList.add("tappable");
-      bp.setAttribute("role", "button");
-      bp.setAttribute("tabindex", "0");
-      const open = function () { togglePartWords(p, bp); };
-      bp.addEventListener("click", open);
-      bp.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
-    }
     return bp;
   }
 
@@ -583,9 +591,10 @@
   }
 
   function fillPron(recP, word, token) {
+    const pe = pronEl; // capture: a later search may null/replace pronEl
     recP.then(function (rec) {
-      if (token !== runToken || !pronEl) return;
-      pronEl.innerHTML = "";
+      if (token !== runToken || !pe) return;
+      pe.innerHTML = "";
       ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = "";
       const ipa = rec && rec.i, resp = rec && rec.rs;
       if (ipa) {
@@ -593,20 +602,20 @@
         ib.type = "button";
         ib.setAttribute("aria-label", "Show pronunciation key");
         ib.addEventListener("click", function () { toggleIpaKey(ipa); });
-        pronEl.appendChild(ib);
+        pe.appendChild(ib);
       }
       if (canSpeak) {
-        if (ipa) pronEl.appendChild(el("span", "pdot", "•"));
+        if (ipa) pe.appendChild(el("span", "pdot", "•"));
         const rb = el("button", "resp speakable", resp || word);
         rb.type = "button";
         rb.setAttribute("aria-label", "Pronounce " + word);
         rb.addEventListener("click", function () { speak(word); });
-        pronEl.appendChild(rb);
+        pe.appendChild(rb);
       } else if (resp) {
-        if (ipa) pronEl.appendChild(el("span", "pdot", "•"));
-        pronEl.appendChild(el("span", "resp", resp));
+        if (ipa) pe.appendChild(el("span", "pdot", "•"));
+        pe.appendChild(el("span", "resp", resp));
       }
-      if (pronEl.children.length) requestAnimationFrame(function () { pronEl.classList.add("in"); });
+      if (pe.children.length) requestAnimationFrame(function () { if (token === runToken) pe.classList.add("in"); });
     });
   }
 
@@ -818,56 +827,16 @@
     return d;
   }
 
-  // ---------- thumb index + browse-by-letter ----------
+  // ---------- browse-by-letter (A–Z strip on the home screen) ----------
   const ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  function buildThumb() {
-    thumbEl.innerHTML = "";
-    const handle = el("div", "thumb-handle", "A");
-    thumbEl.appendChild(handle);
-    const rail = el("div", "thumb-rail");
+  function buildAlpha() {
+    const alphaEl = document.getElementById("alpha");
+    if (!alphaEl) return;
+    alphaEl.innerHTML = "";
     ALPHA.split("").forEach(function (c) {
-      const t = el("div", "thumb-tab", c);
-      t.dataset.letter = c;
-      t.addEventListener("click", function () { closeRail(); browseLetter(c); });
-      rail.appendChild(t);
-    });
-    thumbEl.appendChild(rail);
-    thumbHandle = handle; thumbRail = rail;
-
-    function openRail() { thumbEl.classList.add("open"); }
-    function closeRail() { thumbEl.classList.remove("open"); clearDrag(); }
-    function clearDrag() { Array.prototype.forEach.call(rail.children, function (t) { t.classList.remove("drag-active"); }); }
-    function tabAt(x, y) { const e = document.elementFromPoint(x, y); return (e && e.dataset && e.dataset.letter) ? e : null; }
-    thumbCloseRail = closeRail;
-
-    let dragging = false, moved = false;
-    handle.addEventListener("pointerdown", function (e) {
-      e.preventDefault();
-      if (thumbEl.classList.contains("open")) { closeRail(); return; } // tap again to close
-      dragging = true; moved = false; openRail();
-      try { handle.setPointerCapture(e.pointerId); } catch (_) {}
-    });
-    if (typeof document.addEventListener === "function") {
-      document.addEventListener("pointermove", function (e) {
-        if (!dragging) return;
-        moved = true; clearDrag();
-        const t = tabAt(e.clientX, e.clientY); if (t) t.classList.add("drag-active");
-      });
-      document.addEventListener("pointerup", function (e) {
-        if (!dragging) return; dragging = false;
-        const t = tabAt(e.clientX, e.clientY);
-        if (t) { const L = t.dataset.letter; closeRail(); browseLetter(L); }
-        else if (moved) { closeRail(); } // released off the rail after dragging
-        // a plain tap (no drag) leaves the rail open so letters can be tapped
-      });
-    }
-  }
-  function highlightThumb(word) {
-    const L = String(word || "").charAt(0).toUpperCase();
-    const cur = /[A-Z]/.test(L) ? L : "A";
-    if (thumbHandle) thumbHandle.textContent = cur;
-    if (thumbRail) Array.prototype.forEach.call(thumbRail.children, function (t) {
-      if (t.dataset.letter === cur) t.classList.add("on"); else t.classList.remove("on");
+      const b = el("button", "alpha-tab", c); b.type = "button"; b.dataset.letter = c;
+      b.addEventListener("click", function () { browseLetter(c); });
+      alphaEl.appendChild(b);
     });
   }
 
@@ -890,7 +859,6 @@
   function closeBrowse() { browseEl.hidden = true; browseEl.innerHTML = ""; browseToken++; }
   async function browseLetter(letter) {
     const L = letter.toUpperCase(), lc = letter.toLowerCase();
-    highlightThumb(letter);
     const token = ++browseToken;
     const list = openBrowse(L);
     const cap = 600;
@@ -967,18 +935,21 @@
     btn.addEventListener("click", function () { run(btn.dataset.word); });
   });
 
-  buildThumb();
+  buildAlpha();
   loadData();
   renderHistory();
   updateNav();
 
-  // pin the word to the top: show the compact header once the full one scrolls off
-  miniHead.hidden = true;
-  if (typeof IntersectionObserver === "function") {
-    const io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { miniHead.hidden = en.isIntersecting || !currentWord; });
-    }, { root: contentEl, threshold: 0 });
-    io.observe(entryEl);
+  // Pin the word to the top: the compact header is a non-layout overlay toggled
+  // purely from scroll position (with hysteresis), so it can't feed back into
+  // the layout and flicker the way an IntersectionObserver did.
+  if (contentEl && typeof contentEl.addEventListener === "function") {
+    let miniShown = false;
+    contentEl.addEventListener("scroll", function () {
+      const y = contentEl.scrollTop || 0;
+      if (currentWord && !miniShown && y > 72) { miniHead.classList.add("show"); miniShown = true; }
+      else if (miniShown && (!currentWord || y < 40)) { miniHead.classList.remove("show"); miniShown = false; }
+    });
   }
 
   const m = location.hash.match(/word=([a-zA-Z]+)/);

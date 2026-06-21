@@ -45,7 +45,7 @@ function makeDom() {
   }
   const ids = {};
   ["searchForm", "wordInput", "hint", "entry", "miniHead", "note", "ipaKey", "cards",
-   "browse", "thumb", "suggest", "recent", "content", "themeToggle", "navHome", "navBack", "navFwd"]
+   "browse", "alpha", "suggest", "recent", "content", "themeToggle", "navHome", "navBack", "navFwd"]
     .forEach((id) => { ids[id] = el(id === "searchForm" ? "form" : "div"); });
   ids.searchForm.querySelector = () => el("button"); // .search-btn lookup
   const examples = ["biography", "incredible", "democracy"].map((w) => { const b = el("button"); b.dataset.word = w; return b; });
@@ -126,48 +126,37 @@ async function main() {
   await settle();
   assert.ok(!find(ids.entry, hasClass("error")), "no error banner after a search");
   const word = find(ids.entry, hasClass("entry-word"));
-  assert.ok(word && word.textContent === "biography", "headword renders the whole word");
+  assert.ok(word && deepText(word).replace(/[·\s]/g, "") === "biography", "headword renders the word (with subtle dots)");
   const morphs = findAll(ids.cards, hasClass("mw")).map((c) => c.textContent);
   assert.deepStrictEqual(morphs, ["bio", "graph", "y"], "breakdown lists morphemes bio · graph · y");
+  assert.ok(find(ids.cards, hasClass("part-kind")), "each part says what kind it is");
   assert.ok(find(ids.entry, hasClass("resp")), "pronunciation respelling is shown under the word");
   const meaning = find(ids.cards, hasClass("def-meaning"));
   assert.ok(meaning && /account of the series of events|life/i.test(deepText(meaning)),
     "meaning is filled from WordNet, got: " + (meaning && deepText(meaning)));
 
-  // --- Layer 4: tapping a morpheme drops down words sharing the piece. ---
-  const rootBP = find(ids.cards, (c) => c.dataset && c.dataset.kind === "root");
-  assert.ok(rootBP, "a root morpheme exists in the breakdown");
-  rootBP.dispatch("click");
+  // --- Layer 4: following another word runs a fresh analysis. ---
+  examples[1].dispatch("click"); // incredible
   await settle();
-  assert.ok(rootBP.classList.contains("expanded"), "tapped morpheme expands");
-  const chips = findAll(rootBP, hasClass("related-chip"));
-  assert.ok(chips.length > 0, "expanded morpheme lists words sharing the piece");
-  assert.ok(!chips.map((c) => c.textContent).includes("biography"), "current word excluded from related words");
-
-  // --- Layer 5: following a related word runs a fresh analysis. ---
-  const next = chips[0];
-  next.dispatch("click");
-  await settle();
-  assert.strictEqual(ids.wordInput.value, next.textContent, "clicking a related word loads it");
   const word2 = find(ids.entry, hasClass("entry-word"));
-  assert.ok(word2 && !find(ids.entry, hasClass("error")), "followed word re-renders cleanly");
+  assert.ok(word2 && deepText(word2).replace(/[·\s]/g, "") === "incredible" && !find(ids.entry, hasClass("error")),
+    "a second search re-renders cleanly, got: " + (word2 && deepText(word2)));
 
-  // --- Layer 6: searches are remembered. ---
+  // --- Layer 5: searches are remembered. ---
   const history = JSON.parse(sandbox.localStorage.getItem("rootwork.history"));
-  assert.ok(history.includes("biography") && history.includes(next.textContent),
+  assert.ok(history.includes("biography") && history.includes("incredible"),
     "history records both searches, got: " + JSON.stringify(history));
   assert.ok(findAll(ids.recent, hasClass("history-chip")).length >= 2, "recent row renders chips");
 
-  // --- Layer 7: the thumb index is built A–Z. ---
-  assert.ok(findAll(ids.thumb, hasClass("thumb-tab")).length === 26, "thumb index has a tab per letter A–Z");
+  // --- Layer 6: the A–Z browse strip is built. ---
+  assert.ok(findAll(ids.alpha, hasClass("alpha-tab")).length === 26, "home A–Z strip has a tab per letter");
 
   console.log("ok - dictionary exposed to window");
   console.log("ok - engine decomposes with a root; silent 'e' is its own morpheme");
-  console.log("ok - search renders headword, breakdown, pronunciation and meaning");
-  console.log("ok - tapping a morpheme expands it with related words");
-  console.log("ok - following a related word runs a fresh analysis");
+  console.log("ok - search renders headword, breakdown, part labels, pronunciation and meaning");
+  console.log("ok - a second search re-renders cleanly");
   console.log("ok - searches are saved to history");
-  console.log("ok - thumb index renders A–Z");
+  console.log("ok - A–Z browse strip renders");
   console.log("\nAll integration tests passed.");
 }
 
