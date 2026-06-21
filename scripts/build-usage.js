@@ -28,8 +28,9 @@ const OUT = path.join(ROOT, "usage");
 const Y0 = 1500, Y1 = 2019, NYEARS = Y1 - Y0 + 1; // 520 yearly points
 const BUCKET = 25, NB = Math.ceil(NYEARS / BUCKET); // 21 buckets
 const BATCH = 100;         // words per Ngrams request
-const CONCURRENCY = 5;     // parallel requests
-const PAUSE = 120;         // ms between launching requests (be polite)
+const CONCURRENCY = 3;     // parallel requests (higher gets rate-limited)
+const PAUSE = 250;         // ms between launching requests (be polite)
+const RETRIES = 5;         // retry non-200 / network errors with backoff
 const CORPUS = "en-2019";
 
 const args = process.argv.slice(2);
@@ -40,9 +41,10 @@ const SAMPLE = LIMIT > 0;
 
 function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
 
-function fetchJSON(url) {
+function fetchOnce(url) {
   return new Promise((resolve) => {
     const req = https.get(url, { headers: { "User-Agent": "Mozilla/5.0 rootwork-build" } }, (res) => {
+      // 200 -> data (possibly []); anything else -> null = retryable failure
       if (res.statusCode !== 200) { res.resume(); return resolve(null); }
       let body = "";
       res.on("data", (d) => (body += d));
@@ -51,6 +53,16 @@ function fetchJSON(url) {
     req.on("error", () => resolve(null));
     req.setTimeout(30000, () => { req.destroy(); resolve(null); });
   });
+}
+// Retry non-200 / network errors with exponential backoff. A 200 with an empty
+// or partial array is final (those words genuinely lack data) and not retried.
+async function fetchJSON(url) {
+  for (let attempt = 0; attempt <= RETRIES; attempt++) {
+    const r = await fetchOnce(url);
+    if (r !== null) return r;
+    if (attempt < RETRIES) await sleep(1500 * Math.pow(2, attempt));
+  }
+  return null;
 }
 
 // 520 yearly points -> 21 quarter-century buckets, normalised to the word's peak.

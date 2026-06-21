@@ -502,11 +502,16 @@ body {
 .usage-bars { display: flex; align-items: flex-end; gap: 2px; height: 96px;
   border-bottom: 1px solid var(--bd); }
 .usage-col { flex: 1; display: flex; align-items: flex-end; height: 100%;
-  -webkit-tap-highlight-color: transparent; }
+  cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.usage-col:active { transform: scaleY(0.97); transform-origin: bottom; }
 .usage-bar { width: 100%; min-height: 2px; border-radius: 2px 2px 0 0;
   background: var(--suffix); opacity: 0.85;
   animation: usageGrow .5s var(--pop) both; }
 .usage-col.peak .usage-bar { background: var(--prefix-ink); opacity: 1; }
+.usage-col.sel .usage-bar { outline: 2px solid var(--ink); outline-offset: 1px; opacity: 1; }
+.era-panel { margin-top: 11px; padding-top: 10px; border-top: 1px solid var(--bd);
+  animation: cardOpen .3s var(--pop) both; }
+.era-panel .lab { margin-bottom: 6px; }
 @keyframes usageGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 .usage-bar { transform-origin: bottom; }
 .usage-axis { display: flex; justify-content: space-between; margin-top: 5px; }
@@ -521,14 +526,20 @@ body {
 .divider .orn { font-size: 17px; line-height: 1; }
 
 /* home-screen A–Z browse strip */
-.alpha { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 24px; }
-.alpha-tab {
-  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 700; color: var(--muted); cursor: pointer;
-  background: var(--field); border: 1px solid var(--bd); border-radius: 8px;
-  -webkit-tap-highlight-color: transparent;
+/* A–Z as dictionary thumb-tabs down the right edge (home screen only) */
+.alpha {
+  position: fixed; top: 50%; right: 0; transform: translateY(-50%);
+  z-index: 5; display: flex; flex-direction: column; gap: 2px; margin: 0;
 }
-.alpha-tab:active { transform: scale(0.9); }
+.alpha-tab {
+  width: 23px; height: 18px; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--muted); cursor: pointer;
+  background: var(--field); border: 1px solid var(--bd); border-right: none;
+  border-radius: 7px 0 0 7px; -webkit-tap-highlight-color: transparent;
+}
+.alpha-tab:active { background: var(--prefix); color: #f3e7d2; }
+/* keep the centered splash clear of the rail */
+.hint { padding-right: 30px; }
 
 /* typeahead suggestions */
 .suggest { list-style: none; margin: 0 0 9px; padding: 6px; display: flex; flex-direction: column; gap: 2px;

@@ -559,22 +559,67 @@
       let peak = 0;
       for (let i = 1; i < series.length; i++) if (series[i] > series[peak]) peak = i;
       const bars = el("div", "usage-bars");
+      const eraPanel = el("div", "era-panel"); eraPanel.hidden = true;
+      let openEra = -1;
       series.forEach(function (v, i) {
         const col = el("div", "usage-col" + (i === peak ? " peak" : ""));
+        col.setAttribute("role", "button"); col.setAttribute("tabindex", "0");
         const bar = el("div", "usage-bar");
         bar.style.height = Math.max(2, v) + "%";
         const y = 1500 + i * 25;
-        col.setAttribute("title", y + "–" + (y + 24));
+        col.setAttribute("title", "Words that peaked in " + y + "–" + (y + 24));
         col.appendChild(bar);
+        const openIt = function () { showEra(i, col); };
+        col.addEventListener("click", openIt);
+        col.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openIt(); } });
         bars.appendChild(col);
       });
       holder.appendChild(bars);
       const axis = el("div", "usage-axis");
       [1500, 1600, 1700, 1800, 1900, 2000].forEach(function (y) { axis.appendChild(el("span", "usage-tick", String(y))); });
       holder.appendChild(axis);
-      holder.appendChild(el("div", "usage-note", "Most used in the " + (1500 + peak * 25) + "s, by printed-book frequency."));
+      holder.appendChild(el("div", "usage-note", "Most used in the " + (1500 + peak * 25) + "s, by printed-book frequency. Tap a bar for that era's words."));
+      holder.appendChild(eraPanel);
+
+      function markSel(i) {
+        const cols = bars.children;
+        for (let k = 0; k < cols.length; k++) cols[k].classList.toggle("sel", k === i);
+      }
+      function showEra(i, col) {
+        if (openEra === i) { openEra = -1; eraPanel.hidden = true; markSel(-1); return; }
+        openEra = i; markSel(i);
+        const y = 1500 + i * 25;
+        eraPanel.hidden = false; eraPanel.innerHTML = "";
+        eraPanel.appendChild(el("div", "lab", "Words that peaked in " + y + "–" + (y + 24)));
+        const listBox = el("div", "related-list");
+        listBox.appendChild(el("div", "related-empty", "loading…"));
+        eraPanel.appendChild(listBox);
+        const tk = runToken;
+        loadEras().then(function (eras) {
+          if (tk !== runToken || openEra !== i) return;
+          listBox.innerHTML = "";
+          const words = (eras && eras[i]) ? eras[i].filter(function (w) { return w !== currentWord; }).slice(0, 60) : [];
+          if (!words.length) { listBox.appendChild(el("div", "related-empty", "No standout words for this era.")); return; }
+          words.forEach(function (w, j) {
+            const c = el("button", "related-chip", w); c.dataset.kind = "root";
+            c.style.setProperty("--i", j);
+            c.addEventListener("click", function () { run(w); });
+            listBox.appendChild(c);
+          });
+        });
+      }
     });
     return card;
+  }
+  let ERAS = null, erasPromise = null;
+  function loadEras() {
+    if (erasPromise) return erasPromise;
+    if (typeof fetch !== "function") { ERAS = {}; return (erasPromise = Promise.resolve(ERAS)); }
+    erasPromise = fetch("eras.json?v=" + DATA_V)
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .catch(function () { return {}; })
+      .then(function (m) { ERAS = m || {}; return ERAS; });
+    return erasPromise;
   }
 
   function defaultGloss(p) {
