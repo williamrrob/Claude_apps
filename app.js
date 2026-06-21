@@ -416,7 +416,7 @@
   }
 
   function defaultGloss(p) {
-    if (p.silentE) return "silent “magic” e — a spelling marker, not a sound";
+    if (p.silentE) return "silent final “e” — a spelling marker that lengthens the preceding vowel; not itself pronounced";
     if (p.kind === "linker") return "connecting vowel — joins the roots";
     return null;
   }
@@ -492,7 +492,8 @@
     list.appendChild(el("div", "related-empty", "finding words…"));
     box.appendChild(list);
     bp.classList.add("expanded");
-    (bp.querySelector(".bp-inner") || bp).appendChild(box);
+    // into .bp-col so it lines up under the morpheme text, not the accent rule
+    (bp.querySelector(".bp-col") || bp.querySelector(".bp-inner") || bp).appendChild(box);
 
     const token = runToken;
     loadData().then(async function () {
@@ -688,10 +689,16 @@
   function buildThesaurusCard(recP, token) {
     const card = el("div", "card");
     card.appendChild(el("div", "cap", "Thesaurus"));
-    recP.then(function (rec) {
+    recP.then(async function (rec) {
       if (token !== runToken) return;
-      const s = rec && rec.s, a = rec && rec.a, r = rec && rec.r;
-      if (!(s && s.length) && !(a && a.length) && !(r && r.length)) { card.remove(); return; }
+      // Only offer words we can actually open — Wiktionary's related/synonym
+      // lists include forms we have no entry for (e.g. "prescriptionless"), and
+      // tapping those dead-ends. Keep just the ones with a real entry.
+      const s = await validateWords(rec && rec.s || [], 12);
+      const a = await validateWords(rec && rec.a || [], 8);
+      const r = await validateWords(rec && rec.r || [], 12);
+      if (token !== runToken) return;
+      if (!s.length && !a.length && !r.length) { card.remove(); return; }
       function group(label, words, cls) {
         if (!words || !words.length) return;
         const row = el("div", "thes-group");
@@ -787,9 +794,24 @@
     const re = new RegExp("\\b(" + SRC_LANGS + ")\\s+(\\S+?)\\s*\\(([^)]+)\\)");
     const m = e.match(re);
     if (!m) return null;
-    const inner = m[3].split(",");
-    const translit = inner[0].trim();
-    const gloss = inner.slice(1).join(",").replace(/[“”"]/g, "").trim();
+    // Inside the parens, a transliteration (if any) is the unquoted text before
+    // the first quote; the quoted text is the gloss. So βίος (bíos, “life”) →
+    // translit "bíos", gloss "life"; but nacelle (“rowing boat, …”) → no
+    // translit, gloss only (don't mistake the quoted gloss for a transliteration).
+    const inner = m[3];
+    const qi = inner.search(/[“"]/);
+    let translit = "", gloss = "";
+    if (qi >= 0) {
+      translit = inner.slice(0, qi).replace(/[,;]\s*$/, "").trim();
+      gloss = inner.slice(qi).replace(/[“”"]/g, "").trim();
+      // the outer regex stops at the first ")", which can truncate a nested
+      // parenthetical — drop any dangling, unbalanced "(" tail it left behind.
+      if ((gloss.match(/\(/g) || []).length > (gloss.match(/\)/g) || []).length) {
+        gloss = gloss.replace(/\s*\([^()]*$/, "").trim();
+      }
+    } else {
+      translit = inner.split(",")[0].trim();
+    }
     return { lang: m[1], word: m[2], translit: translit, gloss: gloss };
   }
 

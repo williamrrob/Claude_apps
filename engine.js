@@ -47,6 +47,18 @@
     };
   }
 
+  // The single-letter "a" prefix is ambiguous. Latin ad- assimilates to "a-"
+  // before s + consonant (ad+scribere → a·scribe, a·spire, a·scend), whereas the
+  // Greek privative a- ("not") appears before s + vowel (a·symmetric, a·sexual)
+  // or other letters (a·typical, a·moral). Pick the reading the spelling implies.
+  const VOWELS = "aeiouy";
+  function aFormFits(entry, word, pos) {
+    const sCluster = word[pos + 1] === "s" && word[pos + 2] && VOWELS.indexOf(word[pos + 2]) < 0;
+    if (entry.id === "ad") return sCluster;
+    if (entry.id === "a-priv") return !sCluster;
+    return true;
+  }
+
   function matchesAt(index, word, pos) {
     const out = [];
     for (let i = 0; i < index.length; i++) {
@@ -78,6 +90,7 @@
         // (e.g. "e", "a") from being matched inside a non-classical stem.
         matchesAt(PREFIX_INDEX, word, pos).forEach(function (m) {
           if (word.length - (pos + m.form.length) < 2) return; // leave room for a stem
+          if (m.form === "a" && !aFormFits(m.entry, word, pos)) return; // a- vs ad-
           const rest = rec(pos + m.form.length, 0);
           consider(part("prefix", m.form, m.entry, pos), rest, m.form.length * W_KNOWN + AFFIX_BONUS);
         });

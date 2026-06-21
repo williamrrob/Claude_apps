@@ -9,7 +9,7 @@ const MORPHEMES = {
   prefixes: [
     { id: "a-priv", forms: ["an", "a"], origin: "Greek", source: "a-/an-", meaning: "not, without" },
     { id: "ab", forms: ["abs", "ab"], origin: "Latin", source: "ab", meaning: "away from" },
-    { id: "ad", forms: ["ac", "af", "ag", "al", "ap", "as", "at", "ad"], origin: "Latin", source: "ad", meaning: "to, toward" },
+    { id: "ad", forms: ["ac", "af", "ag", "al", "ap", "as", "at", "ad", "a"], origin: "Latin", source: "ad", meaning: "to, toward" },
     { id: "ambi", forms: ["ambi", "amphi"], origin: "Latin", source: "ambi", meaning: "both, around" },
     { id: "ante", forms: ["ante", "anti"], origin: "Latin", source: "ante", meaning: "before" },
     { id: "anti", forms: ["anti", "ant"], origin: "Greek", source: "anti", meaning: "against, opposite" },
