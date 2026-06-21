@@ -511,7 +511,8 @@ body {
 .usage-col.sel .usage-bar { outline: 2px solid var(--ink); outline-offset: 1px; opacity: 1; }
 .era-panel { margin-top: 11px; padding-top: 10px; border-top: 1px solid var(--bd);
   animation: cardOpen .3s var(--pop) both; }
-.era-panel .lab { margin-bottom: 6px; }
+.era-panel .lab { margin-bottom: 3px; }
+.era-sub { font-size: 11.5px; font-style: italic; color: var(--muted); margin-bottom: 8px; }
 @keyframes usageGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 .usage-bar { transform-origin: bottom; }
 .usage-axis { display: flex; justify-content: space-between; margin-top: 5px; }

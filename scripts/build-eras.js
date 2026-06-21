@@ -14,23 +14,29 @@ const ROOT = path.join(__dirname, "..");
 const USAGE = path.join(ROOT, "usage");
 const NB = 21, TOP = 100;
 
+// A small blocklist so a discovery feature never surfaces crude terms.
+const BLOCK = new Set(("clit dildo dominatrix bollocks cunt fuck shit dick cock pussy " +
+  "wank twat slut whore boob tit arse").split(" "));
+
 const buckets = Array.from({ length: NB }, () => []);
 
 for (const f of fs.readdirSync(USAGE)) {
   if (!f.endsWith(".json")) continue;
-  const sh = JSON.parse(fs.readFileSync(path.join(USAGE, f), "utf8"));
+  let sh;
+  try { sh = JSON.parse(fs.readFileSync(path.join(USAGE, f), "utf8")); } catch { continue; }
   for (const w of Object.keys(sh)) {
-    if (!/^[a-z]{3,14}$/.test(w)) continue;       // skip junk / very long
+    if (!/^[a-z]{3,14}$/.test(w) || BLOCK.has(w)) continue; // skip junk / crude / very long
     const a = sh[w];
     if (!a || a.length !== NB) continue;
-    let peak = 0;
-    for (let i = 1; i < NB; i++) if (a[i] > a[peak]) peak = i;
-    if (a[peak] < 60) continue;                    // needs a real crest
-    // sharpness = peak minus the strongest *other* bucket (0–100)
-    let other = 0;
-    for (let i = 0; i < NB; i++) if (i !== peak && a[i] > other) other = a[i];
-    const sharp = a[peak] - other;
-    buckets[peak].push({ w: w, s: sharp });
+    // Breadth filter: a word used in only one bucket is almost always rare/OCR
+    // noise. Requiring usage across many eras keeps recognizable words and drops
+    // the junk (so we surface "crinoline" / "telegraphy", not "chafeweed").
+    let nz = 0, sum = 0, peak = 0;
+    for (let i = 0; i < NB; i++) { if (a[i] > 0) nz++; sum += a[i]; if (a[i] > a[peak]) peak = i; }
+    if (nz < 10) continue;
+    // distinctiveness = how far the peak rises above the word's own average
+    const distinct = a[peak] - sum / NB;
+    buckets[peak].push({ w: w, s: distinct });
   }
 }
 

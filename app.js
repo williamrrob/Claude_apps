@@ -591,6 +591,7 @@
         const y = 1500 + i * 25;
         eraPanel.hidden = false; eraPanel.innerHTML = "";
         eraPanel.appendChild(el("div", "lab", "Words that peaked in " + y + "–" + (y + 24)));
+        eraPanel.appendChild(el("div", "era-sub", "Words whose own usage crested in this quarter-century — not the era's most common words."));
         const listBox = el("div", "related-list");
         listBox.appendChild(el("div", "related-empty", "loading…"));
         eraPanel.appendChild(listBox);
