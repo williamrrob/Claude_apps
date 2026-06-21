@@ -14,10 +14,6 @@ const ROOT = path.join(__dirname, "..");
 const USAGE = path.join(ROOT, "usage");
 const NB = 21, TOP = 100;
 
-// A small blocklist so a discovery feature never surfaces crude terms.
-const BLOCK = new Set(("clit dildo dominatrix bollocks cunt fuck shit dick cock pussy " +
-  "wank twat slut whore boob tit arse").split(" "));
-
 const buckets = Array.from({ length: NB }, () => []);
 
 for (const f of fs.readdirSync(USAGE)) {
@@ -25,7 +21,7 @@ for (const f of fs.readdirSync(USAGE)) {
   let sh;
   try { sh = JSON.parse(fs.readFileSync(path.join(USAGE, f), "utf8")); } catch { continue; }
   for (const w of Object.keys(sh)) {
-    if (!/^[a-z]{3,14}$/.test(w) || BLOCK.has(w)) continue; // skip junk / crude / very long
+    if (!/^[a-z]{3,14}$/.test(w)) continue;       // skip non-words / very long
     const a = sh[w];
     if (!a || a.length !== NB) continue;
     // Breadth filter: a word used in only one bucket is almost always rare/OCR
