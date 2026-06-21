@@ -441,6 +441,13 @@ body {
 
 /* cards */
 .cards { display: flex; flex-direction: column; gap: 11px; margin-top: 14px; }
+/* Wikipedia image card */
+.img-card { padding: 0; overflow: hidden; }
+.wiki-img { display: block; width: 100%; height: auto; max-height: 280px; object-fit: cover; }
+.img-cap { padding: 10px 14px 12px; }
+.img-title { font-size: 15px; font-weight: 700; color: var(--ink); text-decoration: none; }
+.img-title:active { color: var(--prefix-ink); }
+.img-desc { display: block; font-size: 13px; font-style: italic; color: var(--muted); margin-top: 2px; }
 .card { border: 1px solid var(--bd); border-radius: 16px; padding: 14px 16px;
   background: var(--glass-sheen), var(--panel);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);

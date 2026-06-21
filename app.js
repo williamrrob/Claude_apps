@@ -151,6 +151,69 @@
     return Promise.race([req, timeout]).then(function (res) { onlineCache[w] = res; return res; });
   }
 
+  // ---------- Wikipedia: a lead image, and proper-noun detection ----------
+  // The Wikidata short description tells common nouns ("Genus of flowering
+  // plants") from proper nouns ("Capital of France", "German composer"), which we
+  // can't recover from our lower-cased data. CORS-enabled; cached; times out.
+  const wikiCache = {};
+  function isProperDesc(desc) {
+    if (!desc) return false;
+    if (/^(genus|species|type|kind|family|group|class|order|unit|si unit|style|movement|colou?r|number|letter|chemical|musical instrument|dance|language|disease|condition|branch|field|study|form of|part of|process)\b/i.test(desc)) return false;
+    return /\b(\d{3,4}|born|died|politician|philosopher|mathematician|physicist|chemist|scientist|writer|author|poet|dramatist|playwright|novelist|composer|painter|sculptor|artist|architect|king|queen|emperor|empress|prince|princess|saint|pope|actor|actress|singer|musician|general|president|monarch|leader|deity|god|goddess|hero)\b/i.test(desc)
+      || /^(capital|city|town|municipality|village|commune|river|mountain|lake|island|countr|state|province|region|county|district|nation|kingdom|empire|sea|ocean|continent|settlement|locality|peninsula)\b/i.test(desc);
+  }
+  function fetchWiki(word) {
+    const w = String(word || "").trim();
+    if (typeof fetch !== "function" || !/^[a-z][a-z .'-]{1,40}$/i.test(w)) return Promise.resolve(null);
+    if (w in wikiCache) return Promise.resolve(wikiCache[w]);
+    const url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(w);
+    const timeout = new Promise(function (r) { setTimeout(function () { r(null); }, 4500); });
+    const req = fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j || !j.type) return null;
+      return {
+        title: j.title || w, type: j.type, desc: j.description || "",
+        thumb: j.thumbnail && j.thumbnail.source, orig: j.originalimage && j.originalimage.source,
+        url: j.content_urls && j.content_urls.desktop && j.content_urls.desktop.page,
+        proper: isProperDesc(j.description || ""),
+      };
+    }).catch(function () { return null; });
+    return Promise.race([req, timeout]).then(function (res) { wikiCache[w] = res; return res; });
+  }
+  // Add the image (and capitalize a proper-noun headword) once Wikipedia answers.
+  function addWikiInfo(word, token) {
+    fetchWiki(word).then(function (wp) {
+      if (token !== runToken || !wp) return;
+      if (wp.proper) capitalizeHeadword(word);
+      if (wp.type === "standard" && wp.thumb) {
+        const card = buildImageCard(wp);
+        cardsEl.insertBefore(card, cardsEl.firstChild); // up top, prominent
+        requestAnimationFrame(function () { card.classList.add("in"); });
+      }
+    });
+  }
+  function capitalizeHeadword(word) {
+    const cap = word.charAt(0).toUpperCase() + word.slice(1);
+    if (cap === word) return;
+    const parts = entryEl.querySelectorAll(".entry-word .ew-part");
+    if (parts.length === 1) parts[0].textContent = cap; // proper nouns aren't split
+    const mh = miniHead.querySelectorAll(".mh-part");
+    if (mh.length === 1) mh[0].textContent = cap;
+  }
+  function buildImageCard(wp) {
+    const card = el("div", "card img-card");
+    const img = document.createElement("img");
+    img.className = "wiki-img"; img.src = wp.thumb; img.alt = wp.title;
+    img.setAttribute("loading", "lazy");
+    card.appendChild(img);
+    const cap = el("div", "img-cap");
+    const a = document.createElement("a"); a.className = "img-title"; a.textContent = wp.title;
+    if (wp.url) { a.setAttribute("href", wp.url); a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); }
+    cap.appendChild(a);
+    if (wp.desc) cap.appendChild(el("span", "img-desc", wp.desc));
+    card.appendChild(cap);
+    return card;
+  }
+
   // ---------- hybrid breakdown ----------
   let MFORMS = null;
   function morphFind(s) {
@@ -473,6 +536,7 @@
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
     await delay(110); if (token !== runToken) return;
     fillPron(recP, result.word, token);
+    addWikiInfo(result.word, token); // lead image + proper-noun capitalization
 
     // 2) Breakdown — pop in split, then stack into an acrostic, then unfold info.
     await delay(120); if (token !== runToken) return;
