@@ -267,7 +267,7 @@ const MORPHEMES = {
     { id: "sis", forms: ["osis", "sis"], origin: "Greek", source: "-sis", meaning: "process, condition, action" },
     { id: "tude", forms: ["itude", "tude"], origin: "Latin", source: "-tudo", meaning: "state or quality of" },
     { id: "ty", forms: ["ty"], origin: "Latin", source: "-tas", meaning: "state or quality of" },
-    { id: "ure", forms: ["ture", "ure"], origin: "Latin", source: "-ura", meaning: "act, process, or result of" },
+    { id: "ure", forms: ["ture", "ure", "tur", "ur"], origin: "Latin", source: "-ura", meaning: "act, process, or result of" },
     { id: "y", forms: ["y"], origin: "Old English", source: "-ig", meaning: "characterized by, full of" }
   ]
 };
