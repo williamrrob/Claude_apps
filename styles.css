@@ -316,8 +316,21 @@ body {
 .tl .node:first-child::before { display: none; }
 .tl .dot { width: 14px; height: 14px; border-radius: 50%; margin: 0 auto 7px; position: relative; z-index: 1;
   border: 2px solid var(--panel); box-shadow: 0 0 0 1px var(--bd); }
+.tl .node { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.tl .node:active { transform: scale(0.96); }
 .tl .lang { font-size: 11.5px; font-weight: 600; line-height: 1.2; }
 .tl .era { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.tl .node.sel .lang { color: var(--prefix-ink); }
+.tl .node.sel .dot { box-shadow: 0 0 0 1px var(--bd), 0 0 0 4px color-mix(in srgb, var(--prefix) 30%, transparent); }
+/* tap-to-expand detail under the timeline */
+.tl-detail { margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--bd); }
+.tl-hint { font-size: 12.5px; font-style: italic; color: var(--muted); }
+.tl-d-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.tl-d-dot { width: 10px; height: 10px; border-radius: 50%; flex: 0 0 auto; }
+.tl-d-name { font-size: 15.5px; font-weight: 700; }
+.tl-d-era { font-size: 12px; color: var(--muted); }
+.tl-d-desc { font-size: 14px; line-height: 1.5; color: var(--ink); margin-top: 6px;
+  animation: cardOpen .3s var(--pop) both; }
 .sub { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--suffix); margin-top: 13px; }
 .first-rec { font-size: 14.5px; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--bd); }
 .first-rec .sub { color: var(--muted); margin: 0 6px 0 0; }

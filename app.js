@@ -417,9 +417,14 @@
     entryEl.appendChild(pronEl);
     const gloss = rec && rec.d && rec.d[0] && rec.d[0].g;
     if (gloss) entryEl.appendChild(el("div", "entry-gloss", shortGloss(gloss)));
-    // compact pinned header (revealed on scroll)
+    // compact pinned header (revealed on scroll) — same subtle dots between parts
     miniHead.innerHTML = "";
-    miniHead.appendChild(el("span", "minihead-word", word));
+    const mw = el("span", "minihead-word");
+    surfaces.forEach(function (s, i) {
+      if (i) mw.appendChild(el("span", "entry-dot", "·"));
+      mw.appendChild(el("span", "mh-part", s));
+    });
+    miniHead.appendChild(mw);
     if (pos) miniHead.appendChild(el("span", "minihead-pos", pos));
   }
 
@@ -826,43 +831,44 @@
     return /(Proto-|-der\.)/.test(e) && !/\bfrom\b/i.test(e);
   }
 
-  // Languages we can place on a timeline, with a rough chronological rank and the
-  // period the language was in use (modern ones show when they began). BC/AD.
+  // Languages we can place on a timeline, with a rough chronological rank, the
+  // period the language was in use (modern ones show when they began; BC/AD), and
+  // a one-line description shown when you tap that stage.
   const LANGS = {
-    "Proto-Indo-European": { rank: -4500, short: "PIE", era: "c. 4500 BC" },
-    "Proto-Hellenic": { rank: -2000, era: "c. 2000 BC" },
-    "Proto-Italic": { rank: -1500, era: "c. 1500 BC" },
-    "Proto-Germanic": { rank: -500, era: "c. 500 BC" },
-    "Proto-West Germanic": { rank: -100, era: "c. 1 AD" },
-    "Ancient Greek": { rank: -800, era: "c. 800 BC–300 AD" },
-    "Hellenistic Greek": { rank: -300, era: "c. 300 BC" },
-    "Koine Greek": { rank: -200, era: "c. 300 BC–300 AD" },
-    "Byzantine Greek": { rank: 600, era: "4th–15th c." },
-    "Greek": { rank: 1700, era: "from c. 1500" },
-    "Latin": { rank: -75, era: "c. 75 BC–200 AD" },
-    "Classical Latin": { rank: -75, era: "c. 75 BC–200 AD" },
-    "Vulgar Latin": { rank: 200, era: "1st–7th c." },
-    "Late Latin": { rank: 300, era: "3rd–6th c." },
-    "Ecclesiastical Latin": { rank: 400, era: "4th c.+" },
-    "Medieval Latin": { rank: 900, era: "9th–15th c." },
-    "New Latin": { rank: 1550, era: "from c. 1500" },
-    "Old English": { rank: 700, era: "5th–11th c." },
-    "Middle English": { rank: 1200, era: "1150–1500" },
-    "Old French": { rank: 1000, era: "9th–14th c." },
-    "Anglo-Norman": { rank: 1100, era: "11th–14th c." },
-    "Middle French": { rank: 1450, era: "14th–17th c." },
-    "French": { rank: 1700, era: "from c. 1600" },
-    "Old Norse": { rank: 800, era: "8th–14th c." },
-    "Italian": { rank: 1400, era: "from c. 1400" },
-    "Spanish": { rank: 1400, era: "from c. 1400" },
-    "Portuguese": { rank: 1400, era: "from c. 1400" },
-    "Dutch": { rank: 1500, era: "from c. 1500" },
-    "German": { rank: 1500, era: "from c. 1500" },
-    "Arabic": { rank: 600, era: "7th c.+" },
-    "Sanskrit": { rank: -1500, era: "c. 1500 BC" },
-    "Hebrew": { rank: -900, era: "c. 900 BC" },
-    "Persian": { rank: 800, era: "medieval+" },
-    "English": { rank: 1500, era: "from c. 1500" },
+    "Proto-Indo-European": { rank: -4500, short: "PIE", era: "c. 4500 BC", desc: "The reconstructed common ancestor of most European and South-Asian languages, spoken by a preliterate steppe people. Unattested — known only by comparing its descendants." },
+    "Proto-Hellenic": { rank: -2000, era: "c. 2000 BC", desc: "The reconstructed ancestor of the Greek dialects, before the earliest written Greek." },
+    "Proto-Italic": { rank: -1500, era: "c. 1500 BC", desc: "The reconstructed ancestor of Latin and the other early Italic languages of the Italian peninsula." },
+    "Proto-Germanic": { rank: -500, era: "c. 500 BC", desc: "The reconstructed ancestor of the Germanic languages — English, German, Dutch and the Scandinavian tongues." },
+    "Proto-West Germanic": { rank: -100, era: "c. 1 AD", desc: "The branch of Germanic that gave rise to English, Dutch and German." },
+    "Ancient Greek": { rank: -800, era: "c. 800 BC–300 AD", desc: "The language of classical Greece — Homer, the philosophers, the city-states — and a deep source of scientific and technical vocabulary." },
+    "Hellenistic Greek": { rank: -300, era: "c. 300 BC", desc: "Greek of the Hellenistic age, spread across the Mediterranean and Near East by Alexander's conquests." },
+    "Koine Greek": { rank: -200, era: "c. 300 BC–300 AD", desc: "The 'common' Greek of the Hellenistic and Roman world — the language of the New Testament." },
+    "Byzantine Greek": { rank: 600, era: "4th–15th c.", desc: "The medieval Greek of the Eastern Roman (Byzantine) Empire." },
+    "Greek": { rank: 1700, era: "from c. 1500", desc: "Modern Greek." },
+    "Latin": { rank: -75, era: "c. 75 BC–200 AD", desc: "The language of ancient Rome and its empire, and for centuries afterward the language of European scholarship, law and the Church." },
+    "Classical Latin": { rank: -75, era: "c. 75 BC–200 AD", desc: "The polished literary Latin of the late Republic and early Empire — Cicero, Virgil, Caesar." },
+    "Vulgar Latin": { rank: 200, era: "1st–7th c.", desc: "The everyday spoken Latin of ordinary Romans, from which the Romance languages descend." },
+    "Late Latin": { rank: 300, era: "3rd–6th c.", desc: "The Latin of late antiquity, as the written and spoken forms drifted apart." },
+    "Ecclesiastical Latin": { rank: 400, era: "4th c.+", desc: "The Latin of the Western Church, still in liturgical use today." },
+    "Medieval Latin": { rank: 900, era: "9th–15th c.", desc: "The Latin of the Middle Ages — scholarship, charters and the Church across Europe." },
+    "New Latin": { rank: 1550, era: "from c. 1500", desc: "Post-medieval Latin used by scientists and scholars to coin technical terms — much of modern taxonomy, anatomy and botany." },
+    "Old English": { rank: 700, era: "5th–11th c.", desc: "The Germanic language of the Anglo-Saxons — the tongue of Beowulf — before the Norman Conquest." },
+    "Middle English": { rank: 1200, era: "1150–1500", desc: "English after the Norman Conquest, heavily borrowing from French — the language of Chaucer." },
+    "Old French": { rank: 1000, era: "9th–14th c.", desc: "Medieval French; the Norman variety brought to England became a major source of English vocabulary." },
+    "Anglo-Norman": { rank: 1100, era: "11th–14th c.", desc: "The variety of Old French spoken by the Norman ruling class in England." },
+    "Middle French": { rank: 1450, era: "14th–17th c.", desc: "French of the Renaissance, between the medieval and modern stages." },
+    "French": { rank: 1700, era: "from c. 1600", desc: "Modern French, a continuing source of English loanwords." },
+    "Old Norse": { rank: 800, era: "8th–14th c.", desc: "The language of the Vikings, which left a deep mark on English through Scandinavian settlement." },
+    "Italian": { rank: 1400, era: "from c. 1400", desc: "A Romance language descended from Latin; source of many musical and artistic terms." },
+    "Spanish": { rank: 1400, era: "from c. 1400", desc: "A Romance language descended from Latin." },
+    "Portuguese": { rank: 1400, era: "from c. 1400", desc: "A Romance language descended from Latin." },
+    "Dutch": { rank: 1500, era: "from c. 1500", desc: "A West Germanic language, a close relative of English." },
+    "German": { rank: 1500, era: "from c. 1500", desc: "A West Germanic language, a close relative of English." },
+    "Arabic": { rank: 600, era: "7th c.+", desc: "Source of many scientific, mathematical and trade terms that entered Europe in the Middle Ages." },
+    "Sanskrit": { rank: -1500, era: "c. 1500 BC", desc: "The classical language of ancient India and its sacred texts; one of the earliest-attested Indo-European languages." },
+    "Hebrew": { rank: -900, era: "c. 900 BC", desc: "The classical language of the Hebrew Bible; source of many religious terms." },
+    "Persian": { rank: 800, era: "medieval+", desc: "An Indo-European language of Iran; source of various words reaching English via Arabic and Turkish." },
+    "English": { rank: 1500, era: "from c. 1500", desc: "Modern English." },
   };
 
   function parseChain(e) {
@@ -929,17 +935,50 @@
     const chain = parseChain(e);
     if (chain.length < 2) return null;
     const colors = ["var(--root)", "var(--suffix)", "var(--prefix-ink)", "var(--stem)", "var(--ink)"];
+    const wrap = el("div", "tl-wrap");
     const tl = el("div", "tl");
+    const detail = el("div", "tl-detail");
+    detail.appendChild(el("div", "tl-hint", "Tap a stage to learn about each language."));
+    let open = null;
+
+    function select(name, color) {
+      const nodes = tl.children;
+      for (let i = 0; i < nodes.length; i++) nodes[i].classList.toggle("sel", nodes[i].dataset.name === name);
+      const L = LANGS[name];
+      detail.innerHTML = "";
+      const head = el("div", "tl-d-head");
+      const sw = el("span", "tl-d-dot"); sw.style.background = color; head.appendChild(sw);
+      head.appendChild(el("span", "tl-d-name", name));
+      head.appendChild(el("span", "tl-d-era", L.era));
+      detail.appendChild(head);
+      if (L.desc) detail.appendChild(el("div", "tl-d-desc", L.desc));
+    }
+    function toggle(name, color) {
+      if (open === name) { // tapping the open one collapses back to the hint
+        open = null;
+        const nodes = tl.children;
+        for (let i = 0; i < nodes.length; i++) nodes[i].classList.remove("sel");
+        detail.innerHTML = ""; detail.appendChild(el("div", "tl-hint", "Tap a stage to learn about each language."));
+        return;
+      }
+      open = name; select(name, color);
+    }
+
     chain.forEach(function (name, i) {
-      const node = el("div", "node");
-      const dot = el("div", "dot");
-      dot.style.background = colors[i % colors.length];
+      const color = colors[i % colors.length];
+      const node = el("div", "node"); node.dataset.name = name;
+      node.setAttribute("role", "button"); node.setAttribute("tabindex", "0");
+      const dot = el("div", "dot"); dot.style.background = color;
       node.appendChild(dot);
       node.appendChild(el("div", "lang", LANGS[name].short || name));
       node.appendChild(el("div", "era", LANGS[name].era));
+      node.addEventListener("click", function () { toggle(name, color); });
+      node.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); toggle(name, color); } });
       tl.appendChild(node);
     });
-    return tl;
+    wrap.appendChild(tl);
+    wrap.appendChild(detail);
+    return wrap;
   }
 
   function buildHistoryCard(recP, parts, token, divider) {
