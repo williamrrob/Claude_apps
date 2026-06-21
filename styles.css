@@ -255,6 +255,17 @@ body {
 .card-say-word { font-weight: 600; font-style: italic; }
 .card-related { margin-top: 7px; }
 .card-related .lab { margin-bottom: 5px; }
+/* extra info in the tapped-morpheme expansion */
+.bpw-mean { font-size: 14px; font-style: italic; color: var(--ink); margin-bottom: 7px; }
+.bpw-origin { margin-bottom: 8px; }
+.bpw-origin-head { display: flex; align-items: baseline; gap: 8px; }
+.bpw-origin-lang { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--prefix-ink); }
+.bpw-origin-era { font-size: 11px; color: var(--muted); }
+.bpw-origin-desc { font-size: 13px; line-height: 1.45; color: var(--muted); margin-top: 3px; }
+.bpw-source { display: block; text-align: left; background: none; border: none; padding: 0; margin-bottom: 8px;
+  font: inherit; font-size: 13.5px; font-weight: 600; color: var(--prefix-ink); cursor: pointer;
+  -webkit-tap-highlight-color: transparent; }
+.bpw-source:active { opacity: 0.6; }
 
 /* ---------- related/synonym/antonym chips ---------- */
 .related-gloss { color: var(--muted); }

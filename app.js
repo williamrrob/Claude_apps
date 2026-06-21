@@ -467,10 +467,11 @@
     requestAnimationFrame(function () { bdCard.classList.add("in"); });
 
     // 1) assemble — pieces pop in tight so they read as the whole word
-    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(130); }
+    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(navigating ? 0 : 130); }
 
-    // Single-unit words (e.g. "ism") have nothing to split — skip the animation.
-    if (reduceMotion || bpEls.length <= 1) {
+    // Skip the animation for single-unit words ("ism"), reduced-motion users, and
+    // when revisiting via the back/forward buttons (it's not a fresh discovery).
+    if (reduceMotion || navigating || bpEls.length <= 1) {
       bd.classList.add("split"); bd.classList.add("stacked");
       bpEls.forEach(function (bp) { swapToSource(bp); bp.classList.add("open"); });
     } else {
@@ -595,6 +596,28 @@
       sayRow.appendChild(btn);
       sayRow.appendChild(el("span", "card-say-word", say));
       box.appendChild(sayRow);
+    }
+    // fuller meaning (all senses), when richer than the one-line gloss above
+    if (p.meaning && /[,;]/.test(p.meaning)) {
+      box.appendChild(el("div", "bpw-mean", "“" + p.meaning + "”"));
+    }
+    // where it comes from — the source language and a one-line note about it
+    const olang = p.origin === "Greek" ? "Ancient Greek" : p.origin;
+    if (olang && LANGS[olang]) {
+      const o = el("div", "bpw-origin");
+      const h = el("div", "bpw-origin-head");
+      h.appendChild(el("span", "bpw-origin-lang", olang));
+      h.appendChild(el("span", "bpw-origin-era", LANGS[olang].era));
+      o.appendChild(h);
+      if (LANGS[olang].desc) o.appendChild(el("div", "bpw-origin-desc", LANGS[olang].desc));
+      box.appendChild(o);
+    }
+    // deep-link to the full source-word entry (its derivatives + Wiktionary)
+    if (p.source && /^[a-zà-ɏ'-]{2,}$/i.test(p.source) && foldKey(p.source) !== foldKey(currentWord)) {
+      const link = el("button", "bpw-source"); link.type = "button";
+      link.textContent = "Explore the source word: " + p.source + " →";
+      link.addEventListener("click", function (e) { e.stopPropagation(); run(p.source); });
+      box.appendChild(link);
     }
     const list = el("div", "card-related");
     list.appendChild(el("div", "related-empty", "finding words…"));
