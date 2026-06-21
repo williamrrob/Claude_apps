@@ -862,13 +862,60 @@
     ipaKeyEl.hidden = false;
   }
 
+  // Rough IPA → plain-English respelling, used when we have no CMU respelling.
+  // Clean where the IPA has syllable boundaries; a single blob otherwise — which
+  // is still more useful than showing nothing.
+  const IPA_RESP = [
+    ["tʃ", "ch"], ["dʒ", "j"], ["aʊ", "ow"], ["aɪ", "y"], ["eɪ", "ay"], ["oʊ", "oh"], ["əʊ", "oh"],
+    ["ɔɪ", "oy"], ["ɪə", "eer"], ["eə", "air"], ["ɛə", "air"], ["ʊə", "oor"],
+    ["ʃ", "sh"], ["ʒ", "zh"], ["θ", "th"], ["ð", "th"], ["ŋ", "ng"], ["ɡ", "g"], ["ɹ", "r"],
+    ["ɚ", "ur"], ["ɝ", "ur"], ["ɜ", "ur"], ["ʔ", ""],
+    ["ɑ", "ah"], ["æ", "a"], ["ʌ", "uh"], ["ɔ", "aw"], ["ɒ", "o"], ["ɛ", "eh"], ["ɪ", "ih"],
+    ["i", "ee"], ["ʊ", "uu"], ["u", "oo"], ["ə", "uh"], ["y", "ee"],
+    ["a", "ah"], ["e", "eh"], ["o", "oh"],
+    ["p", "p"], ["b", "b"], ["t", "t"], ["d", "d"], ["k", "k"], ["g", "g"], ["f", "f"], ["v", "v"],
+    ["s", "s"], ["z", "z"], ["h", "h"], ["m", "m"], ["n", "n"], ["l", "l"], ["r", "r"], ["w", "w"],
+    ["j", "y"], ["x", "kh"], ["c", "k"], ["q", "k"],
+  ];
+  function ipaConv(ph) {
+    let out = "";
+    for (let i = 0; i < ph.length;) {
+      let hit = false;
+      for (let k = 0; k < IPA_RESP.length; k++) {
+        if (ph.startsWith(IPA_RESP[k][0], i)) { out += IPA_RESP[k][1]; i += IPA_RESP[k][0].length; hit = true; break; }
+      }
+      if (!hit) i++;
+    }
+    return out;
+  }
+  function respellFromIPA(ipa) {
+    if (!ipa) return "";
+    let s = String(ipa).split(",")[0].trim();
+    const m = s.match(/[\/\[]([^\/\]]+)[\/\]]/); if (m) s = m[1];
+    s = s.replace(/[()]/g, "").replace(/\u02d0/g, ""); // drop parens and the length mark
+    // Split into syllables at stress marks and dots, noting primary stress.
+    const sy = []; let cur = "", stress = 0, primary = -1;
+    function flush() { if (cur) { const i = sy.length; sy.push(cur); if (stress === 2 && primary < 0) primary = i; cur = ""; } }
+    for (const ch of s) {
+      if (ch === "\u02c8") { flush(); stress = 2; }
+      else if (ch === "\u02cc") { flush(); stress = 1; }
+      else if (ch === ".") { flush(); stress = 0; }
+      else cur += ch;
+    }
+    flush();
+    if (!sy.length) return "";
+    if (primary < 0) primary = 0;
+    return sy.map(function (ph, idx) { const r = ipaConv(ph); return idx === primary ? r.toUpperCase() : r; })
+      .filter(Boolean).join("-");
+  }
+
   function fillPron(recP, word, token) {
     const pe = pronEl; // capture: a later search may null/replace pronEl
     recP.then(function (rec) {
       if (token !== runToken || !pe) return;
       pe.innerHTML = "";
       ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = "";
-      const ipa = rec && rec.i, resp = rec && rec.rs;
+      const ipa = rec && rec.i, resp = (rec && rec.rs) || respellFromIPA(ipa);
       if (ipa) {
         const ib = el("button", "ipa", ipa);
         ib.type = "button";
