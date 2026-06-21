@@ -473,7 +473,9 @@ body {
 .bp-inner { min-width: 0; overflow: hidden; }
 .bd.stacked .bp-inner { padding-top: 14px; }
 .bd.stacked .bp:first-child .bp-inner { padding-top: 0; }
-.bd.stacked .bp-main { align-items: stretch; gap: 0; }
+/* stacked: span the full card width so the right column reaches the edge */
+.bd.stacked .bp-main { display: flex; align-items: stretch; gap: 0; }
+.bd.stacked .bp-col { flex: 1 1 auto; min-width: 0; }
 .bp .mw { font-size: 22px; font-weight: 700; color: var(--c); line-height: 1.1; flex: 0 0 auto; }
 /* vertical accent rule to the left of each stacked morpheme */
 .bp-vline { display: none; width: 2px; border-radius: 2px; background: var(--c); align-self: stretch;
