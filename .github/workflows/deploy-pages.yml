@@ -35,6 +35,7 @@ jobs:
           cp index.html styles.css data.js engine.js app.js \
              manifest.webmanifest icon.svg morpheme-index.json roots.json _site/
           cp -r words _site/
+          cp -r usage _site/
 
       - name: Configure Pages (auto-enable)
         uses: actions/configure-pages@v5

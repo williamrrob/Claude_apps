@@ -92,6 +92,22 @@
     return fetchShard(key).then(function (sh) { return sh ? (sh[word] || null) : null; });
   }
 
+  // ---------- usage history (built-in quarter-century buckets, 1500–2025) ----------
+  const usageCache = {};
+  function fetchUsageShard(key) {
+    key = String(key || "").toLowerCase();
+    if (!/^[a-z]{2}$/.test(key) || typeof fetch !== "function") return Promise.resolve(null);
+    if (!usageCache[key]) {
+      usageCache[key] = fetch("usage/" + key + ".json?v=" + DATA_V)
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .catch(function () { return {}; });
+    }
+    return usageCache[key];
+  }
+  function getUsage(word) {
+    return fetchUsageShard(String(word || "").slice(0, 2)).then(function (sh) { return sh ? (sh[word] || null) : null; });
+  }
+
   // ---------- source words: Latin / Greek / PIE roots English is built on ----------
   // roots.json is generated from data (scripts/build-roots.js): the English-
   // relevant lemmas with a gloss and the English words built on each. Keyed by an
@@ -280,6 +296,7 @@
         showStatus("Hmm, nothing to break down there. Try another word.", true);
         return;
       }
+      fetchUsageShard(result.word.slice(0, 2)); // warm the usage shard in parallel
       // If we have neither a dictionary definition nor a Wiktionary etymology,
       // there's nothing trustworthy to show — don't invent a breakdown.
       const rec0 = await getWord(result.word);
@@ -518,10 +535,46 @@
     cardsEl.appendChild(histCard);
     requestAnimationFrame(function () { divider.classList.add("in"); histCard.classList.add("in"); });
 
-    // 5) Thesaurus
+    // 5) Usage over time
+    const useCard = buildUsageCard(result.word, token);
+    cardsEl.appendChild(useCard);
+    requestAnimationFrame(function () { useCard.classList.add("in"); });
+
+    // 6) Thesaurus
     const thesCard = buildThesaurusCard(recP, token);
     cardsEl.appendChild(thesCard);
     requestAnimationFrame(function () { thesCard.classList.add("in"); });
+  }
+
+  // Usage-over-time histogram: 21 quarter-century buckets (1500–2025), each 0–100
+  // of the word's own peak. Built from Google Books Ngrams (scripts/build-usage.js).
+  function buildUsageCard(word, token) {
+    const card = el("div", "card");
+    card.appendChild(el("div", "cap", "Usage over time"));
+    const holder = el("div", "usage-holder");
+    card.appendChild(holder);
+    getUsage(word).then(function (series) {
+      if (token !== runToken) return;
+      if (!series || !series.length || !series.some(function (v) { return v > 0; })) { card.remove(); return; }
+      let peak = 0;
+      for (let i = 1; i < series.length; i++) if (series[i] > series[peak]) peak = i;
+      const bars = el("div", "usage-bars");
+      series.forEach(function (v, i) {
+        const col = el("div", "usage-col" + (i === peak ? " peak" : ""));
+        const bar = el("div", "usage-bar");
+        bar.style.height = Math.max(2, v) + "%";
+        const y = 1500 + i * 25;
+        col.setAttribute("title", y + "–" + (y + 24));
+        col.appendChild(bar);
+        bars.appendChild(col);
+      });
+      holder.appendChild(bars);
+      const axis = el("div", "usage-axis");
+      [1500, 1600, 1700, 1800, 1900, 2000].forEach(function (y) { axis.appendChild(el("span", "usage-tick", String(y))); });
+      holder.appendChild(axis);
+      holder.appendChild(el("div", "usage-note", "Most used in the " + (1500 + peak * 25) + "s, by printed-book frequency."));
+    });
+    return card;
   }
 
   function defaultGloss(p) {
