@@ -33,7 +33,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html styles.css data.js engine.js app.js \
-             manifest.webmanifest icon.svg morpheme-index.json _site/
+             manifest.webmanifest icon.svg morpheme-index.json roots.json _site/
           cp -r words _site/
 
       - name: Configure Pages (auto-enable)

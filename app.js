@@ -92,6 +92,49 @@
     return fetchShard(key).then(function (sh) { return sh ? (sh[word] || null) : null; });
   }
 
+  // ---------- source words: Latin / Greek / PIE roots English is built on ----------
+  // roots.json is generated from data (scripts/build-roots.js): the English-
+  // relevant lemmas with a gloss and the English words built on each. Keyed by an
+  // ASCII fold of the lemma (and its romanization), so "scribo", "bios" resolve.
+  let ROOTS = null, rootsPromise = null;
+  function loadRoots() {
+    if (rootsPromise) return rootsPromise;
+    if (typeof fetch !== "function") { ROOTS = {}; return (rootsPromise = Promise.resolve()); }
+    rootsPromise = fetch("roots.json?v=" + DATA_V)
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .catch(function () { return {}; })
+      .then(function (m) { ROOTS = m || {}; return ROOTS; });
+    return rootsPromise;
+  }
+  function foldKey(s) {
+    return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+  }
+  // Obscure roots we didn't build in are looked up live — Wiktionary's REST
+  // endpoint is CORS-enabled and groups definitions by language.
+  const ONLINE_LANGS = { la: "Latin", grc: "Ancient Greek", "ine-pro": "Proto-Indo-European",
+    "gem-pro": "Proto-Germanic", "itc-pro": "Proto-Italic", el: "Greek" };
+  const onlineCache = {};
+  function lookupOnline(word) {
+    const w = String(word || "").trim();
+    if (typeof fetch !== "function" || !/^[a-zÀ-ɏ-]{2,40}$/i.test(w)) return Promise.resolve(null);
+    if (w in onlineCache) return Promise.resolve(onlineCache[w]);
+    const url = "https://en.wiktionary.org/api/rest_v1/page/definition/" + encodeURIComponent(w);
+    const timeout = new Promise(function (r) { setTimeout(function () { r(null); }, 4500); });
+    const req = fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j) return null;
+      const order = ["la", "grc", "ine-pro", "gem-pro", "itc-pro", "el"];
+      let code = null;
+      for (let i = 0; i < order.length; i++) if (j[order[i]]) { code = order[i]; break; }
+      if (!code) return null;
+      const sec = j[code][0];
+      if (!sec || !sec.definitions || !sec.definitions.length) return null;
+      const def = sec.definitions[0].definition.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+      if (!def) return null;
+      return { l: w, lang: ONLINE_LANGS[code] || sec.language || "", g: def.split(/[;]/)[0].slice(0, 90).trim(), en: [], online: true };
+    }).catch(function () { return null; });
+    return Promise.race([req, timeout]).then(function (res) { onlineCache[w] = res; return res; });
+  }
+
   // ---------- hybrid breakdown ----------
   let MFORMS = null;
   function morphFind(s) {
@@ -242,6 +285,16 @@
       const rec0 = await getWord(result.word);
       if (token !== runToken) return;
       if (!rec0 || (!(rec0.d && rec0.d.length) && !rec0.e)) {
+        // Not an English headword — maybe it's a source word (a Latin/Greek/PIE
+        // root). Try the built-in lexicon first, then a quick live lookup.
+        await loadRoots();
+        if (token !== runToken) return;
+        const rk = foldKey(result.word);
+        if (ROOTS && ROOTS[rk]) { pushHistory(result.word); pushNav(result.word); renderSource(ROOTS[rk], token); return; }
+        showStatus("Looking up “" + escapeHtml(result.word) + "” …", false);
+        const online = await lookupOnline(result.word);
+        if (token !== runToken) return;
+        if (online) { pushHistory(result.word); pushNav(result.word); renderSource(online, token); return; }
         showStatus("“" + escapeHtml(result.word) + "” isn’t in the dictionary.", true);
         return;
       }
@@ -251,6 +304,56 @@
       await reveal(result, token);
     } catch (err) {
       showStatus("Something went wrong: " + escapeHtml(String(err && err.message || err)), true);
+    }
+  }
+
+  // Render a source word (Latin/Greek/PIE root): the lemma, its language and
+  // gloss, then the English words built on it (or a Wiktionary link if live).
+  function renderSource(r, token) {
+    if (token !== runToken) return;
+    clearStage(); hint.hidden = true;
+    currentWord = r.l;
+    const ew = el("div", "entry-word"); ew.textContent = r.l;
+    entryEl.appendChild(ew);
+    const pron = el("div", "pron");
+    pron.appendChild(el("span", "src-lang", r.lang + (r.online ? " · live" : "")));
+    if (r.rom && foldKey(r.rom) !== foldKey(r.l)) pron.appendChild(el("span", "resp", r.rom));
+    entryEl.appendChild(pron);
+    if (r.g) entryEl.appendChild(el("div", "entry-gloss", r.g));
+    requestAnimationFrame(function () { entryEl.classList.add("in"); });
+    miniHead.innerHTML = ""; miniHead.appendChild(el("span", "minihead-word", r.l));
+
+    const card = el("div", "card");
+    card.appendChild(el("div", "cap", "Source word"));
+    card.appendChild(el("div", "src-note", r.online
+      ? "Looked up live from Wiktionary."
+      : "A " + r.lang + " word English vocabulary is built on."));
+    cardsEl.appendChild(card);
+    requestAnimationFrame(function () { card.classList.add("in"); });
+
+    if (r.en && r.en.length) {
+      const fam = el("div", "card");
+      fam.appendChild(el("div", "cap", "English words from this root"));
+      const list = el("div", "related-list");
+      r.en.forEach(function (w, i) {
+        const c = el("button", "related-chip", w); c.dataset.kind = "root";
+        c.style.setProperty("--i", i);
+        c.addEventListener("click", function () { run(w); });
+        list.appendChild(c);
+      });
+      fam.appendChild(list);
+      cardsEl.appendChild(fam);
+      requestAnimationFrame(function () { fam.classList.add("in"); });
+    }
+    if (r.online) {
+      const link = el("div", "card");
+      const a = document.createElement("a"); a.className = "src-wiki";
+      a.textContent = "View full entry on Wiktionary →";
+      a.setAttribute("href", "https://en.wiktionary.org/wiki/" + encodeURIComponent(r.l));
+      a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
+      link.appendChild(a);
+      cardsEl.appendChild(link);
+      requestAnimationFrame(function () { link.classList.add("in"); });
     }
   }
 
@@ -951,24 +1054,38 @@
     const key = v.slice(0, 2);
     if (v.length < 2 || !/^[a-z]{2}$/.test(key)) { hideSuggest(); return; }
     const token = ++suggestToken;
-    fetchShard(key).then(function (sh) {
+    Promise.all([fetchShard(key), loadRoots()]).then(function (res) {
+      const sh = res[0];
       if (token !== suggestToken || !sh) return;
       if (input.value.trim().toLowerCase() !== v) return;
-      // Only suggest words we actually have a definition for.
-      const matches = Object.keys(sh)
+      // English headwords we have a definition for…
+      const seen = {};
+      const items = Object.keys(sh)
         .filter(function (w) { return w.indexOf(v) === 0 && w !== v && sh[w] && sh[w].d && sh[w].d.length; })
         .sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
-        .slice(0, 8);
-      renderSuggest(matches, v);
+        .slice(0, 8)
+        .map(function (w) { seen[w] = 1; return { w: w }; });
+      // …plus a few Latin/Greek source words (searchable by romanization).
+      if (ROOTS) {
+        Object.keys(ROOTS)
+          .filter(function (k) { return k.indexOf(v) === 0 && !seen[k]; })
+          .sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
+          .slice(0, 4)
+          .forEach(function (k) { items.push({ w: k, lang: ROOTS[k].lang }); });
+      }
+      renderSuggest(items, v);
     });
   }
-  function renderSuggest(words, q) {
+  function renderSuggest(items, q) {
     suggestEl.innerHTML = "";
-    if (!words.length) { hideSuggest(); return; }
-    words.forEach(function (w) {
+    if (!items.length) { hideSuggest(); return; }
+    items.forEach(function (it) {
+      const w = it.w;
       const li = document.createElement("li");
       const b = el("button", "suggest-item"); b.type = "button";
-      b.innerHTML = '<span class="hl">' + escapeHtml(w.slice(0, q.length)) + "</span>" + escapeHtml(w.slice(q.length));
+      let html = '<span class="hl">' + escapeHtml(w.slice(0, q.length)) + "</span>" + escapeHtml(w.slice(q.length));
+      if (it.lang) html += '<span class="sug-lang">' + escapeHtml(it.lang) + "</span>";
+      b.innerHTML = html;
       // pointerdown fires before the input's blur-hide, so the tap always lands
       b.addEventListener("pointerdown", function (e) { e.preventDefault(); hideSuggest(); run(w); });
       b.addEventListener("click", function () { hideSuggest(); run(w); });
