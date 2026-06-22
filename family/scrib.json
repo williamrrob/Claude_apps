@@ -131,10 +131,10 @@
   {
    "w": "adscript",
    "s": null,
-   "region": "signing-subscribing",
+   "region": "writing-copying",
    "parent": null,
    "by": "user",
-   "at": "2026-06-22T19:48:02.765Z"
+   "at": "2026-06-22T20:58:45.792Z"
   },
   {
    "w": "transcribe",
@@ -537,6 +537,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T19:48:02.765Z"
+  "updated": "2026-06-22T20:58:45.792Z"
  }
 }
