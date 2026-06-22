@@ -468,9 +468,9 @@
    "w": "scripted",
    "s": null,
    "region": "writing-copying",
-   "parent": null,
+   "parent": "script",
    "by": "user",
-   "at": "2026-06-22T19:47:15.500Z"
+   "at": "2026-06-22T19:47:23.329Z"
   }
  ],
  "collapse": {
@@ -537,6 +537,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T19:47:15.500Z"
+  "updated": "2026-06-22T19:47:23.329Z"
  }
 }
