@@ -20,13 +20,17 @@ const ROOT = path.join(__dirname, "..");
 const WORDS = path.join(ROOT, "words");
 const dict = JSON.parse(fs.readFileSync(path.join(ROOT, "dictionary.json"), "utf8"));
 
-// the pilot family: every vocab word built on scrib-/script-
+// the pilot family: members of a morpheme-index root (default scrib), plus any
+// vocab word literally containing the root forms. Usage: node build-rich-pilot.js [rootId]
+const rootId = process.argv[2] || "scrib";
 const vocab = new Set();
 for (const f of fs.readdirSync(WORDS)) {
   if (!f.endsWith(".json")) continue;
   Object.keys(JSON.parse(fs.readFileSync(path.join(WORDS, f), "utf8"))).forEach((w) => vocab.add(w));
 }
-const family = [...vocab].filter((w) => /scrib|script/.test(w)).sort();
+const idx = JSON.parse(fs.readFileSync(path.join(ROOT, "morpheme-index.json"), "utf8"));
+const members = new Set(Array.isArray(idx[rootId]) ? idx[rootId] : []);
+const family = [...members].filter((w) => vocab.has(w)).sort();
 
 function kaikkiUrl(w) {
   return "https://kaikki.org/dictionary/English/meaning/" + w[0] + "/" + w.slice(0, 2) + "/" + w + ".jsonl";
@@ -99,5 +103,5 @@ for (const key of Object.keys(byShard)) {
   }
   fs.writeFileSync(p, JSON.stringify(shard));
 }
-console.log("\nscribere family:", family.length, "words | enriched:", enriched, "| no data:", missed.length);
+console.log("\n"+rootId+" family:", family.length, "words | enriched:", enriched, "| no data:", missed.length);
 if (missed.length) console.log("  no kaikki/WordNet entry:", missed.join(", "));
