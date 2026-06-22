@@ -712,9 +712,15 @@ body {
 .src-wiki:active { opacity: .7; }
 
 /* dock nav row */
-.dock-row { display: flex; align-items: center; gap: 8px; }
+.dock-row { display: flex; align-items: center; gap: 8px; transition: gap 0.26s var(--ease); }
 .dock-row .search { flex: 1; }
-.nav-pair { display: flex; gap: 4px; flex: 0 0 auto; }
+.nav-pair {
+  display: flex; gap: 4px; flex: 0 0 auto; max-width: 130px; opacity: 1; overflow: hidden;
+  transition: max-width 0.26s var(--ease), opacity 0.18s ease;
+}
+/* while typing, the nav buttons fold away and the search takes the whole dock */
+.dock-row.typing { gap: 0; }
+.dock-row.typing .nav-pair { max-width: 0; opacity: 0; pointer-events: none; }
 .nav-btn { width: 34px; height: 36px; border-radius: 999px; border: 1px solid var(--bd);
   background: var(--glass-sheen), var(--field); box-shadow: var(--glass-hi);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);

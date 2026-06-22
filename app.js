@@ -1704,9 +1704,13 @@
   function submit() { input.blur(); hideSuggest(); run(input.value); }
   form.addEventListener("submit", function (e) { e.preventDefault(); submit(); });
   form.querySelector(".search-btn").addEventListener("click", function (e) { e.preventDefault(); submit(); });
+  // While focused (typing), fold the ⌂ ‹ › nav buttons away so the search bar
+  // expands to the full dock width; restore them on blur.
+  const dockRow = document.querySelector(".dock-row");
+  function setTyping(on) { if (dockRow && dockRow.classList) dockRow.classList[on ? "add" : "remove"]("typing"); }
   input.addEventListener("input", onType);
-  input.addEventListener("focus", function () { if (!input.value.trim()) showRecent(); });
-  input.addEventListener("blur", function () { setTimeout(function () { hideSuggest(); hideRecent(); }, 150); });
+  input.addEventListener("focus", function () { setTyping(true); if (!input.value.trim()) showRecent(); });
+  input.addEventListener("blur", function () { setTimeout(function () { setTyping(false); hideSuggest(); hideRecent(); }, 150); });
   if (navHome) navHome.addEventListener("click", goHome);
   if (navBack) navBack.addEventListener("click", goBack);
   if (navFwd) navFwd.addEventListener("click", goFwd);
