@@ -59,6 +59,18 @@
     return true;
   }
 
+  // The "in-" prefix (and its assimilations im-/il-/ir-) is also ambiguous:
+  // negative "not" before an adjective (in·credible, in·visible, il·legal), but
+  // locative "in / into / upon" before a verb (in·scribe, in·spect, im·port).
+  // Heuristic: an adjectival ending → negative; otherwise → locative.
+  const ADJ_END = /(?:ible|able|id|ous|ant|ent|ile|ine|al|ar)$/;
+  function inFormFits(entry, word) {
+    const adj = ADJ_END.test(word);
+    if (entry.id === "in-neg") return adj;
+    if (entry.id === "in-loc") return !adj;
+    return true;
+  }
+
   function matchesAt(index, word, pos) {
     const out = [];
     for (let i = 0; i < index.length; i++) {
@@ -91,6 +103,7 @@
         matchesAt(PREFIX_INDEX, word, pos).forEach(function (m) {
           if (word.length - (pos + m.form.length) < 2) return; // leave room for a stem
           if (m.form === "a" && !aFormFits(m.entry, word, pos)) return; // a- vs ad-
+          if ((m.entry.id === "in-neg" || m.entry.id === "in-loc") && !inFormFits(m.entry, word)) return; // in- not vs into
           const rest = rec(pos + m.form.length, 0);
           consider(part("prefix", m.form, m.entry, pos), rest, m.form.length * W_KNOWN + AFFIX_BONUS);
         });

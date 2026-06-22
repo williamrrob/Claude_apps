@@ -187,7 +187,9 @@
       if (wp.proper) capitalizeHeadword(word);
       if (wp.type === "standard" && wp.thumb) {
         const card = buildImageCard(wp);
-        cardsEl.insertBefore(card, cardsEl.firstChild); // up top, prominent
+        const thes = cardsEl.querySelector ? cardsEl.querySelector(".thes-card") : null;
+        if (thes) cardsEl.insertBefore(card, thes); // near the end, before related words
+        else cardsEl.appendChild(card);
         requestAnimationFrame(function () { card.classList.add("in"); });
       }
     });
@@ -200,18 +202,21 @@
     const mh = miniHead.querySelectorAll(".mh-part");
     if (mh.length === 1) mh[0].textContent = cap;
   }
+  // The whole card is the photo, with a glass shimmer over it and the label in a
+  // liquid-glass bubble in the corner. Full image (no crop) so it's the source's framing.
   function buildImageCard(wp) {
     const card = el("div", "card img-card");
     const img = document.createElement("img");
     img.className = "wiki-img"; img.src = wp.thumb; img.alt = wp.title;
     img.setAttribute("loading", "lazy");
     card.appendChild(img);
-    const cap = el("div", "img-cap");
-    const a = document.createElement("a"); a.className = "img-title"; a.textContent = wp.title;
-    if (wp.url) { a.setAttribute("href", wp.url); a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); }
-    cap.appendChild(a);
-    if (wp.desc) cap.appendChild(el("span", "img-desc", wp.desc));
-    card.appendChild(cap);
+    card.appendChild(el("div", "img-sheen")); // liquid-glass shimmer over the picture
+    const bubble = document.createElement(wp.url ? "a" : "div");
+    bubble.className = "img-bubble";
+    if (wp.url) { bubble.setAttribute("href", wp.url); bubble.setAttribute("target", "_blank"); bubble.setAttribute("rel", "noopener"); }
+    bubble.appendChild(el("span", "img-bubble-t", wp.title));
+    if (wp.desc) bubble.appendChild(el("span", "img-bubble-d", wp.desc));
+    card.appendChild(bubble);
     return card;
   }
 
@@ -1046,7 +1051,7 @@
 
   // ---------- thesaurus ----------
   function buildThesaurusCard(recP, token) {
-    const card = el("div", "card");
+    const card = el("div", "card thes-card");
     card.appendChild(el("div", "cap", "Thesaurus"));
     recP.then(async function (rec) {
       if (token !== runToken) return;
@@ -1335,21 +1340,15 @@
   }
 
   // ---------- word-family tree ----------
-  // Prefixes grouped by their established sense (spatial, temporal, …) so a big
-  // family collapses to a few branches. Unmapped prefixes fall under "Other".
-  const SENSE = {
-    "a-priv": "Negation", "in-neg": "Negation", "dis": "Negation", "anti": "Against", "contra": "Against", "ob": "Against", "mal": "Against",
-    "ad": "Spatial", "ab": "Spatial", "de": "Spatial", "e": "Spatial", "in-loc": "Spatial", "sub": "Spatial", "super": "Spatial",
-    "trans": "Spatial", "circum": "Spatial", "inter": "Spatial", "intra": "Spatial", "extra": "Spatial", "intro": "Spatial",
-    "retro": "Spatial", "peri": "Spatial", "para": "Spatial", "dia": "Spatial", "epi": "Spatial", "per": "Spatial", "pro": "Spatial",
-    "circ": "Spatial", "ecto": "Spatial", "endo": "Spatial", "exo": "Spatial", "hypo": "Spatial", "hyper": "Spatial",
-    "pre": "Time", "post": "Time", "ante": "Time", "fore": "Time", "neo": "Time",
-    "co": "Together", "syn": "Together",
-    "re": "Again / back",
-    "auto": "Self", "homo": "Same", "hetero": "Different",
-    "bi": "Number", "tri": "Number", "uni": "Number", "mono": "Number", "multi": "Number", "semi": "Number", "poly": "Number", "hemi": "Number",
+  // Most prefixes sit directly under the root, but a few cohesive sets read better
+  // bundled into a labelled group (you only see these when the root has them).
+  const CLUSTER = {
+    Number: ["bi", "tri", "uni", "mono", "multi", "poly", "semi", "hemi", "deca", "cent", "quadr", "penta", "oct", "milli", "kilo"],
+    Target: ["auto", "homo", "hetero", "allo"],
+    Degree: ["hyper", "hypo", "iso", "ultra", "infra", "supra"],
   };
-  const SENSE_ORDER = ["Base", "Spatial", "Time", "Together", "Negation", "Against", "Again / back", "Number", "Self", "Same", "Different", "Other"];
+  const PRE_CLUSTER = {};
+  Object.keys(CLUSTER).forEach(function (c) { CLUSTER[c].forEach(function (id) { PRE_CLUSTER[id] = c; }); });
 
   function dotted(w) { // word split by morpheme, joined with subtle dots
     try {
@@ -1415,12 +1414,8 @@
   }
 
   function buildFamilyTree(rootPart, headword, words) {
-    const cats = {};
-    function bucket(cat, key, label, gloss) {
-      cats[cat] = cats[cat] || {};
-      cats[cat][key] = cats[cat][key] || { label: label, gloss: gloss, words: [] };
-      return cats[cat][key];
-    }
+    // root → prefix groups (and a "base" group) → derivation forest of words
+    const groups = {};
     words = words.concat([headword]); // the headword sits in the tree too
     const seen = {};
     words.forEach(function (w) {
@@ -1428,32 +1423,34 @@
       let pre = null;
       try { pre = window.EtymologyEngine.decompose(w).parts.filter(function (p) { return p.kind === "prefix"; })[0]; } catch (e) {}
       if (pre) {
-        const cat = SENSE[pre.id] || "Other";
         const lab = (pre.source || pre.surface).replace(/[-\s]+$/, "") + "-"; // canonical: trans-, not tran-
-        bucket(cat, pre.id, lab, (pre.source || pre.surface) + (pre.meaning ? " · " + firstSense(pre.meaning) : "")).words.push(w);
+        const g = groups[pre.id] || (groups[pre.id] = { label: lab, gloss: (pre.source || pre.surface) + (pre.meaning ? " · " + firstSense(pre.meaning) : ""), words: [] });
+        g.words.push(w);
       } else {
-        bucket("Base", "(base)", "base", "the bare root as a word").words.push(w);
+        const g = groups["(base)"] || (groups["(base)"] = { label: "base", gloss: "the root as a word", words: [], base: true });
+        g.words.push(w);
       }
     });
-    const catNodes = SENSE_ORDER.filter(function (c) { return cats[c]; }).map(function (c) {
-      const keys = Object.keys(cats[c]);
-      if (c === "Base") {
-        const kids = deriveForest(cats[c]["(base)"].words, headword);
-        return { type: "group", label: "base", gloss: "the root as a word", count: countWords(kids), children: kids };
-      }
-      const prefixes = keys.map(function (k) {
-        const g = cats[c][k];
-        const kids = deriveForest(g.words, headword);
-        return { type: "group", label: g.label, gloss: g.gloss, count: countWords(kids), children: kids };
-      }).sort(function (a, b) { return b.count - a.count; });
-      const children = prefixes.length === 1 ? prefixes[0].children : prefixes;
-      return { type: "group", label: c, gloss: "", count: countWords(children), children: children };
+    // build a node per prefix; route a few into cohesive clusters, rest stay direct
+    let baseNode = null; const direct = []; const clusters = {};
+    Object.keys(groups).forEach(function (k) {
+      const g = groups[k];
+      const kids = deriveForest(g.words, headword);
+      const node = { type: "group", label: g.label, gloss: g.gloss, count: countWords(kids), children: kids };
+      if (g.base) { node._base = true; baseNode = node; return; }
+      const cl = PRE_CLUSTER[k];
+      if (cl) { (clusters[cl] = clusters[cl] || []).push(node); } else { direct.push(node); }
     });
+    const clusterNodes = Object.keys(clusters).map(function (cl) {
+      const ch = clusters[cl].sort(function (a, b) { return b.count - a.count; });
+      return { type: "group", label: cl, gloss: "", count: ch.reduce(function (n, p) { return n + p.count; }, 0), children: ch };
+    });
+    let children = direct.concat(clusterNodes).sort(function (a, b) { return b.count - a.count; });
+    if (baseNode) children.unshift(baseNode); // base always first
     return { type: "root", label: rootPart.surface, source: rootPart.source,
       gloss: (rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : ""),
-      children: catNodes, _open: true };
+      children: children, _open: true };
   }
-  function wordNode(w, headword) { return { type: "word", word: w, current: w === headword }; }
 
   // The whole tree renders from treeRoot based on each node's _open flag, so it
   // accumulates: expanding a branch keeps everything else in place.
