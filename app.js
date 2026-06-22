@@ -1423,64 +1423,115 @@
     }, 190);
   }
 
-  // Nest words by derivation: a longer word that starts with a shorter family
-  // word descends from it (transcribe → transcribed, transcriber; transcript →
-  // transcription). Returns the forest roots; each node may itself have children.
-  function deriveForest(words, headword) {
-    const arr = words.slice().sort(function (a, b) { return a.length - b.length || a.localeCompare(b); });
-    const nodes = arr.map(function (w) { return { type: "word", word: w, current: w === headword, children: [] }; });
-    nodes.forEach(function (n) {
-      let best = null;
-      nodes.forEach(function (m) {
-        if (m !== n && n.word.length > m.word.length && n.word.indexOf(m.word) === 0 && (!best || m.word.length > best.word.length)) best = m;
-      });
-      n._parent = best;
-    });
-    const roots = [];
-    nodes.forEach(function (n) { (n._parent ? n._parent.children : roots).push(n); delete n._parent; });
-    return roots;
-  }
   function countWords(nodes) {
     return nodes.reduce(function (n, c) { return n + (c.type === "word" ? 1 : 0) + countWords(c.children || []); }, 0);
   }
 
+  // ---- decomposition helpers (cached per tree build) ----
+  function decompParts(w, cache) {
+    if (cache[w]) return cache[w];
+    let ps = [];
+    try { ps = window.EtymologyEngine.decompose(w).parts; } catch (e) {}
+    cache[w] = ps; return ps;
+  }
+  function firstPrefixOf(w, cache) {
+    const ps = decompParts(w, cache);
+    for (let i = 0; i < ps.length; i++) { if (ps[i].kind === "prefix") return ps[i]; if (ps[i].kind === "root") break; }
+    return null;
+  }
+  // A "complex" word is more than a bare root (+ silent e): it carries a prefix,
+  // a real suffix, or a second root — so other words can derive *from* it.
+  function isComplexWord(w, cache) {
+    const ps = decompParts(w, cache);
+    let roots = 0, pre = false, suf = false;
+    ps.forEach(function (p) {
+      if (p.kind === "prefix") pre = true;
+      else if (p.kind === "root") roots++;
+      else if (p.kind === "suffix" && !p.silentE) suf = true;
+    });
+    return pre || suf || roots >= 2;
+  }
+
+  // Build one derivation forest over the whole family, then group its roots by
+  // their leading prefix. A word descends from another when it merely adds a
+  // suffix (transcribe → transcribed) or when stripping its prefix leaves a
+  // complete, already-complex family word (nontelescopic → telescopic). A bare
+  // prefix+root form (transcribe, transcript) has no such parent, so it sits
+  // directly in its prefix group — making transcribe and transcript siblings
+  // under "trans-".
   function buildFamilyTree(rootPart, headword, words) {
-    // root → prefix groups (and a "base" group) → derivation forest of words
+    const dcache = {};
+    const list = []; const have = {};
+    words.concat([headword]).forEach(function (w) { if (!have[w]) { have[w] = 1; list.push(w); } });
+    const byWord = {};
+    list.forEach(function (w) { byWord[w] = { type: "word", word: w, current: w === headword, children: [] }; });
+
+    function parentOf(w) {
+      // (a) suffix derivation — longest shorter family word that w begins with
+      let best = null;
+      list.forEach(function (p) {
+        if (p !== w && p.length < w.length && w.indexOf(p) === 0 && (!best || p.length > best.length)) best = p;
+      });
+      if (best) return best;
+      // (b) prefix derivation — strip the leading prefix; if a complete, complex
+      // family word remains, w descends from it
+      const pre = firstPrefixOf(w, dcache);
+      if (pre) {
+        const stem = w.slice(pre.surface.length);
+        if (stem !== w && byWord[stem] && isComplexWord(stem, dcache)) return stem;
+      }
+      return null;
+    }
+
+    const roots = [];
+    list.forEach(function (w) {
+      const par = parentOf(w);
+      if (par && byWord[par]) byWord[par].children.push(byWord[w]); else roots.push(byWord[w]);
+    });
+    (function sortKids(nodes) {
+      nodes.sort(function (a, b) { return a.word.length - b.word.length || a.word.localeCompare(b.word); });
+      nodes.forEach(function (n) { sortKids(n.children); });
+    })(roots);
+
+    // group the forest roots by leading prefix (or a "base" group of bare roots)
     const groups = {};
-    words = words.concat([headword]); // the headword sits in the tree too
-    const seen = {};
-    words.forEach(function (w) {
-      if (seen[w]) return; seen[w] = 1;
-      let pre = null;
-      try { pre = window.EtymologyEngine.decompose(w).parts.filter(function (p) { return p.kind === "prefix"; })[0]; } catch (e) {}
+    roots.forEach(function (n) {
+      const pre = firstPrefixOf(n.word, dcache);
       if (pre) {
         const lab = (pre.source || pre.surface).replace(/[-\s]+$/, "") + "-"; // canonical: trans-, not tran-
-        const g = groups[pre.id] || (groups[pre.id] = { label: lab, gloss: (pre.source || pre.surface) + (pre.meaning ? " · " + firstSense(pre.meaning) : ""), words: [] });
-        g.words.push(w);
+        const g = groups[pre.id] || (groups[pre.id] = { id: pre.id, label: lab,
+          gloss: (pre.source || pre.surface) + (pre.meaning ? " · " + firstSense(pre.meaning) : ""), nodes: [] });
+        g.nodes.push(n);
       } else {
-        const g = groups["(base)"] || (groups["(base)"] = { label: "base", gloss: "the root as a word", words: [], base: true });
-        g.words.push(w);
+        const g = groups["(base)"] || (groups["(base)"] = { id: "(base)", base: true,
+          label: rootPart.surface, gloss: "the root as a word", nodes: [] });
+        g.nodes.push(n);
       }
     });
-    // build a node per prefix; route a few into cohesive clusters, rest stay direct
+
     let baseNode = null; const direct = []; const clusters = {};
     Object.keys(groups).forEach(function (k) {
       const g = groups[k];
-      const kids = deriveForest(g.words, headword);
-      const node = { type: "group", label: g.label, gloss: g.gloss, count: countWords(kids), children: kids, _root: rootPart.surface };
-      if (g.base) { node._base = true; node._root = null; node.label = rootPart.surface; baseNode = node; return; } // base shows the bare root
-      const cl = PRE_CLUSTER[k];
+      g.nodes.sort(function (a, b) { return a.word.length - b.word.length || a.word.localeCompare(b.word); });
+      const words = countWords(g.nodes);
+      const node = { type: "group", label: g.label, gloss: g.gloss, count: words, _weight: words, children: g.nodes, _root: rootPart.surface };
+      if (g.base) { node._base = true; node._root = null; node.label = rootPart.surface; baseNode = node; return; }
+      const cl = PRE_CLUSTER[g.id];
       if (cl) { (clusters[cl] = clusters[cl] || []).push(node); } else { direct.push(node); }
     });
-    // only keep a cluster if ≥2 of its prefixes actually appear (else it didn't
-    // group well — show those prefixes directly instead)
+
+    // a sense cluster forms only when ≥2 of its prefixes appear (else it didn't
+    // group well — show those prefixes directly). Its number is the count of
+    // affixes it bundles, not the number of words.
     const clusterNodes = [];
     Object.keys(clusters).forEach(function (cl) {
       const arr = clusters[cl].sort(function (a, b) { return b.count - a.count; });
-      if (arr.length >= 2) clusterNodes.push({ type: "group", label: cl, gloss: "", count: arr.reduce(function (n, p) { return n + p.count; }, 0), children: arr });
+      if (arr.length >= 2) clusterNodes.push({ type: "group", label: cl, gloss: "", count: arr.length,
+        _weight: arr.reduce(function (n, p) { return n + p._weight; }, 0), _affixGroup: true, children: arr });
       else arr.forEach(function (n) { direct.push(n); });
     });
-    let children = direct.concat(clusterNodes).sort(function (a, b) { return b.count - a.count; });
+
+    let children = direct.concat(clusterNodes).sort(function (a, b) { return (b._weight || b.count) - (a._weight || a.count); });
     if (baseNode) children.unshift(baseNode); // base always first
     return { type: "root", label: rootPart.surface, source: rootPart.source,
       gloss: (rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : ""),
