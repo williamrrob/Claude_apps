@@ -32,6 +32,9 @@
   .by { width:7px; height:7px; border-radius:50%; flex:none; }
   .by.user { background:var(--user); } .by.assistant { background:var(--assist); }
   .pool .chip { background:#211c18; }
+  .word-head { background:var(--panel2); }
+  .word-head .w { font-weight:700; }
+  .caret { color:var(--muted); flex:none; font-size:12px; }
   .muted { color:var(--muted); } .small { font-size:12px; }
   .secthead { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:18px 4px 6px; }
   /* sheet */
@@ -82,9 +85,19 @@ function saveCfg(){ LS.setItem("ed.token",cfg.token); LS.setItem("ed.repo",cfg.r
 const b64enc = (s) => btoa(unescape(encodeURIComponent(s)));
 const b64dec = (s) => decodeURIComponent(escape(atob((s||"").replace(/\n/g,""))));
 
+// Demo mode (?demo=1): read the files from the same origin and never save —
+// lets the full UI be exercised without a token (for development/verification).
+const DEMO = /[?&]demo=1/.test(location.search);
+
 // ---- GitHub Contents API ----
 function api(path){ return "https://api.github.com/repos/"+cfg.repo+"/contents/"+path; }
 async function ghGet(path){
+  if (DEMO){
+    const r = await fetch(path+"?t="+Date.now(), { cache:"no-store" });
+    if (r.status===404) return { missing:true };
+    if (!r.ok) throw new Error("GET "+path+" → "+r.status);
+    return { json: await r.json(), sha:"demo" };
+  }
   const r = await fetch(api(path)+"?ref="+encodeURIComponent(cfg.branch)+"&t="+Date.now(), {
     headers:{ Authorization:"Bearer "+cfg.token, Accept:"application/vnd.github+json" } });
   if (r.status===404) return { missing:true };
@@ -93,6 +106,7 @@ async function ghGet(path){
   return { json: JSON.parse(b64dec(j.content)), sha: j.sha };
 }
 async function ghPut(path, obj, sha, message){
+  if (DEMO) return "demo"; // never write in demo mode
   const body = { message: message||("edit "+path), content: b64enc(JSON.stringify(obj,null,1)), branch: cfg.branch };
   if (sha) body.sha = sha;
   const r = await fetch(api(path), { method:"PUT",
@@ -104,14 +118,17 @@ async function ghPut(path, obj, sha, message){
 
 // ---- state ----
 let fam=null, famSha=null, members=[], senses={}, originalText=null, backupDone=false;
+const poolOpen=new Set();        // words expanded in the Unplaced pool
+const regionWordOpen=new Set();  // "region|word" groups expanded in a region
 const now = () => new Date().toISOString();
 
 function setStatus(t, cls){ const s=$("status"); s.textContent=t; s.className="status"+(cls?" "+cls:""); }
 
 // ---- load ----
 async function load(){
-  if (!cfg.token){ return renderSetup("Enter a GitHub token to begin."); }
-  setStatus("loading…","saving");
+  if (!DEMO && !cfg.token){ return renderSetup("Enter a GitHub token to begin."); }
+  if (DEMO) setStatus("demo — not saving","");
+  else setStatus("loading…","saving");
   try {
     const f = await ghGet("family/"+cfg.root+".json");
     if (f.missing) return renderSetup("No family/"+cfg.root+".json on "+cfg.branch+". Check root/branch.");
@@ -166,6 +183,8 @@ function placementOf(w, s){ return fam.placements.find(p=>p.w===w && (p.s??null)
 function senseLabel(w, s){ const d=senses[w]; if(d && s!=null && d[s]) return d[s].g; if(d&&d[0]) return d[0].g; return ""; }
 function senseDom(w, s){ const d=senses[w]; if(d && s!=null && d[s]) return d[s].dom; return null; }
 function shortG(g){ return g? (g.length>54? g.slice(0,52)+"…":g):""; }
+function senseCount(w){ return (senses[w]||[]).length; }
+function hasAdverbSense(w){ return (senses[w]||[]).some(d=>/adv/i.test(d.p||"")); }
 
 // ---- render ----
 function render(){
@@ -207,18 +226,40 @@ function renderRegion(rg){
   edit.onclick=(e)=>{ e.stopPropagation(); editRegion(rg); }; h.appendChild(edit);
   box.appendChild(h);
   const body=document.createElement("div"); body.className="body";
-  // nest by parent within region
+  // group placements by word (a word's senses placed here associate into one node),
+  // then nest words by parent (descent).
   const here=fam.placements.filter(p=>p.region===rg.id);
-  const childrenOf=(par)=> here.filter(p=>(p.parent||null)===par).sort((a,b)=>a.w.localeCompare(b.w));
+  const byWord={}, order=[];
+  here.forEach(p=>{ if(!byWord[p.w]){ byWord[p.w]=[]; order.push(p.w); } byWord[p.w].push(p); });
+  const parentOf={}; order.forEach(w=>{ parentOf[w]=byWord[w][0].parent||null; });
+  const present={}; order.forEach(w=>present[w]=1);
+  const isTop=w=>{ const par=parentOf[w]; return !par||!present[par]; };
   (function walk(par, depth){
-    childrenOf(par).forEach(p=>{
-      const c=chipEl(p); c.style.marginLeft=(depth*16)+"px"; body.appendChild(c);
-      walk(p.w, depth+1);
+    order.filter(w=> par===null? isTop(w): parentOf[w]===par).sort().forEach(w=>{
+      body.appendChild(wordNode(rg, w, byWord[w], depth));
+      walk(w, depth+1);
     });
   })(null,0);
   if(!here.length){ const e=document.createElement("div"); e.className="muted small"; e.textContent="empty"; body.appendChild(e); }
   box.appendChild(body);
   return box;
+}
+// One word inside a region. A single placement renders as a chip; a word with
+// multiple senses placed here renders as a collapsible header grouping them.
+function wordNode(rg, w, places, depth){
+  const wrap=document.createElement("div");
+  if(places.length===1){ const c=chipEl(places[0]); c.style.marginLeft=(depth*16)+"px"; wrap.appendChild(c); return wrap; }
+  const key=rg.id+"|"+w, open=regionWordOpen.has(key);
+  const head=document.createElement("div"); head.className="chip word-head"; head.style.marginLeft=(depth*16)+"px";
+  const anyUser=places.some(p=>p.by==="user");
+  const by=document.createElement("span"); by.className="by "+(anyUser?"user":"assistant"); head.appendChild(by);
+  const ww=document.createElement("span"); ww.className="w"; ww.textContent=w; head.appendChild(ww);
+  const cnt=document.createElement("span"); cnt.className="sub"; cnt.textContent=places.length+" senses here"; head.appendChild(cnt);
+  const car=document.createElement("span"); car.className="caret"; car.textContent=open?"▾":"▸"; head.appendChild(car);
+  head.onclick=()=>{ open?regionWordOpen.delete(key):regionWordOpen.add(key); render(); };
+  wrap.appendChild(head);
+  if(open){ places.slice().sort((a,b)=>(a.s??-1)-(b.s??-1)).forEach(p=>{ const c=chipEl(p); c.style.marginLeft=((depth+1)*16)+"px"; wrap.appendChild(c); }); }
+  return wrap;
 }
 function renderCollapsed(){
   const wrap=document.createElement("div");
@@ -238,21 +279,37 @@ function renderCollapsed(){
 }
 function renderPool(){
   const wrap=document.createElement("div"); wrap.className="pool";
-  const placed=new Set(fam.placements.map(p=>p.w));
+  // a word is unplaced if it has no whole-word placement and isn't collapsed
+  // (placing some senses still leaves the rest available).
+  const placedWhole=new Set(fam.placements.filter(p=>p.s==null).map(p=>p.w));
   const collapsed=new Set(Object.keys(fam.collapse||{}));
-  const un=members.filter(w=>!placed.has(w)&&!collapsed.has(w));
+  const un=members.filter(w=>!placedWhole.has(w)&&!collapsed.has(w));
   const h=document.createElement("div"); h.className="secthead"; h.textContent="Unplaced ("+un.length+")"; wrap.appendChild(h);
   if(!un.length){ const e=document.createElement("div"); e.className="muted small"; e.style.margin="0 4px"; e.textContent="all words placed"; wrap.appendChild(e); }
-  un.forEach(w=>{
-    const d=senses[w]||[];
-    // whole-word chip + one chip per sense
-    wrap.appendChild(poolChip(w, null, "(whole word)"));
-    d.forEach((s,i)=> wrap.appendChild(poolChip(w, i, s.g)));
-  });
+  un.forEach(w=> wrap.appendChild(poolWord(w)));
   return wrap;
 }
+// A word in the pool: collapsed header (tap to expand its senses). Each sense can
+// be placed individually; senses already placed elsewhere are dimmed out.
+function poolWord(w){
+  const box=document.createElement("div");
+  const open=poolOpen.has(w), n=senseCount(w);
+  const head=document.createElement("div"); head.className="chip word-head";
+  const ww=document.createElement("span"); ww.className="w"; ww.textContent=w; head.appendChild(ww);
+  if(hasAdverbSense(w)){ const a=document.createElement("span"); a.className="dom"; a.textContent="adv"; head.appendChild(a); }
+  const cnt=document.createElement("span"); cnt.className="sub"; cnt.textContent=(n?n+(n>1?" senses":" sense"):"no senses"); head.appendChild(cnt);
+  const car=document.createElement("span"); car.className="caret"; car.textContent=open?"▾":"▸"; head.appendChild(car);
+  head.onclick=()=>{ open?poolOpen.delete(w):poolOpen.add(w); render(); };
+  box.appendChild(head);
+  if(open){
+    const placedSenses=new Set(fam.placements.filter(p=>p.w===w&&p.s!=null).map(p=>p.s));
+    box.appendChild(poolChip(w,null,"(whole word — all senses)"));
+    (senses[w]||[]).forEach((s,i)=>{ if(!placedSenses.has(i)) box.appendChild(poolChip(w,i,s.g)); });
+  }
+  return box;
+}
 function poolChip(w, s, gloss){
-  const c=document.createElement("div"); c.className="chip";
+  const c=document.createElement("div"); c.className="chip"; c.style.marginLeft="16px";
   const ww=document.createElement("span"); ww.className="w"; ww.textContent=w+(s!=null?" ·"+(s+1):""); c.appendChild(ww);
   const dom=senseDom(w,s); if(dom){ const dd=document.createElement("span"); dd.className="dom"; dd.textContent=dom.replace(/-/g," "); c.appendChild(dd); }
   const sub=document.createElement("span"); sub.className="sub"; sub.textContent=shortG(gloss); c.appendChild(sub);
@@ -311,7 +368,11 @@ function parentSheet(p){
 }
 function collapseSheet(p){
   const types=["past tense of","past participle of","present participle of","plural of","adverb of","comparative of","superlative of"];
-  let html="<h3>Collapse "+esc(p.w)+"</h3><label class='f'>Relation</label><select id='ct'>"+types.map(t=>"<option>"+t+"</option>").join("")+"</select>";
+  let html="<h3>Collapse "+esc(p.w)+"</h3>";
+  // A past participle that also works as an adverb shouldn't be folded away — it
+  // earns its own card. Warn when the form carries an adverb sense.
+  if(hasAdverbSense(p.w)) html+='<div class="small" style="color:#e6b800;margin-bottom:8px">⚠ "'+esc(p.w)+'" has an adverb sense — if it functions as an adverb more than as a plain past tense, keep it as its own card instead of collapsing.</div>';
+  html+="<label class='f'>Relation</label><select id='ct'>"+types.map(t=>"<option>"+t+"</option>").join("")+"</select>";
   html+="<label class='f'>Lemma (base word)</label><input id='cl' value='"+esc(p.parent||"")+"' placeholder='e.g. prescribe' />";
   html+='<div class="row" style="margin-top:12px"><button id="cok">Collapse</button><button onclick="closeSheet()">Cancel</button></div>';
   openSheet(html);

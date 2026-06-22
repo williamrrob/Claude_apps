@@ -41,6 +41,18 @@ if (dangling.length) console.log("!! referenced but no record:", dangling.join("
 if (dupNodeAndCollapse.length) console.log("!! both a node AND collapsed:", dupNodeAndCollapse.join(", "));
 if (badTargets.length) console.log("!! collapse target not a node:", badTargets.join(", "));
 
+// A past participle that also functions as an adverb earns its own card, so it
+// must NOT be collapsed away. Drop such entries from the collapse set (they stay
+// standalone) and report them so they can be placed in the tree instead.
+function senseOf(w) { const p = path.join(WORDS, w.slice(0, 2) + ".json"); try { return (JSON.parse(fs.readFileSync(p, "utf8"))[w] || {}).d || []; } catch { return []; } }
+const promoted = [];
+Object.keys(collapse).forEach((w) => {
+  if (/past/.test(collapse[w].t) && senseOf(w).some((d) => /adv/i.test(d.p || ""))) {
+    promoted.push(w); delete collapse[w];
+  }
+});
+if (promoted.length) console.log("promoted (past participle that works as an adverb — give its own card):", promoted.join(", "));
+
 // --- apply: rel pointers on inflections + forms list on lemmas ---
 const formsByLemma = {};
 Object.keys(collapse).forEach((w) => { (formsByLemma[collapse[w].l] = formsByLemma[collapse[w].l] || []).push(w); });
