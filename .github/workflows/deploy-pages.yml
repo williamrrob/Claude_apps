@@ -32,10 +32,11 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp index.html styles.css data.js engine.js app.js \
+          cp index.html editor.html styles.css data.js engine.js app.js \
              manifest.webmanifest icon.svg morpheme-index.json roots.json eras.json _site/
           cp -r words _site/
           cp -r usage _site/
+          cp -r family _site/
 
       - name: Configure Pages (auto-enable)
         uses: actions/configure-pages@v5
