@@ -840,27 +840,12 @@
       link.addEventListener("click", function (e) { e.stopPropagation(); run(p.source); });
       box.appendChild(link);
     }
-    const list = el("div", "card-related");
-    list.appendChild(el("div", "related-empty", "finding words…"));
-    box.appendChild(list);
+    // Related words used to be listed here per morpheme; the per-root tree button
+    // now gives a far richer family view, so the card just shows the morpheme's
+    // pronunciation, meaning, origin, and a link to its source word.
     bp.classList.add("expanded");
     // into .bp-col so it lines up under the morpheme text, not the accent rule
     (bp.querySelector(".bp-col") || bp.querySelector(".bp-inner") || bp).appendChild(box);
-
-    const token = runToken;
-    loadData().then(async function () {
-      if (token !== runToken || !bp.classList.contains("expanded")) return;
-      const cand = (MORPH[p.id] || [])
-        .filter(function (w) { return w !== currentWord && w.length <= 12; })
-        .sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
-        .slice(0, 40);
-      const valid = await validateWords(cand, 18); // only words with real entries
-      if (token !== runToken || !bp.classList.contains("expanded")) return;
-      list.innerHTML = "";
-      if (!valid.length) { list.appendChild(el("div", "related-empty", "No common words share this piece.")); return; }
-      list.appendChild(el("div", "lab", "More words"));
-      renderWordGroups(list, valid, p.kind);
-    });
   }
   // Keep only candidate words that actually have a dictionary entry, so tapping
   // one never lands on a blank page.
@@ -884,39 +869,6 @@
       u.lang = "en-US"; u.rate = 0.95;
       window.speechSynthesis.speak(u);
     } catch (e) {}
-  }
-
-  // ---------- related word families ----------
-  function commonPrefix(a, b) { let i = 0; while (i < a.length && i < b.length && a[i] === b[i]) i++; return i; }
-  function clusterFamilies(words) {
-    const sorted = words.slice().sort();
-    const groups = [];
-    sorted.forEach(function (w) {
-      const g = groups[groups.length - 1];
-      if (g && commonPrefix(g[g.length - 1], w) >= 4) g.push(w);
-      else groups.push([w]);
-    });
-    groups.sort(function (a, b) { return b.length - a.length || a[0].localeCompare(b[0]); });
-    return groups;
-  }
-  function renderWordGroups(box, words, kind) {
-    const clean = words.filter(function (w) { return w.length <= 14; });
-    const pick = (clean.length ? clean : words)
-      .slice().sort(function (a, b) { return a.length - b.length || a.localeCompare(b); })
-      .slice(0, 18);
-    // one wrapping list so chips fill rows naturally (no ragged per-family rows)
-    box.appendChild(chipRow(pick, kind));
-  }
-  function chipRow(words, kind) {
-    const list = el("div", "related-list");
-    words.forEach(function (w, i) {
-      const c = el("button", "related-chip", w);
-      if (kind) c.dataset.kind = kind;
-      c.style.setProperty("--i", i);
-      c.addEventListener("click", function (e) { e.stopPropagation(); run(w); });
-      list.appendChild(c);
-    });
-    return list;
   }
 
   // ---------- IPA pronunciation key ----------
@@ -1429,7 +1381,8 @@
     if (!root) { closeTree(); return; }
     treeEl.hidden = false; treeEl.classList.add("tree-in");
     treeRoot = root; treeRoot._open = true;
-    renderTree(null);
+    const cur = expandToCurrent(treeRoot); // open the path down to the word we came from
+    renderTree(cur);
   }
   // Shrink the current word page back into the tree it came from (X / back).
   function returnToTree() {
@@ -1561,6 +1514,19 @@
     return { type: "root", label: rootPart.surface, source: rootPart.source,
       gloss: (rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : ""),
       children: children, _open: true };
+  }
+
+  // Open every node on the path from the tree root down to the word we came from,
+  // so the tree lands already expanded to (and scrolled to) that word. Returns the
+  // current-word node for scroll-into-view.
+  function expandToCurrent(node) {
+    if (node.type === "word" && node.current) return node;
+    const kids = node.children || [];
+    for (let i = 0; i < kids.length; i++) {
+      const found = expandToCurrent(kids[i]);
+      if (found) { node._open = true; return found; }
+    }
+    return null;
   }
 
   // The whole tree renders from treeRoot based on each node's _open flag, so it
