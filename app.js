@@ -1356,6 +1356,38 @@
   const treeCache = {};    // root id -> promise of its family root node
   function closeTree() { treeEl.hidden = true; treeEl.classList.remove("tree-in"); treeEl.innerHTML = ""; treeToken++; }
 
+  // Hand-curated family (from the curator editor) for a root id, if one exists.
+  // Fetched fresh each open (no-store) so it follows editor saves after deploy.
+  function loadFamily(id) {
+    return fetch("family/" + id + ".json?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+  }
+  // Convert the curator's placement format into the tree's node shape: regions are
+  // groups (by meaning), placements nest by parent (descent). A word placed more
+  // than once in a region (different senses) is shown once — its senses associate.
+  function curatedFamilyTree(doc, rootPart) {
+    const byRegion = {};
+    (doc.placements || []).forEach(function (p) { (byRegion[p.region] = byRegion[p.region] || []).push(p); });
+    const regionNodes = (doc.regions || []).map(function (rg) {
+      const here = byRegion[rg.id] || [];
+      const parentOf = {}, order = [];
+      here.forEach(function (p) { if (!(p.w in parentOf)) { parentOf[p.w] = p.parent || null; order.push(p.w); } });
+      const present = {}; order.forEach(function (w) { present[w] = 1; });
+      const isTop = function (w) { const par = parentOf[w]; return !par || !present[par]; };
+      function build(par) {
+        return order.filter(function (w) { return par === null ? isTop(w) : parentOf[w] === par; })
+          .sort(function (a, b) { return a.localeCompare(b); })
+          .map(function (w) { return { type: "word", word: w, current: false, children: build(w) }; });
+      }
+      const kids = build(null);
+      if (!kids.length) return null;
+      return { type: "group", label: rg.label, gloss: rg.gloss || "", count: countWords(kids), children: kids };
+    }).filter(Boolean);
+    return { type: "root", label: rootPart.surface, source: rootPart.source,
+      gloss: (rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : ""),
+      children: regionNodes, _open: true };
+  }
+
   // Build each root's family in the background as the word card opens, so a tree
   // animates in instantly when its button is tapped.
   function prefetchTree(word, parts) {
@@ -1372,9 +1404,17 @@
   async function openTreeRoot(rootPart, word) {
     if (!rootPart || !rootPart.id) return;
     const token = ++treeToken;
-    if (!treeCache[rootPart.id]) prefetchTree(word, [rootPart]);
     contentEl.classList.add("to-tree"); // the card contracts away
-    const root = await treeCache[rootPart.id];
+    // Prefer a hand-curated family (family/<id>.json, edited in the curator) and
+    // fall back to the heuristic prefix-grouped tree when there isn't one.
+    const curated = await loadFamily(rootPart.id);
+    let root;
+    if (curated && curated.placements && curated.placements.length) {
+      root = curatedFamilyTree(curated, rootPart);
+    } else {
+      if (!treeCache[rootPart.id]) prefetchTree(word, [rootPart]);
+      root = await treeCache[rootPart.id];
+    }
     await delay(170);
     if (token !== treeToken) { contentEl.classList.remove("to-tree"); return; }
     contentEl.classList.remove("to-tree");

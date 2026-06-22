@@ -385,7 +385,7 @@ body {
 }
 .history-chip:active { transform: scale(0.94); }
 .search {
-  display: flex; align-items: center; gap: 6px; padding: 4px; border-radius: 999px;
+  display: flex; align-items: center; gap: 6px; padding: 4px; border-radius: 16px;
   background: var(--glass-sheen), var(--field); border: 1px solid var(--bd);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-hi), var(--glass-shadow);
