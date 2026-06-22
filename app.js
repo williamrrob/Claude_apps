@@ -1380,8 +1380,9 @@
     contentEl.classList.remove("to-tree");
     if (!root) { closeTree(); return; }
     treeEl.hidden = false; treeEl.classList.add("tree-in");
-    treeRoot = root; treeRoot._open = true;
-    const cur = expandToCurrent(treeRoot); // open the path down to the word we came from
+    treeRoot = root;
+    resetTreeState(treeRoot); treeRoot._open = true; // clear flags from a prior open
+    const cur = expandToCurrent(treeRoot, word); // open the path down to the word we came from
     renderTree(cur);
   }
   // Shrink the current word page back into the tree it came from (X / back).
@@ -1516,17 +1517,22 @@
       children: children, _open: true };
   }
 
-  // Open every node on the path from the tree root down to the word we came from,
-  // so the tree lands already expanded to (and scrolled to) that word. Returns the
-  // current-word node for scroll-into-view.
-  function expandToCurrent(node) {
-    if (node.type === "word" && node.current) return node;
-    const kids = node.children || [];
-    for (let i = 0; i < kids.length; i++) {
-      const found = expandToCurrent(kids[i]);
-      if (found) { node._open = true; return found; }
-    }
-    return null;
+  // A family tree is cached per root and shared by every word in the family, so
+  // before (re)opening it we clear stale expansion/current flags — otherwise it
+  // stays focused on whichever word first built it.
+  function resetTreeState(node) {
+    node._open = false;
+    if (node.type === "word") node.current = false;
+    (node.children || []).forEach(resetTreeState);
+  }
+  // Open every node on the path from the tree root down to `word` (and mark it
+  // current), so the tree lands already expanded to it. Returns its node.
+  function expandToCurrent(node, word) {
+    let found = (node.type === "word" && node.word === word) ? node : null;
+    if (found) node.current = true;
+    (node.children || []).forEach(function (k) { const f = expandToCurrent(k, word); if (f) found = found || f; });
+    if (found && found !== node) node._open = true;
+    return found;
   }
 
   // The whole tree renders from treeRoot based on each node's _open flag, so it
