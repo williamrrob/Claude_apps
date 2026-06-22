@@ -36,8 +36,8 @@
    "id": "signing-subscribing",
    "label": "Signing & subscribing",
    "gloss": "commit by writing one's name",
-   "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "by": "user",
+   "at": "2026-06-22T20:59:19.027Z"
   },
   {
    "id": "sacred-writing",
@@ -537,6 +537,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T20:58:55.769Z"
+  "updated": "2026-06-22T20:59:19.027Z"
  }
 }
