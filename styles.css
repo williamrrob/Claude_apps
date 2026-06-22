@@ -537,9 +537,9 @@ body {
 
 /* cards */
 .cards { display: flex; flex-direction: column; gap: 11px; margin-top: 14px; }
-/* Wikipedia image card — the whole card is the photo */
-.img-card { padding: 0; position: relative; overflow: hidden; border-radius: 18px; }
-.wiki-img { display: block; width: 100%; height: auto; } /* full image, no crop */
+/* Wikipedia image card — the whole card is the photo (.card.img-card beats .card) */
+.card.img-card { padding: 0; position: relative; overflow: hidden; border-radius: 18px; }
+.wiki-img { display: block; width: 100%; height: auto; } /* full image, edge-to-edge */
 /* liquid-glass shimmer/depth right over the picture */
 .img-sheen { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
   background: linear-gradient(135deg, rgba(255,255,255,0.20), rgba(255,255,255,0.03) 34%,

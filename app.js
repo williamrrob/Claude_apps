@@ -1340,14 +1340,20 @@
   }
 
   // ---------- word-family tree ----------
-  // Most prefixes sit directly under the root, but a few cohesive sets read better
-  // bundled into a labelled group (you only see these when the root has them).
+  // Prefixes are bundled by sense so the top of a family isn't a long flat list.
+  // A group only actually forms when ≥2 of its prefixes appear (see buildFamilyTree),
+  // so a lone prefix still shows directly — no weird one-item groups.
   const CLUSTER = {
-    Number: ["bi", "tri", "uni", "mono", "multi", "poly", "semi", "hemi", "deca", "cent", "quadr", "penta", "oct", "milli", "kilo"],
-    Target: ["auto", "homo", "hetero", "allo"],
-    Degree: ["hyper", "hypo", "iso", "ultra", "infra", "supra"],
-    Against: ["anti", "contra", "ob"],
-    Side: ["cis", "trans"],
+    "Place / direction": ["ad", "ab", "de", "e", "in-loc", "ex", "sub", "super", "trans", "cis", "circum", "inter", "intra",
+      "extra", "intro", "retro", "peri", "para", "dia", "epi", "per", "pro", "ecto", "endo", "exo"],
+    "Time / order": ["pre", "post", "ante", "fore", "neo", "paleo", "proto"],
+    "Negation": ["a-priv", "in-neg", "un", "non", "dis"],
+    "Against": ["anti", "contra", "ob"],
+    "Together": ["co", "syn"],
+    "Number": ["bi", "tri", "uni", "mono", "multi", "poly", "semi", "hemi", "deca", "cent", "quadr", "penta", "oct", "milli", "kilo"],
+    "Degree": ["hyper", "hypo", "iso", "ultra", "infra", "supra", "mega", "macro", "micro"],
+    "Self / other": ["auto", "homo", "hetero", "allo"],
+    "Again / back": ["re"],
   };
   const PRE_CLUSTER = {};
   Object.keys(CLUSTER).forEach(function (c) { CLUSTER[c].forEach(function (id) { PRE_CLUSTER[id] = c; }); });
