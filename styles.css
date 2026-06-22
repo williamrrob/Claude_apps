@@ -444,6 +444,71 @@ body {
 }
 .entry-letter:active { transform: scale(0.94); }
 
+/* tree button — collapse the word card into the family tree */
+.tree-btn {
+  flex: 0 0 auto; width: 28px; height: 26px; display: grid; place-items: center;
+  color: var(--muted); background: var(--field); border: 1px solid var(--bd);
+  border-radius: 8px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.tree-btn:active { transform: scale(0.92); color: var(--prefix-ink); }
+
+/* ---------- word-family tree overlay ---------- */
+.tree {
+  /* sits above the content but below the dock, so the search bar stays usable */
+  position: absolute; inset: 0; z-index: 4; display: flex; flex-direction: column;
+  background: var(--bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.16'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23p)'/%3E%3C/svg%3E");
+  padding: calc(env(safe-area-inset-top) + 10px) var(--pad) calc(76px + env(safe-area-inset-bottom)) var(--pad);
+}
+.tree-loading { color: var(--muted); font-style: italic; margin: 24px 4px; }
+.tree-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.tree-back, .tree-close {
+  width: 32px; height: 32px; flex: 0 0 auto; border-radius: 9px; border: 1px solid var(--bd);
+  background: var(--field); color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer;
+  display: grid; place-items: center; -webkit-tap-highlight-color: transparent;
+}
+.tree-back:active, .tree-close:active { transform: scale(0.92); }
+.tree-crumb { flex: 1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px; font-size: 12.5px; color: var(--muted); overflow: hidden; }
+.tree-crumb-seg { cursor: pointer; }
+.tree-crumb-seg.cur { color: var(--ink); font-weight: 700; cursor: default; }
+.tree-crumb-sep { color: var(--muted); opacity: 0.6; }
+
+.tree-body { flex: 1; display: flex; align-items: center; gap: 14px; overflow-y: auto; }
+/* focused node on the left */
+.tree-left { flex: 0 0 auto; }
+.tree-root {
+  width: 96px; height: 96px; border-radius: 50%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 6px;
+  background: color-mix(in srgb, var(--root) 18%, var(--panel)); border: 1.5px solid var(--root);
+}
+.tree-root-w { font-size: 15px; font-weight: 700; color: var(--root); }
+.tree-root-g { font-size: 9px; color: var(--muted); margin-top: 3px; line-height: 1.2; }
+
+/* children fan vertically */
+.tree-kids { flex: 1; display: flex; flex-direction: column; gap: 9px; min-width: 0;
+  border-left: 1px solid var(--bd); padding-left: 14px; }
+
+/* one chip shape for every node (glass) */
+.tnode {
+  position: relative; border-radius: 14px; padding: 9px 30px 9px 13px;
+  background: var(--glass-sheen), var(--panel);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--bd); box-shadow: var(--glass-hi);
+  cursor: pointer; -webkit-tap-highlight-color: transparent; min-width: 0;
+}
+.tnode:active { transform: scale(0.985); }
+.tnode.focus { cursor: default; }
+.tnode-w { display: block; font-size: 14px; color: var(--ink); }
+.tnode.step .tnode-w { color: var(--prefix-ink); font-weight: 700; }
+.tnode-sub { display: block; font-size: 10.5px; font-style: italic; color: var(--muted); margin-top: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tnode-count { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--muted); }
+.tnode-mark { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
+.tnode-mark.plus { font-size: 15px; color: var(--muted); }
+.tnode-mark.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--root); }
+.tnode.current { border-color: var(--prefix-ink); }
+.tnode.current .tnode-w { color: var(--prefix-ink); }
+
 /* cards */
 .cards { display: flex; flex-direction: column; gap: 11px; margin-top: 14px; }
 /* Wikipedia image card */

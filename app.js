@@ -17,6 +17,7 @@
   const ipaKeyEl = $("ipaKey");
   const cardsEl = $("cards");
   const browseEl = $("browse");
+  const treeEl = $("tree");
   const suggestEl = $("suggest");
   const recentEl = $("recent");
   const navHome = $("navHome");
@@ -314,6 +315,7 @@
     hideSuggest();
     hideRecent();
     if (!browseEl.hidden) closeBrowse();
+    if (treeEl && !treeEl.hidden) closeTree();
     currentWord = "";
     input.value = "";
     hint.hidden = false;
@@ -346,6 +348,7 @@
     hideRecent();
     if (themeToggle) themeToggle.hidden = true; // toggle lives on the home screen only
     if (!browseEl.hidden) closeBrowse();
+    if (treeEl && !treeEl.hidden) closeTree();
     hint.hidden = true;
     loadData();
     if (contentEl) contentEl.scrollTop = 0;
@@ -478,6 +481,14 @@
   function buildEntry(word, rec, parts) {
     entryEl.className = "entry"; entryEl.innerHTML = "";
     const ruleRow = el("div", "entry-rule-row");
+    // tree button (top-left) — collapse this card into the word-family tree
+    if (parts && parts.some(function (p) { return p.kind === "root" && p.id; })) {
+      const tb = el("button", "tree-btn"); tb.type = "button";
+      tb.setAttribute("aria-label", "Show " + word + " in the word-family tree");
+      tb.innerHTML = '<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M7.2 11 16 6.6M7.2 13 16 17.4"/></svg>';
+      tb.addEventListener("click", function () { openTree(word, parts); });
+      ruleRow.appendChild(tb);
+    }
     ruleRow.appendChild(el("span", "entry-rule"));
     const pos = rec && rec.d && rec.d[0] && rec.d[0].p;
     if (pos) ruleRow.appendChild(el("span", "entry-pos", pos));
@@ -1320,6 +1331,174 @@
       list.appendChild(b);
     });
     if (words.length > cap) list.appendChild(el("div", "browse-note", "Showing the first " + cap + " of " + words.length + " words."));
+  }
+
+  // ---------- word-family tree ----------
+  // Prefixes grouped by their established sense (spatial, temporal, …) so a big
+  // family collapses to a few branches. Unmapped prefixes fall under "Other".
+  const SENSE = {
+    "a-priv": "Negation", "in-neg": "Negation", "dis": "Negation", "anti": "Against", "contra": "Against", "ob": "Against", "mal": "Against",
+    "ad": "Spatial", "ab": "Spatial", "de": "Spatial", "e": "Spatial", "in-loc": "Spatial", "sub": "Spatial", "super": "Spatial",
+    "trans": "Spatial", "circum": "Spatial", "inter": "Spatial", "intra": "Spatial", "extra": "Spatial", "intro": "Spatial",
+    "retro": "Spatial", "peri": "Spatial", "para": "Spatial", "dia": "Spatial", "epi": "Spatial", "per": "Spatial", "pro": "Spatial",
+    "circ": "Spatial", "ecto": "Spatial", "endo": "Spatial", "exo": "Spatial", "hypo": "Spatial", "hyper": "Spatial",
+    "pre": "Time", "post": "Time", "ante": "Time", "fore": "Time", "neo": "Time",
+    "co": "Together", "syn": "Together",
+    "re": "Again / back",
+    "auto": "Self", "homo": "Same", "hetero": "Different",
+    "bi": "Number", "tri": "Number", "uni": "Number", "mono": "Number", "multi": "Number", "semi": "Number", "poly": "Number", "hemi": "Number",
+  };
+  const SENSE_ORDER = ["Base", "Spatial", "Time", "Together", "Negation", "Against", "Again / back", "Number", "Self", "Same", "Different", "Other"];
+
+  function dotted(w) { // word split by morpheme, joined with subtle dots
+    try {
+      const ps = window.EtymologyEngine.decompose(w).parts;
+      if (ps.length > 1) return ps.map(function (p) { return p.surface; }).join("·");
+    } catch (e) {}
+    return w;
+  }
+
+  let treeStack = [];      // path of nodes from root to the focused node
+  let treeToken = 0;
+  function closeTree() { treeEl.hidden = true; treeEl.innerHTML = ""; treeToken++; }
+
+  async function openTree(word, parts) {
+    const rootPart = (parts || []).filter(function (p) { return p.kind === "root" && p.id; })[0];
+    if (!rootPart) return;
+    const token = ++treeToken;
+    treeEl.hidden = false;
+    treeEl.innerHTML = "";
+    treeEl.appendChild(el("div", "tree-loading", "Growing the family of " + word + "…"));
+    await loadData();
+    if (token !== treeToken) return;
+
+    const fam = (MORPH[rootPart.id] || []).filter(function (w) { return w !== word && /^[a-z]{2,}$/.test(w) && w.length <= 16; });
+    const valid = await validateWords(fam, 200); // only words we can actually open
+    if (token !== treeToken) return;
+    const root = buildFamilyTree(rootPart, word, valid);
+    treeStack = [root];
+    renderTree();
+  }
+
+  function buildFamilyTree(rootPart, headword, words) {
+    const cats = {};
+    function bucket(cat, key, label, gloss) {
+      cats[cat] = cats[cat] || {};
+      cats[cat][key] = cats[cat][key] || { label: label, gloss: gloss, words: [] };
+      return cats[cat][key];
+    }
+    // the headword itself sits in the tree too, marked current
+    words = words.concat([headword]);
+    const seen = {};
+    words.forEach(function (w) {
+      if (seen[w]) return; seen[w] = 1;
+      let pre = null;
+      try { pre = window.EtymologyEngine.decompose(w).parts.filter(function (p) { return p.kind === "prefix"; })[0]; } catch (e) {}
+      if (pre) {
+        const cat = SENSE[pre.id] || "Other";
+        bucket(cat, pre.id, pre.surface + "-", (pre.source || pre.surface) + (pre.meaning ? " · " + firstSense(pre.meaning) : "")).words.push(w);
+      } else {
+        bucket("Base", "(base)", "base", "the bare root as a word").words.push(w);
+      }
+    });
+    const sortW = function (a, b) { return a.length - b.length || a.localeCompare(b); };
+    const catNodes = SENSE_ORDER.filter(function (c) { return cats[c]; }).map(function (c) {
+      const keys = Object.keys(cats[c]);
+      // Base goes straight to its words; other categories nest a prefix layer.
+      if (c === "Base") {
+        const words2 = cats[c]["(base)"].words.sort(sortW).map(function (w) { return wordNode(w, headword); });
+        return { type: "group", label: "base", gloss: "the root as a word", count: words2.length, children: words2 };
+      }
+      const prefixes = keys.map(function (k) {
+        const g = cats[c][k];
+        const ws = g.words.sort(sortW).map(function (w) { return wordNode(w, headword); });
+        return { type: "group", label: g.label, gloss: g.gloss, count: ws.length, children: ws };
+      }).sort(function (a, b) { return b.count - a.count; });
+      const cnt = prefixes.reduce(function (n, p) { return n + p.count; }, 0);
+      // a category with a single prefix collapses to that prefix directly
+      const children = prefixes.length === 1 ? prefixes[0].children : prefixes;
+      return { type: "group", label: c, gloss: "", count: cnt, children: children };
+    });
+    return { type: "root", label: rootPart.surface, source: rootPart.source,
+      gloss: (rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : ""),
+      children: catNodes };
+  }
+  function wordNode(w, headword) { return { type: "word", word: w, current: w === headword }; }
+
+  function renderTree() {
+    treeEl.innerHTML = "";
+    const focus = treeStack[treeStack.length - 1];
+    // header: back + breadcrumb of the path
+    const head = el("div", "tree-head");
+    const back = el("button", "tree-back", "‹"); back.type = "button";
+    back.setAttribute("aria-label", "Back");
+    back.addEventListener("click", function () { if (treeStack.length > 1) { treeStack.pop(); renderTree(); } else closeTree(); });
+    head.appendChild(back);
+    const crumb = el("div", "tree-crumb");
+    treeStack.forEach(function (n, i) {
+      if (i) crumb.appendChild(el("span", "tree-crumb-sep", "›"));
+      const seg = el("span", "tree-crumb-seg" + (i === treeStack.length - 1 ? " cur" : ""), n.label);
+      if (i < treeStack.length - 1) { seg.addEventListener("click", function () { treeStack = treeStack.slice(0, i + 1); renderTree(); }); }
+      crumb.appendChild(seg);
+    });
+    head.appendChild(crumb);
+    const x = el("button", "tree-close", "✕"); x.type = "button";
+    x.addEventListener("click", closeTree);
+    head.appendChild(x);
+    treeEl.appendChild(head);
+
+    // body: focused node on the left, its children fanning to the right
+    const body = el("div", "tree-body");
+    const left = el("div", "tree-left");
+    left.appendChild(focusChip(focus));
+    body.appendChild(left);
+    const kids = el("div", "tree-kids");
+    (focus.children || []).forEach(function (c) { kids.appendChild(treeChip(c)); });
+    body.appendChild(kids);
+    treeEl.appendChild(body);
+  }
+
+  function focusChip(node) {
+    if (node.type === "root") {
+      const c = el("div", "tree-root");
+      c.appendChild(el("div", "tree-root-w", node.label));
+      if (node.gloss) c.appendChild(el("div", "tree-root-g", node.gloss));
+      return c;
+    }
+    const c = el("div", "tnode step focus");
+    c.appendChild(el("span", "tnode-w", node.label));
+    if (node.gloss) c.appendChild(el("span", "tnode-sub", node.gloss));
+    return c;
+  }
+
+  function treeChip(node) {
+    if (node.type === "word") {
+      const c = el("div", "tnode word" + (node.current ? " current" : ""));
+      c.appendChild(el("span", "tnode-w", dotted(node.word)));
+      const g = el("span", "tnode-sub", "");
+      c.appendChild(g);
+      c.appendChild(el("span", "tnode-mark dot", ""));
+      getWord(node.word).then(function (rec) {
+        const def = rec && rec.d && rec.d[0] && rec.d[0].g;
+        if (def) g.textContent = shortGloss(def);
+      });
+      c.setAttribute("role", "button"); c.setAttribute("tabindex", "0");
+      const open = function () { closeTree(); run(node.word); };
+      c.addEventListener("click", open);
+      c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+      return c;
+    }
+    // group (a + combining step / category)
+    const c = el("div", "tnode step");
+    c.appendChild(el("span", "tnode-w", node.label));
+    if (node.gloss) c.appendChild(el("span", "tnode-sub", node.gloss));
+    c.appendChild(el("span", "tnode-count", String(node.count)));
+    c.appendChild(el("span", "tnode-mark plus", "+"));
+    c.setAttribute("role", "button"); c.setAttribute("tabindex", "0");
+    const drill = function () { treeStack.push(node); renderTree(); };
+    c.addEventListener("click", drill);
+    c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); drill(); } });
+    return c;
   }
 
   // ---------- typeahead ----------
