@@ -129,14 +129,6 @@
    "at": "2026-06-22T19:47:28.202Z"
   },
   {
-   "w": "adscript",
-   "s": null,
-   "region": "signing-subscribing",
-   "parent": null,
-   "by": "user",
-   "at": "2026-06-22T20:58:55.769Z"
-  },
-  {
    "w": "transcribe",
    "s": null,
    "region": "writing-copying",
@@ -537,6 +529,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T20:59:19.027Z"
+  "updated": "2026-06-22T20:59:26.214Z"
  }
 }
