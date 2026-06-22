@@ -1,0 +1,57 @@
+{
+  "_note": "Hand-classified word family for the scrib-/script- root (Latin scribere, 'to write'). The tree is grouped by SEMANTIC DOMAIN (location in meaning space), not by prefix; ancestry/descent is shown via nested kids. Inflections (collapse) are NOT shown as nodes — they fold into their lemma's card as 'Forms' and get a 'rel' pointer. Consumed by the app's tree view; build-family.js writes the collapse pointers + forms into the shards.",
+  "root": "scrib",
+  "regions": [
+    { "label": "Writing & copying", "gloss": "the act, its agents, artefacts, reproduction",
+      "nodes": [
+        { "w": "scribe", "kids": [ { "w": "scriber" }, { "w": "scribble" } ] },
+        { "w": "script", "kids": [
+            { "w": "manuscript" }, { "w": "typescript" }, { "w": "postscript" },
+            { "w": "subscript" }, { "w": "superscript" }, { "w": "unscripted" }, { "w": "adscript" }
+        ] },
+        { "w": "transcribe", "kids": [ { "w": "transcriber" }, { "w": "transcript", "kids": [ { "w": "transcription" } ] } ] }
+      ] },
+    { "label": "Official directives", "gloss": "orders set down in writing",
+      "nodes": [
+        { "w": "prescribe", "kids": [ { "w": "prescriber" }, { "w": "prescript" }, { "w": "prescriptive" },
+            { "w": "prescription", "kids": [ { "w": "nonprescription" } ] } ] },
+        { "w": "proscribe", "kids": [ { "w": "proscription" } ] },
+        { "w": "conscript", "kids": [ { "w": "conscription" } ] },
+        { "w": "rescript", "kids": [ { "w": "rescriptor" } ] }
+      ] },
+    { "label": "Writing on a surface", "gloss": "engrave · around · above",
+      "nodes": [
+        { "w": "inscribe", "kids": [ { "w": "inscription" }, { "w": "inscriptive" } ] },
+        { "w": "circumscribe", "kids": [ { "w": "circumscription" } ] },
+        { "w": "superscribe", "kids": [ { "w": "superscription" } ] }
+      ] },
+    { "label": "Depiction & attribution", "gloss": "render or assign in words",
+      "nodes": [
+        { "w": "describe", "kids": [
+            { "w": "description" },
+            { "w": "descriptive", "kids": [ { "w": "undescriptive" } ] },
+            { "w": "describable", "kids": [ { "w": "indescribable" } ] },
+            { "w": "descriptor" },
+            { "w": "nondescript" }
+        ] },
+        { "w": "ascribe", "kids": [ { "w": "ascription" }, { "w": "ascribable", "kids": [ { "w": "unascribable" } ] } ] }
+      ] },
+    { "label": "Signing & subscribing", "gloss": "commit by writing one's name",
+      "nodes": [ { "w": "subscribe", "kids": [ { "w": "subscriber" }, { "w": "subscription" } ] } ] },
+    { "label": "Sacred writing", "gloss": "religion",
+      "nodes": [ { "w": "scripture", "kids": [ { "w": "scriptural" } ] } ] }
+  ],
+  "collapse": {
+    "adscripted":    { "l": "adscript",     "t": "past tense of" },
+    "circumscribed": { "l": "circumscribe", "t": "past tense of" },
+    "described":     { "l": "describe",     "t": "past tense of" },
+    "inscribed":     { "l": "inscribe",     "t": "past tense of" },
+    "prescribed":    { "l": "prescribe",    "t": "past tense of" },
+    "proscribed":    { "l": "proscribe",    "t": "past tense of" },
+    "subscribed":    { "l": "subscribe",    "t": "past tense of" },
+    "transcribed":   { "l": "transcribe",   "t": "past tense of" },
+    "scripted":      { "l": "script",       "t": "past tense of" },
+    "descriptively": { "l": "descriptive",  "t": "adverb of" },
+    "inscriptively": { "l": "inscriptive",  "t": "adverb of" }
+  }
+}
