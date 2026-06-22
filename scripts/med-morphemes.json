@@ -1,0 +1,3803 @@
+{
+"_source": "Wikipedia: List of medical roots and affixes",
+"_license": "CC BY-SA 4.0",
+"_url": "https://en.wikipedia.org/wiki/List_of_medical_roots_and_affixes",
+"morphemes": [
+{
+"id": "med-abdomin",
+"forms": [
+"abdomin"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "abdomin",
+"meaning": "of or relating to the abdomen"
+},
+{
+"id": "med-acanth",
+"forms": [
+"acanth"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ákantha",
+"meaning": "thorn or spine"
+},
+{
+"id": "med-acou",
+"forms": [
+"acou"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "akoúein",
+"meaning": "of or relating to hearing"
+},
+{
+"id": "med-acusis",
+"forms": [
+"acusis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "akoustikós",
+"meaning": "hearing"
+},
+{
+"id": "med-aden",
+"forms": [
+"aden"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "adḗn, adén-",
+"meaning": "of or relating to a gland"
+},
+{
+"id": "med-adip",
+"forms": [
+"adip"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "adip",
+"meaning": "of or relating to fat or fatty tissue"
+},
+{
+"id": "med-adren",
+"forms": [
+"adren"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "adren",
+"meaning": "of or relating to the adrenal glands"
+},
+{
+"id": "med-aemia",
+"forms": [
+"aemia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "anaimía",
+"meaning": "blood condition"
+},
+{
+"id": "med-aero",
+"forms": [
+"aero"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "aḗr, aéros",
+"meaning": "air, gas"
+},
+{
+"id": "med-aesthesi",
+"forms": [
+"aesthesi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "aísthēsis",
+"meaning": "sensation"
+},
+{
+"id": "med-algesi",
+"forms": [
+"algesi",
+"alge"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "álgos",
+"meaning": "pain"
+},
+{
+"id": "med-algia",
+"forms": [
+"algia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "algia",
+"meaning": "pain"
+},
+{
+"id": "med-ambi",
+"forms": [
+"ambi"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "ambi",
+"meaning": "denoting something as positioned on both sides; describing both of two"
+},
+{
+"id": "med-amnio",
+"forms": [
+"amnio"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ámnion",
+"meaning": "Pertaining to the membranous fetal sac (amnion)"
+},
+{
+"id": "med-amphi",
+"forms": [
+"amphi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "amphí",
+"meaning": "on both sides"
+},
+{
+"id": "med-amylo",
+"forms": [
+"amylo",
+"amyl"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "amylo",
+"meaning": "starchy, carbohydrate-related"
+},
+{
+"id": "med-aniso",
+"forms": [
+"aniso"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ánisos",
+"meaning": "describing something as unequal"
+},
+{
+"id": "med-ankyl",
+"forms": [
+"ankyl"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ankúlos",
+"meaning": "denoting something as crooked or bent"
+},
+{
+"id": "med-ante",
+"forms": [
+"ante"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ante",
+"meaning": "describing something as positioned in front of another thing"
+},
+{
+"id": "med-anthropo",
+"forms": [
+"anthropo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ánthrōpos",
+"meaning": "human"
+},
+{
+"id": "med-anti",
+"forms": [
+"anti"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "antí",
+"meaning": "describing something as 'against' or 'opposed to' another"
+},
+{
+"id": "med-archi",
+"forms": [
+"archi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "arkhi-",
+"meaning": "first, primitive"
+},
+{
+"id": "med-arseno",
+"forms": [
+"arseno"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "arsenikós",
+"meaning": "of or pertaining to a male; masculine"
+},
+{
+"id": "med-arterio",
+"forms": [
+"arterio",
+"arteri"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "artēría",
+"meaning": "of or pertaining to an artery"
+},
+{
+"id": "med-arthr",
+"forms": [
+"arthr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "árthron",
+"meaning": "of or pertaining to the joints, limbs"
+},
+{
+"id": "med-articul",
+"forms": [
+"articul"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "articul",
+"meaning": "joint"
+},
+{
+"id": "med-asthenia",
+"forms": [
+"asthenia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "asthéneia",
+"meaning": "weakness"
+},
+{
+"id": "med-atelo",
+"forms": [
+"atelo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "atelḗs",
+"meaning": "imperfect or incomplete development"
+},
+{
+"id": "med-ather",
+"forms": [
+"ather"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "athárē",
+"meaning": "fatty deposit, soft gruel-like deposit"
+},
+{
+"id": "med-ation",
+"forms": [
+"ation"
+],
+"cat": "suffix",
+"origin": "Latin",
+"source": "ation",
+"meaning": "process"
+},
+{
+"id": "med-atri",
+"forms": [
+"atri"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "atri",
+"meaning": "an atrium (esp. heart atrium)"
+},
+{
+"id": "med-auxo",
+"forms": [
+"auxo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "auxánō, aúxō",
+"meaning": "increase; growth"
+},
+{
+"id": "med-axill",
+"forms": [
+"axill"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "axill",
+"meaning": "of or pertaining to the armpit (uncommon as a prefix)"
+},
+{
+"id": "med-azoto",
+"forms": [
+"azoto"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ázōtikós",
+"meaning": "nitrogenous compound"
+},
+{
+"id": "med-bacillo",
+"forms": [
+"bacillo"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "bacillo",
+"meaning": "rod-shaped, typically referring to Bacillus spp."
+},
+{
+"id": "med-bacteri",
+"forms": [
+"bacteri"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "baktḗrion",
+"meaning": "Pertaining to bacteria"
+},
+{
+"id": "med-blepharo",
+"forms": [
+"blepharo",
+"blephar"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "blépharon",
+"meaning": "of or pertaining to the eyelid"
+},
+{
+"id": "med-brachio",
+"forms": [
+"brachio",
+"brachi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "brakhíōn",
+"meaning": "of or relating to the arm"
+},
+{
+"id": "med-brachy",
+"forms": [
+"brachy"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "brakhús",
+"meaning": "indicating 'short' or less commonly 'little'"
+},
+{
+"id": "med-brady",
+"forms": [
+"brady"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "bradús",
+"meaning": "slow"
+},
+{
+"id": "med-bronchi",
+"forms": [
+"bronchi",
+"bronch"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "brónkhos",
+"meaning": "of or relating to the bronchus"
+},
+{
+"id": "med-bucco",
+"forms": [
+"bucco",
+"bucc"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "bucco",
+"meaning": "of or pertaining to the cheek"
+},
+{
+"id": "med-burso",
+"forms": [
+"burso"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "búrsa",
+"meaning": "bursa (fluid sac between the bones)"
+},
+{
+"id": "med-capill",
+"forms": [
+"capill"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "capill",
+"meaning": "of or pertaining to hair"
+},
+{
+"id": "med-carcin",
+"forms": [
+"carcin"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "karkínos",
+"meaning": "cancer"
+},
+{
+"id": "med-cardi",
+"forms": [
+"cardi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kardía",
+"meaning": "of or pertaining to the heart"
+},
+{
+"id": "med-cata",
+"forms": [
+"cata"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "katá",
+"meaning": "down, under"
+},
+{
+"id": "med-cele",
+"forms": [
+"cele"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "kḗlē",
+"meaning": "pouching, hernia"
+},
+{
+"id": "med-centesis",
+"forms": [
+"centesis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "kéntēsis",
+"meaning": "surgical puncture for aspiration"
+},
+{
+"id": "med-cephalo",
+"forms": [
+"cephalo",
+"cephal"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kephalḗ",
+"meaning": "of or pertaining to the head (as a whole)"
+},
+{
+"id": "med-cerato",
+"forms": [
+"cerato",
+"cerat"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kéras, kerat-",
+"meaning": "of or pertaining to the cornu; a horn"
+},
+{
+"id": "med-cerebello",
+"forms": [
+"cerebello",
+"cerebell"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "cerebello",
+"meaning": "of or pertaining to the cerebellum"
+},
+{
+"id": "med-cerebro",
+"forms": [
+"cerebro",
+"cerebr"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "cerebro",
+"meaning": "of or pertaining to the brain"
+},
+{
+"id": "med-cervic",
+"forms": [
+"cervic"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "cervic",
+"meaning": "of or pertaining to the neck or the cervix"
+},
+{
+"id": "med-cheil",
+"forms": [
+"cheil"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kheîlos",
+"meaning": "of or pertaining to the lips"
+},
+{
+"id": "med-chemo",
+"forms": [
+"chemo",
+"chem"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "khēmeía",
+"meaning": "chemistry, drug"
+},
+{
+"id": "med-chlor",
+"forms": [
+"chlor"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "khlōrós",
+"meaning": "denoting a green color"
+},
+{
+"id": "med-cholecysto",
+"forms": [
+"cholecysto",
+"cholecyst"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kholēkústis",
+"meaning": "of or pertaining to the gallbladder"
+},
+{
+"id": "med-chondri",
+"forms": [
+"chondri",
+"chondr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "chondri",
+"meaning": "cartilage, gristle, granule, granular"
+},
+{
+"id": "med-chromato",
+"forms": [
+"chromato"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "khrôma",
+"meaning": "color"
+},
+{
+"id": "med-cidal",
+"forms": [
+"cidal"
+],
+"cat": "suffix",
+"origin": "Latin",
+"source": "cidal",
+"meaning": "killing, destroying"
+},
+{
+"id": "med-circum",
+"forms": [
+"circum"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "circum",
+"meaning": "denoting something as 'around' another"
+},
+{
+"id": "med-clast",
+"forms": [
+"clast"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "klastós",
+"meaning": "break"
+},
+{
+"id": "med-clostr",
+"forms": [
+"clostr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "klōstḗr",
+"meaning": "spindle"
+},
+{
+"id": "med-coccus",
+"forms": [
+"coccus"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "kókkos",
+"meaning": "round, spherical"
+},
+{
+"id": "med-colp",
+"forms": [
+"colp"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kólpos",
+"meaning": "of or pertaining to the vagina"
+},
+{
+"id": "med-contra",
+"forms": [
+"contra"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "contra",
+"meaning": "against"
+},
+{
+"id": "med-cornu",
+"forms": [
+"cornu"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "cornu",
+"meaning": "applied to describing processes and parts of the body as likened or si"
+},
+{
+"id": "med-cortic",
+"forms": [
+"cortic"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "cortic",
+"meaning": "cortex, outer region"
+},
+{
+"id": "med-cranio",
+"forms": [
+"cranio",
+"crani"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "krāníon",
+"meaning": "belonging or relating to the cranium"
+},
+{
+"id": "med-crine",
+"forms": [
+"crine"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "krínō",
+"meaning": "to secrete"
+},
+{
+"id": "med-cryo",
+"forms": [
+"cryo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "krúos",
+"meaning": "cold"
+},
+{
+"id": "med-cutane",
+"forms": [
+"cutane"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "cutane",
+"meaning": "skin"
+},
+{
+"id": "med-cyano",
+"forms": [
+"cyano",
+"cyan"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kúanos, kuáneos",
+"meaning": "having a blue color"
+},
+{
+"id": "med-cycl",
+"forms": [
+"cycl"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kúklos",
+"meaning": "circle, cycle"
+},
+{
+"id": "med-cypho",
+"forms": [
+"cypho",
+"cyph"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kuphós",
+"meaning": "denotes something as bent (uncommon as a prefix)"
+},
+{
+"id": "med-cysto",
+"forms": [
+"cysto",
+"cyst"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kústis",
+"meaning": "of or pertaining to the urinary bladder"
+},
+{
+"id": "med-cyto",
+"forms": [
+"cyto"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kútos",
+"meaning": "cell"
+},
+{
+"id": "med-dacryo",
+"forms": [
+"dacryo",
+"dacry"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "dacryo",
+"meaning": "of or pertaining to tears"
+},
+{
+"id": "med-dactylo",
+"forms": [
+"dactylo",
+"dactyl"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "dáktulos",
+"meaning": "of or pertaining to a finger, toe"
+},
+{
+"id": "med-dent",
+"forms": [
+"dent"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "dent",
+"meaning": "of or pertaining to teeth"
+},
+{
+"id": "med-dermato",
+"forms": [
+"dermato",
+"dermat"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "dérma, dérmatos",
+"meaning": "of or pertaining to the skin"
+},
+{
+"id": "med-desis",
+"forms": [
+"desis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "désis",
+"meaning": "binding"
+},
+{
+"id": "med-dextro",
+"forms": [
+"dextro",
+"dextr"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "dextro",
+"meaning": "right, on the right side"
+},
+{
+"id": "med-diplo",
+"forms": [
+"diplo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "diplóos",
+"meaning": "twofold"
+},
+{
+"id": "med-dipsia",
+"forms": [
+"dipsia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "dípsa",
+"meaning": "(condition of) thirst"
+},
+{
+"id": "med-dorso",
+"forms": [
+"dorso"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "dorso",
+"meaning": "of or pertaining to the back"
+},
+{
+"id": "med-dromo",
+"forms": [
+"dromo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "drómos",
+"meaning": "running, conduction, course"
+},
+{
+"id": "med-duodeno",
+"forms": [
+"duodeno"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "duodeno",
+"meaning": "twelve"
+},
+{
+"id": "med-dynamo",
+"forms": [
+"dynamo",
+"dynam"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "dúnamis",
+"meaning": "force, energy, power"
+},
+{
+"id": "med-dynia",
+"forms": [
+"dynia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "odúnē",
+"meaning": "pain"
+},
+{
+"id": "med-ecto",
+"forms": [
+"ecto"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ektós",
+"meaning": "outer, outside"
+},
+{
+"id": "med-ectasia",
+"forms": [
+"ectasia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "éktasis",
+"meaning": "expansion, dilation"
+},
+{
+"id": "med-ectomy",
+"forms": [
+"ectomy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "ektomḗ",
+"meaning": "denotes a surgical operation or removal of a body part; resection, exc"
+},
+{
+"id": "med-edema",
+"forms": [
+"edema"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "oídēma",
+"meaning": "swelling"
+},
+{
+"id": "med-emesis",
+"forms": [
+"emesis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "hémesis",
+"meaning": "vomiting condition"
+},
+{
+"id": "med-encephalo",
+"forms": [
+"encephalo",
+"encephal"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "enképhalos",
+"meaning": "of or pertaining to the brain; see also cerebro-"
+},
+{
+"id": "med-endo",
+"forms": [
+"endo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "éndon",
+"meaning": "denotes something as inside or within"
+},
+{
+"id": "med-eosino",
+"forms": [
+"eosino",
+"eosin"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ēṓs",
+"meaning": "having a red color"
+},
+{
+"id": "med-entero",
+"forms": [
+"entero"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "énteron",
+"meaning": "of or pertaining to the intestine"
+},
+{
+"id": "med-episio",
+"forms": [
+"episio",
+"episi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "epísion",
+"meaning": "of or pertaining to the pubic region, the loins"
+},
+{
+"id": "med-erythro",
+"forms": [
+"erythro",
+"erythr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "eruthrós",
+"meaning": "having a red color"
+},
+{
+"id": "med-esophageal",
+"forms": [
+"esophageal"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "oisophágos",
+"meaning": "gullet (AmE)"
+},
+{
+"id": "med-esthesio",
+"forms": [
+"esthesio"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "aísthēsis",
+"meaning": "sensation (AmE)"
+},
+{
+"id": "med-extra",
+"forms": [
+"extra"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "extra",
+"meaning": "outside"
+},
+{
+"id": "med-fibr",
+"forms": [
+"fibr"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "fibr",
+"meaning": "fiber"
+},
+{
+"id": "med-foramino",
+"forms": [
+"foramino"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "foramino",
+"meaning": "hole, opening, or aperture, particularly in bone"
+},
+{
+"id": "med-form",
+"forms": [
+"form"
+],
+"cat": "suffix",
+"origin": "Latin",
+"source": "form",
+"meaning": "used to form adjectives indicating \"having the form of\""
+},
+{
+"id": "med-gastr",
+"forms": [
+"gastr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "gastḗr, gastr-",
+"meaning": "of or pertaining to the stomach"
+},
+{
+"id": "med-genic",
+"forms": [
+"genic"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "-genḗs",
+"meaning": "formative; pertaining to producing"
+},
+{
+"id": "med-geusia",
+"forms": [
+"geusia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "geûsis",
+"meaning": "taste"
+},
+{
+"id": "med-gingiv",
+"forms": [
+"gingiv"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "gingiv",
+"meaning": "of or pertaining to the gums"
+},
+{
+"id": "med-glauco",
+"forms": [
+"glauco",
+"glauc"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "glaukós",
+"meaning": "Having a grey or bluish-grey colour"
+},
+{
+"id": "med-glosso",
+"forms": [
+"glosso"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "glôssa, glôtta",
+"meaning": "of or pertaining to the tongue"
+},
+{
+"id": "med-gluco",
+"forms": [
+"gluco"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "glukús",
+"meaning": "sweet"
+},
+{
+"id": "med-glyc",
+"forms": [
+"glyc"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "glukús",
+"meaning": "sugar"
+},
+{
+"id": "med-gnath",
+"forms": [
+"gnath"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "gnáthos",
+"meaning": "of or pertaining to the jaw"
+},
+{
+"id": "med-gnosis",
+"forms": [
+"gnosis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "gnôsis",
+"meaning": "knowledge"
+},
+{
+"id": "med-gram",
+"forms": [
+"gram"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "grámma",
+"meaning": "record or picture"
+},
+{
+"id": "med-graph",
+"forms": [
+"graph"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "-graphía",
+"meaning": "instrument used to record data or picture"
+},
+{
+"id": "med-graphy",
+"forms": [
+"graphy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "-graphía",
+"meaning": "process of recording"
+},
+{
+"id": "med-gyno",
+"forms": [
+"gyno"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "gunḗ, gunaik",
+"meaning": "woman"
+},
+{
+"id": "med-halluc",
+"forms": [
+"halluc"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "halluc",
+"meaning": "to wander in mind"
+},
+{
+"id": "med-hemat",
+"forms": [
+"hemat"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "hemat",
+"meaning": "of or pertaining to blood"
+},
+{
+"id": "med-hema",
+"forms": [
+"hema"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "hema",
+"meaning": "blood (AmE)"
+},
+{
+"id": "med-hemangio",
+"forms": [
+"hemangio",
+"hemangi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "hemangio",
+"meaning": "blood vessels"
+},
+{
+"id": "med-hemi",
+"forms": [
+"hemi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "hēmi-",
+"meaning": "one-half"
+},
+{
+"id": "med-hepat",
+"forms": [
+"hepat"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "hêpar, ēpat-",
+"meaning": "of or pertaining to the liver"
+},
+{
+"id": "med-hetero",
+"forms": [
+"hetero",
+"heter"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "héteros",
+"meaning": "denotes something as \"the other\" (of two), as an addition, or differen"
+},
+{
+"id": "med-hidro",
+"forms": [
+"hidro",
+"hidr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "hidrṓs, hidrōt-",
+"meaning": "sweat"
+},
+{
+"id": "med-histo",
+"forms": [
+"histo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "histós",
+"meaning": "tissue"
+},
+{
+"id": "med-homeo",
+"forms": [
+"homeo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "homoios",
+"meaning": "similar"
+},
+{
+"id": "med-homo",
+"forms": [
+"homo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "homós",
+"meaning": "denotes something as \"the same\" as another or common"
+},
+{
+"id": "med-humero",
+"forms": [
+"humero",
+"humer"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "humero",
+"meaning": "of or pertaining to the shoulder (or [rarely] the upper arm)"
+},
+{
+"id": "med-hydro",
+"forms": [
+"hydro",
+"hydr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "húdōr",
+"meaning": "water"
+},
+{
+"id": "med-hyper",
+"forms": [
+"hyper"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "hupér",
+"meaning": "extreme or beyond normal"
+},
+{
+"id": "med-hypo",
+"forms": [
+"hypo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "hupó",
+"meaning": "below[5]"
+},
+{
+"id": "med-hystero",
+"forms": [
+"hystero",
+"hyster"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "hustéra",
+"meaning": "of or pertaining to the womb or the uterus"
+},
+{
+"id": "med-iasis",
+"forms": [
+"iasis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "íasis",
+"meaning": "condition, formation, or presence of"
+},
+{
+"id": "med-iatro",
+"forms": [
+"iatro",
+"iatr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "iatrós",
+"meaning": "of or pertaining to medicine or a physician (uncommon as a prefix but "
+},
+{
+"id": "med-ileo",
+"forms": [
+"ileo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "eileós",
+"meaning": "ileum"
+},
+{
+"id": "med-ilio",
+"forms": [
+"ilio"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "ilio",
+"meaning": "ilium"
+},
+{
+"id": "med-infra",
+"forms": [
+"infra"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "infra",
+"meaning": "below"
+},
+{
+"id": "med-inter",
+"forms": [
+"inter"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "inter",
+"meaning": "between, among"
+},
+{
+"id": "med-intra",
+"forms": [
+"intra"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "intra",
+"meaning": "within"
+},
+{
+"id": "med-ipsi",
+"forms": [
+"ipsi"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "ipsi",
+"meaning": "same"
+},
+{
+"id": "med-irido",
+"forms": [
+"irido",
+"irid"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "îris",
+"meaning": "of or pertaining to the iris"
+},
+{
+"id": "med-ischio",
+"forms": [
+"ischio"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "iskhíon",
+"meaning": "of or pertaining to the ischium, the hip-joint"
+},
+{
+"id": "med-ismus",
+"forms": [
+"ismus"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "ismus",
+"meaning": "spasm, contraction"
+},
+{
+"id": "med-itis",
+"forms": [
+"itis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "-îtis",
+"meaning": "inflammation"
+},
+{
+"id": "med-juxta",
+"forms": [
+"juxta"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "juxta",
+"meaning": "near to, alongside, or next to"
+},
+{
+"id": "med-kary",
+"forms": [
+"kary"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "káruon",
+"meaning": "nucleus"
+},
+{
+"id": "med-kerat",
+"forms": [
+"kerat"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kéras",
+"meaning": "cornea (eye or skin)"
+},
+{
+"id": "med-koil",
+"forms": [
+"koil"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "koîlos",
+"meaning": "hollow"
+},
+{
+"id": "med-kyph",
+"forms": [
+"kyph"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "kuphós",
+"meaning": "humped"
+},
+{
+"id": "med-lacrimo",
+"forms": [
+"lacrimo",
+"lacrim"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "lacrimo",
+"meaning": "tear"
+},
+{
+"id": "med-lacti",
+"forms": [
+"lacti",
+"lact"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "lacti",
+"meaning": "milk"
+},
+{
+"id": "med-laparo",
+"forms": [
+"laparo",
+"lapar"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "lapára",
+"meaning": "of or pertaining to the abdominal wall, flank"
+},
+{
+"id": "med-laryngo",
+"forms": [
+"laryngo",
+"laryng"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "lárunx",
+"meaning": "of or pertaining to the larynx, the lower throat cavity where the voic"
+},
+{
+"id": "med-latero",
+"forms": [
+"latero"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "latero",
+"meaning": "lateral"
+},
+{
+"id": "med-leio",
+"forms": [
+"leio"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "leîos",
+"meaning": "smooth"
+},
+{
+"id": "med-lepsis",
+"forms": [
+"lepsis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "lêpsis",
+"meaning": "attack, seizure"
+},
+{
+"id": "med-lepto",
+"forms": [
+"lepto",
+"lept"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "leptós",
+"meaning": "light, slender"
+},
+{
+"id": "med-leuco",
+"forms": [
+"leuco",
+"leuc"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "leukós",
+"meaning": "denoting a white color"
+},
+{
+"id": "med-lingua",
+"forms": [
+"lingua",
+"lingu"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "lingua",
+"meaning": "of or pertaining to the tongue"
+},
+{
+"id": "med-lipo",
+"forms": [
+"lipo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "lípos",
+"meaning": "fat"
+},
+{
+"id": "med-lissos",
+"forms": [
+"lissos"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "Lissós",
+"meaning": "smooth"
+},
+{
+"id": "med-litho",
+"forms": [
+"litho",
+"lith"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "líthos",
+"meaning": "stone, calculus"
+},
+{
+"id": "med-logo",
+"forms": [
+"logo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "lógos",
+"meaning": "speech"
+},
+{
+"id": "med-logist",
+"forms": [
+"logist"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "logistḗs",
+"meaning": "denotes someone who studies a certain field (the field of _____-logy);"
+},
+{
+"id": "med-logy",
+"forms": [
+"logy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "-logíā",
+"meaning": "denotes the academic study or practice of a certain field; the study o"
+},
+{
+"id": "med-lumbo",
+"forms": [
+"lumbo"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "lumbo",
+"meaning": "of or relating to the part of the trunk between the lowest ribs and th"
+},
+{
+"id": "med-lympho",
+"forms": [
+"lympho",
+"lymph"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "lympho",
+"meaning": "lymph"
+},
+{
+"id": "med-lyso",
+"forms": [
+"lyso"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "lúsis",
+"meaning": "dissolution"
+},
+{
+"id": "med-lysis",
+"forms": [
+"lysis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "lúsis",
+"meaning": "destruction, separation"
+},
+{
+"id": "med-macro",
+"forms": [
+"macro",
+"macr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "makrós",
+"meaning": "large, long"
+},
+{
+"id": "med-malacia",
+"forms": [
+"malacia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "malakía",
+"meaning": "softening"
+},
+{
+"id": "med-mammo",
+"forms": [
+"mammo"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "mammo",
+"meaning": "of or pertaining to the breast"
+},
+{
+"id": "med-mammillo",
+"forms": [
+"mammillo",
+"mammill"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "mammillo",
+"meaning": "of or pertaining to the nipple"
+},
+{
+"id": "med-manu",
+"forms": [
+"manu"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "manu",
+"meaning": "of or pertaining to the hand"
+},
+{
+"id": "med-masto",
+"forms": [
+"masto"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "mastós",
+"meaning": "of or pertaining to the breast"
+},
+{
+"id": "med-mega",
+"forms": [
+"mega"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "mégas",
+"meaning": "enlargement, million"
+},
+{
+"id": "med-melano",
+"forms": [
+"melano"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "mélās, melano-",
+"meaning": "having a black color"
+},
+{
+"id": "med-melos",
+"forms": [
+"melos"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "mélos",
+"meaning": "extremity"
+},
+{
+"id": "med-meningo",
+"forms": [
+"meningo",
+"mening"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "mêninx",
+"meaning": "membrane"
+},
+{
+"id": "med-meta",
+"forms": [
+"meta"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "metá",
+"meaning": "after, beside, beyond or change"
+},
+{
+"id": "med-meter",
+"forms": [
+"meter"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "métron",
+"meaning": "instrument used to measure or count"
+},
+{
+"id": "med-metry",
+"forms": [
+"metry"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "métron",
+"meaning": "process of measuring, -meter + -y (see -meter)"
+},
+{
+"id": "med-metr",
+"forms": [
+"metr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "mḗtrā",
+"meaning": "pertaining to conditions or instruments of the uterus"
+},
+{
+"id": "med-micr",
+"forms": [
+"micr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "mīkrós",
+"meaning": "millionth; denoting something as small, relating to smallness"
+},
+{
+"id": "med-morph",
+"forms": [
+"morph"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "morphḗ",
+"meaning": "form, shape"
+},
+{
+"id": "med-musculo",
+"forms": [
+"musculo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "mûs",
+"meaning": "muscle"
+},
+{
+"id": "med-myco",
+"forms": [
+"myco"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "múkēs, mukēt-",
+"meaning": "fungus"
+},
+{
+"id": "med-myelo",
+"forms": [
+"myelo",
+"myel"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "muelós",
+"meaning": "of or relating to bone marrow or the spinal cord"
+},
+{
+"id": "med-mylo",
+"forms": [
+"mylo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "múlē",
+"meaning": "of or relating to molar teeth or the lower jaw"
+},
+{
+"id": "med-myringo",
+"forms": [
+"myringo",
+"myring"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "myringo",
+"meaning": "eardrum"
+},
+{
+"id": "med-myxo",
+"forms": [
+"myxo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "múxa",
+"meaning": "mucus"
+},
+{
+"id": "med-nano",
+"forms": [
+"nano"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "nânos",
+"meaning": "dwarf, small"
+},
+{
+"id": "med-narco",
+"forms": [
+"narco",
+"narc"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "nárkē",
+"meaning": "numb, sleep"
+},
+{
+"id": "med-nato",
+"forms": [
+"nato"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "nato",
+"meaning": "birth"
+},
+{
+"id": "med-necro",
+"forms": [
+"necro",
+"necr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "nekrós",
+"meaning": "death"
+},
+{
+"id": "med-nephro",
+"forms": [
+"nephro",
+"nephr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "nephrós",
+"meaning": "of or pertaining to the kidney"
+},
+{
+"id": "med-neur",
+"forms": [
+"neur"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "neûron",
+"meaning": "of or pertaining to nerves and the nervous system"
+},
+{
+"id": "med-noci",
+"forms": [
+"noci"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "noci",
+"meaning": "pain, injury, hurt"
+},
+{
+"id": "med-ocul",
+"forms": [
+"ocul"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "ocul",
+"meaning": "of or pertaining to the eye"
+},
+{
+"id": "med-odont",
+"forms": [
+"odont"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "odoús, odont-",
+"meaning": "of or pertaining to teeth"
+},
+{
+"id": "med-odyn",
+"forms": [
+"odyn"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "odúnē",
+"meaning": "pain"
+},
+{
+"id": "med-oesophageal",
+"forms": [
+"oesophageal",
+"oesophago"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "oisophágos",
+"meaning": "gullet"
+},
+{
+"id": "med-olig",
+"forms": [
+"olig"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "olígos",
+"meaning": "having little, having few"
+},
+{
+"id": "med-omphalo",
+"forms": [
+"omphalo",
+"omphal"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "omphalós",
+"meaning": "of or pertaining to the navel, the umbilicus"
+},
+{
+"id": "med-onco",
+"forms": [
+"onco"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ónkos",
+"meaning": "tumor, bulk, volume"
+},
+{
+"id": "med-onycho",
+"forms": [
+"onycho",
+"onych"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ónux, onukho-",
+"meaning": "of or pertaining to the nail (of a finger or toe)"
+},
+{
+"id": "med-oophoro",
+"forms": [
+"oophoro",
+"oophor"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ōiophóron",
+"meaning": "of or pertaining to the woman's (ovary)"
+},
+{
+"id": "med-ophthalmo",
+"forms": [
+"ophthalmo",
+"ophthalm"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ophthalmós",
+"meaning": "of or pertaining to the (eye)"
+},
+{
+"id": "med-opistho",
+"forms": [
+"opistho"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ópisthen",
+"meaning": "back, behind, rear[11]"
+},
+{
+"id": "med-opsy",
+"forms": [
+"opsy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "ópsis",
+"meaning": "examination or inspection"
+},
+{
+"id": "med-optico",
+"forms": [
+"optico",
+"optic"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "optikós",
+"meaning": "of or relating to chemical properties of the eye"
+},
+{
+"id": "med-orchio",
+"forms": [
+"orchio",
+"orchi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "órkhis",
+"meaning": "testis"
+},
+{
+"id": "med-ortho",
+"forms": [
+"ortho",
+"orth"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "orthós",
+"meaning": "denoting something as straight or correct"
+},
+{
+"id": "med-osis",
+"forms": [
+"osis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "-ōsis",
+"meaning": "a condition, disease, process or increase"
+},
+{
+"id": "med-oste",
+"forms": [
+"oste"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "ostéon",
+"meaning": "bone"
+},
+{
+"id": "med-ovario",
+"forms": [
+"ovario",
+"ovari"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "ovario",
+"meaning": "of or pertaining to the ovaries"
+},
+{
+"id": "med-pachy",
+"forms": [
+"pachy"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "pakhús",
+"meaning": "thick"
+},
+{
+"id": "med-pagus",
+"forms": [
+"pagus"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "págos",
+"meaning": "Indicates conjoined twins, with the first part denoting the organs fus"
+},
+{
+"id": "med-palpebr",
+"forms": [
+"palpebr"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "palpebr",
+"meaning": "of or pertaining to the eyelid (uncommon as a root)"
+},
+{
+"id": "med-papill",
+"forms": [
+"papill"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "papill",
+"meaning": "of or pertaining to the nipple (of the chest/breast)"
+},
+{
+"id": "med-papulo",
+"forms": [
+"papulo",
+"papul"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "papulo",
+"meaning": "small elevation or swelling in the skin, a pimple, swelling"
+},
+{
+"id": "med-para",
+"forms": [
+"para"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "pará",
+"meaning": "alongside of"
+},
+{
+"id": "med-paresis",
+"forms": [
+"paresis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "páresis",
+"meaning": "slight paralysis"
+},
+{
+"id": "med-parvo",
+"forms": [
+"parvo"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "parvo",
+"meaning": "small"
+},
+{
+"id": "med-patho",
+"forms": [
+"patho",
+"path"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "páthos",
+"meaning": "disease"
+},
+{
+"id": "med-pathy",
+"forms": [
+"pathy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "páthos",
+"meaning": "disease or disorder"
+},
+{
+"id": "med-pauci",
+"forms": [
+"pauci"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "pauci",
+"meaning": "Few"
+},
+{
+"id": "med-pector",
+"forms": [
+"pector"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "pector",
+"meaning": "breast or chest"
+},
+{
+"id": "med-pelvi",
+"forms": [
+"pelvi"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "pelvi",
+"meaning": "hip bone"
+},
+{
+"id": "med-penia",
+"forms": [
+"penia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "penia",
+"meaning": "deficiency"
+},
+{
+"id": "med-pepsia",
+"forms": [
+"pepsia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "peptós",
+"meaning": "relating to digestion or the digestive tract."
+},
+{
+"id": "med-peri",
+"forms": [
+"peri"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "perí",
+"meaning": "surrounding or around"
+},
+{
+"id": "med-pexy",
+"forms": [
+"pexy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "pêxis",
+"meaning": "fixation"
+},
+{
+"id": "med-phaco",
+"forms": [
+"phaco"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "phakós",
+"meaning": "lens-shaped"
+},
+{
+"id": "med-phago",
+"forms": [
+"phago"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "-phágos",
+"meaning": "eating, devouring"
+},
+{
+"id": "med-phagist",
+"forms": [
+"phagist"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "phagistḗs",
+"meaning": "eater of"
+},
+{
+"id": "med-phagy",
+"forms": [
+"phagy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "phagy",
+"meaning": "feeding on"
+},
+{
+"id": "med-phall",
+"forms": [
+"phall"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "phallós",
+"meaning": "phallus"
+},
+{
+"id": "med-pharmac",
+"forms": [
+"pharmac"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "phármakon",
+"meaning": "drug, medication"
+},
+{
+"id": "med-pharyng",
+"forms": [
+"pharyng"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "phárunx, pharung-",
+"meaning": "pertaining to the pharynx"
+},
+{
+"id": "med-philia",
+"forms": [
+"philia",
+"phil"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "philíā",
+"meaning": "attraction for"
+},
+{
+"id": "med-phleb",
+"forms": [
+"phleb"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "phléps, phleb-",
+"meaning": "of or pertaining to the (blood) veins, a vein"
+},
+{
+"id": "med-phobia",
+"forms": [
+"phobia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "phóbos",
+"meaning": "exaggerated fear, sensitivity, aversion"
+},
+{
+"id": "med-phon",
+"forms": [
+"phon"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "phōnḗ",
+"meaning": "sound"
+},
+{
+"id": "med-phren",
+"forms": [
+"phren"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "phrḗn",
+"meaning": "the mind"
+},
+{
+"id": "med-phyllo",
+"forms": [
+"phyllo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "phúllon",
+"meaning": "leaf-like"
+},
+{
+"id": "med-phyte",
+"forms": [
+"phyte"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "phutón",
+"meaning": "to grow"
+},
+{
+"id": "med-plasia",
+"forms": [
+"plasia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "plásis",
+"meaning": "formation, development"
+},
+{
+"id": "med-plasty",
+"forms": [
+"plasty"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "plastós",
+"meaning": "surgical repair, reconstruction"
+},
+{
+"id": "med-plegia",
+"forms": [
+"plegia"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "plēgḗ",
+"meaning": "paralysis"
+},
+{
+"id": "med-pleio",
+"forms": [
+"pleio"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "pleîon",
+"meaning": "more, excessive, multiple"
+},
+{
+"id": "med-pleur",
+"forms": [
+"pleur"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "pleurā́",
+"meaning": "of or pertaining to the ribs"
+},
+{
+"id": "med-plexy",
+"forms": [
+"plexy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "plḗssō, plḗssein",
+"meaning": "stroke or seizure"
+},
+{
+"id": "med-poiesis",
+"forms": [
+"poiesis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "poíēsis",
+"meaning": "production"
+},
+{
+"id": "med-polio",
+"forms": [
+"polio"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "poliós",
+"meaning": "having a grey color"
+},
+{
+"id": "med-poly",
+"forms": [
+"poly"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "polús",
+"meaning": "many"
+},
+{
+"id": "med-porphyr",
+"forms": [
+"porphyr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "porphúra",
+"meaning": "purple color"
+},
+{
+"id": "med-post",
+"forms": [
+"post"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "post",
+"meaning": "after or behind"
+},
+{
+"id": "med-prosop",
+"forms": [
+"prosop"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "prósōpon",
+"meaning": "face"
+},
+{
+"id": "med-prot",
+"forms": [
+"prot"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "prōtos",
+"meaning": "first or most important"
+},
+{
+"id": "med-pseud",
+"forms": [
+"pseud"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "pseúdō",
+"meaning": "false or fake"
+},
+{
+"id": "med-psor",
+"forms": [
+"psor"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "psṓra",
+"meaning": "Itching"
+},
+{
+"id": "med-psych",
+"forms": [
+"psych"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "psukhḗ",
+"meaning": "of or pertaining to the mind"
+},
+{
+"id": "med-ptero",
+"forms": [
+"ptero"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "pterón",
+"meaning": "Pertaining to a wing"
+},
+{
+"id": "med-ptosis",
+"forms": [
+"ptosis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "ptôsis",
+"meaning": "falling, drooping, downward placement, prolapse"
+},
+{
+"id": "med-ptysis",
+"forms": [
+"ptysis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "ptū́ō",
+"meaning": "spitting"
+},
+{
+"id": "med-pulmon",
+"forms": [
+"pulmon"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "pulmon",
+"meaning": "of or relating to the lungs"
+},
+{
+"id": "med-pyel",
+"forms": [
+"pyel"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "púelos",
+"meaning": "pelvis"
+},
+{
+"id": "med-pykno",
+"forms": [
+"pykno"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "púknōsis",
+"meaning": "to thicken (as the nucleus does in early stages of cell death)"
+},
+{
+"id": "med-pylor",
+"forms": [
+"pylor"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "pulōrós",
+"meaning": "gate"
+},
+{
+"id": "med-quadri",
+"forms": [
+"quadri",
+"quadr"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "quadri",
+"meaning": "four"
+},
+{
+"id": "med-radi",
+"forms": [
+"radi"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "radi",
+"meaning": "radiation"
+},
+{
+"id": "med-rect",
+"forms": [
+"rect"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "rect",
+"meaning": "rectum"
+},
+{
+"id": "med-reticulo",
+"forms": [
+"reticulo",
+"reticul"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "reticulo",
+"meaning": "net"
+},
+{
+"id": "med-retro",
+"forms": [
+"retro"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "retro",
+"meaning": "backward, behind"
+},
+{
+"id": "med-rhabdo",
+"forms": [
+"rhabdo",
+"rhabd"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "rhábdos",
+"meaning": "rod shaped, striated"
+},
+{
+"id": "med-rhachio",
+"forms": [
+"rhachio",
+"rhachi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "rhákhis",
+"meaning": "spine"
+},
+{
+"id": "med-rhodo",
+"forms": [
+"rhodo",
+"rhod"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "rhódon",
+"meaning": "denoting a rose-red color"
+},
+{
+"id": "med-rrhage",
+"forms": [
+"rrhage"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "-ragía",
+"meaning": "burst forth, rapid flow (of blood, usually)"
+},
+{
+"id": "med-rrhaphy",
+"forms": [
+"rrhaphy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "rhaphḗ",
+"meaning": "surgical suturing"
+},
+{
+"id": "med-rrhea",
+"forms": [
+"rrhea"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "rhoíā",
+"meaning": "flowing, discharge"
+},
+{
+"id": "med-rrhexis",
+"forms": [
+"rrhexis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "rhêxis",
+"meaning": "rupture"
+},
+{
+"id": "med-rrhoea",
+"forms": [
+"rrhoea"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "rhoíā",
+"meaning": "flowing, discharge"
+},
+{
+"id": "med-rubro",
+"forms": [
+"rubro"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "rubro",
+"meaning": "of or pertaining to the red nucleus of the brain"
+},
+{
+"id": "med-rupt",
+"forms": [
+"rupt"
+],
+"cat": "suffix",
+"origin": "Latin",
+"source": "rupt",
+"meaning": "break or burst"
+},
+{
+"id": "med-salpingo",
+"forms": [
+"salpingo",
+"salping"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "sálpinx, salping-",
+"meaning": "of or pertaining to tubes, e.g. fallopian tubes"
+},
+{
+"id": "med-sangui",
+"forms": [
+"sangui"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "sangui",
+"meaning": "of or pertaining to blood"
+},
+{
+"id": "med-sapro",
+"forms": [
+"sapro"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "saprós",
+"meaning": "relating to putrefaction or decay"
+},
+{
+"id": "med-sarco",
+"forms": [
+"sarco"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "sárx",
+"meaning": "muscular, flesh-like"
+},
+{
+"id": "med-scapulo",
+"forms": [
+"scapulo",
+"scapul"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "scapulo",
+"meaning": "of or pertaining to the scapula"
+},
+{
+"id": "med-schisto",
+"forms": [
+"schisto",
+"schist"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "skhistós",
+"meaning": "split, cleft"
+},
+{
+"id": "med-schizo",
+"forms": [
+"schizo",
+"schiz"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "skhízō",
+"meaning": "denoting something \"split\" or \"double-sided\""
+},
+{
+"id": "med-sclero",
+"forms": [
+"sclero",
+"scler"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "sklērós",
+"meaning": "hard"
+},
+{
+"id": "med-sclerosis",
+"forms": [
+"sclerosis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "sklērós",
+"meaning": "hardening"
+},
+{
+"id": "med-scolio",
+"forms": [
+"scolio",
+"scoli"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "skoliós",
+"meaning": "twisted"
+},
+{
+"id": "med-scope",
+"forms": [
+"scope"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "skópos",
+"meaning": "instrument for viewing"
+},
+{
+"id": "med-scopy",
+"forms": [
+"scopy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "skopéō",
+"meaning": "process of viewing"
+},
+{
+"id": "med-scoto",
+"forms": [
+"scoto"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "skótos",
+"meaning": "darkness"
+},
+{
+"id": "med-semi",
+"forms": [
+"semi"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "semi",
+"meaning": "one-half, partly"
+},
+{
+"id": "med-sialo",
+"forms": [
+"sialo"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "sialo",
+"meaning": "saliva, salivary gland"
+},
+{
+"id": "med-sigmoido",
+"forms": [
+"sigmoido",
+"sigmoid"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "sigmoeidḗs",
+"meaning": "sigmoid, S-shaped curvature"
+},
+{
+"id": "med-sinistro",
+"forms": [
+"sinistro",
+"sinistr"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "sinistro",
+"meaning": "left, left side"
+},
+{
+"id": "med-sinus",
+"forms": [
+"sinus"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "sinus",
+"meaning": "of or pertaining to the sinus"
+},
+{
+"id": "med-sito",
+"forms": [
+"sito"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "sîtos",
+"meaning": "food, grain"
+},
+{
+"id": "med-somato",
+"forms": [
+"somato",
+"somat"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "sôma",
+"meaning": "body, bodily"
+},
+{
+"id": "med-somno",
+"forms": [
+"somno"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "somno",
+"meaning": "Sleep"
+},
+{
+"id": "med-spadias",
+"forms": [
+"spadias"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "spáō",
+"meaning": "slit, fissure"
+},
+{
+"id": "med-spasmo",
+"forms": [
+"spasmo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "spasmós",
+"meaning": "spasm"
+},
+{
+"id": "med-sperma",
+"forms": [
+"sperma"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "spérma",
+"meaning": "semen, spermatozoa"
+},
+{
+"id": "med-splanchni",
+"forms": [
+"splanchni",
+"splanchn"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "splánkhnon",
+"meaning": "viscera"
+},
+{
+"id": "med-spleno",
+"forms": [
+"spleno",
+"splen"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "splḗn, splēn-",
+"meaning": "spleen"
+},
+{
+"id": "med-spondylo",
+"forms": [
+"spondylo",
+"spondyl"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "sphóndulos, spóndulos",
+"meaning": "of or pertaining to the spine, the vertebra"
+},
+{
+"id": "med-squamoso",
+"forms": [
+"squamoso",
+"squamos"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "squamoso",
+"meaning": "denoting something as \"full of scales\" or \"scaly\""
+},
+{
+"id": "med-stalsis",
+"forms": [
+"stalsis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "stéllō",
+"meaning": "contraction"
+},
+{
+"id": "med-stasis",
+"forms": [
+"stasis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "stásis",
+"meaning": "stopping, standing"
+},
+{
+"id": "med-staxis",
+"forms": [
+"staxis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "stázō, staktós",
+"meaning": "dripping, trickling"
+},
+{
+"id": "med-steno",
+"forms": [
+"steno"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "stenós",
+"meaning": "denoting something as narrow in shape or pertaining to narrowness"
+},
+{
+"id": "med-stenosis",
+"forms": [
+"stenosis"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "stenós",
+"meaning": "abnormal narrowing of a blood vessel or other tubular organ or structu"
+},
+{
+"id": "med-steth",
+"forms": [
+"steth"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "stêthos",
+"meaning": "of or pertaining to the upper chest, the area above the breast and und"
+},
+{
+"id": "med-stheno",
+"forms": [
+"stheno"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "sthénos",
+"meaning": "strength, force, power"
+},
+{
+"id": "med-stom",
+"forms": [
+"stom"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "stóma, stomat-",
+"meaning": "of or pertaining to the mouth; an artificially created opening[13]"
+},
+{
+"id": "med-stomy",
+"forms": [
+"stomy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "stóma",
+"meaning": "creation of an opening"
+},
+{
+"id": "med-super",
+"forms": [
+"super"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "super",
+"meaning": "in excess, above, superior"
+},
+{
+"id": "med-supra",
+"forms": [
+"supra"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "supra",
+"meaning": "above, excessive"
+},
+{
+"id": "med-tachy",
+"forms": [
+"tachy"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "takhús",
+"meaning": "denoting something as fast, irregularly fast"
+},
+{
+"id": "med-tension",
+"forms": [
+"tension"
+],
+"cat": "suffix",
+"origin": "Latin",
+"source": "tension",
+"meaning": "pressure"
+},
+{
+"id": "med-terato",
+"forms": [
+"terato"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "téras",
+"meaning": "Monster"
+},
+{
+"id": "med-tetan",
+"forms": [
+"tetan"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "tétanos",
+"meaning": "rigid, tense"
+},
+{
+"id": "med-thec",
+"forms": [
+"thec"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "thḗkē",
+"meaning": "case, sheath"
+},
+{
+"id": "med-thely",
+"forms": [
+"thely"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "thêlus",
+"meaning": "denoting something as relating to a woman, feminine"
+},
+{
+"id": "med-therap",
+"forms": [
+"therap"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "therapeíā",
+"meaning": "treatment"
+},
+{
+"id": "med-thermo",
+"forms": [
+"thermo",
+"therm"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "thermós",
+"meaning": "heat"
+},
+{
+"id": "med-thoraci",
+"forms": [
+"thoraci",
+"thorac"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "thṓrāx",
+"meaning": "of or pertaining to the upper chest, chest(thorax); the area above the"
+},
+{
+"id": "med-thrombo",
+"forms": [
+"thrombo",
+"thromb"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "thrómbos",
+"meaning": "of or relating to a blood clot, clotting of blood"
+},
+{
+"id": "med-thyro",
+"forms": [
+"thyro",
+"thyr"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "thureós",
+"meaning": "thyroid"
+},
+{
+"id": "med-tomy",
+"forms": [
+"tomy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "-tomía",
+"meaning": "act of cutting; incising, incision"
+},
+{
+"id": "med-topo",
+"forms": [
+"topo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "tópos",
+"meaning": "place, topical"
+},
+{
+"id": "med-torti",
+"forms": [
+"torti",
+"tort"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "torti",
+"meaning": "twisted"
+},
+{
+"id": "med-toxi",
+"forms": [
+"toxi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "toxikón",
+"meaning": "toxin, poison"
+},
+{
+"id": "med-trachea",
+"forms": [
+"trachea",
+"trache"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "trakheîa",
+"meaning": "trachea"
+},
+{
+"id": "med-trachelo",
+"forms": [
+"trachelo",
+"trachel"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "trákhēlos",
+"meaning": "of or pertaining to the neck"
+},
+{
+"id": "med-trans",
+"forms": [
+"trans"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "trans",
+"meaning": "denoting something as moving or situated across or through"
+},
+{
+"id": "med-trichi",
+"forms": [
+"trichi"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "thríx",
+"meaning": "of or pertaining to hair, hair-like structure"
+},
+{
+"id": "med-tripsy",
+"forms": [
+"tripsy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "trípsis",
+"meaning": "crushing"
+},
+{
+"id": "med-trophy",
+"forms": [
+"trophy"
+],
+"cat": "suffix",
+"origin": "Greek",
+"source": "trophḗ",
+"meaning": "nourishment, development"
+},
+{
+"id": "med-tympano",
+"forms": [
+"tympano",
+"tympan"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "túmpanon",
+"meaning": "eardrum"
+},
+{
+"id": "med-ultra",
+"forms": [
+"ultra"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "ultra",
+"meaning": "beyond, excessive"
+},
+{
+"id": "med-umbilic",
+"forms": [
+"umbilic"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "umbilic",
+"meaning": "of or pertaining to the navel, the umbilicus"
+},
+{
+"id": "med-ungui",
+"forms": [
+"ungui"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "ungui",
+"meaning": "of or pertaining to the nail, a claw"
+},
+{
+"id": "med-urin",
+"forms": [
+"urin"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "oûron",
+"meaning": "of or pertaining to urine, the urinary system"
+},
+{
+"id": "med-vagin",
+"forms": [
+"vagin"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "vagin",
+"meaning": "of or pertaining to the vagina"
+},
+{
+"id": "med-varico",
+"forms": [
+"varico",
+"varic"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "varico",
+"meaning": "swollen or twisted vein"
+},
+{
+"id": "med-vaso",
+"forms": [
+"vaso"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "vaso",
+"meaning": "duct, blood vessel"
+},
+{
+"id": "med-vasculo",
+"forms": [
+"vasculo"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "vasculo",
+"meaning": "blood vessel"
+},
+{
+"id": "med-ventro",
+"forms": [
+"ventro"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "ventro",
+"meaning": "of or pertaining to the belly, the stomach cavities"
+},
+{
+"id": "med-ventriculo",
+"forms": [
+"ventriculo",
+"ventricul"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "ventriculo",
+"meaning": "of or pertaining to the ventricles; any hollow region inside an organ"
+},
+{
+"id": "med-version",
+"forms": [
+"version"
+],
+"cat": "suffix",
+"origin": "Latin",
+"source": "version",
+"meaning": "turning"
+},
+{
+"id": "med-vesico",
+"forms": [
+"vesico",
+"vesic"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "vesico",
+"meaning": "of or pertaining to the bladder"
+},
+{
+"id": "med-viscero",
+"forms": [
+"viscero",
+"viscer"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "viscero",
+"meaning": "of or pertaining to the internal organs, the viscera"
+},
+{
+"id": "med-xantho",
+"forms": [
+"xantho",
+"xanth"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "xanthós",
+"meaning": "having a yellow color, especially an abnormally yellow color"
+},
+{
+"id": "med-xiph",
+"forms": [
+"xiph"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "xíphos",
+"meaning": "sword"
+},
+{
+"id": "med-zymo",
+"forms": [
+"zymo"
+],
+"cat": "root",
+"origin": "Greek",
+"source": "zúmē",
+"meaning": "fermentation"
+},
+{
+"id": "med-armpit",
+"forms": [
+"armpit"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "armpit",
+"meaning": "maschal-"
+},
+{
+"id": "med-bladder",
+"forms": [
+"bladder"
+],
+"cat": "root",
+"origin": "Latin",
+"source": "bladder",
+"meaning": "cyst-"
+}
+]
+}

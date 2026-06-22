@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "20";
+  const DATA_V = "21";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -238,7 +238,7 @@
   function hybridPart(x) {
     const e = morphFind(x.s);
     if (e) return { kind: x.k, surface: x.s, origin: e.origin, source: e.source, meaning: e.meaning, id: e.id, forms: e.forms };
-    return { kind: x.k, surface: x.s, origin: null, source: null, meaning: x.g || null, id: null, forms: null };
+    return { kind: x.k, surface: x.s, origin: x.o || null, source: null, meaning: x.g || null, id: null, forms: null };
   }
   function wholePart(word) {
     return [{ kind: "word", surface: word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
