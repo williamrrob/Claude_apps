@@ -124,9 +124,9 @@
    "w": "unscripted",
    "s": null,
    "region": "writing-copying",
-   "parent": "script",
-   "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "parent": "scripted",
+   "by": "user",
+   "at": "2026-06-22T19:47:28.202Z"
   },
   {
    "w": "adscript",
@@ -537,6 +537,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T19:47:23.329Z"
+  "updated": "2026-06-22T19:47:28.202Z"
  }
 }
