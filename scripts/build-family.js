@@ -21,11 +21,8 @@ for (const f of fs.readdirSync(WORDS)) {
   Object.keys(JSON.parse(fs.readFileSync(path.join(WORDS, f), "utf8"))).forEach((w) => vocab.add(w));
 }
 
-// gather every word that appears as a tree node
-const treeWords = [];
-(function walk(nodes) { (nodes || []).forEach((n) => { treeWords.push(n.w); walk(n.kids); }); })(
-  doc.regions.reduce((a, r) => a.concat(r.nodes), [])
-);
+// placement format: every placed word, and the collapse map
+const treeWords = (doc.placements || []).map((p) => p.w);
 const collapse = doc.collapse || {};
 const covered = new Set(treeWords.concat(Object.keys(collapse)));
 

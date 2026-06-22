@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Rootwork — Family Curator</title>
+<style>
+  :root { --bg:#1a1714; --panel:#241f1b; --panel2:#2c2621; --ink:#f5ebd7; --muted:#a89a86;
+    --accent:#b5651d; --user:#6db86b; --assist:#7a6f60; --line:#3a332c; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { margin:0; font:15px/1.4 -apple-system,system-ui,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--ink); }
+  header { position:sticky; top:0; z-index:5; background:var(--panel); border-bottom:1px solid var(--line);
+    padding:10px 12px; display:flex; align-items:center; gap:10px; padding-top:max(10px,env(safe-area-inset-top)); }
+  header h1 { font-size:15px; margin:0; font-weight:700; flex:1; }
+  .status { font-size:12px; color:var(--muted); white-space:nowrap; }
+  .status.saving { color:var(--accent); } .status.ok { color:var(--user); } .status.err { color:#e0716a; }
+  button { font:inherit; color:var(--ink); background:var(--panel2); border:1px solid var(--line);
+    border-radius:9px; padding:6px 10px; cursor:pointer; }
+  button:active { transform:translateY(1px); }
+  .iconbtn { padding:6px 9px; }
+  main { padding:12px; max-width:760px; margin:0 auto; }
+  .region { background:var(--panel); border:1px solid var(--line); border-radius:12px; margin:0 0 14px; overflow:hidden; }
+  .region > h2 { font-size:14px; margin:0; padding:10px 12px; background:var(--panel2); display:flex; gap:8px; align-items:baseline; }
+  .region h2 .g { font-size:12px; color:var(--muted); font-weight:400; flex:1; }
+  .region .body { padding:8px 10px 12px; }
+  .chip { display:flex; align-items:center; gap:8px; padding:7px 9px; margin:5px 0; border-radius:9px;
+    background:var(--panel2); border:1px solid var(--line); cursor:pointer; }
+  .chip .w { font-weight:600; }
+  .chip .sub { color:var(--muted); font-size:12.5px; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .dom { font-size:10.5px; font-weight:700; text-transform:lowercase; padding:1px 6px; border-radius:8px;
+    background:var(--accent); color:var(--bg); }
+  .by { width:7px; height:7px; border-radius:50%; flex:none; }
+  .by.user { background:var(--user); } .by.assistant { background:var(--assist); }
+  .pool .chip { background:#211c18; }
+  .muted { color:var(--muted); } .small { font-size:12px; }
+  .secthead { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:18px 4px 6px; }
+  /* sheet */
+  .sheet-bg { position:fixed; inset:0; background:rgba(0,0,0,.5); display:none; z-index:20; }
+  .sheet-bg.open { display:block; }
+  .sheet { position:fixed; left:0; right:0; bottom:0; z-index:21; background:var(--panel); border-top:1px solid var(--line);
+    border-radius:16px 16px 0 0; padding:14px 14px max(16px,env(safe-area-inset-bottom)); transform:translateY(100%);
+    transition:transform .18s ease; max-height:80vh; overflow:auto; max-width:760px; margin:0 auto; }
+  .sheet.open { transform:none; }
+  .sheet h3 { margin:2px 0 10px; font-size:15px; }
+  .sheet .opt { display:block; width:100%; text-align:left; margin:6px 0; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; }
+  input, select, textarea { font:inherit; color:var(--ink); background:var(--panel2); border:1px solid var(--line);
+    border-radius:8px; padding:8px; width:100%; }
+  label.f { display:block; margin:8px 0 3px; font-size:12px; color:var(--muted); }
+  .setup { max-width:520px; margin:30px auto; padding:0 16px; }
+  .setup p { color:var(--muted); }
+  .danger { color:#e0716a; border-color:#5a302c; }
+  code { background:#000; padding:1px 5px; border-radius:5px; font-size:12px; }
+  .legend { display:flex; gap:14px; align-items:center; font-size:12px; color:var(--muted); margin:0 4px 10px; }
+</style>
+</head>
+<body>
+<header>
+  <button class="iconbtn" id="gear" title="Settings">⚙</button>
+  <h1 id="title">Family Curator</h1>
+  <span class="status" id="status">—</span>
+  <button class="iconbtn" id="revert" title="Revert to session backup">⟲</button>
+</header>
+<main id="app"><div class="setup"><p>Loading…</p></div></main>
+
+<div class="sheet-bg" id="sheetbg"></div>
+<div class="sheet" id="sheet"></div>
+
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+const LS = window.localStorage;
+const cfg = {
+  token:  LS.getItem("ed.token") || "",
+  repo:   LS.getItem("ed.repo")  || "williamrrob/Claude_apps",
+  branch: LS.getItem("ed.branch")|| "claude/visual-etymology-app-093c1d",
+  root:   LS.getItem("ed.root")  || "scrib",
+};
+function saveCfg(){ LS.setItem("ed.token",cfg.token); LS.setItem("ed.repo",cfg.repo); LS.setItem("ed.branch",cfg.branch); LS.setItem("ed.root",cfg.root); }
+
+// ---- base64 (utf-8 safe) ----
+const b64enc = (s) => btoa(unescape(encodeURIComponent(s)));
+const b64dec = (s) => decodeURIComponent(escape(atob((s||"").replace(/\n/g,""))));
+
+// ---- GitHub Contents API ----
+function api(path){ return "https://api.github.com/repos/"+cfg.repo+"/contents/"+path; }
+async function ghGet(path){
+  const r = await fetch(api(path)+"?ref="+encodeURIComponent(cfg.branch)+"&t="+Date.now(), {
+    headers:{ Authorization:"Bearer "+cfg.token, Accept:"application/vnd.github+json" } });
+  if (r.status===404) return { missing:true };
+  if (!r.ok) throw new Error("GET "+path+" → "+r.status+" "+(await r.text()).slice(0,120));
+  const j = await r.json();
+  return { json: JSON.parse(b64dec(j.content)), sha: j.sha };
+}
+async function ghPut(path, obj, sha, message){
+  const body = { message: message||("edit "+path), content: b64enc(JSON.stringify(obj,null,1)), branch: cfg.branch };
+  if (sha) body.sha = sha;
+  const r = await fetch(api(path), { method:"PUT",
+    headers:{ Authorization:"Bearer "+cfg.token, Accept:"application/vnd.github+json", "Content-Type":"application/json" },
+    body: JSON.stringify(body) });
+  if (!r.ok) throw new Error("PUT "+path+" → "+r.status+" "+(await r.text()).slice(0,160));
+  return (await r.json()).content.sha;
+}
+
+// ---- state ----
+let fam=null, famSha=null, members=[], senses={}, originalText=null, backupDone=false;
+const now = () => new Date().toISOString();
+
+function setStatus(t, cls){ const s=$("status"); s.textContent=t; s.className="status"+(cls?" "+cls:""); }
+
+// ---- load ----
+async function load(){
+  if (!cfg.token){ return renderSetup("Enter a GitHub token to begin."); }
+  setStatus("loading…","saving");
+  try {
+    const f = await ghGet("family/"+cfg.root+".json");
+    if (f.missing) return renderSetup("No family/"+cfg.root+".json on "+cfg.branch+". Check root/branch.");
+    fam = f.json; famSha = f.sha; originalText = JSON.stringify(fam);
+    backupDone = false;
+    // members: morpheme-index ∪ placements ∪ collapse keys
+    let idxMembers=[];
+    try { const idx = await ghGet("morpheme-index.json"); const v=idx.json[cfg.root]; idxMembers = Array.isArray(v)?v:(v&&v.words)||[]; } catch(e){}
+    const set = new Set(idxMembers);
+    fam.placements.forEach(p=>set.add(p.w));
+    Object.keys(fam.collapse||{}).forEach(w=>{ set.add(w); set.add(fam.collapse[w].l); });
+    members = [...set].sort();
+    await loadSenses(members);
+    render();
+    setStatus("loaded","ok");
+  } catch(e){ renderSetup("Load failed: "+e.message); }
+}
+async function loadSenses(words){
+  senses={};
+  const byShard={};
+  words.forEach(w=>{ const k=w.slice(0,2).toLowerCase(); if(/^[a-z]{2}$/.test(k)) (byShard[k]=byShard[k]||[]).push(w); });
+  for (const k of Object.keys(byShard)){
+    try { const sh = await ghGet("words/"+k+".json");
+      byShard[k].forEach(w=>{ const r=sh.json[w]; if(r&&r.d) senses[w]=r.d; });
+    } catch(e){}
+  }
+}
+
+// ---- mutation + autosave ----
+let saveTimer=null, saving=false, dirty=false;
+function touch(entry){ entry.by="user"; entry.at=now(); }
+function mutate(fn){ fn(); fam.meta=fam.meta||{}; fam.meta.updated=now(); render(); scheduleSave(); }
+function scheduleSave(){ dirty=true; setStatus("• unsaved"); clearTimeout(saveTimer); saveTimer=setTimeout(doSave, 1400); }
+async function doSave(){
+  if (saving){ scheduleSave(); return; }
+  if (!dirty) return;
+  saving=true; dirty=false; setStatus("saving…","saving");
+  try {
+    if (!backupDone && originalText){
+      await ghPut("family/backups/"+cfg.root+"-"+Date.now()+".json", JSON.parse(originalText), null, "backup "+cfg.root+" before edits");
+      backupDone=true;
+    }
+    famSha = await ghPut("family/"+cfg.root+".json", fam, famSha, "curate "+cfg.root);
+    setStatus("saved ✓","ok");
+  } catch(e){ setStatus("save error","err"); alert("Save failed:\n"+e.message); dirty=true; }
+  saving=false;
+  if (dirty) scheduleSave();
+}
+
+// ---- helpers ----
+function placementOf(w, s){ return fam.placements.find(p=>p.w===w && (p.s??null)===(s??null)); }
+function senseLabel(w, s){ const d=senses[w]; if(d && s!=null && d[s]) return d[s].g; if(d&&d[0]) return d[0].g; return ""; }
+function senseDom(w, s){ const d=senses[w]; if(d && s!=null && d[s]) return d[s].dom; return null; }
+function shortG(g){ return g? (g.length>54? g.slice(0,52)+"…":g):""; }
+
+// ---- render ----
+function render(){
+  const app=$("app");
+  app.innerHTML="";
+  $("title").textContent = "Curator · "+(fam.rootLabel||cfg.root)+"-";
+  app.appendChild(legend());
+  // regions
+  fam.regions.forEach(rg=> app.appendChild(renderRegion(rg)));
+  // add-region
+  const add=document.createElement("button"); add.textContent="+ New region"; add.onclick=newRegion;
+  app.appendChild(add);
+  // collapsed
+  app.appendChild(renderCollapsed());
+  // unplaced pool
+  app.appendChild(renderPool());
+}
+function legend(){
+  const d=document.createElement("div"); d.className="legend";
+  d.innerHTML='<span><span class="by user" style="display:inline-block"></span> yours</span>'
+    +'<span><span class="by assistant" style="display:inline-block"></span> assistant (editable)</span>'
+    +'<span class="small">tap a chip to act</span>';
+  return d;
+}
+function chipEl(p){
+  const c=document.createElement("div"); c.className="chip";
+  const by=document.createElement("span"); by.className="by "+(p.by||"assistant"); c.appendChild(by);
+  const w=document.createElement("span"); w.className="w"; w.textContent=p.w+(p.s!=null?" ·"+(p.s+1):""); c.appendChild(w);
+  const dom=senseDom(p.w,p.s); if(dom){ const dd=document.createElement("span"); dd.className="dom"; dd.textContent=dom.replace(/-/g," "); c.appendChild(dd); }
+  const sub=document.createElement("span"); sub.className="sub"; sub.textContent=shortG(senseLabel(p.w,p.s)); c.appendChild(sub);
+  c.onclick=()=>placedSheet(p);
+  return c;
+}
+function renderRegion(rg){
+  const box=document.createElement("div"); box.className="region";
+  const h=document.createElement("h2");
+  h.innerHTML='<span>'+esc(rg.label)+'</span><span class="g">'+esc(rg.gloss||"")+'</span>';
+  const edit=document.createElement("button"); edit.className="iconbtn"; edit.textContent="✎"; edit.style.padding="2px 7px";
+  edit.onclick=(e)=>{ e.stopPropagation(); editRegion(rg); }; h.appendChild(edit);
+  box.appendChild(h);
+  const body=document.createElement("div"); body.className="body";
+  // nest by parent within region
+  const here=fam.placements.filter(p=>p.region===rg.id);
+  const childrenOf=(par)=> here.filter(p=>(p.parent||null)===par).sort((a,b)=>a.w.localeCompare(b.w));
+  (function walk(par, depth){
+    childrenOf(par).forEach(p=>{
+      const c=chipEl(p); c.style.marginLeft=(depth*16)+"px"; body.appendChild(c);
+      walk(p.w, depth+1);
+    });
+  })(null,0);
+  if(!here.length){ const e=document.createElement("div"); e.className="muted small"; e.textContent="empty"; body.appendChild(e); }
+  box.appendChild(body);
+  return box;
+}
+function renderCollapsed(){
+  const wrap=document.createElement("div");
+  const keys=Object.keys(fam.collapse||{});
+  const h=document.createElement("div"); h.className="secthead"; h.textContent="Collapsed forms ("+keys.length+")"; wrap.appendChild(h);
+  if(!keys.length){ const e=document.createElement("div"); e.className="muted small"; e.style.margin="0 4px"; e.textContent="none"; wrap.appendChild(e); return wrap; }
+  keys.sort().forEach(w=>{
+    const c=fam.collapse[w];
+    const el=document.createElement("div"); el.className="chip";
+    const by=document.createElement("span"); by.className="by "+(c.by||"assistant"); el.appendChild(by);
+    const ww=document.createElement("span"); ww.className="w"; ww.textContent=w; el.appendChild(ww);
+    const sub=document.createElement("span"); sub.className="sub"; sub.textContent=c.t+" "+c.l; el.appendChild(sub);
+    el.onclick=()=>collapsedSheet(w);
+    wrap.appendChild(el);
+  });
+  return wrap;
+}
+function renderPool(){
+  const wrap=document.createElement("div"); wrap.className="pool";
+  const placed=new Set(fam.placements.map(p=>p.w));
+  const collapsed=new Set(Object.keys(fam.collapse||{}));
+  const un=members.filter(w=>!placed.has(w)&&!collapsed.has(w));
+  const h=document.createElement("div"); h.className="secthead"; h.textContent="Unplaced ("+un.length+")"; wrap.appendChild(h);
+  if(!un.length){ const e=document.createElement("div"); e.className="muted small"; e.style.margin="0 4px"; e.textContent="all words placed"; wrap.appendChild(e); }
+  un.forEach(w=>{
+    const d=senses[w]||[];
+    // whole-word chip + one chip per sense
+    wrap.appendChild(poolChip(w, null, "(whole word)"));
+    d.forEach((s,i)=> wrap.appendChild(poolChip(w, i, s.g)));
+  });
+  return wrap;
+}
+function poolChip(w, s, gloss){
+  const c=document.createElement("div"); c.className="chip";
+  const ww=document.createElement("span"); ww.className="w"; ww.textContent=w+(s!=null?" ·"+(s+1):""); c.appendChild(ww);
+  const dom=senseDom(w,s); if(dom){ const dd=document.createElement("span"); dd.className="dom"; dd.textContent=dom.replace(/-/g," "); c.appendChild(dd); }
+  const sub=document.createElement("span"); sub.className="sub"; sub.textContent=shortG(gloss); c.appendChild(sub);
+  c.onclick=()=>placeSheet(w,s);
+  return c;
+}
+
+// ---- sheets ----
+function openSheet(html){ const s=$("sheet"); s.innerHTML=html; $("sheetbg").classList.add("open"); s.classList.add("open"); }
+function closeSheet(){ $("sheetbg").classList.remove("open"); $("sheet").classList.remove("open"); }
+$("sheetbg").onclick=closeSheet;
+
+function placeSheet(w, s){
+  let html="<h3>Place "+esc(w)+(s!=null?" · sense "+(s+1):"")+"</h3>";
+  html+='<div class="small muted" style="margin-bottom:8px">Choose a region (you can set a parent after).</div>';
+  fam.regions.forEach(rg=> html+='<button class="opt" data-rg="'+rg.id+'">'+esc(rg.label)+'</button>');
+  html+='<button class="opt" id="np">+ New region…</button>';
+  openSheet(html);
+  $("sheet").querySelectorAll("[data-rg]").forEach(b=> b.onclick=()=>{ doPlace(w,s,b.getAttribute("data-rg")); });
+  $("np").onclick=()=> newRegion((id)=> doPlace(w,s,id));
+}
+function doPlace(w,s,region){
+  mutate(()=>{ const p={w,s:s??null,region,parent:null,by:"user",at:now()}; fam.placements.push(p); });
+  closeSheet();
+}
+function placedSheet(p){
+  let html="<h3>"+esc(p.w)+(p.s!=null?" · sense "+(p.s+1):"")+"</h3>";
+  html+='<div class="small muted" style="margin-bottom:8px">'+(p.by==="user"?"yours":"assistant — editing makes it yours")+'</div>';
+  html+='<button class="opt" id="parent">Set parent (descends from…)</button>';
+  html+='<button class="opt" id="move">Move to another region</button>';
+  html+='<button class="opt" id="collapse">Collapse as inflection…</button>';
+  html+='<button class="opt danger" id="remove">Remove from tree</button>';
+  openSheet(html);
+  $("parent").onclick=()=>parentSheet(p);
+  $("move").onclick=()=>moveSheet(p);
+  $("collapse").onclick=()=>collapseSheet(p);
+  $("remove").onclick=()=>{ mutate(()=>{ fam.placements=fam.placements.filter(x=>x!==p); }); closeSheet(); };
+}
+function moveSheet(p){
+  let html="<h3>Move "+esc(p.w)+" to…</h3>";
+  fam.regions.forEach(rg=> html+='<button class="opt" data-rg="'+rg.id+'"'+(rg.id===p.region?' disabled':'')+'>'+esc(rg.label)+'</button>');
+  openSheet(html);
+  $("sheet").querySelectorAll("[data-rg]").forEach(b=> b.onclick=()=>{
+    mutate(()=>{ p.region=b.getAttribute("data-rg"); p.parent=null; touch(p); }); closeSheet();
+  });
+}
+function parentSheet(p){
+  const here=fam.placements.filter(x=>x.region===p.region && x.w!==p.w);
+  let html="<h3>"+esc(p.w)+" descends from…</h3>";
+  html+='<button class="opt" data-par="">(top of region — no parent)</button>';
+  here.sort((a,b)=>a.w.localeCompare(b.w)).forEach(x=> html+='<button class="opt" data-par="'+esc(x.w)+'">'+esc(x.w)+'</button>');
+  openSheet(html);
+  $("sheet").querySelectorAll("[data-par]").forEach(b=> b.onclick=()=>{
+    mutate(()=>{ p.parent=b.getAttribute("data-par")||null; touch(p); }); closeSheet();
+  });
+}
+function collapseSheet(p){
+  const types=["past tense of","past participle of","present participle of","plural of","adverb of","comparative of","superlative of"];
+  let html="<h3>Collapse "+esc(p.w)+"</h3><label class='f'>Relation</label><select id='ct'>"+types.map(t=>"<option>"+t+"</option>").join("")+"</select>";
+  html+="<label class='f'>Lemma (base word)</label><input id='cl' value='"+esc(p.parent||"")+"' placeholder='e.g. prescribe' />";
+  html+='<div class="row" style="margin-top:12px"><button id="cok">Collapse</button><button onclick="closeSheet()">Cancel</button></div>';
+  openSheet(html);
+  $("cok").onclick=()=>{ const l=$("cl").value.trim(); if(!l) return; mutate(()=>{
+    fam.collapse=fam.collapse||{}; fam.collapse[p.w]={l, t:$("ct").value, by:"user", at:now()};
+    fam.placements=fam.placements.filter(x=>x!==p);
+  }); closeSheet(); };
+}
+function collapsedSheet(w){
+  const c=fam.collapse[w];
+  let html="<h3>"+esc(w)+"</h3><div class='small muted' style='margin-bottom:8px'>"+esc(c.t+" "+c.l)+"</div>";
+  html+='<button class="opt danger" id="un">Un-collapse (back to unplaced)</button>';
+  openSheet(html);
+  $("un").onclick=()=>{ mutate(()=>{ delete fam.collapse[w]; }); closeSheet(); };
+}
+function newRegion(then){
+  let html="<h3>New region</h3><label class='f'>Name</label><input id='rl' placeholder='e.g. Computing' />";
+  html+="<label class='f'>Gloss (optional)</label><input id='rg' placeholder='short description' />";
+  html+='<div class="row" style="margin-top:12px"><button id="rok">Create</button><button onclick="closeSheet()">Cancel</button></div>';
+  openSheet(html);
+  $("rok").onclick=()=>{ const label=$("rl").value.trim(); if(!label) return;
+    const id=label.toLowerCase().replace(/[^a-z]+/g,"-").replace(/^-|-$/g,"")||("r"+Date.now());
+    mutate(()=>{ fam.regions.push({id,label,gloss:$("rg").value.trim(),by:"user",at:now()}); });
+    closeSheet(); if(typeof then==="function") then(id);
+  };
+}
+function editRegion(rg){
+  let html="<h3>Edit region</h3><label class='f'>Name</label><input id='rl' value='"+esc(rg.label)+"' />";
+  html+="<label class='f'>Gloss</label><input id='rg' value='"+esc(rg.gloss||"")+"' />";
+  html+='<div class="row" style="margin-top:12px"><button id="rok">Save</button><button class="danger" id="rdel">Delete region</button></div>';
+  openSheet(html);
+  $("rok").onclick=()=>{ mutate(()=>{ rg.label=$("rl").value.trim()||rg.label; rg.gloss=$("rg").value.trim(); touch(rg); }); closeSheet(); };
+  $("rdel").onclick=()=>{ if(fam.placements.some(p=>p.region===rg.id)){ alert("Move its words out first."); return; }
+    mutate(()=>{ fam.regions=fam.regions.filter(x=>x!==rg); }); closeSheet(); };
+}
+
+// ---- settings + revert ----
+function renderSetup(msg){
+  $("app").innerHTML='<div class="setup"><h2>Setup</h2>'+(msg?'<p class="danger">'+esc(msg)+'</p>':'')
+    +'<label class="f">GitHub fine-grained token (this repo, Contents: read & write)</label><input id="s_token" type="password" value="'+esc(cfg.token)+'">'
+    +'<label class="f">Repo (owner/name)</label><input id="s_repo" value="'+esc(cfg.repo)+'">'
+    +'<label class="f">Branch</label><input id="s_branch" value="'+esc(cfg.branch)+'">'
+    +'<label class="f">Root id</label><input id="s_root" value="'+esc(cfg.root)+'">'
+    +'<div class="row" style="margin-top:14px"><button id="s_save">Save & load</button></div>'
+    +'<p class="small">Token is stored only in this browser. Steps: github.com → Settings → Developer settings → Fine-grained tokens → only this repo → Repository permissions → Contents: Read and write.</p></div>';
+  $("s_save").onclick=()=>{ cfg.token=$("s_token").value.trim(); cfg.repo=$("s_repo").value.trim(); cfg.branch=$("s_branch").value.trim(); cfg.root=$("s_root").value.trim(); saveCfg(); load(); };
+}
+$("gear").onclick=()=>renderSetup();
+$("revert").onclick=async ()=>{
+  if(!originalText){ alert("Nothing to revert to yet."); return; }
+  if(!confirm("Revert "+cfg.root+" to the version from when you opened it this session? Your changes since then will be overwritten (a backup commit was made).")) return;
+  setStatus("reverting…","saving");
+  try { fam=JSON.parse(originalText); famSha=await ghPut("family/"+cfg.root+".json", fam, famSha, "revert "+cfg.root); render(); setStatus("reverted","ok"); }
+  catch(e){ setStatus("revert failed","err"); alert(e.message); }
+};
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+window.closeSheet=closeSheet;
+load();
+</script>
+</body>
+</html>
