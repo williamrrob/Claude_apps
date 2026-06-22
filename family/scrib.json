@@ -460,9 +460,9 @@
    "w": "descript",
    "s": null,
    "region": "depiction-attribution",
-   "parent": null,
+   "parent": "describe",
    "by": "user",
-   "at": "2026-06-22T19:37:16.312Z"
+   "at": "2026-06-22T19:45:28.387Z"
   }
  ],
  "collapse": {
@@ -535,6 +535,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T19:44:36.345Z"
+  "updated": "2026-06-22T19:45:28.387Z"
  }
 }
