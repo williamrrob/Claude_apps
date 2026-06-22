@@ -116,6 +116,10 @@
 
       if (phase === 1) {
         matchesAt(ROOT_INDEX, word, pos).forEach(function (m) {
+          // The "carry" sense of eso- (Greek oisein) is bound to -phag- in English
+          // (esophagus); elsewhere "eso" is the unrelated esō- "within" (esoteric),
+          // so only read it as this root directly before phag.
+          if (m.entry.id === "eso-carry" && word.substr(pos + m.form.length, 4) !== "phag") return;
           const rest = rec(pos + m.form.length, 1);
           consider(part("root", m.form, m.entry, pos), rest, m.form.length * W_KNOWN + ROOT_BONUS);
         });

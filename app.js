@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "19";
+  const DATA_V = "20";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -240,26 +240,33 @@
     if (e) return { kind: x.k, surface: x.s, origin: e.origin, source: e.source, meaning: e.meaning, id: e.id, forms: e.forms };
     return { kind: x.k, surface: x.s, origin: null, source: null, meaning: x.g || null, id: null, forms: null };
   }
+  function wholePart(word) {
+    return [{ kind: "word", surface: word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
+  }
   function chooseBreakdown(result, rec) {
+    // A curated breakdown (MorphoLex / Wiktionary, in rec.b) is authoritative — it
+    // beats the heuristic engine even when the engine is confident, because the
+    // engine confidently mis-splits opaque stems (demister → demos·ist·er). A
+    // single "word"-kind part means the lexicon says don't decompose at all (demo).
+    const b = rec && rec.b;
+    if (b && b.length) {
+      if (b.length === 1) return b[0].k === "word" ? wholePart(result.word) : result.parts;
+      return b.map(hybridPart);
+    }
     // Eponyms / place names aren't built from roots — "davenport" is a surname,
-    // not a·ven·port. When the etymology says so (and Wiktionary offers no real
-    // affix split), present the word whole instead of force-splitting it.
+    // not a·ven·port. When the etymology says so, present the word whole instead
+    // of force-splitting it.
     const ety = (rec && rec.e) || "";
     const eponym = /named after|\bsurname\b|\beponym|place name|toponym|genericized trademark/i.test(ety);
-    if (eponym && !(rec && rec.b && rec.b.length >= 2)) {
-      return [{ kind: "word", surface: result.word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
-    }
+    if (eponym) return wholePart(result.word);
+    // No curated breakdown: a split with no real root, or one carrying a big
+    // unknown chunk (e.g. colpomicroscope → col·pomicr·o·scop·e), is worse than
+    // showing the word whole.
     const bad = !result.hasRoot ||
       result.parts.some(function (p) { return p.kind === "unknown"; }) ||
       (result.confidence || 0) < 0.6;
-    if (bad && rec && rec.b && rec.b.length >= 2) return rec.b.map(hybridPart);
-    // No Wiktionary rescue available: a split with no real root, or one carrying a
-    // big unknown chunk (e.g. colpomicroscope → col·pomicr·o·scop·e), is worse than
-    // showing the word whole.
     const bigUnknown = result.parts.some(function (p) { return p.kind === "unknown" && p.surface.length >= 4; });
-    if (bad && (!result.hasRoot || bigUnknown)) {
-      return [{ kind: "word", surface: result.word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
-    }
+    if (bad && (!result.hasRoot || bigUnknown)) return wholePart(result.word);
     return result.parts;
   }
 
@@ -1467,10 +1474,14 @@
     list.forEach(function (w) { byWord[w] = { type: "word", word: w, current: w === headword, children: [] }; });
 
     function parentOf(w) {
-      // (a) suffix derivation — longest shorter family word that w begins with
-      let best = null;
+      // (a) suffix derivation — the longest shorter family word w extends. A
+      // derived word shares its parent's *stem*, not always its exact spelling:
+      // geology → geolog·ical / geolog·ist, so strip a final e/y before matching.
+      let best = null, bestLen = 0;
       list.forEach(function (p) {
-        if (p !== w && p.length < w.length && w.indexOf(p) === 0 && (!best || p.length > best.length)) best = p;
+        if (p === w || p.length >= w.length) return;
+        const stem = (p.length >= 5 && /[ey]$/.test(p)) ? p.slice(0, -1) : p;
+        if (stem.length >= 4 && w.indexOf(stem) === 0 && p.length > bestLen) { best = p; bestLen = p.length; }
       });
       if (best) return best;
       // (b) prefix derivation — strip the leading prefix; if a complete, complex
