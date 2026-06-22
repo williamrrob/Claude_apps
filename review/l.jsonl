@@ -1474,7 +1474,7 @@
 {"w":"limicolae","r":9000000,"src":"whole","b":"limicolae","flags":[],"st":"auto-whole"}
 {"w":"limit","r":2109,"src":"whole","b":"limit","flags":[],"st":"auto-whole"}
 {"w":"limitation","r":6993,"src":"data","b":"limit·ation","flags":[],"st":"auto-data"}
-{"w":"limited","r":750,"src":"engine","b":"l·i·mit·ed","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"limited","r":750,"src":"curated","b":"limit·ed","flags":[],"st":"fixed","note":"limit+ed; was l.i.mit.ed"}
 {"w":"limitedly","r":9000000,"src":"data","b":"limited·ly","flags":[],"st":"auto-data"}
 {"w":"limiter","r":35808,"src":"engine","b":"l·i·mit·er","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"limiting","r":8909,"src":"engine","b":"l·i·m·i·ting","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
@@ -2013,7 +2013,7 @@
 {"w":"logistician","r":229620,"src":"data","b":"logistic·ian","flags":[],"st":"auto-data"}
 {"w":"logistics","r":6173,"src":"engine","b":"log·ist·ic·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"logjam","r":91668,"src":"data","b":"log·jam","flags":[],"st":"auto-data"}
-{"w":"logo","r":1153,"src":"engine","b":"log·o","flags":["stray","unknown"],"st":"todo"}
+{"w":"logo","r":1153,"src":"whole","b":"logo","flags":[],"st":"fixed","note":"whole: clipping"}
 {"w":"logogram","r":9000000,"src":"data","b":"logo·gram","flags":[],"st":"auto-data"}
 {"w":"logogrammatic","r":9000000,"src":"engine","b":"log·o·gram·mat·ic","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"logogrammatically","r":9000000,"src":"engine","b":"log·o·gram·mat·ical·ly","flags":["unknown"],"st":"todo"}

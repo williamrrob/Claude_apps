@@ -458,7 +458,7 @@
 {"w":"ratified","r":20067,"src":"whole","b":"ratified","flags":[],"st":"auto-whole"}
 {"w":"ratifier","r":9000000,"src":"whole","b":"ratifier","flags":[],"st":"auto-whole"}
 {"w":"ratify","r":33231,"src":"whole","b":"ratify","flags":[],"st":"auto-whole"}
-{"w":"rating","r":350,"src":"engine","b":"r·a·ting","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"rating","r":350,"src":"whole","b":"rating","flags":[],"st":"fixed","note":"whole: rate+ing, English stem"}
 {"w":"ratio","r":2943,"src":"whole","b":"ratio","flags":[],"st":"auto-whole"}
 {"w":"ratiocinate","r":9000000,"src":"whole","b":"ratiocinate","flags":[],"st":"auto-whole"}
 {"w":"ratiocination","r":326815,"src":"whole","b":"ratiocination","flags":[],"st":"auto-whole"}
@@ -1856,7 +1856,7 @@
 {"w":"respondent","r":6675,"src":"engine","b":"re·s·pon·dent","flags":["stray","unknown"],"st":"todo"}
 {"w":"responder","r":22393,"src":"engine","b":"re·s·pon·d·er","flags":["stray","unknown"],"st":"todo"}
 {"w":"response","r":954,"src":"whole","b":"response","flags":[],"st":"auto-whole"}
-{"w":"responsibility","r":1486,"src":"engine","b":"re·s·pon·s·i·bi·l·ity","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"responsibility","r":1486,"src":"curated","b":"re·spons·ibil·ity","flags":[],"st":"fixed","note":"re+spons(pledge)+ibil+ity"}
 {"w":"responsible","r":1236,"src":"whole","b":"responsible","flags":[],"st":"auto-whole"}
 {"w":"responsibleness","r":9000000,"src":"engine","b":"re·s·pon·s·ible·ness","flags":["stray","unknown"],"st":"todo"}
 {"w":"responsibly","r":27752,"src":"data","b":"responsibl·y","flags":[],"st":"auto-data"}

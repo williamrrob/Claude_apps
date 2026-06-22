@@ -2369,7 +2369,7 @@
 {"w":"phon","r":72517,"src":"whole","b":"phon","flags":[],"st":"auto-whole"}
 {"w":"phonate","r":9000000,"src":"engine","b":"phon·ate","flags":[],"st":"todo-low"}
 {"w":"phonation","r":211240,"src":"engine","b":"phon·ation","flags":[],"st":"todo-low"}
-{"w":"phone","r":254,"src":"engine","b":"phon·e","flags":["stray"],"st":"todo"}
+{"w":"phone","r":254,"src":"whole","b":"phone","flags":[],"st":"fixed","note":"whole: clipping of telephone"}
 {"w":"phonebook","r":29488,"src":"whole","b":"phonebook","flags":[],"st":"auto-whole"}
 {"w":"phoneme","r":61221,"src":"data","b":"phon·eme","flags":[],"st":"auto-data"}
 {"w":"phonemic","r":61103,"src":"data","b":"phon·em·ic","flags":[],"st":"auto-data"}
@@ -4320,7 +4320,7 @@
 {"w":"potency","r":22989,"src":"engine","b":"p·o·ten·cy","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"potent","r":15641,"src":"engine","b":"p·o·tent","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"potentate","r":108858,"src":"engine","b":"p·o·tent·ate","flags":["stray","unknown"],"st":"todo"}
-{"w":"potential","r":1223,"src":"engine","b":"p·o·tent·i·al","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"potential","r":1223,"src":"curated","b":"potent·ial","flags":[],"st":"fixed","note":"potent+ial; was p.o.tent.i.al"}
 {"w":"potentiality","r":86130,"src":"engine","b":"p·o·tent·i·al·ity","flags":["stray","unknown"],"st":"todo"}
 {"w":"potentially","r":5944,"src":"engine","b":"p·o·tent·i·al·ly","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"potentiate","r":124560,"src":"engine","b":"p·o·tent·i·ate","flags":["stray","lowconf","unknown"],"st":"todo"}
@@ -4825,7 +4825,7 @@
 {"w":"preset","r":19630,"src":"data","b":"pre·set","flags":[],"st":"auto-data"}
 {"w":"preside","r":39684,"src":"whole","b":"preside","flags":[],"st":"auto-whole"}
 {"w":"presidency","r":11654,"src":"whole","b":"presidency","flags":[],"st":"auto-whole"}
-{"w":"president","r":687,"src":"engine","b":"pre·s·i·dent","flags":["stray","unknown"],"st":"todo"}
+{"w":"president","r":687,"src":"curated","b":"pre·sid·ent","flags":[],"st":"fixed","note":"pre+sid(sit)+ent; was pre.s.i.dent"}
 {"w":"presidential","r":5982,"src":"engine","b":"pre·s·i·dent·i·al","flags":["stray","unknown"],"st":"todo"}
 {"w":"presidentially","r":203186,"src":"engine","b":"pre·s·i·dent·i·al·ly","flags":["stray","unknown"],"st":"todo"}
 {"w":"presidentship","r":9000000,"src":"data","b":"president·ship","flags":[],"st":"auto-data"}
@@ -4964,7 +4964,7 @@
 {"w":"primality","r":122163,"src":"whole","b":"primality","flags":[],"st":"auto-whole"}
 {"w":"primaquine","r":201457,"src":"whole","b":"primaquine","flags":[],"st":"auto-whole"}
 {"w":"primarily","r":3984,"src":"engine","b":"pr·i·mar·i·ly","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"primary","r":1242,"src":"engine","b":"pr·i·mar·y","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"primary","r":1242,"src":"curated","b":"prim·ary","flags":[],"st":"fixed","note":"prim(first)+ary; was pr.i.mar.y"}
 {"w":"primate","r":25624,"src":"whole","b":"primate","flags":[],"st":"auto-whole"}
 {"w":"primates","r":26112,"src":"whole","b":"primates","flags":[],"st":"auto-whole"}
 {"w":"primateship","r":9000000,"src":"data","b":"primate·ship","flags":[],"st":"auto-data"}

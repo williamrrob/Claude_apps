@@ -4357,7 +4357,7 @@
 {"w":"committal","r":73936,"src":"data","b":"committ·al","flags":[],"st":"auto-data"}
 {"w":"committed","r":3480,"src":"engine","b":"com·mit·t·ed","flags":["stray","unknown"],"st":"todo"}
 {"w":"committedness","r":9000000,"src":"data","b":"committed·ness","flags":[],"st":"auto-data"}
-{"w":"committee","r":642,"src":"engine","b":"com·mit·te·e","flags":["stray","unknown"],"st":"todo"}
+{"w":"committee","r":642,"src":"whole","b":"committee","flags":[],"st":"fixed","note":"whole: lexicalized"}
 {"w":"committeeman","r":123549,"src":"engine","b":"com·mit·te·e·man","flags":["unknown"],"st":"todo"}
 {"w":"committeewoman","r":9000000,"src":"whole","b":"committeewoman","flags":[],"st":"auto-whole"}
 {"w":"commix","r":9000000,"src":"whole","b":"commix","flags":[],"st":"auto-whole"}
@@ -5187,7 +5187,7 @@
 {"w":"consultive","r":9000000,"src":"engine","b":"con·su·lt·ive","flags":["unknown"],"st":"todo"}
 {"w":"consumable","r":26231,"src":"engine","b":"con·su·m·able","flags":["stray","unknown"],"st":"todo"}
 {"w":"consume","r":13639,"src":"engine","b":"con·su·m·e","flags":["stray","unknown"],"st":"todo"}
-{"w":"consumer","r":1184,"src":"engine","b":"con·su·m·er","flags":["stray","unknown"],"st":"todo"}
+{"w":"consumer","r":1184,"src":"curated","b":"con·sum·er","flags":[],"st":"fixed","note":"con+sum(take)+er; was con.su.m.er"}
 {"w":"consumerism","r":38728,"src":"engine","b":"con·su·m·er·ism","flags":["stray","unknown"],"st":"todo"}
 {"w":"consuming","r":10037,"src":"whole","b":"consuming","flags":[],"st":"auto-whole"}
 {"w":"consummate","r":44258,"src":"whole","b":"consummate","flags":[],"st":"auto-whole"}

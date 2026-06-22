@@ -1,5 +1,5 @@
 {
-  "_note": "Hand-authored breakdowns for boundaries neither the rules engine nor MorphoLex can represent — e.g. the Greek root bios surfacing as a lone 'b' before -ial/-ic, which can't be a general engine rule (a one-letter root would mis-match everywhere). Highest priority: build-curated.js overrides any other breakdown. Each part: s=surface, k=prefix|root|suffix, g=gloss, o=origin.",
+  "_note": "Hand-authored, human-verified breakdowns + a verified 'whole' list (plain English / proper nouns / clippings that are NOT built from classical morphemes). Highest priority: build-curated.js writes these into the shards, overriding engine/MorphoLex/medical output. 'words' entries must tile the word exactly. This file is the record of words personally reviewed and corrected.",
   "words": {
     "microbe":        [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"be","k":"root","g":"life","o":"Greek"}],
     "microbial":      [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ial","k":"suffix","g":"pertaining to"}],
@@ -9,6 +9,21 @@
     "aerobic":        [{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"}],
     "aerobics":       [{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"},{"s":"s","k":"suffix","g":"plural"}],
     "anaerobe":       [{"s":"an","k":"prefix","g":"without","o":"Greek"},{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"be","k":"root","g":"life","o":"Greek"}],
-    "anaerobic":      [{"s":"an","k":"prefix","g":"without","o":"Greek"},{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"}]
-  }
+    "anaerobic":      [{"s":"an","k":"prefix","g":"without","o":"Greek"},{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"}],
+
+    "president":      [{"s":"pre","k":"prefix","g":"before","o":"Latin"},{"s":"sid","k":"root","g":"to sit","o":"Latin"},{"s":"ent","k":"suffix","g":"one who"}],
+    "consumer":       [{"s":"con","k":"prefix","g":"with, together","o":"Latin"},{"s":"sum","k":"root","g":"to take","o":"Latin"},{"s":"er","k":"suffix","g":"one who"}],
+    "potential":      [{"s":"potent","k":"root","g":"powerful","o":"Latin"},{"s":"ial","k":"suffix","g":"pertaining to"}],
+    "ability":        [{"s":"abil","k":"root","g":"able","o":"Latin"},{"s":"ity","k":"suffix","g":"state of"}],
+    "primary":        [{"s":"prim","k":"root","g":"first","o":"Latin"},{"s":"ary","k":"suffix","g":"pertaining to"}],
+    "official":       [{"s":"offic","k":"root","g":"duty, service","o":"Latin"},{"s":"ial","k":"suffix","g":"pertaining to"}],
+    "limited":        [{"s":"limit","k":"root","g":"boundary","o":"Latin"},{"s":"ed","k":"suffix","g":"past tense"}],
+    "visual":         [{"s":"vis","k":"root","g":"to see","o":"Latin"},{"s":"ual","k":"suffix","g":"pertaining to"}],
+    "responsibility": [{"s":"re","k":"prefix","g":"back","o":"Latin"},{"s":"spons","k":"root","g":"to pledge","o":"Latin"},{"s":"ibil","k":"suffix","g":"able to"},{"s":"ity","k":"suffix","g":"state of"}]
+  },
+  "whole": [
+    "phone", "movie", "blog", "committee", "marketing", "getting", "homepage",
+    "logo", "dating", "spanish", "setting", "european", "interesting", "rating",
+    "archives"
+  ]
 }

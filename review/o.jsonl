@@ -391,7 +391,7 @@
 {"w":"office","r":240,"src":"whole","b":"office","flags":[],"st":"auto-whole"}
 {"w":"officeholder","r":145226,"src":"data","b":"office·hold·er","flags":[],"st":"auto-data"}
 {"w":"officer","r":1696,"src":"data","b":"office·r","flags":[],"st":"auto-data"}
-{"w":"official","r":769,"src":"engine","b":"of·fic·i·al","flags":["stray","unknown"],"st":"todo"}
+{"w":"official","r":769,"src":"curated","b":"offic·ial","flags":[],"st":"fixed","note":"offic(duty)+ial; was of.fic.i.al"}
 {"w":"officialdom","r":135058,"src":"engine","b":"of·fic·i·al·dom","flags":["stray","unknown"],"st":"todo"}
 {"w":"officialese","r":9000000,"src":"engine","b":"of·fic·i·al·es·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"officialise","r":9000000,"src":"engine","b":"of·fic·i·al·ise","flags":["stray","unknown"],"st":"todo"}

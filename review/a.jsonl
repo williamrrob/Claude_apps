@@ -124,7 +124,7 @@
 {"w":"abies","r":70118,"src":"engine","b":"a·bi·es","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"abila","r":9000000,"src":"engine","b":"a·bi·la","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"abilene","r":20973,"src":"engine","b":"a·bi·l·en·e","flags":["stray","unknown"],"st":"todo"}
-{"w":"ability","r":1588,"src":"engine","b":"a·bi·l·ity","flags":["stray","unknown"],"st":"todo"}
+{"w":"ability","r":1588,"src":"curated","b":"abil·ity","flags":[],"st":"fixed","note":"abil+ity; was a.bi.l.ity"}
 {"w":"abiogenesis","r":125074,"src":"engine","b":"a·bio·gene·sis","flags":["stray"],"st":"todo"}
 {"w":"abiogenetic","r":9000000,"src":"engine","b":"a·bio·gene·t·ic","flags":["stray","unknown"],"st":"todo"}
 {"w":"abiogenist","r":9000000,"src":"engine","b":"a·bio·gen·ist","flags":["stray"],"st":"todo"}
@@ -4407,7 +4407,7 @@
 {"w":"architrave","r":219219,"src":"whole","b":"architrave","flags":[],"st":"auto-whole"}
 {"w":"archival","r":13746,"src":"engine","b":"arch·iv·al","flags":["unknown"],"st":"todo"}
 {"w":"archive","r":703,"src":"engine","b":"arch·ive","flags":[],"st":"todo-low"}
-{"w":"archives","r":894,"src":"engine","b":"arch·ive·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"archives","r":894,"src":"whole","b":"archives","flags":[],"st":"fixed","note":"whole: lexicalized borrowing"}
 {"w":"archivist","r":24977,"src":"data","b":"archiv·ist","flags":[],"st":"auto-data"}
 {"w":"archly","r":254157,"src":"data","b":"arch·ly","flags":[],"st":"auto-data"}
 {"w":"archness","r":9000000,"src":"engine","b":"arch·ness","flags":[],"st":"todo-low"}

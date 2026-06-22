@@ -27,16 +27,15 @@ const vocab = {};
 for (const f of fs.readdirSync(WORDS)) if (f.endsWith(".json")) Object.assign(vocab, JSON.parse(fs.readFileSync(path.join(WORDS, f))));
 const words = Object.keys(vocab).sort();
 
-// load existing ledger statuses (preserve human decisions)
+// load human decisions (the authoritative record of words personally reviewed).
+// review/decisions.log is append-only JSONL: {"w","st":"ok"|"fixed","note"}.
 const prior = {};
-if (fs.existsSync(REVIEW)) {
-  for (const f of fs.readdirSync(REVIEW)) {
-    if (!f.endsWith(".jsonl")) continue;
-    for (const line of fs.readFileSync(path.join(REVIEW, f), "utf8").split("\n")) {
-      if (!line.trim()) continue;
-      const r = JSON.parse(line);
-      if (r.st === "ok" || r.st === "fixed") prior[r.w] = { st: r.st, note: r.note };
-    }
+const decLog = path.join(REVIEW, "decisions.log");
+if (fs.existsSync(decLog)) {
+  for (const line of fs.readFileSync(decLog, "utf8").split("\n")) {
+    if (!line.trim()) continue;
+    const r = JSON.parse(line);
+    if (r.st === "ok" || r.st === "fixed") prior[r.w] = { st: r.st, note: r.note };
   }
 }
 

@@ -11,13 +11,19 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const WORDS = path.join(ROOT, "words");
 
-const words = JSON.parse(fs.readFileSync(path.join(__dirname, "curated-breakdowns.json"), "utf8")).words;
+const doc = JSON.parse(fs.readFileSync(path.join(__dirname, "curated-breakdowns.json"), "utf8"));
+const words = doc.words;
+const whole = doc.whole || [];
 let applied = 0, missing = [];
 const byShard = {};
 Object.keys(words).forEach((w) => {
   const tiled = words[w].map((p) => p.s).join("");
   if (tiled !== w) throw new Error("curated breakdown for '" + w + "' does not tile: '" + tiled + "'");
   (byShard[w.slice(0, 2)] = byShard[w.slice(0, 2)] || {})[w] = words[w];
+});
+// verified plain English / proper nouns / clippings — present whole, never split
+whole.forEach((w) => {
+  (byShard[w.slice(0, 2)] = byShard[w.slice(0, 2)] || {})[w] = [{ s: w, k: "word" }];
 });
 for (const key of Object.keys(byShard)) {
   const p = path.join(WORDS, key + ".json");

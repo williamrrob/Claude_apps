@@ -1992,7 +1992,7 @@
 {"w":"homeotherm","r":9000000,"src":"data","b":"homeo·therm","flags":[],"st":"auto-data"}
 {"w":"homeothermic","r":9000000,"src":"data","b":"homeo·therm·ic","flags":[],"st":"auto-data"}
 {"w":"homeowner","r":12078,"src":"whole","b":"homeowner","flags":[],"st":"auto-whole"}
-{"w":"homepage","r":1116,"src":"engine","b":"hom·ep·a·ge","flags":["stray"],"st":"todo"}
+{"w":"homepage","r":1116,"src":"whole","b":"homepage","flags":[],"st":"fixed","note":"whole: English compound"}
 {"w":"homer","r":11109,"src":"whole","b":"homer","flags":[],"st":"auto-whole"}
 {"w":"homeric","r":71146,"src":"data","b":"homer·ic","flags":[],"st":"auto-data"}
 {"w":"homeroom","r":73743,"src":"data","b":"home·room","flags":[],"st":"auto-data"}

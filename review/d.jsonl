@@ -290,7 +290,7 @@
 {"w":"dateless","r":118376,"src":"data","b":"date·less","flags":[],"st":"auto-data"}
 {"w":"dateline","r":25985,"src":"data","b":"date·line","flags":[],"st":"auto-data"}
 {"w":"datemark","r":9000000,"src":"data","b":"date·mark","flags":[],"st":"auto-data"}
-{"w":"dating","r":1518,"src":"engine","b":"d·a·ting","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"dating","r":1518,"src":"whole","b":"dating","flags":[],"st":"fixed","note":"whole: date+ing, English stem"}
 {"w":"dative","r":83801,"src":"whole","b":"dative","flags":[],"st":"auto-whole"}
 {"w":"datril","r":9000000,"src":"whole","b":"datril","flags":[],"st":"auto-whole"}
 {"w":"datum","r":16465,"src":"whole","b":"datum","flags":[],"st":"auto-whole"}

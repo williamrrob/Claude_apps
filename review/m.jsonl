@@ -934,7 +934,7 @@
 {"w":"market","r":469,"src":"whole","b":"market","flags":[],"st":"auto-whole"}
 {"w":"marketable","r":27622,"src":"data","b":"market·able","flags":[],"st":"auto-data"}
 {"w":"marketer","r":26004,"src":"data","b":"market·er","flags":[],"st":"auto-data"}
-{"w":"marketing","r":721,"src":"engine","b":"mar·k·e·ting","flags":["stray","unknown"],"st":"todo"}
+{"w":"marketing","r":721,"src":"whole","b":"marketing","flags":[],"st":"fixed","note":"whole: market+ing, English stem"}
 {"w":"marketplace","r":3006,"src":"data","b":"market·place","flags":[],"st":"auto-data"}
 {"w":"markhoor","r":9000000,"src":"engine","b":"mar·kho·or","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"markhor","r":9000000,"src":"engine","b":"mar·kh·or","flags":["lowconf","unknown"],"st":"todo"}
@@ -3915,7 +3915,7 @@
 {"w":"moved","r":2251,"src":"engine","b":"mov·ed","flags":[],"st":"todo-low"}
 {"w":"movement","r":2292,"src":"data","b":"move·ment","flags":[],"st":"auto-data"}
 {"w":"mover","r":16092,"src":"data","b":"move·r","flags":[],"st":"auto-data"}
-{"w":"movie","r":489,"src":"engine","b":"mov·i·e","flags":["stray","unknown"],"st":"todo"}
+{"w":"movie","r":489,"src":"whole","b":"movie","flags":[],"st":"fixed","note":"whole: plain English"}
 {"w":"moviegoer","r":127204,"src":"data","b":"movie·goer","flags":[],"st":"auto-data"}
 {"w":"moviemaking","r":123104,"src":"data","b":"movie·making","flags":[],"st":"auto-data"}
 {"w":"moving","r":1592,"src":"engine","b":"mov·ing","flags":["lowconf","unknown"],"st":"todo"}

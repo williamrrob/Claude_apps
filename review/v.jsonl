@@ -1007,7 +1007,7 @@
 {"w":"vista","r":4812,"src":"whole","b":"vista","flags":[],"st":"auto-whole"}
 {"w":"vistaril","r":175033,"src":"engine","b":"vis·t·ar·il","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vistula","r":128661,"src":"whole","b":"vistula","flags":[],"st":"auto-whole"}
-{"w":"visual","r":1654,"src":"engine","b":"vis·u·al","flags":["stray","unknown"],"st":"todo"}
+{"w":"visual","r":1654,"src":"curated","b":"vis·ual","flags":[],"st":"fixed","note":"vis(see)+ual; was vis.u.al"}
 {"w":"visualisation","r":34165,"src":"engine","b":"vis·u·al·is·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"visualise","r":70635,"src":"data","b":"visual·ise","flags":[],"st":"auto-data"}
 {"w":"visualised","r":117299,"src":"engine","b":"vis·u·al·ise·d","flags":["stray","unknown"],"st":"todo"}

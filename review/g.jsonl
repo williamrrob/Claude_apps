@@ -808,7 +808,7 @@
 {"w":"getatable","r":9000000,"src":"engine","b":"ge·tat·able","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"getaway","r":13337,"src":"data","b":"get·away","flags":[],"st":"auto-data"}
 {"w":"gettable","r":176621,"src":"engine","b":"ge·tt·able","flags":["unknown"],"st":"todo"}
-{"w":"getting","r":855,"src":"engine","b":"ge·t·ting","flags":["stray","unknown"],"st":"todo"}
+{"w":"getting","r":855,"src":"whole","b":"getting","flags":[],"st":"fixed","note":"whole: get+ting, English stem"}
 {"w":"gettysburg","r":20746,"src":"whole","b":"gettysburg","flags":[],"st":"auto-whole"}
 {"w":"getup","r":235671,"src":"data","b":"get·up","flags":[],"st":"auto-data"}
 {"w":"geum","r":117785,"src":"engine","b":"ge·um","flags":["lowconf","unknown"],"st":"todo"}

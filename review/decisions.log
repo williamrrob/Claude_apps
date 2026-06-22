@@ -1,0 +1,25 @@
+{"w":"president","st":"fixed","note":"pre+sid(sit)+ent; was pre.s.i.dent"}
+{"w":"consumer","st":"fixed","note":"con+sum(take)+er; was con.su.m.er"}
+{"w":"potential","st":"fixed","note":"potent+ial; was p.o.tent.i.al"}
+{"w":"ability","st":"fixed","note":"abil+ity; was a.bi.l.ity"}
+{"w":"primary","st":"fixed","note":"prim(first)+ary; was pr.i.mar.y"}
+{"w":"official","st":"fixed","note":"offic(duty)+ial; was of.fic.i.al"}
+{"w":"limited","st":"fixed","note":"limit+ed; was l.i.mit.ed"}
+{"w":"visual","st":"fixed","note":"vis(see)+ual; was vis.u.al"}
+{"w":"responsibility","st":"fixed","note":"re+spons(pledge)+ibil+ity"}
+{"w":"phone","st":"fixed","note":"whole: clipping of telephone"}
+{"w":"movie","st":"fixed","note":"whole: plain English"}
+{"w":"blog","st":"fixed","note":"whole: clipping of web+log"}
+{"w":"committee","st":"fixed","note":"whole: lexicalized"}
+{"w":"marketing","st":"fixed","note":"whole: market+ing, English stem"}
+{"w":"getting","st":"fixed","note":"whole: get+ting, English stem"}
+{"w":"homepage","st":"fixed","note":"whole: English compound"}
+{"w":"logo","st":"fixed","note":"whole: clipping"}
+{"w":"dating","st":"fixed","note":"whole: date+ing, English stem"}
+{"w":"spanish","st":"fixed","note":"whole: proper/demonym"}
+{"w":"setting","st":"fixed","note":"whole: set+ting, English stem"}
+{"w":"european","st":"fixed","note":"whole: proper/demonym"}
+{"w":"interesting","st":"fixed","note":"whole: lexicalized"}
+{"w":"rating","st":"fixed","note":"whole: rate+ing, English stem"}
+{"w":"archives","st":"fixed","note":"whole: lexicalized borrowing"}
+{"w":"subscribe","st":"ok","note":"engine correct: sub+scrib(write)+e"}

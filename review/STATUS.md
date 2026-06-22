@@ -6,14 +6,14 @@ Total words: **77477**
 
 | status | count | meaning |
 |---|---|---|
-| reviewed ok | 9 | human-checked, breakdown correct |
-| reviewed & fixed | 0 | corrected (curated / engine / data fix) |
+| reviewed ok | 10 | human-checked, breakdown correct |
+| reviewed & fixed | 24 | corrected (curated / engine / data fix) |
 | trusted data (curated) | 0 | hand-authored override |
 | trusted data (MorphoLex/medical) | 23191 | dataset breakdown, presumed good (spot-check) |
 | shown whole | 44036 | not decomposed — can't be a wrong split |
-| **todo — suspicious** | **7670** | engine split with stray letters / low conf → review first |
+| **todo — suspicious** | **7645** | engine split with stray letters / low conf → review first |
 | todo — low priority | 2571 | engine split, looks clean |
 
-**Human-reviewed: 9 · Remaining to review: 10241**
+**Human-reviewed: 34 · Remaining to review: 10216**
 
 Next batch: see `review/QUEUE.tsv` (highest priority first).

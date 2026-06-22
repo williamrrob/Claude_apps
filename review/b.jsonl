@@ -2367,7 +2367,7 @@
 {"w":"blockish","r":9000000,"src":"engine","b":"b·loc·k·ish","flags":["stray","unknown"],"st":"todo"}
 {"w":"blocky","r":87729,"src":"data","b":"block·y","flags":[],"st":"auto-data"}
 {"w":"bloemfontein","r":55020,"src":"whole","b":"bloemfontein","flags":[],"st":"auto-whole"}
-{"w":"blog","r":536,"src":"engine","b":"b·log","flags":["stray","unknown"],"st":"todo"}
+{"w":"blog","r":536,"src":"whole","b":"blog","flags":[],"st":"fixed","note":"whole: clipping of web+log"}
 {"w":"blogger","r":3800,"src":"engine","b":"b·log·ge·r","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"blok","r":60542,"src":"whole","b":"blok","flags":[],"st":"auto-whole"}
 {"w":"bloke","r":30673,"src":"whole","b":"bloke","flags":[],"st":"auto-whole"}

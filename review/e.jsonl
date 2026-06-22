@@ -2337,7 +2337,7 @@
 {"w":"europa","r":11468,"src":"engine","b":"eu·r·op·a","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"europan","r":268045,"src":"engine","b":"eu·r·op·an","flags":["stray","unknown"],"st":"todo"}
 {"w":"europe","r":837,"src":"whole","b":"europe","flags":[],"st":"auto-whole"}
-{"w":"european","r":1013,"src":"engine","b":"eu·r·op·e·an","flags":["stray","unknown"],"st":"todo"}
+{"w":"european","r":1013,"src":"whole","b":"european","flags":[],"st":"fixed","note":"whole: proper/demonym"}
 {"w":"europeanisation","r":179035,"src":"engine","b":"eu·r·op·e·an·is·ation","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"europeanise","r":9000000,"src":"engine","b":"eu·r·op·e·an·ise","flags":["stray","unknown"],"st":"todo"}
 {"w":"europeanization","r":163141,"src":"engine","b":"eu·r·op·e·an·iz·ation","flags":["stray","lowconf","unknown"],"st":"todo"}

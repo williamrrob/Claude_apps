@@ -2086,7 +2086,7 @@
 {"w":"interest","r":652,"src":"data","b":"inter·est","flags":[],"st":"auto-data"}
 {"w":"interested","r":1615,"src":"data","b":"inter·est·ed","flags":[],"st":"auto-data"}
 {"w":"interestedness","r":9000000,"src":"data","b":"interested·ness","flags":[],"st":"auto-data"}
-{"w":"interesting","r":1747,"src":"engine","b":"inter·e·s·ting","flags":["stray","unknown"],"st":"todo"}
+{"w":"interesting","r":1747,"src":"whole","b":"interesting","flags":[],"st":"fixed","note":"whole: lexicalized"}
 {"w":"interestingly","r":16261,"src":"engine","b":"inter·e·s·ting·ly","flags":["stray","unknown"],"st":"todo"}
 {"w":"interestingness","r":152958,"src":"engine","b":"inter·e·s·ting·ness","flags":["stray","unknown"],"st":"todo"}
 {"w":"interface","r":1379,"src":"data","b":"inter·face","flags":[],"st":"auto-data"}

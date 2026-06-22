@@ -2294,7 +2294,7 @@
 {"w":"settee","r":66006,"src":"whole","b":"settee","flags":[],"st":"auto-whole"}
 {"w":"setter","r":23882,"src":"data","b":"sett·er","flags":[],"st":"auto-data"}
 {"w":"setterwort","r":9000000,"src":"data","b":"setter·wort","flags":[],"st":"auto-data"}
-{"w":"setting","r":1774,"src":"engine","b":"se·t·ting","flags":["stray","unknown"],"st":"todo"}
+{"w":"setting","r":1774,"src":"whole","b":"setting","flags":[],"st":"fixed","note":"whole: set+ting, English stem"}
 {"w":"settle","r":8622,"src":"whole","b":"settle","flags":[],"st":"auto-whole"}
 {"w":"settled","r":7876,"src":"whole","b":"settled","flags":[],"st":"auto-whole"}
 {"w":"settlement","r":4074,"src":"data","b":"settle·ment","flags":[],"st":"auto-data"}
@@ -4789,7 +4789,7 @@
 {"w":"spangly","r":9000000,"src":"engine","b":"s·pan·g·ly","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"spaniard","r":60905,"src":"engine","b":"s·pan·i·ar·d","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"spaniel","r":20766,"src":"whole","b":"spaniel","flags":[],"st":"auto-whole"}
-{"w":"spanish","r":1771,"src":"engine","b":"s·pan·ish","flags":["stray","unknown"],"st":"todo"}
+{"w":"spanish","r":1771,"src":"whole","b":"spanish","flags":[],"st":"fixed","note":"whole: proper/demonym"}
 {"w":"spank","r":9558,"src":"whole","b":"spank","flags":[],"st":"auto-whole"}
 {"w":"spanker","r":184425,"src":"engine","b":"s·pan·k·er","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"spanking","r":4894,"src":"whole","b":"spanking","flags":[],"st":"auto-whole"}
@@ -6866,7 +6866,7 @@
 {"w":"subrogate","r":9000000,"src":"whole","b":"subrogate","flags":[],"st":"auto-whole"}
 {"w":"subrogation","r":64065,"src":"data","b":"sub·rog·at·ion","flags":[],"st":"auto-data"}
 {"w":"subroutine","r":18965,"src":"data","b":"sub·routine","flags":[],"st":"auto-data"}
-{"w":"subscribe","r":866,"src":"engine","b":"sub·scrib·e","flags":["stray"],"st":"todo"}
+{"w":"subscribe","r":866,"src":"engine","b":"sub·scrib·e","flags":["stray"],"st":"ok","note":"engine correct: sub+scrib(write)+e"}
 {"w":"subscribed","r":13891,"src":"engine","b":"sub·scrib·ed","flags":[],"st":"todo-low"}
 {"w":"subscriber","r":5622,"src":"engine","b":"sub·scrib·er","flags":[],"st":"todo-low"}
 {"w":"subscript","r":38066,"src":"engine","b":"sub·script","flags":[],"st":"todo-low"}
