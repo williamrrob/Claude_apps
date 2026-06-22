@@ -1,0 +1,3 @@
+# Derived words that look like a rule-based pair but are NOT (false positives).
+# One word per line; build-relations.js skips these. Comments after #.
+christ      # christ -> chrism is not "adherent of chrism"
