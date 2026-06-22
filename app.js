@@ -1359,9 +1359,8 @@
     return w;
   }
 
-  let treeStack = [];      // path of nodes from root to the focused node
+  let treeRoot = null;     // the family tree (grows in place as you expand)
   let treeToken = 0;
-  let treeFrom = null;     // rect of the tapped chip, for the drill FLIP
   const treeCache = {};    // word -> promise of its family root node
   function closeTree() { treeEl.hidden = true; treeEl.classList.remove("tree-in"); treeEl.innerHTML = ""; treeToken++; }
 
@@ -1388,11 +1387,31 @@
     if (token !== treeToken) { contentEl.classList.remove("to-tree"); return; }
     contentEl.classList.remove("to-tree");
     if (!root) { closeTree(); return; }
-    treeEl.innerHTML = "";
     treeEl.hidden = false;
     treeEl.classList.add("tree-in");
-    treeStack = [root];
-    renderTree();
+    treeRoot = root; treeRoot._open = true;
+    renderTree(null);
+  }
+
+  // Nest words by derivation: a longer word that starts with a shorter family
+  // word descends from it (transcribe → transcribed, transcriber; transcript →
+  // transcription). Returns the forest roots; each node may itself have children.
+  function deriveForest(words, headword) {
+    const arr = words.slice().sort(function (a, b) { return a.length - b.length || a.localeCompare(b); });
+    const nodes = arr.map(function (w) { return { type: "word", word: w, current: w === headword, children: [] }; });
+    nodes.forEach(function (n) {
+      let best = null;
+      nodes.forEach(function (m) {
+        if (m !== n && n.word.length > m.word.length && n.word.indexOf(m.word) === 0 && (!best || m.word.length > best.word.length)) best = m;
+      });
+      n._parent = best;
+    });
+    const roots = [];
+    nodes.forEach(function (n) { (n._parent ? n._parent.children : roots).push(n); delete n._parent; });
+    return roots;
+  }
+  function countWords(nodes) {
+    return nodes.reduce(function (n, c) { return n + (c.type === "word" ? 1 : 0) + countWords(c.children || []); }, 0);
   }
 
   function buildFamilyTree(rootPart, headword, words) {
@@ -1402,8 +1421,7 @@
       cats[cat][key] = cats[cat][key] || { label: label, gloss: gloss, words: [] };
       return cats[cat][key];
     }
-    // the headword itself sits in the tree too, marked current
-    words = words.concat([headword]);
+    words = words.concat([headword]); // the headword sits in the tree too
     const seen = {};
     words.forEach(function (w) {
       if (seen[w]) return; seen[w] = 1;
@@ -1411,119 +1429,92 @@
       try { pre = window.EtymologyEngine.decompose(w).parts.filter(function (p) { return p.kind === "prefix"; })[0]; } catch (e) {}
       if (pre) {
         const cat = SENSE[pre.id] || "Other";
-        bucket(cat, pre.id, pre.surface + "-", (pre.source || pre.surface) + (pre.meaning ? " · " + firstSense(pre.meaning) : "")).words.push(w);
+        const lab = (pre.source || pre.surface).replace(/[-\s]+$/, "") + "-"; // canonical: trans-, not tran-
+        bucket(cat, pre.id, lab, (pre.source || pre.surface) + (pre.meaning ? " · " + firstSense(pre.meaning) : "")).words.push(w);
       } else {
         bucket("Base", "(base)", "base", "the bare root as a word").words.push(w);
       }
     });
-    const sortW = function (a, b) { return a.length - b.length || a.localeCompare(b); };
     const catNodes = SENSE_ORDER.filter(function (c) { return cats[c]; }).map(function (c) {
       const keys = Object.keys(cats[c]);
-      // Base goes straight to its words; other categories nest a prefix layer.
       if (c === "Base") {
-        const words2 = cats[c]["(base)"].words.sort(sortW).map(function (w) { return wordNode(w, headword); });
-        return { type: "group", label: "base", gloss: "the root as a word", count: words2.length, children: words2 };
+        const kids = deriveForest(cats[c]["(base)"].words, headword);
+        return { type: "group", label: "base", gloss: "the root as a word", count: countWords(kids), children: kids };
       }
       const prefixes = keys.map(function (k) {
         const g = cats[c][k];
-        const ws = g.words.sort(sortW).map(function (w) { return wordNode(w, headword); });
-        return { type: "group", label: g.label, gloss: g.gloss, count: ws.length, children: ws };
+        const kids = deriveForest(g.words, headword);
+        return { type: "group", label: g.label, gloss: g.gloss, count: countWords(kids), children: kids };
       }).sort(function (a, b) { return b.count - a.count; });
-      const cnt = prefixes.reduce(function (n, p) { return n + p.count; }, 0);
-      // a category with a single prefix collapses to that prefix directly
       const children = prefixes.length === 1 ? prefixes[0].children : prefixes;
-      return { type: "group", label: c, gloss: "", count: cnt, children: children };
+      return { type: "group", label: c, gloss: "", count: countWords(children), children: children };
     });
     return { type: "root", label: rootPart.surface, source: rootPart.source,
       gloss: (rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : ""),
-      children: catNodes };
+      children: catNodes, _open: true };
   }
   function wordNode(w, headword) { return { type: "word", word: w, current: w === headword }; }
 
-  function renderTree() {
+  // The whole tree renders from treeRoot based on each node's _open flag, so it
+  // accumulates: expanding a branch keeps everything else in place.
+  function renderTree(opened) {
     treeEl.innerHTML = "";
-    const focus = treeStack[treeStack.length - 1];
-    // header: back + breadcrumb of the path
     const head = el("div", "tree-head");
-    const back = el("button", "tree-back", "‹"); back.type = "button";
-    back.setAttribute("aria-label", "Back");
-    back.addEventListener("click", function () { if (treeStack.length > 1) { treeStack.pop(); renderTree(); } else closeTree(); });
-    head.appendChild(back);
-    const crumb = el("div", "tree-crumb");
-    treeStack.forEach(function (n, i) {
-      if (i) crumb.appendChild(el("span", "tree-crumb-sep", "›"));
-      const seg = el("span", "tree-crumb-seg" + (i === treeStack.length - 1 ? " cur" : ""), n.label);
-      if (i < treeStack.length - 1) { seg.addEventListener("click", function () { treeStack = treeStack.slice(0, i + 1); renderTree(); }); }
-      crumb.appendChild(seg);
-    });
-    head.appendChild(crumb);
     const x = el("button", "tree-close", "✕"); x.type = "button";
+    x.setAttribute("aria-label", "Close tree");
     x.addEventListener("click", closeTree);
     head.appendChild(x);
+    head.appendChild(el("div", "tree-title", "Word family · " + treeRoot.label + "-"));
     treeEl.appendChild(head);
 
-    // body: focused node on the left, its children fanning to the right
     const body = el("div", "tree-body");
-    const links = el("div", "tree-links"); body.appendChild(links); // connector overlay
-    const left = el("div", "tree-left");
-    const fEl = focusChip(focus); left.appendChild(fEl);
-    body.appendChild(left);
-    const kids = el("div", "tree-kids");
-    (focus.children || []).forEach(function (c, i) { const chip = treeChip(c); chip.style.setProperty("--i", i); kids.appendChild(chip); });
-    body.appendChild(kids);
+    const canvas = el("div", "tree-canvas");
+    const links = el("div", "tree-links"); canvas.appendChild(links);
+    canvas.appendChild(renderNode(treeRoot));
+    body.appendChild(canvas);
     treeEl.appendChild(body);
 
-    // after layout: draw curved connectors, and FLIP the focus chip in from where
-    // it was tapped (so the tree feels continuous as you drill)
     requestAnimationFrame(function () {
-      drawLinks(body, fEl, kids, links);
-      if (treeFrom && fEl.getBoundingClientRect) {
-        const to = fEl.getBoundingClientRect();
-        const dx = treeFrom.left - to.left, dy = treeFrom.top - to.top;
-        treeFrom = null;
-        if (Math.abs(dx) + Math.abs(dy) > 2) {
-          fEl.style.transition = "none";
-          fEl.style.transform = "translate(" + dx + "px," + dy + "px)";
-          requestAnimationFrame(function () {
-            fEl.style.transition = "transform .5s var(--ease)";
-            fEl.style.transform = "";
-          });
-        }
+      drawAllLinks(canvas, links);
+      if (opened && opened._el && opened._el.scrollIntoView) {
+        opened._el.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
       }
     });
   }
-  function drawLinks(body, fEl, kids, links) {
-    if (typeof fEl.offsetWidth !== "number") return; // shim has no layout
-    const sw = body.offsetWidth, sh = body.offsetHeight;
-    const sx = fEl.offsetLeft + fEl.offsetWidth, sy = fEl.offsetTop + fEl.offsetHeight / 2;
-    let p = "";
-    Array.prototype.forEach.call(kids.children, function (chip, i) {
-      const ex = chip.offsetLeft, ey = chip.offsetTop + chip.offsetHeight / 2, mx = (sx + ex) / 2;
-      p += '<path d="M' + sx + ' ' + sy + ' C' + mx + ' ' + sy + ' ' + mx + ' ' + ey + ' ' + ex + ' ' + ey +
-        '" fill="none" stroke="rgba(245,235,215,0.34)" stroke-width="1.6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="animation:treeDraw .55s var(--ease) forwards;animation-delay:' + (90 + i * 45) + 'ms"/>';
-    });
-    links.innerHTML = '<svg width="' + sw + '" height="' + sh + '" viewBox="0 0 ' + sw + ' ' + sh + '" preserveAspectRatio="none" style="position:absolute;inset:0;overflow:visible">' + p + "</svg>";
+
+  function toggle(node, opened) {
+    node._open = !node._open;
+    node._justOpen = node._open;
+    renderTree(node._open ? node : null);
   }
 
-  function focusChip(node) {
-    if (node.type === "root") {
-      const c = el("div", "tree-root");
-      c.appendChild(el("div", "tree-root-w", node.label));
-      if (node.gloss) c.appendChild(el("div", "tree-root-g", node.gloss));
-      return c;
+  function renderNode(node) {
+    const row = el("div", "tnode-row");
+    const chip = node.type === "root" ? rootChip(node) : nodeChip(node);
+    node._el = chip;
+    row.appendChild(chip);
+    if (node.children && node.children.length && node._open) {
+      const kids = el("div", "tnode-kids" + (node._justOpen ? " just-open" : ""));
+      node._justOpen = false;
+      node.children.forEach(function (c) { kids.appendChild(renderNode(c)); });
+      row.appendChild(kids);
     }
-    const c = el("div", "tnode step focus");
-    c.appendChild(el("span", "tnode-w", node.label));
-    if (node.gloss) c.appendChild(el("span", "tnode-sub", node.gloss));
+    return row;
+  }
+
+  function rootChip(node) {
+    const c = el("div", "tree-root");
+    c.appendChild(el("div", "tree-root-w", node.label + "-"));
+    if (node.gloss) c.appendChild(el("div", "tree-root-g", node.gloss));
     return c;
   }
 
-  function treeChip(node) {
+  function nodeChip(node) {
+    const expandable = node.children && node.children.length;
     if (node.type === "word") {
       const c = el("div", "tnode word" + (node.current ? " current" : ""));
       c.appendChild(el("span", "tnode-w", dotted(node.word)));
-      const g = el("span", "tnode-sub", "");
-      c.appendChild(g);
+      const g = el("span", "tnode-sub", ""); c.appendChild(g);
       c.appendChild(el("span", "tnode-mark dot", ""));
       getWord(node.word).then(function (rec) {
         const def = rec && rec.d && rec.d[0] && rec.d[0].g;
@@ -1533,19 +1524,45 @@
       const open = function () { closeTree(); run(node.word); };
       c.addEventListener("click", open);
       c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+      if (expandable) { // also a branch — a toggle reveals the words derived from it
+        const t = el("button", "tnode-toggle", node._open ? "−" : "+"); t.type = "button";
+        t.setAttribute("aria-label", (node._open ? "Hide" : "Show") + " words from " + node.word);
+        t.addEventListener("click", function (e) { e.stopPropagation(); toggle(node); });
+        c.appendChild(t);
+      }
       return c;
     }
-    // group (a + combining step / category)
-    const c = el("div", "tnode step");
+    // group (sense category / prefix step) — tapping expands/collapses it
+    const c = el("div", "tnode step" + (node._open ? " open" : ""));
     c.appendChild(el("span", "tnode-w", node.label));
     if (node.gloss) c.appendChild(el("span", "tnode-sub", node.gloss));
     c.appendChild(el("span", "tnode-count", String(node.count)));
-    c.appendChild(el("span", "tnode-mark plus", "+"));
+    c.appendChild(el("span", "tnode-mark plus", node._open ? "−" : "+"));
     c.setAttribute("role", "button"); c.setAttribute("tabindex", "0");
-    const drill = function () { treeFrom = c.getBoundingClientRect ? c.getBoundingClientRect() : null; treeStack.push(node); renderTree(); };
-    c.addEventListener("click", drill);
-    c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); drill(); } });
+    const t = function () { toggle(node); };
+    c.addEventListener("click", t);
+    c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t(); } });
     return c;
+  }
+
+  // one SVG of curved connectors over the whole canvas, redrawn on every change
+  function drawAllLinks(canvas, links) {
+    if (!canvas.querySelectorAll || typeof canvas.offsetWidth !== "number") return;
+    const rows = canvas.querySelectorAll(".tnode-row");
+    let p = "";
+    Array.prototype.forEach.call(rows, function (row) {
+      if (row.children.length < 2) return;
+      const chip = row.children[0], kids = row.children[1];
+      const sx = chip.offsetLeft + chip.offsetWidth, sy = chip.offsetTop + chip.offsetHeight / 2;
+      Array.prototype.forEach.call(kids.children, function (kr) {
+        const cc = kr.children[0];
+        const ex = cc.offsetLeft, ey = cc.offsetTop + cc.offsetHeight / 2, mx = (sx + ex) / 2;
+        p += '<path d="M' + sx + ' ' + sy + ' C' + mx + ' ' + sy + ' ' + mx + ' ' + ey + ' ' + ex + ' ' + ey +
+          '" fill="none" stroke="rgba(245,235,215,0.32)" stroke-width="1.6"/>';
+      });
+    });
+    const w = canvas.scrollWidth || canvas.offsetWidth, h = canvas.scrollHeight || canvas.offsetHeight;
+    links.innerHTML = '<svg width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none" style="position:absolute;inset:0;overflow:visible">' + p + "</svg>";
   }
 
   // ---------- typeahead ----------

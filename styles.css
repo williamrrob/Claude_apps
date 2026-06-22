@@ -461,54 +461,66 @@ body {
   padding: calc(env(safe-area-inset-top) + 10px) var(--pad) calc(76px + env(safe-area-inset-bottom)) var(--pad);
 }
 .tree-loading { color: var(--muted); font-style: italic; margin: 24px 4px; }
-.tree-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.tree-back, .tree-close {
-  width: 32px; height: 32px; flex: 0 0 auto; border-radius: 9px; border: 1px solid var(--bd);
-  background: var(--field); color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer;
+.tree-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex: 0 0 auto; }
+.tree-close {
+  width: 32px; height: 32px; flex: 0 0 auto; border-radius: 16px; border: 1px solid var(--bd);
+  background: var(--glass-sheen), var(--field); box-shadow: var(--glass-hi);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer;
   display: grid; place-items: center; -webkit-tap-highlight-color: transparent;
 }
-.tree-back:active, .tree-close:active { transform: scale(0.92); }
-.tree-crumb { flex: 1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px; font-size: 12.5px; color: var(--muted); overflow: hidden; }
-.tree-crumb-seg { cursor: pointer; }
-.tree-crumb-seg.cur { color: var(--ink); font-weight: 700; cursor: default; }
-.tree-crumb-sep { color: var(--muted); opacity: 0.6; }
+.tree-close:active { transform: scale(0.92); }
+.tree-title { font-size: 12.5px; letter-spacing: 0.04em; color: var(--muted); }
 
-.tree-body { position: relative; flex: 1; display: flex; align-items: center; gap: 50px; overflow-y: auto; }
-/* connector overlay (curved lines, drawn from layout) */
+/* horizontally + vertically scrollable canvas that grows as branches expand */
+.tree-body { position: relative; flex: 1; overflow: auto; -webkit-overflow-scrolling: touch; }
+.tree-canvas { position: relative; display: inline-block; min-width: 100%; padding: 6px 14px 6px 2px; }
 .tree-links { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-/* equal-width columns so a chip keeps its size when it moves left (continuity) */
-.tree-left { flex: 1 1 0; min-width: 0; display: flex; justify-content: center; z-index: 1; }
-.tree-kids { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px; z-index: 1; }
+.tnode-row { display: flex; align-items: center; gap: 42px; }
+.tnode-kids { display: flex; flex-direction: column; gap: 8px; padding: 5px 0; }
 .tree-root {
-  width: 84px; height: 84px; border-radius: 50%; display: flex; flex-direction: column;
+  position: relative; z-index: 1; flex: 0 0 auto;
+  width: 86px; height: 86px; border-radius: 50%; display: flex; flex-direction: column;
   align-items: center; justify-content: center; text-align: center; padding: 6px;
-  background: color-mix(in srgb, var(--root) 18%, var(--panel)); border: 1.5px solid var(--root);
+  background: var(--glass-sheen), color-mix(in srgb, var(--root) 16%, var(--panel));
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  border: 1.5px solid var(--root); box-shadow: var(--glass-hi);
 }
 .tree-root-w { font-size: 14px; font-weight: 700; color: var(--root); }
 .tree-root-g { font-size: 8px; color: var(--muted); margin-top: 2px; line-height: 1.2; }
 
-/* one chip shape for every node (glass) — compact */
+/* one frosted-glass chip shape for every node, maximal corner curve */
 .tnode {
-  position: relative; width: 100%; box-sizing: border-box;
-  border-radius: 11px; padding: 6px 24px 6px 11px;
+  position: relative; z-index: 1; flex: 0 0 auto; width: 158px; box-sizing: border-box;
+  border-radius: 18px; padding: 7px 26px 7px 13px;
   background: var(--glass-sheen), var(--panel);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   border: 1px solid var(--bd); box-shadow: var(--glass-hi);
   cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
-.tree-kids .tnode { animation: tnodeGrow .42s var(--ease) both; animation-delay: calc(90ms + var(--i, 0) * 45ms); }
 .tnode:active { transform: scale(0.97); }
-.tnode.focus { cursor: default; }
 .tnode-w { display: block; font-size: 12.5px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tnode.step .tnode-w { color: var(--prefix-ink); font-weight: 700; }
 .tnode-sub { display: block; font-size: 9.5px; font-style: italic; color: var(--muted); margin-top: 1px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tnode-count { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--muted); }
-.tnode-mark { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); }
+.tnode-count { position: absolute; right: 26px; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--muted); }
+.tnode-mark { position: absolute; right: 11px; top: 50%; transform: translateY(-50%); }
 .tnode-mark.plus { font-size: 14px; color: var(--muted); }
 .tnode-mark.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--root); }
+.tnode-toggle { position: absolute; right: 5px; top: 50%; transform: translateY(-50%);
+  width: 20px; height: 20px; border-radius: 10px; border: 1px solid var(--bd); background: var(--field);
+  color: var(--muted); font-size: 13px; line-height: 1; display: grid; place-items: center; cursor: pointer;
+  -webkit-tap-highlight-color: transparent; }
 .tnode.current { border-color: var(--prefix-ink); }
 .tnode.current .tnode-w { color: var(--prefix-ink); }
+/* newly-opened branch grows in */
+.tnode-kids.just-open > .tnode-row > .tnode,
+.tnode-kids.just-open > .tnode-row > .tree-root { animation: tnodeGrow .4s var(--ease) both; }
+.tnode-kids.just-open > .tnode-row:nth-child(2) > .tnode { animation-delay: .04s; }
+.tnode-kids.just-open > .tnode-row:nth-child(3) > .tnode { animation-delay: .08s; }
+.tnode-kids.just-open > .tnode-row:nth-child(4) > .tnode { animation-delay: .12s; }
+.tnode-kids.just-open > .tnode-row:nth-child(5) > .tnode { animation-delay: .16s; }
+.tnode-kids.just-open > .tnode-row:nth-child(n+6) > .tnode { animation-delay: .2s; }
 
 @keyframes tnodeGrow { from { opacity: 0; transform: translateX(-16px) scale(0.94); } to { opacity: 1; transform: none; } }
 @keyframes treeDraw { to { stroke-dashoffset: 0; } }
