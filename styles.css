@@ -473,41 +473,50 @@ body {
 .tree-crumb-seg.cur { color: var(--ink); font-weight: 700; cursor: default; }
 .tree-crumb-sep { color: var(--muted); opacity: 0.6; }
 
-.tree-body { flex: 1; display: flex; align-items: center; gap: 14px; overflow-y: auto; }
-/* focused node on the left */
-.tree-left { flex: 0 0 auto; }
+.tree-body { position: relative; flex: 1; display: flex; align-items: center; gap: 50px; overflow-y: auto; }
+/* connector overlay (curved lines, drawn from layout) */
+.tree-links { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+/* equal-width columns so a chip keeps its size when it moves left (continuity) */
+.tree-left { flex: 1 1 0; min-width: 0; display: flex; justify-content: center; z-index: 1; }
+.tree-kids { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px; z-index: 1; }
 .tree-root {
-  width: 96px; height: 96px; border-radius: 50%; display: flex; flex-direction: column;
+  width: 84px; height: 84px; border-radius: 50%; display: flex; flex-direction: column;
   align-items: center; justify-content: center; text-align: center; padding: 6px;
   background: color-mix(in srgb, var(--root) 18%, var(--panel)); border: 1.5px solid var(--root);
 }
-.tree-root-w { font-size: 15px; font-weight: 700; color: var(--root); }
-.tree-root-g { font-size: 9px; color: var(--muted); margin-top: 3px; line-height: 1.2; }
+.tree-root-w { font-size: 14px; font-weight: 700; color: var(--root); }
+.tree-root-g { font-size: 8px; color: var(--muted); margin-top: 2px; line-height: 1.2; }
 
-/* children fan vertically */
-.tree-kids { flex: 1; display: flex; flex-direction: column; gap: 9px; min-width: 0;
-  border-left: 1px solid var(--bd); padding-left: 14px; }
-
-/* one chip shape for every node (glass) */
+/* one chip shape for every node (glass) — compact */
 .tnode {
-  position: relative; border-radius: 14px; padding: 9px 30px 9px 13px;
+  position: relative; width: 100%; box-sizing: border-box;
+  border-radius: 11px; padding: 6px 24px 6px 11px;
   background: var(--glass-sheen), var(--panel);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   border: 1px solid var(--bd); box-shadow: var(--glass-hi);
-  cursor: pointer; -webkit-tap-highlight-color: transparent; min-width: 0;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
-.tnode:active { transform: scale(0.985); }
+.tree-kids .tnode { animation: tnodeGrow .42s var(--ease) both; animation-delay: calc(90ms + var(--i, 0) * 45ms); }
+.tnode:active { transform: scale(0.97); }
 .tnode.focus { cursor: default; }
-.tnode-w { display: block; font-size: 14px; color: var(--ink); }
+.tnode-w { display: block; font-size: 12.5px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tnode.step .tnode-w { color: var(--prefix-ink); font-weight: 700; }
-.tnode-sub { display: block; font-size: 10.5px; font-style: italic; color: var(--muted); margin-top: 2px;
+.tnode-sub { display: block; font-size: 9.5px; font-style: italic; color: var(--muted); margin-top: 1px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tnode-count { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--muted); }
-.tnode-mark { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
-.tnode-mark.plus { font-size: 15px; color: var(--muted); }
-.tnode-mark.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--root); }
+.tnode-count { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--muted); }
+.tnode-mark { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); }
+.tnode-mark.plus { font-size: 14px; color: var(--muted); }
+.tnode-mark.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--root); }
 .tnode.current { border-color: var(--prefix-ink); }
 .tnode.current .tnode-w { color: var(--prefix-ink); }
+
+@keyframes tnodeGrow { from { opacity: 0; transform: translateX(-16px) scale(0.94); } to { opacity: 1; transform: none; } }
+@keyframes treeDraw { to { stroke-dashoffset: 0; } }
+/* the word card contracts away as the tree takes over */
+.content.to-tree { transition: transform .24s var(--ease), opacity .24s var(--ease); transform: scale(0.86); opacity: 0; transform-origin: 30% 30%; }
+/* the tree fans in */
+.tree.tree-in { animation: treeIn .3s var(--ease) both; }
+@keyframes treeIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: none; } }
 
 /* cards */
 .cards { display: flex; flex-direction: column; gap: 11px; margin-top: 14px; }

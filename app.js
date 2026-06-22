@@ -548,6 +548,7 @@
     await delay(110); if (token !== runToken) return;
     fillPron(recP, result.word, token);
     addWikiInfo(result.word, token); // lead image + proper-noun capitalization
+    prefetchTree(result.word, parts); // build the family tree in the background
 
     // 2) Breakdown — pop in split, then stack into an acrostic, then unfold info.
     await delay(120); if (token !== runToken) return;
@@ -1360,22 +1361,36 @@
 
   let treeStack = [];      // path of nodes from root to the focused node
   let treeToken = 0;
-  function closeTree() { treeEl.hidden = true; treeEl.innerHTML = ""; treeToken++; }
+  let treeFrom = null;     // rect of the tapped chip, for the drill FLIP
+  const treeCache = {};    // word -> promise of its family root node
+  function closeTree() { treeEl.hidden = true; treeEl.classList.remove("tree-in"); treeEl.innerHTML = ""; treeToken++; }
+
+  // Build the family in the background as the word card opens, so the tree is
+  // ready to animate in instantly when the tree button is tapped.
+  function prefetchTree(word, parts) {
+    const rootPart = (parts || []).filter(function (p) { return p.kind === "root" && p.id; })[0];
+    if (!rootPart || treeCache[word]) return;
+    treeCache[word] = loadData().then(async function () {
+      const fam = (MORPH[rootPart.id] || []).filter(function (w) { return w !== word && /^[a-z]{2,}$/.test(w) && w.length <= 16; });
+      const valid = await validateWords(fam, 200);
+      return buildFamilyTree(rootPart, word, valid);
+    }).catch(function () { return null; });
+  }
 
   async function openTree(word, parts) {
     const rootPart = (parts || []).filter(function (p) { return p.kind === "root" && p.id; })[0];
     if (!rootPart) return;
     const token = ++treeToken;
-    treeEl.hidden = false;
+    prefetchTree(word, parts);
+    contentEl.classList.add("to-tree"); // the card contracts away
+    const root = await treeCache[word];
+    await delay(170);                   // let the contraction read
+    if (token !== treeToken) { contentEl.classList.remove("to-tree"); return; }
+    contentEl.classList.remove("to-tree");
+    if (!root) { closeTree(); return; }
     treeEl.innerHTML = "";
-    treeEl.appendChild(el("div", "tree-loading", "Growing the family of " + word + "…"));
-    await loadData();
-    if (token !== treeToken) return;
-
-    const fam = (MORPH[rootPart.id] || []).filter(function (w) { return w !== word && /^[a-z]{2,}$/.test(w) && w.length <= 16; });
-    const valid = await validateWords(fam, 200); // only words we can actually open
-    if (token !== treeToken) return;
-    const root = buildFamilyTree(rootPart, word, valid);
+    treeEl.hidden = false;
+    treeEl.classList.add("tree-in");
     treeStack = [root];
     renderTree();
   }
@@ -1449,13 +1464,45 @@
 
     // body: focused node on the left, its children fanning to the right
     const body = el("div", "tree-body");
+    const links = el("div", "tree-links"); body.appendChild(links); // connector overlay
     const left = el("div", "tree-left");
-    left.appendChild(focusChip(focus));
+    const fEl = focusChip(focus); left.appendChild(fEl);
     body.appendChild(left);
     const kids = el("div", "tree-kids");
-    (focus.children || []).forEach(function (c) { kids.appendChild(treeChip(c)); });
+    (focus.children || []).forEach(function (c, i) { const chip = treeChip(c); chip.style.setProperty("--i", i); kids.appendChild(chip); });
     body.appendChild(kids);
     treeEl.appendChild(body);
+
+    // after layout: draw curved connectors, and FLIP the focus chip in from where
+    // it was tapped (so the tree feels continuous as you drill)
+    requestAnimationFrame(function () {
+      drawLinks(body, fEl, kids, links);
+      if (treeFrom && fEl.getBoundingClientRect) {
+        const to = fEl.getBoundingClientRect();
+        const dx = treeFrom.left - to.left, dy = treeFrom.top - to.top;
+        treeFrom = null;
+        if (Math.abs(dx) + Math.abs(dy) > 2) {
+          fEl.style.transition = "none";
+          fEl.style.transform = "translate(" + dx + "px," + dy + "px)";
+          requestAnimationFrame(function () {
+            fEl.style.transition = "transform .5s var(--ease)";
+            fEl.style.transform = "";
+          });
+        }
+      }
+    });
+  }
+  function drawLinks(body, fEl, kids, links) {
+    if (typeof fEl.offsetWidth !== "number") return; // shim has no layout
+    const sw = body.offsetWidth, sh = body.offsetHeight;
+    const sx = fEl.offsetLeft + fEl.offsetWidth, sy = fEl.offsetTop + fEl.offsetHeight / 2;
+    let p = "";
+    Array.prototype.forEach.call(kids.children, function (chip, i) {
+      const ex = chip.offsetLeft, ey = chip.offsetTop + chip.offsetHeight / 2, mx = (sx + ex) / 2;
+      p += '<path d="M' + sx + ' ' + sy + ' C' + mx + ' ' + sy + ' ' + mx + ' ' + ey + ' ' + ex + ' ' + ey +
+        '" fill="none" stroke="rgba(245,235,215,0.34)" stroke-width="1.6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="animation:treeDraw .55s var(--ease) forwards;animation-delay:' + (90 + i * 45) + 'ms"/>';
+    });
+    links.innerHTML = '<svg width="' + sw + '" height="' + sh + '" viewBox="0 0 ' + sw + ' ' + sh + '" preserveAspectRatio="none" style="position:absolute;inset:0;overflow:visible">' + p + "</svg>";
   }
 
   function focusChip(node) {
@@ -1495,7 +1542,7 @@
     c.appendChild(el("span", "tnode-count", String(node.count)));
     c.appendChild(el("span", "tnode-mark plus", "+"));
     c.setAttribute("role", "button"); c.setAttribute("tabindex", "0");
-    const drill = function () { treeStack.push(node); renderTree(); };
+    const drill = function () { treeFrom = c.getBoundingClientRect ? c.getBoundingClientRect() : null; treeStack.push(node); renderTree(); };
     c.addEventListener("click", drill);
     c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); drill(); } });
     return c;
