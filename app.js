@@ -1346,6 +1346,8 @@
     Number: ["bi", "tri", "uni", "mono", "multi", "poly", "semi", "hemi", "deca", "cent", "quadr", "penta", "oct", "milli", "kilo"],
     Target: ["auto", "homo", "hetero", "allo"],
     Degree: ["hyper", "hypo", "iso", "ultra", "infra", "supra"],
+    Against: ["anti", "contra", "ob"],
+    Side: ["cis", "trans"],
   };
   const PRE_CLUSTER = {};
   Object.keys(CLUSTER).forEach(function (c) { CLUSTER[c].forEach(function (id) { PRE_CLUSTER[id] = c; }); });
@@ -1441,9 +1443,13 @@
       const cl = PRE_CLUSTER[k];
       if (cl) { (clusters[cl] = clusters[cl] || []).push(node); } else { direct.push(node); }
     });
-    const clusterNodes = Object.keys(clusters).map(function (cl) {
-      const ch = clusters[cl].sort(function (a, b) { return b.count - a.count; });
-      return { type: "group", label: cl, gloss: "", count: ch.reduce(function (n, p) { return n + p.count; }, 0), children: ch };
+    // only keep a cluster if ≥2 of its prefixes actually appear (else it didn't
+    // group well — show those prefixes directly instead)
+    const clusterNodes = [];
+    Object.keys(clusters).forEach(function (cl) {
+      const arr = clusters[cl].sort(function (a, b) { return b.count - a.count; });
+      if (arr.length >= 2) clusterNodes.push({ type: "group", label: cl, gloss: "", count: arr.reduce(function (n, p) { return n + p.count; }, 0), children: arr });
+      else arr.forEach(function (n) { direct.push(n); });
     });
     let children = direct.concat(clusterNodes).sort(function (a, b) { return b.count - a.count; });
     if (baseNode) children.unshift(baseNode); // base always first

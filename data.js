@@ -17,6 +17,7 @@ const MORPHEMES = {
     { id: "bene", forms: ["bene", "ben"], origin: "Latin", source: "bene", meaning: "well, good" },
     { id: "bi", forms: ["bi"], origin: "Latin", source: "bi-", meaning: "two" },
     { id: "circum", forms: ["circum", "circu"], origin: "Latin", source: "circum", meaning: "around" },
+    { id: "cis", forms: ["cis"], origin: "Latin", source: "cis", meaning: "on this side of" },
     { id: "co", forms: ["com", "con", "col", "cor", "co"], origin: "Latin", source: "com", meaning: "with, together" },
     { id: "contra", forms: ["contra", "contro", "counter"], origin: "Latin", source: "contra", meaning: "against" },
     { id: "de", forms: ["de"], origin: "Latin", source: "de", meaning: "down, away, off" },
