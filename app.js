@@ -1575,6 +1575,20 @@
     return found;
   }
 
+  // Open (or close) every branch in the tree.
+  function setAllOpen(node, on) {
+    if (node.children && node.children.length) node._open = on;
+    (node.children || []).forEach(function (k) { setAllOpen(k, on); });
+  }
+  // Re-open just the path down to whichever word is currently marked.
+  function openPathToCurrent(node) {
+    if (node.type === "word" && node.current) return true;
+    let found = false;
+    (node.children || []).forEach(function (k) { if (openPathToCurrent(k)) found = true; });
+    if (found) node._open = true;
+    return found;
+  }
+
   // The whole tree renders from treeRoot based on each node's _open flag, so it
   // accumulates: expanding a branch keeps everything else in place.
   function renderTree(opened) {
@@ -1585,6 +1599,17 @@
     x.addEventListener("click", closeTree);
     head.appendChild(x);
     head.appendChild(el("div", "tree-title", "Word family · " + treeRoot.label + "-"));
+    // Show-all / collapse toggle — expand every branch at once, or fold back to
+    // just the path to the current word.
+    const allBtn = el("button", "tree-all", treeRoot._allOpen ? "Collapse" : "Show all");
+    allBtn.type = "button";
+    allBtn.addEventListener("click", function () {
+      treeRoot._allOpen = !treeRoot._allOpen;
+      if (treeRoot._allOpen) { setAllOpen(treeRoot, true); }
+      else { setAllOpen(treeRoot, false); treeRoot._open = true; openPathToCurrent(treeRoot); }
+      renderTree(null);
+    });
+    head.appendChild(allBtn);
     treeEl.appendChild(head);
 
     const body = el("div", "tree-body");
