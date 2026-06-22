@@ -332,9 +332,9 @@
    "w": "description",
    "s": null,
    "region": "depiction-attribution",
-   "parent": "describe",
-   "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "parent": "descript",
+   "by": "user",
+   "at": "2026-06-22T19:44:07.561Z"
   },
   {
    "w": "descriptive",
@@ -535,6 +535,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T19:37:16.312Z"
+  "updated": "2026-06-22T19:44:07.561Z"
  }
 }
