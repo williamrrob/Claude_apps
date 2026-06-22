@@ -514,12 +514,6 @@
    "by": "assistant",
    "at": "2026-06-22T19:09:01.098Z"
   },
-  "scripted": {
-   "l": "script",
-   "t": "past tense of",
-   "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
-  },
   "descriptively": {
    "l": "descriptive",
    "t": "adverb of",
@@ -535,6 +529,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T19:45:37.569Z"
+  "updated": "2026-06-22T19:47:01.070Z"
  }
 }
