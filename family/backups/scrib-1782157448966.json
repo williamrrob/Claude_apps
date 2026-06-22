@@ -36,8 +36,8 @@
    "id": "signing-subscribing",
    "label": "Signing & subscribing",
    "gloss": "commit by writing one's name",
-   "by": "user",
-   "at": "2026-06-22T20:59:19.027Z"
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
   },
   {
    "id": "sacred-writing",
@@ -124,9 +124,17 @@
    "w": "unscripted",
    "s": null,
    "region": "writing-copying",
-   "parent": "scripted",
-   "by": "user",
-   "at": "2026-06-22T19:47:28.202Z"
+   "parent": "script",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "adscript",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "script",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
   },
   {
    "w": "transcribe",
@@ -324,17 +332,17 @@
    "w": "description",
    "s": null,
    "region": "depiction-attribution",
-   "parent": "descript",
-   "by": "user",
-   "at": "2026-06-22T19:44:07.561Z"
+   "parent": "describe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
   },
   {
    "w": "descriptive",
    "s": null,
    "region": "depiction-attribution",
-   "parent": "descript",
-   "by": "user",
-   "at": "2026-06-22T19:44:15.129Z"
+   "parent": "describe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
   },
   {
    "w": "undescriptive",
@@ -364,9 +372,9 @@
    "w": "descriptor",
    "s": null,
    "region": "depiction-attribution",
-   "parent": "descript",
-   "by": "user",
-   "at": "2026-06-22T19:44:23.631Z"
+   "parent": "describe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
   },
   {
    "w": "nondescript",
@@ -389,8 +397,8 @@
    "s": null,
    "region": "depiction-attribution",
    "parent": "ascribe",
-   "by": "user",
-   "at": "2026-06-22T19:45:37.569Z"
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
   },
   {
    "w": "ascribable",
@@ -452,17 +460,9 @@
    "w": "descript",
    "s": null,
    "region": "depiction-attribution",
-   "parent": "describe",
+   "parent": null,
    "by": "user",
-   "at": "2026-06-22T19:45:28.387Z"
-  },
-  {
-   "w": "scripted",
-   "s": null,
-   "region": "writing-copying",
-   "parent": "script",
-   "by": "user",
-   "at": "2026-06-22T19:47:23.329Z"
+   "at": "2026-06-22T19:37:16.312Z"
   }
  ],
  "collapse": {
@@ -514,6 +514,12 @@
    "by": "assistant",
    "at": "2026-06-22T19:09:01.098Z"
   },
+  "scripted": {
+   "l": "script",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
   "descriptively": {
    "l": "descriptive",
    "t": "adverb of",
@@ -529,6 +535,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T21:00:05.387Z"
+  "updated": "2026-06-22T19:37:16.312Z"
  }
 }
