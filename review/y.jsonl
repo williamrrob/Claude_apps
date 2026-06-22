@@ -55,7 +55,7 @@
 {"w":"yarrow","r":47565,"src":"whole","b":"yarrow","flags":[],"st":"auto-whole"}
 {"w":"yashmac","r":9000000,"src":"whole","b":"yashmac","flags":[],"st":"auto-whole"}
 {"w":"yashmak","r":9000000,"src":"whole","b":"yashmak","flags":[],"st":"auto-whole"}
-{"w":"yastrzemski","r":205189,"src":"whole","b":"yastrzemski","flags":[],"st":"auto-whole"}
+{"w":"yastrzemski","r":205189,"src":"engine","b":"y·astr·zem·s·ki","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"yataghan","r":9000000,"src":"whole","b":"yataghan","flags":[],"st":"auto-whole"}
 {"w":"yatobyo","r":9000000,"src":"whole","b":"yatobyo","flags":[],"st":"auto-whole"}
 {"w":"yaup","r":9000000,"src":"whole","b":"yaup","flags":[],"st":"auto-whole"}

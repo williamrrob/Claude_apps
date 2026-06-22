@@ -23,3 +23,40 @@
 {"w":"rating","st":"fixed","note":"whole: rate+ing, English stem"}
 {"w":"archives","st":"fixed","note":"whole: lexicalized borrowing"}
 {"w":"subscribe","st":"ok","note":"engine correct: sub+scrib(write)+e"}
+{"w":"cactus","st":"fixed","note":"cact+us; shares root cact with cacti (Latin us->i)"}
+{"w":"cacti","st":"fixed","note":"cact+i; plural of cactus, shared root cact"}
+{"w":"fungus","st":"fixed","note":"fung+us; pairs with fungi"}
+{"w":"fungi","st":"fixed","note":"fung+i; plural of fungus"}
+{"w":"nucleus","st":"fixed","note":"nucle+us; pairs with nuclei"}
+{"w":"nuclei","st":"fixed","note":"nucle+i; plural of nucleus"}
+{"w":"stimulus","st":"fixed","note":"stimul+us; pairs with stimuli"}
+{"w":"stimuli","st":"fixed","note":"stimul+i; plural of stimulus"}
+{"w":"alumnus","st":"fixed","note":"alumn+us; pairs with alumni"}
+{"w":"alumni","st":"fixed","note":"alumn+i; plural of alumnus"}
+{"w":"radius","st":"fixed","note":"radi+us; pairs with radii"}
+{"w":"radii","st":"fixed","note":"radi+i; plural of radius"}
+{"w":"focus","st":"fixed","note":"foc+us; pairs with foci"}
+{"w":"foci","st":"fixed","note":"foc+i; plural of focus"}
+{"w":"syllabus","st":"fixed","note":"syllab+us; pairs with syllabi"}
+{"w":"syllabi","st":"fixed","note":"syllab+i; plural of syllabus"}
+{"w":"terminus","st":"fixed","note":"termin+us; pairs with termini"}
+{"w":"termini","st":"fixed","note":"termin+i; plural of terminus"}
+{"w":"bacillus","st":"fixed","note":"bacill+us; pairs with bacilli"}
+{"w":"bacilli","st":"fixed","note":"bacill+i; plural of bacillus"}
+{"w":"thesis","st":"fixed","note":"thes(place)+is; Greek, base of theses"}
+{"w":"theses","st":"fixed","note":"plural of thesis (Greek is->es); rel pointer"}
+{"w":"analyses","st":"fixed","note":"plural of analysis; rel pointer"}
+{"w":"crises","st":"fixed","note":"plural of crisis; rel pointer"}
+{"w":"diagnoses","st":"fixed","note":"plural of diagnosis; rel pointer"}
+{"w":"hypotheses","st":"fixed","note":"plural of hypothesis; rel pointer"}
+{"w":"parentheses","st":"fixed","note":"plural of parenthesis; rel pointer"}
+{"w":"neuroses","st":"fixed","note":"plural of neurosis; rel pointer"}
+{"w":"psychoses","st":"fixed","note":"plural of psychosis; rel pointer"}
+{"w":"ran","st":"fixed","note":"past tense of run; rel pointer"}
+{"w":"running","st":"fixed","note":"present participle of run; rel pointer"}
+{"w":"swam","st":"fixed","note":"past tense of swim; rel pointer"}
+{"w":"swum","st":"fixed","note":"past participle of swim; rel pointer"}
+{"w":"ate","st":"fixed","note":"past tense of eat; rel pointer"}
+{"w":"eaten","st":"fixed","note":"past participle of eat; rel pointer"}
+{"w":"psychologist","st":"fixed","note":"derived from psychology; rel pointer"}
+{"w":"biologist","st":"fixed","note":"derived from biology; rel pointer"}

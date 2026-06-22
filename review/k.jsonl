@@ -96,7 +96,7 @@
 {"w":"kansa","r":185399,"src":"whole","b":"kansa","flags":[],"st":"auto-whole"}
 {"w":"kansan","r":138976,"src":"whole","b":"kansan","flags":[],"st":"auto-whole"}
 {"w":"kansas","r":2030,"src":"whole","b":"kansas","flags":[],"st":"auto-whole"}
-{"w":"kansu","r":318090,"src":"engine","b":"kan·su","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"kansu","r":318090,"src":"whole","b":"kansu","flags":[],"st":"auto-whole"}
 {"w":"kant","r":25542,"src":"whole","b":"kant","flags":[],"st":"auto-whole"}
 {"w":"kantian","r":91508,"src":"whole","b":"kantian","flags":[],"st":"auto-whole"}
 {"w":"kantrex","r":9000000,"src":"whole","b":"kantrex","flags":[],"st":"auto-whole"}
@@ -277,7 +277,7 @@
 {"w":"keratalgia","r":9000000,"src":"data","b":"kerat·algia","flags":[],"st":"auto-data"}
 {"w":"keratectasia","r":9000000,"src":"data","b":"kerat·ectasia","flags":[],"st":"auto-data"}
 {"w":"keratin","r":59750,"src":"engine","b":"ker·a·tin","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"keratinisation","r":9000000,"src":"engine","b":"ker·a·tin·is·ation","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"keratinisation","r":9000000,"src":"engine","b":"ker·a·tin·i·s·ation","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"keratinise","r":9000000,"src":"data","b":"keratin·ise","flags":[],"st":"auto-data"}
 {"w":"keratinization","r":9000000,"src":"engine","b":"ker·a·tin·iz·ation","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"keratinize","r":9000000,"src":"engine","b":"ker·a·tin·ize","flags":["lowconf","unknown"],"st":"todo"}
@@ -767,7 +767,7 @@
 {"w":"kookaburra","r":72144,"src":"whole","b":"kookaburra","flags":[],"st":"auto-whole"}
 {"w":"kookie","r":210137,"src":"whole","b":"kookie","flags":[],"st":"auto-whole"}
 {"w":"kooky","r":78024,"src":"whole","b":"kooky","flags":[],"st":"auto-whole"}
-{"w":"koopmans","r":147937,"src":"engine","b":"k·o·op·man·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"koopmans","r":147937,"src":"engine","b":"k·o·op·man·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"kopeck","r":9000000,"src":"engine","b":"k·op·eck","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"kopek","r":193832,"src":"engine","b":"k·op·ek","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"kopiyka","r":9000000,"src":"engine","b":"k·op·i·y·ka","flags":["stray","lowconf","unknown"],"st":"todo"}
@@ -788,8 +788,8 @@
 {"w":"koruna","r":23132,"src":"whole","b":"koruna","flags":[],"st":"auto-whole"}
 {"w":"korzybski","r":240841,"src":"whole","b":"korzybski","flags":[],"st":"auto-whole"}
 {"w":"kos","r":14925,"src":"whole","b":"kos","flags":[],"st":"auto-whole"}
-{"w":"kosciusko","r":67029,"src":"whole","b":"kosciusko","flags":[],"st":"auto-whole"}
-{"w":"kosciuszko","r":119681,"src":"whole","b":"kosciuszko","flags":[],"st":"auto-whole"}
+{"w":"kosciusko","r":67029,"src":"engine","b":"k·o·sci·u·s·ko","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"kosciuszko","r":119681,"src":"engine","b":"k·o·sci·u·s·zko","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"kosher","r":16526,"src":"whole","b":"kosher","flags":[],"st":"auto-whole"}
 {"w":"kosovo","r":11461,"src":"whole","b":"kosovo","flags":[],"st":"auto-whole"}
 {"w":"kosteletzya","r":9000000,"src":"engine","b":"kos·tele·tz·y·a","flags":["stray","lowconf","unknown"],"st":"todo"}

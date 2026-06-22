@@ -6,7 +6,7 @@
 {"w":"vacate","r":36539,"src":"engine","b":"vac·ate","flags":[],"st":"todo-low"}
 {"w":"vacation","r":1503,"src":"engine","b":"vac·ation","flags":[],"st":"todo-low"}
 {"w":"vacationer","r":126819,"src":"engine","b":"vac·ation·er","flags":[],"st":"todo-low"}
-{"w":"vacationing","r":49948,"src":"engine","b":"vac·ation·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"vacationing","r":49948,"src":"engine","b":"vac·ation·ing","flags":[],"st":"todo-low"}
 {"w":"vacationist","r":9000000,"src":"engine","b":"vac·ation·ist","flags":[],"st":"todo-low"}
 {"w":"vaccaria","r":9000000,"src":"engine","b":"vac·c·ar·ia","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vaccina","r":9000000,"src":"whole","b":"vaccina","flags":[],"st":"auto-whole"}
@@ -30,7 +30,7 @@
 {"w":"vacuolated","r":9000000,"src":"engine","b":"vacu·ol·ate·d","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vacuolation","r":274206,"src":"engine","b":"vacu·ol·ation","flags":["unknown"],"st":"todo"}
 {"w":"vacuole","r":86087,"src":"engine","b":"vacu·ol·e","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"vacuolisation","r":9000000,"src":"whole","b":"vacuolisation","flags":[],"st":"auto-whole"}
+{"w":"vacuolisation","r":9000000,"src":"engine","b":"vacu·oli·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"vacuolization","r":9000000,"src":"whole","b":"vacuolization","flags":[],"st":"auto-whole"}
 {"w":"vacuous","r":83004,"src":"engine","b":"vacu·ous","flags":[],"st":"todo-low"}
 {"w":"vacuously","r":284251,"src":"engine","b":"vacu·ous·ly","flags":[],"st":"todo-low"}
@@ -313,7 +313,7 @@
 {"w":"vaticinator","r":9000000,"src":"whole","b":"vaticinator","flags":[],"st":"auto-whole"}
 {"w":"vaudeville","r":47044,"src":"whole","b":"vaudeville","flags":[],"st":"auto-whole"}
 {"w":"vaudevillian","r":268554,"src":"whole","b":"vaudevillian","flags":[],"st":"auto-whole"}
-{"w":"vaudois","r":283820,"src":"engine","b":"v·aud·ois","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"vaudois","r":283820,"src":"engine","b":"v·aud·oi·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vaughan","r":15792,"src":"whole","b":"vaughan","flags":[],"st":"auto-whole"}
 {"w":"vault","r":9566,"src":"whole","b":"vault","flags":[],"st":"auto-whole"}
 {"w":"vaulted","r":40674,"src":"whole","b":"vaulted","flags":[],"st":"auto-whole"}
@@ -404,12 +404,12 @@
 {"w":"vender","r":75097,"src":"engine","b":"ven·d·er","flags":["stray","unknown"],"st":"todo"}
 {"w":"vendetta","r":30081,"src":"whole","b":"vendetta","flags":[],"st":"auto-whole"}
 {"w":"vendible","r":9000000,"src":"engine","b":"ven·d·ible","flags":["stray","unknown"],"st":"todo"}
-{"w":"vending","r":14860,"src":"whole","b":"vending","flags":[],"st":"auto-whole"}
+{"w":"vending","r":14860,"src":"engine","b":"ven·d·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"vendition","r":9000000,"src":"engine","b":"ven·d·ition","flags":["stray","unknown"],"st":"todo"}
 {"w":"vendor","r":2742,"src":"data","b":"vend·or","flags":[],"st":"auto-data"}
 {"w":"vendue","r":268634,"src":"engine","b":"ven·du·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"veneer","r":22415,"src":"whole","b":"veneer","flags":[],"st":"auto-whole"}
-{"w":"veneering","r":181975,"src":"engine","b":"ven·e·er·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"veneering","r":181975,"src":"engine","b":"ven·e·er·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"venerability","r":9000000,"src":"engine","b":"ven·er·a·bi·l·ity","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"venerable","r":28259,"src":"data","b":"vener·able","flags":[],"st":"auto-data"}
 {"w":"venerableness","r":9000000,"src":"data","b":"venerable·ness","flags":[],"st":"auto-data"}
@@ -418,7 +418,7 @@
 {"w":"veneration","r":70879,"src":"data","b":"vener·at·ion","flags":[],"st":"auto-data"}
 {"w":"venerator","r":9000000,"src":"engine","b":"ven·er·ator","flags":[],"st":"todo-low"}
 {"w":"venereal","r":72115,"src":"whole","b":"venereal","flags":[],"st":"auto-whole"}
-{"w":"veneridae","r":9000000,"src":"engine","b":"ven·er·ida·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"veneridae","r":9000000,"src":"engine","b":"ven·er·id·ae","flags":["unknown"],"st":"todo"}
 {"w":"venesect","r":9000000,"src":"engine","b":"ven·e·sect","flags":[],"st":"todo-low"}
 {"w":"venesection","r":9000000,"src":"engine","b":"ven·e·sect·ion","flags":[],"st":"todo-low"}
 {"w":"venetia","r":72940,"src":"whole","b":"venetia","flags":[],"st":"auto-whole"}
@@ -443,7 +443,7 @@
 {"w":"venomed","r":9000000,"src":"data","b":"venom·ed","flags":[],"st":"auto-data"}
 {"w":"venomous","r":51419,"src":"engine","b":"v·e·nom·ous","flags":["stray","unknown"],"st":"todo"}
 {"w":"venomously","r":9000000,"src":"engine","b":"v·e·nom·ous·ly","flags":["stray","unknown"],"st":"todo"}
-{"w":"venose","r":9000000,"src":"engine","b":"ven·os·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"venose","r":9000000,"src":"engine","b":"ven·o·s·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"venous","r":23946,"src":"whole","b":"venous","flags":[],"st":"auto-whole"}
 {"w":"vent","r":11370,"src":"whole","b":"vent","flags":[],"st":"auto-whole"}
 {"w":"ventail","r":9000000,"src":"engine","b":"vent·ail","flags":["lowconf","unknown"],"st":"todo"}
@@ -458,14 +458,14 @@
 {"w":"venting","r":30161,"src":"engine","b":"ven·ting","flags":[],"st":"todo-low"}
 {"w":"ventner","r":9000000,"src":"engine","b":"vent·n·er","flags":["stray","unknown"],"st":"todo"}
 {"w":"ventolin","r":102080,"src":"whole","b":"ventolin","flags":[],"st":"auto-whole"}
-{"w":"ventose","r":9000000,"src":"engine","b":"vent·os·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"ventose","r":9000000,"src":"engine","b":"vent·o·s·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"ventral","r":34066,"src":"engine","b":"vent·r·al","flags":["stray","unknown"],"st":"todo"}
 {"w":"ventrally","r":170701,"src":"engine","b":"vent·r·al·ly","flags":["stray","unknown"],"st":"todo"}
 {"w":"ventricle","r":42727,"src":"whole","b":"ventricle","flags":[],"st":"auto-whole"}
-{"w":"ventricose","r":9000000,"src":"engine","b":"vent·r·ic·os·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"ventricose","r":9000000,"src":"engine","b":"vent·r·ic·o·s·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"ventricous","r":9000000,"src":"engine","b":"vent·r·ic·ous","flags":["stray","unknown"],"st":"todo"}
 {"w":"ventricular","r":19935,"src":"data","b":"ventricul·ar","flags":[],"st":"auto-data"}
-{"w":"ventriculus","r":9000000,"src":"whole","b":"ventriculus","flags":[],"st":"auto-whole"}
+{"w":"ventriculus","r":9000000,"src":"engine","b":"vent·r·ic·ulu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"ventriloquism","r":148132,"src":"engine","b":"vent·ril·o·quis·m","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"ventriloquist","r":92867,"src":"engine","b":"vent·ril·o·quis·t","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"ventriloquy","r":9000000,"src":"whole","b":"ventriloquy","flags":[],"st":"auto-whole"}
@@ -492,7 +492,7 @@
 {"w":"veratrum","r":262691,"src":"whole","b":"veratrum","flags":[],"st":"auto-whole"}
 {"w":"verb","r":12093,"src":"whole","b":"verb","flags":[],"st":"auto-whole"}
 {"w":"verbal","r":9728,"src":"data","b":"verb·al","flags":[],"st":"auto-data"}
-{"w":"verbalisation","r":9000000,"src":"engine","b":"verb·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"verbalisation","r":9000000,"src":"engine","b":"verb·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"verbalise","r":9000000,"src":"data","b":"verbal·ise","flags":[],"st":"auto-data"}
 {"w":"verbalised","r":9000000,"src":"engine","b":"verb·al·ise·d","flags":["stray","unknown"],"st":"todo"}
 {"w":"verbaliser","r":9000000,"src":"engine","b":"verb·al·ise·r","flags":["stray","unknown"],"st":"todo"}
@@ -502,11 +502,11 @@
 {"w":"verbalized","r":207819,"src":"data","b":"verb·al·ized","flags":[],"st":"auto-data"}
 {"w":"verbalizer","r":9000000,"src":"engine","b":"verb·al·ize·r","flags":["stray","unknown"],"st":"todo"}
 {"w":"verbally","r":28465,"src":"data","b":"verb·al·ly","flags":[],"st":"auto-data"}
-{"w":"verbascum","r":174672,"src":"whole","b":"verbascum","flags":[],"st":"auto-whole"}
+{"w":"verbascum","r":174672,"src":"engine","b":"verb·a·s·cum","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"verbatim","r":14767,"src":"whole","b":"verbatim","flags":[],"st":"auto-whole"}
 {"w":"verbena","r":55532,"src":"whole","b":"verbena","flags":[],"st":"auto-whole"}
-{"w":"verbenaceae","r":224431,"src":"whole","b":"verbenaceae","flags":[],"st":"auto-whole"}
-{"w":"verbesina","r":9000000,"src":"whole","b":"verbesina","flags":[],"st":"auto-whole"}
+{"w":"verbenaceae","r":224431,"src":"engine","b":"verb·en·ace·ae","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"verbesina","r":9000000,"src":"engine","b":"verb·es·ina","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"verbiage","r":78059,"src":"engine","b":"ver·bi·a·ge","flags":[],"st":"todo-low"}
 {"w":"verbify","r":9000000,"src":"engine","b":"ver·bi·fy","flags":[],"st":"todo-low"}
 {"w":"verbolatry","r":9000000,"src":"whole","b":"verbolatry","flags":[],"st":"auto-whole"}
@@ -536,7 +536,7 @@
 {"w":"verified","r":6089,"src":"engine","b":"veri·fi·ed","flags":["unknown"],"st":"todo"}
 {"w":"verifier","r":34807,"src":"engine","b":"veri·fi·er","flags":["unknown"],"st":"todo"}
 {"w":"verify","r":4674,"src":"engine","b":"veri·fy","flags":[],"st":"todo-low"}
-{"w":"verifying","r":18802,"src":"engine","b":"veri·fy·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"verifying","r":18802,"src":"engine","b":"veri·fy·ing","flags":[],"st":"todo-low"}
 {"w":"verily","r":33978,"src":"engine","b":"veri·ly","flags":[],"st":"todo-low"}
 {"w":"verisimilar","r":9000000,"src":"whole","b":"verisimilar","flags":[],"st":"auto-whole"}
 {"w":"verisimilitude","r":130746,"src":"data","b":"veri·simil·itude","flags":[],"st":"auto-data"}
@@ -557,7 +557,7 @@
 {"w":"vermillion","r":34475,"src":"whole","b":"vermillion","flags":[],"st":"auto-whole"}
 {"w":"vermin","r":48421,"src":"whole","b":"vermin","flags":[],"st":"auto-whole"}
 {"w":"verminous","r":9000000,"src":"engine","b":"ver·min·ous","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"vermis","r":240436,"src":"engine","b":"ver·mis","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"vermis","r":240436,"src":"engine","b":"ver·mi·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vermont","r":3700,"src":"whole","b":"vermont","flags":[],"st":"auto-whole"}
 {"w":"vermonter","r":176302,"src":"whole","b":"vermonter","flags":[],"st":"auto-whole"}
 {"w":"vermouth","r":81305,"src":"whole","b":"vermouth","flags":[],"st":"auto-whole"}
@@ -571,7 +571,7 @@
 {"w":"vernonia","r":115444,"src":"whole","b":"vernonia","flags":[],"st":"auto-whole"}
 {"w":"verona","r":17431,"src":"engine","b":"ver·ona","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"veronal","r":9000000,"src":"engine","b":"ver·on·al","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"veronese","r":121183,"src":"whole","b":"veronese","flags":[],"st":"auto-whole"}
+{"w":"veronese","r":121183,"src":"engine","b":"ver·on·es·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"veronica","r":14293,"src":"whole","b":"veronica","flags":[],"st":"auto-whole"}
 {"w":"verpa","r":9000000,"src":"engine","b":"ver·pa","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"verrazano","r":175413,"src":"engine","b":"ver·raz·an·o","flags":["stray","lowconf","unknown"],"st":"todo"}
@@ -663,7 +663,7 @@
 {"w":"vesture","r":191823,"src":"whole","b":"vesture","flags":[],"st":"auto-whole"}
 {"w":"vesuvian","r":9000000,"src":"engine","b":"v·e·su·v·ian","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vesuvianite","r":9000000,"src":"engine","b":"v·e·su·v·ian·it·e","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"vesuvius","r":71697,"src":"whole","b":"vesuvius","flags":[],"st":"auto-whole"}
+{"w":"vesuvius","r":71697,"src":"engine","b":"v·e·su·viu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vet","r":10095,"src":"whole","b":"vet","flags":[],"st":"auto-whole"}
 {"w":"vetch","r":78928,"src":"whole","b":"vetch","flags":[],"st":"auto-whole"}
 {"w":"vetchling","r":9000000,"src":"data","b":"vetch·ling","flags":[],"st":"auto-data"}
@@ -695,7 +695,7 @@
 {"w":"viaticus","r":9000000,"src":"whole","b":"viaticus","flags":[],"st":"auto-whole"}
 {"w":"vibe","r":16213,"src":"whole","b":"vibe","flags":[],"st":"auto-whole"}
 {"w":"vibes","r":25232,"src":"whole","b":"vibes","flags":[],"st":"auto-whole"}
-{"w":"vibist","r":9000000,"src":"whole","b":"vibist","flags":[],"st":"auto-whole"}
+{"w":"vibist","r":9000000,"src":"engine","b":"v·i·bi·s·t","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"viborg","r":109641,"src":"whole","b":"viborg","flags":[],"st":"auto-whole"}
 {"w":"vibraharp","r":9000000,"src":"whole","b":"vibraharp","flags":[],"st":"auto-whole"}
 {"w":"vibramycin","r":216771,"src":"whole","b":"vibramycin","flags":[],"st":"auto-whole"}
@@ -741,7 +741,7 @@
 {"w":"vicissitude","r":320324,"src":"whole","b":"vicissitude","flags":[],"st":"auto-whole"}
 {"w":"vicksburg","r":33361,"src":"whole","b":"vicksburg","flags":[],"st":"auto-whole"}
 {"w":"victim","r":5465,"src":"whole","b":"victim","flags":[],"st":"auto-whole"}
-{"w":"victimisation","r":76193,"src":"whole","b":"victimisation","flags":[],"st":"auto-whole"}
+{"w":"victimisation","r":76193,"src":"engine","b":"vict·imi·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"victimise","r":9000000,"src":"engine","b":"vict·im·ise","flags":["unknown"],"st":"todo"}
 {"w":"victimised","r":124600,"src":"engine","b":"vict·im·ise·d","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"victimiser","r":9000000,"src":"engine","b":"vict·im·ise·r","flags":["stray","lowconf","unknown"],"st":"todo"}
@@ -790,7 +790,7 @@
 {"w":"viewing","r":2786,"src":"whole","b":"viewing","flags":[],"st":"auto-whole"}
 {"w":"viewless","r":9000000,"src":"data","b":"view·less","flags":[],"st":"auto-data"}
 {"w":"viewpoint","r":12202,"src":"data","b":"view·point","flags":[],"st":"auto-data"}
-{"w":"vigesimal","r":9000000,"src":"engine","b":"v·i·ge·sim·al","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"vigesimal","r":9000000,"src":"engine","b":"v·i·ge·s·im·al","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vigil","r":23848,"src":"whole","b":"vigil","flags":[],"st":"auto-whole"}
 {"w":"vigilance","r":29888,"src":"data","b":"vigil·ance","flags":[],"st":"auto-data"}
 {"w":"vigilant","r":30528,"src":"data","b":"vigil·ant","flags":[],"st":"auto-data"}
@@ -972,11 +972,11 @@
 {"w":"viscometric","r":9000000,"src":"engine","b":"vis·c·o·metr·ic","flags":["stray","unknown"],"st":"todo"}
 {"w":"viscometry","r":9000000,"src":"data","b":"visco·metry","flags":[],"st":"auto-data"}
 {"w":"visconti","r":63457,"src":"whole","b":"visconti","flags":[],"st":"auto-whole"}
-{"w":"viscose","r":44378,"src":"engine","b":"vis·cos·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"viscose","r":44378,"src":"engine","b":"vis·co·s·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"viscosimeter","r":9000000,"src":"engine","b":"vis·cos·i·meter","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"viscosimetric","r":9000000,"src":"engine","b":"vis·cos·i·metr·ic","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"viscosimetry","r":9000000,"src":"engine","b":"vis·cos·i·metr·y","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"viscosity","r":20413,"src":"engine","b":"vis·cos·ity","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"viscosity","r":20413,"src":"engine","b":"vis·co·s·ity","flags":["stray","unknown"],"st":"todo"}
 {"w":"viscount","r":39266,"src":"whole","b":"viscount","flags":[],"st":"auto-whole"}
 {"w":"viscountcy","r":9000000,"src":"whole","b":"viscountcy","flags":[],"st":"auto-whole"}
 {"w":"viscountess","r":240769,"src":"data","b":"viscount·ess","flags":[],"st":"auto-data"}
@@ -984,7 +984,7 @@
 {"w":"viscous","r":32669,"src":"engine","b":"vis·c·ous","flags":["stray","unknown"],"st":"todo"}
 {"w":"viscousness","r":9000000,"src":"data","b":"viscous·ness","flags":[],"st":"auto-data"}
 {"w":"viscum","r":243613,"src":"engine","b":"vis·cum","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"viscus","r":9000000,"src":"engine","b":"vis·cus","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"viscus","r":9000000,"src":"engine","b":"vis·cu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vise","r":36163,"src":"whole","b":"vise","flags":[],"st":"auto-whole"}
 {"w":"viselike","r":9000000,"src":"data","b":"vise·like","flags":[],"st":"auto-data"}
 {"w":"vishnu","r":42924,"src":"engine","b":"vis·hnu","flags":["lowconf","unknown"],"st":"todo"}
@@ -1008,7 +1008,7 @@
 {"w":"vistaril","r":175033,"src":"engine","b":"vis·t·ar·il","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vistula","r":128661,"src":"whole","b":"vistula","flags":[],"st":"auto-whole"}
 {"w":"visual","r":1654,"src":"curated","b":"vis·ual","flags":[],"st":"fixed","note":"vis(see)+ual; was vis.u.al"}
-{"w":"visualisation","r":34165,"src":"engine","b":"vis·u·al·is·ation","flags":["stray","unknown"],"st":"todo"}
+{"w":"visualisation","r":34165,"src":"engine","b":"vis·u·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"visualise","r":70635,"src":"data","b":"visual·ise","flags":[],"st":"auto-data"}
 {"w":"visualised","r":117299,"src":"engine","b":"vis·u·al·ise·d","flags":["stray","unknown"],"st":"todo"}
 {"w":"visualiser","r":81181,"src":"engine","b":"vis·u·al·ise·r","flags":["stray","unknown"],"st":"todo"}
@@ -1017,9 +1017,9 @@
 {"w":"visualized","r":37960,"src":"engine","b":"vis·u·al·ize·d","flags":["stray","unknown"],"st":"todo"}
 {"w":"visualizer","r":71466,"src":"engine","b":"vis·u·al·ize·r","flags":["stray","unknown"],"st":"todo"}
 {"w":"visually","r":12289,"src":"engine","b":"vis·u·al·ly","flags":["stray","unknown"],"st":"todo"}
-{"w":"vitaceae","r":285291,"src":"whole","b":"vitaceae","flags":[],"st":"auto-whole"}
+{"w":"vitaceae","r":285291,"src":"engine","b":"vit·ace·ae","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"vital","r":4759,"src":"whole","b":"vital","flags":[],"st":"auto-whole"}
-{"w":"vitalisation","r":9000000,"src":"engine","b":"vit·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"vitalisation","r":9000000,"src":"engine","b":"vit·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"vitalise","r":279922,"src":"engine","b":"vit·al·ise","flags":[],"st":"todo-low"}
 {"w":"vitaliser","r":9000000,"src":"engine","b":"vit·al·ise·r","flags":["stray","unknown"],"st":"todo"}
 {"w":"vitalism","r":308713,"src":"data","b":"vital·ism","flags":[],"st":"auto-data"}
@@ -1031,7 +1031,7 @@
 {"w":"vitalizing","r":205106,"src":"data","b":"vital·izing","flags":[],"st":"auto-data"}
 {"w":"vitally","r":41079,"src":"data","b":"vital·ly","flags":[],"st":"auto-data"}
 {"w":"vitalness","r":9000000,"src":"data","b":"vital·ness","flags":[],"st":"auto-data"}
-{"w":"vitals","r":67099,"src":"engine","b":"vit·al·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"vitals","r":67099,"src":"engine","b":"vit·al·s","flags":["stray"],"st":"todo"}
 {"w":"vitamin","r":5013,"src":"whole","b":"vitamin","flags":[],"st":"auto-whole"}
 {"w":"vitaminise","r":9000000,"src":"data","b":"vitamin·ise","flags":[],"st":"auto-data"}
 {"w":"vitaminize","r":9000000,"src":"whole","b":"vitaminize","flags":[],"st":"auto-whole"}
@@ -1046,7 +1046,7 @@
 {"w":"vitidaceae","r":9000000,"src":"whole","b":"vitidaceae","flags":[],"st":"auto-whole"}
 {"w":"vitiliginous","r":9000000,"src":"engine","b":"vit·i·lig·in·ous","flags":["unknown"],"st":"todo"}
 {"w":"vitiligo","r":86103,"src":"engine","b":"vit·i·lig·o","flags":["stray","unknown"],"st":"todo"}
-{"w":"vitis","r":83473,"src":"engine","b":"vit·is","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"vitis","r":83473,"src":"engine","b":"vit·i·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"vitrectomy","r":131774,"src":"engine","b":"vit·rect·om·y","flags":["stray","unknown"],"st":"todo"}
 {"w":"vitreous","r":47153,"src":"whole","b":"vitreous","flags":[],"st":"auto-whole"}
 {"w":"vitrification","r":106434,"src":"engine","b":"vit·r·i·fic·ation","flags":["stray","unknown"],"st":"todo"}
@@ -1061,7 +1061,7 @@
 {"w":"vituperate","r":9000000,"src":"whole","b":"vituperate","flags":[],"st":"auto-whole"}
 {"w":"vituperation","r":261529,"src":"data","b":"vituperat·ion","flags":[],"st":"auto-data"}
 {"w":"vituperative","r":244575,"src":"data","b":"vituperat·ive","flags":[],"st":"auto-data"}
-{"w":"vitus","r":90474,"src":"engine","b":"vit·us","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"vitus","r":90474,"src":"engine","b":"vit·u·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"viva","r":15449,"src":"engine","b":"viv·a","flags":["stray","unknown"],"st":"todo"}
 {"w":"vivace","r":71686,"src":"whole","b":"vivace","flags":[],"st":"auto-whole"}
 {"w":"vivacious","r":72872,"src":"engine","b":"v·i·vac·ious","flags":["stray","unknown"],"st":"todo"}
@@ -1071,8 +1071,8 @@
 {"w":"vivarium","r":115996,"src":"engine","b":"viv·ar·ium","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"viverra","r":205610,"src":"engine","b":"viv·er·ra","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"viverricula","r":9000000,"src":"engine","b":"viv·er·r·ic·ula","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"viverridae","r":9000000,"src":"whole","b":"viverridae","flags":[],"st":"auto-whole"}
-{"w":"viverrinae","r":9000000,"src":"whole","b":"viverrinae","flags":[],"st":"auto-whole"}
+{"w":"viverridae","r":9000000,"src":"engine","b":"viv·er·rid·ae","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"viverrinae","r":9000000,"src":"engine","b":"viv·er·rin·ae","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"viverrine","r":9000000,"src":"engine","b":"viv·er·r·ine","flags":["stray","unknown"],"st":"todo"}
 {"w":"vivid","r":10809,"src":"data","b":"viv·id","flags":[],"st":"auto-data"}
 {"w":"vividly","r":32809,"src":"data","b":"viv·id·ly","flags":[],"st":"auto-data"}
@@ -1099,7 +1099,7 @@
 {"w":"vocabulary","r":8446,"src":"data","b":"voc·abulary","flags":[],"st":"auto-data"}
 {"w":"vocal","r":6651,"src":"data","b":"voc·al","flags":[],"st":"auto-data"}
 {"w":"vocalic","r":159097,"src":"data","b":"voc·al·ic","flags":[],"st":"auto-data"}
-{"w":"vocalisation","r":9000000,"src":"engine","b":"voc·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"vocalisation","r":9000000,"src":"engine","b":"voc·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"vocalise","r":158126,"src":"engine","b":"voc·al·ise","flags":[],"st":"todo-low"}
 {"w":"vocaliser","r":9000000,"src":"engine","b":"voc·al·ise·r","flags":["stray","unknown"],"st":"todo"}
 {"w":"vocalism","r":9000000,"src":"engine","b":"voc·al·ism","flags":[],"st":"todo-low"}
@@ -1184,7 +1184,7 @@
 {"w":"volumetric","r":33604,"src":"data","b":"volum·etr·ic","flags":[],"st":"auto-data"}
 {"w":"volumetrical","r":9000000,"src":"engine","b":"volu·metr·ical","flags":[],"st":"todo-low"}
 {"w":"volumetrically","r":9000000,"src":"data","b":"volum·etr·ic·al·ly","flags":[],"st":"auto-data"}
-{"w":"voluminosity","r":9000000,"src":"engine","b":"v·o·lumin·os·ity","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"voluminosity","r":9000000,"src":"engine","b":"v·o·lumin·o·s·ity","flags":["stray","unknown"],"st":"todo"}
 {"w":"voluminous","r":50344,"src":"engine","b":"v·o·lumin·ous","flags":["stray","unknown"],"st":"todo"}
 {"w":"voluminousness","r":9000000,"src":"engine","b":"v·o·lumin·ous·ness","flags":["stray","unknown"],"st":"todo"}
 {"w":"volund","r":9000000,"src":"engine","b":"volu·nd","flags":["lowconf","unknown"],"st":"todo"}
@@ -1203,17 +1203,17 @@
 {"w":"volvariaceae","r":9000000,"src":"whole","b":"volvariaceae","flags":[],"st":"auto-whole"}
 {"w":"volvariella","r":9000000,"src":"whole","b":"volvariella","flags":[],"st":"auto-whole"}
 {"w":"volvocaceae","r":9000000,"src":"whole","b":"volvocaceae","flags":[],"st":"auto-whole"}
-{"w":"volvocales","r":9000000,"src":"engine","b":"volv·oc·al·es","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"volvocales","r":9000000,"src":"engine","b":"volv·oc·al·es","flags":["unknown"],"st":"todo"}
 {"w":"volvox","r":266489,"src":"engine","b":"volv·ox","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"volvulus","r":136993,"src":"whole","b":"volvulus","flags":[],"st":"auto-whole"}
+{"w":"volvulus","r":136993,"src":"engine","b":"volv·ulu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vombatidae","r":9000000,"src":"whole","b":"vombatidae","flags":[],"st":"auto-whole"}
 {"w":"vomer","r":9000000,"src":"whole","b":"vomer","flags":[],"st":"auto-whole"}
 {"w":"vomit","r":30663,"src":"whole","b":"vomit","flags":[],"st":"auto-whole"}
 {"w":"vomiter","r":9000000,"src":"engine","b":"v·o·mit·er","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"vomiting","r":17108,"src":"engine","b":"v·o·m·i·ting","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
+{"w":"vomiting","r":17108,"src":"engine","b":"v·o·mit·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"vomitive","r":9000000,"src":"engine","b":"v·o·mit·ive","flags":["stray","unknown"],"st":"todo"}
 {"w":"vomitory","r":9000000,"src":"engine","b":"v·o·mit·ory","flags":["stray","unknown"],"st":"todo"}
-{"w":"vomitus","r":295292,"src":"engine","b":"v·o·mit·us","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"vomitus","r":295292,"src":"engine","b":"v·o·mit·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vonnegut","r":44329,"src":"whole","b":"vonnegut","flags":[],"st":"auto-whole"}
 {"w":"voodoo","r":15513,"src":"whole","b":"voodoo","flags":[],"st":"auto-whole"}
 {"w":"voodooism","r":9000000,"src":"data","b":"voodoo·ism","flags":[],"st":"auto-data"}
@@ -1293,5 +1293,5 @@
 {"w":"vulval","r":185785,"src":"whole","b":"vulval","flags":[],"st":"auto-whole"}
 {"w":"vulvar","r":76085,"src":"whole","b":"vulvar","flags":[],"st":"auto-whole"}
 {"w":"vulvectomy","r":9000000,"src":"whole","b":"vulvectomy","flags":[],"st":"auto-whole"}
-{"w":"vulvitis","r":9000000,"src":"engine","b":"vul·vit·is","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"vulvitis","r":9000000,"src":"engine","b":"vul·vit·i·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"vulvovaginitis","r":9000000,"src":"whole","b":"vulvovaginitis","flags":[],"st":"auto-whole"}

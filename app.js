@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "23";
+  const DATA_V = "25";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -558,6 +558,18 @@
 
     // 1) headword
     buildEntry(result.word, rec, parts);
+    // Inflected / derived form: present it as descending from a base word
+    // ("plural of cactus", "past tense of run", "derived from psychology") and
+    // point at that base, rather than as a standalone word.
+    if (rec && rec.rel && rec.rel.l) {
+      const rel = el("div", "entry-rel");
+      rel.appendChild(document.createTextNode((rec.rel.t || "from") + " "));
+      const lk = el("button", "rel-link", rec.rel.l);
+      lk.type = "button";
+      lk.addEventListener("click", function () { run(rec.rel.l); });
+      rel.appendChild(lk);
+      entryEl.appendChild(rel);
+    }
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
     await delay(110); if (token !== runToken) return;
     fillPron(recP, result.word, token);

@@ -91,6 +91,7 @@
 {"w":"eat","r":2727,"src":"whole","b":"eat","flags":[],"st":"auto-whole"}
 {"w":"eatable","r":202371,"src":"data","b":"eat·able","flags":[],"st":"auto-data"}
 {"w":"eatage","r":9000000,"src":"data","b":"eat·age","flags":[],"st":"auto-data"}
+{"w":"eaten","r":9000000,"src":"engine","b":"e·a·ten","flags":["stray"],"st":"fixed","note":"past participle of eat; rel pointer"}
 {"w":"eater","r":19320,"src":"data","b":"eat·er","flags":[],"st":"auto-data"}
 {"w":"eatery","r":43819,"src":"whole","b":"eatery","flags":[],"st":"auto-whole"}
 {"w":"eating","r":3491,"src":"engine","b":"e·a·ting","flags":["stray"],"st":"todo"}
@@ -100,7 +101,7 @@
 {"w":"eavesdropper","r":112156,"src":"data","b":"eavesdropp·er","flags":[],"st":"auto-data"}
 {"w":"eb","r":10502,"src":"whole","b":"eb","flags":[],"st":"auto-whole"}
 {"w":"ebb","r":30670,"src":"whole","b":"ebb","flags":[],"st":"auto-whole"}
-{"w":"ebbing","r":115461,"src":"engine","b":"e·b·bi·ng","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"ebbing","r":115461,"src":"whole","b":"ebbing","flags":[],"st":"auto-whole"}
 {"w":"ebbtide","r":165712,"src":"data","b":"ebb·tide","flags":[],"st":"auto-data"}
 {"w":"ebenaceae","r":9000000,"src":"whole","b":"ebenaceae","flags":[],"st":"auto-whole"}
 {"w":"ebenales","r":9000000,"src":"whole","b":"ebenales","flags":[],"st":"auto-whole"}
@@ -188,7 +189,7 @@
 {"w":"eck","r":48146,"src":"whole","b":"eck","flags":[],"st":"auto-whole"}
 {"w":"eckhart","r":61977,"src":"whole","b":"eckhart","flags":[],"st":"auto-whole"}
 {"w":"eclair","r":123935,"src":"whole","b":"eclair","flags":[],"st":"auto-whole"}
-{"w":"eclampsia","r":66598,"src":"whole","b":"eclampsia","flags":[],"st":"auto-whole"}
+{"w":"eclampsia","r":66598,"src":"engine","b":"e·clam·p·s·ia","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"eclat","r":88154,"src":"whole","b":"eclat","flags":[],"st":"auto-whole"}
 {"w":"eclectic","r":14718,"src":"whole","b":"eclectic","flags":[],"st":"auto-whole"}
 {"w":"eclecticism","r":102251,"src":"data","b":"eclectic·ism","flags":[],"st":"auto-data"}
@@ -206,7 +207,7 @@
 {"w":"ecology","r":6519,"src":"data","b":"eco·log·y","flags":[],"st":"auto-data"}
 {"w":"econometric","r":29370,"src":"data","b":"econo·metric","flags":[],"st":"auto-data"}
 {"w":"econometrician","r":307115,"src":"engine","b":"e·con·o·metr·ic·ian","flags":["stray"],"st":"todo"}
-{"w":"econometrics","r":30858,"src":"engine","b":"e·con·o·metr·ic·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"econometrics","r":30858,"src":"engine","b":"e·con·o·metr·ic·s","flags":["stray"],"st":"todo"}
 {"w":"econometrist","r":9000000,"src":"engine","b":"e·con·o·metr·ist","flags":["stray"],"st":"todo"}
 {"w":"economic","r":860,"src":"data","b":"econom·ic","flags":[],"st":"auto-data"}
 {"w":"economical","r":13408,"src":"data","b":"econom·ic·al","flags":[],"st":"auto-data"}
@@ -241,7 +242,7 @@
 {"w":"ectoparasite","r":9000000,"src":"whole","b":"ectoparasite","flags":[],"st":"auto-whole"}
 {"w":"ectopia","r":9000000,"src":"engine","b":"ect·op·ia","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"ectopic","r":40681,"src":"engine","b":"ect·op·ic","flags":[],"st":"todo-low"}
-{"w":"ectopistes","r":9000000,"src":"engine","b":"ect·op·ist·es","flags":["unknown"],"st":"todo"}
+{"w":"ectopistes","r":9000000,"src":"engine","b":"ect·op·ist·es","flags":[],"st":"todo-low"}
 {"w":"ectoplasm","r":173758,"src":"data","b":"ecto·plasm","flags":[],"st":"auto-data"}
 {"w":"ectoproct","r":9000000,"src":"whole","b":"ectoproct","flags":[],"st":"auto-whole"}
 {"w":"ectoprocta","r":9000000,"src":"whole","b":"ectoprocta","flags":[],"st":"auto-whole"}
@@ -366,7 +367,7 @@
 {"w":"effectiveness","r":4602,"src":"engine","b":"ef·fect·ive·ness","flags":[],"st":"todo-low"}
 {"w":"effectivity","r":114462,"src":"engine","b":"ef·fect·i·vit·y","flags":["stray"],"st":"todo"}
 {"w":"effector","r":42618,"src":"engine","b":"ef·fect·or","flags":[],"st":"todo-low"}
-{"w":"effects","r":976,"src":"engine","b":"ef·fect·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"effects","r":976,"src":"engine","b":"ef·fect·s","flags":["stray"],"st":"todo"}
 {"w":"effectual","r":70090,"src":"engine","b":"ef·fect·u·al","flags":["stray","unknown"],"st":"todo"}
 {"w":"effectuality","r":9000000,"src":"engine","b":"ef·fect·u·al·ity","flags":["stray","unknown"],"st":"todo"}
 {"w":"effectually","r":78124,"src":"engine","b":"ef·fect·u·al·ly","flags":["stray","unknown"],"st":"todo"}
@@ -381,9 +382,9 @@
 {"w":"effendi","r":90814,"src":"whole","b":"effendi","flags":[],"st":"auto-whole"}
 {"w":"efferent","r":96222,"src":"engine","b":"ef·fer·ent","flags":[],"st":"todo-low"}
 {"w":"effervesce","r":9000000,"src":"whole","b":"effervesce","flags":[],"st":"auto-whole"}
-{"w":"effervescence","r":153271,"src":"whole","b":"effervescence","flags":[],"st":"auto-whole"}
-{"w":"effervescent","r":64145,"src":"whole","b":"effervescent","flags":[],"st":"auto-whole"}
-{"w":"effervescing","r":9000000,"src":"engine","b":"ef·fer·v·e·sci·ng","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"effervescence","r":153271,"src":"engine","b":"ef·fer·v·es·c·ence","flags":["stray","unknown"],"st":"todo"}
+{"w":"effervescent","r":64145,"src":"engine","b":"ef·fer·v·es·c·ent","flags":["stray","unknown"],"st":"todo"}
+{"w":"effervescing","r":9000000,"src":"engine","b":"ef·fer·v·es·c·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"effete","r":146791,"src":"whole","b":"effete","flags":[],"st":"auto-whole"}
 {"w":"efficacious","r":54597,"src":"data","b":"efficac·ious","flags":[],"st":"auto-data"}
 {"w":"efficaciously","r":9000000,"src":"data","b":"efficac·ious·ly","flags":[],"st":"auto-data"}
@@ -422,7 +423,7 @@
 {"w":"egality","r":9000000,"src":"whole","b":"egality","flags":[],"st":"auto-whole"}
 {"w":"egbert","r":64569,"src":"whole","b":"egbert","flags":[],"st":"auto-whole"}
 {"w":"egeria","r":223421,"src":"engine","b":"e·ge·ria","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"egest","r":9000000,"src":"whole","b":"egest","flags":[],"st":"auto-whole"}
+{"w":"egest","r":9000000,"src":"engine","b":"e·ge·s·t","flags":["stray","unknown"],"st":"todo"}
 {"w":"egg","r":5153,"src":"whole","b":"egg","flags":[],"st":"auto-whole"}
 {"w":"eggar","r":206744,"src":"whole","b":"eggar","flags":[],"st":"auto-whole"}
 {"w":"eggbeater","r":223784,"src":"data","b":"egg·beat·er","flags":[],"st":"auto-data"}
@@ -579,7 +580,7 @@
 {"w":"elected","r":4274,"src":"engine","b":"e·lect·ed","flags":["stray"],"st":"todo"}
 {"w":"election","r":2197,"src":"data","b":"elect·ion","flags":[],"st":"auto-data"}
 {"w":"electioneer","r":9000000,"src":"engine","b":"e·lect·ion·e·er","flags":["stray","unknown"],"st":"todo"}
-{"w":"electioneering","r":87166,"src":"engine","b":"e·lect·ion·e·er·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"electioneering","r":87166,"src":"engine","b":"e·lect·ion·e·er·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"elective","r":11280,"src":"engine","b":"e·lect·ive","flags":["stray"],"st":"todo"}
 {"w":"elector","r":40726,"src":"engine","b":"e·lect·or","flags":["stray"],"st":"todo"}
 {"w":"electoral","r":9502,"src":"engine","b":"e·lect·or·al","flags":["stray"],"st":"todo"}
@@ -616,7 +617,7 @@
 {"w":"electrolytic","r":44174,"src":"engine","b":"e·lect·ro·ly·t·ic","flags":["stray","unknown"],"st":"todo"}
 {"w":"electromagnet","r":108897,"src":"data","b":"electro·magnet","flags":[],"st":"auto-data"}
 {"w":"electromagnetic","r":14015,"src":"data","b":"electro·magnet·ic","flags":[],"st":"auto-data"}
-{"w":"electromagnetics","r":70739,"src":"engine","b":"e·lect·r·o·magn·et·ic·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"electromagnetics","r":70739,"src":"engine","b":"e·lect·r·o·magn·et·ic·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"electromagnetism","r":65687,"src":"data","b":"electro·magnet·ism","flags":[],"st":"auto-data"}
 {"w":"electromechanical","r":38753,"src":"whole","b":"electromechanical","flags":[],"st":"auto-whole"}
 {"w":"electrometer","r":205364,"src":"data","b":"electro·meter","flags":[],"st":"auto-data"}
@@ -633,8 +634,8 @@
 {"w":"electronics","r":762,"src":"data","b":"electr·on·ics","flags":[],"st":"auto-data"}
 {"w":"electrophoresis","r":21545,"src":"data","b":"electro·phoresis","flags":[],"st":"auto-data"}
 {"w":"electrophoretic","r":59183,"src":"engine","b":"e·lect·r·op·h·or·et·ic","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"electrophoridae","r":9000000,"src":"engine","b":"e·lect·r·op·h·or·ida·e","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"electrophorus","r":9000000,"src":"engine","b":"e·lect·r·op·h·or·us","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"electrophoridae","r":9000000,"src":"engine","b":"e·lect·r·op·h·or·id·ae","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"electrophorus","r":9000000,"src":"engine","b":"e·lect·r·op·h·or·u·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"electroplate","r":169178,"src":"data","b":"electro·plate","flags":[],"st":"auto-data"}
 {"w":"electroplater","r":9000000,"src":"engine","b":"e·lect·r·op·l·ate·r","flags":["stray","unknown"],"st":"todo"}
 {"w":"electropositive","r":9000000,"src":"engine","b":"e·lect·r·o·posit·ive","flags":["stray","unknown"],"st":"todo"}
@@ -643,7 +644,7 @@
 {"w":"electroshock","r":115058,"src":"data","b":"electro·shock","flags":[],"st":"auto-data"}
 {"w":"electrosleep","r":9000000,"src":"data","b":"electro·sleep","flags":[],"st":"auto-data"}
 {"w":"electrostatic","r":24709,"src":"data","b":"electro·stat·ic","flags":[],"st":"auto-data"}
-{"w":"electrostatically","r":147148,"src":"whole","b":"electrostatically","flags":[],"st":"auto-whole"}
+{"w":"electrostatically","r":147148,"src":"engine","b":"e·lect·ro·s·tat·ical·ly","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"electrostatics","r":97715,"src":"data","b":"electro·statics","flags":[],"st":"auto-data"}
 {"w":"electrosurgery","r":205760,"src":"data","b":"electro·surgery","flags":[],"st":"auto-data"}
 {"w":"electrotherapist","r":9000000,"src":"data","b":"electro·therapist","flags":[],"st":"auto-data"}
@@ -662,7 +663,7 @@
 {"w":"elemental","r":18669,"src":"data","b":"element·al","flags":[],"st":"auto-data"}
 {"w":"elementarily","r":9000000,"src":"engine","b":"e·l·e·ment·ar·i·ly","flags":["stray","unknown"],"st":"todo"}
 {"w":"elementary","r":3217,"src":"whole","b":"elementary","flags":[],"st":"auto-whole"}
-{"w":"elements","r":1858,"src":"engine","b":"e·l·e·ment·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"elements","r":1858,"src":"engine","b":"e·l·e·ment·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"elemi","r":9000000,"src":"whole","b":"elemi","flags":[],"st":"auto-whole"}
 {"w":"eleocharis","r":168285,"src":"whole","b":"eleocharis","flags":[],"st":"auto-whole"}
 {"w":"eleotridae","r":9000000,"src":"whole","b":"eleotridae","flags":[],"st":"auto-whole"}
@@ -742,8 +743,8 @@
 {"w":"elongation","r":28301,"src":"data","b":"e·long·at·ion","flags":[],"st":"auto-data"}
 {"w":"elope","r":117312,"src":"whole","b":"elope","flags":[],"st":"auto-whole"}
 {"w":"elopement","r":148002,"src":"data","b":"elope·ment","flags":[],"st":"auto-data"}
-{"w":"elopidae","r":9000000,"src":"engine","b":"e·l·op·ida·e","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"elops","r":9000000,"src":"engine","b":"e·l·op·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"elopidae","r":9000000,"src":"engine","b":"e·l·op·id·ae","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"elops","r":9000000,"src":"engine","b":"e·l·op·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"eloquence","r":41542,"src":"whole","b":"eloquence","flags":[],"st":"auto-whole"}
 {"w":"eloquent","r":31117,"src":"whole","b":"eloquent","flags":[],"st":"auto-whole"}
 {"w":"eloquently","r":45897,"src":"data","b":"eloquent·ly","flags":[],"st":"auto-data"}
@@ -935,7 +936,7 @@
 {"w":"empathise","r":131278,"src":"engine","b":"em·path·ise","flags":[],"st":"todo-low"}
 {"w":"empathize","r":70286,"src":"engine","b":"em·path·ize","flags":[],"st":"todo-low"}
 {"w":"empathy","r":24238,"src":"engine","b":"em·path·y","flags":["stray"],"st":"todo"}
-{"w":"empedocles","r":128847,"src":"whole","b":"empedocles","flags":[],"st":"auto-whole"}
+{"w":"empedocles","r":128847,"src":"engine","b":"em·pedo·cl·es","flags":["unknown"],"st":"todo"}
 {"w":"empennage","r":9000000,"src":"whole","b":"empennage","flags":[],"st":"auto-whole"}
 {"w":"emperor","r":9294,"src":"whole","b":"emperor","flags":[],"st":"auto-whole"}
 {"w":"empetraceae","r":9000000,"src":"whole","b":"empetraceae","flags":[],"st":"auto-whole"}
@@ -1103,7 +1104,7 @@
 {"w":"endaemonism","r":9000000,"src":"whole","b":"endaemonism","flags":[],"st":"auto-whole"}
 {"w":"endameba","r":9000000,"src":"whole","b":"endameba","flags":[],"st":"auto-whole"}
 {"w":"endamoeba","r":9000000,"src":"whole","b":"endamoeba","flags":[],"st":"auto-whole"}
-{"w":"endamoebidae","r":9000000,"src":"engine","b":"end·a·mo·e·bi·da·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"endamoebidae","r":9000000,"src":"engine","b":"end·a·mo·e·bi·d·ae","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"endanger","r":32730,"src":"data","b":"en·danger","flags":[],"st":"auto-data"}
 {"w":"endangered","r":9482,"src":"data","b":"en·dangered","flags":[],"st":"auto-data"}
 {"w":"endangerment","r":71909,"src":"engine","b":"end·an·ge·r·ment","flags":["stray","unknown"],"st":"todo"}
@@ -1131,7 +1132,7 @@
 {"w":"endlessly","r":32402,"src":"data","b":"end·less·ly","flags":[],"st":"auto-data"}
 {"w":"endlessness","r":316801,"src":"data","b":"endless·ness","flags":[],"st":"auto-data"}
 {"w":"endoblast","r":9000000,"src":"data","b":"endo·blast","flags":[],"st":"auto-data"}
-{"w":"endocarditis","r":55456,"src":"engine","b":"endo·cardi·tis","flags":["unknown"],"st":"todo"}
+{"w":"endocarditis","r":55456,"src":"engine","b":"endo·cardi·ti·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"endocardium","r":279628,"src":"engine","b":"endo·cardi·um","flags":["unknown"],"st":"todo"}
 {"w":"endocarp","r":9000000,"src":"data","b":"endo·carp","flags":[],"st":"auto-data"}
 {"w":"endocentric","r":9000000,"src":"data","b":"endo·centric","flags":[],"st":"auto-data"}
@@ -1169,7 +1170,7 @@
 {"w":"endonuclease","r":57808,"src":"whole","b":"endonuclease","flags":[],"st":"auto-whole"}
 {"w":"endoparasite","r":9000000,"src":"whole","b":"endoparasite","flags":[],"st":"auto-whole"}
 {"w":"endoparasitic","r":9000000,"src":"whole","b":"endoparasitic","flags":[],"st":"auto-whole"}
-{"w":"endoplasm","r":9000000,"src":"whole","b":"endoplasm","flags":[],"st":"auto-whole"}
+{"w":"endoplasm","r":9000000,"src":"engine","b":"end·op·la·s·m","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"endoprocta","r":9000000,"src":"whole","b":"endoprocta","flags":[],"st":"auto-whole"}
 {"w":"endorphin","r":77690,"src":"whole","b":"endorphin","flags":[],"st":"auto-whole"}
 {"w":"endorse","r":12074,"src":"whole","b":"endorse","flags":[],"st":"auto-whole"}
@@ -1246,7 +1247,7 @@
 {"w":"engaging","r":9495,"src":"whole","b":"engaging","flags":[],"st":"auto-whole"}
 {"w":"engagingly","r":161167,"src":"whole","b":"engagingly","flags":[],"st":"auto-whole"}
 {"w":"engelmannia","r":9000000,"src":"engine","b":"en·ge·l·man·nia","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"engels","r":36079,"src":"engine","b":"en·ge·ls","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"engels","r":36079,"src":"engine","b":"en·ge·l·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"engender","r":58049,"src":"data","b":"en·gender","flags":[],"st":"auto-data"}
 {"w":"engild","r":9000000,"src":"data","b":"en·gild","flags":[],"st":"auto-data"}
 {"w":"engine","r":1033,"src":"whole","b":"engine","flags":[],"st":"auto-whole"}
@@ -1346,7 +1347,7 @@
 {"w":"enplane","r":9000000,"src":"data","b":"en·plane","flags":[],"st":"auto-data"}
 {"w":"enquire","r":14847,"src":"engine","b":"en·quir·e","flags":["stray"],"st":"todo"}
 {"w":"enquirer","r":28173,"src":"data","b":"en·quire·r","flags":[],"st":"auto-data"}
-{"w":"enquiringly","r":9000000,"src":"engine","b":"en·quir·ing·ly","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"enquiringly","r":9000000,"src":"engine","b":"en·quir·ing·ly","flags":[],"st":"todo-low"}
 {"w":"enquiry","r":7167,"src":"engine","b":"en·quir·y","flags":["stray"],"st":"todo"}
 {"w":"enrage","r":124648,"src":"data","b":"en·rage","flags":[],"st":"auto-data"}
 {"w":"enraged","r":43465,"src":"data","b":"en·raged","flags":[],"st":"auto-data"}
@@ -1379,7 +1380,7 @@
 {"w":"ensorcelled","r":9000000,"src":"whole","b":"ensorcelled","flags":[],"st":"auto-whole"}
 {"w":"ensuant","r":9000000,"src":"engine","b":"en·su·ant","flags":[],"st":"todo-low"}
 {"w":"ensue","r":48781,"src":"whole","b":"ensue","flags":[],"st":"auto-whole"}
-{"w":"ensuing","r":25427,"src":"engine","b":"en·su·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"ensuing","r":25427,"src":"engine","b":"en·su·ing","flags":[],"st":"todo-low"}
 {"w":"ensure","r":1371,"src":"data","b":"en·sure","flags":[],"st":"auto-data"}
 {"w":"entablature","r":265320,"src":"whole","b":"entablature","flags":[],"st":"auto-whole"}
 {"w":"entail","r":25855,"src":"data","b":"en·tail","flags":[],"st":"auto-data"}
@@ -1426,8 +1427,8 @@
 {"w":"entertain","r":14007,"src":"engine","b":"en·ter·tain","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"entertained","r":20433,"src":"engine","b":"en·ter·tain·ed","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"entertainer","r":23934,"src":"engine","b":"en·ter·tain·er","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"entertaining","r":8618,"src":"engine","b":"en·ter·tain·ing","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"entertainingly","r":178197,"src":"engine","b":"en·ter·tain·ing·ly","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"entertaining","r":8618,"src":"engine","b":"en·ter·tain·ing","flags":["unknown"],"st":"todo"}
+{"w":"entertainingly","r":178197,"src":"engine","b":"en·ter·tain·ing·ly","flags":["unknown"],"st":"todo"}
 {"w":"entertainment","r":706,"src":"engine","b":"en·ter·tain·ment","flags":["unknown"],"st":"todo"}
 {"w":"enthalpy","r":57427,"src":"whole","b":"enthalpy","flags":[],"st":"auto-whole"}
 {"w":"enthral","r":331148,"src":"whole","b":"enthral","flags":[],"st":"auto-whole"}
@@ -1471,10 +1472,10 @@
 {"w":"entomophilous","r":9000000,"src":"data","b":"entomo·philous","flags":[],"st":"auto-data"}
 {"w":"entomophobia","r":9000000,"src":"whole","b":"entomophobia","flags":[],"st":"auto-whole"}
 {"w":"entomophthora","r":9000000,"src":"engine","b":"en·tom·op·hth·or·a","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"entomophthoraceae","r":9000000,"src":"whole","b":"entomophthoraceae","flags":[],"st":"auto-whole"}
+{"w":"entomophthoraceae","r":9000000,"src":"engine","b":"en·tom·op·hth·or·ace·ae","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"entomophthorales","r":9000000,"src":"engine","b":"en·tom·op·hth·or·al·es","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"entomostraca","r":9000000,"src":"whole","b":"entomostraca","flags":[],"st":"auto-whole"}
-{"w":"entoparasite","r":9000000,"src":"whole","b":"entoparasite","flags":[],"st":"auto-whole"}
+{"w":"entoparasite","r":9000000,"src":"engine","b":"en·t·op·ar·a·s·it·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"entoproct","r":9000000,"src":"whole","b":"entoproct","flags":[],"st":"auto-whole"}
 {"w":"entoprocta","r":9000000,"src":"whole","b":"entoprocta","flags":[],"st":"auto-whole"}
 {"w":"entourage","r":34699,"src":"whole","b":"entourage","flags":[],"st":"auto-whole"}
@@ -1492,7 +1493,7 @@
 {"w":"entrap","r":126144,"src":"data","b":"en·trap","flags":[],"st":"auto-data"}
 {"w":"entrapment","r":51709,"src":"data","b":"en·trap·ment","flags":[],"st":"auto-data"}
 {"w":"entreat","r":83494,"src":"data","b":"en·treat","flags":[],"st":"auto-data"}
-{"w":"entreatingly","r":9000000,"src":"engine","b":"en·treat·ing·ly","flags":["unknown"],"st":"todo"}
+{"w":"entreatingly","r":9000000,"src":"engine","b":"en·treat·ing·ly","flags":[],"st":"todo-low"}
 {"w":"entreaty","r":134924,"src":"data","b":"en·treat·y","flags":[],"st":"auto-data"}
 {"w":"entrecote","r":9000000,"src":"whole","b":"entrecote","flags":[],"st":"auto-whole"}
 {"w":"entree","r":35663,"src":"whole","b":"entree","flags":[],"st":"auto-whole"}
@@ -1576,7 +1577,7 @@
 {"w":"epacris","r":9000000,"src":"whole","b":"epacris","flags":[],"st":"auto-whole"}
 {"w":"epanalepsis","r":9000000,"src":"whole","b":"epanalepsis","flags":[],"st":"auto-whole"}
 {"w":"epanaphora","r":9000000,"src":"whole","b":"epanaphora","flags":[],"st":"auto-whole"}
-{"w":"epanodos","r":9000000,"src":"whole","b":"epanodos","flags":[],"st":"auto-whole"}
+{"w":"epanodos","r":9000000,"src":"engine","b":"e·pan·odo·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"epanorthosis","r":9000000,"src":"engine","b":"e·pan·ortho·sis","flags":["stray"],"st":"todo"}
 {"w":"eparch","r":9000000,"src":"engine","b":"ep·arch","flags":[],"st":"todo-low"}
 {"w":"eparchial","r":9000000,"src":"data","b":"ep·archi·al","flags":[],"st":"auto-data"}
@@ -1650,7 +1651,7 @@
 {"w":"epidermis","r":46485,"src":"data","b":"epi·dermis","flags":[],"st":"auto-data"}
 {"w":"epidiascope","r":9000000,"src":"data","b":"epi·diascope","flags":[],"st":"auto-data"}
 {"w":"epididymis","r":99616,"src":"whole","b":"epididymis","flags":[],"st":"auto-whole"}
-{"w":"epididymitis","r":167079,"src":"engine","b":"epi·di·d·y·mit·is","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"epididymitis","r":167079,"src":"engine","b":"epi·di·d·y·mit·i·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"epidural","r":39289,"src":"whole","b":"epidural","flags":[],"st":"auto-whole"}
 {"w":"epigaea","r":9000000,"src":"whole","b":"epigaea","flags":[],"st":"auto-whole"}
 {"w":"epigastric","r":169174,"src":"data","b":"epi·gastr·ic","flags":[],"st":"auto-data"}
@@ -1676,7 +1677,7 @@
 {"w":"epilog","r":125179,"src":"engine","b":"epi·log","flags":[],"st":"todo-low"}
 {"w":"epilogue","r":35907,"src":"engine","b":"epi·logue","flags":[],"st":"todo-low"}
 {"w":"epimedium","r":139940,"src":"whole","b":"epimedium","flags":[],"st":"auto-whole"}
-{"w":"epimetheus","r":196937,"src":"engine","b":"ep·im·e·the·us","flags":["stray","unknown"],"st":"todo"}
+{"w":"epimetheus","r":196937,"src":"engine","b":"ep·im·e·the·u·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"epimorphic","r":9000000,"src":"data","b":"epi·morphic","flags":[],"st":"auto-data"}
 {"w":"epinephelus","r":160014,"src":"whole","b":"epinephelus","flags":[],"st":"auto-whole"}
 {"w":"epinephrin","r":9000000,"src":"whole","b":"epinephrin","flags":[],"st":"auto-whole"}
@@ -1693,7 +1694,7 @@
 {"w":"epiphyte","r":192659,"src":"data","b":"epi·phyte","flags":[],"st":"auto-data"}
 {"w":"epiphytic","r":140646,"src":"whole","b":"epiphytic","flags":[],"st":"auto-whole"}
 {"w":"epiphytotic","r":9000000,"src":"whole","b":"epiphytotic","flags":[],"st":"auto-whole"}
-{"w":"epiplexis","r":9000000,"src":"engine","b":"epi·plex·is","flags":["unknown"],"st":"todo"}
+{"w":"epiplexis","r":9000000,"src":"engine","b":"epi·plex·i·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"epipremnum","r":9000000,"src":"whole","b":"epipremnum","flags":[],"st":"auto-whole"}
 {"w":"epirus","r":106879,"src":"whole","b":"epirus","flags":[],"st":"auto-whole"}
 {"w":"episcia","r":9000000,"src":"engine","b":"epi·sci·a","flags":["stray","unknown"],"st":"todo"}
@@ -1802,7 +1803,7 @@
 {"w":"equiprobable","r":327004,"src":"whole","b":"equiprobable","flags":[],"st":"auto-whole"}
 {"w":"equipt","r":151582,"src":"whole","b":"equipt","flags":[],"st":"auto-whole"}
 {"w":"equisetaceae","r":9000000,"src":"whole","b":"equisetaceae","flags":[],"st":"auto-whole"}
-{"w":"equisetales","r":9000000,"src":"engine","b":"e·quis·et·al·es","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"equisetales","r":9000000,"src":"engine","b":"e·quis·et·al·es","flags":["stray","unknown"],"st":"todo"}
 {"w":"equisetatae","r":9000000,"src":"whole","b":"equisetatae","flags":[],"st":"auto-whole"}
 {"w":"equisetum","r":137652,"src":"whole","b":"equisetum","flags":[],"st":"auto-whole"}
 {"w":"equitable","r":13826,"src":"whole","b":"equitable","flags":[],"st":"auto-whole"}
@@ -1840,7 +1841,7 @@
 {"w":"erebus","r":101562,"src":"whole","b":"erebus","flags":[],"st":"auto-whole"}
 {"w":"erect","r":17241,"src":"whole","b":"erect","flags":[],"st":"auto-whole"}
 {"w":"erectile","r":19010,"src":"engine","b":"e·rect·ile","flags":["stray"],"st":"todo"}
-{"w":"erecting","r":51891,"src":"engine","b":"e·re·c·ting","flags":["stray","unknown"],"st":"todo"}
+{"w":"erecting","r":51891,"src":"engine","b":"e·rect·ing","flags":["stray"],"st":"todo"}
 {"w":"erection","r":14368,"src":"data","b":"erect·ion","flags":[],"st":"auto-data"}
 {"w":"erectly","r":9000000,"src":"data","b":"erect·ly","flags":[],"st":"auto-data"}
 {"w":"erectness","r":9000000,"src":"data","b":"erect·ness","flags":[],"st":"auto-data"}
@@ -1878,7 +1879,7 @@
 {"w":"eridanus","r":229200,"src":"whole","b":"eridanus","flags":[],"st":"auto-whole"}
 {"w":"erie","r":11602,"src":"whole","b":"erie","flags":[],"st":"auto-whole"}
 {"w":"erigeron","r":131817,"src":"whole","b":"erigeron","flags":[],"st":"auto-whole"}
-{"w":"erignathus","r":9000000,"src":"engine","b":"e·rig·nat·hus","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"erignathus","r":9000000,"src":"engine","b":"e·rig·nat·hu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"erin","r":11188,"src":"whole","b":"erin","flags":[],"st":"auto-whole"}
 {"w":"erinaceidae","r":9000000,"src":"whole","b":"erinaceidae","flags":[],"st":"auto-whole"}
 {"w":"erinaceus","r":9000000,"src":"whole","b":"erinaceus","flags":[],"st":"auto-whole"}
@@ -2035,7 +2036,7 @@
 {"w":"esophageal","r":29019,"src":"engine","b":"eso·phage·al","flags":[],"st":"todo-low"}
 {"w":"esophagitis","r":77726,"src":"data","b":"esophag·itis","flags":[],"st":"auto-data"}
 {"w":"esophagoscope","r":9000000,"src":"data","b":"esophago·scope","flags":[],"st":"auto-data"}
-{"w":"esophagus","r":30484,"src":"engine","b":"eso·phag·us","flags":["unknown"],"st":"todo"}
+{"w":"esophagus","r":30484,"src":"engine","b":"eso·phag·u·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"esoteric","r":24773,"src":"whole","b":"esoteric","flags":[],"st":"auto-whole"}
 {"w":"esoterica","r":109645,"src":"whole","b":"esoterica","flags":[],"st":"auto-whole"}
 {"w":"esotropia","r":305911,"src":"whole","b":"esotropia","flags":[],"st":"auto-whole"}
@@ -2090,7 +2091,7 @@
 {"w":"ester","r":20158,"src":"whole","b":"ester","flags":[],"st":"auto-whole"}
 {"w":"esterify","r":9000000,"src":"whole","b":"esterify","flags":[],"st":"auto-whole"}
 {"w":"esther","r":12714,"src":"whole","b":"esther","flags":[],"st":"auto-whole"}
-{"w":"esthesia","r":9000000,"src":"engine","b":"e·s·the·sia","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"esthesia","r":9000000,"src":"engine","b":"e·s·the·s·ia","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"esthesis","r":9000000,"src":"engine","b":"e·s·the·sis","flags":["stray","unknown"],"st":"todo"}
 {"w":"esthete","r":9000000,"src":"engine","b":"e·s·the·t·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"esthetic","r":61571,"src":"data","b":"es·thet·ic","flags":[],"st":"auto-data"}
@@ -2123,7 +2124,7 @@
 {"w":"estrone","r":114979,"src":"whole","b":"estrone","flags":[],"st":"auto-whole"}
 {"w":"estronol","r":9000000,"src":"whole","b":"estronol","flags":[],"st":"auto-whole"}
 {"w":"estrous","r":115046,"src":"whole","b":"estrous","flags":[],"st":"auto-whole"}
-{"w":"estrus","r":76257,"src":"engine","b":"e·stru·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"estrus","r":76257,"src":"engine","b":"e·stru·s","flags":["stray"],"st":"todo"}
 {"w":"estuarial","r":9000000,"src":"whole","b":"estuarial","flags":[],"st":"auto-whole"}
 {"w":"estuarine","r":34259,"src":"whole","b":"estuarine","flags":[],"st":"auto-whole"}
 {"w":"estuary","r":21719,"src":"whole","b":"estuary","flags":[],"st":"auto-whole"}
@@ -2214,7 +2215,7 @@
 {"w":"etna","r":43245,"src":"whole","b":"etna","flags":[],"st":"auto-whole"}
 {"w":"etodolac","r":128704,"src":"whole","b":"etodolac","flags":[],"st":"auto-whole"}
 {"w":"etonian","r":9000000,"src":"whole","b":"etonian","flags":[],"st":"auto-whole"}
-{"w":"etropus","r":9000000,"src":"engine","b":"e·tr·op·us","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"etropus","r":9000000,"src":"engine","b":"e·tr·op·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"etruria","r":138298,"src":"whole","b":"etruria","flags":[],"st":"auto-whole"}
 {"w":"etruscan","r":55784,"src":"whole","b":"etruscan","flags":[],"st":"auto-whole"}
 {"w":"etude","r":49503,"src":"whole","b":"etude","flags":[],"st":"auto-whole"}
@@ -2223,7 +2224,7 @@
 {"w":"etymologise","r":9000000,"src":"engine","b":"e·tym·o·log·ise","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"etymologist","r":9000000,"src":"data","b":"etymo·log·ist","flags":[],"st":"auto-data"}
 {"w":"etymologize","r":9000000,"src":"engine","b":"e·tym·o·log·ize","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"etymologizing","r":9000000,"src":"whole","b":"etymologizing","flags":[],"st":"auto-whole"}
+{"w":"etymologizing","r":9000000,"src":"engine","b":"e·tym·o·log·iz·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"etymology","r":34391,"src":"data","b":"etymo·log·y","flags":[],"st":"auto-data"}
 {"w":"etymon","r":9000000,"src":"whole","b":"etymon","flags":[],"st":"auto-whole"}
 {"w":"eu","r":2279,"src":"whole","b":"eu","flags":[],"st":"auto-whole"}
@@ -2279,16 +2280,16 @@
 {"w":"eumeces","r":322046,"src":"whole","b":"eumeces","flags":[],"st":"auto-whole"}
 {"w":"eumenes","r":200833,"src":"whole","b":"eumenes","flags":[],"st":"auto-whole"}
 {"w":"eumenides","r":208034,"src":"whole","b":"eumenides","flags":[],"st":"auto-whole"}
-{"w":"eumetopias","r":9000000,"src":"engine","b":"eu·met·op·ias","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"eumops","r":9000000,"src":"engine","b":"eu·m·op·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"eumetopias","r":9000000,"src":"engine","b":"eu·met·op·ia·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"eumops","r":9000000,"src":"engine","b":"eu·m·op·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"eumycetes","r":9000000,"src":"whole","b":"eumycetes","flags":[],"st":"auto-whole"}
 {"w":"eumycota","r":9000000,"src":"whole","b":"eumycota","flags":[],"st":"auto-whole"}
 {"w":"eunectes","r":9000000,"src":"whole","b":"eunectes","flags":[],"st":"auto-whole"}
 {"w":"eunuch","r":77008,"src":"whole","b":"eunuch","flags":[],"st":"auto-whole"}
 {"w":"eunuchoidism","r":9000000,"src":"whole","b":"eunuchoidism","flags":[],"st":"auto-whole"}
-{"w":"euonymus","r":125085,"src":"engine","b":"eu·onym·us","flags":["unknown"],"st":"todo"}
+{"w":"euonymus","r":125085,"src":"engine","b":"eu·onym·u·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"eupatorium","r":135566,"src":"whole","b":"eupatorium","flags":[],"st":"auto-whole"}
-{"w":"euphagus","r":9000000,"src":"engine","b":"eu·phag·us","flags":["unknown"],"st":"todo"}
+{"w":"euphagus","r":9000000,"src":"engine","b":"eu·phag·u·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"euphausiacea","r":9000000,"src":"whole","b":"euphausiacea","flags":[],"st":"auto-whole"}
 {"w":"euphemise","r":9000000,"src":"whole","b":"euphemise","flags":[],"st":"auto-whole"}
 {"w":"euphemism","r":64379,"src":"data","b":"eu·phem·ism","flags":[],"st":"auto-data"}
@@ -2338,7 +2339,7 @@
 {"w":"europan","r":268045,"src":"engine","b":"eu·r·op·an","flags":["stray","unknown"],"st":"todo"}
 {"w":"europe","r":837,"src":"whole","b":"europe","flags":[],"st":"auto-whole"}
 {"w":"european","r":1013,"src":"whole","b":"european","flags":[],"st":"fixed","note":"whole: proper/demonym"}
-{"w":"europeanisation","r":179035,"src":"engine","b":"eu·r·op·e·an·is·ation","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"europeanisation","r":179035,"src":"engine","b":"eu·r·op·e·an·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"europeanise","r":9000000,"src":"engine","b":"eu·r·op·e·an·ise","flags":["stray","unknown"],"st":"todo"}
 {"w":"europeanization","r":163141,"src":"engine","b":"eu·r·op·e·an·iz·ation","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"europeanize","r":9000000,"src":"engine","b":"eu·r·op·e·an·ize","flags":["stray","unknown"],"st":"todo"}
@@ -2356,7 +2357,7 @@
 {"w":"eurypterida","r":9000000,"src":"whole","b":"eurypterida","flags":[],"st":"auto-whole"}
 {"w":"eurythmics","r":46101,"src":"whole","b":"eurythmics","flags":[],"st":"auto-whole"}
 {"w":"eurythmy","r":9000000,"src":"whole","b":"eurythmy","flags":[],"st":"auto-whole"}
-{"w":"eusebius","r":78814,"src":"engine","b":"eu·se·bi·us","flags":["unknown"],"st":"todo"}
+{"w":"eusebius","r":78814,"src":"engine","b":"eu·se·bi·u·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"eusporangiate","r":9000000,"src":"data","b":"eu·sporangiate","flags":[],"st":"auto-data"}
 {"w":"eusporangium","r":9000000,"src":"whole","b":"eusporangium","flags":[],"st":"auto-whole"}
 {"w":"eustachio","r":9000000,"src":"whole","b":"eustachio","flags":[],"st":"auto-whole"}
@@ -2411,7 +2412,7 @@
 {"w":"evenhanded","r":168374,"src":"engine","b":"e·ven·h·an·d·ed","flags":["stray","unknown"],"st":"todo"}
 {"w":"evenhandedly","r":9000000,"src":"engine","b":"e·ven·h·an·d·ed·ly","flags":["stray","unknown"],"st":"todo"}
 {"w":"evening","r":2377,"src":"data","b":"even·ing","flags":[],"st":"auto-data"}
-{"w":"eveningwear","r":131903,"src":"whole","b":"eveningwear","flags":[],"st":"auto-whole"}
+{"w":"eveningwear","r":131903,"src":"engine","b":"e·ven·ing·we·ar","flags":["stray","unknown"],"st":"todo"}
 {"w":"evenk","r":9000000,"src":"engine","b":"e·ven·k","flags":["stray","unknown"],"st":"todo"}
 {"w":"evenki","r":9000000,"src":"engine","b":"e·ven·ki","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"evenly","r":17230,"src":"data","b":"even·ly","flags":[],"st":"auto-data"}
@@ -2524,8 +2525,8 @@
 {"w":"excavator","r":45151,"src":"data","b":"excavat·or","flags":[],"st":"auto-data"}
 {"w":"exceed","r":5040,"src":"whole","b":"exceed","flags":[],"st":"auto-whole"}
 {"w":"exceedance","r":51972,"src":"engine","b":"ex·ceed·ance","flags":[],"st":"todo-low"}
-{"w":"exceeding","r":10654,"src":"engine","b":"ex·ceed·ing","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"exceedingly","r":26294,"src":"engine","b":"ex·ceed·ing·ly","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"exceeding","r":10654,"src":"engine","b":"ex·ceed·ing","flags":[],"st":"todo-low"}
+{"w":"exceedingly","r":26294,"src":"engine","b":"ex·ceed·ing·ly","flags":[],"st":"todo-low"}
 {"w":"excel","r":4769,"src":"whole","b":"excel","flags":[],"st":"auto-whole"}
 {"w":"excellence","r":4721,"src":"whole","b":"excellence","flags":[],"st":"auto-whole"}
 {"w":"excellency","r":32330,"src":"whole","b":"excellency","flags":[],"st":"auto-whole"}
@@ -2638,7 +2639,7 @@
 {"w":"exenteration","r":9000000,"src":"whole","b":"exenteration","flags":[],"st":"auto-whole"}
 {"w":"exercise","r":2041,"src":"whole","b":"exercise","flags":[],"st":"auto-whole"}
 {"w":"exerciser","r":65335,"src":"engine","b":"ex·e·r·cis·er","flags":["stray","unknown"],"st":"todo"}
-{"w":"exercising","r":15307,"src":"engine","b":"ex·e·r·cis·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"exercising","r":15307,"src":"engine","b":"ex·e·r·cis·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"exercycle","r":9000000,"src":"whole","b":"exercycle","flags":[],"st":"auto-whole"}
 {"w":"exergonic","r":9000000,"src":"whole","b":"exergonic","flags":[],"st":"auto-whole"}
 {"w":"exert","r":24755,"src":"whole","b":"exert","flags":[],"st":"auto-whole"}
@@ -2683,7 +2684,7 @@
 {"w":"existential","r":31041,"src":"whole","b":"existential","flags":[],"st":"auto-whole"}
 {"w":"existentialism","r":53980,"src":"whole","b":"existentialism","flags":[],"st":"auto-whole"}
 {"w":"existentialist","r":100597,"src":"whole","b":"existentialist","flags":[],"st":"auto-whole"}
-{"w":"existing","r":1389,"src":"engine","b":"ex·is·ting","flags":["unknown"],"st":"todo"}
+{"w":"existing","r":1389,"src":"whole","b":"existing","flags":[],"st":"auto-whole"}
 {"w":"exit","r":3226,"src":"whole","b":"exit","flags":[],"st":"auto-whole"}
 {"w":"exmoor","r":67636,"src":"whole","b":"exmoor","flags":[],"st":"auto-whole"}
 {"w":"exobiology","r":177869,"src":"data","b":"exo·biology","flags":[],"st":"auto-data"}
@@ -2714,7 +2715,7 @@
 {"w":"exoneration","r":138744,"src":"data","b":"exoner·at·ion","flags":[],"st":"auto-data"}
 {"w":"exonerative","r":9000000,"src":"whole","b":"exonerative","flags":[],"st":"auto-whole"}
 {"w":"exonuclease","r":91922,"src":"whole","b":"exonuclease","flags":[],"st":"auto-whole"}
-{"w":"exophthalmos","r":266250,"src":"engine","b":"ex·op·hth·al·mos","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"exophthalmos","r":266250,"src":"engine","b":"ex·op·hth·al·mo·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"exopterygota","r":9000000,"src":"whole","b":"exopterygota","flags":[],"st":"auto-whole"}
 {"w":"exorbitance","r":9000000,"src":"data","b":"ex·orbit·ance","flags":[],"st":"auto-data"}
 {"w":"exorbitant","r":55432,"src":"data","b":"ex·orbit·ant","flags":[],"st":"auto-data"}
@@ -2743,14 +2744,14 @@
 {"w":"expanded","r":4831,"src":"engine","b":"ex·pan·d·ed","flags":["stray","unknown"],"st":"todo"}
 {"w":"expandible","r":9000000,"src":"engine","b":"ex·pan·d·ible","flags":["stray","unknown"],"st":"todo"}
 {"w":"expanse","r":39678,"src":"whole","b":"expanse","flags":[],"st":"auto-whole"}
-{"w":"expansible","r":306730,"src":"engine","b":"ex·pan·s·ible","flags":["stray","unknown"],"st":"todo"}
-{"w":"expansile","r":9000000,"src":"engine","b":"ex·pan·s·ile","flags":["stray","unknown"],"st":"todo"}
+{"w":"expansible","r":306730,"src":"engine","b":"ex·pan·s·ible","flags":["stray"],"st":"todo"}
+{"w":"expansile","r":9000000,"src":"engine","b":"ex·pan·s·ile","flags":["stray"],"st":"todo"}
 {"w":"expansion","r":3556,"src":"engine","b":"ex·pan·sion","flags":[],"st":"todo-low"}
 {"w":"expansionism","r":134812,"src":"engine","b":"ex·pan·sion·ism","flags":[],"st":"todo-low"}
 {"w":"expansionist","r":112174,"src":"engine","b":"ex·pan·sion·ist","flags":[],"st":"todo-low"}
-{"w":"expansive","r":24720,"src":"engine","b":"ex·pan·s·ive","flags":["stray","unknown"],"st":"todo"}
-{"w":"expansively","r":210760,"src":"engine","b":"ex·pan·s·ive·ly","flags":["stray","unknown"],"st":"todo"}
-{"w":"expansiveness","r":230032,"src":"engine","b":"ex·pan·s·ive·ness","flags":["stray","unknown"],"st":"todo"}
+{"w":"expansive","r":24720,"src":"engine","b":"ex·pan·s·ive","flags":["stray"],"st":"todo"}
+{"w":"expansively","r":210760,"src":"engine","b":"ex·pan·s·ive·ly","flags":["stray"],"st":"todo"}
+{"w":"expansiveness","r":230032,"src":"engine","b":"ex·pan·s·ive·ness","flags":["stray"],"st":"todo"}
 {"w":"expansivity","r":9000000,"src":"engine","b":"ex·pan·s·i·vit·y","flags":["stray","unknown"],"st":"todo"}
 {"w":"expat","r":16024,"src":"whole","b":"expat","flags":[],"st":"auto-whole"}
 {"w":"expatiate","r":9000000,"src":"whole","b":"expatiate","flags":[],"st":"auto-whole"}
@@ -2780,7 +2781,7 @@
 {"w":"expeditiously","r":49176,"src":"data","b":"ex·ped·it·ious·ly","flags":[],"st":"auto-data"}
 {"w":"expeditiousness","r":9000000,"src":"engine","b":"ex·ped·it·ious·ness","flags":["unknown"],"st":"todo"}
 {"w":"expel","r":41030,"src":"whole","b":"expel","flags":[],"st":"auto-whole"}
-{"w":"expelling","r":78292,"src":"whole","b":"expelling","flags":[],"st":"auto-whole"}
+{"w":"expelling","r":78292,"src":"engine","b":"ex·pel·l·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"expend","r":32800,"src":"data","b":"ex·pend","flags":[],"st":"auto-data"}
 {"w":"expendable","r":47356,"src":"data","b":"ex·pend·able","flags":[],"st":"auto-data"}
 {"w":"expender","r":9000000,"src":"data","b":"expend·er","flags":[],"st":"auto-data"}
@@ -2905,7 +2906,7 @@
 {"w":"extemporarily","r":9000000,"src":"engine","b":"ex·tempor·ar·i·ly","flags":["stray","unknown"],"st":"todo"}
 {"w":"extemporary","r":9000000,"src":"engine","b":"ex·tempor·ary","flags":[],"st":"todo-low"}
 {"w":"extempore","r":263938,"src":"whole","b":"extempore","flags":[],"st":"auto-whole"}
-{"w":"extemporisation","r":9000000,"src":"engine","b":"ex·tempor·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"extemporisation","r":9000000,"src":"engine","b":"ex·tempor·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"extemporise","r":9000000,"src":"engine","b":"ex·tempor·ise","flags":[],"st":"todo-low"}
 {"w":"extemporization","r":9000000,"src":"engine","b":"ex·tempor·iz·ation","flags":["unknown"],"st":"todo"}
 {"w":"extemporize","r":9000000,"src":"data","b":"ex·tempor·ize","flags":[],"st":"auto-data"}
@@ -2953,7 +2954,7 @@
 {"w":"extinguishable","r":9000000,"src":"data","b":"extinguish·able","flags":[],"st":"auto-data"}
 {"w":"extinguished","r":38168,"src":"engine","b":"ex·ting·u·ish·ed","flags":["stray","unknown"],"st":"todo"}
 {"w":"extinguisher","r":34593,"src":"data","b":"extinguish·er","flags":[],"st":"auto-data"}
-{"w":"extinguishing","r":41262,"src":"engine","b":"ex·ting·u·ish·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"extinguishing","r":41262,"src":"engine","b":"ex·ting·u·ish·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"extirpable","r":9000000,"src":"data","b":"extirp·able","flags":[],"st":"auto-data"}
 {"w":"extirpate","r":228926,"src":"whole","b":"extirpate","flags":[],"st":"auto-whole"}
 {"w":"extirpation","r":140218,"src":"data","b":"extirpat·ion","flags":[],"st":"auto-data"}

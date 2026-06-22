@@ -116,7 +116,7 @@
 {"w":"nanometer","r":48542,"src":"data","b":"nano·meter","flags":[],"st":"auto-data"}
 {"w":"nanometre","r":187410,"src":"engine","b":"n·a·n·o·metr·e","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
 {"w":"nanomia","r":9000000,"src":"engine","b":"n·a·nom·ia","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"nanophthalmos","r":9000000,"src":"engine","b":"nan·op·hth·al·mos","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"nanophthalmos","r":9000000,"src":"engine","b":"nan·op·hth·al·mo·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"nanosecond","r":82313,"src":"whole","b":"nanosecond","flags":[],"st":"auto-whole"}
 {"w":"nanotechnology","r":13572,"src":"data","b":"nano·technology","flags":[],"st":"auto-data"}
 {"w":"nanotube","r":46238,"src":"whole","b":"nanotube","flags":[],"st":"auto-whole"}
@@ -236,11 +236,11 @@
 {"w":"natator","r":9000000,"src":"engine","b":"nat·ator","flags":[],"st":"todo-low"}
 {"w":"natatorium","r":128290,"src":"engine","b":"nat·ator·ium","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"natchez","r":41547,"src":"whole","b":"natchez","flags":[],"st":"auto-whole"}
-{"w":"nates","r":88780,"src":"engine","b":"nat·es","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"naticidae","r":9000000,"src":"engine","b":"nat·ic·ida·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"nates","r":88780,"src":"engine","b":"nat·es","flags":[],"st":"todo-low"}
+{"w":"naticidae","r":9000000,"src":"engine","b":"nat·ic·id·ae","flags":["unknown"],"st":"todo"}
 {"w":"nation","r":1848,"src":"whole","b":"nation","flags":[],"st":"auto-whole"}
 {"w":"national","r":242,"src":"data","b":"nation·al","flags":[],"st":"auto-data"}
-{"w":"nationalisation","r":108082,"src":"engine","b":"nat·ion·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"nationalisation","r":108082,"src":"engine","b":"nat·ion·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"nationalise","r":268478,"src":"engine","b":"nat·ion·al·ise","flags":[],"st":"todo-low"}
 {"w":"nationalism","r":19078,"src":"data","b":"nation·al·ism","flags":[],"st":"auto-data"}
 {"w":"nationalist","r":19374,"src":"data","b":"nation·al·ist","flags":[],"st":"auto-data"}
@@ -269,7 +269,7 @@
 {"w":"nattiness","r":9000000,"src":"engine","b":"nat·tin·ess","flags":[],"st":"todo-low"}
 {"w":"natty","r":64240,"src":"whole","b":"natty","flags":[],"st":"auto-whole"}
 {"w":"natural","r":758,"src":"data","b":"natur·al","flags":[],"st":"auto-data"}
-{"w":"naturalisation","r":113922,"src":"engine","b":"nat·ur·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"naturalisation","r":113922,"src":"engine","b":"nat·ur·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"naturalise","r":9000000,"src":"engine","b":"nat·ur·al·ise","flags":[],"st":"todo-low"}
 {"w":"naturalised","r":123175,"src":"engine","b":"nat·ur·al·ise·d","flags":["stray","unknown"],"st":"todo"}
 {"w":"naturalism","r":49689,"src":"data","b":"natur·al·ism","flags":[],"st":"auto-data"}
@@ -369,7 +369,7 @@
 {"w":"neatness","r":81535,"src":"data","b":"neat·ness","flags":[],"st":"auto-data"}
 {"w":"neb","r":44253,"src":"whole","b":"neb","flags":[],"st":"auto-whole"}
 {"w":"nebbech","r":9000000,"src":"whole","b":"nebbech","flags":[],"st":"auto-whole"}
-{"w":"nebbish","r":9000000,"src":"whole","b":"nebbish","flags":[],"st":"auto-whole"}
+{"w":"nebbish","r":9000000,"src":"engine","b":"ne·b·bi·s·h","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"nebcin","r":9000000,"src":"whole","b":"nebcin","flags":[],"st":"auto-whole"}
 {"w":"nebe","r":322389,"src":"whole","b":"nebe","flags":[],"st":"auto-whole"}
 {"w":"nebiim","r":9000000,"src":"engine","b":"ne·bi·im","flags":["lowconf","unknown"],"st":"todo"}
@@ -424,7 +424,7 @@
 {"w":"necrophilism","r":9000000,"src":"data","b":"necro·philism","flags":[],"st":"auto-data"}
 {"w":"necropolis","r":78046,"src":"data","b":"necro·polis","flags":[],"st":"auto-data"}
 {"w":"necropsy","r":85509,"src":"data","b":"necr·opsy","flags":[],"st":"auto-data"}
-{"w":"necrose","r":9000000,"src":"engine","b":"necro·s·e","flags":["stray","unknown"],"st":"todo"}
+{"w":"necrose","r":9000000,"src":"engine","b":"necro·s·e","flags":["stray"],"st":"todo"}
 {"w":"necrosis","r":22938,"src":"whole","b":"necrosis","flags":[],"st":"auto-whole"}
 {"w":"necrotic","r":68696,"src":"whole","b":"necrotic","flags":[],"st":"auto-whole"}
 {"w":"nectar","r":24155,"src":"whole","b":"nectar","flags":[],"st":"auto-whole"}
@@ -554,7 +554,7 @@
 {"w":"neoexpressionism","r":9000000,"src":"whole","b":"neoexpressionism","flags":[],"st":"auto-whole"}
 {"w":"neofiber","r":9000000,"src":"whole","b":"neofiber","flags":[],"st":"auto-whole"}
 {"w":"neohygrophorus","r":9000000,"src":"whole","b":"neohygrophorus","flags":[],"st":"auto-whole"}
-{"w":"neolentinus","r":9000000,"src":"engine","b":"neo·len·tin·us","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"neolentinus","r":9000000,"src":"engine","b":"neo·len·tin·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"neoliberal","r":64081,"src":"engine","b":"neo·liber·al","flags":[],"st":"todo-low"}
 {"w":"neoliberalism","r":80658,"src":"engine","b":"neo·liber·al·ism","flags":[],"st":"todo-low"}
 {"w":"neolith","r":9000000,"src":"data","b":"neo·lith","flags":[],"st":"auto-data"}
@@ -574,7 +574,7 @@
 {"w":"neophyte","r":62353,"src":"data","b":"neo·phyte","flags":[],"st":"auto-data"}
 {"w":"neoplasia","r":54905,"src":"data","b":"neo·plasia","flags":[],"st":"auto-data"}
 {"w":"neoplasm","r":26958,"src":"data","b":"neo·plasm","flags":[],"st":"auto-data"}
-{"w":"neoplastic","r":45579,"src":"whole","b":"neoplastic","flags":[],"st":"auto-whole"}
+{"w":"neoplastic","r":45579,"src":"engine","b":"ne·op·la·s·t·ic","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"neoplatonism","r":225132,"src":"whole","b":"neoplatonism","flags":[],"st":"auto-whole"}
 {"w":"neoplatonist","r":9000000,"src":"whole","b":"neoplatonist","flags":[],"st":"auto-whole"}
 {"w":"neopolitan","r":169941,"src":"whole","b":"neopolitan","flags":[],"st":"auto-whole"}
@@ -593,7 +593,7 @@
 {"w":"nepalese","r":28203,"src":"data","b":"nepal·ese","flags":[],"st":"auto-data"}
 {"w":"nepali","r":31790,"src":"whole","b":"nepali","flags":[],"st":"auto-whole"}
 {"w":"nepenthaceae","r":9000000,"src":"whole","b":"nepenthaceae","flags":[],"st":"auto-whole"}
-{"w":"nepenthes","r":84258,"src":"engine","b":"ne·pen·the·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"nepenthes","r":84258,"src":"whole","b":"nepenthes","flags":[],"st":"auto-whole"}
 {"w":"nepeta","r":189398,"src":"whole","b":"nepeta","flags":[],"st":"auto-whole"}
 {"w":"nepheline","r":298771,"src":"engine","b":"ne·p·heli·n·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"nephelinite","r":9000000,"src":"engine","b":"ne·p·heli·nit·e","flags":["stray","lowconf","unknown"],"st":"todo"}
@@ -617,8 +617,8 @@
 {"w":"nephron","r":105201,"src":"whole","b":"nephron","flags":[],"st":"auto-whole"}
 {"w":"nephropathy","r":53743,"src":"engine","b":"ne·phr·o·path·y","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"nephrops","r":262739,"src":"engine","b":"ne·phr·op·s","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"nephropsidae","r":9000000,"src":"whole","b":"nephropsidae","flags":[],"st":"auto-whole"}
-{"w":"nephroptosia","r":9000000,"src":"whole","b":"nephroptosia","flags":[],"st":"auto-whole"}
+{"w":"nephropsidae","r":9000000,"src":"engine","b":"ne·phr·op·s·id·ae","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"nephroptosia","r":9000000,"src":"engine","b":"ne·phr·opt·o·s·ia","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"nephroptosis","r":9000000,"src":"data","b":"nephro·ptosis","flags":[],"st":"auto-data"}
 {"w":"nephrosclerosis","r":9000000,"src":"data","b":"nephro·sclero·sis","flags":[],"st":"auto-data"}
 {"w":"nephrosis","r":181167,"src":"data","b":"nephro·sis","flags":[],"st":"auto-data"}
@@ -765,6 +765,7 @@
 {"w":"neurosarcoma","r":9000000,"src":"data","b":"neuro·sarcoma","flags":[],"st":"auto-data"}
 {"w":"neuroscience","r":14407,"src":"data","b":"neur·o·sci·ence","flags":[],"st":"auto-data"}
 {"w":"neuroscientist","r":123557,"src":"data","b":"neur·o·sci·ent·ist","flags":[],"st":"auto-data"}
+{"w":"neuroses","r":9000000,"src":"whole","b":"neuroses","flags":[],"st":"fixed","note":"plural of neurosis; rel pointer"}
 {"w":"neurosis","r":58971,"src":"data","b":"neuro·sis","flags":[],"st":"auto-data"}
 {"w":"neurospora","r":74033,"src":"whole","b":"neurospora","flags":[],"st":"auto-whole"}
 {"w":"neurosurgeon","r":75246,"src":"engine","b":"ne·ur·o·su·r·geo·n","flags":["stray","lowconf","unknown"],"st":"todo"}
@@ -854,7 +855,7 @@
 {"w":"newsstand","r":25846,"src":"data","b":"news·stand","flags":[],"st":"auto-data"}
 {"w":"newsvendor","r":9000000,"src":"data","b":"news·vendor","flags":[],"st":"auto-data"}
 {"w":"newswoman","r":9000000,"src":"engine","b":"ne·wsw·o·man","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"newsworthiness","r":273421,"src":"engine","b":"ne·wsw·orth·i·ness","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"newsworthiness","r":273421,"src":"engine","b":"ne·wsw·orth·ine·s·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"newsworthy","r":47310,"src":"engine","b":"ne·wsw·orth·y","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"newswriter","r":9000000,"src":"data","b":"news·writer","flags":[],"st":"auto-data"}
 {"w":"newsy","r":128567,"src":"whole","b":"newsy","flags":[],"st":"auto-whole"}
@@ -1287,7 +1288,7 @@
 {"w":"nonconductive","r":269614,"src":"engine","b":"non·con·duct·ive","flags":[],"st":"todo-low"}
 {"w":"nonconductor","r":9000000,"src":"engine","b":"non·con·duct·or","flags":[],"st":"todo-low"}
 {"w":"nonconformance","r":149667,"src":"data","b":"non·conformance","flags":[],"st":"auto-data"}
-{"w":"nonconforming","r":53316,"src":"engine","b":"non·con·form·ing","flags":["unknown"],"st":"todo"}
+{"w":"nonconforming","r":53316,"src":"engine","b":"non·con·form·ing","flags":[],"st":"todo-low"}
 {"w":"nonconformism","r":9000000,"src":"data","b":"non·conformism","flags":[],"st":"auto-data"}
 {"w":"nonconformist","r":105537,"src":"engine","b":"non·con·form·ist","flags":[],"st":"todo-low"}
 {"w":"nonconformity","r":96791,"src":"engine","b":"non·con·form·ity","flags":[],"st":"todo-low"}
@@ -1374,7 +1375,7 @@
 {"w":"nonintellectual","r":9000000,"src":"engine","b":"non·intel·lect·u·al","flags":["stray","unknown"],"st":"todo"}
 {"w":"noninterchangeable","r":9000000,"src":"whole","b":"noninterchangeable","flags":[],"st":"auto-whole"}
 {"w":"noninterference","r":236481,"src":"engine","b":"non·inter·fer·ence","flags":[],"st":"todo-low"}
-{"w":"nonintersecting","r":9000000,"src":"engine","b":"non·inter·se·c·ting","flags":["stray","unknown"],"st":"todo"}
+{"w":"nonintersecting","r":9000000,"src":"engine","b":"non·inter·sect·ing","flags":[],"st":"todo-low"}
 {"w":"nonintervention","r":9000000,"src":"engine","b":"non·inter·vent·ion","flags":[],"st":"todo-low"}
 {"w":"noninvasive","r":51314,"src":"whole","b":"noninvasive","flags":[],"st":"auto-whole"}
 {"w":"nonionic","r":107462,"src":"whole","b":"nonionic","flags":[],"st":"auto-whole"}
@@ -1409,7 +1410,7 @@
 {"w":"nonmodern","r":9000000,"src":"whole","b":"nonmodern","flags":[],"st":"auto-whole"}
 {"w":"nonmonotonic","r":114661,"src":"data","b":"non·monotonic","flags":[],"st":"auto-data"}
 {"w":"nonmotile","r":9000000,"src":"engine","b":"non·mot·ile","flags":[],"st":"todo-low"}
-{"w":"nonmoving","r":165181,"src":"engine","b":"non·mov·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"nonmoving","r":165181,"src":"engine","b":"non·mov·ing","flags":[],"st":"todo-low"}
 {"w":"nonmusical","r":9000000,"src":"data","b":"non·music·al","flags":[],"st":"auto-data"}
 {"w":"nonnative","r":97982,"src":"engine","b":"non·nat·ive","flags":[],"st":"todo-low"}
 {"w":"nonnatural","r":9000000,"src":"data","b":"non·natural","flags":[],"st":"auto-data"}
@@ -1725,7 +1726,7 @@
 {"w":"notomys","r":9000000,"src":"whole","b":"notomys","flags":[],"st":"auto-whole"}
 {"w":"notonecta","r":9000000,"src":"whole","b":"notonecta","flags":[],"st":"auto-whole"}
 {"w":"notonectidae","r":9000000,"src":"whole","b":"notonectidae","flags":[],"st":"auto-whole"}
-{"w":"notophthalmus","r":9000000,"src":"engine","b":"not·op·hth·al·mus","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"notophthalmus","r":9000000,"src":"engine","b":"not·op·hth·al·mu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"notoriety","r":49394,"src":"whole","b":"notoriety","flags":[],"st":"auto-whole"}
 {"w":"notorious","r":13081,"src":"whole","b":"notorious","flags":[],"st":"auto-whole"}
 {"w":"notoriously","r":35768,"src":"whole","b":"notoriously","flags":[],"st":"auto-whole"}
@@ -1752,7 +1753,7 @@
 {"w":"novation","r":63509,"src":"engine","b":"nov·ation","flags":[],"st":"todo-low"}
 {"w":"novel","r":3455,"src":"whole","b":"novel","flags":[],"st":"auto-whole"}
 {"w":"novelette","r":137757,"src":"data","b":"novel·ette","flags":[],"st":"auto-data"}
-{"w":"novelisation","r":9000000,"src":"whole","b":"novelisation","flags":[],"st":"auto-whole"}
+{"w":"novelisation","r":9000000,"src":"engine","b":"nov·eli·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"novelise","r":9000000,"src":"engine","b":"nov·el·ise","flags":["unknown"],"st":"todo"}
 {"w":"novelist","r":21239,"src":"data","b":"novel·ist","flags":[],"st":"auto-data"}
 {"w":"novelization","r":128742,"src":"whole","b":"novelization","flags":[],"st":"auto-whole"}
@@ -1823,6 +1824,7 @@
 {"w":"nuclease","r":70425,"src":"whole","b":"nuclease","flags":[],"st":"auto-whole"}
 {"w":"nucleate","r":196239,"src":"whole","b":"nucleate","flags":[],"st":"auto-whole"}
 {"w":"nucleated","r":132688,"src":"whole","b":"nucleated","flags":[],"st":"auto-whole"}
+{"w":"nuclei","r":9000000,"src":"curated","b":"nucle·i","flags":[],"st":"fixed","note":"nucle+i; plural of nucleus"}
 {"w":"nucleole","r":9000000,"src":"whole","b":"nucleole","flags":[],"st":"auto-whole"}
 {"w":"nucleolus","r":90128,"src":"whole","b":"nucleolus","flags":[],"st":"auto-whole"}
 {"w":"nucleon","r":43835,"src":"whole","b":"nucleon","flags":[],"st":"auto-whole"}
@@ -1832,7 +1834,7 @@
 {"w":"nucleoside","r":41612,"src":"whole","b":"nucleoside","flags":[],"st":"auto-whole"}
 {"w":"nucleosynthesis","r":105581,"src":"whole","b":"nucleosynthesis","flags":[],"st":"auto-whole"}
 {"w":"nucleotide","r":12754,"src":"whole","b":"nucleotide","flags":[],"st":"auto-whole"}
-{"w":"nucleus","r":12084,"src":"whole","b":"nucleus","flags":[],"st":"auto-whole"}
+{"w":"nucleus","r":12084,"src":"curated","b":"nucle·us","flags":[],"st":"fixed","note":"nucle+us; pairs with nuclei"}
 {"w":"nuda","r":80293,"src":"whole","b":"nuda","flags":[],"st":"auto-whole"}
 {"w":"nude","r":827,"src":"whole","b":"nude","flags":[],"st":"auto-whole"}
 {"w":"nudeness","r":9000000,"src":"whole","b":"nudeness","flags":[],"st":"auto-whole"}
@@ -1866,7 +1868,7 @@
 {"w":"numberplate","r":129575,"src":"data","b":"number·plate","flags":[],"st":"auto-data"}
 {"w":"numbers","r":1244,"src":"whole","b":"numbers","flags":[],"st":"auto-whole"}
 {"w":"numbfish","r":9000000,"src":"data","b":"numb·fish","flags":[],"st":"auto-data"}
-{"w":"numbing","r":52240,"src":"engine","b":"num·bi·ng","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"numbing","r":52240,"src":"whole","b":"numbing","flags":[],"st":"auto-whole"}
 {"w":"numbly","r":258680,"src":"data","b":"numb·ly","flags":[],"st":"auto-data"}
 {"w":"numbness","r":37016,"src":"data","b":"numb·ness","flags":[],"st":"auto-data"}
 {"w":"numdah","r":9000000,"src":"whole","b":"numdah","flags":[],"st":"auto-whole"}

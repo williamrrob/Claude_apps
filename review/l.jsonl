@@ -11,7 +11,7 @@
 {"w":"labial","r":89375,"src":"engine","b":"l·a·bi·al","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"labialise","r":9000000,"src":"engine","b":"l·a·bi·al·ise","flags":["stray","unknown"],"st":"todo"}
 {"w":"labialize","r":9000000,"src":"engine","b":"l·a·bi·al·ize","flags":["stray","unknown"],"st":"todo"}
-{"w":"labiatae","r":231540,"src":"engine","b":"l·a·bi·ata·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"labiatae","r":231540,"src":"engine","b":"l·a·bi·at·ae","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"labiate","r":9000000,"src":"engine","b":"l·a·bi·ate","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"labile","r":79786,"src":"whole","b":"labile","flags":[],"st":"auto-whole"}
 {"w":"labiodental","r":9000000,"src":"engine","b":"l·a·bio·dent·al","flags":["stray","unknown"],"st":"todo"}
@@ -165,8 +165,8 @@
 {"w":"lagomorph","r":9000000,"src":"whole","b":"lagomorph","flags":[],"st":"auto-whole"}
 {"w":"lagomorpha","r":329006,"src":"whole","b":"lagomorpha","flags":[],"st":"auto-whole"}
 {"w":"lagoon","r":14709,"src":"whole","b":"lagoon","flags":[],"st":"auto-whole"}
-{"w":"lagophthalmos","r":9000000,"src":"engine","b":"lag·op·hth·al·mos","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"lagopus","r":166898,"src":"engine","b":"lag·op·us","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"lagophthalmos","r":9000000,"src":"engine","b":"lag·op·hth·al·mo·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lagopus","r":166898,"src":"engine","b":"lag·op·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lagorchestes","r":9000000,"src":"whole","b":"lagorchestes","flags":[],"st":"auto-whole"}
 {"w":"lagos","r":23201,"src":"whole","b":"lagos","flags":[],"st":"auto-whole"}
 {"w":"lagostomus","r":9000000,"src":"whole","b":"lagostomus","flags":[],"st":"auto-whole"}
@@ -237,7 +237,7 @@
 {"w":"lamentations","r":26164,"src":"engine","b":"l·a·ment·ation·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"lamented","r":45956,"src":"engine","b":"l·a·ment·ed","flags":["stray","unknown"],"st":"todo"}
 {"w":"lamenter","r":9000000,"src":"data","b":"lament·er","flags":[],"st":"auto-data"}
-{"w":"lamenting","r":67118,"src":"engine","b":"l·a·ment·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lamenting","r":67118,"src":"engine","b":"l·a·ment·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"lamia","r":112237,"src":"whole","b":"lamia","flags":[],"st":"auto-whole"}
 {"w":"lamiaceae","r":138934,"src":"whole","b":"lamiaceae","flags":[],"st":"auto-whole"}
 {"w":"lamina","r":54310,"src":"whole","b":"lamina","flags":[],"st":"auto-whole"}
@@ -553,9 +553,9 @@
 {"w":"latimeria","r":9000000,"src":"whole","b":"latimeria","flags":[],"st":"auto-whole"}
 {"w":"latimeridae","r":9000000,"src":"whole","b":"latimeridae","flags":[],"st":"auto-whole"}
 {"w":"latin","r":2210,"src":"whole","b":"latin","flags":[],"st":"auto-whole"}
-{"w":"latinae","r":9000000,"src":"engine","b":"l·a·tin·a·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"latinae","r":9000000,"src":"engine","b":"l·a·tin·ae","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"latinate","r":314991,"src":"engine","b":"l·a·tin·ate","flags":["stray","unknown"],"st":"todo"}
-{"w":"latinesce","r":9000000,"src":"engine","b":"l·a·tin·esc·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"latinesce","r":9000000,"src":"engine","b":"l·a·tin·es·c·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"latinise","r":9000000,"src":"engine","b":"l·a·tin·ise","flags":["stray","unknown"],"st":"todo"}
 {"w":"latinism","r":9000000,"src":"engine","b":"l·a·tin·ism","flags":["stray","unknown"],"st":"todo"}
 {"w":"latinist","r":9000000,"src":"data","b":"latin·ist","flags":[],"st":"auto-data"}
@@ -789,7 +789,7 @@
 {"w":"lebanese","r":15944,"src":"whole","b":"lebanese","flags":[],"st":"auto-whole"}
 {"w":"lebanon","r":5244,"src":"whole","b":"lebanon","flags":[],"st":"auto-whole"}
 {"w":"lebensraum","r":227024,"src":"whole","b":"lebensraum","flags":[],"st":"auto-whole"}
-{"w":"lebistes","r":9000000,"src":"whole","b":"lebistes","flags":[],"st":"auto-whole"}
+{"w":"lebistes","r":9000000,"src":"engine","b":"l·e·bi·s·t·es","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lecanopteris","r":9000000,"src":"whole","b":"lecanopteris","flags":[],"st":"auto-whole"}
 {"w":"lecanora","r":294911,"src":"whole","b":"lecanora","flags":[],"st":"auto-whole"}
 {"w":"lecanoraceae","r":9000000,"src":"whole","b":"lecanoraceae","flags":[],"st":"auto-whole"}
@@ -847,8 +847,8 @@
 {"w":"leg","r":4092,"src":"whole","b":"leg","flags":[],"st":"auto-whole"}
 {"w":"legacy","r":5009,"src":"data","b":"leg·acy","flags":[],"st":"auto-data"}
 {"w":"legal","r":545,"src":"whole","b":"legal","flags":[],"st":"auto-whole"}
-{"w":"legalese","r":82375,"src":"engine","b":"leg·al·es·e","flags":["stray","unknown"],"st":"todo"}
-{"w":"legalisation","r":99094,"src":"engine","b":"leg·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"legalese","r":82375,"src":"engine","b":"leg·al·es·e","flags":["stray"],"st":"todo"}
+{"w":"legalisation","r":99094,"src":"engine","b":"leg·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"legalise","r":104309,"src":"engine","b":"leg·al·ise","flags":[],"st":"todo-low"}
 {"w":"legalism","r":100806,"src":"data","b":"legal·ism","flags":[],"st":"auto-data"}
 {"w":"legality","r":24978,"src":"data","b":"legal·ity","flags":[],"st":"auto-data"}
@@ -866,13 +866,13 @@
 {"w":"legerdemain","r":162713,"src":"whole","b":"legerdemain","flags":[],"st":"auto-whole"}
 {"w":"legerity","r":9000000,"src":"engine","b":"leg·er·ity","flags":[],"st":"todo-low"}
 {"w":"legged","r":22053,"src":"engine","b":"leg·ge·d","flags":["stray","unknown"],"st":"todo"}
-{"w":"legging","r":154054,"src":"whole","b":"legging","flags":[],"st":"auto-whole"}
+{"w":"legging","r":154054,"src":"engine","b":"leg·g·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"leggy","r":70603,"src":"data","b":"legg·y","flags":[],"st":"auto-data"}
 {"w":"leghorn","r":93273,"src":"data","b":"leg·horn","flags":[],"st":"auto-data"}
 {"w":"legibility","r":70549,"src":"engine","b":"leg·i·bi·l·ity","flags":["stray","unknown"],"st":"todo"}
 {"w":"legible","r":34035,"src":"whole","b":"legible","flags":[],"st":"auto-whole"}
 {"w":"legibly","r":67266,"src":"data","b":"legibl·y","flags":[],"st":"auto-data"}
-{"w":"leging","r":9000000,"src":"engine","b":"leg·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"leging","r":9000000,"src":"engine","b":"leg·ing","flags":[],"st":"todo-low"}
 {"w":"legion","r":14045,"src":"whole","b":"legion","flags":[],"st":"auto-whole"}
 {"w":"legionary","r":123688,"src":"data","b":"legion·ary","flags":[],"st":"auto-data"}
 {"w":"legionella","r":62659,"src":"whole","b":"legionella","flags":[],"st":"auto-whole"}
@@ -896,7 +896,7 @@
 {"w":"legless","r":119856,"src":"data","b":"leg·less","flags":[],"st":"auto-data"}
 {"w":"leglike","r":9000000,"src":"data","b":"leg·like","flags":[],"st":"auto-data"}
 {"w":"lego","r":11348,"src":"engine","b":"leg·o","flags":["stray","unknown"],"st":"todo"}
-{"w":"legs","r":3384,"src":"engine","b":"leg·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"legs","r":3384,"src":"engine","b":"leg·s","flags":["stray"],"st":"todo"}
 {"w":"legume","r":54077,"src":"whole","b":"legume","flags":[],"st":"auto-whole"}
 {"w":"leguminosae","r":132741,"src":"whole","b":"leguminosae","flags":[],"st":"auto-whole"}
 {"w":"leguminous","r":136720,"src":"whole","b":"leguminous","flags":[],"st":"auto-whole"}
@@ -922,7 +922,7 @@
 {"w":"leishmaniosis","r":9000000,"src":"whole","b":"leishmaniosis","flags":[],"st":"auto-whole"}
 {"w":"leister","r":113595,"src":"whole","b":"leister","flags":[],"st":"auto-whole"}
 {"w":"leisure","r":3290,"src":"whole","b":"leisure","flags":[],"st":"auto-whole"}
-{"w":"leisured","r":318508,"src":"engine","b":"le·i·su·r·ed","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"leisured","r":318508,"src":"whole","b":"leisured","flags":[],"st":"auto-whole"}
 {"w":"leisureliness","r":9000000,"src":"whole","b":"leisureliness","flags":[],"st":"auto-whole"}
 {"w":"leisurely","r":32617,"src":"data","b":"leisure·ly","flags":[],"st":"auto-data"}
 {"w":"leitmotif","r":218175,"src":"whole","b":"leitmotif","flags":[],"st":"auto-whole"}
@@ -997,7 +997,7 @@
 {"w":"lentiginous","r":9000000,"src":"whole","b":"lentiginous","flags":[],"st":"auto-whole"}
 {"w":"lentigo","r":289994,"src":"whole","b":"lentigo","flags":[],"st":"auto-whole"}
 {"w":"lentil","r":47862,"src":"whole","b":"lentil","flags":[],"st":"auto-whole"}
-{"w":"lentinus","r":9000000,"src":"engine","b":"len·tin·us","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"lentinus","r":9000000,"src":"engine","b":"len·tin·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lentisk","r":9000000,"src":"whole","b":"lentisk","flags":[],"st":"auto-whole"}
 {"w":"lentissimo","r":9000000,"src":"whole","b":"lentissimo","flags":[],"st":"auto-whole"}
 {"w":"lento","r":115133,"src":"whole","b":"lento","flags":[],"st":"auto-whole"}
@@ -1065,7 +1065,7 @@
 {"w":"leprosy","r":36291,"src":"whole","b":"leprosy","flags":[],"st":"auto-whole"}
 {"w":"leprous","r":226547,"src":"whole","b":"leprous","flags":[],"st":"auto-whole"}
 {"w":"leptarrhena","r":9000000,"src":"whole","b":"leptarrhena","flags":[],"st":"auto-whole"}
-{"w":"leptinotarsa","r":9000000,"src":"engine","b":"lep·tin·ot·ar·sa","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"leptinotarsa","r":9000000,"src":"engine","b":"lep·tin·ot·ar·s·a","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"leptocephalus","r":9000000,"src":"whole","b":"leptocephalus","flags":[],"st":"auto-whole"}
 {"w":"leptodactylid","r":9000000,"src":"whole","b":"leptodactylid","flags":[],"st":"auto-whole"}
 {"w":"leptodactylidae","r":9000000,"src":"whole","b":"leptodactylidae","flags":[],"st":"auto-whole"}
@@ -1099,7 +1099,7 @@
 {"w":"lescol","r":138430,"src":"whole","b":"lescol","flags":[],"st":"auto-whole"}
 {"w":"lesion","r":22158,"src":"whole","b":"lesion","flags":[],"st":"auto-whole"}
 {"w":"lesotho","r":10006,"src":"whole","b":"lesotho","flags":[],"st":"auto-whole"}
-{"w":"lespedeza","r":170378,"src":"engine","b":"les·ped·eza","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"lespedeza","r":170378,"src":"whole","b":"lespedeza","flags":[],"st":"auto-whole"}
 {"w":"lesquerella","r":324676,"src":"whole","b":"lesquerella","flags":[],"st":"auto-whole"}
 {"w":"less","r":534,"src":"whole","b":"less","flags":[],"st":"auto-whole"}
 {"w":"lessee","r":22366,"src":"whole","b":"lessee","flags":[],"st":"auto-whole"}
@@ -1141,7 +1141,7 @@
 {"w":"leucaena","r":142161,"src":"whole","b":"leucaena","flags":[],"st":"auto-whole"}
 {"w":"leucanthemum","r":289512,"src":"whole","b":"leucanthemum","flags":[],"st":"auto-whole"}
 {"w":"leucine","r":37509,"src":"data","b":"leuc·ine","flags":[],"st":"auto-data"}
-{"w":"leuciscus","r":9000000,"src":"engine","b":"le·u·cis·cus","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"leuciscus","r":9000000,"src":"engine","b":"le·u·cis·cu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"leucocyte","r":127836,"src":"whole","b":"leucocyte","flags":[],"st":"auto-whole"}
 {"w":"leucocytosis","r":9000000,"src":"data","b":"leuco·cyto·sis","flags":[],"st":"auto-data"}
 {"w":"leucocytozoan","r":9000000,"src":"data","b":"leuco·cyto·zo·an","flags":[],"st":"auto-data"}
@@ -1179,7 +1179,7 @@
 {"w":"leveller","r":140972,"src":"data","b":"levell·er","flags":[],"st":"auto-data"}
 {"w":"lever","r":12421,"src":"whole","b":"lever","flags":[],"st":"auto-whole"}
 {"w":"leverage","r":11508,"src":"data","b":"lever·age","flags":[],"st":"auto-data"}
-{"w":"leveraging","r":16897,"src":"whole","b":"leveraging","flags":[],"st":"auto-whole"}
+{"w":"leveraging","r":16897,"src":"engine","b":"l·e·ver·ag·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"leveret","r":9000000,"src":"whole","b":"leveret","flags":[],"st":"auto-whole"}
 {"w":"levi","r":14032,"src":"whole","b":"levi","flags":[],"st":"auto-whole"}
 {"w":"leviathan","r":41997,"src":"whole","b":"leviathan","flags":[],"st":"auto-whole"}
@@ -1190,7 +1190,7 @@
 {"w":"levitation","r":67070,"src":"data","b":"levitat·ion","flags":[],"st":"auto-data"}
 {"w":"levite","r":118680,"src":"engine","b":"l·e·vit·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"levitical","r":163965,"src":"engine","b":"l·e·vit·ical","flags":["stray","unknown"],"st":"todo"}
-{"w":"leviticus","r":22535,"src":"engine","b":"l·e·vit·ic·us","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"leviticus","r":22535,"src":"engine","b":"l·e·vit·ic·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"levitra","r":6971,"src":"engine","b":"l·e·vit·ra","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"levity","r":77785,"src":"whole","b":"levity","flags":[],"st":"auto-whole"}
 {"w":"levodopa","r":65609,"src":"whole","b":"levodopa","flags":[],"st":"auto-whole"}
@@ -1255,7 +1255,7 @@
 {"w":"libellous","r":59128,"src":"engine","b":"l·i·bell·ous","flags":["stray","unknown"],"st":"todo"}
 {"w":"libelous","r":52806,"src":"whole","b":"libelous","flags":[],"st":"auto-whole"}
 {"w":"liberal","r":4109,"src":"data","b":"liber·al","flags":[],"st":"auto-data"}
-{"w":"liberalisation","r":29000,"src":"engine","b":"liber·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"liberalisation","r":29000,"src":"engine","b":"liber·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"liberalise","r":132575,"src":"engine","b":"liber·al·ise","flags":[],"st":"todo-low"}
 {"w":"liberalism","r":22066,"src":"data","b":"liber·al·ism","flags":[],"st":"auto-data"}
 {"w":"liberalist","r":9000000,"src":"engine","b":"liber·al·ist","flags":[],"st":"todo-low"}
@@ -1278,7 +1278,7 @@
 {"w":"libidinal","r":261237,"src":"engine","b":"l·i·bi·din·al","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"libidinous","r":227138,"src":"engine","b":"l·i·bi·din·ous","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"libido","r":29186,"src":"data","b":"libid·o","flags":[],"st":"auto-data"}
-{"w":"libocedrus","r":9000000,"src":"engine","b":"lib·o·ced·rus","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"libocedrus","r":9000000,"src":"engine","b":"lib·o·ced·ru·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"libra","r":24051,"src":"whole","b":"libra","flags":[],"st":"auto-whole"}
 {"w":"librarian","r":9739,"src":"whole","b":"librarian","flags":[],"st":"auto-whole"}
 {"w":"librarianship","r":46179,"src":"whole","b":"librarianship","flags":[],"st":"auto-whole"}
@@ -1394,7 +1394,7 @@
 {"w":"lightship","r":74818,"src":"data","b":"light·ship","flags":[],"st":"auto-data"}
 {"w":"lightsome","r":9000000,"src":"data","b":"light·some","flags":[],"st":"auto-data"}
 {"w":"lightsomely","r":9000000,"src":"data","b":"lightsome·ly","flags":[],"st":"auto-data"}
-{"w":"lightsomeness","r":9000000,"src":"whole","b":"lightsomeness","flags":[],"st":"auto-whole"}
+{"w":"lightsomeness","r":9000000,"src":"engine","b":"lig·ht·s·om·en·ess","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lightweight","r":7806,"src":"data","b":"light·weigh·t","flags":[],"st":"auto-data"}
 {"w":"lightwood","r":276161,"src":"data","b":"light·wood","flags":[],"st":"auto-data"}
 {"w":"ligne","r":22513,"src":"engine","b":"lig·n·e","flags":["stray","unknown"],"st":"todo"}
@@ -1402,7 +1402,7 @@
 {"w":"lignify","r":9000000,"src":"engine","b":"lig·n·ify","flags":["stray","unknown"],"st":"todo"}
 {"w":"lignin","r":56085,"src":"engine","b":"lig·nin","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"lignite","r":62191,"src":"engine","b":"lig·nit·e","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"lignosae","r":9000000,"src":"engine","b":"l·i·gnos·a·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lignosae","r":9000000,"src":"engine","b":"l·i·gnos·ae","flags":["stray","unknown"],"st":"todo"}
 {"w":"lignum","r":140704,"src":"engine","b":"lig·num","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"ligularia","r":315463,"src":"engine","b":"lig·ul·ar·ia","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"ligule","r":258381,"src":"engine","b":"lig·ul·e","flags":["stray","lowconf","unknown"],"st":"todo"}
@@ -1429,8 +1429,8 @@
 {"w":"liliaceous","r":9000000,"src":"whole","b":"liliaceous","flags":[],"st":"auto-whole"}
 {"w":"liliales","r":9000000,"src":"whole","b":"liliales","flags":[],"st":"auto-whole"}
 {"w":"liliidae","r":9000000,"src":"whole","b":"liliidae","flags":[],"st":"auto-whole"}
-{"w":"liliopsid","r":9000000,"src":"engine","b":"lil·i·op·sid","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"liliopsida","r":136775,"src":"whole","b":"liliopsida","flags":[],"st":"auto-whole"}
+{"w":"liliopsid","r":9000000,"src":"engine","b":"lil·i·op·s·id","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"liliopsida","r":136775,"src":"engine","b":"lil·i·op·s·ida","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lilith","r":44517,"src":"whole","b":"lilith","flags":[],"st":"auto-whole"}
 {"w":"lilium","r":90058,"src":"whole","b":"lilium","flags":[],"st":"auto-whole"}
 {"w":"liliuokalani","r":122599,"src":"whole","b":"liliuokalani","flags":[],"st":"auto-whole"}
@@ -1477,7 +1477,7 @@
 {"w":"limited","r":750,"src":"curated","b":"limit·ed","flags":[],"st":"fixed","note":"limit+ed; was l.i.mit.ed"}
 {"w":"limitedly","r":9000000,"src":"data","b":"limited·ly","flags":[],"st":"auto-data"}
 {"w":"limiter","r":35808,"src":"engine","b":"l·i·mit·er","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"limiting","r":8909,"src":"engine","b":"l·i·m·i·ting","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
+{"w":"limiting","r":8909,"src":"engine","b":"l·i·mit·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"limitless","r":32630,"src":"data","b":"limit·less","flags":[],"st":"auto-data"}
 {"w":"limitlessness","r":9000000,"src":"data","b":"limit·less·ness","flags":[],"st":"auto-data"}
 {"w":"limn","r":206580,"src":"whole","b":"limn","flags":[],"st":"auto-whole"}
@@ -1561,7 +1561,7 @@
 {"w":"lingam","r":151989,"src":"whole","b":"lingam","flags":[],"st":"auto-whole"}
 {"w":"lingberry","r":9000000,"src":"whole","b":"lingberry","flags":[],"st":"auto-whole"}
 {"w":"lingcod","r":124658,"src":"data","b":"ling·cod","flags":[],"st":"auto-data"}
-{"w":"lingenberry","r":9000000,"src":"engine","b":"lin·gen·b·er·r·y","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lingenberry","r":9000000,"src":"whole","b":"lingenberry","flags":[],"st":"auto-whole"}
 {"w":"linger","r":32576,"src":"whole","b":"linger","flags":[],"st":"auto-whole"}
 {"w":"lingerer","r":9000000,"src":"data","b":"linger·er","flags":[],"st":"auto-data"}
 {"w":"lingerie","r":2646,"src":"whole","b":"lingerie","flags":[],"st":"auto-whole"}
@@ -1619,7 +1619,7 @@
 {"w":"lionise","r":9000000,"src":"whole","b":"lionise","flags":[],"st":"auto-whole"}
 {"w":"lionize","r":9000000,"src":"data","b":"lion·ize","flags":[],"st":"auto-data"}
 {"w":"liopelma","r":9000000,"src":"engine","b":"l·i·o·pel·ma","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
-{"w":"liopelmidae","r":9000000,"src":"whole","b":"liopelmidae","flags":[],"st":"auto-whole"}
+{"w":"liopelmidae","r":9000000,"src":"engine","b":"l·i·o·pel·mid·ae","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
 {"w":"liothyronine","r":263986,"src":"whole","b":"liothyronine","flags":[],"st":"auto-whole"}
 {"w":"lip","r":7497,"src":"whole","b":"lip","flags":[],"st":"auto-whole"}
 {"w":"lipaemia","r":9000000,"src":"whole","b":"lipaemia","flags":[],"st":"auto-whole"}
@@ -1711,7 +1711,7 @@
 {"w":"listera","r":145850,"src":"whole","b":"listera","flags":[],"st":"auto-whole"}
 {"w":"listeria","r":44830,"src":"whole","b":"listeria","flags":[],"st":"auto-whole"}
 {"w":"listeriosis","r":119525,"src":"whole","b":"listeriosis","flags":[],"st":"auto-whole"}
-{"w":"listing","r":393,"src":"engine","b":"lis·ting","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"listing","r":393,"src":"whole","b":"listing","flags":[],"st":"auto-whole"}
 {"w":"listless","r":81710,"src":"data","b":"list·less","flags":[],"st":"auto-data"}
 {"w":"listlessly","r":183735,"src":"data","b":"list·less·ly","flags":[],"st":"auto-data"}
 {"w":"listlessness","r":218923,"src":"data","b":"list·less·ness","flags":[],"st":"auto-data"}
@@ -1889,7 +1889,7 @@
 {"w":"lobelia","r":71557,"src":"whole","b":"lobelia","flags":[],"st":"auto-whole"}
 {"w":"lobeliaceae","r":9000000,"src":"whole","b":"lobeliaceae","flags":[],"st":"auto-whole"}
 {"w":"lobeliaceous","r":9000000,"src":"whole","b":"lobeliaceous","flags":[],"st":"auto-whole"}
-{"w":"lobipes","r":9000000,"src":"engine","b":"l·o·bi·pes","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lobipes","r":9000000,"src":"engine","b":"l·o·bi·p·es","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lobito","r":324867,"src":"engine","b":"l·o·bi·to","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"loblolly","r":101018,"src":"whole","b":"loblolly","flags":[],"st":"auto-whole"}
 {"w":"lobotes","r":9000000,"src":"whole","b":"lobotes","flags":[],"st":"auto-whole"}
@@ -1907,7 +1907,7 @@
 {"w":"lobworm","r":9000000,"src":"whole","b":"lobworm","flags":[],"st":"auto-whole"}
 {"w":"local","r":236,"src":"data","b":"loc·al","flags":[],"st":"auto-data"}
 {"w":"locale","r":7715,"src":"data","b":"loc·ale","flags":[],"st":"auto-data"}
-{"w":"localisation","r":34756,"src":"engine","b":"loc·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"localisation","r":34756,"src":"engine","b":"loc·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"localise","r":185832,"src":"engine","b":"loc·al·ise","flags":[],"st":"todo-low"}
 {"w":"localised","r":43332,"src":"engine","b":"loc·al·ise·d","flags":["stray","unknown"],"st":"todo"}
 {"w":"localism","r":120859,"src":"data","b":"local·ism","flags":[],"st":"auto-data"}
@@ -1932,7 +1932,7 @@
 {"w":"locke","r":17835,"src":"engine","b":"loc·k·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"locker","r":11611,"src":"data","b":"lock·er","flags":[],"st":"auto-data"}
 {"w":"locket","r":39203,"src":"whole","b":"locket","flags":[],"st":"auto-whole"}
-{"w":"locking","r":9517,"src":"whole","b":"locking","flags":[],"st":"auto-whole"}
+{"w":"locking","r":9517,"src":"engine","b":"loc·k·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"lockjaw","r":114721,"src":"data","b":"lock·jaw","flags":[],"st":"auto-data"}
 {"w":"lockkeeper","r":9000000,"src":"whole","b":"lockkeeper","flags":[],"st":"auto-whole"}
 {"w":"lockman","r":107277,"src":"data","b":"lock·man","flags":[],"st":"auto-data"}
@@ -1952,12 +1952,12 @@
 {"w":"locomotor","r":67865,"src":"engine","b":"loc·o·mot·or","flags":[],"st":"todo-low"}
 {"w":"locoweed","r":9000000,"src":"engine","b":"loc·owe·ed","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"locule","r":9000000,"src":"engine","b":"l·ocul·e","flags":["stray","unknown"],"st":"todo"}
-{"w":"loculus","r":9000000,"src":"engine","b":"l·ocul·us","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"loculus","r":9000000,"src":"engine","b":"l·ocul·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"locum","r":56075,"src":"whole","b":"locum","flags":[],"st":"auto-whole"}
 {"w":"locus","r":13799,"src":"data","b":"loc·us","flags":[],"st":"auto-data"}
 {"w":"locust","r":22519,"src":"whole","b":"locust","flags":[],"st":"auto-whole"}
-{"w":"locusta","r":296073,"src":"whole","b":"locusta","flags":[],"st":"auto-whole"}
-{"w":"locustidae","r":9000000,"src":"whole","b":"locustidae","flags":[],"st":"auto-whole"}
+{"w":"locusta","r":296073,"src":"engine","b":"loc·u·s·ta","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"locustidae","r":9000000,"src":"engine","b":"loc·u·s·tid·ae","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"locution","r":254008,"src":"engine","b":"loc·u·tion","flags":["stray","unknown"],"st":"todo"}
 {"w":"lode","r":47796,"src":"whole","b":"lode","flags":[],"st":"auto-whole"}
 {"w":"lodestar","r":111443,"src":"data","b":"lode·star","flags":[],"st":"auto-data"}
@@ -1997,8 +1997,8 @@
 {"w":"loggerhead","r":73524,"src":"data","b":"logger·head","flags":[],"st":"auto-data"}
 {"w":"loggerheaded","r":9000000,"src":"whole","b":"loggerheaded","flags":[],"st":"auto-whole"}
 {"w":"loggia","r":78819,"src":"whole","b":"loggia","flags":[],"st":"auto-whole"}
-{"w":"logginess","r":9000000,"src":"engine","b":"log·gi·ness","flags":["unknown"],"st":"todo"}
-{"w":"logging","r":6706,"src":"whole","b":"logging","flags":[],"st":"auto-whole"}
+{"w":"logginess","r":9000000,"src":"engine","b":"log·g·ine·s·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"logging","r":6706,"src":"engine","b":"log·g·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"logic","r":3197,"src":"whole","b":"logic","flags":[],"st":"auto-whole"}
 {"w":"logical","r":5753,"src":"data","b":"logic·al","flags":[],"st":"auto-data"}
 {"w":"logicality","r":9000000,"src":"data","b":"logic·al·ity","flags":[],"st":"auto-data"}
@@ -2006,12 +2006,12 @@
 {"w":"logicalness","r":9000000,"src":"data","b":"logical·ness","flags":[],"st":"auto-data"}
 {"w":"logician","r":117861,"src":"data","b":"logic·ian","flags":[],"st":"auto-data"}
 {"w":"logicism","r":9000000,"src":"engine","b":"log·ic·ism","flags":[],"st":"todo-low"}
-{"w":"loginess","r":9000000,"src":"engine","b":"log·i·ness","flags":["stray","unknown"],"st":"todo"}
+{"w":"loginess","r":9000000,"src":"engine","b":"log·ine·s·s","flags":["stray"],"st":"todo"}
 {"w":"logion","r":9000000,"src":"engine","b":"log·ion","flags":[],"st":"todo-low"}
 {"w":"logistic","r":22267,"src":"whole","b":"logistic","flags":[],"st":"auto-whole"}
 {"w":"logistical","r":26648,"src":"data","b":"logistic·al","flags":[],"st":"auto-data"}
 {"w":"logistician","r":229620,"src":"data","b":"logistic·ian","flags":[],"st":"auto-data"}
-{"w":"logistics","r":6173,"src":"engine","b":"log·ist·ic·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"logistics","r":6173,"src":"engine","b":"log·ist·ic·s","flags":["stray"],"st":"todo"}
 {"w":"logjam","r":91668,"src":"data","b":"log·jam","flags":[],"st":"auto-data"}
 {"w":"logo","r":1153,"src":"whole","b":"logo","flags":[],"st":"fixed","note":"whole: clipping"}
 {"w":"logogram","r":9000000,"src":"data","b":"logo·gram","flags":[],"st":"auto-data"}
@@ -2024,7 +2024,7 @@
 {"w":"logomachy","r":9000000,"src":"whole","b":"logomachy","flags":[],"st":"auto-whole"}
 {"w":"logomania","r":9000000,"src":"data","b":"logo·mania","flags":[],"st":"auto-data"}
 {"w":"logorrhea","r":9000000,"src":"data","b":"logo·rrhea","flags":[],"st":"auto-data"}
-{"w":"logos","r":3919,"src":"engine","b":"log·os","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"logos","r":3919,"src":"engine","b":"log·o·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"logotype","r":59652,"src":"engine","b":"log·o·ty·p·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"logroll","r":9000000,"src":"whole","b":"logroll","flags":[],"st":"auto-whole"}
 {"w":"logrolling","r":9000000,"src":"data","b":"log·rolling","flags":[],"st":"auto-data"}
@@ -2145,19 +2145,19 @@
 {"w":"lop","r":41635,"src":"whole","b":"lop","flags":[],"st":"auto-whole"}
 {"w":"lope","r":82817,"src":"whole","b":"lope","flags":[],"st":"auto-whole"}
 {"w":"lophiidae","r":9000000,"src":"whole","b":"lophiidae","flags":[],"st":"auto-whole"}
-{"w":"lophius","r":9000000,"src":"whole","b":"lophius","flags":[],"st":"auto-whole"}
-{"w":"lophodytes","r":9000000,"src":"engine","b":"l·op·hod·y·tes","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lophius","r":9000000,"src":"engine","b":"l·op·hiu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lophodytes","r":9000000,"src":"engine","b":"l·op·hod·y·t·es","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lopholatilus","r":9000000,"src":"whole","b":"lopholatilus","flags":[],"st":"auto-whole"}
 {"w":"lophophora","r":9000000,"src":"engine","b":"l·op·h·op·h·or·a","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"lophophorus","r":9000000,"src":"engine","b":"l·op·h·op·h·or·us","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"lophosoria","r":9000000,"src":"engine","b":"l·op·hos·or·ia","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lophophorus","r":9000000,"src":"engine","b":"l·op·h·op·h·or·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lophosoria","r":9000000,"src":"engine","b":"l·op·ho·s·or·ia","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lophosoriaceae","r":9000000,"src":"whole","b":"lophosoriaceae","flags":[],"st":"auto-whole"}
 {"w":"lopid","r":151808,"src":"engine","b":"l·op·id","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lopper","r":170442,"src":"engine","b":"l·op·p·er","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lopressor","r":119201,"src":"engine","b":"l·op·r·ess·or","flags":["stray","unknown"],"st":"todo"}
-{"w":"lopsided","r":62322,"src":"engine","b":"l·op·sid·ed","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"lopsidedly","r":9000000,"src":"engine","b":"l·op·sid·ed·ly","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"lopsidedness","r":9000000,"src":"engine","b":"l·op·sid·ed·ness","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lopsided","r":62322,"src":"engine","b":"l·op·s·id·ed","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lopsidedly","r":9000000,"src":"engine","b":"l·op·s·id·ed·ly","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lopsidedness","r":9000000,"src":"engine","b":"l·op·s·id·ed·ness","flags":["stray","unknown"],"st":"todo"}
 {"w":"loquacious","r":142556,"src":"whole","b":"loquacious","flags":[],"st":"auto-whole"}
 {"w":"loquaciously","r":9000000,"src":"whole","b":"loquaciously","flags":[],"st":"auto-whole"}
 {"w":"loquaciousness","r":9000000,"src":"whole","b":"loquaciousness","flags":[],"st":"auto-whole"}
@@ -2327,7 +2327,7 @@
 {"w":"lubbock","r":17529,"src":"whole","b":"lubbock","flags":[],"st":"auto-whole"}
 {"w":"lube","r":20460,"src":"whole","b":"lube","flags":[],"st":"auto-whole"}
 {"w":"lubeck","r":92791,"src":"whole","b":"lubeck","flags":[],"st":"auto-whole"}
-{"w":"lubitsch","r":173116,"src":"whole","b":"lubitsch","flags":[],"st":"auto-whole"}
+{"w":"lubitsch","r":173116,"src":"engine","b":"l·u·bi·t·s·ch","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lublin","r":66225,"src":"whole","b":"lublin","flags":[],"st":"auto-whole"}
 {"w":"lubricant","r":21310,"src":"data","b":"lubric·ant","flags":[],"st":"auto-data"}
 {"w":"lubricate","r":70723,"src":"data","b":"lubric·ate","flags":[],"st":"auto-data"}
@@ -2338,7 +2338,7 @@
 {"w":"lubricity","r":139589,"src":"whole","b":"lubricity","flags":[],"st":"auto-whole"}
 {"w":"lubumbashi","r":211972,"src":"whole","b":"lubumbashi","flags":[],"st":"auto-whole"}
 {"w":"lucania","r":256856,"src":"engine","b":"luc·an·ia","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"lucanidae","r":9000000,"src":"engine","b":"luc·an·ida·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lucanidae","r":9000000,"src":"engine","b":"luc·an·id·ae","flags":["unknown"],"st":"todo"}
 {"w":"lucas","r":8129,"src":"whole","b":"lucas","flags":[],"st":"auto-whole"}
 {"w":"luce","r":28577,"src":"engine","b":"luc·e","flags":["stray"],"st":"todo"}
 {"w":"lucent","r":18895,"src":"engine","b":"luc·ent","flags":[],"st":"todo-low"}
@@ -2368,7 +2368,7 @@
 {"w":"luculent","r":9000000,"src":"engine","b":"luc·ulent","flags":[],"st":"todo-low"}
 {"w":"lucullan","r":9000000,"src":"engine","b":"luc·ull·an","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"lucullus","r":174989,"src":"whole","b":"lucullus","flags":[],"st":"auto-whole"}
-{"w":"luculus","r":9000000,"src":"whole","b":"luculus","flags":[],"st":"auto-whole"}
+{"w":"luculus","r":9000000,"src":"engine","b":"luc·ulu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lucy","r":8474,"src":"whole","b":"lucy","flags":[],"st":"auto-whole"}
 {"w":"luda","r":135182,"src":"whole","b":"luda","flags":[],"st":"auto-whole"}
 {"w":"luddite","r":86435,"src":"data","b":"ludd·ite","flags":[],"st":"auto-data"}
@@ -2421,11 +2421,11 @@
 {"w":"luminal","r":57669,"src":"engine","b":"lumin·al","flags":[],"st":"todo-low"}
 {"w":"luminance","r":41036,"src":"engine","b":"lumin·ance","flags":[],"st":"todo-low"}
 {"w":"luminary","r":91007,"src":"engine","b":"lumin·ary","flags":[],"st":"todo-low"}
-{"w":"luminesce","r":9000000,"src":"engine","b":"lumin·esc·e","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"luminescence","r":51447,"src":"engine","b":"lumin·esc·ence","flags":["unknown"],"st":"todo"}
-{"w":"luminescent","r":51230,"src":"engine","b":"lumin·esc·ent","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"luminesce","r":9000000,"src":"engine","b":"lumin·es·c·e","flags":["stray","unknown"],"st":"todo"}
+{"w":"luminescence","r":51447,"src":"engine","b":"lumin·es·c·ence","flags":["stray","unknown"],"st":"todo"}
+{"w":"luminescent","r":51230,"src":"engine","b":"lumin·es·c·ent","flags":["stray","unknown"],"st":"todo"}
 {"w":"luminism","r":9000000,"src":"engine","b":"lumin·ism","flags":[],"st":"todo-low"}
-{"w":"luminosity","r":26358,"src":"engine","b":"lumin·os·ity","flags":["unknown"],"st":"todo"}
+{"w":"luminosity","r":26358,"src":"engine","b":"lumin·o·s·ity","flags":["stray","unknown"],"st":"todo"}
 {"w":"luminous","r":20602,"src":"engine","b":"lumin·ous","flags":[],"st":"todo-low"}
 {"w":"luminousness","r":9000000,"src":"data","b":"luminous·ness","flags":[],"st":"auto-data"}
 {"w":"lumma","r":313258,"src":"whole","b":"lumma","flags":[],"st":"auto-whole"}
@@ -2617,10 +2617,10 @@
 {"w":"lycopodiaceae","r":9000000,"src":"whole","b":"lycopodiaceae","flags":[],"st":"auto-whole"}
 {"w":"lycopodiales","r":9000000,"src":"engine","b":"lyc·o·pod·i·al·es","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lycopodiate","r":9000000,"src":"engine","b":"lyc·o·pod·i·ate","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"lycopodineae","r":9000000,"src":"engine","b":"lyc·o·pod·ine·a·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lycopodineae","r":9000000,"src":"engine","b":"lyc·o·pod·ine·ae","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"lycopodium","r":158387,"src":"engine","b":"lyc·o·pod·ium","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"lycopsida","r":9000000,"src":"whole","b":"lycopsida","flags":[],"st":"auto-whole"}
-{"w":"lycopus","r":312611,"src":"engine","b":"lyc·op·us","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"lycopsida","r":9000000,"src":"engine","b":"lyc·op·s·ida","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"lycopus","r":312611,"src":"engine","b":"lyc·op·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lycosa","r":9000000,"src":"whole","b":"lycosa","flags":[],"st":"auto-whole"}
 {"w":"lycosidae","r":286177,"src":"whole","b":"lycosidae","flags":[],"st":"auto-whole"}
 {"w":"lydia","r":17252,"src":"whole","b":"lydia","flags":[],"st":"auto-whole"}
@@ -2649,7 +2649,7 @@
 {"w":"lymphangitis","r":9000000,"src":"whole","b":"lymphangitis","flags":[],"st":"auto-whole"}
 {"w":"lymphatic","r":32748,"src":"whole","b":"lymphatic","flags":[],"st":"auto-whole"}
 {"w":"lymphedema","r":56450,"src":"data","b":"lymph·edema","flags":[],"st":"auto-data"}
-{"w":"lymphoblast","r":243400,"src":"whole","b":"lymphoblast","flags":[],"st":"auto-whole"}
+{"w":"lymphoblast","r":243400,"src":"engine","b":"lym·phob·la·s·t","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"lymphocyte","r":26972,"src":"whole","b":"lymphocyte","flags":[],"st":"auto-whole"}
 {"w":"lymphocytic","r":44096,"src":"data","b":"lympho·cyt·ic","flags":[],"st":"auto-data"}
 {"w":"lymphocytopenia","r":9000000,"src":"data","b":"lympho·cyto·penia","flags":[],"st":"auto-data"}
@@ -2672,7 +2672,7 @@
 {"w":"lyonnais","r":97598,"src":"whole","b":"lyonnais","flags":[],"st":"auto-whole"}
 {"w":"lyonnaise","r":196021,"src":"whole","b":"lyonnaise","flags":[],"st":"auto-whole"}
 {"w":"lyons","r":14807,"src":"whole","b":"lyons","flags":[],"st":"auto-whole"}
-{"w":"lyophilisation","r":9000000,"src":"engine","b":"l·y·o·phil·is·ation","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
+{"w":"lyophilisation","r":9000000,"src":"engine","b":"l·y·o·phil·i·s·ation","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
 {"w":"lyophilise","r":9000000,"src":"engine","b":"l·y·o·phil·ise","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
 {"w":"lyophilised","r":9000000,"src":"engine","b":"l·y·o·phil·ise·d","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
 {"w":"lyophilization","r":221667,"src":"engine","b":"l·y·o·phil·iz·ation","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
@@ -2706,8 +2706,8 @@
 {"w":"lysis","r":46223,"src":"whole","b":"lysis","flags":[],"st":"auto-whole"}
 {"w":"lysogenic","r":306137,"src":"data","b":"lyso·genic","flags":[],"st":"auto-data"}
 {"w":"lysogenicity","r":9000000,"src":"data","b":"lysogenic·ity","flags":[],"st":"auto-data"}
-{"w":"lysogenisation","r":9000000,"src":"engine","b":"lys·o·gen·is·ation","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"lysogenization","r":9000000,"src":"engine","b":"lys·o·gen·iz·ation","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"lysogenisation","r":9000000,"src":"whole","b":"lysogenisation","flags":[],"st":"auto-whole"}
+{"w":"lysogenization","r":9000000,"src":"whole","b":"lysogenization","flags":[],"st":"auto-whole"}
 {"w":"lysogenize","r":9000000,"src":"data","b":"lyso·gen·ize","flags":[],"st":"auto-data"}
 {"w":"lysogeny","r":9000000,"src":"data","b":"lyso·geny","flags":[],"st":"auto-data"}
 {"w":"lysol","r":110018,"src":"engine","b":"l·y·sol","flags":["stray","lowconf","unknown"],"st":"todo"}

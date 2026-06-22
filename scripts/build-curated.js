@@ -14,6 +14,12 @@ const WORDS = path.join(ROOT, "words");
 const doc = JSON.parse(fs.readFileSync(path.join(__dirname, "curated-breakdowns.json"), "utf8"));
 const words = doc.words;
 const whole = doc.whole || [];
+// relationship pointers: inflected / derived forms that descend from a base word.
+// `plurals` is shorthand ({form: lemma} => "plural of lemma"); `relations` is the
+// general form ({form: {t: "past tense of", l: "run"}}).
+const rel = {};
+Object.keys(doc.plurals || {}).forEach((w) => { rel[w] = { t: "plural of", l: doc.plurals[w] }; });
+Object.keys(doc.relations || {}).forEach((w) => { rel[w] = doc.relations[w]; });
 let applied = 0, missing = [];
 const byShard = {};
 Object.keys(words).forEach((w) => {
@@ -35,5 +41,19 @@ for (const key of Object.keys(byShard)) {
   }
   if (touched) fs.writeFileSync(p, JSON.stringify(shard));
 }
-console.log("curated breakdowns applied:", applied);
+// mark inflected / derived forms with a `rel` pointer ({t, l}) so the UI presents
+// them as descending from a base word, not as standalone words.
+let relApplied = 0;
+const relByShard = {};
+Object.keys(rel).forEach((w) => { (relByShard[w.slice(0, 2)] = relByShard[w.slice(0, 2)] || {})[w] = rel[w]; });
+for (const key of Object.keys(relByShard)) {
+  const p = path.join(WORDS, key + ".json");
+  const shard = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : {};
+  for (const w of Object.keys(relByShard[key])) {
+    if (!shard[w]) { missing.push(w); shard[w] = {}; }
+    shard[w].rel = relByShard[key][w]; relApplied++;
+  }
+  fs.writeFileSync(p, JSON.stringify(shard));
+}
+console.log("curated breakdowns applied:", applied, "| relations:", relApplied);
 if (missing.length) console.log("  (added new word records for:", missing.join(", ") + ")");

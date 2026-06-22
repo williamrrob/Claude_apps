@@ -435,6 +435,13 @@ body {
 .entry-word .entry-dot { color: var(--muted); opacity: .4; font-weight: 400; margin: 0 .1em; }
 .entry .pron { justify-content: flex-start; margin: 9px 0 0; }
 .entry-gloss { font-size: 15px; font-style: italic; color: var(--muted); margin-top: 7px; }
+/* inflected / derived form -> base: "plural of cactus", "past tense of run",
+   "derived from psychology" */
+.entry-rel { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.rel-link {
+  font: inherit; color: var(--accent, #b5651d); background: none; border: none;
+  padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
+}
 /* half-circle letter badge by the word — tap to browse that letter */
 /* current-letter thumb tab: a half-circle on the right edge, up top */
 .entry-letter {

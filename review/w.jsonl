@@ -41,7 +41,7 @@
 {"w":"wagram","r":104621,"src":"engine","b":"w·a·gram","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"wagtail","r":96633,"src":"data","b":"wag·tail","flags":[],"st":"auto-data"}
 {"w":"wahabi","r":244685,"src":"engine","b":"wah·a·bi","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"wahabism","r":324352,"src":"whole","b":"wahabism","flags":[],"st":"auto-whole"}
+{"w":"wahabism","r":324352,"src":"engine","b":"wah·a·bi·s·m","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"wahhabi","r":108220,"src":"whole","b":"wahhabi","flags":[],"st":"auto-whole"}
 {"w":"wahhabism","r":140123,"src":"whole","b":"wahhabism","flags":[],"st":"auto-whole"}
 {"w":"wahoo","r":47303,"src":"whole","b":"wahoo","flags":[],"st":"auto-whole"}
@@ -156,7 +156,7 @@
 {"w":"want","r":253,"src":"whole","b":"want","flags":[],"st":"auto-whole"}
 {"w":"wanted","r":1282,"src":"whole","b":"wanted","flags":[],"st":"auto-whole"}
 {"w":"wanter","r":331532,"src":"data","b":"want·er","flags":[],"st":"auto-data"}
-{"w":"wanting","r":7662,"src":"engine","b":"wan·ting","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"wanting","r":7662,"src":"whole","b":"wanting","flags":[],"st":"auto-whole"}
 {"w":"wanton","r":39190,"src":"whole","b":"wanton","flags":[],"st":"auto-whole"}
 {"w":"wantonly","r":114583,"src":"data","b":"wanton·ly","flags":[],"st":"auto-data"}
 {"w":"wantonness","r":180432,"src":"data","b":"wanton·ness","flags":[],"st":"auto-data"}
@@ -368,7 +368,7 @@
 {"w":"wavell","r":135371,"src":"whole","b":"wavell","flags":[],"st":"auto-whole"}
 {"w":"waver","r":64039,"src":"whole","b":"waver","flags":[],"st":"auto-whole"}
 {"w":"waverer","r":9000000,"src":"data","b":"waver·er","flags":[],"st":"auto-data"}
-{"w":"wavering","r":66847,"src":"engine","b":"w·a·veri·ng","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"wavering","r":66847,"src":"engine","b":"w·a·ver·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"waviness","r":294340,"src":"data","b":"wav·i·ness","flags":[],"st":"auto-data"}
 {"w":"waving","r":21604,"src":"whole","b":"waving","flags":[],"st":"auto-whole"}
 {"w":"wavy","r":34472,"src":"data","b":"wav·y","flags":[],"st":"auto-data"}
@@ -437,11 +437,11 @@
 {"w":"weasel","r":28254,"src":"whole","b":"weasel","flags":[],"st":"auto-whole"}
 {"w":"weather","r":770,"src":"whole","b":"weather","flags":[],"st":"auto-whole"}
 {"w":"weatherboard","r":195562,"src":"data","b":"weather·board","flags":[],"st":"auto-data"}
-{"w":"weatherboarding","r":9000000,"src":"whole","b":"weatherboarding","flags":[],"st":"auto-whole"}
+{"w":"weatherboarding","r":9000000,"src":"engine","b":"we·a·the·rbo·ar·d·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"weathercock","r":9000000,"src":"data","b":"weather·cock","flags":[],"st":"auto-data"}
 {"w":"weathered","r":31237,"src":"engine","b":"we·a·the·r·ed","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"weatherglass","r":9000000,"src":"data","b":"weather·glass","flags":[],"st":"auto-data"}
-{"w":"weatherliness","r":9000000,"src":"engine","b":"we·a·the·rli·ness","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"weatherliness","r":9000000,"src":"engine","b":"we·a·the·rl·ine·s·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"weatherly","r":76063,"src":"engine","b":"we·a·the·r·ly","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"weatherman","r":66802,"src":"data","b":"weather·man","flags":[],"st":"auto-data"}
 {"w":"weatherproof","r":37324,"src":"data","b":"weather·proof","flags":[],"st":"auto-data"}
@@ -456,7 +456,7 @@
 {"w":"web","r":72,"src":"whole","b":"web","flags":[],"st":"auto-whole"}
 {"w":"webb","r":10582,"src":"whole","b":"webb","flags":[],"st":"auto-whole"}
 {"w":"webbed","r":74554,"src":"whole","b":"webbed","flags":[],"st":"auto-whole"}
-{"w":"webbing","r":29908,"src":"engine","b":"web·bi·ng","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"webbing","r":29908,"src":"whole","b":"webbing","flags":[],"st":"auto-whole"}
 {"w":"webby","r":35327,"src":"whole","b":"webby","flags":[],"st":"auto-whole"}
 {"w":"webcam","r":5129,"src":"whole","b":"webcam","flags":[],"st":"auto-whole"}
 {"w":"weber","r":10484,"src":"whole","b":"weber","flags":[],"st":"auto-whole"}
@@ -817,7 +817,7 @@
 {"w":"whoosh","r":85407,"src":"whole","b":"whoosh","flags":[],"st":"auto-whole"}
 {"w":"whop","r":248370,"src":"whole","b":"whop","flags":[],"st":"auto-whole"}
 {"w":"whopper","r":74861,"src":"data","b":"whopp·er","flags":[],"st":"auto-data"}
-{"w":"whopping","r":35342,"src":"whole","b":"whopping","flags":[],"st":"auto-whole"}
+{"w":"whopping","r":35342,"src":"engine","b":"wh·op·p·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"whore","r":9801,"src":"whole","b":"whore","flags":[],"st":"auto-whole"}
 {"w":"whoredom","r":232938,"src":"data","b":"whore·dom","flags":[],"st":"auto-data"}
 {"w":"whorehouse","r":111559,"src":"data","b":"whore·house","flags":[],"st":"auto-data"}
@@ -1008,7 +1008,7 @@
 {"w":"winfred","r":135196,"src":"whole","b":"winfred","flags":[],"st":"auto-whole"}
 {"w":"wing","r":4095,"src":"whole","b":"wing","flags":[],"st":"auto-whole"}
 {"w":"wingback","r":279086,"src":"data","b":"wing·back","flags":[],"st":"auto-data"}
-{"w":"winged","r":18211,"src":"engine","b":"win·ge·d","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"winged","r":18211,"src":"whole","b":"winged","flags":[],"st":"auto-whole"}
 {"w":"winger","r":33120,"src":"data","b":"wing·er","flags":[],"st":"auto-data"}
 {"w":"wingless","r":87494,"src":"data","b":"wing·less","flags":[],"st":"auto-data"}
 {"w":"winglike","r":9000000,"src":"whole","b":"winglike","flags":[],"st":"auto-whole"}
@@ -1103,9 +1103,9 @@
 {"w":"withe","r":119327,"src":"whole","b":"withe","flags":[],"st":"auto-whole"}
 {"w":"wither","r":49827,"src":"whole","b":"wither","flags":[],"st":"auto-whole"}
 {"w":"withered","r":50615,"src":"engine","b":"w·i·the·r·ed","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"withering","r":63149,"src":"whole","b":"withering","flags":[],"st":"auto-whole"}
-{"w":"witheringly","r":9000000,"src":"whole","b":"witheringly","flags":[],"st":"auto-whole"}
-{"w":"withers","r":34741,"src":"engine","b":"w·i·the·rs","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"withering","r":63149,"src":"engine","b":"w·i·the·r·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"witheringly","r":9000000,"src":"engine","b":"w·i·the·r·ing·ly","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"withers","r":34741,"src":"engine","b":"w·i·the·r·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"witherspoon","r":27159,"src":"whole","b":"witherspoon","flags":[],"st":"auto-whole"}
 {"w":"withhold","r":23640,"src":"data","b":"with·hold","flags":[],"st":"auto-data"}
 {"w":"withholder","r":9000000,"src":"whole","b":"withholder","flags":[],"st":"auto-whole"}

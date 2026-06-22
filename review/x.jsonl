@@ -1,6 +1,6 @@
 {"w":"xanax","r":6400,"src":"whole","b":"xanax","flags":[],"st":"auto-whole"}
 {"w":"xanthate","r":9000000,"src":"data","b":"xanth·ate","flags":[],"st":"auto-data"}
-{"w":"xanthelasma","r":9000000,"src":"whole","b":"xanthelasma","flags":[],"st":"auto-whole"}
+{"w":"xanthelasma","r":9000000,"src":"engine","b":"xan·the·la·s·ma","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"xanthemia","r":9000000,"src":"engine","b":"xan·the·mia","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"xanthine","r":91867,"src":"data","b":"xanth·ine","flags":[],"st":"auto-data"}
 {"w":"xanthium","r":276921,"src":"whole","b":"xanthium","flags":[],"st":"auto-whole"}
@@ -42,8 +42,8 @@
 {"w":"xenophobia","r":49907,"src":"data","b":"xeno·phob·ia","flags":[],"st":"auto-data"}
 {"w":"xenophobic","r":85285,"src":"data","b":"xeno·phob·ic","flags":[],"st":"auto-data"}
 {"w":"xenophon","r":84008,"src":"engine","b":"xen·o·phon","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"xenopodidae","r":9000000,"src":"engine","b":"xen·o·pod·ida·e","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"xenopus","r":36693,"src":"engine","b":"xen·op·us","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"xenopodidae","r":9000000,"src":"engine","b":"xen·o·pod·id·ae","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"xenopus","r":36693,"src":"engine","b":"xen·op·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"xenorhyncus","r":9000000,"src":"whole","b":"xenorhyncus","flags":[],"st":"auto-whole"}
 {"w":"xenosauridae","r":9000000,"src":"whole","b":"xenosauridae","flags":[],"st":"auto-whole"}
 {"w":"xenosaurus","r":9000000,"src":"whole","b":"xenosaurus","flags":[],"st":"auto-whole"}
@@ -60,7 +60,7 @@
 {"w":"xeroma","r":9000000,"src":"data","b":"xer·oma","flags":[],"st":"auto-data"}
 {"w":"xerophile","r":9000000,"src":"data","b":"xero·phile","flags":[],"st":"auto-data"}
 {"w":"xerophthalmia","r":9000000,"src":"engine","b":"xer·op·hth·al·mia","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"xerophthalmus","r":9000000,"src":"engine","b":"xer·op·hth·al·mus","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"xerophthalmus","r":9000000,"src":"engine","b":"xer·op·hth·al·mu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"xerophyllum","r":9000000,"src":"whole","b":"xerophyllum","flags":[],"st":"auto-whole"}
 {"w":"xerophyte","r":9000000,"src":"data","b":"xero·phyte","flags":[],"st":"auto-data"}
 {"w":"xerophytic","r":9000000,"src":"whole","b":"xerophytic","flags":[],"st":"auto-whole"}

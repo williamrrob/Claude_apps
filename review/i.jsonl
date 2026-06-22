@@ -158,7 +158,7 @@
 {"w":"idling","r":49258,"src":"whole","b":"idling","flags":[],"st":"auto-whole"}
 {"w":"idly","r":54142,"src":"data","b":"idl·y","flags":[],"st":"auto-data"}
 {"w":"ido","r":51467,"src":"whole","b":"ido","flags":[],"st":"auto-whole"}
-{"w":"idocrase","r":9000000,"src":"engine","b":"i·doc·ras·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"idocrase","r":9000000,"src":"engine","b":"i·doc·ra·s·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"idol","r":9403,"src":"whole","b":"idol","flags":[],"st":"auto-whole"}
 {"w":"idolater","r":252518,"src":"data","b":"idol·ater","flags":[],"st":"auto-data"}
 {"w":"idolatress","r":9000000,"src":"whole","b":"idolatress","flags":[],"st":"auto-whole"}
@@ -194,7 +194,7 @@
 {"w":"igloo","r":45062,"src":"whole","b":"igloo","flags":[],"st":"auto-whole"}
 {"w":"iglu","r":91871,"src":"whole","b":"iglu","flags":[],"st":"auto-whole"}
 {"w":"igm","r":35927,"src":"whole","b":"igm","flags":[],"st":"auto-whole"}
-{"w":"ignatius","r":35476,"src":"engine","b":"ig·nat·ius","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"ignatius","r":35476,"src":"engine","b":"ig·nat·iu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"igneous","r":44218,"src":"whole","b":"igneous","flags":[],"st":"auto-whole"}
 {"w":"ignescent","r":9000000,"src":"whole","b":"ignescent","flags":[],"st":"auto-whole"}
 {"w":"ignitable","r":162688,"src":"whole","b":"ignitable","flags":[],"st":"auto-whole"}
@@ -339,7 +339,7 @@
 {"w":"imbed","r":218326,"src":"whole","b":"imbed","flags":[],"st":"auto-whole"}
 {"w":"imbibe","r":127433,"src":"whole","b":"imbibe","flags":[],"st":"auto-whole"}
 {"w":"imbiber","r":9000000,"src":"engine","b":"im·bi·b·er","flags":["stray","unknown"],"st":"todo"}
-{"w":"imbibing","r":164276,"src":"engine","b":"im·bi·bi·ng","flags":["unknown"],"st":"todo"}
+{"w":"imbibing","r":164276,"src":"engine","b":"im·bi·b·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"imbibition","r":232789,"src":"engine","b":"im·bi·bi·tion","flags":[],"st":"todo-low"}
 {"w":"imbricate","r":292753,"src":"whole","b":"imbricate","flags":[],"st":"auto-whole"}
 {"w":"imbricated","r":9000000,"src":"whole","b":"imbricated","flags":[],"st":"auto-whole"}
@@ -396,7 +396,7 @@
 {"w":"immiscible","r":147187,"src":"whole","b":"immiscible","flags":[],"st":"auto-whole"}
 {"w":"immix","r":9000000,"src":"whole","b":"immix","flags":[],"st":"auto-whole"}
 {"w":"immobile","r":60481,"src":"data","b":"im·mobile","flags":[],"st":"auto-data"}
-{"w":"immobilisation","r":135873,"src":"whole","b":"immobilisation","flags":[],"st":"auto-whole"}
+{"w":"immobilisation","r":135873,"src":"engine","b":"im·mob·ili·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"immobilise","r":299174,"src":"engine","b":"im·mob·il·ise","flags":["unknown"],"st":"todo"}
 {"w":"immobility","r":89109,"src":"data","b":"im·mobil·ity","flags":[],"st":"auto-data"}
 {"w":"immobilization","r":52143,"src":"whole","b":"immobilization","flags":[],"st":"auto-whole"}
@@ -443,7 +443,7 @@
 {"w":"immunodeficiency","r":22168,"src":"whole","b":"immunodeficiency","flags":[],"st":"auto-whole"}
 {"w":"immunodeficient","r":192174,"src":"whole","b":"immunodeficient","flags":[],"st":"auto-whole"}
 {"w":"immunoelectrophoresis","r":143425,"src":"whole","b":"immunoelectrophoresis","flags":[],"st":"auto-whole"}
-{"w":"immunofluorescence","r":53718,"src":"engine","b":"im·mun·o·flu·or·esc·ence","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"immunofluorescence","r":53718,"src":"engine","b":"im·mun·o·flu·or·es·c·ence","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"immunogen","r":69548,"src":"data","b":"immuno·gen","flags":[],"st":"auto-data"}
 {"w":"immunogenic","r":105804,"src":"data","b":"immuno·genic","flags":[],"st":"auto-data"}
 {"w":"immunogenicity","r":82385,"src":"engine","b":"im·mun·o·gen·ic·ity","flags":["lowconf","unknown"],"st":"todo"}
@@ -516,17 +516,17 @@
 {"w":"impeded","r":51568,"src":"data","b":"im·peded","flags":[],"st":"auto-data"}
 {"w":"impediment","r":38553,"src":"engine","b":"im·ped·i·ment","flags":[],"st":"todo-low"}
 {"w":"impedimenta","r":9000000,"src":"engine","b":"im·ped·i·ment·a","flags":["stray","unknown"],"st":"todo"}
-{"w":"impeding","r":58139,"src":"engine","b":"im·ped·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"impeding","r":58139,"src":"engine","b":"im·ped·ing","flags":[],"st":"todo-low"}
 {"w":"impel","r":108144,"src":"whole","b":"impel","flags":[],"st":"auto-whole"}
 {"w":"impelled","r":78069,"src":"engine","b":"im·pel·l·ed","flags":["stray","unknown"],"st":"todo"}
 {"w":"impellent","r":9000000,"src":"engine","b":"im·pel·l·ent","flags":["stray","unknown"],"st":"todo"}
 {"w":"impeller","r":51911,"src":"data","b":"impell·er","flags":[],"st":"auto-data"}
-{"w":"impelling","r":168544,"src":"whole","b":"impelling","flags":[],"st":"auto-whole"}
+{"w":"impelling","r":168544,"src":"engine","b":"im·pel·l·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"impend","r":9000000,"src":"engine","b":"im·pend","flags":[],"st":"todo-low"}
 {"w":"impendence","r":9000000,"src":"engine","b":"im·pend·ence","flags":[],"st":"todo-low"}
 {"w":"impendency","r":9000000,"src":"engine","b":"im·pend·ency","flags":[],"st":"todo-low"}
 {"w":"impendent","r":9000000,"src":"engine","b":"im·pend·ent","flags":[],"st":"todo-low"}
-{"w":"impending","r":22536,"src":"engine","b":"im·pend·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"impending","r":22536,"src":"engine","b":"im·pend·ing","flags":[],"st":"todo-low"}
 {"w":"impenetrability","r":321401,"src":"whole","b":"impenetrability","flags":[],"st":"auto-whole"}
 {"w":"impenetrable","r":51184,"src":"data","b":"im·penetr·able","flags":[],"st":"auto-data"}
 {"w":"impenetrableness","r":9000000,"src":"data","b":"impenetrable·ness","flags":[],"st":"auto-data"}
@@ -642,15 +642,15 @@
 {"w":"imported","r":6805,"src":"engine","b":"im·port·ed","flags":[],"st":"todo-low"}
 {"w":"importee","r":9000000,"src":"data","b":"import·ee","flags":[],"st":"auto-data"}
 {"w":"importer","r":17502,"src":"engine","b":"im·port·er","flags":[],"st":"todo-low"}
-{"w":"importing","r":14209,"src":"engine","b":"im·port·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"importing","r":14209,"src":"engine","b":"im·port·ing","flags":[],"st":"todo-low"}
 {"w":"importunate","r":210694,"src":"data","b":"importun·ate","flags":[],"st":"auto-data"}
 {"w":"importunately","r":9000000,"src":"data","b":"importun·ate·ly","flags":[],"st":"auto-data"}
 {"w":"importune","r":9000000,"src":"whole","b":"importune","flags":[],"st":"auto-whole"}
 {"w":"importunity","r":239371,"src":"data","b":"importun·ity","flags":[],"st":"auto-data"}
 {"w":"impose","r":9780,"src":"engine","b":"im·pos·e","flags":["stray"],"st":"todo"}
 {"w":"imposed","r":6642,"src":"engine","b":"im·pos·ed","flags":[],"st":"todo-low"}
-{"w":"imposing","r":15703,"src":"engine","b":"im·pos·ing","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"imposingly","r":9000000,"src":"engine","b":"im·pos·ing·ly","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"imposing","r":15703,"src":"engine","b":"im·pos·ing","flags":[],"st":"todo-low"}
+{"w":"imposingly","r":9000000,"src":"engine","b":"im·pos·ing·ly","flags":[],"st":"todo-low"}
 {"w":"imposition","r":20105,"src":"engine","b":"im·posit·ion","flags":[],"st":"todo-low"}
 {"w":"impossibility","r":35966,"src":"engine","b":"im·pos·s·i·bi·l·ity","flags":["stray","unknown"],"st":"todo"}
 {"w":"impossible","r":4445,"src":"data","b":"im·possible","flags":[],"st":"auto-data"}
@@ -699,7 +699,7 @@
 {"w":"impressive","r":6715,"src":"whole","b":"impressive","flags":[],"st":"auto-whole"}
 {"w":"impressively","r":51421,"src":"whole","b":"impressively","flags":[],"st":"auto-whole"}
 {"w":"impressiveness","r":259957,"src":"whole","b":"impressiveness","flags":[],"st":"auto-whole"}
-{"w":"impressment","r":326022,"src":"engine","b":"im·pre·ss·ment","flags":["unknown"],"st":"todo"}
+{"w":"impressment","r":326022,"src":"whole","b":"impressment","flags":[],"st":"auto-whole"}
 {"w":"imprimatur","r":94765,"src":"whole","b":"imprimatur","flags":[],"st":"auto-whole"}
 {"w":"imprint","r":10314,"src":"whole","b":"imprint","flags":[],"st":"auto-whole"}
 {"w":"imprinting","r":48062,"src":"whole","b":"imprinting","flags":[],"st":"auto-whole"}
@@ -1065,7 +1065,7 @@
 {"w":"incurably","r":236878,"src":"whole","b":"incurably","flags":[],"st":"auto-whole"}
 {"w":"incurious","r":9000000,"src":"whole","b":"incurious","flags":[],"st":"auto-whole"}
 {"w":"incurrence","r":183947,"src":"engine","b":"in·curr·ence","flags":[],"st":"todo-low"}
-{"w":"incurring","r":36275,"src":"engine","b":"in·curr·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"incurring","r":36275,"src":"engine","b":"in·curr·ing","flags":[],"st":"todo-low"}
 {"w":"incursion","r":60310,"src":"data","b":"in·curs·ion","flags":[],"st":"auto-data"}
 {"w":"incursive","r":9000000,"src":"engine","b":"in·curs·ive","flags":[],"st":"todo-low"}
 {"w":"incurvate","r":9000000,"src":"whole","b":"incurvate","flags":[],"st":"auto-whole"}
@@ -1148,7 +1148,7 @@
 {"w":"indication","r":8285,"src":"data","b":"indicat·ion","flags":[],"st":"auto-data"}
 {"w":"indicative","r":15207,"src":"data","b":"indicat·ive","flags":[],"st":"auto-data"}
 {"w":"indicator","r":5799,"src":"data","b":"indicat·or","flags":[],"st":"auto-data"}
-{"w":"indicatoridae","r":9000000,"src":"engine","b":"in·dic·ator·ida·e","flags":["stray","unknown"],"st":"todo"}
+{"w":"indicatoridae","r":9000000,"src":"engine","b":"in·dic·ator·id·ae","flags":["unknown"],"st":"todo"}
 {"w":"indicatory","r":9000000,"src":"engine","b":"in·dic·ator·y","flags":["stray"],"st":"todo"}
 {"w":"indict","r":77222,"src":"whole","b":"indict","flags":[],"st":"auto-whole"}
 {"w":"indictability","r":9000000,"src":"data","b":"indict·ability","flags":[],"st":"auto-data"}
@@ -1167,9 +1167,9 @@
 {"w":"indigenousness","r":9000000,"src":"engine","b":"in·di·gen·ous·ness","flags":[],"st":"todo-low"}
 {"w":"indigent","r":35528,"src":"whole","b":"indigent","flags":[],"st":"auto-whole"}
 {"w":"indigestibility","r":9000000,"src":"engine","b":"in·di·ge·st·i·bi·l·ity","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"indigestible","r":156083,"src":"whole","b":"indigestible","flags":[],"st":"auto-whole"}
+{"w":"indigestible","r":156083,"src":"engine","b":"in·di·ge·s·t·ible","flags":["stray","unknown"],"st":"todo"}
 {"w":"indigestibleness","r":9000000,"src":"data","b":"indigestible·ness","flags":[],"st":"auto-data"}
-{"w":"indigestion","r":44207,"src":"engine","b":"in·di·ge·s·tion","flags":["stray","unknown"],"st":"todo"}
+{"w":"indigestion","r":44207,"src":"engine","b":"in·di·ge·s·tion","flags":["stray"],"st":"todo"}
 {"w":"indigirka","r":9000000,"src":"whole","b":"indigirka","flags":[],"st":"auto-whole"}
 {"w":"indignant","r":53593,"src":"whole","b":"indignant","flags":[],"st":"auto-whole"}
 {"w":"indignantly","r":98115,"src":"whole","b":"indignantly","flags":[],"st":"auto-whole"}
@@ -1210,7 +1210,7 @@
 {"w":"indite","r":9000000,"src":"whole","b":"indite","flags":[],"st":"auto-whole"}
 {"w":"indium","r":56147,"src":"whole","b":"indium","flags":[],"st":"auto-whole"}
 {"w":"individual","r":841,"src":"engine","b":"in·di·vid·u·al","flags":["stray","unknown"],"st":"todo"}
-{"w":"individualisation","r":212295,"src":"engine","b":"in·di·vid·u·al·is·ation","flags":["stray","unknown"],"st":"todo"}
+{"w":"individualisation","r":212295,"src":"engine","b":"in·di·vid·u·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"individualise","r":9000000,"src":"engine","b":"in·di·vid·u·al·ise","flags":["stray","unknown"],"st":"todo"}
 {"w":"individualised","r":78170,"src":"engine","b":"in·di·vid·u·al·ise·d","flags":["stray","unknown"],"st":"todo"}
 {"w":"individualism","r":38124,"src":"engine","b":"in·di·vid·u·al·ism","flags":["stray","unknown"],"st":"todo"}
@@ -1255,7 +1255,7 @@
 {"w":"induced","r":5222,"src":"engine","b":"in·duc·ed","flags":[],"st":"todo-low"}
 {"w":"inducement","r":53504,"src":"engine","b":"in·duc·e·ment","flags":[],"st":"todo-low"}
 {"w":"inducer","r":81093,"src":"engine","b":"in·duc·er","flags":[],"st":"todo-low"}
-{"w":"inducing","r":23488,"src":"engine","b":"in·duc·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"inducing","r":23488,"src":"engine","b":"in·duc·ing","flags":[],"st":"todo-low"}
 {"w":"inducive","r":9000000,"src":"engine","b":"in·duc·ive","flags":[],"st":"todo-low"}
 {"w":"induct","r":90189,"src":"data","b":"in·duct","flags":[],"st":"auto-data"}
 {"w":"inductance","r":43555,"src":"engine","b":"in·duct·ance","flags":[],"st":"todo-low"}
@@ -1441,7 +1441,7 @@
 {"w":"infinite","r":8176,"src":"engine","b":"in·fin·it·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"infinitely","r":22718,"src":"engine","b":"in·fin·ite·ly","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"infiniteness","r":9000000,"src":"engine","b":"in·fin·i·ten·ess","flags":[],"st":"todo-low"}
-{"w":"infinitesimal","r":58404,"src":"whole","b":"infinitesimal","flags":[],"st":"auto-whole"}
+{"w":"infinitesimal","r":58404,"src":"engine","b":"in·fin·it·es·im·al","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"infinitival","r":273647,"src":"whole","b":"infinitival","flags":[],"st":"auto-whole"}
 {"w":"infinitive","r":68238,"src":"engine","b":"in·fin·itive","flags":[],"st":"todo-low"}
 {"w":"infinitude","r":207150,"src":"engine","b":"in·fin·itude","flags":[],"st":"todo-low"}
@@ -1493,7 +1493,7 @@
 {"w":"informality","r":88326,"src":"engine","b":"in·form·al·ity","flags":[],"st":"todo-low"}
 {"w":"informally","r":29771,"src":"engine","b":"in·form·al·ly","flags":[],"st":"todo-low"}
 {"w":"informant","r":29787,"src":"data","b":"inform·ant","flags":[],"st":"auto-data"}
-{"w":"informatics","r":12431,"src":"engine","b":"in·form·at·ic·s","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"informatics","r":12431,"src":"engine","b":"in·form·at·ic·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"information","r":48,"src":"engine","b":"in·form·ation","flags":[],"st":"todo-low"}
 {"w":"informational","r":5896,"src":"engine","b":"in·form·ation·al","flags":[],"st":"todo-low"}
 {"w":"informative","r":8566,"src":"engine","b":"in·form·ative","flags":[],"st":"todo-low"}
@@ -1502,7 +1502,7 @@
 {"w":"informed","r":2118,"src":"data","b":"in·formed","flags":[],"st":"auto-data"}
 {"w":"informer","r":38006,"src":"data","b":"inform·er","flags":[],"st":"auto-data"}
 {"w":"informercial","r":9000000,"src":"engine","b":"in·form·er·ci·al","flags":["unknown"],"st":"todo"}
-{"w":"informing","r":17000,"src":"engine","b":"in·form·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"informing","r":17000,"src":"engine","b":"in·form·ing","flags":[],"st":"todo-low"}
 {"w":"infotainment","r":62822,"src":"engine","b":"in·f·o·tain·ment","flags":["stray","unknown"],"st":"todo"}
 {"w":"infra","r":21370,"src":"whole","b":"infra","flags":[],"st":"auto-whole"}
 {"w":"infract","r":9000000,"src":"data","b":"in·fract","flags":[],"st":"auto-data"}
@@ -1542,7 +1542,7 @@
 {"w":"ingenuous","r":140916,"src":"engine","b":"in·gen·u·ous","flags":["stray","unknown"],"st":"todo"}
 {"w":"ingenuously","r":9000000,"src":"engine","b":"in·gen·u·ous·ly","flags":["stray","unknown"],"st":"todo"}
 {"w":"ingenuousness","r":9000000,"src":"engine","b":"in·gen·u·ous·ness","flags":["stray","unknown"],"st":"todo"}
-{"w":"inger","r":76491,"src":"engine","b":"in·ge·r","flags":["stray","unknown"],"st":"todo"}
+{"w":"inger","r":76491,"src":"whole","b":"inger","flags":[],"st":"auto-whole"}
 {"w":"ingerman","r":241833,"src":"engine","b":"in·ge·r·man","flags":["stray","unknown"],"st":"todo"}
 {"w":"ingest","r":48992,"src":"whole","b":"ingest","flags":[],"st":"auto-whole"}
 {"w":"ingesta","r":9000000,"src":"whole","b":"ingesta","flags":[],"st":"auto-whole"}
@@ -1741,7 +1741,7 @@
 {"w":"inquire","r":8950,"src":"data","b":"in·quire","flags":[],"st":"auto-data"}
 {"w":"inquirer","r":23186,"src":"data","b":"in·quire·r","flags":[],"st":"auto-data"}
 {"w":"inquiring","r":33397,"src":"data","b":"in·quiring","flags":[],"st":"auto-data"}
-{"w":"inquiringly","r":217690,"src":"engine","b":"in·quir·ing·ly","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"inquiringly","r":217690,"src":"engine","b":"in·quir·ing·ly","flags":[],"st":"todo-low"}
 {"w":"inquiry","r":4399,"src":"data","b":"in·quir·y","flags":[],"st":"auto-data"}
 {"w":"inquisition","r":35943,"src":"engine","b":"in·quis·ition","flags":[],"st":"todo-low"}
 {"w":"inquisitive","r":47075,"src":"engine","b":"in·quis·itive","flags":[],"st":"todo-low"}
@@ -2087,8 +2087,8 @@
 {"w":"interested","r":1615,"src":"data","b":"inter·est·ed","flags":[],"st":"auto-data"}
 {"w":"interestedness","r":9000000,"src":"data","b":"interested·ness","flags":[],"st":"auto-data"}
 {"w":"interesting","r":1747,"src":"whole","b":"interesting","flags":[],"st":"fixed","note":"whole: lexicalized"}
-{"w":"interestingly","r":16261,"src":"engine","b":"inter·e·s·ting·ly","flags":["stray","unknown"],"st":"todo"}
-{"w":"interestingness","r":152958,"src":"engine","b":"inter·e·s·ting·ness","flags":["stray","unknown"],"st":"todo"}
+{"w":"interestingly","r":16261,"src":"whole","b":"interestingly","flags":[],"st":"auto-whole"}
+{"w":"interestingness","r":152958,"src":"whole","b":"interestingness","flags":[],"st":"auto-whole"}
 {"w":"interface","r":1379,"src":"data","b":"inter·face","flags":[],"st":"auto-data"}
 {"w":"interfacial","r":52555,"src":"engine","b":"inter·fac·i·al","flags":["stray","unknown"],"st":"todo"}
 {"w":"interfaith","r":26254,"src":"data","b":"inter·faith","flags":[],"st":"auto-data"}
@@ -2160,7 +2160,7 @@
 {"w":"internally","r":12181,"src":"data","b":"in·tern·al·ly","flags":[],"st":"auto-data"}
 {"w":"international","r":214,"src":"data","b":"inter·nation·al","flags":[],"st":"auto-data"}
 {"w":"internationale","r":25270,"src":"data","b":"inter·nation·ale","flags":[],"st":"auto-data"}
-{"w":"internationalisation","r":51092,"src":"engine","b":"inter·nat·ion·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"internationalisation","r":51092,"src":"engine","b":"inter·nat·ion·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"internationalise","r":288799,"src":"engine","b":"inter·nat·ion·al·ise","flags":[],"st":"todo-low"}
 {"w":"internationalism","r":69218,"src":"data","b":"inter·nation·al·ism","flags":[],"st":"auto-data"}
 {"w":"internationalist","r":66699,"src":"data","b":"inter·nation·al·ist","flags":[],"st":"auto-data"}
@@ -2320,7 +2320,7 @@
 {"w":"intransitivize","r":9000000,"src":"whole","b":"intransitivize","flags":[],"st":"auto-whole"}
 {"w":"intrapulmonary","r":273485,"src":"data","b":"intra·pulmonary","flags":[],"st":"auto-data"}
 {"w":"intrasentential","r":9000000,"src":"data","b":"intra·sentential","flags":[],"st":"auto-data"}
-{"w":"intraspecies","r":205767,"src":"engine","b":"intra·spec·ies","flags":["unknown"],"st":"todo"}
+{"w":"intraspecies","r":205767,"src":"engine","b":"intra·spec·i·es","flags":["stray","unknown"],"st":"todo"}
 {"w":"intraspecific","r":112948,"src":"engine","b":"intra·spec·i·fic","flags":[],"st":"todo-low"}
 {"w":"intrastate","r":39435,"src":"whole","b":"intrastate","flags":[],"st":"auto-whole"}
 {"w":"intrauterine","r":55815,"src":"whole","b":"intrauterine","flags":[],"st":"auto-whole"}
@@ -2434,12 +2434,12 @@
 {"w":"inventiveness","r":80137,"src":"data","b":"in·vent·ive·ness","flags":[],"st":"auto-data"}
 {"w":"inventor","r":11983,"src":"data","b":"in·vent·or","flags":[],"st":"auto-data"}
 {"w":"inventory","r":3370,"src":"whole","b":"inventory","flags":[],"st":"auto-whole"}
-{"w":"inventorying","r":137641,"src":"engine","b":"in·vent·ory·ing","flags":["unknown"],"st":"todo"}
+{"w":"inventorying","r":137641,"src":"engine","b":"in·vent·ory·ing","flags":[],"st":"todo-low"}
 {"w":"inverse","r":13271,"src":"data","b":"in·verse","flags":[],"st":"auto-data"}
 {"w":"inversely","r":42256,"src":"data","b":"in·verse·ly","flags":[],"st":"auto-data"}
 {"w":"inversion","r":20476,"src":"data","b":"in·vers·ion","flags":[],"st":"auto-data"}
 {"w":"invert","r":32378,"src":"data","b":"in·vert","flags":[],"st":"auto-data"}
-{"w":"invertase","r":191956,"src":"engine","b":"in·vert·as·e","flags":["stray","unknown"],"st":"todo"}
+{"w":"invertase","r":191956,"src":"engine","b":"in·vert·a·s·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"invertebrate","r":33172,"src":"engine","b":"in·vert·ebr·ate","flags":["unknown"],"st":"todo"}
 {"w":"inverted","r":19046,"src":"engine","b":"in·vert·ed","flags":[],"st":"todo-low"}
 {"w":"inverter","r":18227,"src":"engine","b":"in·vert·er","flags":[],"st":"todo-low"}
@@ -2482,15 +2482,15 @@
 {"w":"invitatory","r":9000000,"src":"engine","b":"in·vit·ator·y","flags":["stray"],"st":"todo"}
 {"w":"invite","r":5411,"src":"whole","b":"invite","flags":[],"st":"auto-whole"}
 {"w":"invitee","r":135007,"src":"engine","b":"in·vit·e·e","flags":["stray","unknown"],"st":"todo"}
-{"w":"inviting","r":14309,"src":"engine","b":"in·v·i·ting","flags":["stray","unknown"],"st":"todo"}
-{"w":"invitingly","r":188883,"src":"engine","b":"in·v·i·ting·ly","flags":["stray","unknown"],"st":"todo"}
+{"w":"inviting","r":14309,"src":"engine","b":"in·vit·ing","flags":[],"st":"todo-low"}
+{"w":"invitingly","r":188883,"src":"engine","b":"in·vit·ing·ly","flags":[],"st":"todo-low"}
 {"w":"invocation","r":21134,"src":"engine","b":"in·voc·ation","flags":[],"st":"todo-low"}
 {"w":"invoice","r":7495,"src":"whole","b":"invoice","flags":[],"st":"auto-whole"}
 {"w":"invoke","r":16052,"src":"whole","b":"invoke","flags":[],"st":"auto-whole"}
 {"w":"involucrate","r":9000000,"src":"engine","b":"in·volu·crat·e","flags":["stray"],"st":"todo"}
 {"w":"involucre","r":9000000,"src":"engine","b":"in·volu·cr·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"involuntarily","r":46696,"src":"engine","b":"in·volu·nt·ar·i·ly","flags":["stray","unknown"],"st":"todo"}
-{"w":"involuntariness","r":9000000,"src":"engine","b":"in·volu·nt·ar·i·ness","flags":["stray","unknown"],"st":"todo"}
+{"w":"involuntariness","r":9000000,"src":"engine","b":"in·volu·nt·ar·ine·s·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"involuntary","r":22715,"src":"data","b":"in·voluntary","flags":[],"st":"auto-data"}
 {"w":"involute","r":201076,"src":"engine","b":"in·volut·e","flags":["stray"],"st":"todo"}
 {"w":"involution","r":77401,"src":"engine","b":"in·volut·ion","flags":[],"st":"todo-low"}
@@ -2510,7 +2510,7 @@
 {"w":"iodin","r":9000000,"src":"whole","b":"iodin","flags":[],"st":"auto-whole"}
 {"w":"iodinate","r":9000000,"src":"data","b":"iod·in·ate","flags":[],"st":"auto-data"}
 {"w":"iodinated","r":138274,"src":"data","b":"iod·in·ated","flags":[],"st":"auto-data"}
-{"w":"iodinating","r":9000000,"src":"engine","b":"iod·i·n·a·ting","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
+{"w":"iodinating","r":9000000,"src":"engine","b":"iod·i·nat·ing","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"iodination","r":298132,"src":"engine","b":"iod·i·nat·ion","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"iodine","r":22049,"src":"data","b":"iod·ine","flags":[],"st":"auto-data"}
 {"w":"iodise","r":9000000,"src":"whole","b":"iodise","flags":[],"st":"auto-whole"}
@@ -2521,7 +2521,7 @@
 {"w":"iodocompound","r":9000000,"src":"whole","b":"iodocompound","flags":[],"st":"auto-whole"}
 {"w":"iodoform","r":9000000,"src":"data","b":"iodo·form","flags":[],"st":"auto-data"}
 {"w":"iodoprotein","r":9000000,"src":"whole","b":"iodoprotein","flags":[],"st":"auto-whole"}
-{"w":"iodopsin","r":9000000,"src":"engine","b":"iod·op·sin","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"iodopsin","r":9000000,"src":"engine","b":"iod·op·s·in","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"iodothyronine","r":307108,"src":"whole","b":"iodothyronine","flags":[],"st":"auto-whole"}
 {"w":"iodotyrosine","r":9000000,"src":"whole","b":"iodotyrosine","flags":[],"st":"auto-whole"}
 {"w":"iol","r":28659,"src":"whole","b":"iol","flags":[],"st":"auto-whole"}
@@ -2856,7 +2856,7 @@
 {"w":"istiophorus","r":9000000,"src":"whole","b":"istiophorus","flags":[],"st":"auto-whole"}
 {"w":"isuprel","r":9000000,"src":"whole","b":"isuprel","flags":[],"st":"auto-whole"}
 {"w":"isuridae","r":9000000,"src":"whole","b":"isuridae","flags":[],"st":"auto-whole"}
-{"w":"isurus","r":9000000,"src":"engine","b":"i·su·rus","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"isurus","r":9000000,"src":"whole","b":"isurus","flags":[],"st":"auto-whole"}
 {"w":"it","r":15,"src":"whole","b":"it","flags":[],"st":"auto-whole"}
 {"w":"italia","r":9460,"src":"whole","b":"italia","flags":[],"st":"auto-whole"}
 {"w":"italian","r":2067,"src":"whole","b":"italian","flags":[],"st":"auto-whole"}

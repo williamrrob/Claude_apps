@@ -87,6 +87,7 @@
 {"w":"radicchio","r":134846,"src":"whole","b":"radicchio","flags":[],"st":"auto-whole"}
 {"w":"radicle","r":248415,"src":"engine","b":"r·a·dic·l·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"radiculitis","r":9000000,"src":"whole","b":"radiculitis","flags":[],"st":"auto-whole"}
+{"w":"radii","r":9000000,"src":"curated","b":"radi·i","flags":[],"st":"fixed","note":"radi+i; plural of radius"}
 {"w":"radiigera","r":9000000,"src":"whole","b":"radiigera","flags":[],"st":"auto-whole"}
 {"w":"radio","r":692,"src":"whole","b":"radio","flags":[],"st":"auto-whole"}
 {"w":"radioactive","r":12106,"src":"data","b":"radio·act·ive","flags":[],"st":"auto-data"}
@@ -139,7 +140,7 @@
 {"w":"radiothorium","r":9000000,"src":"whole","b":"radiothorium","flags":[],"st":"auto-whole"}
 {"w":"radish","r":50593,"src":"whole","b":"radish","flags":[],"st":"auto-whole"}
 {"w":"radium","r":39014,"src":"whole","b":"radium","flags":[],"st":"auto-whole"}
-{"w":"radius","r":6703,"src":"whole","b":"radius","flags":[],"st":"auto-whole"}
+{"w":"radius","r":6703,"src":"curated","b":"radi·us","flags":[],"st":"fixed","note":"radi+us; pairs with radii"}
 {"w":"radix","r":38632,"src":"whole","b":"radix","flags":[],"st":"auto-whole"}
 {"w":"radome","r":121416,"src":"whole","b":"radome","flags":[],"st":"auto-whole"}
 {"w":"radon","r":24199,"src":"whole","b":"radon","flags":[],"st":"auto-whole"}
@@ -147,7 +148,7 @@
 {"w":"raetam","r":9000000,"src":"whole","b":"raetam","flags":[],"st":"auto-whole"}
 {"w":"raf","r":18472,"src":"whole","b":"raf","flags":[],"st":"auto-whole"}
 {"w":"raffia","r":76531,"src":"whole","b":"raffia","flags":[],"st":"auto-whole"}
-{"w":"raffinose","r":222838,"src":"engine","b":"raf·fin·os·e","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"raffinose","r":222838,"src":"engine","b":"raf·fin·o·s·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"raffish","r":295545,"src":"whole","b":"raffish","flags":[],"st":"auto-whole"}
 {"w":"raffishly","r":9000000,"src":"data","b":"raffish·ly","flags":[],"st":"auto-data"}
 {"w":"raffle","r":20452,"src":"whole","b":"raffle","flags":[],"st":"auto-whole"}
@@ -292,6 +293,7 @@
 {"w":"ramshackle","r":98446,"src":"whole","b":"ramshackle","flags":[],"st":"auto-whole"}
 {"w":"ramsons","r":9000000,"src":"whole","b":"ramsons","flags":[],"st":"auto-whole"}
 {"w":"ramus","r":109472,"src":"whole","b":"ramus","flags":[],"st":"auto-whole"}
+{"w":"ran","r":9000000,"src":"whole","b":"ran","flags":[],"st":"fixed","note":"past tense of run; rel pointer"}
 {"w":"rana","r":32989,"src":"whole","b":"rana","flags":[],"st":"auto-whole"}
 {"w":"ranales","r":9000000,"src":"whole","b":"ranales","flags":[],"st":"auto-whole"}
 {"w":"ranatra","r":9000000,"src":"engine","b":"r·a·nat·ra","flags":["stray","lowconf","unknown"],"st":"todo"}
@@ -345,7 +347,7 @@
 {"w":"ransomed","r":150334,"src":"whole","b":"ransomed","flags":[],"st":"auto-whole"}
 {"w":"rant","r":12174,"src":"whole","b":"rant","flags":[],"st":"auto-whole"}
 {"w":"ranter","r":106489,"src":"data","b":"rant·er","flags":[],"st":"auto-data"}
-{"w":"ranting","r":32877,"src":"engine","b":"ran·ting","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"ranting","r":32877,"src":"whole","b":"ranting","flags":[],"st":"auto-whole"}
 {"w":"ranula","r":9000000,"src":"whole","b":"ranula","flags":[],"st":"auto-whole"}
 {"w":"ranunculaceae","r":147969,"src":"whole","b":"ranunculaceae","flags":[],"st":"auto-whole"}
 {"w":"ranunculales","r":9000000,"src":"whole","b":"ranunculales","flags":[],"st":"auto-whole"}
@@ -518,7 +520,7 @@
 {"w":"ravelling","r":9000000,"src":"whole","b":"ravelling","flags":[],"st":"auto-whole"}
 {"w":"raven","r":10563,"src":"whole","b":"raven","flags":[],"st":"auto-whole"}
 {"w":"ravenala","r":9000000,"src":"engine","b":"r·a·ven·al·a","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"ravening","r":212897,"src":"engine","b":"r·a·ven·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"ravening","r":212897,"src":"engine","b":"r·a·ven·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"ravenna","r":36786,"src":"engine","b":"r·a·ven·na","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"ravenous","r":65150,"src":"engine","b":"r·a·ven·ous","flags":["stray","unknown"],"st":"todo"}
 {"w":"ravenously","r":154375,"src":"engine","b":"r·a·ven·ous·ly","flags":["stray","unknown"],"st":"todo"}
@@ -532,8 +534,8 @@
 {"w":"ravioli","r":46577,"src":"whole","b":"ravioli","flags":[],"st":"auto-whole"}
 {"w":"ravish","r":151653,"src":"whole","b":"ravish","flags":[],"st":"auto-whole"}
 {"w":"ravisher","r":9000000,"src":"engine","b":"r·a·vis·h·er","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"ravishing","r":76326,"src":"whole","b":"ravishing","flags":[],"st":"auto-whole"}
-{"w":"ravishingly","r":9000000,"src":"whole","b":"ravishingly","flags":[],"st":"auto-whole"}
+{"w":"ravishing","r":76326,"src":"engine","b":"r·a·vis·h·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"ravishingly","r":9000000,"src":"engine","b":"r·a·vis·h·ing·ly","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"ravishment","r":9000000,"src":"data","b":"ravish·ment","flags":[],"st":"auto-data"}
 {"w":"raw","r":3078,"src":"whole","b":"raw","flags":[],"st":"auto-whole"}
 {"w":"rawalpindi","r":74464,"src":"whole","b":"rawalpindi","flags":[],"st":"auto-whole"}
@@ -731,9 +733,9 @@
 {"w":"recede","r":63982,"src":"data","b":"re·cede","flags":[],"st":"auto-data"}
 {"w":"receding","r":54355,"src":"data","b":"re·ceding","flags":[],"st":"auto-data"}
 {"w":"receipt","r":4687,"src":"whole","b":"receipt","flags":[],"st":"auto-whole"}
-{"w":"receipts","r":10317,"src":"engine","b":"re·ceipt·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"receipts","r":10317,"src":"engine","b":"re·ceipt·s","flags":["stray"],"st":"todo"}
 {"w":"receivable","r":15708,"src":"data","b":"re·ceiv·able","flags":[],"st":"auto-data"}
-{"w":"receivables","r":20711,"src":"engine","b":"re·ceiv·able·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"receivables","r":20711,"src":"engine","b":"re·ceiv·able·s","flags":["stray"],"st":"todo"}
 {"w":"receive","r":908,"src":"data","b":"re·ceive","flags":[],"st":"auto-data"}
 {"w":"received","r":890,"src":"data","b":"re·ceived","flags":[],"st":"auto-data"}
 {"w":"receiver","r":4432,"src":"data","b":"re·ceive·r","flags":[],"st":"auto-data"}
@@ -802,10 +804,10 @@
 {"w":"reclusiveness","r":9000000,"src":"engine","b":"re·clus·ive·ness","flags":[],"st":"todo-low"}
 {"w":"recode","r":44047,"src":"whole","b":"recode","flags":[],"st":"auto-whole"}
 {"w":"recoding","r":86011,"src":"whole","b":"recoding","flags":[],"st":"auto-whole"}
-{"w":"recognisable","r":55411,"src":"engine","b":"re·cogni·s·able","flags":["stray","unknown"],"st":"todo"}
-{"w":"recognisance","r":9000000,"src":"engine","b":"re·cogni·s·ance","flags":["stray","unknown"],"st":"todo"}
+{"w":"recognisable","r":55411,"src":"engine","b":"re·cogni·s·able","flags":["stray"],"st":"todo"}
+{"w":"recognisance","r":9000000,"src":"engine","b":"re·cogni·s·ance","flags":["stray"],"st":"todo"}
 {"w":"recognise","r":12167,"src":"engine","b":"re·cogn·ise","flags":[],"st":"todo-low"}
-{"w":"recognised","r":8648,"src":"engine","b":"re·cogni·s·ed","flags":["stray","unknown"],"st":"todo"}
+{"w":"recognised","r":8648,"src":"engine","b":"re·cogni·s·ed","flags":["stray"],"st":"todo"}
 {"w":"recognition","r":3425,"src":"engine","b":"re·cogni·tion","flags":[],"st":"todo-low"}
 {"w":"recognizable","r":25772,"src":"data","b":"re·cogniz·able","flags":[],"st":"auto-data"}
 {"w":"recognizably","r":157897,"src":"data","b":"re·cogniz·abl·y","flags":[],"st":"auto-data"}
@@ -866,7 +868,7 @@
 {"w":"recoverable","r":27932,"src":"data","b":"recover·able","flags":[],"st":"auto-data"}
 {"w":"recovered","r":9528,"src":"data","b":"re·covered","flags":[],"st":"auto-data"}
 {"w":"recoverer","r":9000000,"src":"engine","b":"re·co·ver·er","flags":[],"st":"todo-low"}
-{"w":"recovering","r":14478,"src":"engine","b":"re·co·veri·ng","flags":["unknown"],"st":"todo"}
+{"w":"recovering","r":14478,"src":"engine","b":"re·co·ver·ing","flags":[],"st":"todo-low"}
 {"w":"recovery","r":2146,"src":"data","b":"recover·y","flags":[],"st":"auto-data"}
 {"w":"recreant","r":304121,"src":"whole","b":"recreant","flags":[],"st":"auto-whole"}
 {"w":"recreate","r":26040,"src":"data","b":"re·create","flags":[],"st":"auto-data"}
@@ -896,14 +898,14 @@
 {"w":"rectitude","r":110681,"src":"data","b":"rect·itude","flags":[],"st":"auto-data"}
 {"w":"recto","r":70171,"src":"engine","b":"rect·o","flags":["stray","unknown"],"st":"todo"}
 {"w":"rectocele","r":319712,"src":"data","b":"recto·cele","flags":[],"st":"auto-data"}
-{"w":"rectoplasty","r":9000000,"src":"engine","b":"rect·op·las·ty","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"rectoplasty","r":9000000,"src":"engine","b":"rect·op·la·s·ty","flags":["stray","unknown"],"st":"todo"}
 {"w":"rector","r":22790,"src":"whole","b":"rector","flags":[],"st":"auto-whole"}
 {"w":"rectorate","r":9000000,"src":"engine","b":"rect·or·ate","flags":[],"st":"todo-low"}
 {"w":"rectorship","r":9000000,"src":"engine","b":"rect·or·ship","flags":[],"st":"todo-low"}
 {"w":"rectory","r":47384,"src":"data","b":"rector·y","flags":[],"st":"auto-data"}
 {"w":"rectosigmoid","r":328844,"src":"data","b":"rect·o·sigmoid","flags":[],"st":"auto-data"}
 {"w":"rectum","r":31054,"src":"engine","b":"rect·um","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"rectus","r":95920,"src":"engine","b":"rect·us","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"rectus","r":95920,"src":"engine","b":"rect·u·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"recumb","r":9000000,"src":"whole","b":"recumb","flags":[],"st":"auto-whole"}
 {"w":"recumbent","r":41349,"src":"whole","b":"recumbent","flags":[],"st":"auto-whole"}
 {"w":"recuperate","r":86157,"src":"whole","b":"recuperate","flags":[],"st":"auto-whole"}
@@ -913,7 +915,7 @@
 {"w":"recurrence","r":18685,"src":"engine","b":"re·curr·ence","flags":[],"st":"todo-low"}
 {"w":"recurrent","r":16515,"src":"engine","b":"re·curr·ent","flags":[],"st":"todo-low"}
 {"w":"recurrently","r":226108,"src":"engine","b":"re·curr·ent·ly","flags":[],"st":"todo-low"}
-{"w":"recurring","r":13282,"src":"engine","b":"re·curr·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"recurring","r":13282,"src":"engine","b":"re·curr·ing","flags":[],"st":"todo-low"}
 {"w":"recursion","r":26325,"src":"engine","b":"re·curs·ion","flags":[],"st":"todo-low"}
 {"w":"recursive","r":16520,"src":"data","b":"re·curs·ive","flags":[],"st":"auto-data"}
 {"w":"recurvate","r":9000000,"src":"whole","b":"recurvate","flags":[],"st":"auto-whole"}
@@ -1017,9 +1019,9 @@
 {"w":"reduced","r":2679,"src":"engine","b":"re·duc·ed","flags":[],"st":"todo-low"}
 {"w":"reducer","r":40975,"src":"engine","b":"re·duc·er","flags":[],"st":"todo-low"}
 {"w":"reducible","r":66909,"src":"engine","b":"re·duc·ible","flags":[],"st":"todo-low"}
-{"w":"reducing","r":4575,"src":"engine","b":"re·duc·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"reducing","r":4575,"src":"engine","b":"re·duc·ing","flags":[],"st":"todo-low"}
 {"w":"reductant","r":239243,"src":"engine","b":"re·duct·ant","flags":[],"st":"todo-low"}
-{"w":"reductase","r":23246,"src":"engine","b":"re·duct·as·e","flags":["stray","unknown"],"st":"todo"}
+{"w":"reductase","r":23246,"src":"engine","b":"re·duct·a·s·e","flags":["stray","unknown"],"st":"todo"}
 {"w":"reductio","r":124868,"src":"engine","b":"re·duct·io","flags":["unknown"],"st":"todo"}
 {"w":"reduction","r":2749,"src":"data","b":"re·duct·ion","flags":[],"st":"auto-data"}
 {"w":"reductionism","r":94701,"src":"engine","b":"re·duct·ion·ism","flags":[],"st":"todo-low"}
@@ -1090,7 +1092,7 @@
 {"w":"refinement","r":16447,"src":"data","b":"refine·ment","flags":[],"st":"auto-data"}
 {"w":"refiner","r":61452,"src":"data","b":"refine·r","flags":[],"st":"auto-data"}
 {"w":"refinery","r":20231,"src":"engine","b":"re·fin·ery","flags":[],"st":"todo-low"}
-{"w":"refining","r":17244,"src":"engine","b":"re·fin·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"refining","r":17244,"src":"engine","b":"re·fin·ing","flags":[],"st":"todo-low"}
 {"w":"refinish","r":68870,"src":"engine","b":"re·fin·ish","flags":[],"st":"todo-low"}
 {"w":"refinisher","r":212348,"src":"engine","b":"re·fin·ish·er","flags":[],"st":"todo-low"}
 {"w":"refit","r":67609,"src":"data","b":"re·fit","flags":[],"st":"auto-data"}
@@ -1141,7 +1143,7 @@
 {"w":"refractiveness","r":9000000,"src":"data","b":"refractive·ness","flags":[],"st":"auto-data"}
 {"w":"refractivity","r":274399,"src":"engine","b":"re·fract·i·vit·y","flags":["stray"],"st":"todo"}
 {"w":"refractometer","r":107160,"src":"engine","b":"re·fract·o·meter","flags":[],"st":"todo-low"}
-{"w":"refractoriness","r":228770,"src":"engine","b":"re·fract·or·i·ness","flags":["stray","unknown"],"st":"todo"}
+{"w":"refractoriness","r":228770,"src":"engine","b":"re·fract·or·ine·s·s","flags":["stray"],"st":"todo"}
 {"w":"refractory","r":27762,"src":"data","b":"re·fract·ory","flags":[],"st":"auto-data"}
 {"w":"refracture","r":9000000,"src":"data","b":"re·fracture","flags":[],"st":"auto-data"}
 {"w":"refrain","r":17538,"src":"whole","b":"refrain","flags":[],"st":"auto-whole"}
@@ -1218,7 +1220,7 @@
 {"w":"registrar","r":7176,"src":"data","b":"registr·ar","flags":[],"st":"auto-data"}
 {"w":"registration","r":1180,"src":"engine","b":"reg·ist·r·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"registry","r":3750,"src":"data","b":"registr·y","flags":[],"st":"auto-data"}
-{"w":"reglaecus","r":9000000,"src":"whole","b":"reglaecus","flags":[],"st":"auto-whole"}
+{"w":"reglaecus","r":9000000,"src":"engine","b":"reg·l·ae·cu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"regnant","r":281484,"src":"engine","b":"reg·n·ant","flags":["stray","unknown"],"st":"todo"}
 {"w":"regnellidium","r":9000000,"src":"whole","b":"regnellidium","flags":[],"st":"auto-whole"}
 {"w":"regorge","r":9000000,"src":"engine","b":"reg·or·ge","flags":["lowconf","unknown"],"st":"todo"}
@@ -1229,7 +1231,7 @@
 {"w":"regret","r":12120,"src":"whole","b":"regret","flags":[],"st":"auto-whole"}
 {"w":"regretful","r":134050,"src":"data","b":"regret·ful","flags":[],"st":"auto-data"}
 {"w":"regretfully","r":86381,"src":"data","b":"regret·ful·ly","flags":[],"st":"auto-data"}
-{"w":"regrets","r":24371,"src":"whole","b":"regrets","flags":[],"st":"auto-whole"}
+{"w":"regrets","r":24371,"src":"engine","b":"reg·ret·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"regrettable","r":54241,"src":"data","b":"regrett·able","flags":[],"st":"auto-data"}
 {"w":"regrettably","r":49029,"src":"data","b":"regrett·abl·y","flags":[],"st":"auto-data"}
 {"w":"regroup","r":61547,"src":"data","b":"re·group","flags":[],"st":"auto-data"}
@@ -1381,7 +1383,7 @@
 {"w":"religion","r":2020,"src":"data","b":"relig·ion","flags":[],"st":"auto-data"}
 {"w":"religionism","r":9000000,"src":"engine","b":"re·lig·ion·ism","flags":[],"st":"todo-low"}
 {"w":"religionist","r":282979,"src":"engine","b":"re·lig·ion·ist","flags":[],"st":"todo-low"}
-{"w":"religiosity","r":73168,"src":"engine","b":"re·lig·ios·ity","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"religiosity","r":73168,"src":"engine","b":"re·lig·io·s·ity","flags":["stray","unknown"],"st":"todo"}
 {"w":"religious","r":2234,"src":"data","b":"relig·ious","flags":[],"st":"auto-data"}
 {"w":"religiousism","r":9000000,"src":"engine","b":"re·lig·ious·ism","flags":[],"st":"todo-low"}
 {"w":"religiously","r":39451,"src":"data","b":"relig·ious·ly","flags":[],"st":"auto-data"}
@@ -1389,7 +1391,7 @@
 {"w":"reline","r":235049,"src":"whole","b":"reline","flags":[],"st":"auto-whole"}
 {"w":"relinquish","r":41806,"src":"whole","b":"relinquish","flags":[],"st":"auto-whole"}
 {"w":"relinquished","r":53067,"src":"engine","b":"re·lin·quis·h·ed","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"relinquishing","r":82834,"src":"whole","b":"relinquishing","flags":[],"st":"auto-whole"}
+{"w":"relinquishing","r":82834,"src":"engine","b":"re·lin·quis·h·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"relinquishment","r":84812,"src":"engine","b":"re·lin·quis·h·ment","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"reliquary","r":137307,"src":"whole","b":"reliquary","flags":[],"st":"auto-whole"}
 {"w":"relish","r":27853,"src":"whole","b":"relish","flags":[],"st":"auto-whole"}
@@ -1570,7 +1572,7 @@
 {"w":"repellant","r":62395,"src":"engine","b":"re·pel·l·ant","flags":["stray","unknown"],"st":"todo"}
 {"w":"repellent","r":28745,"src":"engine","b":"re·pel·l·ent","flags":["stray","unknown"],"st":"todo"}
 {"w":"repellently","r":9000000,"src":"engine","b":"re·pel·l·ent·ly","flags":["stray","unknown"],"st":"todo"}
-{"w":"repelling","r":80213,"src":"whole","b":"repelling","flags":[],"st":"auto-whole"}
+{"w":"repelling","r":80213,"src":"engine","b":"re·pel·l·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"repellingly","r":9000000,"src":"data","b":"repelling·ly","flags":[],"st":"auto-data"}
 {"w":"repent","r":29416,"src":"whole","b":"repent","flags":[],"st":"auto-whole"}
 {"w":"repentance","r":26297,"src":"data","b":"repent·ance","flags":[],"st":"auto-data"}
@@ -1615,9 +1617,9 @@
 {"w":"repose","r":38210,"src":"data","b":"re·pose","flags":[],"st":"auto-data"}
 {"w":"reposeful","r":9000000,"src":"data","b":"repose·ful","flags":[],"st":"auto-data"}
 {"w":"reposit","r":9000000,"src":"engine","b":"re·posit","flags":[],"st":"todo-low"}
-{"w":"repositing","r":9000000,"src":"engine","b":"re·pos·i·ting","flags":[],"st":"todo-low"}
+{"w":"repositing","r":9000000,"src":"engine","b":"re·posit·ing","flags":[],"st":"todo-low"}
 {"w":"reposition","r":50134,"src":"data","b":"re·posit·ion","flags":[],"st":"auto-data"}
-{"w":"repositioning","r":52282,"src":"engine","b":"re·posit·ion·ing","flags":["unknown"],"st":"todo"}
+{"w":"repositioning","r":52282,"src":"engine","b":"re·posit·ion·ing","flags":[],"st":"todo-low"}
 {"w":"repository","r":6758,"src":"data","b":"re·posit·ory","flags":[],"st":"auto-data"}
 {"w":"repossess","r":115029,"src":"data","b":"re·possess","flags":[],"st":"auto-data"}
 {"w":"repossession","r":60599,"src":"data","b":"re·possess·ion","flags":[],"st":"auto-data"}
@@ -1720,7 +1722,7 @@
 {"w":"reschedule","r":50411,"src":"whole","b":"reschedule","flags":[],"st":"auto-whole"}
 {"w":"rescind","r":45131,"src":"whole","b":"rescind","flags":[],"st":"auto-whole"}
 {"w":"rescindable","r":9000000,"src":"data","b":"rescind·able","flags":[],"st":"auto-data"}
-{"w":"rescission","r":52078,"src":"engine","b":"re·sci·s·sion","flags":["stray","unknown"],"st":"todo"}
+{"w":"rescission","r":52078,"src":"engine","b":"re·sci·s·sion","flags":["stray"],"st":"todo"}
 {"w":"rescript","r":9000000,"src":"engine","b":"re·script","flags":[],"st":"todo-low"}
 {"w":"rescriptor","r":280205,"src":"engine","b":"re·script·or","flags":[],"st":"todo-low"}
 {"w":"rescue","r":4571,"src":"whole","b":"rescue","flags":[],"st":"auto-whole"}
@@ -1748,7 +1750,7 @@
 {"w":"reserve","r":2267,"src":"whole","b":"reserve","flags":[],"st":"auto-whole"}
 {"w":"reserved","r":257,"src":"engine","b":"re·serv·ed","flags":[],"st":"todo-low"}
 {"w":"reservedly","r":9000000,"src":"engine","b":"re·serv·ed·ly","flags":[],"st":"todo-low"}
-{"w":"reserves","r":4950,"src":"engine","b":"re·serv·es","flags":["unknown"],"st":"todo"}
+{"w":"reserves","r":4950,"src":"engine","b":"re·serv·es","flags":[],"st":"todo-low"}
 {"w":"reservist","r":72079,"src":"data","b":"reserv·ist","flags":[],"st":"auto-data"}
 {"w":"reservoir","r":9401,"src":"whole","b":"reservoir","flags":[],"st":"auto-whole"}
 {"w":"reset","r":6163,"src":"data","b":"re·set","flags":[],"st":"auto-data"}
@@ -1814,7 +1816,7 @@
 {"w":"resonance","r":11418,"src":"whole","b":"resonance","flags":[],"st":"auto-whole"}
 {"w":"resonant","r":25326,"src":"whole","b":"resonant","flags":[],"st":"auto-whole"}
 {"w":"resonate","r":42844,"src":"engine","b":"re·s·o·nat·e","flags":["stray","unknown"],"st":"todo"}
-{"w":"resonating","r":86641,"src":"engine","b":"re·s·o·n·a·ting","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
+{"w":"resonating","r":86641,"src":"engine","b":"re·s·o·nat·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"resonator","r":39244,"src":"engine","b":"re·s·o·nat·or","flags":["stray","unknown"],"st":"todo"}
 {"w":"resorb","r":9000000,"src":"whole","b":"resorb","flags":[],"st":"auto-whole"}
 {"w":"resorcinol","r":166227,"src":"whole","b":"resorcinol","flags":[],"st":"auto-whole"}
@@ -1840,7 +1842,7 @@
 {"w":"respectfulness","r":9000000,"src":"data","b":"respect·ful·ness","flags":[],"st":"auto-data"}
 {"w":"respective","r":1769,"src":"data","b":"respect·ive","flags":[],"st":"auto-data"}
 {"w":"respectively","r":4184,"src":"data","b":"respect·ive·ly","flags":[],"st":"auto-data"}
-{"w":"respects","r":11842,"src":"engine","b":"re·spect·s","flags":["stray","unknown"],"st":"todo"}
+{"w":"respects","r":11842,"src":"engine","b":"re·spect·s","flags":["stray"],"st":"todo"}
 {"w":"respighi","r":139719,"src":"whole","b":"respighi","flags":[],"st":"auto-whole"}
 {"w":"respiration","r":23204,"src":"engine","b":"re·spir·ation","flags":[],"st":"todo-low"}
 {"w":"respirator","r":30547,"src":"data","b":"re·spir·at·or","flags":[],"st":"auto-data"}
@@ -2113,10 +2115,10 @@
 {"w":"revisionism","r":77236,"src":"data","b":"re·vis·ion·ism","flags":[],"st":"auto-data"}
 {"w":"revisionist","r":52777,"src":"data","b":"re·vis·ion·ist","flags":[],"st":"auto-data"}
 {"w":"revisit","r":25640,"src":"engine","b":"re·vis·it","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"revitalisation","r":112611,"src":"engine","b":"re·vit·al·is·ation","flags":["unknown"],"st":"todo"}
+{"w":"revitalisation","r":112611,"src":"engine","b":"re·vit·al·i·s·ation","flags":["stray","unknown"],"st":"todo"}
 {"w":"revitalise","r":95945,"src":"engine","b":"re·vit·al·ise","flags":[],"st":"todo-low"}
 {"w":"revitalised","r":132302,"src":"engine","b":"re·vit·al·ise·d","flags":["stray","unknown"],"st":"todo"}
-{"w":"revitalising","r":102507,"src":"whole","b":"revitalising","flags":[],"st":"auto-whole"}
+{"w":"revitalising","r":102507,"src":"engine","b":"re·vit·al·i·s·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"revitalization","r":25324,"src":"engine","b":"re·vit·al·iz·ation","flags":["unknown"],"st":"todo"}
 {"w":"revitalize","r":37736,"src":"data","b":"re·vital·ize","flags":[],"st":"auto-data"}
 {"w":"revitalized","r":59255,"src":"data","b":"re·vital·ized","flags":[],"st":"auto-data"}
@@ -2245,10 +2247,10 @@
 {"w":"rhinotermitidae","r":9000000,"src":"whole","b":"rhinotermitidae","flags":[],"st":"auto-whole"}
 {"w":"rhinotomy","r":9000000,"src":"data","b":"rhino·tomy","flags":[],"st":"auto-data"}
 {"w":"rhinotracheitis","r":328486,"src":"data","b":"rhino·tracheitis","flags":[],"st":"auto-data"}
-{"w":"rhinovirus","r":108516,"src":"whole","b":"rhinovirus","flags":[],"st":"auto-whole"}
+{"w":"rhinovirus","r":108516,"src":"engine","b":"rh·i·nov·iru·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"rhipsalis","r":9000000,"src":"whole","b":"rhipsalis","flags":[],"st":"auto-whole"}
 {"w":"rhiptoglossa","r":9000000,"src":"whole","b":"rhiptoglossa","flags":[],"st":"auto-whole"}
-{"w":"rhizobiaceae","r":9000000,"src":"whole","b":"rhizobiaceae","flags":[],"st":"auto-whole"}
+{"w":"rhizobiaceae","r":9000000,"src":"engine","b":"rh·i·zo·bi·ace·ae","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"rhizobium","r":84798,"src":"engine","b":"rh·i·zo·bi·um","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"rhizoctinia","r":9000000,"src":"engine","b":"rh·i·zo·c·tin·ia","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"rhizoid","r":9000000,"src":"whole","b":"rhizoid","flags":[],"st":"auto-whole"}
@@ -2257,13 +2259,13 @@
 {"w":"rhizome","r":51459,"src":"whole","b":"rhizome","flags":[],"st":"auto-whole"}
 {"w":"rhizomorph","r":9000000,"src":"data","b":"rhizo·morph","flags":[],"st":"auto-data"}
 {"w":"rhizophora","r":245491,"src":"engine","b":"rh·i·z·op·h·or·a","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"rhizophoraceae","r":9000000,"src":"whole","b":"rhizophoraceae","flags":[],"st":"auto-whole"}
+{"w":"rhizophoraceae","r":9000000,"src":"engine","b":"rh·i·zo·ph·or·ace·ae","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"rhizopod","r":9000000,"src":"engine","b":"rh·i·zo·pod","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"rhizopoda","r":9000000,"src":"engine","b":"rh·i·zo·pod·a","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"rhizopodan","r":9000000,"src":"engine","b":"rh·i·zo·pod·an","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"rhizopogon","r":9000000,"src":"whole","b":"rhizopogon","flags":[],"st":"auto-whole"}
 {"w":"rhizopogonaceae","r":9000000,"src":"whole","b":"rhizopogonaceae","flags":[],"st":"auto-whole"}
-{"w":"rhizopus","r":216223,"src":"engine","b":"rh·i·z·op·us","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"rhizopus","r":216223,"src":"engine","b":"rh·i·zo·pu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"rhizotomy","r":325099,"src":"data","b":"rhizo·tomy","flags":[],"st":"auto-data"}
 {"w":"rho","r":23008,"src":"whole","b":"rho","flags":[],"st":"auto-whole"}
 {"w":"rhodanthe","r":9000000,"src":"whole","b":"rhodanthe","flags":[],"st":"auto-whole"}
@@ -2271,7 +2273,7 @@
 {"w":"rhodesia","r":45542,"src":"whole","b":"rhodesia","flags":[],"st":"auto-whole"}
 {"w":"rhodesian","r":61000,"src":"whole","b":"rhodesian","flags":[],"st":"auto-whole"}
 {"w":"rhodium","r":28823,"src":"whole","b":"rhodium","flags":[],"st":"auto-whole"}
-{"w":"rhodochrosite","r":152543,"src":"whole","b":"rhodochrosite","flags":[],"st":"auto-whole"}
+{"w":"rhodochrosite","r":152543,"src":"engine","b":"rh·o·doc·hro·s·it·e","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"rhododendron","r":45016,"src":"whole","b":"rhododendron","flags":[],"st":"auto-whole"}
 {"w":"rhodolite","r":99821,"src":"data","b":"rhodo·lite","flags":[],"st":"auto-data"}
 {"w":"rhodomontade","r":9000000,"src":"whole","b":"rhodomontade","flags":[],"st":"auto-whole"}
@@ -2328,7 +2330,7 @@
 {"w":"ribavirin","r":61788,"src":"whole","b":"ribavirin","flags":[],"st":"auto-whole"}
 {"w":"ribband","r":9000000,"src":"data","b":"rib·band","flags":[],"st":"auto-data"}
 {"w":"ribbed","r":24248,"src":"whole","b":"ribbed","flags":[],"st":"auto-whole"}
-{"w":"ribbing","r":78109,"src":"engine","b":"rib·bi·ng","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"ribbing","r":78109,"src":"whole","b":"ribbing","flags":[],"st":"auto-whole"}
 {"w":"ribbon","r":7333,"src":"whole","b":"ribbon","flags":[],"st":"auto-whole"}
 {"w":"ribbonfish","r":9000000,"src":"data","b":"ribbon·fish","flags":[],"st":"auto-data"}
 {"w":"ribbonlike","r":9000000,"src":"whole","b":"ribbonlike","flags":[],"st":"auto-whole"}
@@ -2492,7 +2494,7 @@
 {"w":"rinderpest","r":160026,"src":"whole","b":"rinderpest","flags":[],"st":"auto-whole"}
 {"w":"ring","r":1516,"src":"whole","b":"ring","flags":[],"st":"auto-whole"}
 {"w":"ringdove","r":9000000,"src":"data","b":"ring·dove","flags":[],"st":"auto-data"}
-{"w":"ringed","r":49471,"src":"engine","b":"rin·ge·d","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"ringed","r":49471,"src":"whole","b":"ringed","flags":[],"st":"auto-whole"}
 {"w":"ringer","r":15541,"src":"data","b":"ring·er","flags":[],"st":"auto-data"}
 {"w":"ringgit","r":27963,"src":"whole","b":"ringgit","flags":[],"st":"auto-whole"}
 {"w":"ringhals","r":9000000,"src":"whole","b":"ringhals","flags":[],"st":"auto-whole"}
@@ -2581,7 +2583,7 @@
 {"w":"riverside","r":7569,"src":"data","b":"river·side","flags":[],"st":"auto-data"}
 {"w":"rivet","r":34908,"src":"whole","b":"rivet","flags":[],"st":"auto-whole"}
 {"w":"riveter","r":100408,"src":"data","b":"rivet·er","flags":[],"st":"auto-data"}
-{"w":"riveting","r":37759,"src":"engine","b":"riv·e·ting","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"riveting","r":37759,"src":"whole","b":"riveting","flags":[],"st":"auto-whole"}
 {"w":"rivetter","r":9000000,"src":"whole","b":"rivetter","flags":[],"st":"auto-whole"}
 {"w":"riviera","r":13377,"src":"whole","b":"riviera","flags":[],"st":"auto-whole"}
 {"w":"rivina","r":9000000,"src":"whole","b":"rivina","flags":[],"st":"auto-whole"}
@@ -2636,8 +2638,8 @@
 {"w":"robespierre","r":116524,"src":"whole","b":"robespierre","flags":[],"st":"auto-whole"}
 {"w":"robin","r":5591,"src":"whole","b":"robin","flags":[],"st":"auto-whole"}
 {"w":"robinia","r":190628,"src":"engine","b":"r·o·bi·nia","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"robinson","r":5592,"src":"whole","b":"robinson","flags":[],"st":"auto-whole"}
-{"w":"robitussin","r":86209,"src":"whole","b":"robitussin","flags":[],"st":"auto-whole"}
+{"w":"robinson","r":5592,"src":"engine","b":"r·o·bi·n·s·on","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"robitussin","r":86209,"src":"engine","b":"r·o·bi·tu·s·s·in","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"roble","r":153270,"src":"whole","b":"roble","flags":[],"st":"auto-whole"}
 {"w":"robot","r":5190,"src":"whole","b":"robot","flags":[],"st":"auto-whole"}
 {"w":"robotic","r":17963,"src":"data","b":"robot·ic","flags":[],"st":"auto-data"}
@@ -2702,7 +2704,7 @@
 {"w":"rofecoxib","r":85753,"src":"whole","b":"rofecoxib","flags":[],"st":"auto-whole"}
 {"w":"rogaine","r":48193,"src":"whole","b":"rogaine","flags":[],"st":"auto-whole"}
 {"w":"rogation","r":9000000,"src":"whole","b":"rogation","flags":[],"st":"auto-whole"}
-{"w":"rogers","r":6061,"src":"engine","b":"r·o·ge·rs","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"rogers","r":6061,"src":"engine","b":"r·o·ge·r·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"roget","r":24213,"src":"engine","b":"r·o·ge·t","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"rogue","r":10656,"src":"whole","b":"rogue","flags":[],"st":"auto-whole"}
 {"w":"roguery","r":9000000,"src":"whole","b":"roguery","flags":[],"st":"auto-whole"}
@@ -2757,7 +2759,7 @@
 {"w":"romanoff","r":137767,"src":"engine","b":"r·o·man·off","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"romanov","r":78989,"src":"engine","b":"r·o·m·a·nov","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
 {"w":"romans","r":11241,"src":"engine","b":"r·o·man·s","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"romansh","r":117529,"src":"engine","b":"r·o·man·sh","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"romansh","r":117529,"src":"engine","b":"r·o·man·s·h","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"romantic","r":5058,"src":"whole","b":"romantic","flags":[],"st":"auto-whole"}
 {"w":"romantically","r":72170,"src":"engine","b":"r·o·man·t·ical·ly","flags":["stray","unknown"],"st":"todo"}
 {"w":"romanticisation","r":9000000,"src":"engine","b":"r·o·man·t·i·cis·ation","flags":["stray","lowconf","linkers","unknown"],"st":"todo"}
@@ -2836,7 +2838,7 @@
 {"w":"ropey","r":214439,"src":"data","b":"rope·y","flags":[],"st":"auto-data"}
 {"w":"rophy","r":9000000,"src":"engine","b":"r·op·h·y","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"ropiness","r":9000000,"src":"data","b":"rop·i·ness","flags":[],"st":"auto-data"}
-{"w":"roping","r":47632,"src":"engine","b":"r·op·ing","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"roping","r":47632,"src":"engine","b":"r·op·ing","flags":["stray","unknown"],"st":"todo"}
 {"w":"ropy","r":271582,"src":"engine","b":"r·op·y","flags":["stray","unknown"],"st":"todo"}
 {"w":"roquefort","r":89734,"src":"whole","b":"roquefort","flags":[],"st":"auto-whole"}
 {"w":"roquette","r":240104,"src":"whole","b":"roquette","flags":[],"st":"auto-whole"}
@@ -2875,7 +2877,7 @@
 {"w":"rosiness","r":9000000,"src":"data","b":"ros·i·ness","flags":[],"st":"auto-data"}
 {"w":"rosinweed","r":9000000,"src":"data","b":"rosin·weed","flags":[],"st":"auto-data"}
 {"w":"rosita","r":79428,"src":"whole","b":"rosita","flags":[],"st":"auto-whole"}
-{"w":"rosmarinus","r":216348,"src":"engine","b":"ros·marin·us","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"rosmarinus","r":216348,"src":"engine","b":"ros·marin·u·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"ross","r":4710,"src":"whole","b":"ross","flags":[],"st":"auto-whole"}
 {"w":"rossbach","r":241938,"src":"whole","b":"rossbach","flags":[],"st":"auto-whole"}
 {"w":"rossetti","r":54385,"src":"whole","b":"rossetti","flags":[],"st":"auto-whole"}
@@ -3022,7 +3024,7 @@
 {"w":"rubbernecker","r":9000000,"src":"data","b":"rubberneck·er","flags":[],"st":"auto-data"}
 {"w":"rubberstamp","r":285536,"src":"whole","b":"rubberstamp","flags":[],"st":"auto-whole"}
 {"w":"rubbery","r":81195,"src":"data","b":"rubb·er·y","flags":[],"st":"auto-data"}
-{"w":"rubbing","r":18405,"src":"engine","b":"rub·bi·ng","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"rubbing","r":18405,"src":"whole","b":"rubbing","flags":[],"st":"auto-whole"}
 {"w":"rubbish","r":15088,"src":"whole","b":"rubbish","flags":[],"st":"auto-whole"}
 {"w":"rubbishy","r":9000000,"src":"data","b":"rubbish·y","flags":[],"st":"auto-data"}
 {"w":"rubble","r":28099,"src":"whole","b":"rubble","flags":[],"st":"auto-whole"}
@@ -3034,8 +3036,8 @@
 {"w":"rubens","r":37464,"src":"whole","b":"rubens","flags":[],"st":"auto-whole"}
 {"w":"rubeola","r":205637,"src":"whole","b":"rubeola","flags":[],"st":"auto-whole"}
 {"w":"rubia","r":74085,"src":"engine","b":"r·u·bi·a","flags":["stray","lowconf","unknown"],"st":"todo"}
-{"w":"rubiaceae","r":134046,"src":"whole","b":"rubiaceae","flags":[],"st":"auto-whole"}
-{"w":"rubiales","r":9000000,"src":"engine","b":"r·u·bi·al·es","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"rubiaceae","r":134046,"src":"engine","b":"r·u·bi·ace·ae","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"rubiales","r":9000000,"src":"engine","b":"r·u·bi·al·es","flags":["stray","unknown"],"st":"todo"}
 {"w":"rubicelle","r":9000000,"src":"whole","b":"rubicelle","flags":[],"st":"auto-whole"}
 {"w":"rubicon","r":39309,"src":"engine","b":"r·u·bi·con","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"rubicund","r":9000000,"src":"whole","b":"rubicund","flags":[],"st":"auto-whole"}
@@ -3088,7 +3090,7 @@
 {"w":"rugby","r":5076,"src":"whole","b":"rugby","flags":[],"st":"auto-whole"}
 {"w":"rugelach","r":9000000,"src":"whole","b":"rugelach","flags":[],"st":"auto-whole"}
 {"w":"rugged","r":12141,"src":"whole","b":"rugged","flags":[],"st":"auto-whole"}
-{"w":"ruggedisation","r":9000000,"src":"engine","b":"rug·ge·dis·ation","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"ruggedisation","r":9000000,"src":"engine","b":"rug·ge·di·s·ation","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"ruggedise","r":9000000,"src":"engine","b":"rug·ge·d·ise","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"ruggedization","r":9000000,"src":"data","b":"rugged·ization","flags":[],"st":"auto-data"}
 {"w":"ruggedize","r":9000000,"src":"engine","b":"rug·ge·d·ize","flags":["stray","lowconf","unknown"],"st":"todo"}
@@ -3115,7 +3117,7 @@
 {"w":"rum","r":16341,"src":"whole","b":"rum","flags":[],"st":"auto-whole"}
 {"w":"rumania","r":66599,"src":"whole","b":"rumania","flags":[],"st":"auto-whole"}
 {"w":"rumanian","r":29644,"src":"data","b":"rumania·n","flags":[],"st":"auto-data"}
-{"w":"rumansh","r":9000000,"src":"engine","b":"r·u·man·sh","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"rumansh","r":9000000,"src":"engine","b":"r·u·man·s·h","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"rumba","r":44604,"src":"whole","b":"rumba","flags":[],"st":"auto-whole"}
 {"w":"rumble","r":18226,"src":"whole","b":"rumble","flags":[],"st":"auto-whole"}
 {"w":"rumbling","r":57919,"src":"whole","b":"rumbling","flags":[],"st":"auto-whole"}
@@ -3156,7 +3158,7 @@
 {"w":"runnel","r":9000000,"src":"whole","b":"runnel","flags":[],"st":"auto-whole"}
 {"w":"runner","r":7723,"src":"data","b":"runn·er","flags":[],"st":"auto-data"}
 {"w":"runniness","r":9000000,"src":"whole","b":"runniness","flags":[],"st":"auto-whole"}
-{"w":"running","r":1102,"src":"whole","b":"running","flags":[],"st":"auto-whole"}
+{"w":"running","r":1102,"src":"whole","b":"running","flags":[],"st":"fixed","note":"present participle of run; rel pointer"}
 {"w":"runny","r":45988,"src":"data","b":"runn·y","flags":[],"st":"auto-data"}
 {"w":"runoff","r":14580,"src":"data","b":"run·off","flags":[],"st":"auto-data"}
 {"w":"runproof","r":9000000,"src":"data","b":"run·proof","flags":[],"st":"auto-data"}

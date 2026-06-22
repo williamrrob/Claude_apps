@@ -19,11 +19,65 @@
     "official":       [{"s":"offic","k":"root","g":"duty, service","o":"Latin"},{"s":"ial","k":"suffix","g":"pertaining to"}],
     "limited":        [{"s":"limit","k":"root","g":"boundary","o":"Latin"},{"s":"ed","k":"suffix","g":"past tense"}],
     "visual":         [{"s":"vis","k":"root","g":"to see","o":"Latin"},{"s":"ual","k":"suffix","g":"pertaining to"}],
-    "responsibility": [{"s":"re","k":"prefix","g":"back","o":"Latin"},{"s":"spons","k":"root","g":"to pledge","o":"Latin"},{"s":"ibil","k":"suffix","g":"able to"},{"s":"ity","k":"suffix","g":"state of"}]
+    "responsibility": [{"s":"re","k":"prefix","g":"back","o":"Latin"},{"s":"spons","k":"root","g":"to pledge","o":"Latin"},{"s":"ibil","k":"suffix","g":"able to"},{"s":"ity","k":"suffix","g":"state of"}],
+
+    "cactus":    [{"s":"cact","k":"root","g":"cactus","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+    "cacti":     [{"s":"cact","k":"root","g":"cactus","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
+    "fungus":    [{"s":"fung","k":"root","g":"fungus, mushroom","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+    "fungi":     [{"s":"fung","k":"root","g":"fungus, mushroom","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
+    "nucleus":   [{"s":"nucle","k":"root","g":"kernel, core","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+    "nuclei":    [{"s":"nucle","k":"root","g":"kernel, core","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
+    "stimulus":  [{"s":"stimul","k":"root","g":"goad, spur","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+    "stimuli":   [{"s":"stimul","k":"root","g":"goad, spur","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
+    "alumnus":   [{"s":"alumn","k":"root","g":"foster son, pupil","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+    "alumni":    [{"s":"alumn","k":"root","g":"foster son, pupil","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
+    "radius":    [{"s":"radi","k":"root","g":"ray, spoke","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+    "radii":     [{"s":"radi","k":"root","g":"ray, spoke","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
+    "focus":     [{"s":"foc","k":"root","g":"hearth, focal point","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+    "foci":      [{"s":"foc","k":"root","g":"hearth, focal point","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
+    "syllabus":  [{"s":"syllab","k":"root","g":"list, syllabus","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+    "syllabi":   [{"s":"syllab","k":"root","g":"list, syllabus","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
+    "terminus":  [{"s":"termin","k":"root","g":"boundary, end","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+    "termini":   [{"s":"termin","k":"root","g":"boundary, end","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
+    "bacillus":  [{"s":"bacill","k":"root","g":"little rod","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
+
+    "thesis":    [{"s":"thes","k":"root","g":"to place, set down","o":"Greek"},{"s":"is","k":"suffix","g":"singular (Greek)"}],
+    "theses":    [{"s":"thes","k":"root","g":"to place, set down","o":"Greek"},{"s":"es","k":"suffix","g":"plural (Greek)"}]
   },
   "whole": [
     "phone", "movie", "blog", "committee", "marketing", "getting", "homepage",
     "logo", "dating", "spanish", "setting", "european", "interesting", "rating",
     "archives"
-  ]
+  ],
+  "_rel_note": "Inflected / derived forms descend from a base word and point at it ('plural of cactus', 'past tense of run', 'derived from psychology') rather than standing alone. 'plurals' is shorthand (=> 'plural of'); 'relations' is the general {t,l} form. build-curated.js writes a 'rel' field on the record.",
+  "plurals": {
+    "cacti": "cactus",
+    "fungi": "fungus",
+    "nuclei": "nucleus",
+    "stimuli": "stimulus",
+    "alumni": "alumnus",
+    "radii": "radius",
+    "foci": "focus",
+    "syllabi": "syllabus",
+    "termini": "terminus",
+    "bacilli": "bacillus",
+    "theses": "thesis",
+    "analyses": "analysis",
+    "crises": "crisis",
+    "diagnoses": "diagnosis",
+    "hypotheses": "hypothesis",
+    "parentheses": "parenthesis",
+    "neuroses": "neurosis",
+    "psychoses": "psychosis"
+  },
+  "relations": {
+    "ran": { "t": "past tense of", "l": "run" },
+    "running": { "t": "present participle of", "l": "run" },
+    "swam": { "t": "past tense of", "l": "swim" },
+    "swum": { "t": "past participle of", "l": "swim" },
+    "ate": { "t": "past tense of", "l": "eat" },
+    "eaten": { "t": "past participle of", "l": "eat" },
+    "psychologist": { "t": "derived from", "l": "psychology" },
+    "biologist": { "t": "derived from", "l": "biology" }
+  }
 }

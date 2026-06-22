@@ -164,8 +164,8 @@
 {"w":"quatrain","r":144060,"src":"whole","b":"quatrain","flags":[],"st":"auto-whole"}
 {"w":"quattrocento","r":254339,"src":"whole","b":"quattrocento","flags":[],"st":"auto-whole"}
 {"w":"quaver","r":236376,"src":"whole","b":"quaver","flags":[],"st":"auto-whole"}
-{"w":"quavering","r":229598,"src":"engine","b":"qu·a·veri·ng","flags":["lowconf","unknown"],"st":"todo"}
-{"w":"quaveringly","r":9000000,"src":"engine","b":"qu·a·veri·ng·ly","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"quavering","r":229598,"src":"engine","b":"qu·a·ver·ing","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"quaveringly","r":9000000,"src":"engine","b":"qu·a·ver·ing·ly","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"quay","r":19447,"src":"whole","b":"quay","flags":[],"st":"auto-whole"}
 {"w":"quayage","r":9000000,"src":"data","b":"quay·age","flags":[],"st":"auto-data"}
 {"w":"queasily","r":9000000,"src":"data","b":"queasi·ly","flags":[],"st":"auto-data"}
@@ -193,7 +193,7 @@
 {"w":"quenching","r":50528,"src":"whole","b":"quenching","flags":[],"st":"auto-whole"}
 {"w":"quenchless","r":9000000,"src":"data","b":"quench·less","flags":[],"st":"auto-data"}
 {"w":"quercitron","r":9000000,"src":"whole","b":"quercitron","flags":[],"st":"auto-whole"}
-{"w":"quercus","r":45872,"src":"engine","b":"quer·cus","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"quercus","r":45872,"src":"engine","b":"quer·cu·s","flags":["stray","lowconf","unknown"],"st":"todo"}
 {"w":"querier","r":166970,"src":"engine","b":"quer·i·er","flags":["stray","unknown"],"st":"todo"}
 {"w":"quern","r":189935,"src":"engine","b":"quer·n","flags":["stray","unknown"],"st":"todo"}
 {"w":"querulous","r":206421,"src":"whole","b":"querulous","flags":[],"st":"auto-whole"}
@@ -208,7 +208,7 @@
 {"w":"questionably","r":201319,"src":"data","b":"question·abl·y","flags":[],"st":"auto-data"}
 {"w":"questioner","r":63572,"src":"data","b":"question·er","flags":[],"st":"auto-data"}
 {"w":"questioning","r":13326,"src":"data","b":"question·ing","flags":[],"st":"auto-data"}
-{"w":"questioningly","r":186233,"src":"engine","b":"quest·ion·ing·ly","flags":["unknown"],"st":"todo"}
+{"w":"questioningly","r":186233,"src":"engine","b":"quest·ion·ing·ly","flags":[],"st":"todo-low"}
 {"w":"questionnaire","r":8404,"src":"data","b":"questionn·aire","flags":[],"st":"auto-data"}
 {"w":"quetch","r":9000000,"src":"whole","b":"quetch","flags":[],"st":"auto-whole"}
 {"w":"quetzal","r":46297,"src":"whole","b":"quetzal","flags":[],"st":"auto-whole"}
@@ -287,12 +287,12 @@
 {"w":"quira","r":9000000,"src":"engine","b":"quir·a","flags":["stray","unknown"],"st":"todo"}
 {"w":"quire","r":79195,"src":"whole","b":"quire","flags":[],"st":"auto-whole"}
 {"w":"quirk","r":42291,"src":"whole","b":"quirk","flags":[],"st":"auto-whole"}
-{"w":"quirkiness","r":157316,"src":"engine","b":"quir·ki·ness","flags":["unknown"],"st":"todo"}
+{"w":"quirkiness","r":157316,"src":"engine","b":"quir·k·ine·s·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"quirky","r":21297,"src":"engine","b":"quir·k·y","flags":["stray","unknown"],"st":"todo"}
 {"w":"quirt","r":253323,"src":"engine","b":"quir·t","flags":["stray","unknown"],"st":"todo"}
-{"w":"quiscalus","r":320122,"src":"engine","b":"quis·c·al·us","flags":["stray","lowconf","unknown"],"st":"todo"}
+{"w":"quiscalus","r":320122,"src":"engine","b":"quis·c·al·u·s","flags":["stray","unknown"],"st":"todo"}
 {"w":"quisling","r":189882,"src":"whole","b":"quisling","flags":[],"st":"auto-whole"}
-{"w":"quislingism","r":9000000,"src":"whole","b":"quislingism","flags":[],"st":"auto-whole"}
+{"w":"quislingism","r":9000000,"src":"engine","b":"quis·l·ing·ism","flags":["stray","unknown"],"st":"todo"}
 {"w":"quit","r":6026,"src":"whole","b":"quit","flags":[],"st":"auto-whole"}
 {"w":"quitclaim","r":112772,"src":"whole","b":"quitclaim","flags":[],"st":"auto-whole"}
 {"w":"quite","r":1390,"src":"whole","b":"quite","flags":[],"st":"auto-whole"}
@@ -301,7 +301,7 @@
 {"w":"quittance","r":9000000,"src":"data","b":"quitt·ance","flags":[],"st":"auto-data"}
 {"w":"quitter","r":91010,"src":"data","b":"quitt·er","flags":[],"st":"auto-data"}
 {"w":"quiver","r":43657,"src":"whole","b":"quiver","flags":[],"st":"auto-whole"}
-{"w":"quivering","r":53983,"src":"engine","b":"qu·i·veri·ng","flags":["lowconf","unknown"],"st":"todo"}
+{"w":"quivering","r":53983,"src":"engine","b":"qu·i·ver·ing","flags":["lowconf","unknown"],"st":"todo"}
 {"w":"quixotic","r":78769,"src":"whole","b":"quixotic","flags":[],"st":"auto-whole"}
 {"w":"quixotically","r":9000000,"src":"whole","b":"quixotically","flags":[],"st":"auto-whole"}
 {"w":"quixotism","r":9000000,"src":"whole","b":"quixotism","flags":[],"st":"auto-whole"}
