@@ -11,7 +11,7 @@ const MORPHEMES = {
     { id: "ab", forms: ["abs", "ab"], origin: "Latin", source: "ab", meaning: "away from" },
     { id: "ad", forms: ["ac", "af", "ag", "al", "ap", "as", "at", "ad", "a"], origin: "Latin", source: "ad", meaning: "to, toward" },
     { id: "ambi", forms: ["ambi", "amphi"], origin: "Latin", source: "ambi", meaning: "both, around" },
-    { id: "ante", forms: ["ante", "anti"], origin: "Latin", source: "ante", meaning: "before" },
+    { id: "ante", forms: ["ante"], origin: "Latin", source: "ante", meaning: "before" },
     { id: "anti", forms: ["anti", "ant"], origin: "Greek", source: "anti", meaning: "against, opposite" },
     { id: "auto", forms: ["auto", "aut"], origin: "Greek", source: "autos", meaning: "self" },
     { id: "bene", forms: ["bene", "ben"], origin: "Latin", source: "bene", meaning: "well, good" },

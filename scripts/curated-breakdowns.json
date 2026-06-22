@@ -1,0 +1,14 @@
+{
+  "_note": "Hand-authored breakdowns for boundaries neither the rules engine nor MorphoLex can represent — e.g. the Greek root bios surfacing as a lone 'b' before -ial/-ic, which can't be a general engine rule (a one-letter root would mis-match everywhere). Highest priority: build-curated.js overrides any other breakdown. Each part: s=surface, k=prefix|root|suffix, g=gloss, o=origin.",
+  "words": {
+    "microbe":        [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"be","k":"root","g":"life","o":"Greek"}],
+    "microbial":      [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ial","k":"suffix","g":"pertaining to"}],
+    "microbic":       [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"}],
+    "antimicrobial":  [{"s":"anti","k":"prefix","g":"against","o":"Greek"},{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ial","k":"suffix","g":"pertaining to"}],
+    "aerobe":         [{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"be","k":"root","g":"life","o":"Greek"}],
+    "aerobic":        [{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"}],
+    "aerobics":       [{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"},{"s":"s","k":"suffix","g":"plural"}],
+    "anaerobe":       [{"s":"an","k":"prefix","g":"without","o":"Greek"},{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"be","k":"root","g":"life","o":"Greek"}],
+    "anaerobic":      [{"s":"an","k":"prefix","g":"without","o":"Greek"},{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"}]
+  }
+}
