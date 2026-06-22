@@ -319,6 +319,13 @@ body {
 .sense { display: grid; grid-template-columns: 16px 1fr; gap: 8px; margin-top: 9px; font-size: 15px; line-height: 1.45; }
 .sense .num { color: var(--muted); font-size: 13px; font-weight: 600; }
 .sense .pos { font-style: italic; color: var(--suffix); font-size: 13px; margin-right: 6px; }
+/* domain / "location in meaning space" tag for a sense (computing, law, biology…) */
+.sense-dom {
+  display: inline-block; margin-right: 6px; padding: 0 7px;
+  font-size: 11px; font-weight: 600; letter-spacing: .02em; text-transform: lowercase;
+  color: var(--bg, #1a1714); background: var(--accent, #b5651d);
+  border-radius: 9px; vertical-align: 1px;
+}
 .sense-ex { display: block; margin-top: 3px; color: var(--muted); font-style: italic; font-size: 13.5px; }
 .def-loading { color: var(--muted); font-style: italic; }
 .hist { font-size: 15px; line-height: 1.5; margin-top: 10px; }

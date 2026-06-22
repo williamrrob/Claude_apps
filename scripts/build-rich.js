@@ -55,6 +55,58 @@ function pickWords(arr, max, exclude) {
 }
 function shardKey(w) { return w.slice(0, 2).toLowerCase(); }
 
+const MAX_SENSES = 12; // was effectively 4; lifted so distinct senses survive
+// Collapse a sense's Wiktionary topics into one concise domain label (its
+// "location" in meaning space). Broad umbrella topics are skipped in favour of a
+// specific one (computing over sciences).
+const BROAD_TOPICS = new Set([
+  "sciences", "natural-sciences", "physical-sciences", "human-sciences",
+  "social-sciences", "applied-sciences", "engineering", "mathematics",
+]);
+function pickDomain(topics) {
+  if (!topics || !topics.length) return null;
+  const specific = topics.find((t) => !BROAD_TOPICS.has(t));
+  return specific || topics[0];
+}
+function normGloss(g) { return String(g || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim().slice(0, 45); }
+// All non-archaic senses of one part-of-speech block, with a domain tag.
+function extractSenses(o, limit) {
+  const out = [];
+  for (const s of o.senses || []) {
+    if (out.length >= limit) break;
+    if (!s.glosses || !s.glosses.length) continue;
+    if (s.tags && (s.tags.includes("obsolete") || s.tags.includes("archaic"))) continue;
+    const entry = { p: posAbbr(o.pos), g: s.glosses[s.glosses.length - 1] };
+    const ex = (s.examples || []).find((e) => e.text && e.text.length < 160);
+    if (ex) entry.x = ex.text;
+    const dom = pickDomain(s.topics);
+    if (dom) entry.dom = dom;
+    out.push(entry);
+  }
+  return out;
+}
+// Append WordNet senses (dictionary.json) Wiktionary didn't cover, deduped by gloss.
+function mergeWordNet(d, wnEntry, limit) {
+  if (!wnEntry) return d;
+  const have = new Set(d.map((x) => normGloss(x.g)));
+  for (const s of wnEntry) {
+    if (d.length >= limit) break;
+    const g = s.d; if (!g) continue;
+    const key = normGloss(g);
+    if (have.has(key)) continue;
+    have.add(key);
+    d.push({ p: s.p, g: g });
+  }
+  return d;
+}
+
+// Reusable extraction helpers (used by build-rich-pilot.js for per-word fetches).
+module.exports = { extractSenses, pickDomain, mergeWordNet, posAbbr, cleanEt, normGloss, MAX_SENSES };
+
+// Below: the full-dump streaming build. Guarded so requiring this file for its
+// helpers doesn't hang waiting on stdin.
+if (require.main === module) {
+
 const rec = Object.create(null);
 function ensure(w) { return rec[w] || (rec[w] = { d: [], s: [], a: [], r: [] }); }
 
@@ -69,15 +121,7 @@ rl.on("line", function (line) {
   if (!w || !target.has(w) || !o.senses) return;
 
   const r = ensure(w);
-  for (const s of o.senses) {
-    if (r.d.length >= 4) break;
-    if (!s.glosses || !s.glosses.length) continue;
-    if (s.tags && (s.tags.includes("obsolete") || s.tags.includes("archaic"))) continue;
-    const entry = { p: posAbbr(o.pos), g: s.glosses[s.glosses.length - 1] };
-    const ex = (s.examples || []).find((e) => e.text && e.text.length < 160);
-    if (ex) entry.x = ex.text;
-    r.d.push(entry);
-  }
+  if (r.d.length < MAX_SENSES) r.d = r.d.concat(extractSenses(o, MAX_SENSES - r.d.length));
   if (!r.e && o.etymology_text) { const e = cleanEt(o.etymology_text); if (e) r.e = e; }
   if (!r.i && o.sounds) {
     const ga = o.sounds.find((s) => s.ipa && (s.tags || []).some((t) => /General.American|GenAm|\bUS\b/.test(t)))
@@ -142,8 +186,8 @@ rl.on("close", function () {
     const r = rec[w] || {};
     const out = {};
 
-    let d = (r.d || []).slice(0, 4);
-    if (!d.length && dict[w]) d = dict[w].slice(0, 4).map((s) => ({ p: s.p, g: s.d }));
+    let d = (r.d || []).slice(0, MAX_SENSES);
+    d = mergeWordNet(d, dict[w], MAX_SENSES); // pull in WordNet senses Wiktionary missed
     if (d.length) out.d = d;
     if (r.e) out.e = r.e;
 
@@ -182,3 +226,5 @@ rl.on("close", function () {
   console.log("words with data:", withData, "of", target.size);
   console.log("shard files:", files, "total MB:", (total / 1048576).toFixed(2));
 });
+
+} // end require.main guard

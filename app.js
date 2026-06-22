@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "25";
+  const DATA_V = "26";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -1064,7 +1064,9 @@
           const row = el("div", "sense");
           row.appendChild(el("span", "num", String(i + 1)));
           const body = el("span");
-          let html = '<span class="pos">' + escapeHtml(s.p) + "</span>" + escapeHtml(s.g);
+          let html = '<span class="pos">' + escapeHtml(s.p) + "</span>";
+          if (s.dom) html += '<span class="sense-dom">' + escapeHtml(s.dom.replace(/-/g, " ")) + "</span>";
+          html += escapeHtml(s.g);
           if (s.x) html += '<span class="sense-ex">“' + escapeHtml(s.x) + "”</span>";
           body.innerHTML = html;
           row.appendChild(body);
