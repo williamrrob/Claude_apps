@@ -187,8 +187,9 @@
       if (wp.proper) capitalizeHeadword(word);
       if (wp.type === "standard" && wp.thumb) {
         const card = buildImageCard(wp);
-        const thes = cardsEl.querySelector ? cardsEl.querySelector(".thes-card") : null;
-        if (thes) cardsEl.insertBefore(card, thes); // near the end, before related words
+        const def = cardsEl.querySelector ? cardsEl.querySelector(".def-card") : null;
+        if (def && def.nextSibling) cardsEl.insertBefore(card, def.nextSibling); // just below the definition
+        else if (def) cardsEl.appendChild(card);
         else cardsEl.appendChild(card);
         requestAnimationFrame(function () { card.classList.add("in"); });
       }
@@ -304,6 +305,7 @@
     updateNav();
   }
   function goBack() {
+    if (treeReturn && treeRoot) { returnToTree(); return; } // came from a tree → back into it
     if (navIndex <= 0) return;
     navIndex--; navigating = true; updateNav();
     Promise.resolve(run(navStack[navIndex])).then(function () { navigating = false; });
@@ -346,6 +348,7 @@
   async function run(rawWord) {
     const word = String(rawWord || "").trim();
     if (!word) return;
+    treeReturn = openingFromTree; openingFromTree = false; // came from a tree?
     const token = ++runToken;
     input.value = word;
     input.blur(); // dismiss the keyboard so the dock returns to the bottom
@@ -486,13 +489,12 @@
   function buildEntry(word, rec, parts) {
     entryEl.className = "entry"; entryEl.innerHTML = "";
     const ruleRow = el("div", "entry-rule-row");
-    // tree button (top-left) — collapse this card into the word-family tree
-    if (parts && parts.some(function (p) { return p.kind === "root" && p.id; })) {
-      const tb = el("button", "tree-btn"); tb.type = "button";
-      tb.setAttribute("aria-label", "Show " + word + " in the word-family tree");
-      tb.innerHTML = '<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M7.2 11 16 6.6M7.2 13 16 17.4"/></svg>';
-      tb.addEventListener("click", function () { openTree(word, parts); });
-      ruleRow.appendChild(tb);
+    // when this word was reached from a tree, offer a way to shrink back into it
+    if (treeReturn && treeRoot) {
+      const bk = el("button", "tree-btn", "✕"); bk.type = "button";
+      bk.setAttribute("aria-label", "Back to the word-family tree");
+      bk.addEventListener("click", returnToTree);
+      ruleRow.appendChild(bk);
     }
     ruleRow.appendChild(el("span", "entry-rule"));
     const pos = rec && rec.d && rec.d[0] && rec.d[0].p;
@@ -577,7 +579,7 @@
 
     // Skip the animation for single-unit words ("ism"), reduced-motion users, and
     // when revisiting via the back/forward buttons (it's not a fresh discovery).
-    if (reduceMotion || navigating || bpEls.length <= 1) {
+    if (reduceMotion || navigating || treeReturn || bpEls.length <= 1) {
       bd.classList.add("split"); bd.classList.add("stacked");
       bpEls.forEach(function (bp) { swapToSource(bp); bp.classList.add("open"); });
     } else {
@@ -752,6 +754,14 @@
     }
     col.appendChild(info);
     main.appendChild(col);
+    // per-root tree button — explore the family of this particular root
+    if (p.kind === "root" && p.id) {
+      const tb = el("button", "bp-tree"); tb.type = "button";
+      tb.setAttribute("aria-label", "Word-family tree for " + (p.source || p.surface));
+      tb.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.3"/><circle cx="18" cy="6" r="2.3"/><circle cx="18" cy="18" r="2.3"/><path d="M7.1 11 16 6.6M7.1 13 16 17.4"/></svg>';
+      tb.addEventListener("click", function (e) { e.stopPropagation(); openTreeRoot(p, currentWord); });
+      main.appendChild(tb);
+    }
     inner.appendChild(main);
     bp.appendChild(inner);
 
@@ -1021,7 +1031,7 @@
 
   // ---------- definition ----------
   function buildDefinitionCard(recP, token) {
-    const card = el("div", "card");
+    const card = el("div", "card def-card");
     card.appendChild(el("div", "cap", "Definition"));
     const slot = el("div", "def-meaning");
     slot.innerHTML = '<span class="def-loading">looking it up…</span>';
@@ -1368,36 +1378,49 @@
 
   let treeRoot = null;     // the family tree (grows in place as you expand)
   let treeToken = 0;
-  const treeCache = {};    // word -> promise of its family root node
+  let openingFromTree = false; // set when a word is opened by tapping a tree chip
+  let treeReturn = false;      // current word came from a tree → offer a way back
+  const treeCache = {};    // root id -> promise of its family root node
   function closeTree() { treeEl.hidden = true; treeEl.classList.remove("tree-in"); treeEl.innerHTML = ""; treeToken++; }
 
-  // Build the family in the background as the word card opens, so the tree is
-  // ready to animate in instantly when the tree button is tapped.
+  // Build each root's family in the background as the word card opens, so a tree
+  // animates in instantly when its button is tapped.
   function prefetchTree(word, parts) {
-    const rootPart = (parts || []).filter(function (p) { return p.kind === "root" && p.id; })[0];
-    if (!rootPart || treeCache[word]) return;
-    treeCache[word] = loadData().then(async function () {
-      const fam = (MORPH[rootPart.id] || []).filter(function (w) { return w !== word && /^[a-z]{2,}$/.test(w) && w.length <= 16; });
-      const valid = await validateWords(fam, 200);
-      return buildFamilyTree(rootPart, word, valid);
-    }).catch(function () { return null; });
+    (parts || []).forEach(function (rp) {
+      if (rp.kind !== "root" || !rp.id || treeCache[rp.id]) return;
+      treeCache[rp.id] = loadData().then(async function () {
+        const fam = (MORPH[rp.id] || []).filter(function (w) { return w !== word && /^[a-z]{2,}$/.test(w) && w.length <= 16; });
+        const valid = await validateWords(fam, 200);
+        return buildFamilyTree(rp, word, valid);
+      }).catch(function () { return null; });
+    });
   }
 
-  async function openTree(word, parts) {
-    const rootPart = (parts || []).filter(function (p) { return p.kind === "root" && p.id; })[0];
-    if (!rootPart) return;
+  async function openTreeRoot(rootPart, word) {
+    if (!rootPart || !rootPart.id) return;
     const token = ++treeToken;
-    prefetchTree(word, parts);
+    if (!treeCache[rootPart.id]) prefetchTree(word, [rootPart]);
     contentEl.classList.add("to-tree"); // the card contracts away
-    const root = await treeCache[word];
-    await delay(170);                   // let the contraction read
+    const root = await treeCache[rootPart.id];
+    await delay(170);
     if (token !== treeToken) { contentEl.classList.remove("to-tree"); return; }
     contentEl.classList.remove("to-tree");
     if (!root) { closeTree(); return; }
-    treeEl.hidden = false;
-    treeEl.classList.add("tree-in");
+    treeEl.hidden = false; treeEl.classList.add("tree-in");
     treeRoot = root; treeRoot._open = true;
     renderTree(null);
+  }
+  // Shrink the current word page back into the tree it came from (X / back).
+  function returnToTree() {
+    if (!treeRoot) return;
+    const token = ++treeToken;
+    contentEl.classList.add("to-tree");
+    setTimeout(function () {
+      if (token !== treeToken) return;
+      contentEl.classList.remove("to-tree");
+      treeEl.hidden = false; treeEl.classList.add("tree-in");
+      renderTree(null);
+    }, 190);
   }
 
   // Nest words by derivation: a longer word that starts with a shorter family
@@ -1444,8 +1467,8 @@
     Object.keys(groups).forEach(function (k) {
       const g = groups[k];
       const kids = deriveForest(g.words, headword);
-      const node = { type: "group", label: g.label, gloss: g.gloss, count: countWords(kids), children: kids };
-      if (g.base) { node._base = true; baseNode = node; return; }
+      const node = { type: "group", label: g.label, gloss: g.gloss, count: countWords(kids), children: kids, _root: rootPart.surface };
+      if (g.base) { node._base = true; node._root = null; node.label = rootPart.surface; baseNode = node; return; } // base shows the bare root
       const cl = PRE_CLUSTER[k];
       if (cl) { (clusters[cl] = clusters[cl] || []).push(node); } else { direct.push(node); }
     });
@@ -1530,7 +1553,7 @@
         if (def) g.textContent = shortGloss(def);
       });
       c.setAttribute("role", "button"); c.setAttribute("tabindex", "0");
-      const open = function () { closeTree(); run(node.word); };
+      const open = function () { openingFromTree = true; closeTree(); run(node.word); };
       c.addEventListener("click", open);
       c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
       if (expandable) { // also a branch — a toggle reveals the words derived from it
@@ -1543,7 +1566,11 @@
     }
     // group (sense category / prefix step) — tapping expands/collapses it
     const c = el("div", "tnode step" + (node._open ? " open" : ""));
-    c.appendChild(el("span", "tnode-w", node.label));
+    const w = el("span", "tnode-w");
+    if (node._root) { // affix chip: show the root with it, e.g. "trans- + scrīb"
+      w.innerHTML = '<span class="t-aff">' + escapeHtml(node.label) + '</span><span class="t-plus"> + </span><span class="t-root">' + escapeHtml(node._root) + "</span>";
+    } else { w.textContent = node.label; }
+    c.appendChild(w);
     if (node.gloss) c.appendChild(el("span", "tnode-sub", node.gloss));
     c.appendChild(el("span", "tnode-count", String(node.count)));
     c.appendChild(el("span", "tnode-mark plus", node._open ? "−" : "+"));

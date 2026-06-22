@@ -356,10 +356,11 @@ body {
 /* ---------- bottom dock ---------- */
 .dock {
   position: relative; z-index: 5;
-  border-top: 1px solid var(--bd); background: var(--dock);
+  margin: 6px var(--pad) calc(8px + env(safe-area-inset-bottom));
+  border: 1px solid var(--bd); border-radius: 24px; background: var(--dock);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-hi);
-  padding: 9px var(--pad) calc(12px + env(safe-area-inset-bottom)) var(--pad);
+  box-shadow: var(--glass-hi), var(--glass-shadow);
+  padding: 8px 8px;
 }
 .recent { display: flex; align-items: center; gap: 7px; overflow-x: auto; margin-bottom: 9px; scrollbar-width: none; }
 .recent::-webkit-scrollbar { display: none; }
@@ -526,6 +527,16 @@ body {
 .tnode-kids.just-open > .tnode-row:nth-child(4) > .tnode { animation-delay: .12s; }
 .tnode-kids.just-open > .tnode-row:nth-child(5) > .tnode { animation-delay: .16s; }
 .tnode-kids.just-open > .tnode-row:nth-child(n+6) > .tnode { animation-delay: .2s; }
+
+/* root shown inside an affix chip: "trans- + scrīb" */
+.t-aff { color: var(--prefix-ink); font-weight: 700; }
+.t-root { color: var(--root); font-weight: 700; }
+.t-plus { color: var(--muted); }
+/* per-root tree button in the breakdown piece */
+.bp-tree { align-self: center; flex: 0 0 auto; margin-left: 10px; width: 28px; height: 26px;
+  display: grid; place-items: center; color: var(--muted); background: var(--field);
+  border: 1px solid var(--bd); border-radius: 9px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.bp-tree:active { transform: scale(0.92); color: var(--prefix-ink); }
 
 @keyframes tnodeGrow { from { opacity: 0; transform: translateX(-16px) scale(0.94); } to { opacity: 1; transform: none; } }
 @keyframes treeDraw { to { stroke-dashoffset: 0; } }
