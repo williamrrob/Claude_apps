@@ -1,0 +1,534 @@
+{
+ "_note": "Editor data for the scrib-/script- family. Placement format: each placement puts a word (optionally a specific sense index s) into a region, optionally under a parent word (descent). Every entry carries provenance (by: user|assistant). Regenerators MUST preserve by:user entries. Edited live by editor.html via the GitHub API.",
+ "root": "scrib",
+ "rootLabel": "scrībere",
+ "rootGloss": "Latin · to write",
+ "regions": [
+  {
+   "id": "writing-copying",
+   "label": "Writing & copying",
+   "gloss": "the act, its agents, artefacts, reproduction",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "id": "official-directives",
+   "label": "Official directives",
+   "gloss": "orders set down in writing",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "id": "writing-on-a-surface",
+   "label": "Writing on a surface",
+   "gloss": "engrave · around · above",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "id": "depiction-attribution",
+   "label": "Depiction & attribution",
+   "gloss": "render or assign in words",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "id": "signing-subscribing",
+   "label": "Signing & subscribing",
+   "gloss": "commit by writing one's name",
+   "by": "user",
+   "at": "2026-06-22T20:59:19.027Z"
+  },
+  {
+   "id": "sacred-writing",
+   "label": "Sacred writing",
+   "gloss": "religion",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  }
+ ],
+ "placements": [
+  {
+   "w": "scribe",
+   "s": null,
+   "region": "writing-copying",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "scriber",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "scribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "scribble",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "scribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "script",
+   "s": null,
+   "region": "writing-copying",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "manuscript",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "script",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "typescript",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "script",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "postscript",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "script",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "subscript",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "script",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "superscript",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "script",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "unscripted",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "scripted",
+   "by": "user",
+   "at": "2026-06-22T19:47:28.202Z"
+  },
+  {
+   "w": "transcribe",
+   "s": null,
+   "region": "writing-copying",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "transcriber",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "transcribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "transcript",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "transcribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "transcription",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "transcript",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "prescribe",
+   "s": null,
+   "region": "official-directives",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "prescriber",
+   "s": null,
+   "region": "official-directives",
+   "parent": "prescribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "prescript",
+   "s": null,
+   "region": "official-directives",
+   "parent": "prescribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "prescriptive",
+   "s": null,
+   "region": "official-directives",
+   "parent": "prescribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "prescription",
+   "s": null,
+   "region": "official-directives",
+   "parent": "prescribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "nonprescription",
+   "s": null,
+   "region": "official-directives",
+   "parent": "prescription",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "proscribe",
+   "s": null,
+   "region": "official-directives",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "proscription",
+   "s": null,
+   "region": "official-directives",
+   "parent": "proscribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "conscript",
+   "s": null,
+   "region": "official-directives",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "conscription",
+   "s": null,
+   "region": "official-directives",
+   "parent": "conscript",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "rescript",
+   "s": null,
+   "region": "official-directives",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "rescriptor",
+   "s": null,
+   "region": "official-directives",
+   "parent": "rescript",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "inscribe",
+   "s": null,
+   "region": "writing-on-a-surface",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "inscription",
+   "s": null,
+   "region": "writing-on-a-surface",
+   "parent": "inscribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "inscriptive",
+   "s": null,
+   "region": "writing-on-a-surface",
+   "parent": "inscribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "circumscribe",
+   "s": null,
+   "region": "writing-on-a-surface",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "circumscription",
+   "s": null,
+   "region": "writing-on-a-surface",
+   "parent": "circumscribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "superscribe",
+   "s": null,
+   "region": "writing-on-a-surface",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "superscription",
+   "s": null,
+   "region": "writing-on-a-surface",
+   "parent": "superscribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "describe",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "description",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "descript",
+   "by": "user",
+   "at": "2026-06-22T19:44:07.561Z"
+  },
+  {
+   "w": "descriptive",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "descript",
+   "by": "user",
+   "at": "2026-06-22T19:44:15.129Z"
+  },
+  {
+   "w": "undescriptive",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "descriptive",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "describable",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "describe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "indescribable",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "describable",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "descriptor",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "descript",
+   "by": "user",
+   "at": "2026-06-22T19:44:23.631Z"
+  },
+  {
+   "w": "nondescript",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "descript",
+   "by": "user",
+   "at": "2026-06-22T19:37:16.312Z"
+  },
+  {
+   "w": "ascribe",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "ascription",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "ascribe",
+   "by": "user",
+   "at": "2026-06-22T19:45:37.569Z"
+  },
+  {
+   "w": "ascribable",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "ascribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "unascribable",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "ascribable",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "subscribe",
+   "s": null,
+   "region": "signing-subscribing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "subscriber",
+   "s": null,
+   "region": "signing-subscribing",
+   "parent": "subscribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "subscription",
+   "s": null,
+   "region": "signing-subscribing",
+   "parent": "subscribe",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "scripture",
+   "s": null,
+   "region": "sacred-writing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "scriptural",
+   "s": null,
+   "region": "sacred-writing",
+   "parent": "scripture",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  {
+   "w": "descript",
+   "s": null,
+   "region": "depiction-attribution",
+   "parent": "describe",
+   "by": "user",
+   "at": "2026-06-22T19:45:28.387Z"
+  },
+  {
+   "w": "scripted",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "script",
+   "by": "user",
+   "at": "2026-06-22T19:47:23.329Z"
+  }
+ ],
+ "collapse": {
+  "adscripted": {
+   "l": "adscript",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  "circumscribed": {
+   "l": "circumscribe",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  "described": {
+   "l": "describe",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  "inscribed": {
+   "l": "inscribe",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  "prescribed": {
+   "l": "prescribe",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  "proscribed": {
+   "l": "proscribe",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  "subscribed": {
+   "l": "subscribe",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  "transcribed": {
+   "l": "transcribe",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  "descriptively": {
+   "l": "descriptive",
+   "t": "adverb of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  },
+  "inscriptively": {
+   "l": "inscriptive",
+   "t": "adverb of",
+   "by": "assistant",
+   "at": "2026-06-22T19:09:01.098Z"
+  }
+ },
+ "meta": {
+  "version": 1,
+  "updated": "2026-06-22T21:00:05.387Z"
+ }
+}

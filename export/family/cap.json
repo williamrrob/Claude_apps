@@ -1,0 +1,494 @@
+{
+ "_note": "Editor data for the cap-/capt-/cept-/ceive-/cip- family (Latin capere, 'to take, seize'). Placement format with provenance; regenerators MUST preserve by:user. Edited live by editor.html.",
+ "root": "cap",
+ "rootLabel": "capere",
+ "rootGloss": "Latin · to take, seize",
+ "regions": [
+  {
+   "id": "seizing-capturing",
+   "label": "Seizing & capturing",
+   "gloss": "physically take, hold, catch",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "id": "receiving",
+   "label": "Receiving",
+   "gloss": "take in, take up",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "id": "accepting",
+   "label": "Accepting",
+   "gloss": "take willingly",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "id": "grasping-mind",
+   "label": "Grasping the mind",
+   "gloss": "take in — form or hold an idea",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "id": "deceiving",
+   "label": "Deceiving",
+   "gloss": "take in by trickery",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "id": "taking-out-before-from",
+   "label": "Taking out, before & away",
+   "gloss": "except, set down beforehand, free from",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  }
+ ],
+ "placements": [
+  {
+   "w": "capture",
+   "s": null,
+   "region": "seizing-capturing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "capturer",
+   "s": null,
+   "region": "seizing-capturing",
+   "parent": "capture",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "captor",
+   "s": null,
+   "region": "seizing-capturing",
+   "parent": "capture",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "captive",
+   "s": null,
+   "region": "seizing-capturing",
+   "parent": "capture",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "captivity",
+   "s": null,
+   "region": "seizing-capturing",
+   "parent": "captive",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "caption",
+   "s": null,
+   "region": "seizing-capturing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "captious",
+   "s": null,
+   "region": "seizing-capturing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "capable",
+   "s": null,
+   "region": "seizing-capturing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "receive",
+   "s": null,
+   "region": "receiving",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "receiver",
+   "s": null,
+   "region": "receiving",
+   "parent": "receive",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "receipt",
+   "s": null,
+   "region": "receiving",
+   "parent": "receive",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "receptor",
+   "s": null,
+   "region": "receiving",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "receptive",
+   "s": null,
+   "region": "receiving",
+   "parent": "receptor",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "recipe",
+   "s": null,
+   "region": "receiving",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "susceptible",
+   "s": null,
+   "region": "receiving",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "unsusceptible",
+   "s": null,
+   "region": "receiving",
+   "parent": "susceptible",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "accept",
+   "s": null,
+   "region": "accepting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "acceptor",
+   "s": null,
+   "region": "accepting",
+   "parent": "accept",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "acceptant",
+   "s": null,
+   "region": "accepting",
+   "parent": "accept",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "acceptive",
+   "s": null,
+   "region": "accepting",
+   "parent": "accept",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "nonacceptance",
+   "s": null,
+   "region": "accepting",
+   "parent": "accept",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "acceptable",
+   "s": null,
+   "region": "accepting",
+   "parent": "accept",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "unacceptable",
+   "s": null,
+   "region": "accepting",
+   "parent": "acceptable",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "conceive",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "conceiver",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": "conceive",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "conceivable",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": "conceive",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "inconceivable",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": "conceivable",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "concept",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "preconception",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": "concept",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "conceit",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "conceited",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": "conceit",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "perceive",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "unperceivable",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": "perceive",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "percept",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "perceptive",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": "percept",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "unperceptive",
+   "s": null,
+   "region": "grasping-mind",
+   "parent": "perceptive",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "deceive",
+   "s": null,
+   "region": "deceiving",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "deceiver",
+   "s": null,
+   "region": "deceiving",
+   "parent": "deceive",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "deceit",
+   "s": null,
+   "region": "deceiving",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "deceitful",
+   "s": null,
+   "region": "deceiving",
+   "parent": "deceit",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "deception",
+   "s": null,
+   "region": "deceiving",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "except",
+   "s": null,
+   "region": "taking-out-before-from",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "unexceptional",
+   "s": null,
+   "region": "taking-out-before-from",
+   "parent": "except",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "unexceptionable",
+   "s": null,
+   "region": "taking-out-before-from",
+   "parent": "except",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "precept",
+   "s": null,
+   "region": "taking-out-before-from",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "preceptorship",
+   "s": null,
+   "region": "taking-out-before-from",
+   "parent": "precept",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  {
+   "w": "emancipationist",
+   "s": null,
+   "region": "taking-out-before-from",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  }
+ ],
+ "collapse": {
+  "accepted": {
+   "l": "accept",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "received": {
+   "l": "receive",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "acceptableness": {
+   "l": "acceptable",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "unacceptableness": {
+   "l": "unacceptable",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "conceivableness": {
+   "l": "conceivable",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "inconceivableness": {
+   "l": "inconceivable",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "perceptiveness": {
+   "l": "perceptive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "unperceptiveness": {
+   "l": "unperceptive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "receptiveness": {
+   "l": "receptive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "susceptibleness": {
+   "l": "susceptible",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  }
+ },
+ "meta": {
+  "version": 1,
+  "updated": "2026-06-23T01:02:21.631Z"
+ }
+}
