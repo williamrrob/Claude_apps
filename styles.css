@@ -569,7 +569,11 @@ body {
 /* per-root tree button in the breakdown piece */
 .bp-tree { align-self: center; flex: 0 0 auto; margin-left: 10px; width: 28px; height: 26px;
   display: grid; place-items: center; color: var(--muted); background: var(--field);
-  border: 1px solid var(--bd); border-radius: 9px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  border: 1px solid var(--bd); border-radius: 9px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  opacity: 0; pointer-events: none; transition: opacity .18s var(--ease); }
+/* only reveal the tree button once the morpheme card has settled open (so it
+   doesn't flash in place of the separator dots during the assembly animation) */
+.bp.open .bp-tree { opacity: 1; pointer-events: auto; }
 .bp-tree:active { transform: scale(0.92); color: var(--prefix-ink); }
 
 @keyframes tnodeGrow { from { opacity: 0; transform: translateX(-16px) scale(0.94); } to { opacity: 1; transform: none; } }
@@ -620,7 +624,7 @@ body {
 .bd.stacked .bd-dot { display: none; }
 .bp { --c: var(--stem); display: inline-flex; flex-direction: column;
   opacity: 0; transform: scale(.9);
-  transition: opacity .34s var(--ease), transform .42s var(--pop); }
+  transition: opacity .17s var(--ease), transform .21s var(--pop); }
 .bp.in { opacity: 1; transform: none; }
 .bp[data-kind="prefix"] { --c: var(--prefix-ink); }
 .bp[data-kind="root"] { --c: var(--root); }
@@ -631,7 +635,7 @@ body {
 .bp.tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 /* stacked: each row animates its height (0fr → 1fr) so the card grows as pieces land */
 .bd.stacked .bp { width: 100%; display: grid; grid-template-rows: 0fr;
-  transition: grid-template-rows .5s var(--ease), transform .6s var(--chase-in); }
+  transition: grid-template-rows .25s var(--ease), transform .3s var(--chase-in); }
 .bd.stacked .bp.open { grid-template-rows: 1fr; }
 .bp-inner { min-width: 0; overflow: hidden; }
 .bd.stacked .bp-inner { padding-top: 14px; }

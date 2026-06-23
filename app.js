@@ -584,13 +584,13 @@
       entryEl.appendChild(rel);
     }
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
-    await delay(110); if (token !== runToken) return;
+    await delay(55); if (token !== runToken) return;
     fillPron(recP, result.word, token);
     addWikiInfo(result.word, token); // lead image + proper-noun capitalization
     prefetchTree(result.word, parts); // build the family tree in the background
 
     // 2) Breakdown — pop in split, then stack into an acrostic, then unfold info.
-    await delay(120); if (token !== runToken) return;
+    await delay(60); if (token !== runToken) return;
     const shown = isWhole ? parts : parts.filter(function (p) { return !(p.kind === "unknown" && p.surface.length < 3); });
     const bdCard = el("div", "card bd-card");
     bdCard.appendChild(el("div", "cap", "Breakdown"));
@@ -607,7 +607,7 @@
     requestAnimationFrame(function () { bdCard.classList.add("in"); });
 
     // 1) assemble — pieces pop in tight so they read as the whole word
-    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(navigating ? 0 : 130); }
+    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(navigating ? 0 : 65); }
 
     // Skip the animation for single-unit words ("ism"), reduced-motion users, and
     // when revisiting via the back/forward buttons (it's not a fresh discovery).
@@ -616,16 +616,16 @@
       bpEls.forEach(function (bp) { swapToSource(bp); bp.classList.add("open"); });
     } else {
       // 2) breathe out: gaps open and the dots grow in between the pieces
-      await delay(360); if (token !== runToken) return;
+      await delay(180); if (token !== runToken) return;
       bd.classList.add("split");
-      await delay(680); if (token !== runToken) return;
+      await delay(340); if (token !== runToken) return;
       // 3) breathe in: pieces draw back together and the dots fade away
       bd.classList.remove("split");
-      await delay(560); if (token !== runToken) return;
+      await delay(280); if (token !== runToken) return;
       // 4) chase out toward the card's inner-left edge, leftmost first — each
       //    piece darts after the one before it
-      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(210); }
-      await delay(420); if (token !== runToken) return;
+      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(105); }
+      await delay(210); if (token !== runToken) return;
       // 5) restack, then float each piece back in from the inner-left edge, top
       //    first, growing the card a row at a time
       bd.classList.add("stacked");
@@ -641,12 +641,12 @@
         bp.style.transition = "";
         bp.classList.add("open");
         bp.style.transform = "";
-        await delay(180);
+        await delay(90);
       }
     }
 
     // 3) Definition
-    await delay(120); if (token !== runToken) return;
+    await delay(60); if (token !== runToken) return;
     const defCard = buildDefinitionCard(recP, token);
     cardsEl.appendChild(defCard);
     requestAnimationFrame(function () { defCard.classList.add("in"); });
