@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "40";
+  const DATA_V = "41";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -616,15 +616,15 @@
       entryEl.appendChild(av);
     }
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
-    await delay(55); if (token !== runToken) return;
+    await delay(28); if (token !== runToken) return;
     fillPron(recP, result.word, token, isAbbr ? rec : null);
     addWikiInfo(result.word, token); // lead image + proper-noun capitalization
     prefetchTree(result.word, parts); // build the family tree in the background
 
     // 2) Breakdown — skipped for abbreviations (cf, e.g., i.e.) since the letters
     // are initials, not morphemes. The "read as" line in the pron slot carries the meaning.
-    await delay(60); if (token !== runToken) return;
-    if (isAbbr) { await delay(60); }
+    await delay(30); if (token !== runToken) return;
+    if (isAbbr) { await delay(30); }
     const shown = isWhole ? parts : parts.filter(function (p) { return !(p.kind === "unknown" && p.surface.length < 3); });
     if (!isAbbr && !isWhole) {
       const bdCard = el("div", "card bd-card");
@@ -642,7 +642,7 @@
       requestAnimationFrame(function () { bdCard.classList.add("in"); });
 
     // 1) assemble — pieces pop in tight so they read as the whole word
-    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(navigating ? 0 : 65); }
+    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(navigating ? 0 : 40); }
 
     // Skip the animation for single-unit words ("ism"), reduced-motion users, and
     // when revisiting via the back/forward buttons (it's not a fresh discovery).
@@ -651,16 +651,16 @@
       bpEls.forEach(function (bp) { swapToSource(bp); bp.classList.add("open"); });
     } else {
       // 2) breathe out: gaps open and the dots grow in between the pieces
-      await delay(180); if (token !== runToken) return;
+      await delay(90); if (token !== runToken) return;
       bd.classList.add("split");
-      await delay(340); if (token !== runToken) return;
+      await delay(170); if (token !== runToken) return;
       // 3) breathe in: pieces draw back together and the dots fade away
       bd.classList.remove("split");
-      await delay(280); if (token !== runToken) return;
+      await delay(140); if (token !== runToken) return;
       // 4) chase out toward the card's inner-left edge, leftmost first — each
       //    piece darts after the one before it
-      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(105); }
-      await delay(210); if (token !== runToken) return;
+      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(50); }
+      await delay(100); if (token !== runToken) return;
       // 5) restack, then float each piece back in from the inner-left edge, top
       //    first, growing the card a row at a time
       bd.classList.add("stacked");
@@ -676,13 +676,13 @@
         bp.style.transition = "";
         bp.classList.add("open");
         bp.style.transform = "";
-        await delay(90);
+        await delay(45);
       }
     }
     } // end !isAbbr breakdown block
 
     // 3) Definition
-    await delay(60); if (token !== runToken) return;
+    await delay(30); if (token !== runToken) return;
     const defCard = buildDefinitionCard(recP, token);
     cardsEl.appendChild(defCard);
     requestAnimationFrame(function () { defCard.classList.add("in"); });
