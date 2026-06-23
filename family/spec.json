@@ -14,14 +14,7 @@
   {
    "id": "regard-esteem",
    "label": "Regard & esteem",
-   "gloss": "holding in — or beneath — regard",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "id": "suspicion",
-   "label": "Suspicion",
-   "gloss": "looking at with mistrust",
+   "gloss": "how one regards another — esteem, contempt, mistrust",
    "by": "assistant",
    "at": "2026-06-22T23:09:07.791Z"
   },
@@ -171,7 +164,7 @@
   {
    "w": "suspect",
    "s": null,
-   "region": "suspicion",
+   "region": "regard-esteem",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-22T23:09:07.791Z"
@@ -179,7 +172,7 @@
   {
    "w": "suspicion",
    "s": null,
-   "region": "suspicion",
+   "region": "regard-esteem",
    "parent": "suspect",
    "by": "assistant",
    "at": "2026-06-22T23:09:07.791Z"
@@ -187,7 +180,7 @@
   {
    "w": "suspicious",
    "s": null,
-   "region": "suspicion",
+   "region": "regard-esteem",
    "parent": "suspect",
    "by": "assistant",
    "at": "2026-06-22T23:09:07.791Z"
@@ -195,7 +188,7 @@
   {
    "w": "oversuspicious",
    "s": null,
-   "region": "suspicion",
+   "region": "regard-esteem",
    "parent": "suspicious",
    "by": "assistant",
    "at": "2026-06-22T23:09:07.791Z"
@@ -497,6 +490,6 @@
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T23:09:07.791Z"
+  "updated": "2026-06-23T00:56:37.001Z"
  }
 }

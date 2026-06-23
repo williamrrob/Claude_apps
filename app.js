@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "29";
+  const DATA_V = "30";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -235,10 +235,23 @@
     }
     return MFORMS[s] || MFORMS[s.replace(/^-|-$/g, "")] || null;
   }
+  let MBYID = null;
+  function morphById(id) {
+    if (!MBYID) {
+      MBYID = {};
+      const M = window.MORPHEMES || {};
+      ["prefixes", "roots", "suffixes"].forEach(function (cat) {
+        (M[cat] || []).forEach(function (e) { if (e.id && !MBYID[e.id]) MBYID[e.id] = e; });
+      });
+    }
+    return MBYID[id] || null;
+  }
   function hybridPart(x) {
-    const e = morphFind(x.s);
-    if (e) return { kind: x.k, surface: x.s, origin: e.origin, source: e.source, meaning: e.meaning, id: e.id, forms: e.forms };
-    return { kind: x.k, surface: x.s, origin: x.o || null, source: null, meaning: x.g || null, id: null, forms: null };
+    // a curated part may bind to a morpheme by explicit id when its surface isn't a
+    // registered form (e.g. suspect → sus·pect, with pect bound to the spec root).
+    const e = morphFind(x.s) || (x.id && morphById(x.id));
+    if (e) return { kind: x.k, surface: x.s, disp: x.disp || null, origin: x.o || e.origin, source: e.source, meaning: x.g || e.meaning, id: e.id, forms: e.forms };
+    return { kind: x.k, surface: x.s, disp: x.disp || null, origin: x.o || null, source: null, meaning: x.g || null, id: x.id || null, forms: null };
   }
   function wholePart(word) {
     return [{ kind: "word", surface: word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
@@ -510,7 +523,7 @@
 
     // headword with subtle dots between its parts
     const wordEl = el("div", "entry-word");
-    const surfaces = (parts && parts.length > 1 && !parts[0].whole) ? parts.map(function (p) { return p.surface; }) : [word];
+    const surfaces = (parts && parts.length > 1 && !parts[0].whole) ? parts.map(function (p) { return p.disp || p.surface; }) : [word];
     surfaces.forEach(function (s, i) {
       if (i) wordEl.appendChild(el("span", "entry-dot", "·"));
       wordEl.appendChild(el("span", "ew-part", s));
@@ -759,7 +772,7 @@
     // is "Latin · root" + "shows up as …" (right-justified). The .mw fragment
     // spells the word during the animation, then swaps to the source (swapToSource).
     const r1 = el("div", "bp-r1");
-    r1.appendChild(el("span", "mw", p.surface));
+    r1.appendChild(el("span", "mw", p.disp || p.surface));
     if (g) r1.appendChild(el("span", "gl", g));
     col.appendChild(r1);
 
