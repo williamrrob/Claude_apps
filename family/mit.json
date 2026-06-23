@@ -1,0 +1,375 @@
+{
+ "_note": "Editor data for the mit-/miss- family (Latin mittere, 'to send, let go'). Placement format with provenance; regenerators MUST preserve by:user.",
+ "root": "mit",
+ "rootLabel": "miss · mit",
+ "rootGloss": "Latin mittere · to send, let go",
+ "regions": [
+  {
+   "id": "emitting",
+   "label": "Emitting & emissaries",
+   "gloss": "send out",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "id": "transmission",
+   "label": "Transmission",
+   "gloss": "send across",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "id": "admitting-entrusting",
+   "label": "Admitting & entrusting",
+   "gloss": "let in; send together",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "id": "permitting",
+   "label": "Permitting",
+   "gloss": "let pass, allow",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "id": "releasing",
+   "label": "Releasing & sending away",
+   "gloss": "let go, send off, pause",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "id": "submission",
+   "label": "Submission",
+   "gloss": "send under, yield",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "id": "things-sent",
+   "label": "Things sent",
+   "gloss": "a thing let go or dispatched",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  }
+ ],
+ "placements": [
+  {
+   "w": "emit",
+   "s": null,
+   "region": "emitting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "emission",
+   "s": null,
+   "region": "emitting",
+   "parent": "emit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "photoemission",
+   "s": null,
+   "region": "emitting",
+   "parent": "emission",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "photoemissive",
+   "s": null,
+   "region": "emitting",
+   "parent": "emission",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "emissary",
+   "s": null,
+   "region": "emitting",
+   "parent": "emit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "transmission",
+   "s": null,
+   "region": "transmission",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "transmissible",
+   "s": null,
+   "region": "transmission",
+   "parent": "transmission",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "nontransmissible",
+   "s": null,
+   "region": "transmission",
+   "parent": "transmissible",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "transmitting",
+   "s": null,
+   "region": "transmission",
+   "parent": "transmission",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "admit",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "readmit",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "admit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "intromit",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "commit",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "noncommissioned",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "commit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "mission",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "missal",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "mission",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "permit",
+   "s": null,
+   "region": "permitting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "permissive",
+   "s": null,
+   "region": "permitting",
+   "parent": "permit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "impermissible",
+   "s": null,
+   "region": "permitting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "unpermissive",
+   "s": null,
+   "region": "permitting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "dismiss",
+   "s": null,
+   "region": "releasing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "omit",
+   "s": null,
+   "region": "releasing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "omission",
+   "s": null,
+   "region": "releasing",
+   "parent": "omit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "remit",
+   "s": null,
+   "region": "releasing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "remiss",
+   "s": null,
+   "region": "releasing",
+   "parent": "remit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "manumit",
+   "s": null,
+   "region": "releasing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "intermit",
+   "s": null,
+   "region": "releasing",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "intermittency",
+   "s": null,
+   "region": "releasing",
+   "parent": "intermit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "intermittent",
+   "s": null,
+   "region": "releasing",
+   "parent": "intermit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "submit",
+   "s": null,
+   "region": "submission",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "submissive",
+   "s": null,
+   "region": "submission",
+   "parent": "submit",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "unsubmissive",
+   "s": null,
+   "region": "submission",
+   "parent": "submissive",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "missile",
+   "s": null,
+   "region": "things-sent",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "missive",
+   "s": null,
+   "region": "things-sent",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "premiss",
+   "s": null,
+   "region": "things-sent",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  }
+ ],
+ "collapse": {
+  "permissiveness": {
+   "l": "permissive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  "submissively": {
+   "l": "submissive",
+   "t": "adverb of",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  "submissiveness": {
+   "l": "submissive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  "unpermissiveness": {
+   "l": "unpermissive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  },
+  "intermittently": {
+   "l": "intermittent",
+   "t": "adverb of",
+   "by": "assistant",
+   "at": "2026-06-23T04:09:20.695Z"
+  }
+ },
+ "meta": {
+  "version": 1,
+  "updated": "2026-06-23T04:09:20.695Z"
+ }
+}
