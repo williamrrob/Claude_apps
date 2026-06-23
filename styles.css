@@ -457,6 +457,7 @@ body {
 /* inflected / derived form -> base: "plural of cactus", "past tense of run",
    "derived from psychology" */
 .entry-rel { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.entry-vars { font-size: 13px; color: var(--muted); margin-top: 4px; }
 .rel-link {
   font: inherit; color: var(--accent, #b5651d); background: none; border: none;
   padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px;

@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "36";
+  const DATA_V = "37";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -585,6 +585,20 @@
       lk.addEventListener("click", function () { run(rec.rel.l); });
       rel.appendChild(lk);
       entryEl.appendChild(rel);
+    }
+    // Canonical card carries the whole family of spellings: "also spelled
+    // caplin, capelan". Each is tappable and lands back on this same card.
+    if (rec && rec.vars && rec.vars.length) {
+      const av = el("div", "entry-vars");
+      av.appendChild(document.createTextNode("also spelled "));
+      rec.vars.forEach(function (v, i) {
+        if (i) av.appendChild(document.createTextNode(", "));
+        const lk = el("button", "rel-link", v);
+        lk.type = "button";
+        lk.addEventListener("click", function () { run(v); });
+        av.appendChild(lk);
+      });
+      entryEl.appendChild(av);
     }
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
     await delay(55); if (token !== runToken) return;
