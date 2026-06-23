@@ -1,0 +1,541 @@
+{
+ "_note": "Editor data for the duc-/duct- family (Latin dūcere, 'to lead'; dux 'leader'). Placement format with provenance; regenerators MUST preserve by:user.",
+ "root": "duc",
+ "rootLabel": "duct · duc",
+ "rootGloss": "Latin dūcere · to lead",
+ "regions": [
+  {
+   "id": "channels-conduction",
+   "label": "Channels & conduction",
+   "gloss": "leading fluid, current, heat",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "id": "leaders-dukes",
+   "label": "Leaders & dukes",
+   "gloss": "the leader (dux)",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "id": "production",
+   "label": "Production",
+   "gloss": "lead forth into being",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "id": "reduction",
+   "label": "Reduction & deduction",
+   "gloss": "lead down, draw from",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "id": "influence",
+   "label": "Influence & induction",
+   "gloss": "lead in, on, or aside",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "id": "education",
+   "label": "Education",
+   "gloss": "lead out, draw forth, raise",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "id": "drawing-toward-away",
+   "label": "Drawing toward & away",
+   "gloss": "ab-/ad- : carry off, draw to (anatomy, law)",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  }
+ ],
+ "placements": [
+  {
+   "w": "conduct",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "nonconducting",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": "conduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "nonconductive",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": "conduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "semiconducting",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": "conduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "semiconductive",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": "conduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "semiconductor",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": "conduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "superconductivity",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": "conduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "conduce",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "duct",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "ductile",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": "duct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "ductless",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": "duct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "aqueduct",
+   "s": null,
+   "region": "channels-conduction",
+   "parent": "duct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "duce",
+   "s": null,
+   "region": "leaders-dukes",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "ducal",
+   "s": null,
+   "region": "leaders-dukes",
+   "parent": "duce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "archducal",
+   "s": null,
+   "region": "leaders-dukes",
+   "parent": "ducal",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "produce",
+   "s": null,
+   "region": "production",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "producer",
+   "s": null,
+   "region": "production",
+   "parent": "produce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "product",
+   "s": null,
+   "region": "production",
+   "parent": "produce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "productiveness",
+   "s": null,
+   "region": "production",
+   "parent": "product",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "nonproductive",
+   "s": null,
+   "region": "production",
+   "parent": "produce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "counterproductive",
+   "s": null,
+   "region": "production",
+   "parent": "produce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "irreproducible",
+   "s": null,
+   "region": "production",
+   "parent": "produce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "unreproducible",
+   "s": null,
+   "region": "production",
+   "parent": "produce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "unproductive",
+   "s": null,
+   "region": "production",
+   "parent": "produce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "reduce",
+   "s": null,
+   "region": "reduction",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "reducer",
+   "s": null,
+   "region": "reduction",
+   "parent": "reduce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "deduce",
+   "s": null,
+   "region": "reduction",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "deduct",
+   "s": null,
+   "region": "reduction",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "nondeductible",
+   "s": null,
+   "region": "reduction",
+   "parent": "deduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "induce",
+   "s": null,
+   "region": "influence",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "inducer",
+   "s": null,
+   "region": "influence",
+   "parent": "induce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "inducive",
+   "s": null,
+   "region": "influence",
+   "parent": "induce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "induct",
+   "s": null,
+   "region": "influence",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "inductor",
+   "s": null,
+   "region": "influence",
+   "parent": "induct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "seduce",
+   "s": null,
+   "region": "influence",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "seducer",
+   "s": null,
+   "region": "influence",
+   "parent": "seduce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "reintroduction",
+   "s": null,
+   "region": "influence",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "educate",
+   "s": null,
+   "region": "education",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "educatee",
+   "s": null,
+   "region": "education",
+   "parent": "educate",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "educationalist",
+   "s": null,
+   "region": "education",
+   "parent": "educate",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "educator",
+   "s": null,
+   "region": "education",
+   "parent": "educate",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "coeducate",
+   "s": null,
+   "region": "education",
+   "parent": "educate",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "educe",
+   "s": null,
+   "region": "education",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "abduct",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "abduction",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": "abduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "abductor",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": "abduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "abduce",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "abducent",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": "abduce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "adduct",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "adduction",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": "adduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "adductor",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": "adduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "adductive",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": "adduct",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "adduce",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "adducer",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": "adduce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "adducent",
+   "s": null,
+   "region": "drawing-toward-away",
+   "parent": "adduce",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  }
+ ],
+ "collapse": {
+  "abducting": {
+   "l": "abduct",
+   "t": "present participle of",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  "adducting": {
+   "l": "adduct",
+   "t": "present participle of",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  "induced": {
+   "l": "induce",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  "reduced": {
+   "l": "reduce",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  "unproductively": {
+   "l": "unproductive",
+   "t": "adverb of",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  },
+  "unproductiveness": {
+   "l": "unproductive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T04:06:47.530Z"
+  }
+ },
+ "meta": {
+  "version": 1,
+  "updated": "2026-06-23T04:06:47.530Z"
+ }
+}
