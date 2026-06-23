@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "38";
+  const DATA_V = "40";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -544,8 +544,10 @@
 
     pronEl = el("div", "pron");
     entryEl.appendChild(pronEl);
+    const isAbbr = rec && rec.d && rec.d[0] && rec.d[0].p === "abbr.";
     const gloss = rec && rec.d && rec.d[0] && rec.d[0].g;
-    if (gloss) entryEl.appendChild(el("div", "entry-gloss", shortGloss(gloss)));
+    // Abbreviations show "read as" in the pron slot instead of an entry gloss.
+    if (gloss && !isAbbr) entryEl.appendChild(el("div", "entry-gloss", shortGloss(gloss)));
     // compact pinned header (revealed on scroll) — same subtle dots between parts
     miniHead.innerHTML = "";
     const mw = el("span", "minihead-word");
@@ -562,7 +564,20 @@
     const recP = getWord(result.word);
     const rec = await recP;
     if (token !== runToken) return;
-    const parts = chooseBreakdown(result, rec);
+    const isAbbr = rec && rec.d && rec.d[0] && rec.d[0].p === "abbr.";
+    // If this word is a member of a collection that names a parent English word,
+    // redirect to that parent — abbreviations live on the parent's card, not alone.
+    if (isAbbr) {
+      const col = await loadCollections();
+      if (token !== runToken) return;
+      const ids = col.byWord[result.word];
+      if (ids && ids.length) {
+        const member = (col.defs[ids[0]].members || []).find(function (m) { return m.w === result.word; });
+        if (member && member.parent) { run(member.parent); return; }
+      }
+    }
+    // Abbreviations (abbr.) don't have meaningful morpheme breakdowns — show whole.
+    const parts = isAbbr ? wholePart(result.word) : chooseBreakdown(result, rec);
     const isWhole = parts.length === 1 && parts[0].whole;
 
     if (!rec || !rec.d || !rec.d.length) {
@@ -602,26 +617,29 @@
     }
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
     await delay(55); if (token !== runToken) return;
-    fillPron(recP, result.word, token);
+    fillPron(recP, result.word, token, isAbbr ? rec : null);
     addWikiInfo(result.word, token); // lead image + proper-noun capitalization
     prefetchTree(result.word, parts); // build the family tree in the background
 
-    // 2) Breakdown — pop in split, then stack into an acrostic, then unfold info.
+    // 2) Breakdown — skipped for abbreviations (cf, e.g., i.e.) since the letters
+    // are initials, not morphemes. The "read as" line in the pron slot carries the meaning.
     await delay(60); if (token !== runToken) return;
+    if (isAbbr) { await delay(60); }
     const shown = isWhole ? parts : parts.filter(function (p) { return !(p.kind === "unknown" && p.surface.length < 3); });
-    const bdCard = el("div", "card bd-card");
-    bdCard.appendChild(el("div", "cap", "Breakdown"));
-    const bd = el("div", "bd");
-    const bpEls = [];
-    shown.forEach(function (p, i) {
-      if (i) bd.appendChild(el("span", "bd-dot", "·"));
-      const bp = buildBP(p, rec);
-      bd.appendChild(bp);
-      bpEls.push(bp);
-    });
-    bdCard.appendChild(bd);
-    cardsEl.appendChild(bdCard);
-    requestAnimationFrame(function () { bdCard.classList.add("in"); });
+    if (!isAbbr && !isWhole) {
+      const bdCard = el("div", "card bd-card");
+      bdCard.appendChild(el("div", "cap", "Breakdown"));
+      const bd = el("div", "bd");
+      const bpEls = [];
+      shown.forEach(function (p, i) {
+        if (i) bd.appendChild(el("span", "bd-dot", "·"));
+        const bp = buildBP(p, rec);
+        bd.appendChild(bp);
+        bpEls.push(bp);
+      });
+      bdCard.appendChild(bd);
+      cardsEl.appendChild(bdCard);
+      requestAnimationFrame(function () { bdCard.classList.add("in"); });
 
     // 1) assemble — pieces pop in tight so they read as the whole word
     for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(navigating ? 0 : 65); }
@@ -661,6 +679,7 @@
         await delay(90);
       }
     }
+    } // end !isAbbr breakdown block
 
     // 3) Definition
     await delay(60); if (token !== runToken) return;
@@ -682,6 +701,14 @@
       if (colCard && token === runToken) {
         cardsEl.appendChild(colCard);
         requestAnimationFrame(function () { colCard.classList.add("in"); });
+      }
+    });
+    // "Abbreviated as" card: inline abbreviation sub-cards (with usage charts)
+    // on the canonical word's page instead of separate pages per abbreviation.
+    buildAbbrCard(result.word, token).then(function (abbrCard) {
+      if (abbrCard && token === runToken) {
+        cardsEl.appendChild(abbrCard);
+        requestAnimationFrame(function () { abbrCard.classList.add("in"); });
       }
     });
 
@@ -1018,8 +1045,29 @@
       .filter(Boolean).join("-");
   }
 
-  function fillPron(recP, word, token) {
+  // Extract the human-readable reading from an abbreviation gloss.
+  // "Abbreviation of Latin confer — "compare"." → "compare"
+  // "Abbreviation of Latin exempli gratia — "for example"." → "for example"
+  function abbrReading(gloss) {
+    const m = String(gloss || "").match(/[“”""]([^"""“”]+)["""“”]/);
+    if (m) return m[1];
+    const d = String(gloss || "").match(/—\s*(.+?)\.?\s*$/);
+    if (d) return d[1].replace(/^[""]|["".]$/g, "").trim();
+    return null;
+  }
+  function fillPron(recP, word, token, abbrRec) {
     const pe = pronEl; // capture: a later search may null/replace pronEl
+    // For abbreviations show "read as: compare" instead of IPA.
+    if (abbrRec) {
+      const g = abbrRec.d && abbrRec.d[0] && abbrRec.d[0].g;
+      const reading = abbrReading(g);
+      if (reading) {
+        pe.appendChild(el("span", "abbr-read-label", "read as"));
+        pe.appendChild(el("span", "abbr-read-val", reading));
+        requestAnimationFrame(function () { if (token === runToken) pe.classList.add("in"); });
+      }
+      return;
+    }
     recP.then(function (rec) {
       if (token !== runToken || !pe) return;
       pe.innerHTML = "";
@@ -1420,23 +1468,83 @@
     collPromise = fetch("family/collections.json?v=" + DATA_V)
       .then(function (r) { return r.ok ? r.json() : {}; })
       .then(function (data) {
-        const byWord = {};
+        // byWord: abbreviation → [collectionId]
+        // byParent: parent English word → [{member, collId}]
+        const byWord = {}, byParent = {};
         Object.keys(data || {}).forEach(function (id) {
           (data[id].members || []).forEach(function (m) {
             (byWord[m.w] = byWord[m.w] || []).push(id);
+            if (m.parent) (byParent[m.parent] = byParent[m.parent] || []).push({ m: m, id: id });
           });
         });
-        return { defs: data || {}, byWord: byWord };
-      }).catch(function () { return { defs: {}, byWord: {} }; });
+        return { defs: data || {}, byWord: byWord, byParent: byParent };
+      }).catch(function () { return { defs: {}, byWord: {}, byParent: {} }; });
     return collPromise;
   }
-  // A tag card for the word page: if this word is in a curated collection, show
-  // the tag; tapping it reveals the rest of the set (with each one's gloss).
+
+  // Build a mini inline usage chart for an abbreviation, shown within its parent card.
+  function buildAbbrUsageSlot(abbr) {
+    const slot = el("div", "abbr-usage");
+    slot.hidden = true;
+    getUsage(abbr).then(function (series) {
+      if (!series || !series.length || !series.some(function (v) { return v > 0; })) return;
+      let peak = 0;
+      for (let i = 1; i < series.length; i++) if (series[i] > series[peak]) peak = i;
+      const bars = el("div", "usage-bars abbr-bars");
+      series.forEach(function (v, i) {
+        const col = el("div", "usage-col" + (i === peak ? " peak" : ""));
+        const bar = el("div", "usage-bar");
+        bar.style.height = Math.max(2, v) + "%";
+        col.appendChild(bar); bars.appendChild(col);
+      });
+      slot.appendChild(bars);
+      slot.appendChild(el("div", "usage-note", "Peak: " + (1500 + peak * 25) + "s"));
+    });
+    return slot;
+  }
+
+  // "Abbreviated as" card: on a parent word's page, show inline expandable entries
+  // for any abbreviations that abbreviate this word. Each row expands to show its
+  // usage history inline rather than navigating to a separate page.
+  async function buildAbbrCard(word, token) {
+    const col = await loadCollections();
+    if (token !== runToken) return null;
+    const entries = col.byParent[word]; if (!entries || !entries.length) return null;
+    const card = el("div", "card coll-card");
+    card.appendChild(el("div", "cap", "Abbreviated as"));
+    const list = el("div", "coll-list");
+    entries.forEach(function (e, i) {
+      const m = e.m;
+      const row = el("div", "coll-item abbr-row"); // not a button: has internal expand
+      row.style.setProperty("--i", i);
+      const head = el("button", "abbr-head"); head.type = "button";
+      head.appendChild(el("span", "coll-w", m.w));
+      const desc = m.latin ? (m.latin + (m.sense ? " — " + m.sense : "")) : (m.sense || "");
+      head.appendChild(el("span", "coll-g", desc));
+      head.appendChild(el("span", "abbr-chevron", "›"));
+      const usage = buildAbbrUsageSlot(m.w);
+      let open = false;
+      head.addEventListener("click", function () {
+        open = !open; usage.hidden = !open;
+        head.querySelector(".abbr-chevron").style.transform = open ? "rotate(90deg)" : "";
+      });
+      row.appendChild(head); row.appendChild(usage);
+      list.appendChild(row);
+    });
+    card.appendChild(list);
+    return card;
+  }
+
+  // "Latin abbreviation" tag: for abbreviations that have no parent (i.e. they are
+  // standalone entries, not redirected) show a tag + the full set collapsible.
   async function buildCollectionCard(word, token) {
     const col = await loadCollections();
     if (token !== runToken) return null;
     const ids = col.byWord[word]; if (!ids || !ids.length) return null;
     const id = ids[0]; const def = col.defs[id]; if (!def) return null;
+    // If this member has a parent, its page is the parent — show nothing here.
+    const member = (def.members || []).find(function (m) { return m.w === word; });
+    if (member && member.parent) return null;
     const card = el("div", "card coll-card");
     const tag = el("button", "coll-tag", def.label); tag.type = "button";
     const sub = el("div", "coll-sub", def.gloss || "");

@@ -6,77 +6,92 @@
       {
         "w": "cf",
         "latin": "confer",
-        "sense": "compare"
+        "sense": "compare",
+        "parent": "confer"
       },
       {
         "w": "eg",
         "latin": "exempli gratia",
-        "sense": "for example"
+        "sense": "for example",
+        "parent": "exemplify"
       },
       {
         "w": "ie",
         "latin": "id est",
-        "sense": "that is"
+        "sense": "that is",
+        "parent": null
       },
       {
         "w": "etc",
         "latin": "et cetera",
-        "sense": "and the rest"
+        "sense": "and the rest",
+        "parent": "et cetera"
       },
       {
         "w": "viz",
         "latin": "videlicet",
-        "sense": "namely"
+        "sense": "namely",
+        "parent": null
       },
       {
         "w": "et al",
         "latin": "et alii",
-        "sense": "and others"
+        "sense": "and others",
+        "parent": null
       },
       {
         "w": "nb",
         "latin": "nota bene",
-        "sense": "note well"
+        "sense": "note well",
+        "parent": null
       },
       {
         "w": "qv",
         "latin": "quod vide",
-        "sense": "which see"
+        "sense": "which see",
+        "parent": null
       },
       {
         "w": "ibid",
         "latin": "ibidem",
-        "sense": "in the same place"
+        "sense": "in the same place",
+        "parent": null
       },
       {
         "w": "op cit",
         "latin": "opere citato",
-        "sense": "in the work cited"
+        "sense": "in the work cited",
+        "parent": null
       },
       {
         "w": "sc",
         "latin": "scilicet",
-        "sense": "namely"
+        "sense": "namely",
+        "parent": null
       },
       {
         "w": "ca",
         "latin": "circa",
-        "sense": "around, approximately"
+        "sense": "around, approximately",
+        "parent": "circa"
       },
       {
         "w": "vs",
         "latin": "versus",
-        "sense": "against"
+        "sense": "against",
+        "parent": "versus"
       },
       {
         "w": "ad lib",
         "latin": "ad libitum",
-        "sense": "freely, at will"
+        "sense": "freely, at will",
+        "parent": null
       },
       {
         "w": "ps",
         "latin": "post scriptum",
-        "sense": "written after"
+        "sense": "written after",
+        "parent": null
       }
     ]
   }

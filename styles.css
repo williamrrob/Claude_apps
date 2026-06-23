@@ -190,6 +190,9 @@ body {
   width: 19px; height: 19px; border-radius: 50%; display: inline-grid; place-items: center; padding-left: 1px;
 }
 .pron .resp:active { transform: scale(0.96); }
+/* abbreviation "read as" — sits in the pron slot, styled like pronunciation */
+.abbr-read-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.abbr-read-val { font-size: 16px; font-weight: 600; color: var(--ink); font-style: italic; }
 
 /* IPA pronunciation key */
 .ipa-key {
@@ -482,6 +485,19 @@ body {
 .coll-item:active { transform: scale(.98); }
 .coll-w { font-weight: 700; color: var(--prefix-ink); flex: 0 0 auto; min-width: 44px; }
 .coll-g { font-size: 12.5px; font-style: italic; color: var(--muted); }
+/* abbreviated-as inline rows on the parent card */
+.abbr-row { display: flex; flex-direction: column; gap: 0;
+  background: var(--glass-sheen), var(--panel); border: 1px solid var(--bd); box-shadow: var(--glass-hi);
+  border-radius: 12px; padding: 0; overflow: hidden;
+  opacity: 0; transform: translateY(6px); animation: chipIn .3s var(--ease) forwards; animation-delay: calc(var(--i,0) * 30ms); }
+.abbr-head { display: flex; align-items: baseline; gap: 10px; text-align: left;
+  background: none; border: none; padding: 7px 12px; cursor: pointer; width: 100%;
+  -webkit-tap-highlight-color: transparent; }
+.abbr-head:active { background: var(--field); }
+.abbr-chevron { margin-left: auto; font-size: 15px; color: var(--muted); transition: transform .2s var(--ease); }
+.abbr-usage { padding: 0 12px 10px; }
+.abbr-bars { height: 42px; }
+.abbr-bars .usage-bar { border-radius: 2px 2px 0 0; }
 /* half-circle letter badge by the word — tap to browse that letter */
 /* current-letter thumb tab: a half-circle on the right edge, up top */
 .entry-letter {
