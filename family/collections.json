@@ -1,0 +1,83 @@
+{
+  "latin-abbr": {
+    "label": "Latin abbreviation",
+    "gloss": "Short forms of Latin phrases used in English prose.",
+    "members": [
+      {
+        "w": "cf",
+        "latin": "confer",
+        "sense": "compare"
+      },
+      {
+        "w": "eg",
+        "latin": "exempli gratia",
+        "sense": "for example"
+      },
+      {
+        "w": "ie",
+        "latin": "id est",
+        "sense": "that is"
+      },
+      {
+        "w": "etc",
+        "latin": "et cetera",
+        "sense": "and the rest"
+      },
+      {
+        "w": "viz",
+        "latin": "videlicet",
+        "sense": "namely"
+      },
+      {
+        "w": "et al",
+        "latin": "et alii",
+        "sense": "and others"
+      },
+      {
+        "w": "nb",
+        "latin": "nota bene",
+        "sense": "note well"
+      },
+      {
+        "w": "qv",
+        "latin": "quod vide",
+        "sense": "which see"
+      },
+      {
+        "w": "ibid",
+        "latin": "ibidem",
+        "sense": "in the same place"
+      },
+      {
+        "w": "op cit",
+        "latin": "opere citato",
+        "sense": "in the work cited"
+      },
+      {
+        "w": "sc",
+        "latin": "scilicet",
+        "sense": "namely"
+      },
+      {
+        "w": "ca",
+        "latin": "circa",
+        "sense": "around, approximately"
+      },
+      {
+        "w": "vs",
+        "latin": "versus",
+        "sense": "against"
+      },
+      {
+        "w": "ad lib",
+        "latin": "ad libitum",
+        "sense": "freely, at will"
+      },
+      {
+        "w": "ps",
+        "latin": "post scriptum",
+        "sense": "written after"
+      }
+    ]
+  }
+}

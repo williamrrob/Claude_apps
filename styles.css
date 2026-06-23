@@ -462,6 +462,26 @@ body {
   font: inherit; color: var(--accent, #b5651d); background: none; border: none;
   padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
 }
+/* curated-collection tag card (e.g. Latin abbreviations) — tap to see the set */
+.coll-tag {
+  font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--ink);
+  background: var(--glass-sheen), var(--field); border: 1px solid var(--bd);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-hi); border-radius: 999px; padding: 5px 14px 5px 12px; cursor: pointer;
+  -webkit-tap-highlight-color: transparent; display: inline-flex; align-items: center; gap: 6px;
+}
+.coll-tag::after { content: "›"; font-size: 15px; color: var(--muted); transition: transform .2s var(--ease); }
+.coll-tag.open::after { transform: rotate(90deg); }
+.coll-tag:active { transform: scale(.96); }
+.coll-sub { font-size: 12px; color: var(--muted); margin-top: 8px; }
+.coll-list { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.coll-item { display: flex; align-items: baseline; gap: 10px; text-align: left;
+  background: var(--glass-sheen), var(--panel); border: 1px solid var(--bd); box-shadow: var(--glass-hi);
+  border-radius: 12px; padding: 7px 12px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  opacity: 0; transform: translateY(6px); animation: chipIn .3s var(--ease) forwards; animation-delay: calc(var(--i,0) * 30ms); }
+.coll-item:active { transform: scale(.98); }
+.coll-w { font-weight: 700; color: var(--prefix-ink); flex: 0 0 auto; min-width: 44px; }
+.coll-g { font-size: 12.5px; font-style: italic; color: var(--muted); }
 /* half-circle letter badge by the word — tap to browse that letter */
 /* current-letter thumb tab: a half-circle on the right edge, up top */
 .entry-letter {
@@ -479,9 +499,13 @@ body {
 
 /* tree button — collapse the word card into the family tree */
 .tree-btn {
-  flex: 0 0 auto; width: 28px; height: 26px; display: grid; place-items: center;
-  color: var(--muted); background: var(--field); border: 1px solid var(--bd);
-  border-radius: 8px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  flex: 0 0 auto; width: 40px; height: 40px; display: grid; place-items: center;
+  color: var(--ink); font-size: 19px; line-height: 1;
+  background: var(--glass-sheen), var(--field); border: 1px solid var(--bd);
+  border-radius: 50%; box-shadow: var(--glass-hi), var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+  transition: transform 0.15s var(--ease);
 }
 .tree-btn:active { transform: scale(0.92); color: var(--prefix-ink); }
 
@@ -544,14 +568,23 @@ body {
 .tnode.step .tnode-w { color: var(--prefix-ink); font-weight: 700; }
 .tnode-sub { display: block; font-size: 9.5px; font-style: italic; color: var(--muted); margin-top: 1px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tnode-count { position: absolute; right: 26px; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--muted); }
-.tnode-mark { position: absolute; right: 11px; top: 50%; transform: translateY(-50%); }
-.tnode-mark.plus { font-size: 14px; color: var(--muted); }
+/* category chips may wrap to as many lines as the label needs */
+.tnode.step { padding-right: 46px; }
+.tnode.step .tnode-w, .tnode.step .tnode-sub { white-space: normal; overflow: visible; text-overflow: clip; }
+.tnode-count { position: absolute; right: 28px; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--muted); }
+.tnode-mark { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
+.tnode-mark.plus { font-size: 15px; color: var(--muted); pointer-events: none; }
 .tnode-mark.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--root); }
-.tnode-toggle { position: absolute; right: 5px; top: 50%; transform: translateY(-50%);
-  width: 20px; height: 20px; border-radius: 10px; border: 1px solid var(--bd); background: var(--field);
-  color: var(--muted); font-size: 13px; line-height: 1; display: grid; place-items: center; cursor: pointer;
+/* invisible toggle covering the right third of a branch chip — big, easy target */
+.tnode-hit { position: absolute; top: 0; right: 0; bottom: 0; width: 33%; min-width: 38px;
+  background: none; border: none; padding: 0; cursor: pointer; z-index: 2;
   -webkit-tap-highlight-color: transparent; }
+/* Latin source label (e.g. conferre): a softer, italic chip that doesn't open */
+.tnode.source { border-style: dashed; cursor: default; }
+.tnode.source .tnode-w { font-style: italic; color: var(--root); }
+.tnode-lang { display: inline-block; margin-left: 5px; font-size: 8.5px; font-style: normal; font-weight: 700;
+  letter-spacing: .04em; color: var(--muted);
+  border: 1px solid var(--bd); border-radius: 5px; padding: 0 4px; vertical-align: middle; }
 .tnode.current { border-color: var(--prefix-ink); }
 .tnode.current .tnode-w { color: var(--prefix-ink); }
 /* newly-opened branch grows in */

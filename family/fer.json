@@ -1,1072 +1,1093 @@
 {
- "_note": "Editor data for the fer- family (Latin ferre, 'to carry, bear'). Hand-filtered from the full engine membership (~311 raw, mostly false positives: fern/ferry/buffer/ferret/ferocity/inferno/names). EXCLUDES other Latin roots the engine lumps as fer: ferus 'wild' (feral, ferine), fervēre 'boil' (fervent, fervor, fervid), ferīre 'strike' (interfere) — those are corrected to their true root via curated-breakdowns. Regenerators MUST preserve by:user.",
- "root": "fer",
- "rootLabel": "ferre",
- "rootGloss": "Latin · to carry, bear",
- "regions": [
-  {
-   "id": "conferring-referring",
-   "label": "Conferring & referring",
-   "gloss": "carry to the mind — propose, deduce, point to",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "id": "deferring-differing",
-   "label": "Deferring & differing",
-   "gloss": "carry away — put off, set apart",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "id": "offering-suffering",
-   "label": "Offering & suffering",
-   "gloss": "bear toward; bear under, endure",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "id": "transfer-conveyance",
-   "label": "Transfer & conveyance",
-   "gloss": "carry across, carry around",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "id": "flow-toward-away",
-   "label": "Flow toward & away",
-   "gloss": "anatomy: carrying in or out",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "id": "fertility",
-   "label": "Fertility",
-   "gloss": "bearing fruit, fruitful",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "id": "bearing-producing",
-   "label": "Bearing & producing",
-   "gloss": "-fer / -ferous : that which bears, carries, or yields",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
+  "_note": "Editor data for the fer- family (Latin ferre, 'to carry, bear'). Hand-filtered from the full engine membership (~311 raw, mostly false positives: fern/ferry/buffer/ferret/ferocity/inferno/names). EXCLUDES other Latin roots the engine lumps as fer: ferus 'wild' (feral, ferine), fervēre 'boil' (fervent, fervor, fervid), ferīre 'strike' (interfere) — those are corrected to their true root via curated-breakdowns. Regenerators MUST preserve by:user.",
+  "root": "fer",
+  "rootLabel": "ferre",
+  "rootGloss": "Latin · to carry, bear",
+  "regions": [
+    {
+      "id": "conferring-referring",
+      "label": "Bringing to mind",
+      "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "id": "deferring-differing",
+      "label": "Setting apart",
+      "gloss": "carry away — delay, yield, or differ in kind",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "id": "offering-suffering",
+      "label": "Bearing toward & under",
+      "gloss": "hold out to — or bear up under",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "id": "transfer-conveyance",
+      "label": "Carrying across & around",
+      "gloss": "move from place to place; bound around",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "id": "flow-toward-away",
+      "label": "Inflow & outflow",
+      "gloss": "anatomy — vessels and nerves that carry in or out",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "id": "fertility",
+      "label": "Fruitfulness",
+      "gloss": "bearing fruit, fruitful",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "id": "bearing-producing",
+      "label": "Bearers & yielders",
+      "gloss": "-fer / -ferous — that which carries or yields",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "confer",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "conferre",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "conference",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "conferre",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "teleconference",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "conferre",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "conferment",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "conferre",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "conferee",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "conferre",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "conferral",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "conferre",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "conferrer",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "conferre",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "infer",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "inference",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "infer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "inferential",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "inference",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "refer",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "reference",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "refer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "referenced",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "reference",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "referable",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "refer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "referent",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "refer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "coreferent",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "referent",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "referral",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "refer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "referee",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "refer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "refereeing",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "referee",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "referendum",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "refer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "referential",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "refer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "coreference",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "refer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "prefer",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "preference",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "prefer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "preferent",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "prefer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "preferred",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "prefer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "preferable",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "prefer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "preferably",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "preferable",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "preferment",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "prefer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "defer",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "deference",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "defer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "deferment",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "defer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "deferral",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "defer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "differ",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "different",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "differ",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "difference",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "different",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "differently",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "different",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "differentia",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "differ",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "differential",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "differentia",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "indifferent",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "differ",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "indifference",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "indifferent",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "indifferently",
+      "s": null,
+      "region": "deferring-differing",
+      "parent": "indifferent",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "offer",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "offerer",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "offer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "offeror",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "offer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "offering",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "offer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "offertory",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "offer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "counteroffer",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "offer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "proffer",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "offer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "suffer",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "sufferer",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "suffer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "suffering",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "suffer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "sufferance",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "suffer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "sufferable",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "suffer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "insufferable",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "sufferable",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "unsufferable",
+      "s": null,
+      "region": "offering-suffering",
+      "parent": "sufferable",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "transfer",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "transference",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transfer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "countertransference",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transference",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "transferable",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transfer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "nontransferable",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transferable",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "untransferable",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transferable",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "transferee",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transfer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "transferer",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transfer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "transferor",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transfer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "transferral",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transfer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "transferase",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transfer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "transferrin",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "transfer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "circumference",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "circumferent",
+      "s": null,
+      "region": "transfer-conveyance",
+      "parent": "circumference",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "afferent",
+      "s": null,
+      "region": "flow-toward-away",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "efferent",
+      "s": null,
+      "region": "flow-toward-away",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "deferent",
+      "s": null,
+      "region": "flow-toward-away",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "fertile",
+      "s": null,
+      "region": "fertility",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "fertility",
+      "s": null,
+      "region": "fertility",
+      "parent": "fertile",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "infertile",
+      "s": null,
+      "region": "fertility",
+      "parent": "fertile",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "infertility",
+      "s": null,
+      "region": "fertility",
+      "parent": "infertile",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "unfertile",
+      "s": null,
+      "region": "fertility",
+      "parent": "fertile",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "fertilize",
+      "s": null,
+      "region": "fertility",
+      "parent": "fertile",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "fertilizer",
+      "s": null,
+      "region": "fertility",
+      "parent": "fertilize",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "fertilizable",
+      "s": null,
+      "region": "fertility",
+      "parent": "fertilize",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "fertilise",
+      "s": null,
+      "region": "fertility",
+      "parent": "fertile",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "fertiliser",
+      "s": null,
+      "region": "fertility",
+      "parent": "fertilise",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "conifer",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "coniferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "conifer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "coniferales",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "conifer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "aquifer",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "aquiferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "aquifer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "crucifer",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "cruciferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "crucifer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "cruciferae",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "crucifer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "lucifer",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "luciferin",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "lucifer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "rotifer",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "rotifera",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "rotifer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "porifera",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "poriferan",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "porifera",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "poriferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "porifera",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "foraminifer",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "foraminifera",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "foraminifer",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "umbellifer",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "laticifer",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "thurifer",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "vinifera",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "mangifera",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "indigofera",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "proliferate",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "vociferate",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "vociferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "vociferate",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "vociferously",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "vociferous",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "vociferation",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "vociferate",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "vociferator",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": "vociferate",
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "auriferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "calciferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "bacciferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "somniferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "odoriferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "gemmiferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "muciferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "ossiferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "cheliferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "chyliferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "amentiferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "aluminiferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "aeriferous",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "calciferol",
+      "s": null,
+      "region": "bearing-producing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-23T05:28:10.421Z"
+    },
+    {
+      "w": "conferre",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": null,
+      "kind": "source",
+      "lang": "la",
+      "gloss": "Latin · to bring together; compare",
+      "by": "user",
+      "at": "2026-06-23T14:19:25.810Z"
+    },
+    {
+      "w": "cf",
+      "s": null,
+      "region": "conferring-referring",
+      "parent": "conferre",
+      "tag": "latin-abbr",
+      "gloss": "abbreviation of Latin confer — “compare”",
+      "by": "user",
+      "at": "2026-06-23T14:19:25.810Z"
+    }
+  ],
+  "collapse": {},
+  "meta": {
+    "version": 1,
+    "updated": "2026-06-23T05:28:10.421Z"
   }
- ],
- "placements": [
-  {
-   "w": "confer",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "conference",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "confer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "teleconference",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "conference",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "conferment",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "confer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "conferee",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "confer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "conferral",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "confer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "conferrer",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "confer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "infer",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "inference",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "infer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "inferential",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "inference",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "refer",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "reference",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "refer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "referenced",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "reference",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "referable",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "refer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "referent",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "refer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "coreferent",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "referent",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "referral",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "refer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "referee",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "refer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "refereeing",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "referee",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "referendum",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "refer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "referential",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "refer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "coreference",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "refer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "prefer",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "preference",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "prefer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "preferent",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "prefer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "preferred",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "prefer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "preferable",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "prefer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "preferably",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "preferable",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "preferment",
-   "s": null,
-   "region": "conferring-referring",
-   "parent": "prefer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "defer",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "deference",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "defer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "deferment",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "defer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "deferral",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "defer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "differ",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "different",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "differ",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "difference",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "different",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "differently",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "different",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "differentia",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "differ",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "differential",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "differentia",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "indifferent",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "differ",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "indifference",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "indifferent",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "indifferently",
-   "s": null,
-   "region": "deferring-differing",
-   "parent": "indifferent",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "offer",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "offerer",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "offer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "offeror",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "offer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "offering",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "offer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "offertory",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "offer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "counteroffer",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "offer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "proffer",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "offer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "suffer",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "sufferer",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "suffer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "suffering",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "suffer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "sufferance",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "suffer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "sufferable",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "suffer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "insufferable",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "sufferable",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "unsufferable",
-   "s": null,
-   "region": "offering-suffering",
-   "parent": "sufferable",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "transfer",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "transference",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transfer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "countertransference",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transference",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "transferable",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transfer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "nontransferable",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transferable",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "untransferable",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transferable",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "transferee",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transfer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "transferer",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transfer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "transferor",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transfer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "transferral",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transfer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "transferase",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transfer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "transferrin",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "transfer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "circumference",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "circumferent",
-   "s": null,
-   "region": "transfer-conveyance",
-   "parent": "circumference",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "afferent",
-   "s": null,
-   "region": "flow-toward-away",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "efferent",
-   "s": null,
-   "region": "flow-toward-away",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "deferent",
-   "s": null,
-   "region": "flow-toward-away",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "fertile",
-   "s": null,
-   "region": "fertility",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "fertility",
-   "s": null,
-   "region": "fertility",
-   "parent": "fertile",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "infertile",
-   "s": null,
-   "region": "fertility",
-   "parent": "fertile",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "infertility",
-   "s": null,
-   "region": "fertility",
-   "parent": "infertile",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "unfertile",
-   "s": null,
-   "region": "fertility",
-   "parent": "fertile",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "fertilize",
-   "s": null,
-   "region": "fertility",
-   "parent": "fertile",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "fertilizer",
-   "s": null,
-   "region": "fertility",
-   "parent": "fertilize",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "fertilizable",
-   "s": null,
-   "region": "fertility",
-   "parent": "fertilize",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "fertilise",
-   "s": null,
-   "region": "fertility",
-   "parent": "fertile",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "fertiliser",
-   "s": null,
-   "region": "fertility",
-   "parent": "fertilise",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "conifer",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "coniferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "conifer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "coniferales",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "conifer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "aquifer",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "aquiferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "aquifer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "crucifer",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "cruciferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "crucifer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "cruciferae",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "crucifer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "lucifer",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "luciferin",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "lucifer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "rotifer",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "rotifera",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "rotifer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "porifera",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "poriferan",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "porifera",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "poriferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "porifera",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "foraminifer",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "foraminifera",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "foraminifer",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "umbellifer",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "laticifer",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "thurifer",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "vinifera",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "mangifera",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "indigofera",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "proliferate",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "vociferate",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "vociferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "vociferate",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "vociferously",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "vociferous",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "vociferation",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "vociferate",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "vociferator",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": "vociferate",
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "auriferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "calciferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "bacciferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "somniferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "odoriferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "gemmiferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "muciferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "ossiferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "cheliferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "chyliferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "amentiferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "aluminiferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "aeriferous",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  },
-  {
-   "w": "calciferol",
-   "s": null,
-   "region": "bearing-producing",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-23T05:28:10.421Z"
-  }
- ],
- "collapse": {},
- "meta": {
-  "version": 1,
-  "updated": "2026-06-23T05:28:10.421Z"
- }
 }

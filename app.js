@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "37";
+  const DATA_V = "38";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -675,6 +675,13 @@
         if (defCard.nextSibling) cardsEl.insertBefore(famCard, defCard.nextSibling);
         else cardsEl.appendChild(famCard);
         requestAnimationFrame(function () { famCard.classList.add("in"); });
+      }
+    });
+    // 3.6) Collection tag (e.g. Latin abbreviations) — tappable to see the set.
+    buildCollectionCard(result.word, token).then(function (colCard) {
+      if (colCard && token === runToken) {
+        cardsEl.appendChild(colCard);
+        requestAnimationFrame(function () { colCard.classList.add("in"); });
       }
     });
 
@@ -1402,6 +1409,53 @@
     return fetch("family/" + id + ".json?t=" + Date.now(), { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
   }
+
+  // Curated collections (family/collections.json) — sets of words that belong
+  // together by convention rather than morphology, e.g. Latin abbreviations
+  // (cf., e.g., i.e., et al.). Indexed word -> [collectionId] so a card can show
+  // a tag and open the rest of the set.
+  let collPromise = null;
+  function loadCollections() {
+    if (collPromise) return collPromise;
+    collPromise = fetch("family/collections.json?v=" + DATA_V)
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .then(function (data) {
+        const byWord = {};
+        Object.keys(data || {}).forEach(function (id) {
+          (data[id].members || []).forEach(function (m) {
+            (byWord[m.w] = byWord[m.w] || []).push(id);
+          });
+        });
+        return { defs: data || {}, byWord: byWord };
+      }).catch(function () { return { defs: {}, byWord: {} }; });
+    return collPromise;
+  }
+  // A tag card for the word page: if this word is in a curated collection, show
+  // the tag; tapping it reveals the rest of the set (with each one's gloss).
+  async function buildCollectionCard(word, token) {
+    const col = await loadCollections();
+    if (token !== runToken) return null;
+    const ids = col.byWord[word]; if (!ids || !ids.length) return null;
+    const id = ids[0]; const def = col.defs[id]; if (!def) return null;
+    const card = el("div", "card coll-card");
+    const tag = el("button", "coll-tag", def.label); tag.type = "button";
+    const sub = el("div", "coll-sub", def.gloss || "");
+    const list = el("div", "coll-list"); list.hidden = true;
+    (def.members || []).forEach(function (m, i) {
+      if (m.w === word) return;
+      const row = el("button", "coll-item"); row.type = "button";
+      row.style.setProperty("--i", i);
+      row.appendChild(el("span", "coll-w", m.w));
+      row.appendChild(el("span", "coll-g", m.latin ? (m.latin + (m.sense ? " — " + m.sense : "")) : (m.sense || "")));
+      row.addEventListener("click", function () { run(m.w); });
+      list.appendChild(row);
+    });
+    tag.addEventListener("click", function () {
+      const show = list.hidden; list.hidden = !show; tag.classList.toggle("open", show);
+    });
+    card.appendChild(tag); card.appendChild(sub); card.appendChild(list);
+    return card;
+  }
   // A "Word family" card for the word page: if any root has a curated family that
   // contains this word, show which region it lives in and a button to open the tree.
   async function buildFamilyCard(parts, word, token) {
@@ -1440,18 +1494,26 @@
     (doc.placements || []).forEach(function (p) { (byRegion[p.region] = byRegion[p.region] || []).push(p); });
     const regionNodes = (doc.regions || []).map(function (rg) {
       const here = byRegion[rg.id] || [];
-      const parentOf = {}, order = [];
-      here.forEach(function (p) { if (!(p.w in parentOf)) { parentOf[p.w] = p.parent || null; order.push(p.w); } });
+      const parentOf = {}, order = [], meta = {};
+      here.forEach(function (p) { if (!(p.w in parentOf)) { parentOf[p.w] = p.parent || null; order.push(p.w); meta[p.w] = p; } });
       const present = {}; order.forEach(function (w) { present[w] = 1; });
       const isTop = function (w) { const par = parentOf[w]; return !par || !present[par]; };
       function build(par) {
         return order.filter(function (w) { return par === null ? isTop(w) : parentOf[w] === par; })
           .sort(function (a, b) { return a.localeCompare(b); })
-          .map(function (w) { return { type: "word", word: w, current: false, children: build(w) }; });
+          .map(function (w) {
+            const m = meta[w] || {};
+            // A "source" placement (e.g. Latin conferre) is a label node, not a
+            // dictionary entry: it carries its own gloss/lang and doesn't navigate.
+            return { type: "word", word: w, current: false, kind: m.kind || null,
+              lang: m.lang || null, glossText: m.gloss || null, tag: m.tag || null, children: build(w) };
+          });
       }
       const kids = build(null);
       if (!kids.length) return null;
-      return { type: "group", label: rg.label, gloss: rg.gloss || "", count: countWords(kids), children: kids };
+      // Count is the entries immediately connected to this category, not the
+      // whole subtree.
+      return { type: "group", label: rg.label, gloss: rg.gloss || "", count: kids.length, children: kids };
     }).filter(Boolean);
     return { type: "root", label: doc.rootLabel || rootPart.surface, infinitive: !!doc.rootLabel, source: rootPart.source,
       gloss: doc.rootGloss || ((rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : "")),
@@ -1727,23 +1789,40 @@
   function nodeChip(node) {
     const expandable = node.children && node.children.length;
     if (node.type === "word") {
-      const c = el("div", "tnode word" + (node.current ? " current" : ""));
-      c.appendChild(el("span", "tnode-w", dotted(node.word)));
-      const g = el("span", "tnode-sub", ""); c.appendChild(g);
-      c.appendChild(el("span", "tnode-mark dot", ""));
-      getWord(node.word).then(function (rec) {
+      const isSource = node.kind === "source"; // Latin label node, not an entry
+      const c = el("div", "tnode word" + (node.current ? " current" : "") + (isSource ? " source" : ""));
+      const wrap = el("span", "tnode-w");
+      // Source labels (Latin lemmas) are shown whole; entries get morpheme dots.
+      wrap.appendChild(document.createTextNode(isSource ? node.word : dotted(node.word)));
+      if (node.lang) wrap.appendChild(el("span", "tnode-lang", node.lang));
+      c.appendChild(wrap);
+      const g = el("span", "tnode-sub", node.glossText ? shortGloss(node.glossText) : ""); c.appendChild(g);
+      if (!expandable) c.appendChild(el("span", "tnode-mark dot", ""));
+      if (!node.glossText) getWord(node.word).then(function (rec) {
         const def = rec && rec.d && rec.d[0] && rec.d[0].g;
         if (def) g.textContent = shortGloss(def);
       });
       c.setAttribute("role", "button"); c.setAttribute("tabindex", "0");
-      const open = function () { openingFromTree = true; closeTree(); run(node.word); };
-      c.addEventListener("click", open);
-      c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+      if (!isSource) {
+        const open = function () { openingFromTree = true; closeTree(); run(node.word); };
+        c.addEventListener("click", open);
+        c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+      } else if (expandable) {
+        // A source label (Latin conferre) doesn't open a page — the whole chip
+        // just expands/collapses its descendants.
+        c.addEventListener("click", function () { toggle(node); });
+        c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(node); } });
+      }
       if (expandable) { // also a branch — a toggle reveals the words derived from it
-        const t = el("button", "tnode-toggle", node._open ? "−" : "+"); t.type = "button";
-        t.setAttribute("aria-label", (node._open ? "Hide" : "Show") + " words from " + node.word);
-        t.addEventListener("click", function (e) { e.stopPropagation(); toggle(node); });
-        c.appendChild(t);
+        // Big hit target: the right third of the chip toggles, so the +/− is easy
+        // to hit without opening the word. (Source chips already toggle wholesale.)
+        if (!isSource) {
+          const hit = el("button", "tnode-hit", ""); hit.type = "button";
+          hit.setAttribute("aria-label", (node._open ? "Hide" : "Show") + " words from " + node.word);
+          hit.addEventListener("click", function (e) { e.stopPropagation(); toggle(node); });
+          c.appendChild(hit);
+        }
+        c.appendChild(el("span", "tnode-mark plus", node._open ? "−" : "+"));
       }
       return c;
     }
