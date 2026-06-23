@@ -1,8 +1,8 @@
 {
  "_note": "Editor data for the spec-/spect-/spic- family (Latin specere, 'to look, see'). Placement format with provenance; regenerators MUST preserve by:user. Edited live by editor.html.",
  "root": "spec",
- "rootLabel": "spect · spic · spec",
- "rootGloss": "Latin specere · to look, see",
+ "rootLabel": "specere",
+ "rootGloss": "Latin · to look, see",
  "regions": [
   {
    "id": "looking-watching",

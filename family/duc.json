@@ -1,8 +1,8 @@
 {
  "_note": "Editor data for the duc-/duct- family (Latin dūcere, 'to lead'; dux 'leader'). Placement format with provenance; regenerators MUST preserve by:user.",
  "root": "duc",
- "rootLabel": "duct · duc",
- "rootGloss": "Latin dūcere · to lead",
+ "rootLabel": "dūcere",
+ "rootGloss": "Latin · to lead",
  "regions": [
   {
    "id": "channels-conduction",

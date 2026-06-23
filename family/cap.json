@@ -1,8 +1,8 @@
 {
  "_note": "Editor data for the cap-/capt-/cept-/ceive-/cip- family (Latin capere, 'to take, seize'). Placement format with provenance; regenerators MUST preserve by:user. Edited live by editor.html.",
  "root": "cap",
- "rootLabel": "capt · cept · ceive · cip",
- "rootGloss": "Latin capere · to take, seize",
+ "rootLabel": "capere",
+ "rootGloss": "Latin · to take, seize",
  "regions": [
   {
    "id": "seizing-capturing",

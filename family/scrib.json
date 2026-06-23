@@ -1,8 +1,8 @@
 {
  "_note": "Editor data for the scrib-/script- family. Placement format: each placement puts a word (optionally a specific sense index s) into a region, optionally under a parent word (descent). Every entry carries provenance (by: user|assistant). Regenerators MUST preserve by:user entries. Edited live by editor.html via the GitHub API.",
  "root": "scrib",
- "rootLabel": "scrīb · script",
- "rootGloss": "Latin scribere · to write",
+ "rootLabel": "scrībere",
+ "rootGloss": "Latin · to write",
  "regions": [
   {
    "id": "writing-copying",

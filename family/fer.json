@@ -1,8 +1,8 @@
 {
  "_note": "Editor data for the fer- family (Latin ferre, 'to carry, bear'). Hand-filtered from the full engine membership (~311 raw, mostly false positives: fern/ferry/buffer/ferret/ferocity/inferno/names). EXCLUDES other Latin roots the engine lumps as fer: ferus 'wild' (feral, ferine), fervēre 'boil' (fervent, fervor, fervid), ferīre 'strike' (interfere) — those are corrected to their true root via curated-breakdowns. Regenerators MUST preserve by:user.",
  "root": "fer",
- "rootLabel": "fer",
- "rootGloss": "Latin ferre · to carry, bear, bring",
+ "rootLabel": "ferre",
+ "rootGloss": "Latin · to carry, bear",
  "regions": [
   {
    "id": "conferring-referring",

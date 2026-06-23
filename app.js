@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "35";
+  const DATA_V = "36";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -1442,8 +1442,8 @@
       if (!kids.length) return null;
       return { type: "group", label: rg.label, gloss: rg.gloss || "", count: countWords(kids), children: kids };
     }).filter(Boolean);
-    return { type: "root", label: rootPart.surface, source: rootPart.source,
-      gloss: (rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : ""),
+    return { type: "root", label: doc.rootLabel || rootPart.surface, infinitive: !!doc.rootLabel, source: rootPart.source,
+      gloss: doc.rootGloss || ((rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : "")),
       children: regionNodes, _open: true };
   }
 
@@ -1657,7 +1657,7 @@
     x.setAttribute("aria-label", "Close tree");
     x.addEventListener("click", closeTree);
     head.appendChild(x);
-    head.appendChild(el("div", "tree-title", "Word family · " + treeRoot.label + "-"));
+    head.appendChild(el("div", "tree-title", "Word family · " + treeRoot.label + (treeRoot.infinitive ? "" : "-")));
     // Show-all / collapse toggle — expand every branch at once, or fold back to
     // just the path to the current word.
     const allBtn = el("button", "tree-all", treeRoot._allOpen ? "Collapse" : "Show all");
@@ -1708,7 +1708,7 @@
 
   function rootChip(node) {
     const c = el("div", "tree-root");
-    c.appendChild(el("div", "tree-root-w", node.label + "-"));
+    c.appendChild(el("div", "tree-root-w", node.label + (node.infinitive ? "" : "-")));
     if (node.gloss) c.appendChild(el("div", "tree-root-g", node.gloss));
     return c;
   }

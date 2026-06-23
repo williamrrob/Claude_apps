@@ -1,8 +1,8 @@
 {
  "_note": "Editor data for the mit-/miss- family (Latin mittere, 'to send, let go'). Placement format with provenance; regenerators MUST preserve by:user.",
  "root": "mit",
- "rootLabel": "miss · mit",
- "rootGloss": "Latin mittere · to send, let go",
+ "rootLabel": "mittere",
+ "rootGloss": "Latin · to send, let go",
  "regions": [
   {
    "id": "emitting",
