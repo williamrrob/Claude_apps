@@ -586,6 +586,9 @@ body {
 
 /* cards */
 .cards { display: flex; flex-direction: column; gap: 11px; margin-top: 14px; }
+/* the Wikipedia picture always sorts to the end of the word card, regardless of
+   when its (async) fetch resolves */
+.cards .img-card { order: 1; }
 /* Wikipedia image card — the whole card is the photo (.card.img-card beats .card) */
 .card.img-card { padding: 0; position: relative; overflow: hidden; border-radius: 18px; }
 .wiki-img { display: block; width: 100%; height: auto; } /* full image, edge-to-edge */

@@ -187,10 +187,7 @@
       if (wp.proper) capitalizeHeadword(word);
       if (wp.type === "standard" && wp.thumb) {
         const card = buildImageCard(wp);
-        const def = cardsEl.querySelector ? cardsEl.querySelector(".def-card") : null;
-        if (def && def.nextSibling) cardsEl.insertBefore(card, def.nextSibling); // just below the definition
-        else if (def) cardsEl.appendChild(card);
-        else cardsEl.appendChild(card);
+        cardsEl.appendChild(card); // at the end of the word card, after the other sections
         requestAnimationFrame(function () { card.classList.add("in"); });
       }
     });
