@@ -651,6 +651,16 @@
     cardsEl.appendChild(defCard);
     requestAnimationFrame(function () { defCard.classList.add("in"); });
 
+    // 3.5) Word family — if this word belongs to a curated family, tie its page
+    // to the family tree (shows the region it sits in + opens the tree).
+    buildFamilyCard(parts, result.word, token).then(function (famCard) {
+      if (famCard && token === runToken) {
+        if (defCard.nextSibling) cardsEl.insertBefore(famCard, defCard.nextSibling);
+        else cardsEl.appendChild(famCard);
+        requestAnimationFrame(function () { famCard.classList.add("in"); });
+      }
+    });
+
     // 4) divider + Word history
     const divider = fleuron();
     const histCard = buildHistoryCard(recP, parts, token, divider);
@@ -1375,6 +1385,36 @@
     return fetch("family/" + id + ".json?t=" + Date.now(), { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
   }
+  // A "Word family" card for the word page: if any root has a curated family that
+  // contains this word, show which region it lives in and a button to open the tree.
+  async function buildFamilyCard(parts, word, token) {
+    const rootParts = (parts || []).filter(function (p) { return p.kind === "root" && p.id; });
+    for (const rp of rootParts) {
+      const fam = await loadFamily(rp.id);
+      if (token !== runToken) return null;
+      if (!fam || !fam.placements) continue;
+      const pl = fam.placements.find(function (p) { return p.w === word; });
+      const col = fam.collapse && fam.collapse[word];
+      if (!pl && !col) continue;
+      const card = el("div", "card fam-card");
+      card.appendChild(el("div", "cap", "Word family"));
+      const row = el("div", "fam-row");
+      const region = pl && (fam.regions || []).find(function (r) { return r.id === pl.region; });
+      const where = el("div", "fam-where");
+      where.innerHTML = '<span class="fam-root">' + escapeHtml(fam.rootLabel || (rp.surface + "-")) + "</span>" +
+        (region ? ' · <span class="fam-region">' + escapeHtml(region.label) + "</span>" : "");
+      row.appendChild(where);
+      const btn = el("button", "fam-open", "Open tree →"); btn.type = "button";
+      btn.addEventListener("click", function () { openTreeRoot(rp, word); });
+      row.appendChild(btn);
+      card.appendChild(row);
+      const sub = region ? region.gloss : (col ? (col.t + " " + col.l) : "");
+      if (sub) card.appendChild(el("div", "fam-gloss", sub));
+      return card;
+    }
+    return null;
+  }
+
   // Convert the curator's placement format into the tree's node shape: regions are
   // groups (by meaning), placements nest by parent (descent). A word placed more
   // than once in a region (different senses) is shown once — its senses associate.

@@ -319,6 +319,18 @@ body {
 .sense { display: grid; grid-template-columns: 16px 1fr; gap: 8px; margin-top: 9px; font-size: 15px; line-height: 1.45; }
 .sense .num { color: var(--muted); font-size: 13px; font-weight: 600; }
 .sense .pos { font-style: italic; color: var(--suffix); font-size: 13px; margin-right: 6px; }
+/* word-family card: ties a word page to its curated family tree */
+.fam-row { display: flex; align-items: center; gap: 10px; }
+.fam-where { flex: 1; font-size: 14px; }
+.fam-root { font-weight: 700; }
+.fam-region { color: var(--muted); }
+.fam-gloss { margin-top: 5px; font-size: 13px; color: var(--muted); font-style: italic; }
+.fam-open {
+  flex: 0 0 auto; font-size: 13px; color: #f3e7d2; cursor: pointer;
+  background: var(--prefix); border: none; border-radius: 999px; padding: 6px 13px;
+  box-shadow: inset 0 1px 0 rgba(255,250,240,0.25); -webkit-tap-highlight-color: transparent;
+}
+.fam-open:active { transform: scale(0.95); }
 /* domain / "location in meaning space" tag for a sense (computing, law, biology…) */
 .sense-dom {
   display: inline-block; margin-right: 6px; padding: 0 7px;
