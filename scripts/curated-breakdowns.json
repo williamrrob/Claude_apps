@@ -1,6 +1,10 @@
 {
   "_note": "Hand-authored, human-verified breakdowns + a verified 'whole' list (plain English / proper nouns / clippings that are NOT built from classical morphemes). Highest priority: build-curated.js writes these into the shards, overriding engine/MorphoLex/medical output. 'words' entries must tile the word exactly. This file is the record of words personally reviewed and corrected.",
   "words": {
+    "affect":         [{"s":"af","k":"prefix","id":"ad","g":"to, toward","o":"Latin"},{"s":"fect","k":"root"}],
+    "effect":         [{"s":"ef","k":"prefix","id":"ex","g":"out","o":"Latin"},{"s":"fect","k":"root"}],
+    "elicit":         [{"s":"e","k":"prefix","id":"ex","g":"out","o":"Latin"},{"s":"licit","k":"root","g":"to lure, draw (lacere)","o":"Latin"}],
+    "illicit":        [{"s":"il","k":"prefix","id":"in","g":"not","o":"Latin"},{"s":"licit","k":"root","g":"allowed (licēre)","o":"Latin"}],
     "suspect":        [{"s":"su","k":"prefix","id":"sub","disp":"su(b)","g":"up, from under","o":"Latin"},{"s":"spect","k":"root"}],
     "microbe":        [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"be","k":"root","g":"life","o":"Greek"}],
     "microbial":      [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ial","k":"suffix","g":"pertaining to"}],
