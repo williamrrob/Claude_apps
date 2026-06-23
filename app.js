@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "41";
+  const DATA_V = "42";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -642,7 +642,7 @@
       requestAnimationFrame(function () { bdCard.classList.add("in"); });
 
     // 1) assemble — pieces pop in tight so they read as the whole word
-    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(navigating ? 0 : 40); }
+    for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(navigating ? 0 : 55); }
 
     // Skip the animation for single-unit words ("ism"), reduced-motion users, and
     // when revisiting via the back/forward buttons (it's not a fresh discovery).
@@ -651,16 +651,16 @@
       bpEls.forEach(function (bp) { swapToSource(bp); bp.classList.add("open"); });
     } else {
       // 2) breathe out: gaps open and the dots grow in between the pieces
-      await delay(90); if (token !== runToken) return;
+      await delay(130); if (token !== runToken) return;
       bd.classList.add("split");
-      await delay(170); if (token !== runToken) return;
+      await delay(260); if (token !== runToken) return;
       // 3) breathe in: pieces draw back together and the dots fade away
       bd.classList.remove("split");
-      await delay(140); if (token !== runToken) return;
+      await delay(210); if (token !== runToken) return;
       // 4) chase out toward the card's inner-left edge, leftmost first — each
       //    piece darts after the one before it
-      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(50); }
-      await delay(100); if (token !== runToken) return;
+      for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("exit"); await delay(75); }
+      await delay(155); if (token !== runToken) return;
       // 5) restack, then float each piece back in from the inner-left edge, top
       //    first, growing the card a row at a time
       bd.classList.add("stacked");
@@ -676,7 +676,7 @@
         bp.style.transition = "";
         bp.classList.add("open");
         bp.style.transform = "";
-        await delay(45);
+        await delay(68);
       }
     }
     } // end !isAbbr breakdown block
@@ -847,14 +847,7 @@
     }
     col.appendChild(info);
     main.appendChild(col);
-    // per-root tree button — explore the family of this particular root
-    if (p.kind === "root" && p.id) {
-      const tb = el("button", "bp-tree"); tb.type = "button";
-      tb.setAttribute("aria-label", "Word-family tree for " + (p.source || p.surface));
-      tb.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.3"/><circle cx="18" cy="6" r="2.3"/><circle cx="18" cy="18" r="2.3"/><path d="M7.1 11 16 6.6M7.1 13 16 17.4"/></svg>';
-      tb.addEventListener("click", function (e) { e.stopPropagation(); openTreeRoot(p, currentWord); });
-      main.appendChild(tb);
-    }
+    // Tree access is via the Word family card below, not a per-chip button.
     inner.appendChild(main);
     bp.appendChild(inner);
 

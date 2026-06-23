@@ -329,9 +329,10 @@ body {
 .fam-region { color: var(--muted); }
 .fam-gloss { margin-top: 5px; font-size: 13px; color: var(--muted); font-style: italic; }
 .fam-open {
-  flex: 0 0 auto; font-size: 13px; color: #f3e7d2; cursor: pointer;
-  background: var(--prefix); border: none; border-radius: 999px; padding: 6px 13px;
-  box-shadow: inset 0 1px 0 rgba(255,250,240,0.25); -webkit-tap-highlight-color: transparent;
+  flex: 0 0 auto; font-size: 13px; font-weight: 600; color: #f3e7d2; cursor: pointer;
+  background: var(--root); border: none; border-radius: 999px; padding: 7px 15px;
+  box-shadow: inset 0 1px 0 rgba(255,250,240,0.20), 0 2px 8px rgba(0,0,0,0.22);
+  -webkit-tap-highlight-color: transparent; transition: transform .15s var(--ease);
 }
 .fam-open:active { transform: scale(0.95); }
 /* domain / "location in meaning space" tag for a sense (computing, law, biology…) */
@@ -616,15 +617,7 @@ body {
 .t-aff { color: var(--prefix-ink); font-weight: 700; }
 .t-root { color: var(--root); font-weight: 700; }
 .t-plus { color: var(--muted); }
-/* per-root tree button in the breakdown piece */
-.bp-tree { align-self: center; flex: 0 0 auto; margin-left: 10px; width: 28px; height: 26px;
-  display: grid; place-items: center; color: var(--muted); background: var(--field);
-  border: 1px solid var(--bd); border-radius: 9px; cursor: pointer; -webkit-tap-highlight-color: transparent;
-  opacity: 0; pointer-events: none; transition: opacity .18s var(--ease); }
-/* only reveal the tree button once the morpheme card has settled open (so it
-   doesn't flash in place of the separator dots during the assembly animation) */
-.bp.open .bp-tree { opacity: 1; pointer-events: auto; }
-.bp-tree:active { transform: scale(0.92); color: var(--prefix-ink); }
+/* (bp-tree chip buttons removed — tree entry is via Word family card only) */
 
 @keyframes tnodeGrow { from { opacity: 0; transform: translateX(-16px) scale(0.94); } to { opacity: 1; transform: none; } }
 @keyframes treeDraw { to { stroke-dashoffset: 0; } }
@@ -669,12 +662,13 @@ body {
 /* .bd clips to its own (content) box, so pieces vanish at the card's inner
    margin, not the screen edge */
 .bd { display: flex; flex-wrap: nowrap; align-items: flex-end; gap: 0; overflow: hidden; }
+.bd.split { align-items: center; }
 .bd.stacked { flex-direction: column; align-items: stretch; gap: 0; }
 /* dots stay collapsed until the word "breathes" apart, then ride out with the pieces */
-.bd-dot { align-self: flex-end; color: var(--muted); font-weight: 700; line-height: 1;
+.bd-dot { align-self: center; color: var(--muted); font-weight: 700; line-height: 1;
   font-size: 0; opacity: 0; padding: 0;
   transition: font-size .5s var(--ease), opacity .45s var(--ease), padding .5s var(--ease); }
-.bd.split .bd-dot { font-size: 16px; opacity: 1; padding: 0 5px 6px; }
+.bd.split .bd-dot { font-size: 16px; opacity: 1; padding: 0 5px; }
 .bd.stacked .bd-dot { display: none; }
 .bp { --c: var(--stem); display: inline-flex; flex-direction: column;
   opacity: 0; transform: scale(.9);
