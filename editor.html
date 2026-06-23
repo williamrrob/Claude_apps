@@ -138,6 +138,9 @@ async function load(){
     let idxMembers=[];
     try { const idx = await ghGet("morpheme-index.json"); const v=idx.json[cfg.root]; idxMembers = Array.isArray(v)?v:(v&&v.words)||[]; } catch(e){}
     const set = new Set(idxMembers);
+    // full engine membership (family/candidates/<root>.json) if present — so the
+    // pool shows every candidate, not just the 60-capped index.
+    try { const cand = await ghGet("family/candidates/"+cfg.root+".json"); if (Array.isArray(cand.json)) cand.json.forEach(w=>set.add(w)); } catch(e){}
     fam.placements.forEach(p=>set.add(p.w));
     Object.keys(fam.collapse||{}).forEach(w=>{ set.add(w); set.add(fam.collapse[w].l); });
     members = [...set].sort();

@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "34";
+  const DATA_V = "35";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -222,18 +222,20 @@
   }
 
   // ---------- hybrid breakdown ----------
-  let MFORMS = null;
-  function morphFind(s) {
-    if (!MFORMS) {
-      MFORMS = {};
+  let MFK = null;
+  function morphFind(s, kind) {
+    if (!MFK) {
+      MFK = { prefix: {}, root: {}, suffix: {} };
       const M = window.MORPHEMES || {};
-      ["prefixes", "roots", "suffixes"].forEach(function (cat) {
-        (M[cat] || []).forEach(function (e) {
-          (e.forms || []).forEach(function (f) { if (!MFORMS[f]) MFORMS[f] = e; });
+      [["prefixes", "prefix"], ["roots", "root"], ["suffixes", "suffix"]].forEach(function (pair) {
+        (M[pair[0]] || []).forEach(function (e) {
+          (e.forms || []).forEach(function (f) { if (!MFK[pair[1]][f]) MFK[pair[1]][f] = e; });
         });
       });
     }
-    return MFORMS[s] || MFORMS[s.replace(/^-|-$/g, "")] || null;
+    const t = s.replace(/^-|-$/g, "");
+    if (kind && MFK[kind]) return MFK[kind][s] || MFK[kind][t] || null; // a suffix part only matches suffixes, etc.
+    return MFK.root[s] || MFK.prefix[s] || MFK.suffix[s] || MFK.root[t] || MFK.prefix[t] || MFK.suffix[t] || null;
   }
   let MBYID = null;
   function morphById(id) {
@@ -247,9 +249,13 @@
     return MBYID[id] || null;
   }
   function hybridPart(x) {
+    // a curated part with an explicit source (src) is self-contained: it asserts its
+    // own root (e.g. feral's "fer" = ferus 'wild') and must NOT bind to a coincidental
+    // morpheme of the same spelling (ferre) or get that morpheme's id/tree button.
+    if (x.src) return { kind: x.k, surface: x.s, disp: x.disp || null, origin: x.o || null, source: x.src, meaning: x.g || null, id: null, forms: null };
     // a curated part may bind to a morpheme by explicit id when its surface isn't a
     // registered form (e.g. suspect → sus·pect, with pect bound to the spec root).
-    const e = morphFind(x.s) || (x.id && morphById(x.id));
+    const e = morphFind(x.s, x.k) || (x.id && morphById(x.id));
     if (e) return { kind: x.k, surface: x.s, disp: x.disp || null, origin: x.o || e.origin, source: e.source, meaning: x.g || e.meaning, id: e.id, forms: e.forms };
     return { kind: x.k, surface: x.s, disp: x.disp || null, origin: x.o || null, source: null, meaning: x.g || null, id: x.id || null, forms: null };
   }

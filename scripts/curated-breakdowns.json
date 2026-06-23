@@ -1,57 +1,823 @@
 {
   "_note": "Hand-authored, human-verified breakdowns + a verified 'whole' list (plain English / proper nouns / clippings that are NOT built from classical morphemes). Highest priority: build-curated.js writes these into the shards, overriding engine/MorphoLex/medical output. 'words' entries must tile the word exactly. This file is the record of words personally reviewed and corrected.",
   "words": {
-    "affect":         [{"s":"af","k":"prefix","id":"ad","g":"to, toward","o":"Latin"},{"s":"fect","k":"root"}],
-    "effect":         [{"s":"ef","k":"prefix","id":"ex","g":"out","o":"Latin"},{"s":"fect","k":"root"}],
-    "elicit":         [{"s":"e","k":"prefix","id":"ex","g":"out","o":"Latin"},{"s":"licit","k":"root","g":"to lure, draw (lacere)","o":"Latin"}],
-    "illicit":        [{"s":"il","k":"prefix","id":"in","g":"not","o":"Latin"},{"s":"licit","k":"root","g":"allowed (licēre)","o":"Latin"}],
-    "suspect":        [{"s":"su","k":"prefix","id":"sub","disp":"su(b)","g":"up, from under","o":"Latin"},{"s":"spect","k":"root"}],
-    "microbe":        [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"be","k":"root","g":"life","o":"Greek"}],
-    "microbial":      [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ial","k":"suffix","g":"pertaining to"}],
-    "microbic":       [{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"}],
-    "antimicrobial":  [{"s":"anti","k":"prefix","g":"against","o":"Greek"},{"s":"micro","k":"prefix","g":"small","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ial","k":"suffix","g":"pertaining to"}],
-    "aerobe":         [{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"be","k":"root","g":"life","o":"Greek"}],
-    "aerobic":        [{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"}],
-    "aerobics":       [{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"},{"s":"s","k":"suffix","g":"plural"}],
-    "anaerobe":       [{"s":"an","k":"prefix","g":"without","o":"Greek"},{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"be","k":"root","g":"life","o":"Greek"}],
-    "anaerobic":      [{"s":"an","k":"prefix","g":"without","o":"Greek"},{"s":"aero","k":"prefix","g":"air","o":"Greek"},{"s":"b","k":"root","g":"life","o":"Greek"},{"s":"ic","k":"suffix","g":"pertaining to"}],
-
-    "president":      [{"s":"pre","k":"prefix","g":"before","o":"Latin"},{"s":"sid","k":"root","g":"to sit","o":"Latin"},{"s":"ent","k":"suffix","g":"one who"}],
-    "consumer":       [{"s":"con","k":"prefix","g":"with, together","o":"Latin"},{"s":"sum","k":"root","g":"to take","o":"Latin"},{"s":"er","k":"suffix","g":"one who"}],
-    "potential":      [{"s":"potent","k":"root","g":"powerful","o":"Latin"},{"s":"ial","k":"suffix","g":"pertaining to"}],
-    "ability":        [{"s":"abil","k":"root","g":"able","o":"Latin"},{"s":"ity","k":"suffix","g":"state of"}],
-    "primary":        [{"s":"prim","k":"root","g":"first","o":"Latin"},{"s":"ary","k":"suffix","g":"pertaining to"}],
-    "official":       [{"s":"offic","k":"root","g":"duty, service","o":"Latin"},{"s":"ial","k":"suffix","g":"pertaining to"}],
-    "limited":        [{"s":"limit","k":"root","g":"boundary","o":"Latin"},{"s":"ed","k":"suffix","g":"past tense"}],
-    "visual":         [{"s":"vis","k":"root","g":"to see","o":"Latin"},{"s":"ual","k":"suffix","g":"pertaining to"}],
-    "responsibility": [{"s":"re","k":"prefix","g":"back","o":"Latin"},{"s":"spons","k":"root","g":"to pledge","o":"Latin"},{"s":"ibil","k":"suffix","g":"able to"},{"s":"ity","k":"suffix","g":"state of"}],
-
-    "cactus":    [{"s":"cact","k":"root","g":"cactus","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-    "cacti":     [{"s":"cact","k":"root","g":"cactus","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
-    "fungus":    [{"s":"fung","k":"root","g":"fungus, mushroom","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-    "fungi":     [{"s":"fung","k":"root","g":"fungus, mushroom","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
-    "nucleus":   [{"s":"nucle","k":"root","g":"kernel, core","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-    "nuclei":    [{"s":"nucle","k":"root","g":"kernel, core","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
-    "stimulus":  [{"s":"stimul","k":"root","g":"goad, spur","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-    "stimuli":   [{"s":"stimul","k":"root","g":"goad, spur","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
-    "alumnus":   [{"s":"alumn","k":"root","g":"foster son, pupil","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-    "alumni":    [{"s":"alumn","k":"root","g":"foster son, pupil","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
-    "radius":    [{"s":"radi","k":"root","g":"ray, spoke","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-    "radii":     [{"s":"radi","k":"root","g":"ray, spoke","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
-    "focus":     [{"s":"foc","k":"root","g":"hearth, focal point","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-    "foci":      [{"s":"foc","k":"root","g":"hearth, focal point","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
-    "syllabus":  [{"s":"syllab","k":"root","g":"list, syllabus","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-    "syllabi":   [{"s":"syllab","k":"root","g":"list, syllabus","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
-    "terminus":  [{"s":"termin","k":"root","g":"boundary, end","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-    "termini":   [{"s":"termin","k":"root","g":"boundary, end","o":"Latin"},{"s":"i","k":"suffix","g":"plural (Latin)"}],
-    "bacillus":  [{"s":"bacill","k":"root","g":"little rod","o":"Latin"},{"s":"us","k":"suffix","g":"singular (Latin nominative)"}],
-
-    "thesis":    [{"s":"thes","k":"root","g":"to place, set down","o":"Greek"},{"s":"is","k":"suffix","g":"singular (Greek)"}],
-    "theses":    [{"s":"thes","k":"root","g":"to place, set down","o":"Greek"},{"s":"es","k":"suffix","g":"plural (Greek)"}]
+    "feral": [
+      {
+        "s": "fer",
+        "k": "root",
+        "g": "wild (ferus)",
+        "o": "Latin",
+        "src": "ferus"
+      },
+      {
+        "s": "al",
+        "k": "suffix",
+        "g": "relating to"
+      }
+    ],
+    "ferine": [
+      {
+        "s": "fer",
+        "k": "root",
+        "g": "wild (ferus)",
+        "o": "Latin",
+        "src": "ferus"
+      },
+      {
+        "s": "ine",
+        "k": "suffix",
+        "g": "of the nature of"
+      }
+    ],
+    "fervent": [
+      {
+        "s": "ferv",
+        "k": "root",
+        "g": "to boil, glow (fervēre)",
+        "o": "Latin",
+        "src": "fervēre"
+      },
+      {
+        "s": "ent",
+        "k": "suffix",
+        "g": "being"
+      }
+    ],
+    "fervency": [
+      {
+        "s": "ferv",
+        "k": "root",
+        "g": "to boil, glow (fervēre)",
+        "o": "Latin",
+        "src": "fervēre"
+      },
+      {
+        "s": "ency",
+        "k": "suffix",
+        "g": "state of"
+      }
+    ],
+    "fervid": [
+      {
+        "s": "ferv",
+        "k": "root",
+        "g": "to boil, glow (fervēre)",
+        "o": "Latin",
+        "src": "fervēre"
+      },
+      {
+        "s": "id",
+        "k": "suffix",
+        "g": "tending to"
+      }
+    ],
+    "fervor": [
+      {
+        "s": "ferv",
+        "k": "root",
+        "g": "to boil, glow (fervēre)",
+        "o": "Latin",
+        "src": "fervēre"
+      },
+      {
+        "s": "or",
+        "k": "suffix",
+        "g": "state of"
+      }
+    ],
+    "perfervid": [
+      {
+        "s": "per",
+        "k": "prefix",
+        "g": "thoroughly",
+        "o": "Latin"
+      },
+      {
+        "s": "ferv",
+        "k": "root",
+        "g": "to boil, glow (fervēre)",
+        "o": "Latin",
+        "src": "fervēre"
+      },
+      {
+        "s": "id",
+        "k": "suffix",
+        "g": "tending to"
+      }
+    ],
+    "interfere": [
+      {
+        "s": "inter",
+        "k": "prefix",
+        "g": "between",
+        "o": "Latin"
+      },
+      {
+        "s": "fere",
+        "k": "root",
+        "g": "to strike (ferīre)",
+        "o": "Latin",
+        "src": "ferīre"
+      }
+    ],
+    "interference": [
+      {
+        "s": "inter",
+        "k": "prefix",
+        "g": "between",
+        "o": "Latin"
+      },
+      {
+        "s": "fer",
+        "k": "root",
+        "g": "to strike (ferīre)",
+        "o": "Latin",
+        "src": "ferīre"
+      },
+      {
+        "s": "ence",
+        "k": "suffix",
+        "g": "state of"
+      }
+    ],
+    "affect": [
+      {
+        "s": "af",
+        "k": "prefix",
+        "id": "ad",
+        "g": "to, toward",
+        "o": "Latin"
+      },
+      {
+        "s": "fect",
+        "k": "root"
+      }
+    ],
+    "effect": [
+      {
+        "s": "ef",
+        "k": "prefix",
+        "id": "ex",
+        "g": "out",
+        "o": "Latin"
+      },
+      {
+        "s": "fect",
+        "k": "root"
+      }
+    ],
+    "elicit": [
+      {
+        "s": "e",
+        "k": "prefix",
+        "id": "ex",
+        "g": "out",
+        "o": "Latin"
+      },
+      {
+        "s": "licit",
+        "k": "root",
+        "g": "to lure, draw (lacere)",
+        "o": "Latin"
+      }
+    ],
+    "illicit": [
+      {
+        "s": "il",
+        "k": "prefix",
+        "id": "in",
+        "g": "not",
+        "o": "Latin"
+      },
+      {
+        "s": "licit",
+        "k": "root",
+        "g": "allowed (licēre)",
+        "o": "Latin"
+      }
+    ],
+    "suspect": [
+      {
+        "s": "su",
+        "k": "prefix",
+        "id": "sub",
+        "disp": "su(b)",
+        "g": "up, from under",
+        "o": "Latin"
+      },
+      {
+        "s": "spect",
+        "k": "root"
+      }
+    ],
+    "microbe": [
+      {
+        "s": "micro",
+        "k": "prefix",
+        "g": "small",
+        "o": "Greek"
+      },
+      {
+        "s": "be",
+        "k": "root",
+        "g": "life",
+        "o": "Greek"
+      }
+    ],
+    "microbial": [
+      {
+        "s": "micro",
+        "k": "prefix",
+        "g": "small",
+        "o": "Greek"
+      },
+      {
+        "s": "b",
+        "k": "root",
+        "g": "life",
+        "o": "Greek"
+      },
+      {
+        "s": "ial",
+        "k": "suffix",
+        "g": "pertaining to"
+      }
+    ],
+    "microbic": [
+      {
+        "s": "micro",
+        "k": "prefix",
+        "g": "small",
+        "o": "Greek"
+      },
+      {
+        "s": "b",
+        "k": "root",
+        "g": "life",
+        "o": "Greek"
+      },
+      {
+        "s": "ic",
+        "k": "suffix",
+        "g": "pertaining to"
+      }
+    ],
+    "antimicrobial": [
+      {
+        "s": "anti",
+        "k": "prefix",
+        "g": "against",
+        "o": "Greek"
+      },
+      {
+        "s": "micro",
+        "k": "prefix",
+        "g": "small",
+        "o": "Greek"
+      },
+      {
+        "s": "b",
+        "k": "root",
+        "g": "life",
+        "o": "Greek"
+      },
+      {
+        "s": "ial",
+        "k": "suffix",
+        "g": "pertaining to"
+      }
+    ],
+    "aerobe": [
+      {
+        "s": "aero",
+        "k": "prefix",
+        "g": "air",
+        "o": "Greek"
+      },
+      {
+        "s": "be",
+        "k": "root",
+        "g": "life",
+        "o": "Greek"
+      }
+    ],
+    "aerobic": [
+      {
+        "s": "aero",
+        "k": "prefix",
+        "g": "air",
+        "o": "Greek"
+      },
+      {
+        "s": "b",
+        "k": "root",
+        "g": "life",
+        "o": "Greek"
+      },
+      {
+        "s": "ic",
+        "k": "suffix",
+        "g": "pertaining to"
+      }
+    ],
+    "aerobics": [
+      {
+        "s": "aero",
+        "k": "prefix",
+        "g": "air",
+        "o": "Greek"
+      },
+      {
+        "s": "b",
+        "k": "root",
+        "g": "life",
+        "o": "Greek"
+      },
+      {
+        "s": "ic",
+        "k": "suffix",
+        "g": "pertaining to"
+      },
+      {
+        "s": "s",
+        "k": "suffix",
+        "g": "plural"
+      }
+    ],
+    "anaerobe": [
+      {
+        "s": "an",
+        "k": "prefix",
+        "g": "without",
+        "o": "Greek"
+      },
+      {
+        "s": "aero",
+        "k": "prefix",
+        "g": "air",
+        "o": "Greek"
+      },
+      {
+        "s": "be",
+        "k": "root",
+        "g": "life",
+        "o": "Greek"
+      }
+    ],
+    "anaerobic": [
+      {
+        "s": "an",
+        "k": "prefix",
+        "g": "without",
+        "o": "Greek"
+      },
+      {
+        "s": "aero",
+        "k": "prefix",
+        "g": "air",
+        "o": "Greek"
+      },
+      {
+        "s": "b",
+        "k": "root",
+        "g": "life",
+        "o": "Greek"
+      },
+      {
+        "s": "ic",
+        "k": "suffix",
+        "g": "pertaining to"
+      }
+    ],
+    "president": [
+      {
+        "s": "pre",
+        "k": "prefix",
+        "g": "before",
+        "o": "Latin"
+      },
+      {
+        "s": "sid",
+        "k": "root",
+        "g": "to sit",
+        "o": "Latin"
+      },
+      {
+        "s": "ent",
+        "k": "suffix",
+        "g": "one who"
+      }
+    ],
+    "consumer": [
+      {
+        "s": "con",
+        "k": "prefix",
+        "g": "with, together",
+        "o": "Latin"
+      },
+      {
+        "s": "sum",
+        "k": "root",
+        "g": "to take",
+        "o": "Latin"
+      },
+      {
+        "s": "er",
+        "k": "suffix",
+        "g": "one who"
+      }
+    ],
+    "potential": [
+      {
+        "s": "potent",
+        "k": "root",
+        "g": "powerful",
+        "o": "Latin"
+      },
+      {
+        "s": "ial",
+        "k": "suffix",
+        "g": "pertaining to"
+      }
+    ],
+    "ability": [
+      {
+        "s": "abil",
+        "k": "root",
+        "g": "able",
+        "o": "Latin"
+      },
+      {
+        "s": "ity",
+        "k": "suffix",
+        "g": "state of"
+      }
+    ],
+    "primary": [
+      {
+        "s": "prim",
+        "k": "root",
+        "g": "first",
+        "o": "Latin"
+      },
+      {
+        "s": "ary",
+        "k": "suffix",
+        "g": "pertaining to"
+      }
+    ],
+    "official": [
+      {
+        "s": "offic",
+        "k": "root",
+        "g": "duty, service",
+        "o": "Latin"
+      },
+      {
+        "s": "ial",
+        "k": "suffix",
+        "g": "pertaining to"
+      }
+    ],
+    "limited": [
+      {
+        "s": "limit",
+        "k": "root",
+        "g": "boundary",
+        "o": "Latin"
+      },
+      {
+        "s": "ed",
+        "k": "suffix",
+        "g": "past tense"
+      }
+    ],
+    "visual": [
+      {
+        "s": "vis",
+        "k": "root",
+        "g": "to see",
+        "o": "Latin"
+      },
+      {
+        "s": "ual",
+        "k": "suffix",
+        "g": "pertaining to"
+      }
+    ],
+    "responsibility": [
+      {
+        "s": "re",
+        "k": "prefix",
+        "g": "back",
+        "o": "Latin"
+      },
+      {
+        "s": "spons",
+        "k": "root",
+        "g": "to pledge",
+        "o": "Latin"
+      },
+      {
+        "s": "ibil",
+        "k": "suffix",
+        "g": "able to"
+      },
+      {
+        "s": "ity",
+        "k": "suffix",
+        "g": "state of"
+      }
+    ],
+    "cactus": [
+      {
+        "s": "cact",
+        "k": "root",
+        "g": "cactus",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "cacti": [
+      {
+        "s": "cact",
+        "k": "root",
+        "g": "cactus",
+        "o": "Latin"
+      },
+      {
+        "s": "i",
+        "k": "suffix",
+        "g": "plural (Latin)"
+      }
+    ],
+    "fungus": [
+      {
+        "s": "fung",
+        "k": "root",
+        "g": "fungus, mushroom",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "fungi": [
+      {
+        "s": "fung",
+        "k": "root",
+        "g": "fungus, mushroom",
+        "o": "Latin"
+      },
+      {
+        "s": "i",
+        "k": "suffix",
+        "g": "plural (Latin)"
+      }
+    ],
+    "nucleus": [
+      {
+        "s": "nucle",
+        "k": "root",
+        "g": "kernel, core",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "nuclei": [
+      {
+        "s": "nucle",
+        "k": "root",
+        "g": "kernel, core",
+        "o": "Latin"
+      },
+      {
+        "s": "i",
+        "k": "suffix",
+        "g": "plural (Latin)"
+      }
+    ],
+    "stimulus": [
+      {
+        "s": "stimul",
+        "k": "root",
+        "g": "goad, spur",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "stimuli": [
+      {
+        "s": "stimul",
+        "k": "root",
+        "g": "goad, spur",
+        "o": "Latin"
+      },
+      {
+        "s": "i",
+        "k": "suffix",
+        "g": "plural (Latin)"
+      }
+    ],
+    "alumnus": [
+      {
+        "s": "alumn",
+        "k": "root",
+        "g": "foster son, pupil",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "alumni": [
+      {
+        "s": "alumn",
+        "k": "root",
+        "g": "foster son, pupil",
+        "o": "Latin"
+      },
+      {
+        "s": "i",
+        "k": "suffix",
+        "g": "plural (Latin)"
+      }
+    ],
+    "radius": [
+      {
+        "s": "radi",
+        "k": "root",
+        "g": "ray, spoke",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "radii": [
+      {
+        "s": "radi",
+        "k": "root",
+        "g": "ray, spoke",
+        "o": "Latin"
+      },
+      {
+        "s": "i",
+        "k": "suffix",
+        "g": "plural (Latin)"
+      }
+    ],
+    "focus": [
+      {
+        "s": "foc",
+        "k": "root",
+        "g": "hearth, focal point",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "foci": [
+      {
+        "s": "foc",
+        "k": "root",
+        "g": "hearth, focal point",
+        "o": "Latin"
+      },
+      {
+        "s": "i",
+        "k": "suffix",
+        "g": "plural (Latin)"
+      }
+    ],
+    "syllabus": [
+      {
+        "s": "syllab",
+        "k": "root",
+        "g": "list, syllabus",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "syllabi": [
+      {
+        "s": "syllab",
+        "k": "root",
+        "g": "list, syllabus",
+        "o": "Latin"
+      },
+      {
+        "s": "i",
+        "k": "suffix",
+        "g": "plural (Latin)"
+      }
+    ],
+    "terminus": [
+      {
+        "s": "termin",
+        "k": "root",
+        "g": "boundary, end",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "termini": [
+      {
+        "s": "termin",
+        "k": "root",
+        "g": "boundary, end",
+        "o": "Latin"
+      },
+      {
+        "s": "i",
+        "k": "suffix",
+        "g": "plural (Latin)"
+      }
+    ],
+    "bacillus": [
+      {
+        "s": "bacill",
+        "k": "root",
+        "g": "little rod",
+        "o": "Latin"
+      },
+      {
+        "s": "us",
+        "k": "suffix",
+        "g": "singular (Latin nominative)"
+      }
+    ],
+    "thesis": [
+      {
+        "s": "thes",
+        "k": "root",
+        "g": "to place, set down",
+        "o": "Greek"
+      },
+      {
+        "s": "is",
+        "k": "suffix",
+        "g": "singular (Greek)"
+      }
+    ],
+    "theses": [
+      {
+        "s": "thes",
+        "k": "root",
+        "g": "to place, set down",
+        "o": "Greek"
+      },
+      {
+        "s": "es",
+        "k": "suffix",
+        "g": "plural (Greek)"
+      }
+    ]
   },
   "whole": [
-    "phone", "movie", "blog", "committee", "marketing", "getting", "homepage",
-    "logo", "dating", "spanish", "setting", "european", "interesting", "rating",
+    "phone",
+    "movie",
+    "blog",
+    "committee",
+    "marketing",
+    "getting",
+    "homepage",
+    "logo",
+    "dating",
+    "spanish",
+    "setting",
+    "european",
+    "interesting",
+    "rating",
     "archives"
   ],
   "_rel_note": "Inflected / derived forms descend from a base word and point at it ('plural of cactus', 'past tense of run', 'derived from psychology') rather than standing alone. 'plurals' is shorthand (=> 'plural of'); 'relations' is the general {t,l} form. build-curated.js writes a 'rel' field on the record.",
@@ -76,13 +842,37 @@
     "psychoses": "psychosis"
   },
   "relations": {
-    "ran": { "t": "past tense of", "l": "run" },
-    "running": { "t": "present participle of", "l": "run" },
-    "swam": { "t": "past tense of", "l": "swim" },
-    "swum": { "t": "past participle of", "l": "swim" },
-    "ate": { "t": "past tense of", "l": "eat" },
-    "eaten": { "t": "past participle of", "l": "eat" },
-    "psychologist": { "t": "derived from", "l": "psychology" },
-    "biologist": { "t": "derived from", "l": "biology" }
+    "ran": {
+      "t": "past tense of",
+      "l": "run"
+    },
+    "running": {
+      "t": "present participle of",
+      "l": "run"
+    },
+    "swam": {
+      "t": "past tense of",
+      "l": "swim"
+    },
+    "swum": {
+      "t": "past participle of",
+      "l": "swim"
+    },
+    "ate": {
+      "t": "past tense of",
+      "l": "eat"
+    },
+    "eaten": {
+      "t": "past participle of",
+      "l": "eat"
+    },
+    "psychologist": {
+      "t": "derived from",
+      "l": "psychology"
+    },
+    "biologist": {
+      "t": "derived from",
+      "l": "biology"
+    }
   }
 }
