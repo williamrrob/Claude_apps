@@ -51,7 +51,7 @@
   {
    "w": "capture",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -59,7 +59,7 @@
   {
    "w": "capturer",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": "capture",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -67,7 +67,7 @@
   {
    "w": "captor",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": "capture",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -75,7 +75,7 @@
   {
    "w": "captive",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": "capture",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -83,7 +83,7 @@
   {
    "w": "captivity",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": "captive",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -91,7 +91,7 @@
   {
    "w": "caption",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -99,7 +99,7 @@
   {
    "w": "captious",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -107,7 +107,7 @@
   {
    "w": "capable",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -115,7 +115,7 @@
   {
    "w": "receive",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -123,7 +123,7 @@
   {
    "w": "receiver",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": "receive",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -131,7 +131,7 @@
   {
    "w": "receipt",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": "receive",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -139,7 +139,7 @@
   {
    "w": "receptor",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -147,7 +147,7 @@
   {
    "w": "receptive",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": "receptor",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -155,7 +155,7 @@
   {
    "w": "recipe",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -163,7 +163,7 @@
   {
    "w": "susceptible",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -171,7 +171,7 @@
   {
    "w": "unsusceptible",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": "susceptible",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -179,7 +179,7 @@
   {
    "w": "accept",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -187,7 +187,7 @@
   {
    "w": "acceptor",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": "accept",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -195,7 +195,7 @@
   {
    "w": "acceptant",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": "accept",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -203,7 +203,7 @@
   {
    "w": "acceptive",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": "accept",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -211,7 +211,7 @@
   {
    "w": "nonacceptance",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": "accept",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -219,7 +219,7 @@
   {
    "w": "acceptable",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": "accept",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -227,7 +227,7 @@
   {
    "w": "unacceptable",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": "acceptable",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -235,7 +235,7 @@
   {
    "w": "conceive",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -243,7 +243,7 @@
   {
    "w": "conceiver",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "conceive",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -251,7 +251,7 @@
   {
    "w": "conceivable",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "conceive",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -259,7 +259,7 @@
   {
    "w": "inconceivable",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "conceivable",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -267,7 +267,7 @@
   {
    "w": "concept",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -275,7 +275,7 @@
   {
    "w": "preconception",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "concept",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -283,7 +283,7 @@
   {
    "w": "conceit",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -291,7 +291,7 @@
   {
    "w": "conceited",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "conceit",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -299,7 +299,7 @@
   {
    "w": "perceive",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -307,7 +307,7 @@
   {
    "w": "unperceivable",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "perceive",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -315,7 +315,7 @@
   {
    "w": "percept",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -323,7 +323,7 @@
   {
    "w": "perceptive",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "percept",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -331,7 +331,7 @@
   {
    "w": "unperceptive",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "perceptive",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -339,7 +339,7 @@
   {
    "w": "deceive",
    "s": null,
-   "region": "deceiving",
+   "region": "deceit",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -347,7 +347,7 @@
   {
    "w": "deceiver",
    "s": null,
-   "region": "deceiving",
+   "region": "deceit",
    "parent": "deceive",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -355,7 +355,7 @@
   {
    "w": "deceit",
    "s": null,
-   "region": "deceiving",
+   "region": "deceit",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -363,7 +363,7 @@
   {
    "w": "deceitful",
    "s": null,
-   "region": "deceiving",
+   "region": "deceit",
    "parent": "deceit",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -371,7 +371,7 @@
   {
    "w": "deception",
    "s": null,
-   "region": "deceiving",
+   "region": "deceit",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -379,7 +379,7 @@
   {
    "w": "except",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -387,7 +387,7 @@
   {
    "w": "unexceptional",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": "except",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -395,7 +395,7 @@
   {
    "w": "unexceptionable",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": "except",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -403,7 +403,7 @@
   {
    "w": "precept",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -411,7 +411,7 @@
   {
    "w": "preceptorship",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": "precept",
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -419,7 +419,7 @@
   {
    "w": "emancipationist",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T01:02:21.631Z"
@@ -427,7 +427,7 @@
   {
    "w": "captivate",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": "captive",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -435,7 +435,7 @@
   {
    "w": "captivation",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": "captivate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -443,7 +443,7 @@
   {
    "w": "captivating",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": "captivate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -451,7 +451,7 @@
   {
    "w": "recapture",
    "s": null,
-   "region": "seizing-capturing",
+   "region": "acquiring-control",
    "parent": "capture",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -459,7 +459,7 @@
   {
    "w": "reception",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": "receive",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -467,7 +467,7 @@
   {
    "w": "receptacle",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": "receptor",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -475,7 +475,7 @@
   {
    "w": "receptivity",
    "s": null,
-   "region": "receiving",
+   "region": "acquiring-control",
    "parent": "receptor",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -483,7 +483,7 @@
   {
    "w": "acceptance",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": "accept",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -491,7 +491,7 @@
   {
    "w": "acceptably",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": "acceptable",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -499,7 +499,7 @@
   {
    "w": "acceptability",
    "s": null,
-   "region": "accepting",
+   "region": "acquiring-control",
    "parent": "acceptable",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -507,7 +507,7 @@
   {
    "w": "perception",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "perceive",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -515,7 +515,7 @@
   {
    "w": "perceptible",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "perceive",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -523,7 +523,7 @@
   {
    "w": "perceptibly",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "perceptible",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -531,7 +531,7 @@
   {
    "w": "imperceptible",
    "s": null,
-   "region": "grasping-mind",
+   "region": "formation-conception",
    "parent": "perceptible",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -539,7 +539,7 @@
   {
    "w": "inception",
    "s": null,
-   "region": "inception-beginning",
+   "region": "formation-conception",
    "parent": null,
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -547,7 +547,7 @@
   {
    "w": "incipient",
    "s": null,
-   "region": "inception-beginning",
+   "region": "formation-conception",
    "parent": "inception",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -555,7 +555,7 @@
   {
    "w": "incipience",
    "s": null,
-   "region": "inception-beginning",
+   "region": "formation-conception",
    "parent": "incipient",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -563,7 +563,7 @@
   {
    "w": "deceptive",
    "s": null,
-   "region": "deceiving",
+   "region": "deceit",
    "parent": "deception",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -571,7 +571,7 @@
   {
    "w": "deceptively",
    "s": null,
-   "region": "deceiving",
+   "region": "deceit",
    "parent": "deceptive",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -579,7 +579,7 @@
   {
    "w": "undeceived",
    "s": null,
-   "region": "deceiving",
+   "region": "deceit",
    "parent": "deceive",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -587,7 +587,7 @@
   {
    "w": "exception",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": "except",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -595,7 +595,7 @@
   {
    "w": "exceptional",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": "exception",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -603,7 +603,7 @@
   {
    "w": "exceptionally",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": "exceptional",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -611,7 +611,7 @@
   {
    "w": "intercept",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": null,
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -619,7 +619,7 @@
   {
    "w": "interception",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": "intercept",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -627,7 +627,7 @@
   {
    "w": "interceptor",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": "intercept",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -635,7 +635,7 @@
   {
    "w": "preceptor",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "rules-constraints",
    "parent": "precept",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -643,7 +643,7 @@
   {
    "w": "emancipate",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "sharing-participation",
    "parent": null,
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -651,7 +651,7 @@
   {
    "w": "emancipated",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "sharing-participation",
    "parent": "emancipate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -659,7 +659,7 @@
   {
    "w": "emancipation",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "sharing-participation",
    "parent": "emancipate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -667,7 +667,7 @@
   {
    "w": "emancipator",
    "s": null,
-   "region": "taking-out-before-from",
+   "region": "sharing-participation",
    "parent": "emancipate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -675,7 +675,7 @@
   {
    "w": "principal",
    "s": null,
-   "region": "principal-principle",
+   "region": "authority-leadership",
    "parent": null,
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -683,7 +683,7 @@
   {
    "w": "principally",
    "s": null,
-   "region": "principal-principle",
+   "region": "authority-leadership",
    "parent": "principal",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -691,7 +691,7 @@
   {
    "w": "principality",
    "s": null,
-   "region": "principal-principle",
+   "region": "authority-leadership",
    "parent": "principal",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -699,7 +699,7 @@
   {
    "w": "principle",
    "s": null,
-   "region": "principal-principle",
+   "region": "authority-leadership",
    "parent": "principal",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -707,7 +707,7 @@
   {
    "w": "principled",
    "s": null,
-   "region": "principal-principle",
+   "region": "authority-leadership",
    "parent": "principle",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -715,7 +715,7 @@
   {
    "w": "unprincipled",
    "s": null,
-   "region": "principal-principle",
+   "region": "authority-leadership",
    "parent": "principle",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -723,7 +723,7 @@
   {
    "w": "participate",
    "s": null,
-   "region": "participation",
+   "region": "sharing-participation",
    "parent": null,
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -731,7 +731,7 @@
   {
    "w": "participant",
    "s": null,
-   "region": "participation",
+   "region": "sharing-participation",
    "parent": "participate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -739,7 +739,7 @@
   {
    "w": "participation",
    "s": null,
-   "region": "participation",
+   "region": "sharing-participation",
    "parent": "participate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -747,7 +747,7 @@
   {
    "w": "participatory",
    "s": null,
-   "region": "participation",
+   "region": "sharing-participation",
    "parent": "participation",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -755,7 +755,7 @@
   {
    "w": "participial",
    "s": null,
-   "region": "participation",
+   "region": "sharing-participation",
    "parent": "participate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -763,7 +763,7 @@
   {
    "w": "anticipate",
    "s": null,
-   "region": "anticipation",
+   "region": "rules-constraints",
    "parent": null,
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -771,7 +771,7 @@
   {
    "w": "anticipated",
    "s": null,
-   "region": "anticipation",
+   "region": "rules-constraints",
    "parent": "anticipate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -779,7 +779,7 @@
   {
    "w": "anticipation",
    "s": null,
-   "region": "anticipation",
+   "region": "rules-constraints",
    "parent": "anticipate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -787,7 +787,7 @@
   {
    "w": "anticipatory",
    "s": null,
-   "region": "anticipation",
+   "region": "rules-constraints",
    "parent": "anticipation",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -795,7 +795,7 @@
   {
    "w": "unanticipated",
    "s": null,
-   "region": "anticipation",
+   "region": "rules-constraints",
    "parent": "anticipated",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -803,7 +803,7 @@
   {
    "w": "anticipant",
    "s": null,
-   "region": "anticipation",
+   "region": "rules-constraints",
    "parent": "anticipate",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -811,7 +811,7 @@
   {
    "w": "capital",
    "s": null,
-   "region": "capital",
+   "region": "authority-leadership",
    "parent": null,
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -819,7 +819,7 @@
   {
    "w": "capitalize",
    "s": null,
-   "region": "capital",
+   "region": "authority-leadership",
    "parent": "capital",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -827,7 +827,7 @@
   {
    "w": "capitalism",
    "s": null,
-   "region": "capital",
+   "region": "authority-leadership",
    "parent": "capital",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -835,7 +835,7 @@
   {
    "w": "capitalist",
    "s": null,
-   "region": "capital",
+   "region": "authority-leadership",
    "parent": "capitalism",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -843,7 +843,7 @@
   {
    "w": "capitalistic",
    "s": null,
-   "region": "capital",
+   "region": "authority-leadership",
    "parent": "capitalism",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -851,7 +851,7 @@
   {
    "w": "capitulation",
    "s": null,
-   "region": "capital",
+   "region": "authority-leadership",
    "parent": "capital",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -859,7 +859,7 @@
   {
    "w": "capacitate",
    "s": null,
-   "region": "capital",
+   "region": "authority-leadership",
    "parent": "capital",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -867,7 +867,7 @@
   {
    "w": "captain",
    "s": null,
-   "region": "captaincy",
+   "region": "authority-leadership",
    "parent": null,
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -875,7 +875,7 @@
   {
    "w": "captaincy",
    "s": null,
-   "region": "captaincy",
+   "region": "authority-leadership",
    "parent": "captain",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -883,7 +883,7 @@
   {
    "w": "captainship",
    "s": null,
-   "region": "captaincy",
+   "region": "authority-leadership",
    "parent": "captain",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -891,7 +891,7 @@
   {
    "w": "discipline",
    "s": null,
-   "region": "discipline",
+   "region": "sharing-participation",
    "parent": null,
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -899,7 +899,7 @@
   {
    "w": "disciplined",
    "s": null,
-   "region": "discipline",
+   "region": "sharing-participation",
    "parent": "discipline",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
@@ -907,26 +907,91 @@
   {
    "w": "disciplinary",
    "s": null,
-   "region": "discipline",
+   "region": "sharing-participation",
    "parent": "discipline",
    "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
   }
  ],
  "collapse": {
-  "accepted": { "l": "accept", "t": "past tense of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" },
-  "received": { "l": "receive", "t": "past tense of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" },
-  "perceived": { "l": "perceive", "t": "past tense of", "by": "user", "at": "2026-06-24T00:00:00.000Z" },
-  "conceived": { "l": "conceive", "t": "past tense of", "by": "user", "at": "2026-06-24T00:00:00.000Z" },
-  "deceived": { "l": "deceive", "t": "past tense of", "by": "user", "at": "2026-06-24T00:00:00.000Z" },
-  "acceptableness": { "l": "acceptable", "t": "quality of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" },
-  "unacceptableness": { "l": "unacceptable", "t": "quality of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" },
-  "conceivableness": { "l": "conceivable", "t": "quality of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" },
-  "inconceivableness": { "l": "inconceivable", "t": "quality of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" },
-  "perceptiveness": { "l": "perceptive", "t": "quality of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" },
-  "unperceptiveness": { "l": "unperceptive", "t": "quality of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" },
-  "receptiveness": { "l": "receptive", "t": "quality of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" },
-  "susceptibleness": { "l": "susceptible", "t": "quality of", "by": "assistant", "at": "2026-06-23T01:02:21.631Z" }
+  "accepted": {
+   "l": "accept",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "received": {
+   "l": "receive",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "perceived": {
+   "l": "perceive",
+   "t": "past tense of",
+   "by": "user",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  "conceived": {
+   "l": "conceive",
+   "t": "past tense of",
+   "by": "user",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  "deceived": {
+   "l": "deceive",
+   "t": "past tense of",
+   "by": "user",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  "acceptableness": {
+   "l": "acceptable",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "unacceptableness": {
+   "l": "unacceptable",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "conceivableness": {
+   "l": "conceivable",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "inconceivableness": {
+   "l": "inconceivable",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "perceptiveness": {
+   "l": "perceptive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "unperceptiveness": {
+   "l": "unperceptive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "receptiveness": {
+   "l": "receptive",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  },
+  "susceptibleness": {
+   "l": "susceptible",
+   "t": "quality of",
+   "by": "assistant",
+   "at": "2026-06-23T01:02:21.631Z"
+  }
  },
  "meta": {
   "version": 1,
