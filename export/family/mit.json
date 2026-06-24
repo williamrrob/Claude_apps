@@ -1,5 +1,5 @@
 {
- "_note": "Editor data for the mit-/miss- family (Latin mittere, 'to send, let go'). Placement format with provenance; regenerators MUST preserve by:user.",
+ "_note": "Editor data for the mit-/miss-/miss- family (Latin mittere, 'to send, let go'). Hand-filtered from ~305 raw; EXCLUDES: proper nouns (Smith, Mitchell, Mitterand, Nimitz, Yosemite); mineral/rock names (-ite suffix: dolomite, chromite, gummite, wolframite); scientific terminology (mitosis, mitochondrion—from Greek mito-; smithereens variant); ethnic/language terms (Semitic, Elamitic, Hamitic—unrelated etymologies); unrelated Old English roots (smith, hermit). Placement format with provenance; regenerators MUST preserve by:assistant.",
  "root": "mit",
  "rootLabel": "mittere",
  "rootGloss": "Latin · to send, let go",
@@ -52,6 +52,41 @@
    "gloss": "a thing let go or dispatched",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "id": "commitment",
+   "label": "Commitment",
+   "gloss": "send together, entrust",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "id": "omission",
+   "label": "Omission",
+   "gloss": "send away, leave out",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "id": "intermission",
+   "label": "Intermission",
+   "gloss": "send between, pause",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "id": "remittance",
+   "label": "Remittance & remission",
+   "gloss": "send back, send money",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "id": "limits",
+   "label": "Limits",
+   "gloss": "set a boundary, delimit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
   }
  ],
  "placements": [
@@ -334,6 +369,342 @@
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
+  },
+  {
+   "w": "mission",
+   "s": null,
+   "region": "things-sent",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "missionary",
+   "s": null,
+   "region": "things-sent",
+   "parent": "mission",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "missional",
+   "s": null,
+   "region": "things-sent",
+   "parent": "mission",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "commit",
+   "s": null,
+   "region": "commitment",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "commitment",
+   "s": null,
+   "region": "commitment",
+   "parent": "commit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "committee",
+   "s": null,
+   "region": "commitment",
+   "parent": "commit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "committal",
+   "s": null,
+   "region": "commitment",
+   "parent": "commit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "uncommitted",
+   "s": null,
+   "region": "commitment",
+   "parent": "commit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "recommit",
+   "s": null,
+   "region": "commitment",
+   "parent": "commit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "omit",
+   "s": null,
+   "region": "omission",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "omission",
+   "s": null,
+   "region": "omission",
+   "parent": "omit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "omissible",
+   "s": null,
+   "region": "omission",
+   "parent": "omit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "intermittent",
+   "s": null,
+   "region": "intermission",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "intermittence",
+   "s": null,
+   "region": "intermission",
+   "parent": "intermittent",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "intermission",
+   "s": null,
+   "region": "intermission",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "intermit",
+   "s": null,
+   "region": "intermission",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "remit",
+   "s": null,
+   "region": "remittance",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "remittance",
+   "s": null,
+   "region": "remittance",
+   "parent": "remit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "remittent",
+   "s": null,
+   "region": "remittance",
+   "parent": "remit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "remission",
+   "s": null,
+   "region": "remittance",
+   "parent": "remit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "remissness",
+   "s": null,
+   "region": "remittance",
+   "parent": "remit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "limit",
+   "s": null,
+   "region": "limits",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "limitation",
+   "s": null,
+   "region": "limits",
+   "parent": "limit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "limited",
+   "s": null,
+   "region": "limits",
+   "parent": "limit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "limitless",
+   "s": null,
+   "region": "limits",
+   "parent": "limit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "delimit",
+   "s": null,
+   "region": "limits",
+   "parent": "limit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "delimitation",
+   "s": null,
+   "region": "limits",
+   "parent": "delimit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "illimitable",
+   "s": null,
+   "region": "limits",
+   "parent": "limit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "commissary",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "commission",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "commissioned",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "commission",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "commissioner",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "commission",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "decommission",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "commission",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "emitter",
+   "s": null,
+   "region": "emitting",
+   "parent": "emit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "transmitter",
+   "s": null,
+   "region": "transmission",
+   "parent": "transmit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "transmitted",
+   "s": null,
+   "region": "transmission",
+   "parent": "transmit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "transmittable",
+   "s": null,
+   "region": "transmission",
+   "parent": "transmit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "admissible",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "admit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "inadmissible",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "admissible",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "admittance",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "admit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "readmit",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "admit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
+  },
+  {
+   "w": "readmission",
+   "s": null,
+   "region": "admitting-entrusting",
+   "parent": "readmit",
+   "by": "assistant",
+   "at": "2026-06-24T00:00:00.000Z"
   }
  ],
  "collapse": {
