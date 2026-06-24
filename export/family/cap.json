@@ -5,94 +5,45 @@
  "rootGloss": "Latin · to take, seize",
  "regions": [
   {
-   "id": "seizing-capturing",
-   "label": "Seizing & capturing",
-   "gloss": "physically take, hold, catch",
+   "id": "acquiring-control",
+   "label": "Acquiring & taking control",
+   "gloss": "capture, accept, receive — all forms of taking into possession, authority, or acceptance",
    "by": "assistant",
-   "at": "2026-06-23T01:02:21.631Z"
-  },
-  {
-   "id": "receiving",
-   "label": "Receiving",
-   "gloss": "take in, take up",
-   "by": "assistant",
-   "at": "2026-06-23T01:02:21.631Z"
-  },
-  {
-   "id": "accepting",
-   "label": "Accepting",
-   "gloss": "take willingly",
-   "by": "assistant",
-   "at": "2026-06-23T01:02:21.631Z"
-  },
-  {
-   "id": "grasping-mind",
-   "label": "Grasping the mind",
-   "gloss": "take in — form or hold an idea",
-   "by": "assistant",
-   "at": "2026-06-23T01:02:21.631Z"
-  },
-  {
-   "id": "deceiving",
-   "label": "Deceiving",
-   "gloss": "take in by trickery",
-   "by": "assistant",
-   "at": "2026-06-23T01:02:21.631Z"
-  },
-  {
-   "id": "taking-out-before-from",
-   "label": "Taking out, before & away",
-   "gloss": "except, set down beforehand, free from",
-   "by": "assistant",
-   "at": "2026-06-23T01:02:21.631Z"
-  },
-  {
-   "id": "principal-principle",
-   "label": "Principal & principle",
-   "gloss": "first thing taken — chief, main, fundamental rule",
-   "by": "user",
    "at": "2026-06-24T00:00:00.000Z"
   },
   {
-   "id": "inception-beginning",
-   "label": "Inception & beginning",
-   "gloss": "taking in — origin, start, first taking",
-   "by": "user",
+   "id": "formation-conception",
+   "label": "Formation & conception",
+   "gloss": "conceive, concept, perceive, inception — taking in through mind to form ideas or understanding",
+   "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
   },
   {
-   "id": "participation",
-   "label": "Participation",
-   "gloss": "part-taking — sharing in, taking part",
-   "by": "user",
+   "id": "deceit",
+   "label": "Deceit & deception",
+   "gloss": "deceive, deceit, conceit — taking or forming falsely or by guile",
+   "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
   },
   {
-   "id": "anticipation",
-   "label": "Anticipation",
-   "gloss": "taking before — foreseeing, expecting",
-   "by": "user",
+   "id": "authority-leadership",
+   "label": "Authority & leadership",
+   "gloss": "captain, principal, capital — taking the first/chief position; exercising authority",
+   "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
   },
   {
-   "id": "capital",
-   "label": "Capital",
-   "gloss": "principal sum — assets, wealth, from the head/chief",
-   "by": "user",
+   "id": "rules-constraints",
+   "label": "Rules & constraints",
+   "gloss": "except, precept, anticipate — taking out/before to set boundaries and rules",
+   "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
   },
   {
-   "id": "discipline",
-   "label": "Discipline",
-   "gloss": "learning from a teacher — from disciple (learner)",
-   "by": "user",
-   "at": "2026-06-24T00:00:00.000Z"
-  },
-  {
-   "id": "captaincy",
-   "label": "Command & rank",
-   "gloss": "captain, captaincy — one who takes the lead",
-   "by": "user",
+   "id": "sharing-participation",
+   "label": "Sharing & participation",
+   "gloss": "participate, emancipate, discipline — taking together or under a master",
+   "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
   }
  ],
