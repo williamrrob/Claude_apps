@@ -5,86 +5,30 @@
  "rootGloss": "Latin · to send, let go",
  "regions": [
   {
-   "id": "emitting",
-   "label": "Emitting & emissaries",
-   "gloss": "send out",
-   "by": "assistant",
-   "at": "2026-06-23T04:09:20.695Z"
-  },
-  {
-   "id": "transmission",
-   "label": "Transmission",
-   "gloss": "send across",
-   "by": "assistant",
-   "at": "2026-06-23T04:09:20.695Z"
-  },
-  {
-   "id": "admitting-entrusting",
-   "label": "Admitting & entrusting",
-   "gloss": "let in; send together",
-   "by": "assistant",
-   "at": "2026-06-23T04:09:20.695Z"
-  },
-  {
-   "id": "permitting",
-   "label": "Permitting",
-   "gloss": "let pass, allow",
-   "by": "assistant",
-   "at": "2026-06-23T04:09:20.695Z"
-  },
-  {
-   "id": "releasing",
-   "label": "Releasing & sending away",
-   "gloss": "let go, send off, pause",
-   "by": "assistant",
-   "at": "2026-06-23T04:09:20.695Z"
-  },
-  {
-   "id": "submission",
-   "label": "Submission",
-   "gloss": "send under, yield",
-   "by": "assistant",
-   "at": "2026-06-23T04:09:20.695Z"
-  },
-  {
-   "id": "things-sent",
-   "label": "Things sent",
-   "gloss": "a thing let go or dispatched",
-   "by": "assistant",
-   "at": "2026-06-23T04:09:20.695Z"
-  },
-  {
-   "id": "commitment",
-   "label": "Commitment",
-   "gloss": "send together, entrust",
+   "id": "sending-forth",
+   "label": "Sending forth & dispersal",
+   "gloss": "emit, transmit, mission — sending outward or dispatching to a purpose",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
   },
   {
-   "id": "omission",
-   "label": "Omission",
-   "gloss": "send away, leave out",
+   "id": "allowing-passage",
+   "label": "Allowing passage & release",
+   "gloss": "permit, allow, release, dismiss — letting things pass, go, or pass through",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
   },
   {
-   "id": "intermission",
-   "label": "Intermission",
-   "gloss": "send between, pause",
+   "id": "trust-delegation",
+   "label": "Trust & delegation",
+   "gloss": "admit, commit, submit — sending under authority; entrusting to care",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
   },
   {
-   "id": "remittance",
-   "label": "Remittance & remission",
-   "gloss": "send back, send money",
-   "by": "assistant",
-   "at": "2026-06-24T00:00:00.000Z"
-  },
-  {
-   "id": "limits",
-   "label": "Limits",
-   "gloss": "set a boundary, delimit",
+   "id": "constraints-limits",
+   "label": "Constraints & limits",
+   "gloss": "limit, intermittent, omit — sending a boundary or sending nothing; setting constraints",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
   }
@@ -93,7 +37,7 @@
   {
    "w": "emit",
    "s": null,
-   "region": "emitting",
+   "region": "sending-forth",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -101,7 +45,7 @@
   {
    "w": "emission",
    "s": null,
-   "region": "emitting",
+   "region": "sending-forth",
    "parent": "emit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -109,7 +53,7 @@
   {
    "w": "photoemission",
    "s": null,
-   "region": "emitting",
+   "region": "sending-forth",
    "parent": "emission",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -117,7 +61,7 @@
   {
    "w": "photoemissive",
    "s": null,
-   "region": "emitting",
+   "region": "sending-forth",
    "parent": "emission",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -125,7 +69,7 @@
   {
    "w": "emissary",
    "s": null,
-   "region": "emitting",
+   "region": "sending-forth",
    "parent": "emit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -133,7 +77,7 @@
   {
    "w": "transmission",
    "s": null,
-   "region": "transmission",
+   "region": "sending-forth",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -141,7 +85,7 @@
   {
    "w": "transmissible",
    "s": null,
-   "region": "transmission",
+   "region": "sending-forth",
    "parent": "transmission",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -149,7 +93,7 @@
   {
    "w": "nontransmissible",
    "s": null,
-   "region": "transmission",
+   "region": "sending-forth",
    "parent": "transmissible",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -157,7 +101,7 @@
   {
    "w": "transmitting",
    "s": null,
-   "region": "transmission",
+   "region": "sending-forth",
    "parent": "transmission",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -165,7 +109,7 @@
   {
    "w": "admit",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -173,7 +117,7 @@
   {
    "w": "readmit",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "admit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -181,7 +125,7 @@
   {
    "w": "intromit",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -189,7 +133,7 @@
   {
    "w": "commit",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -197,7 +141,7 @@
   {
    "w": "noncommissioned",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "commit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -205,7 +149,7 @@
   {
    "w": "mission",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -213,7 +157,7 @@
   {
    "w": "missal",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "mission",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -221,7 +165,7 @@
   {
    "w": "permit",
    "s": null,
-   "region": "permitting",
+   "region": "allowing-passage",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -229,7 +173,7 @@
   {
    "w": "permissive",
    "s": null,
-   "region": "permitting",
+   "region": "allowing-passage",
    "parent": "permit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -237,7 +181,7 @@
   {
    "w": "impermissible",
    "s": null,
-   "region": "permitting",
+   "region": "allowing-passage",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -245,7 +189,7 @@
   {
    "w": "unpermissive",
    "s": null,
-   "region": "permitting",
+   "region": "allowing-passage",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -253,7 +197,7 @@
   {
    "w": "dismiss",
    "s": null,
-   "region": "releasing",
+   "region": "allowing-passage",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -261,7 +205,7 @@
   {
    "w": "omit",
    "s": null,
-   "region": "releasing",
+   "region": "allowing-passage",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -269,7 +213,7 @@
   {
    "w": "omission",
    "s": null,
-   "region": "releasing",
+   "region": "allowing-passage",
    "parent": "omit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -277,7 +221,7 @@
   {
    "w": "remit",
    "s": null,
-   "region": "releasing",
+   "region": "allowing-passage",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -285,7 +229,7 @@
   {
    "w": "remiss",
    "s": null,
-   "region": "releasing",
+   "region": "allowing-passage",
    "parent": "remit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -293,7 +237,7 @@
   {
    "w": "manumit",
    "s": null,
-   "region": "releasing",
+   "region": "allowing-passage",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -301,7 +245,7 @@
   {
    "w": "intermit",
    "s": null,
-   "region": "releasing",
+   "region": "allowing-passage",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -309,7 +253,7 @@
   {
    "w": "intermittency",
    "s": null,
-   "region": "releasing",
+   "region": "allowing-passage",
    "parent": "intermit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -317,7 +261,7 @@
   {
    "w": "intermittent",
    "s": null,
-   "region": "releasing",
+   "region": "allowing-passage",
    "parent": "intermit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -325,7 +269,7 @@
   {
    "w": "submit",
    "s": null,
-   "region": "submission",
+   "region": "trust-delegation",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -333,7 +277,7 @@
   {
    "w": "submissive",
    "s": null,
-   "region": "submission",
+   "region": "trust-delegation",
    "parent": "submit",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -341,7 +285,7 @@
   {
    "w": "unsubmissive",
    "s": null,
-   "region": "submission",
+   "region": "trust-delegation",
    "parent": "submissive",
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -349,7 +293,7 @@
   {
    "w": "missile",
    "s": null,
-   "region": "things-sent",
+   "region": "sending-forth",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -357,7 +301,7 @@
   {
    "w": "missive",
    "s": null,
-   "region": "things-sent",
+   "region": "sending-forth",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -365,7 +309,7 @@
   {
    "w": "premiss",
    "s": null,
-   "region": "things-sent",
+   "region": "sending-forth",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-23T04:09:20.695Z"
@@ -373,7 +317,7 @@
   {
    "w": "mission",
    "s": null,
-   "region": "things-sent",
+   "region": "sending-forth",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -381,7 +325,7 @@
   {
    "w": "missionary",
    "s": null,
-   "region": "things-sent",
+   "region": "sending-forth",
    "parent": "mission",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -389,7 +333,7 @@
   {
    "w": "missional",
    "s": null,
-   "region": "things-sent",
+   "region": "sending-forth",
    "parent": "mission",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -397,7 +341,7 @@
   {
    "w": "commit",
    "s": null,
-   "region": "commitment",
+   "region": "trust-delegation",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -405,7 +349,7 @@
   {
    "w": "commitment",
    "s": null,
-   "region": "commitment",
+   "region": "trust-delegation",
    "parent": "commit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -413,7 +357,7 @@
   {
    "w": "committee",
    "s": null,
-   "region": "commitment",
+   "region": "trust-delegation",
    "parent": "commit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -421,7 +365,7 @@
   {
    "w": "committal",
    "s": null,
-   "region": "commitment",
+   "region": "trust-delegation",
    "parent": "commit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -429,7 +373,7 @@
   {
    "w": "uncommitted",
    "s": null,
-   "region": "commitment",
+   "region": "trust-delegation",
    "parent": "commit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -437,7 +381,7 @@
   {
    "w": "recommit",
    "s": null,
-   "region": "commitment",
+   "region": "trust-delegation",
    "parent": "commit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -445,7 +389,7 @@
   {
    "w": "omit",
    "s": null,
-   "region": "omission",
+   "region": "constraints-limits",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -453,7 +397,7 @@
   {
    "w": "omission",
    "s": null,
-   "region": "omission",
+   "region": "constraints-limits",
    "parent": "omit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -461,7 +405,7 @@
   {
    "w": "omissible",
    "s": null,
-   "region": "omission",
+   "region": "constraints-limits",
    "parent": "omit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -469,7 +413,7 @@
   {
    "w": "intermittent",
    "s": null,
-   "region": "intermission",
+   "region": "constraints-limits",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -477,7 +421,7 @@
   {
    "w": "intermittence",
    "s": null,
-   "region": "intermission",
+   "region": "constraints-limits",
    "parent": "intermittent",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -485,7 +429,7 @@
   {
    "w": "intermission",
    "s": null,
-   "region": "intermission",
+   "region": "constraints-limits",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -493,7 +437,7 @@
   {
    "w": "intermit",
    "s": null,
-   "region": "intermission",
+   "region": "constraints-limits",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -501,7 +445,7 @@
   {
    "w": "remit",
    "s": null,
-   "region": "remittance",
+   "region": "allowing-passage",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -509,7 +453,7 @@
   {
    "w": "remittance",
    "s": null,
-   "region": "remittance",
+   "region": "allowing-passage",
    "parent": "remit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -517,7 +461,7 @@
   {
    "w": "remittent",
    "s": null,
-   "region": "remittance",
+   "region": "allowing-passage",
    "parent": "remit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -525,7 +469,7 @@
   {
    "w": "remission",
    "s": null,
-   "region": "remittance",
+   "region": "allowing-passage",
    "parent": "remit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -533,7 +477,7 @@
   {
    "w": "remissness",
    "s": null,
-   "region": "remittance",
+   "region": "allowing-passage",
    "parent": "remit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -541,7 +485,7 @@
   {
    "w": "limit",
    "s": null,
-   "region": "limits",
+   "region": "constraints-limits",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -549,7 +493,7 @@
   {
    "w": "limitation",
    "s": null,
-   "region": "limits",
+   "region": "constraints-limits",
    "parent": "limit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -557,7 +501,7 @@
   {
    "w": "limited",
    "s": null,
-   "region": "limits",
+   "region": "constraints-limits",
    "parent": "limit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -565,7 +509,7 @@
   {
    "w": "limitless",
    "s": null,
-   "region": "limits",
+   "region": "constraints-limits",
    "parent": "limit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -573,7 +517,7 @@
   {
    "w": "delimit",
    "s": null,
-   "region": "limits",
+   "region": "constraints-limits",
    "parent": "limit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -581,7 +525,7 @@
   {
    "w": "delimitation",
    "s": null,
-   "region": "limits",
+   "region": "constraints-limits",
    "parent": "delimit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -589,7 +533,7 @@
   {
    "w": "illimitable",
    "s": null,
-   "region": "limits",
+   "region": "constraints-limits",
    "parent": "limit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -597,7 +541,7 @@
   {
    "w": "commissary",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -605,7 +549,7 @@
   {
    "w": "commission",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": null,
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -613,7 +557,7 @@
   {
    "w": "commissioned",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "commission",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -621,7 +565,7 @@
   {
    "w": "commissioner",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "commission",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -629,7 +573,7 @@
   {
    "w": "decommission",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "commission",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -637,7 +581,7 @@
   {
    "w": "emitter",
    "s": null,
-   "region": "emitting",
+   "region": "sending-forth",
    "parent": "emit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -645,7 +589,7 @@
   {
    "w": "transmitter",
    "s": null,
-   "region": "transmission",
+   "region": "sending-forth",
    "parent": "transmit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -653,7 +597,7 @@
   {
    "w": "transmitted",
    "s": null,
-   "region": "transmission",
+   "region": "sending-forth",
    "parent": "transmit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -661,7 +605,7 @@
   {
    "w": "transmittable",
    "s": null,
-   "region": "transmission",
+   "region": "sending-forth",
    "parent": "transmit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -669,7 +613,7 @@
   {
    "w": "admissible",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "admit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -677,7 +621,7 @@
   {
    "w": "inadmissible",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "admissible",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -685,7 +629,7 @@
   {
    "w": "admittance",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "admit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -693,7 +637,7 @@
   {
    "w": "readmit",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "admit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
@@ -701,7 +645,7 @@
   {
    "w": "readmission",
    "s": null,
-   "region": "admitting-entrusting",
+   "region": "trust-delegation",
    "parent": "readmit",
    "by": "assistant",
    "at": "2026-06-24T00:00:00.000Z"
