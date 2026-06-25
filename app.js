@@ -115,12 +115,26 @@ Critical rules:
       if (data.stop_reason === "end_turn") {
         const textBlock = (data.content || []).find(function (b) { return b.type === "text"; });
         if (!textBlock) throw new Error("Empty response from Claude");
-        console.log("[callClaude] Response text:", textBlock.text);
-        const match = textBlock.text.match(/\{[\s\S]*\}/);
-        if (!match) throw new Error("No JSON found in response: " + textBlock.text.slice(0, 200));
-        const result = JSON.parse(match[0]);
-        console.log("[callClaude] Parsed breakdown:", result);
-        return result;
+        const responseText = textBlock.text;
+        console.log("[callClaude] Response text:", responseText);
+
+        // Try to extract JSON from markdown code blocks first
+        let match = responseText.match(/```(?:json)?\s*([\s\S]*?)```/);
+        let jsonStr = match ? match[1].trim() : responseText;
+
+        // If no code block, try plain JSON
+        if (!match) {
+          match = responseText.match(/\{[\s\S]*\}/);
+          jsonStr = match ? match[0] : responseText;
+        }
+
+        try {
+          const result = JSON.parse(jsonStr);
+          console.log("[callClaude] Parsed breakdown:", result);
+          return result;
+        } catch (parseErr) {
+          throw new Error("Failed to parse JSON: " + parseErr.message + "\nResponse was: " + responseText.slice(0, 300));
+        }
       }
 
       if (data.stop_reason === "tool_use") {
