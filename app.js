@@ -53,7 +53,7 @@
   const CLAUDE_KEY_LS = "rootwork.claudeKey";
   const GH_KEY_LS = "rootwork.ghToken";
   const GH_REPO = "williamrrob/Claude_apps";
-  const GH_BRANCH = "claude/visual-etymology-app-093c1d";
+  const GH_BRANCH = "claude/latin-roots-word-sort-oy28hh";
 
   function getClaudeKey() { try { return localStorage.getItem(CLAUDE_KEY_LS) || ""; } catch (e) { return ""; } }
   function setClaudeKey(k) { try { localStorage.setItem(CLAUDE_KEY_LS, k); } catch (e) {} }
