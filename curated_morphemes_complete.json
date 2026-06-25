@@ -3335,17 +3335,17 @@
     "parts": [
       {
         "kind": "root",
-        "id": "cap",
-        "gloss": "Latin",
-        "surface": "cap",
-        "origin": {
-          "id": "seizing-capturing",
-          "label": "Seizing & capturing",
-          "gloss": "physically take, hold, catch",
-          "by": "assistant",
-          "at": "2026-06-23T01:02:21.631Z"
-        },
-        "source": "cap"
+        "id": "captiv",
+        "surface": "captiv",
+        "gloss": "",
+        "source": "-captiv"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "cap",
@@ -3356,8 +3356,9 @@
       "parent": "captive",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "captor": {
     "parts": [
@@ -6919,17 +6920,31 @@
     "parts": [
       {
         "kind": "root",
-        "id": "duc",
-        "gloss": "Latin",
-        "surface": "duc",
-        "origin": {
-          "id": "channels-conduction",
-          "label": "Channels & conduction",
-          "gloss": "leading fluid, current, heat",
-          "by": "assistant",
-          "at": "2026-06-23T04:06:47.530Z"
-        },
-        "source": "duc"
+        "id": "super",
+        "surface": "super",
+        "gloss": "",
+        "source": "-super"
+      },
+      {
+        "kind": "prefix",
+        "id": "con",
+        "surface": "con",
+        "gloss": "",
+        "source": "-con"
+      },
+      {
+        "kind": "root",
+        "id": "duct",
+        "surface": "duct",
+        "gloss": "",
+        "source": "-duct"
+      },
+      {
+        "kind": "root",
+        "id": "ivity",
+        "surface": "ivity",
+        "gloss": "",
+        "source": "-ivity"
       }
     ],
     "root": "duc",
@@ -6940,8 +6955,9 @@
       "parent": "conduct",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "conduce": {
     "parts": [
@@ -8767,17 +8783,17 @@
     "parts": [
       {
         "kind": "root",
-        "id": "facere",
-        "gloss": "Latin",
-        "surface": "facere",
-        "origin": {
-          "id": "making-creating",
-          "label": "Making & creating",
-          "gloss": "creating, manufacturing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "facere"
+        "id": "facil",
+        "surface": "facil",
+        "gloss": "",
+        "source": "-facil"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "facere",
@@ -8788,8 +8804,9 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "difficult": {
     "parts": [
@@ -10727,17 +10744,24 @@
     "parts": [
       {
         "kind": "root",
-        "id": "facere",
-        "gloss": "Latin",
-        "surface": "facere",
-        "origin": {
-          "id": "making-creating",
-          "label": "Making & creating",
-          "gloss": "creating, manufacturing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "facere"
+        "id": "super",
+        "surface": "super",
+        "gloss": "",
+        "source": "-super"
+      },
+      {
+        "kind": "root",
+        "id": "ficial",
+        "surface": "ficial",
+        "gloss": "",
+        "source": "-ficial"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "facere",
@@ -10748,8 +10772,9 @@
       "parent": "superficial",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "superficially": {
     "parts": [
@@ -12911,17 +12936,17 @@
     "parts": [
       {
         "kind": "root",
-        "id": "ferre",
-        "gloss": "Latin",
-        "surface": "ferre",
-        "origin": {
-          "id": "bearing-carrying",
-          "label": "Bearing & carrying",
-          "gloss": "physically bearing or carrying something; movement of bearing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "ferre"
+        "id": "fertil",
+        "surface": "fertil",
+        "gloss": "",
+        "source": "-fertil"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "ferre",
@@ -12932,8 +12957,9 @@
       "parent": "fertile",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "infertile": {
     "parts": [
@@ -12966,18 +12992,25 @@
   "infertility": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "in",
+        "surface": "in",
+        "gloss": "",
+        "source": "-in"
+      },
+      {
         "kind": "root",
-        "id": "fer",
-        "gloss": "Latin",
-        "surface": "fer",
-        "origin": {
-          "id": "conferring-referring",
-          "label": "Bringing to mind",
-          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
-          "by": "assistant",
-          "at": "2026-06-23T05:28:10.421Z"
-        },
-        "source": "fer"
+        "id": "fertil",
+        "surface": "fertil",
+        "gloss": "",
+        "source": "-fertil"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "fer",
@@ -12988,8 +13021,9 @@
       "parent": "infertile",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "unfertile": {
     "parts": [
@@ -22516,16 +22550,23 @@
       {
         "kind": "root",
         "id": "spec",
-        "gloss": "Latin",
         "surface": "spec",
-        "origin": {
-          "id": "looking-watching",
-          "label": "Looking & watching",
-          "gloss": "physical observation",
-          "by": "assistant",
-          "at": "2026-06-22T23:09:07.791Z"
-        },
-        "source": "spec"
+        "gloss": "",
+        "source": "-spec"
+      },
+      {
+        "kind": "root",
+        "id": "ific",
+        "surface": "ific",
+        "gloss": "",
+        "source": "-ific"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "spec",
@@ -22536,8 +22577,9 @@
       "parent": "specific",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "specify": {
     "parts": [
@@ -24895,17 +24937,17 @@
     "parts": [
       {
         "kind": "root",
-        "id": "tenere",
-        "gloss": "Latin",
-        "surface": "tenere",
-        "origin": {
-          "id": "holding-grasping",
-          "label": "Holding & grasping",
-          "gloss": "holding something firmly; possession and tenacity",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "tenere"
+        "id": "tenac",
+        "surface": "tenac",
+        "gloss": "",
+        "source": "-tenac"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "tenere",
@@ -24916,8 +24958,9 @@
       "parent": "tenacious",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "contain": {
     "parts": [
@@ -27162,18 +27205,25 @@
   "adversity": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "ad",
+        "surface": "ad",
+        "gloss": "",
+        "source": "-ad"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -27184,8 +27234,9 @@
       "parent": "adverse",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "aversion": {
     "parts": [
@@ -27302,18 +27353,39 @@
   "irreversibility": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "ir",
+        "surface": "ir",
+        "gloss": "",
+        "source": "-ir"
+      },
+      {
+        "kind": "prefix",
+        "id": "re",
+        "surface": "re",
+        "gloss": "",
+        "source": "-re"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ibl",
+        "surface": "ibl",
+        "gloss": "able to be, capable of",
+        "source": "-ibl"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -27324,8 +27396,9 @@
       "parent": "irreversible",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "irreversible": {
     "parts": [
@@ -27553,18 +27626,25 @@
   "perversity": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "per",
+        "surface": "per",
+        "gloss": "",
+        "source": "-per"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -27575,8 +27655,9 @@
       "parent": "perverse",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "perversive": {
     "parts": [
@@ -27721,18 +27802,32 @@
   "reversibility": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "re",
+        "surface": "re",
+        "gloss": "",
+        "source": "-re"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ibl",
+        "surface": "ibl",
+        "gloss": "able to be, capable of",
+        "source": "-ibl"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -27743,8 +27838,9 @@
       "parent": "reversible",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "reversible": {
     "parts": [
@@ -28281,18 +28377,32 @@
   "convertibility": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "con",
+        "surface": "con",
+        "gloss": "",
+        "source": "-con"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ibl",
+        "surface": "ibl",
+        "gloss": "able to be, capable of",
+        "source": "-ibl"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -28303,8 +28413,9 @@
       "parent": "convertible",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "convertible": {
     "parts": [
@@ -28365,18 +28476,39 @@
   "inconvertibility": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "in",
+        "surface": "in",
+        "gloss": "",
+        "source": "-in"
+      },
+      {
+        "kind": "prefix",
+        "id": "con",
+        "surface": "con",
+        "gloss": "",
+        "source": "-con"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ibl",
+        "surface": "ibl",
+        "gloss": "able to be, capable of",
+        "source": "-ibl"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -28387,8 +28519,9 @@
       "parent": "inconvertible",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "inconvertible": {
     "parts": [
@@ -29510,18 +29643,32 @@
   "biodiversity": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "bio",
+        "surface": "bio",
+        "gloss": "",
+        "source": "-bio"
+      },
+      {
+        "kind": "prefix",
+        "id": "di",
+        "surface": "di",
+        "gloss": "",
+        "source": "-di"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -29532,8 +29679,9 @@
       "parent": "diversity",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "divers": {
     "parts": [
@@ -29790,18 +29938,25 @@
   "diversity": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "di",
+        "surface": "di",
+        "gloss": "",
+        "source": "-di"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -29812,8 +29967,9 @@
       "parent": "diverse",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "diverted": {
     "parts": [
@@ -29903,17 +30059,17 @@
     "parts": [
       {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "versatil",
+        "surface": "versatil",
+        "gloss": "",
+        "source": "-versatil"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -29924,8 +30080,9 @@
       "parent": "versatile",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "ambiversion": {
     "parts": [
@@ -30527,17 +30684,24 @@
     "parts": [
       {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "multi",
+        "surface": "multi",
+        "gloss": "",
+        "source": "-multi"
+      },
+      {
+        "kind": "root",
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -30548,8 +30712,9 @@
       "parent": "universal",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "transversal": {
     "parts": [
@@ -30862,18 +31027,32 @@
   "universality": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "uni",
+        "surface": "uni",
+        "gloss": "",
+        "source": "-uni"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "al",
+        "surface": "al",
+        "gloss": "relating to, connected with",
+        "source": "-al"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -30884,8 +31063,9 @@
       "parent": "universal",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "universalize": {
     "parts": [
@@ -30946,18 +31126,25 @@
   "university": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "uni",
+        "surface": "uni",
+        "gloss": "",
+        "source": "-uni"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -30968,8 +31155,9 @@
       "parent": "universal",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "untraversable": {
     "parts": [
@@ -31198,18 +31386,39 @@
   "incontrovertibility": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "in",
+        "surface": "in",
+        "gloss": "",
+        "source": "-in"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "contro",
+        "surface": "contro",
+        "gloss": "",
+        "source": "-contro"
+      },
+      {
+        "kind": "root",
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "",
+        "source": "-vers"
+      },
+      {
+        "kind": "suffix",
+        "id": "ibl",
+        "surface": "ibl",
+        "gloss": "able to be, capable of",
+        "source": "-ibl"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -31220,8 +31429,9 @@
       "parent": "incontrovertible",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "incontrovertible": {
     "parts": [
@@ -32206,17 +32416,24 @@
     "parts": [
       {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "vert"
+        "id": "vertic",
+        "surface": "vertic",
+        "gloss": "",
+        "source": "-vertic"
+      },
+      {
+        "kind": "suffix",
+        "id": "al",
+        "surface": "al",
+        "gloss": "relating to, connected with",
+        "source": "-al"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "surface": "ity",
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "vert",
@@ -32227,8 +32444,9 @@
       "parent": "vertical",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W corrected",
+    "mwVerified": true,
+    "batch2_corrected": true
   },
   "vertically": {
     "parts": [
@@ -32484,25 +32702,24 @@
     "parts": [
       {
         "kind": "root",
-        "id": "cap",
-        "gloss": "able to hold, spacious",
+        "id": "capac",
         "surface": "capac",
-        "origin": "Latin",
-        "source": "capax (from capere, to take, hold)"
+        "gloss": "",
+        "source": "-capac"
       },
       {
         "kind": "suffix",
         "id": "ity",
-        "gloss": "state or quality of",
         "surface": "ity",
-        "origin": "Latin",
-        "source": "-itas"
+        "gloss": "state or quality of",
+        "source": "-ity"
       }
     ],
     "root": "cap",
     "family": null,
     "mwEtymology": "Middle English capacite, from Middle French capacité, from Latin capacitat-, capacitas (state of being able to hold), from capax (able, spacious, from capere to take, hold) + -itas (noun suffix)",
     "mwVerified": true,
-    "source": "M-W research"
+    "source": "M-W corrected",
+    "batch2_corrected": true
   }
 }
