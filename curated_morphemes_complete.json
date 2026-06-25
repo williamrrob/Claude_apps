@@ -2634,17 +2634,17 @@
   "accept": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "ac",
+        "surface": "ac",
+        "gloss": "ac- prefix",
+        "source": "ac-"
+      },
+      {
         "kind": "root",
-        "id": "cap",
-        "gloss": "Latin",
-        "surface": "cap",
-        "origin": {
-          "id": "seizing-capturing",
-          "label": "Seizing & capturing",
-          "gloss": "physically take, hold, catch",
-          "by": "assistant",
-          "at": "2026-06-23T01:02:21.631Z"
-        },
+        "id": "cept",
+        "surface": "cept",
+        "gloss": "root",
         "source": "cap"
       }
     ],
@@ -2656,8 +2656,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "capable": {
     "parts": [
@@ -2970,17 +2970,17 @@
   "except": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "ex",
+        "surface": "ex",
+        "gloss": "ex- prefix",
+        "source": "ex-"
+      },
+      {
         "kind": "root",
-        "id": "cap",
-        "gloss": "Latin",
-        "surface": "cap",
-        "origin": {
-          "id": "seizing-capturing",
-          "label": "Seizing & capturing",
-          "gloss": "physically take, hold, catch",
-          "by": "assistant",
-          "at": "2026-06-23T01:02:21.631Z"
-        },
+        "id": "cept",
+        "surface": "cept",
+        "gloss": "root",
         "source": "cap"
       }
     ],
@@ -2992,8 +2992,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "perceive": {
     "parts": [
@@ -4007,17 +4007,17 @@
   "concede": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "con",
+        "surface": "con",
+        "gloss": "con- prefix",
+        "source": "con-"
+      },
+      {
         "kind": "root",
-        "id": "cedere",
-        "gloss": "Latin",
-        "surface": "cedere",
-        "origin": {
-          "id": "yielding-conceding",
-          "label": "Yielding & conceding",
-          "gloss": "giving way, yielding, granting",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "cede",
+        "surface": "cede",
+        "gloss": "root",
         "source": "cedere"
       }
     ],
@@ -4029,8 +4029,8 @@
       "parent": "cede",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "concession": {
     "parts": [
@@ -4063,17 +4063,17 @@
   "accede": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "ac",
+        "surface": "ac",
+        "gloss": "ac- prefix",
+        "source": "ac-"
+      },
+      {
         "kind": "root",
-        "id": "cedere",
-        "gloss": "Latin",
-        "surface": "cedere",
-        "origin": {
-          "id": "yielding-conceding",
-          "label": "Yielding & conceding",
-          "gloss": "giving way, yielding, granting",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "cede",
+        "surface": "cede",
+        "gloss": "root",
         "source": "cedere"
       }
     ],
@@ -4085,8 +4085,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "accession": {
     "parts": [
@@ -4203,17 +4203,17 @@
   "recede": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "re",
+        "surface": "re",
+        "gloss": "re- prefix",
+        "source": "re-"
+      },
+      {
         "kind": "root",
-        "id": "cedere",
-        "gloss": "Latin",
-        "surface": "cedere",
-        "origin": {
-          "id": "yielding-conceding",
-          "label": "Yielding & conceding",
-          "gloss": "giving way, yielding, granting",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "cede",
+        "surface": "cede",
+        "gloss": "root",
         "source": "cedere"
       }
     ],
@@ -4225,8 +4225,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "recessional": {
     "parts": [
@@ -6751,17 +6751,17 @@
   "conduct": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "con",
+        "surface": "con",
+        "gloss": "con- prefix",
+        "source": "con-"
+      },
+      {
         "kind": "root",
-        "id": "duc",
-        "gloss": "Latin",
-        "surface": "duc",
-        "origin": {
-          "id": "channels-conduction",
-          "label": "Channels & conduction",
-          "gloss": "leading fluid, current, heat",
-          "by": "assistant",
-          "at": "2026-06-23T04:06:47.530Z"
-        },
+        "id": "duct",
+        "surface": "duct",
+        "gloss": "root",
         "source": "duc"
       }
     ],
@@ -6773,8 +6773,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "nonconducting": {
     "parts": [
@@ -7186,17 +7186,17 @@
   "produce": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "pro",
+        "surface": "pro",
+        "gloss": "pro- prefix",
+        "source": "pro-"
+      },
+      {
         "kind": "root",
-        "id": "duc",
-        "gloss": "Latin",
-        "surface": "duc",
-        "origin": {
-          "id": "channels-conduction",
-          "label": "Channels & conduction",
-          "gloss": "leading fluid, current, heat",
-          "by": "assistant",
-          "at": "2026-06-23T04:06:47.530Z"
-        },
+        "id": "duct",
+        "surface": "duct",
+        "gloss": "root",
         "source": "duc"
       }
     ],
@@ -7208,8 +7208,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "producer": {
     "parts": [
@@ -9707,17 +9707,17 @@
   "defect": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "de",
+        "surface": "de",
+        "gloss": "de- prefix",
+        "source": "de-"
+      },
+      {
         "kind": "root",
-        "id": "facere",
-        "gloss": "Latin",
-        "surface": "facere",
-        "origin": {
-          "id": "making-creating",
-          "label": "Making & creating",
-          "gloss": "creating, manufacturing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "fect",
+        "surface": "fect",
+        "gloss": "root",
         "source": "facere"
       }
     ],
@@ -9729,8 +9729,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "defected": {
     "parts": [
@@ -9903,17 +9903,17 @@
   "perfect": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "per",
+        "surface": "per",
+        "gloss": "per- prefix",
+        "source": "per-"
+      },
+      {
         "kind": "root",
-        "id": "facere",
-        "gloss": "Latin",
-        "surface": "facere",
-        "origin": {
-          "id": "making-creating",
-          "label": "Making & creating",
-          "gloss": "creating, manufacturing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "fect",
+        "surface": "fect",
+        "gloss": "root",
         "source": "facere"
       }
     ],
@@ -9925,8 +9925,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "perfected": {
     "parts": [
@@ -10863,17 +10863,17 @@
   "confer": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "con",
+        "surface": "con",
+        "gloss": "con- prefix",
+        "source": "con-"
+      },
+      {
         "kind": "root",
-        "id": "ferre",
-        "gloss": "Latin",
-        "surface": "ferre",
-        "origin": {
-          "id": "bearing-carrying",
-          "label": "Bearing & carrying",
-          "gloss": "physically bearing or carrying something; movement of bearing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "fer",
+        "surface": "fer",
+        "gloss": "to carry",
         "source": "ferre"
       }
     ],
@@ -10885,23 +10885,23 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "conference": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "con",
+        "surface": "con",
+        "gloss": "con- prefix",
+        "source": "con-"
+      },
+      {
         "kind": "root",
-        "id": "ferre",
-        "gloss": "Latin",
-        "surface": "ferre",
-        "origin": {
-          "id": "bearing-carrying",
-          "label": "Bearing & carrying",
-          "gloss": "physically bearing or carrying something; movement of bearing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "fer",
+        "surface": "fer",
+        "gloss": "to carry",
         "source": "ferre"
       }
     ],
@@ -10913,8 +10913,8 @@
       "parent": "confer",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "teleconference": {
     "parts": [
@@ -11143,17 +11143,17 @@
   "refer": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "re",
+        "surface": "re",
+        "gloss": "re- prefix",
+        "source": "re-"
+      },
+      {
         "kind": "root",
-        "id": "ferre",
-        "gloss": "Latin",
-        "surface": "ferre",
-        "origin": {
-          "id": "bearing-carrying",
-          "label": "Bearing & carrying",
-          "gloss": "physically bearing or carrying something; movement of bearing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "fer",
+        "surface": "fer",
+        "gloss": "to carry",
         "source": "ferre"
       }
     ],
@@ -11165,8 +11165,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "reference": {
     "parts": [
@@ -11787,17 +11787,17 @@
   "differ": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "dif",
+        "surface": "dif",
+        "gloss": "dif- prefix",
+        "source": "dif-"
+      },
+      {
         "kind": "root",
-        "id": "ferre",
-        "gloss": "Latin",
-        "surface": "ferre",
-        "origin": {
-          "id": "bearing-carrying",
-          "label": "Bearing & carrying",
-          "gloss": "physically bearing or carrying something; movement of bearing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "fer",
+        "surface": "fer",
+        "gloss": "to carry",
         "source": "ferre"
       }
     ],
@@ -11809,24 +11809,24 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "different": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "dif",
+        "surface": "dif",
+        "gloss": "dif- prefix",
+        "source": "dif-"
+      },
+      {
         "kind": "root",
         "id": "fer",
-        "gloss": "Latin",
         "surface": "fer",
-        "origin": {
-          "id": "conferring-referring",
-          "label": "Bringing to mind",
-          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
-          "by": "assistant",
-          "at": "2026-06-23T05:28:10.421Z"
-        },
-        "source": "fer"
+        "gloss": "to carry",
+        "source": "ferre"
       }
     ],
     "root": "fer",
@@ -11837,8 +11837,8 @@
       "parent": "differ",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "difference": {
     "parts": [
@@ -12431,17 +12431,17 @@
   "transfer": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "trans",
+        "surface": "trans",
+        "gloss": "trans- prefix",
+        "source": "trans-"
+      },
+      {
         "kind": "root",
-        "id": "ferre",
-        "gloss": "Latin",
-        "surface": "ferre",
-        "origin": {
-          "id": "bearing-carrying",
-          "label": "Bearing & carrying",
-          "gloss": "physically bearing or carrying something; movement of bearing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "fer",
+        "surface": "fer",
+        "gloss": "to carry",
         "source": "ferre"
       }
     ],
@@ -12453,8 +12453,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "transference": {
     "parts": [
@@ -16248,17 +16248,17 @@
   "admit": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "ad",
+        "surface": "ad",
+        "gloss": "ad- prefix",
+        "source": "ad-"
+      },
+      {
         "kind": "root",
         "id": "mit",
-        "gloss": "Latin",
         "surface": "mit",
-        "origin": {
-          "id": "emitting",
-          "label": "Emitting & emissaries",
-          "gloss": "send out",
-          "by": "assistant",
-          "at": "2026-06-23T04:09:20.695Z"
-        },
+        "gloss": "root",
         "source": "mit"
       }
     ],
@@ -16270,8 +16270,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "readmit": {
     "parts": [
@@ -16808,17 +16808,17 @@
   "submit": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "sub",
+        "surface": "sub",
+        "gloss": "sub- prefix",
+        "source": "sub-"
+      },
+      {
         "kind": "root",
         "id": "mit",
-        "gloss": "Latin",
         "surface": "mit",
-        "origin": {
-          "id": "emitting",
-          "label": "Emitting & emissaries",
-          "gloss": "send out",
-          "by": "assistant",
-          "at": "2026-06-23T04:09:20.695Z"
-        },
+        "gloss": "root",
         "source": "mit"
       }
     ],
@@ -16830,8 +16830,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "submissive": {
     "parts": [
@@ -17088,17 +17088,17 @@
   "suspend": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "sus",
+        "surface": "sus",
+        "gloss": "sus- prefix",
+        "source": "sus-"
+      },
+      {
         "kind": "root",
-        "id": "pendere",
-        "gloss": "Latin",
-        "surface": "pendere",
-        "origin": {
-          "id": "hanging-suspending",
-          "label": "Hanging & suspending",
-          "gloss": "hanging from, suspending",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "pend",
+        "surface": "pend",
+        "gloss": "root",
         "source": "pendere"
       }
     ],
@@ -17110,8 +17110,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "suspended": {
     "parts": [
@@ -19216,17 +19216,17 @@
   "transcribe": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "trans",
+        "surface": "trans",
+        "gloss": "trans- prefix",
+        "source": "trans-"
+      },
+      {
         "kind": "root",
-        "id": "scrib",
-        "gloss": "Latin",
-        "surface": "scrib",
-        "origin": {
-          "id": "writing-copying",
-          "label": "Writing & copying",
-          "gloss": "the act, its agents, artefacts, reproduction",
-          "by": "assistant",
-          "at": "2026-06-22T19:09:01.098Z"
-        },
+        "id": "script",
+        "surface": "script",
+        "gloss": "root",
         "source": "scrib"
       }
     ],
@@ -19238,8 +19238,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "transcriber": {
     "parts": [
@@ -20196,17 +20196,17 @@
   "subscribe": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "sub",
+        "surface": "sub",
+        "gloss": "sub- prefix",
+        "source": "sub-"
+      },
+      {
         "kind": "root",
-        "id": "scrib",
-        "gloss": "Latin",
-        "surface": "scrib",
-        "origin": {
-          "id": "writing-copying",
-          "label": "Writing & copying",
-          "gloss": "the act, its agents, artefacts, reproduction",
-          "by": "assistant",
-          "at": "2026-06-22T19:09:01.098Z"
-        },
+        "id": "script",
+        "surface": "script",
+        "gloss": "root",
         "source": "scrib"
       }
     ],
@@ -20218,8 +20218,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "subscriber": {
     "parts": [
@@ -21708,17 +21708,17 @@
   "despicable": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "de",
+        "surface": "de",
+        "gloss": "de- prefix",
+        "source": "de-"
+      },
+      {
         "kind": "root",
-        "id": "spec",
-        "gloss": "Latin",
-        "surface": "spec",
-        "origin": {
-          "id": "looking-watching",
-          "label": "Looking & watching",
-          "gloss": "physical observation",
-          "by": "assistant",
-          "at": "2026-06-22T23:09:07.791Z"
-        },
+        "id": "spic",
+        "surface": "spic",
+        "gloss": "to look",
         "source": "spec"
       }
     ],
@@ -21730,23 +21730,23 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "respect": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "re",
+        "surface": "re",
+        "gloss": "re- prefix",
+        "source": "re-"
+      },
+      {
         "kind": "root",
-        "id": "spec",
-        "gloss": "Latin",
-        "surface": "spec",
-        "origin": {
-          "id": "looking-watching",
-          "label": "Looking & watching",
-          "gloss": "physical observation",
-          "by": "assistant",
-          "at": "2026-06-22T23:09:07.791Z"
-        },
+        "id": "spect",
+        "surface": "spect",
+        "gloss": "to look",
         "source": "spec"
       }
     ],
@@ -21758,23 +21758,23 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "suspect": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "sus",
+        "surface": "sus",
+        "gloss": "sus- prefix",
+        "source": "sus-"
+      },
+      {
         "kind": "root",
-        "id": "spec",
-        "gloss": "Latin",
-        "surface": "spec",
-        "origin": {
-          "id": "looking-watching",
-          "label": "Looking & watching",
-          "gloss": "physical observation",
-          "by": "assistant",
-          "at": "2026-06-22T23:09:07.791Z"
-        },
+        "id": "pect",
+        "surface": "pect",
+        "gloss": "to look",
         "source": "spec"
       }
     ],
@@ -21786,23 +21786,23 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "disrespect": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "dis",
+        "surface": "dis",
+        "gloss": "dis- prefix",
+        "source": "dis-"
+      },
+      {
         "kind": "root",
-        "id": "spec",
-        "gloss": "Latin",
-        "surface": "spec",
-        "origin": {
-          "id": "looking-watching",
-          "label": "Looking & watching",
-          "gloss": "physical observation",
-          "by": "assistant",
-          "at": "2026-06-22T23:09:07.791Z"
-        },
+        "id": "spect",
+        "surface": "spect",
+        "gloss": "to look",
         "source": "spec"
       }
     ],
@@ -21814,8 +21814,8 @@
       "parent": "respect",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "disrespectful": {
     "parts": [
@@ -22100,17 +22100,17 @@
   "circumspect": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "circum",
+        "surface": "circum",
+        "gloss": "circum- prefix",
+        "source": "circum-"
+      },
+      {
         "kind": "root",
-        "id": "spec",
-        "gloss": "Latin",
-        "surface": "spec",
-        "origin": {
-          "id": "looking-watching",
-          "label": "Looking & watching",
-          "gloss": "physical observation",
-          "by": "assistant",
-          "at": "2026-06-22T23:09:07.791Z"
-        },
+        "id": "spect",
+        "surface": "spect",
+        "gloss": "to look",
         "source": "spec"
       }
     ],
@@ -22122,8 +22122,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "introspect": {
     "parts": [
@@ -22184,17 +22184,17 @@
   "prospect": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "pro",
+        "surface": "pro",
+        "gloss": "pro- prefix",
+        "source": "pro-"
+      },
+      {
         "kind": "root",
-        "id": "spec",
-        "gloss": "Latin",
-        "surface": "spec",
-        "origin": {
-          "id": "looking-watching",
-          "label": "Looking & watching",
-          "gloss": "physical observation",
-          "by": "assistant",
-          "at": "2026-06-22T23:09:07.791Z"
-        },
+        "id": "spect",
+        "surface": "spect",
+        "gloss": "to look",
         "source": "spec"
       }
     ],
@@ -22206,8 +22206,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "retrospect": {
     "parts": [
@@ -25049,17 +25049,17 @@
   "pertain": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "per",
+        "surface": "per",
+        "gloss": "per- prefix",
+        "source": "per-"
+      },
+      {
         "kind": "root",
-        "id": "tenere",
-        "gloss": "Latin",
-        "surface": "tenere",
-        "origin": {
-          "id": "holding-grasping",
-          "label": "Holding & grasping",
-          "gloss": "holding something firmly; possession and tenacity",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "tain",
+        "surface": "tain",
+        "gloss": "root",
         "source": "tenere"
       }
     ],
@@ -25071,8 +25071,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "pertinent": {
     "parts": [
@@ -25833,17 +25833,17 @@
   "subtract": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "sub",
+        "surface": "sub",
+        "gloss": "sub- prefix",
+        "source": "sub-"
+      },
+      {
         "kind": "root",
-        "id": "tractare",
-        "gloss": "Latin",
-        "surface": "tractare",
-        "origin": {
-          "id": "pulling-drawing",
-          "label": "Pulling & drawing",
-          "gloss": "pulling, dragging, drawing, extracting",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "tract",
+        "surface": "tract",
+        "gloss": "root",
         "source": "tractare"
       }
     ],
@@ -25855,8 +25855,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "subtraction": {
     "parts": [
@@ -26841,17 +26841,17 @@
   "adverse": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "ad",
+        "surface": "ad",
+        "gloss": "ad- prefix",
+        "source": "ad-"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "root",
         "source": "vert"
       }
     ],
@@ -26863,8 +26863,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "averred": {
     "parts": [
@@ -26981,17 +26981,17 @@
   "pervert": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "per",
+        "surface": "per",
+        "gloss": "per- prefix",
+        "source": "per-"
+      },
+      {
         "kind": "root",
         "id": "vert",
-        "gloss": "Latin",
         "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "gloss": "root",
         "source": "vert"
       }
     ],
@@ -27003,8 +27003,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "retrovert": {
     "parts": [
@@ -27037,17 +27037,17 @@
   "reverse": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "re",
+        "surface": "re",
+        "gloss": "re- prefix",
+        "source": "re-"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "root",
         "source": "vert"
       }
     ],
@@ -27059,8 +27059,8 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "revert": {
     "parts": [
@@ -27459,17 +27459,17 @@
   "malversation": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "mal",
+        "surface": "mal",
+        "gloss": "mal- prefix",
+        "source": "mal-"
+      },
+      {
         "kind": "root",
-        "id": "vert",
-        "gloss": "Latin",
-        "surface": "vert",
-        "origin": {
-          "id": "rotational-spatial",
-          "label": "Rotational & spatial turning",
-          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
+        "id": "vers",
+        "surface": "vers",
+        "gloss": "root",
         "source": "vert"
       }
     ],
@@ -27481,8 +27481,8 @@
       "parent": "malversate",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "nonreversible": {
     "parts": [
