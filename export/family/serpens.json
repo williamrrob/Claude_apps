@@ -1,0 +1,43 @@
+{
+  "_note": "Editor data for the serpens-/serpere- family (Latin serpere, 'to crawl, creep'; serpens 'snake'). Limited family: only definitive serpere etymologies included. EXCLUDES: creep/creeper/creeping (from Proto-Germanic *kreupanan, not serpere), reptile/reptilian (from Latin repere, not serpere), serrate (from serrō 'saw'), serf (from servus 'slave'). Placement format with provenance; regenerators MUST preserve by:assistant.",
+  "root": "serpens",
+  "rootLabel": "serpere/serpens",
+  "rootGloss": "Latin · to crawl, creep (serpere); snake (serpens)",
+  "regions": [
+    {
+      "id": "serpent-snake",
+      "label": "Serpent & snake",
+      "gloss": "the creature itself; snakes and serpentine forms",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "serpentine-qualities",
+      "label": "Serpentine qualities",
+      "gloss": "resembling or characteristic of snakes; winding, sinuous",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "serpent",
+      "s": null,
+      "region": "serpent-snake",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A snake; also a malicious or deceitful person (metaphorical extension). From Latin serpēns (creeping thing, snake), present participle of serpere (to crawl)."
+    },
+    {
+      "w": "serpentine",
+      "s": null,
+      "region": "serpentine-qualities",
+      "parent": "serpent",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Resembling or characteristic of a serpent; winding, sinuous. From Latin serpentīnus (of a serpent). Also a green mineral."
+    }
+  ],
+  "collapse": {}
+}
