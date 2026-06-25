@@ -226,7 +226,51 @@ const MORPHEMES = {
     { id: "voc", forms: ["voc", "vok"], origin: "Latin", source: "vocare", meaning: "to call, voice" },
     { id: "vor", forms: ["vor"], origin: "Latin", source: "vorare", meaning: "to devour, eat" },
     { id: "volv", forms: ["volv", "volut", "volu"], origin: "Latin", source: "volvere", meaning: "to roll, turn" },
-    { id: "zo", forms: ["zoo", "zo"], origin: "Greek", source: "zoion", meaning: "animal, living being" }
+    { id: "zo", forms: ["zoo", "zo"], origin: "Greek", source: "zoion", meaning: "animal, living being" },
+
+    // Germanic roots
+    { id: "stand", forms: ["stand", "stood", "sist"], origin: "Proto-Germanic", source: "*standanan", meaning: "to stand, be upright, remain" },
+    { id: "break", forms: ["break", "broke", "breach"], origin: "Proto-Germanic", source: "*brekaną", meaning: "to break, fracture, shatter" },
+    { id: "speak", forms: ["speak", "spoke", "spea"], origin: "Proto-Germanic", source: "*sprekaną", meaning: "to speak, utter" },
+    { id: "grow", forms: ["grow", "grew", "gro"], origin: "Proto-Germanic", source: "*growaną", meaning: "to grow, become green" },
+    { id: "drink", forms: ["drink", "drank", "drunk"], origin: "Proto-Germanic", source: "*drinkaną", meaning: "to drink, imbibe" },
+    { id: "sing", forms: ["sing", "sang", "sung"], origin: "Proto-Germanic", source: "*siŋwaną", meaning: "to sing, resound" },
+    { id: "spin", forms: ["spin", "spun"], origin: "Proto-Germanic", source: "*spinnaną", meaning: "to spin, twist" },
+    { id: "bind", forms: ["bind", "bound"], origin: "Proto-Germanic", source: "*bindaną", meaning: "to bind, tie" },
+    { id: "bring", forms: ["bring", "brought"], origin: "Proto-Germanic", source: "*brinjaną", meaning: "to bring, carry" },
+    { id: "build", forms: ["build", "built"], origin: "Proto-Germanic", source: "*bilþaną", meaning: "to build, construct" },
+    { id: "house", forms: ["house"], origin: "Old English", source: "hūs", meaning: "dwelling, shelter" },
+
+    // Arabic-origin roots
+    { id: "alc", forms: ["alcohol", "alc", "alch"], origin: "Arabic", source: "al-kohl", meaning: "alchemy, alcohol" },
+    { id: "alg", forms: ["algebra", "alg"], origin: "Arabic", source: "al-jabr", meaning: "algebra" },
+    { id: "alb", forms: ["album", "alb"], origin: "Arabic", source: "al-abyad", meaning: "white, albino" },
+    { id: "azz", forms: ["azure", "azz"], origin: "Arabic", source: "al-lazuward", meaning: "azure, lapis lazuli" },
+    { id: "cot", forms: ["cotton", "cot"], origin: "Arabic", source: "qutun", meaning: "cotton" },
+    { id: "mag", forms: ["magazine", "mag"], origin: "Arabic", source: "makhzan", meaning: "magazine, storehouse" },
+    { id: "sac", forms: ["sugar", "sac"], origin: "Arabic", source: "sukkar", meaning: "sugar" },
+    { id: "tar", forms: ["tariff", "tar"], origin: "Arabic", source: "ta'rif", meaning: "tariff, duty" },
+
+    // Persian/Hindi/Sanskrit roots
+    { id: "haj", forms: ["haj", "hadj"], origin: "Arabic/Persian", source: "hajj", meaning: "pilgrimage" },
+    { id: "min", forms: ["minareh", "minaaret", "min"], origin: "Persian", source: "minaret", meaning: "tower of mosque" },
+    { id: "lim", forms: ["lime", "lim"], origin: "Arabic", source: "lima", meaning: "lime (fruit)" },
+
+    // French/Norman (direct, not through Latin)
+    { id: "franch", forms: ["franc", "franch"], origin: "Old French", source: "franc", meaning: "free, frank" },
+    { id: "peas", forms: ["peasant", "peas"], origin: "Old French", source: "paisent", meaning: "peasant, rustic" },
+
+    // Germanic (Norse/Scandinavian beyond Proto-Germanic)
+    { id: "sk", forms: ["skate", "ski", "sk"], origin: "Old Norse", source: "skíð", meaning: "ski, plank, skate" },
+    { id: "sky", forms: ["sky"], origin: "Old Norse", source: "ský", meaning: "sky, cloud" },
+
+    // Hebrew origins
+    { id: "abb", forms: ["abbess", "abbot", "abb"], origin: "Hebrew", source: "abba", meaning: "father, abbot" },
+    { id: "ker", forms: ["kerub", "cher"], origin: "Hebrew", source: "cherub", meaning: "cherub, angel" },
+
+    // Other Romance (Spanish, Italian, Portuguese)
+    { id: "toro", forms: ["toro", "tor"], origin: "Spanish", source: "toro", meaning: "bull, torus" },
+    { id: "passo", forms: ["paso", "pass"], origin: "Spanish", source: "paso", meaning: "step, pass" }
   ],
 
   suffixes: [
