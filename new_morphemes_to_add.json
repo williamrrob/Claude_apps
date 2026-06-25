@@ -1,0 +1,78 @@
+{
+  "prefixes": [
+    {
+      "id": "de",
+      "origin": "Old English",
+      "source": "de",
+      "meaning": "down, away, off",
+      "forms": [
+        "de"
+      ]
+    },
+    {
+      "id": "out",
+      "origin": "Old English",
+      "source": "out",
+      "meaning": "out, beyond; surpassing",
+      "forms": [
+        "out"
+      ]
+    },
+    {
+      "id": "pre",
+      "origin": "Old English",
+      "source": "pre",
+      "meaning": "before",
+      "forms": [
+        "pre"
+      ]
+    },
+    {
+      "id": "pro",
+      "origin": "Old English",
+      "source": "pro",
+      "meaning": "forward, for",
+      "forms": [
+        "pro"
+      ]
+    },
+    {
+      "id": "under",
+      "origin": "Old English",
+      "source": "under",
+      "meaning": "under, beneath; among",
+      "forms": [
+        "under"
+      ]
+    },
+    {
+      "id": "with",
+      "origin": "Old English",
+      "source": "with",
+      "meaning": "against, back",
+      "forms": [
+        "with"
+      ]
+    }
+  ],
+  "suffixes": [
+    {
+      "id": "point",
+      "origin": "Old English",
+      "source": "point",
+      "meaning": "point, position",
+      "forms": [
+        "point"
+      ]
+    },
+    {
+      "id": "ee",
+      "origin": "Old English",
+      "source": "ee",
+      "meaning": "one who is or does",
+      "forms": [
+        "ee"
+      ]
+    }
+  ]
+}
