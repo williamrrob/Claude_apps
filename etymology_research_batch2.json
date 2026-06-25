@@ -1,0 +1,82 @@
+{
+  "bad": {
+    "word": "bad",
+    "etymology": "Old English b\u00e6d/b\u01fdd, origin uncertain; possibly from Proto-Germanic *badaz",
+    "origin": "Germanic",
+    "family": "bad",
+    "confidence": "medium",
+    "source": "Oxford English Dictionary"
+  },
+  "big": {
+    "word": "big",
+    "etymology": "Middle English big, from Old Norse buggr (important person)",
+    "origin": "Germanic",
+    "family": "big",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "small": {
+    "word": "small",
+    "etymology": "Old English smael, from Proto-Germanic *smalaz (small, narrow)",
+    "origin": "Germanic",
+    "family": "small",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "long": {
+    "word": "long",
+    "etymology": "Old English long, from Proto-Germanic *langaz",
+    "origin": "Germanic",
+    "family": "long",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "short": {
+    "word": "short",
+    "etymology": "Old English sceort, from Proto-Germanic *skurtaz",
+    "origin": "Germanic",
+    "family": "short",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "hot": {
+    "word": "hot",
+    "etymology": "Old English hat, from Proto-Germanic *haitaz (called, hot)",
+    "origin": "Germanic",
+    "family": "hot",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "cold": {
+    "word": "cold",
+    "etymology": "Old English ceald, from Proto-Germanic *kaldaz",
+    "origin": "Germanic",
+    "family": "cold",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "new": {
+    "word": "new",
+    "etymology": "Old English neowe, from Proto-Germanic *newjaz",
+    "origin": "Germanic",
+    "family": "new",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "old": {
+    "word": "old",
+    "etymology": "Old English eald, from Proto-Germanic *aldaz",
+    "origin": "Germanic",
+    "family": "old",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "young": {
+    "word": "young",
+    "etymology": "Old English geong, from Proto-Germanic *jungaz",
+    "origin": "Germanic",
+    "family": "young",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  }
+}

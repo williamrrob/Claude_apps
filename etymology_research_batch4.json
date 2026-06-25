@@ -1,0 +1,34 @@
+{
+  "talk": {
+    "word": "talk",
+    "etymology": "Middle English talken, from Old English -t\u00e6lcean (to scold); origin uncertain",
+    "origin": "Germanic",
+    "family": "talk",
+    "confidence": "medium",
+    "source": "Oxford English Dictionary"
+  },
+  "help": {
+    "word": "help",
+    "etymology": "Old English helpan, from Proto-Germanic *helpanan",
+    "origin": "Germanic",
+    "family": "help",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "believe": {
+    "word": "believe",
+    "etymology": "Old English gel\u0113fan, from Proto-Germanic *galiubjan\u0105 (to hold dear, believe)",
+    "origin": "Germanic",
+    "family": "believe",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "learn": {
+    "word": "learn",
+    "etymology": "Old English leornian, from Proto-Germanic *liznan\u0105",
+    "origin": "Germanic",
+    "family": "learn",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  }
+}

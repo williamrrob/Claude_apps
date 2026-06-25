@@ -1,0 +1,250 @@
+{
+  "child": {
+    "word": "child",
+    "etymology": "Proto-Germanic *kiltjaz, from Old English cil\u00f0",
+    "origin": "Germanic",
+    "family": "child",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "face": {
+    "word": "face",
+    "etymology": "Old French face, from Latin facies (appearance, form)",
+    "origin": "Latin",
+    "family": "facies",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "body": {
+    "word": "body",
+    "etymology": "Old English bodig, from Proto-Germanic *budikaz",
+    "origin": "Germanic",
+    "family": "body",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "blood": {
+    "word": "blood",
+    "etymology": "Old English bl\u014dd, from Proto-Germanic *bl\u014ddam",
+    "origin": "Germanic",
+    "family": "blood",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "like": {
+    "word": "like",
+    "etymology": "Old English lician, from Proto-Germanic *likjan\u0105",
+    "origin": "Germanic",
+    "family": "like",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "want": {
+    "word": "want",
+    "etymology": "Old Norse vanta (to lack), from Proto-Germanic *wantanan",
+    "origin": "Germanic",
+    "family": "want",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "run": {
+    "word": "run",
+    "etymology": "Old Norse renna, from Proto-Germanic *rinnan\u0105",
+    "origin": "Germanic",
+    "family": "run",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "play": {
+    "word": "play",
+    "etymology": "Old English plegian, from Proto-Germanic *pleganan",
+    "origin": "Germanic",
+    "family": "play",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "read": {
+    "word": "read",
+    "etymology": "Old English raedan, from Proto-Germanic *r\u0113dan\u0105 (advise, counsel)",
+    "origin": "Germanic",
+    "family": "read",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "write": {
+    "word": "write",
+    "etymology": "Old English wr\u012btan, from Proto-Germanic *wr\u012btan\u0105 (tear, scratch)",
+    "origin": "Germanic",
+    "family": "write",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "bad": {
+    "word": "bad",
+    "etymology": "Old English b\u00e6d/b\u01fdd, origin uncertain; possibly from Proto-Germanic *badaz",
+    "origin": "Germanic",
+    "family": "bad",
+    "confidence": "medium",
+    "source": "Oxford English Dictionary"
+  },
+  "big": {
+    "word": "big",
+    "etymology": "Middle English big, from Old Norse buggr (important person)",
+    "origin": "Germanic",
+    "family": "big",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "small": {
+    "word": "small",
+    "etymology": "Old English smael, from Proto-Germanic *smalaz (small, narrow)",
+    "origin": "Germanic",
+    "family": "small",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "long": {
+    "word": "long",
+    "etymology": "Old English long, from Proto-Germanic *langaz",
+    "origin": "Germanic",
+    "family": "long",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "short": {
+    "word": "short",
+    "etymology": "Old English sceort, from Proto-Germanic *skurtaz",
+    "origin": "Germanic",
+    "family": "short",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "hot": {
+    "word": "hot",
+    "etymology": "Old English hat, from Proto-Germanic *haitaz (called, hot)",
+    "origin": "Germanic",
+    "family": "hot",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "cold": {
+    "word": "cold",
+    "etymology": "Old English ceald, from Proto-Germanic *kaldaz",
+    "origin": "Germanic",
+    "family": "cold",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "new": {
+    "word": "new",
+    "etymology": "Old English neowe, from Proto-Germanic *newjaz",
+    "origin": "Germanic",
+    "family": "new",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "old": {
+    "word": "old",
+    "etymology": "Old English eald, from Proto-Germanic *aldaz",
+    "origin": "Germanic",
+    "family": "old",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "young": {
+    "word": "young",
+    "etymology": "Old English geong, from Proto-Germanic *jungaz",
+    "origin": "Germanic",
+    "family": "young",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "month": {
+    "word": "month",
+    "etymology": "Old English mona\u00fe, from Proto-Germanic *m\u0113n\u014d\u00feaz (moon, month)",
+    "origin": "Germanic",
+    "family": "month",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "flower": {
+    "word": "flower",
+    "etymology": "Old English flowr, from Old French flor, from Latin fl\u014ds (flower, bloom)",
+    "origin": "Latin",
+    "family": "fl\u014ds",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "animal": {
+    "word": "animal",
+    "etymology": "Old French animal, from Latin anima (soul, spirit, living being)",
+    "origin": "Latin",
+    "family": "anima",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "dog": {
+    "word": "dog",
+    "etymology": "Old English docga, origin uncertain; possibly from a personal name or Germanic base",
+    "origin": "Germanic",
+    "family": "dog",
+    "confidence": "low",
+    "source": "Oxford English Dictionary"
+  },
+  "cat": {
+    "word": "cat",
+    "etymology": "Old English catt, from Latin cattus or cattus (cat)",
+    "origin": "Latin",
+    "family": "cattus",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "bird": {
+    "word": "bird",
+    "etymology": "Old English brid (young bird, nestling), from Proto-Germanic *breudaz",
+    "origin": "Germanic",
+    "family": "bird",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "fish": {
+    "word": "fish",
+    "etymology": "Old English fisc, from Proto-Germanic *fiskaz",
+    "origin": "Germanic",
+    "family": "fish",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "talk": {
+    "word": "talk",
+    "etymology": "Middle English talken, from Old English -t\u00e6lcean (to scold); origin uncertain",
+    "origin": "Germanic",
+    "family": "talk",
+    "confidence": "medium",
+    "source": "Oxford English Dictionary"
+  },
+  "help": {
+    "word": "help",
+    "etymology": "Old English helpan, from Proto-Germanic *helpanan",
+    "origin": "Germanic",
+    "family": "help",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "believe": {
+    "word": "believe",
+    "etymology": "Old English gel\u0113fan, from Proto-Germanic *galiubjan\u0105 (to hold dear, believe)",
+    "origin": "Germanic",
+    "family": "believe",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  },
+  "learn": {
+    "word": "learn",
+    "etymology": "Old English leornian, from Proto-Germanic *liznan\u0105",
+    "origin": "Germanic",
+    "family": "learn",
+    "confidence": "high",
+    "source": "Oxford English Dictionary"
+  }
+}
