@@ -44,6 +44,15 @@
       "note": "To yield or grant; to surrender. From Latin c\u0113d\u014d (to yield, go)."
     },
     {
+      "w": "cession",
+      "s": null,
+      "region": "yielding-conceding",
+      "parent": "cede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of ceding; a yielding up. From Latin cessi\u014d, from cedere."
+    },
+    {
       "w": "concede",
       "s": null,
       "region": "yielding-conceding",
@@ -51,6 +60,15 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
       "note": "To admit or grant reluctantly. From Latin conc\u0113dere (con- + c\u0113dere)."
+    },
+    {
+      "w": "concession",
+      "s": null,
+      "region": "yielding-conceding",
+      "parent": "concede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Something conceded; a grant or privilege. From Latin concessi\u014d."
     },
     {
       "w": "accede",
@@ -62,6 +80,15 @@
       "note": "To agree or give consent. From Latin acc\u0113dere (ad- + c\u0113dere)."
     },
     {
+      "w": "accession",
+      "s": null,
+      "region": "yielding-conceding",
+      "parent": "accede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of acceding; an increase by addition. From Latin accessi\u014d."
+    },
+    {
       "w": "secede",
       "s": null,
       "region": "yielding-conceding",
@@ -69,6 +96,24 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
       "note": "To withdraw from an organization. From Latin sec\u0113dere (se- + c\u0113dere)."
+    },
+    {
+      "w": "secession",
+      "s": null,
+      "region": "yielding-conceding",
+      "parent": "secede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of seceding; withdrawal. From Latin secessi\u014d."
+    },
+    {
+      "w": "recession",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "recede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A period of economic decline; or the act of receding. From Latin recessi\u014d."
     },
     {
       "w": "recede",
@@ -80,6 +125,15 @@
       "note": "To go back, move backward. From Latin rec\u0113dere (re- + c\u0113dere)."
     },
     {
+      "w": "recessional",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "recession",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A hymn or musical piece sung during a recession (procession going out). From recession + -al."
+    },
+    {
       "w": "precede",
       "s": null,
       "region": "going-proceeding",
@@ -87,6 +141,42 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
       "note": "To go before, come before. From Latin praec\u0113dere (prae- + c\u0113dere)."
+    },
+    {
+      "w": "precedent",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "precede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An earlier event or action used as an example or guide. From Latin praecedens."
+    },
+    {
+      "w": "precedence",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "precede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Priority or superiority in rank. From precedent + -ence."
+    },
+    {
+      "w": "precedency",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "precedence",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Priority or higher rank. From precedent + -cy."
+    },
+    {
+      "w": "antecedent",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "precede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Something that goes before in time; prior. From Latin antecedent (ante- + cedere)."
     },
     {
       "w": "proceed",
@@ -98,6 +188,51 @@
       "note": "To go forward, advance. From Latin pr\u014dc\u0113dere (pro- + c\u0113dere)."
     },
     {
+      "w": "proceeding",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "proceed",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A course of action; proceedings (legal actions). From proceed + -ing."
+    },
+    {
+      "w": "procedure",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "proceed",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An established or official way of doing something. From Latin procedura."
+    },
+    {
+      "w": "procedural",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "procedure",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to procedure. From procedure + -al."
+    },
+    {
+      "w": "procession",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "proceed",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A group moving forward in an orderly manner; a ceremonial march. From Latin processio."
+    },
+    {
+      "w": "processional",
+      "s": null,
+      "region": "going-proceeding",
+      "parent": "procession",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to or used in a procession. From procession + -al."
+    },
+    {
       "w": "exceed",
       "s": null,
       "region": "exceeding-surpassing",
@@ -105,6 +240,33 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
       "note": "To go beyond limits; to surpass. From Latin exc\u0113dere (ex- + c\u0113dere)."
+    },
+    {
+      "w": "excess",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "exceed",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An amount beyond what is necessary or normal. From Latin excessus."
+    },
+    {
+      "w": "excessive",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "excess",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "More than necessary or usual; immoderate. From excess + -ive."
+    },
+    {
+      "w": "excessively",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "excessive",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an excessive manner. From excessive + -ly."
     },
     {
       "w": "succeed",
@@ -116,6 +278,69 @@
       "note": "To come after; to achieve. From Latin succ\u0113dere (sub- + c\u0113dere)."
     },
     {
+      "w": "success",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "succeed",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The accomplishment of an aim or goal. From Latin successus."
+    },
+    {
+      "w": "successful",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "success",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Accomplishing a desired goal. From success + -ful."
+    },
+    {
+      "w": "successfully",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "successful",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a successful manner. From successful + -ly."
+    },
+    {
+      "w": "successor",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "succeed",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who succeeds another in office or position. From Latin successor."
+    },
+    {
+      "w": "succession",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "succeed",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of succeeding to office, property, or rank; or a sequence. From Latin successio."
+    },
+    {
+      "w": "successive",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "succession",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Following in uninterrupted sequence. From successive."
+    },
+    {
+      "w": "successively",
+      "s": null,
+      "region": "exceeding-surpassing",
+      "parent": "successive",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In successive order; one after another. From successive + -ly."
+    },
+    {
       "w": "intercede",
       "s": null,
       "region": "interceding-intervening",
@@ -123,7 +348,155 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
       "note": "To plead for; to mediate. From Latin interc\u0113dere (inter- + c\u0113dere)."
+    },
+    {
+      "w": "intercession",
+      "s": null,
+      "region": "interceding-intervening",
+      "parent": "intercede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of interceding; prayer or petition on behalf of another. From Latin intercessio."
+    },
+    {
+      "w": "intercessor",
+      "s": null,
+      "region": "interceding-intervening",
+      "parent": "intercede",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who intercedes. From intercede + -or."
+    },
+    {
+      "w": "intercessory",
+      "s": null,
+      "region": "interceding-intervening",
+      "parent": "intercession",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to or involving intercession. From intercession + -ory."
     }
   ],
-  "collapse": {}
+  "collapse": {
+    "ceded": {
+      "l": "cede",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "ceding": {
+      "l": "cede",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "conceded": {
+      "l": "concede",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "conceding": {
+      "l": "concede",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "acceded": {
+      "l": "accede",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "acceding": {
+      "l": "accede",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "seceded": {
+      "l": "secede",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "seceding": {
+      "l": "secede",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "receded": {
+      "l": "recede",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "receding": {
+      "l": "recede",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "preceded": {
+      "l": "precede",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "preceding": {
+      "l": "precede",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "proceeded": {
+      "l": "proceed",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "proceeding": {
+      "l": "proceed",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "exceeded": {
+      "l": "exceed",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "exceeding": {
+      "l": "exceed",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "succeeded": {
+      "l": "succeed",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "succeeding": {
+      "l": "succeed",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "interceded": {
+      "l": "intercede",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "interceding": {
+      "l": "intercede",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
 }

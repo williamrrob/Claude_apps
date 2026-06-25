@@ -1,5 +1,5 @@
 {
-  "_note": "Editor data for petere family. 5 verified placements.",
+  "_note": "Editor data for petere family (Latin petere, 'to seek, ask, request'). 31 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
   "root": "petere",
   "rootLabel": "petere",
   "rootGloss": "Latin · to seek, ask, request",
@@ -28,76 +28,13 @@
   ],
   "placements": [
     {
-      "w": "compete",
-      "s": null,
-      "region": "competing-striving",
-      "parent": null,
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "To strive toward goal. From Latin competere."
-    },
-    {
-      "w": "competent",
-      "s": null,
-      "region": "competing-striving",
-      "parent": "compete",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Having suitable skill."
-    },
-    {
-      "w": "competition",
-      "s": null,
-      "region": "competing-striving",
-      "parent": "compete",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "The act of competing; rivalry. From Latin competītiō, from competere."
-    },
-    {
-      "w": "competitive",
-      "s": null,
-      "region": "competing-striving",
-      "parent": "competition",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Relating to or involving competition. From competītus + -ive."
-    },
-    {
-      "w": "competitor",
-      "s": null,
-      "region": "competing-striving",
-      "parent": "compete",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "One who competes. From Latin competitor."
-    },
-    {
-      "w": "appetite",
-      "s": null,
-      "region": "appetite-desire",
-      "parent": null,
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Desire for food/satisfaction. From Latin appetitus (craving)."
-    },
-    {
       "w": "petition",
       "s": null,
       "region": "seeking-requesting",
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "Formal request. From Latin petitio, from petere."
-    },
-    {
-      "w": "repeat",
-      "s": null,
-      "region": "seeking-requesting",
-      "parent": null,
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "To do again. From Latin repetere (re- + petere)."
+      "note": "A formal written request. From Latin petitio, from petere (to seek)."
     },
     {
       "w": "petitioner",
@@ -107,7 +44,290 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
       "note": "One who petitions. From petition + -er."
+    },
+    {
+      "w": "petitioning",
+      "s": null,
+      "region": "seeking-requesting",
+      "parent": "petition",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Making a petition. From petition + -ing."
+    },
+    {
+      "w": "repeat",
+      "s": null,
+      "region": "seeking-requesting",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To do again; to say again. From Latin repetere (re- + petere)."
+    },
+    {
+      "w": "repeated",
+      "s": null,
+      "region": "seeking-requesting",
+      "parent": "repeat",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Done or said again; recurring. From repeated (past participle of repeat)."
+    },
+    {
+      "w": "repeatedly",
+      "s": null,
+      "region": "seeking-requesting",
+      "parent": "repeated",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Multiple times; again and again. From repeated + -ly."
+    },
+    {
+      "w": "repetition",
+      "s": null,
+      "region": "seeking-requesting",
+      "parent": "repeat",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The action of repeating. From Latin repetitio."
+    },
+    {
+      "w": "repetitive",
+      "s": null,
+      "region": "seeking-requesting",
+      "parent": "repetition",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Characterized by repetition. From repetition + -ive."
+    },
+    {
+      "w": "repetitively",
+      "s": null,
+      "region": "seeking-requesting",
+      "parent": "repetitive",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a repetitive manner. From repetitive + -ly."
+    },
+    {
+      "w": "compete",
+      "s": null,
+      "region": "competing-striving",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To strive in rivalry; to contend. From Latin competere (con- + petere)."
+    },
+    {
+      "w": "competed",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "compete",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Strove in rivalry; contended. From competed (past tense of compete)."
+    },
+    {
+      "w": "competing",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "compete",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Striving in rivalry; contending. From compete + -ing."
+    },
+    {
+      "w": "competence",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "compete",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The quality of being adequately qualified; ability. From Latin competentia."
+    },
+    {
+      "w": "competent",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "competence",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Having suitable skill or knowledge. From Latin competens."
+    },
+    {
+      "w": "competently",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "competent",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a competent manner. From competent + -ly."
+    },
+    {
+      "w": "incompetence",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "competence",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Lack of adequate ability. From in- + competence."
+    },
+    {
+      "w": "incompetent",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "competent",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Lacking adequate ability. From in- + competent."
+    },
+    {
+      "w": "incompetently",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "incompetent",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an incompetent manner. From incompetent + -ly."
+    },
+    {
+      "w": "competition",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "compete",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of competing; rivalry. From Latin competitio."
+    },
+    {
+      "w": "competitive",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "competition",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to or involving competition. From competition + -ive."
+    },
+    {
+      "w": "competitively",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "competitive",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a competitive manner. From competitive + -ly."
+    },
+    {
+      "w": "noncompetitive",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "competitive",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not competitive; not involving competition. From non- + competitive."
+    },
+    {
+      "w": "competitor",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "compete",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who competes; a rival. From Latin competitor."
+    },
+    {
+      "w": "appetite",
+      "s": null,
+      "region": "appetite-desire",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A natural desire or craving, especially for food. From Latin appetitus (craving)."
+    },
+    {
+      "w": "appetitive",
+      "s": null,
+      "region": "appetite-desire",
+      "parent": "appetite",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to appetite or desire. From appetite + -ive."
+    },
+    {
+      "w": "appetence",
+      "s": null,
+      "region": "appetite-desire",
+      "parent": "appetite",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A natural inclination or desire. From Latin appetentia."
+    },
+    {
+      "w": "appetency",
+      "s": null,
+      "region": "appetite-desire",
+      "parent": "appetence",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A natural inclination or craving. From appetence + -cy."
+    },
+    {
+      "w": "appetizing",
+      "s": null,
+      "region": "appetite-desire",
+      "parent": "appetite",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Appealing to or stimulating appetite. From appetite + -izing."
+    },
+    {
+      "w": "appetizer",
+      "s": null,
+      "region": "appetite-desire",
+      "parent": "appetizing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A small dish served before a meal to stimulate appetite. From appetizing + -er."
+    },
+    {
+      "w": "unappetizing",
+      "s": null,
+      "region": "appetite-desire",
+      "parent": "appetizing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not appealing to appetite; unappealing. From un- + appetizing."
     }
   ],
-  "collapse": {}
+  "collapse": {
+    "petitioned": {
+      "l": "petition",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "competed": {
+      "l": "compete",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "competing": {
+      "l": "compete",
+      "t": "present participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "repeated": {
+      "l": "repeat",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "repeating": {
+      "l": "repeat",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "_note": "Editor data for pendere family. 4 verified placements.",
+  "_note": "Editor data for pendere family (Latin pendēre, 'to hang, suspend, weigh'). 41 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
   "root": "pendere",
   "rootLabel": "pend\u0113re",
   "rootGloss": "Latin \u00b7 to hang, suspend, weigh",
@@ -34,7 +34,34 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "Hanging ornament. From Latin pendens, from pendere."
+      "note": "A hanging ornament or jewel. From Latin pendens (hanging), from pendere."
+    },
+    {
+      "w": "pendent",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": "pendant",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Hanging; suspended. Also variant spelling of pendant. From Latin pendens."
+    },
+    {
+      "w": "pending",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": "pendant",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Awaiting; about to happen; hanging. From Latin pendens."
+    },
+    {
+      "w": "pendulum",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": "pendant",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A weight suspended so as to swing freely. From Latin pendulum (neuter of pendulus)."
     },
     {
       "w": "suspend",
@@ -43,7 +70,61 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "To hang from. From Latin suspendere (sub- + pendere)."
+      "note": "To hang from; to cause to stop temporarily. From Latin suspendere (sub- + pendere)."
+    },
+    {
+      "w": "suspended",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": "suspend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Hanging; stopped temporarily. From suspended (past participle of suspend)."
+    },
+    {
+      "w": "suspending",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": "suspend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Hanging; causing to stop. From suspend + -ing."
+    },
+    {
+      "w": "suspense",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": "suspend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A state of uncertainty or anxiety; or the act of suspending. From Latin suspensus."
+    },
+    {
+      "w": "suspenseful",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": "suspense",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Full of suspense; creating uncertainty or anxiety. From suspense + -ful."
+    },
+    {
+      "w": "suspension",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": "suspend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of suspending; or a system of springs and shock absorbers. From Latin suspensio."
+    },
+    {
+      "w": "suspender",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": "suspend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A strap for holding up trousers or a garment. From suspend + -er."
     },
     {
       "w": "depend",
@@ -52,7 +133,115 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "To rely on. From Latin dependere (de- + pendere)."
+      "note": "To rely on; to be contingent on. From Latin dependere (de- + pendere)."
+    },
+    {
+      "w": "depended",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "depend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relied on; was contingent on. From depended (past tense of depend)."
+    },
+    {
+      "w": "depending",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "depend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relying on; contingent on. From depend + -ing."
+    },
+    {
+      "w": "dependence",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "depend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The state of being dependent. From Latin dependentia."
+    },
+    {
+      "w": "dependency",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "dependence",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A territory or possession under the control of another power. From depend + -ency."
+    },
+    {
+      "w": "dependent",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "depend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relying on another for support; contingent on. From Latin dependens."
+    },
+    {
+      "w": "dependently",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "dependent",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a dependent manner. From dependent + -ly."
+    },
+    {
+      "w": "independence",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "dependence",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Freedom from dependence on another; self-reliance. From in- + dependence."
+    },
+    {
+      "w": "independent",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "dependent",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not dependent on another; self-reliant. From in- + dependent."
+    },
+    {
+      "w": "independently",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "independent",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an independent manner. From independent + -ly."
+    },
+    {
+      "w": "independency",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": "independence",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Independence; the state of being independent. From independent + -cy."
+    },
+    {
+      "w": "impend",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To be about to happen; to threaten. From Latin impendere (in- + pendere)."
+    },
+    {
+      "w": "impending",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "impend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "About to happen; looming. From impend + -ing."
     },
     {
       "w": "dispense",
@@ -61,8 +250,198 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "To distribute. From Latin dispensare (dis- + pendere)."
+      "note": "To distribute or supply; to exempt. From Latin dispensare (dis- + pendere)."
+    },
+    {
+      "w": "dispensed",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "dispense",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Distributed or supplied; exempted. From dispensed (past tense of dispense)."
+    },
+    {
+      "w": "dispensing",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "dispense",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Distributing or supplying. From dispense + -ing."
+    },
+    {
+      "w": "dispenser",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "dispense",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A device or person that dispenses. From dispense + -er."
+    },
+    {
+      "w": "dispensary",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "dispense",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A place where medicines are made and distributed. From dispense + -ary."
+    },
+    {
+      "w": "dispensation",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "dispense",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Exemption from a rule; or the action of distributing. From Latin dispensatio."
+    },
+    {
+      "w": "expend",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To spend; to use up. From Latin expendere (ex- + pendere)."
+    },
+    {
+      "w": "expended",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "expend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Spent; used up. From expended (past tense of expend)."
+    },
+    {
+      "w": "expenditure",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "expend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The action of spending money; an amount of money spent. From expend + -iture."
+    },
+    {
+      "w": "expendable",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "expend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Able to be expended or spent; not essential. From expend + -able."
+    },
+    {
+      "w": "expensive",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "expend",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Costing a large amount of money. From expensive (from expend)."
+    },
+    {
+      "w": "expensively",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "expensive",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an expensive manner. From expensive + -ly."
+    },
+    {
+      "w": "append",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To attach to the end of something. From Latin appendere (ap- + pendere)."
+    },
+    {
+      "w": "appendage",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "append",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A thing attached to or hanging from something. From append + -age."
+    },
+    {
+      "w": "appendix",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "append",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A section of additional information added to the end of a book; or a small tube-shaped organ in the abdomen. From Latin appendix."
+    },
+    {
+      "w": "appended",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": "append",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Attached to the end. From appended (past participle of append)."
     }
   ],
-  "collapse": {}
+  "collapse": {
+    "suspended": {
+      "l": "suspend",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "suspending": {
+      "l": "suspend",
+      "t": "present participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "depended": {
+      "l": "depend",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "depending": {
+      "l": "depend",
+      "t": "present participle of (also separate placement as preposition/conjunction)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "impended": {
+      "l": "impend",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "dispensed": {
+      "l": "dispense",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "dispensing": {
+      "l": "dispense",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "expended": {
+      "l": "expend",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "appended": {
+      "l": "append",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
 }

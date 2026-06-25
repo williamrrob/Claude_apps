@@ -1,5 +1,5 @@
 {
-  "_note": "Editor data for facere family. 7 verified placements.",
+  "_note": "Editor data for facere family (Latin facere, 'to make, do, create'). 92 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
   "root": "facere",
   "rootLabel": "facere",
   "rootGloss": "Latin \u00b7 to make, do, create",
@@ -34,7 +34,7 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "Something made. From Latin factum, from facere."
+      "note": "Something done or made; a reality. From Latin factum (made), from facere."
     },
     {
       "w": "factor",
@@ -43,7 +43,79 @@
       "parent": "fact",
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "One who makes. From Latin factor."
+      "note": "One who makes or does; an element contributing to a result. From Latin factor."
+    },
+    {
+      "w": "factorial",
+      "s": null,
+      "region": "making-creating",
+      "parent": "factor",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to factors or factoring. From factor + -ial."
+    },
+    {
+      "w": "factious",
+      "s": null,
+      "region": "making-creating",
+      "parent": "fact",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to or characterized by faction (a group made within a larger group). From Latin factiosus."
+    },
+    {
+      "w": "factiousness",
+      "s": null,
+      "region": "making-creating",
+      "parent": "factious",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The state or quality of being factious. From factious + -ness."
+    },
+    {
+      "w": "faction",
+      "s": null,
+      "region": "making-creating",
+      "parent": "fact",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A group within a larger group, often in conflict. From Latin factio."
+    },
+    {
+      "w": "factional",
+      "s": null,
+      "region": "making-creating",
+      "parent": "faction",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to a faction. From faction + -al."
+    },
+    {
+      "w": "factitious",
+      "s": null,
+      "region": "making-creating",
+      "parent": "fact",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Made artificially; not genuine. From Latin factitius (made, artificial)."
+    },
+    {
+      "w": "factitiously",
+      "s": null,
+      "region": "making-creating",
+      "parent": "factitious",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a factitious manner. From factitious + -ly."
+    },
+    {
+      "w": "facsimile",
+      "s": null,
+      "region": "making-creating",
+      "parent": "fact",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An exact copy or reproduction. From Latin facsimile (fac + simile, make + similar)."
     },
     {
       "w": "manufacture",
@@ -52,7 +124,97 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "To make. From Latin manu + facere."
+      "note": "To make by hand or machine. From Latin manu + facere (by hand + to make)."
+    },
+    {
+      "w": "manufactured",
+      "s": null,
+      "region": "making-creating",
+      "parent": "manufacture",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Made in a manufacturing process. From manufacture + -ed."
+    },
+    {
+      "w": "manufacturer",
+      "s": null,
+      "region": "making-creating",
+      "parent": "manufacture",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A person or company that manufactures. From manufacture + -er."
+    },
+    {
+      "w": "facilitate",
+      "s": null,
+      "region": "making-creating",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To make easy; to assist the progress of. From Latin facilis (easy, from facere)."
+    },
+    {
+      "w": "facilitated",
+      "s": null,
+      "region": "making-creating",
+      "parent": "facilitate",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Made easy; assisted. From facilitate + -ed."
+    },
+    {
+      "w": "facilitating",
+      "s": null,
+      "region": "making-creating",
+      "parent": "facilitate",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Making easy; assisting. From facilitate + -ing."
+    },
+    {
+      "w": "facilitation",
+      "s": null,
+      "region": "making-creating",
+      "parent": "facilitate",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The action of facilitating. From facilitate + -ion."
+    },
+    {
+      "w": "facility",
+      "s": null,
+      "region": "making-creating",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Ease in doing something; or a building or resource. From Latin facilitas."
+    },
+    {
+      "w": "difficult",
+      "s": null,
+      "region": "making-creating",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Hard to do or deal with. From Latin difficilis (dis- + facilis)."
+    },
+    {
+      "w": "difficulty",
+      "s": null,
+      "region": "making-creating",
+      "parent": "difficult",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The state or quality of being difficult. From Latin difficultus."
+    },
+    {
+      "w": "difficultly",
+      "s": null,
+      "region": "making-creating",
+      "parent": "difficult",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a difficult manner; with difficulty. From difficult + -ly."
     },
     {
       "w": "affect",
@@ -61,7 +223,70 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "To influence. From Latin afficere (ad- + facere)."
+      "note": "To influence or produce an effect on. From Latin afficere (ad- + facere)."
+    },
+    {
+      "w": "affected",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "affect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Influenced or changed; or artificially assumed. From affect + -ed."
+    },
+    {
+      "w": "affecting",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "affect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Influencing; moving emotionally. From affect + -ing."
+    },
+    {
+      "w": "affection",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "affect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A feeling of liking or love. From Latin affectio."
+    },
+    {
+      "w": "affectionate",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "affection",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Showing affection; loving. From affection + -ate."
+    },
+    {
+      "w": "affectionately",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "affectionate",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an affectionate manner. From affectionate + -ly."
+    },
+    {
+      "w": "affectless",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "affect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Without emotion or feeling. From affect + -less."
+    },
+    {
+      "w": "affectlessness",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "affectless",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The state of being affectless. From affectless + -ness."
     },
     {
       "w": "effect",
@@ -70,7 +295,187 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "Result. From Latin effectus."
+      "note": "A change produced by an action; a result. From Latin effectus (made), from ex- + facere."
+    },
+    {
+      "w": "effected",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Brought about; produced. From effect + -ed."
+    },
+    {
+      "w": "effecting",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Bringing about; producing. From effect + -ing."
+    },
+    {
+      "w": "effective",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Successful in producing a desired result. From Latin effectivus."
+    },
+    {
+      "w": "effectively",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effective",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an effective manner; successfully. From effective + -ly."
+    },
+    {
+      "w": "effectiveness",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effective",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The quality of being effective. From effective + -ness."
+    },
+    {
+      "w": "ineffective",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effective",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not effective; failing to produce a desired result. From in- + effective."
+    },
+    {
+      "w": "ineffectiveness",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "ineffective",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The quality of being ineffective. From ineffective + -ness."
+    },
+    {
+      "w": "ineffectual",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Failing to produce the desired effect. From in- + effectual."
+    },
+    {
+      "w": "ineffectually",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "ineffectual",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an ineffectual manner. From ineffectual + -ly."
+    },
+    {
+      "w": "effectual",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Producing the desired effect; effective. From Latin effectualis."
+    },
+    {
+      "w": "effectually",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effectual",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an effectual manner; effectively. From effectual + -ly."
+    },
+    {
+      "w": "effectuate",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effectual",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To bring about; to effect. From effectual + -ate."
+    },
+    {
+      "w": "effectuation",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "effectuate",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The action of effectuating. From effectuate + -ion."
+    },
+    {
+      "w": "infect",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To contaminate with disease-causing organisms. From Latin inficere (in- + facere)."
+    },
+    {
+      "w": "infected",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "infect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Contaminated with disease-causing organisms. From infect + -ed."
+    },
+    {
+      "w": "infecting",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "infect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Contaminating with disease. From infect + -ing."
+    },
+    {
+      "w": "infection",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "infect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Contamination with disease-causing organisms; or the disease itself. From Latin infectio."
+    },
+    {
+      "w": "infectious",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "infection",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Capable of causing infection; also capable of spreading to others. From Latin infectiosus."
+    },
+    {
+      "w": "infectiously",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "infectious",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an infectious manner. From infectious + -ly."
+    },
+    {
+      "w": "infectiousness",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "infectious",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The quality of being infectious. From infectious + -ness."
     },
     {
       "w": "defect",
@@ -79,7 +484,61 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "Fault. From Latin defectus."
+      "note": "A shortcoming or fault; an imperfection. From Latin defectus (de- + facere)."
+    },
+    {
+      "w": "defected",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "defect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Abandoned one's country or cause for another. From defect + -ed."
+    },
+    {
+      "w": "defection",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "defect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Abandonment of one's country or cause. From Latin defectio."
+    },
+    {
+      "w": "defector",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "defect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who defects. From defect + -or."
+    },
+    {
+      "w": "defective",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "defect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Having a fault or deficiency. From Latin defectivus."
+    },
+    {
+      "w": "defectively",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "defective",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a defective manner. From defective + -ly."
+    },
+    {
+      "w": "defectiveness",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "defective",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The state of being defective. From defective + -ness."
     },
     {
       "w": "perfect",
@@ -88,8 +547,390 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
-      "note": "Completely made. From Latin perfectus (per- + facere)."
+      "note": "Without fault or defect; complete. From Latin perfectus (per- + facere)."
+    },
+    {
+      "w": "perfected",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "perfect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Made perfect; refined to perfection. From perfect + -ed."
+    },
+    {
+      "w": "perfecting",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "perfect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Making perfect. From perfect + -ing."
+    },
+    {
+      "w": "perfectly",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "perfect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a perfect manner; without fault. From perfect + -ly."
+    },
+    {
+      "w": "perfection",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "perfect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The state of being perfect. From Latin perfectio."
+    },
+    {
+      "w": "perfectionist",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "perfection",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who demands perfection. From perfection + -ist."
+    },
+    {
+      "w": "perfectionistic",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "perfectionist",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to or characteristic of perfectionism. From perfectionist + -ic."
+    },
+    {
+      "w": "perfectionistically",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "perfectionistic",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a perfectionistic manner. From perfectionistic + -ly."
+    },
+    {
+      "w": "imperfect",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "perfect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not perfect; having faults. From im- + perfect."
+    },
+    {
+      "w": "imperfection",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "imperfect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The state of being imperfect. From imperfect + -ion."
+    },
+    {
+      "w": "imperfectly",
+      "s": null,
+      "region": "defect-perfection",
+      "parent": "imperfect",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an imperfect manner. From imperfect + -ly."
+    },
+    {
+      "w": "counteract",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To oppose or neutralize by contrary action. From Latin contra- + act (from facere)."
+    },
+    {
+      "w": "counteracted",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "counteract",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Opposed or neutralized. From counteract + -ed."
+    },
+    {
+      "w": "counteracting",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "counteract",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Opposing or neutralizing. From counteract + -ing."
+    },
+    {
+      "w": "counteraction",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "counteract",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Opposition by contrary action. From counteract + -ion."
+    },
+    {
+      "w": "counteractive",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "counteraction",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Tending to counteract. From counteraction + -ive."
+    },
+    {
+      "w": "satisfaction",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The fulfillment of a desire or need. From Latin satisfactio (satis + facere)."
+    },
+    {
+      "w": "satisfactory",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfaction",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Fulfilling expectations or needs. From satisfaction + -ory."
+    },
+    {
+      "w": "satisfactorily",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfactory",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a satisfactory manner. From satisfactory + -ly."
+    },
+    {
+      "w": "satisfy",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfaction",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To fulfill the needs or desires of. From Latin satisfacere (satis + facere)."
+    },
+    {
+      "w": "satisfied",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfy",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Content; having had desires fulfilled. From satisfy + -ed."
+    },
+    {
+      "w": "satisfying",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfy",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Fulfilling; pleasing. From satisfy + -ing."
+    },
+    {
+      "w": "satisfyingly",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfying",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a satisfying manner. From satisfying + -ly."
+    },
+    {
+      "w": "unsatisfactory",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfactory",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not satisfactory. From un- + satisfactory."
+    },
+    {
+      "w": "unsatisfactorily",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "unsatisfactory",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an unsatisfactory manner. From unsatisfactory + -ly."
+    },
+    {
+      "w": "dissatisfaction",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfaction",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Lack of satisfaction; discontent. From dis- + satisfaction."
+    },
+    {
+      "w": "dissatisfied",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfied",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not content; displeased. From dis- + satisfied."
+    },
+    {
+      "w": "dissatisfactory",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "satisfactory",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not satisfactory; unsatisfactory. From dis- + satisfactory."
+    },
+    {
+      "w": "surface",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The outer boundary or face. From French surface (sur- + face)."
+    },
+    {
+      "w": "superficial",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "surface",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Concerned with or comprehending only what is apparent; shallow. From Latin superficialis."
+    },
+    {
+      "w": "superficiality",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "superficial",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The quality of being superficial. From superficial + -ity."
+    },
+    {
+      "w": "superficially",
+      "s": null,
+      "region": "affecting-effecting",
+      "parent": "superficial",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a superficial manner. From superficial + -ly."
     }
   ],
-  "collapse": {}
+  "collapse": {
+    "manufactured": {
+      "l": "manufacture",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "manufacturing": {
+      "l": "manufacture",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "facilitated": {
+      "l": "facilitate",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "facilitating": {
+      "l": "facilitate",
+      "t": "present participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "affected": {
+      "l": "affect",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "affecting": {
+      "l": "affect",
+      "t": "present participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "effected": {
+      "l": "effect",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "effecting": {
+      "l": "effect",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "infected": {
+      "l": "infect",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "infecting": {
+      "l": "infect",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "defected": {
+      "l": "defect",
+      "t": "past tense of (verb)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "perfected": {
+      "l": "perfect",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "perfecting": {
+      "l": "perfect",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "counteracted": {
+      "l": "counteract",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "counteracting": {
+      "l": "counteract",
+      "t": "present participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "satisfied": {
+      "l": "satisfy",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "satisfying": {
+      "l": "satisfy",
+      "t": "present participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
 }
