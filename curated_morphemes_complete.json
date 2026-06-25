@@ -5351,18 +5351,18 @@
   "contradict": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "contra",
+        "surface": "contra",
+        "gloss": "against",
+        "source": "contra-"
+      },
+      {
         "kind": "root",
-        "id": "dic",
-        "gloss": "Latin",
-        "surface": "dic",
-        "origin": {
-          "id": "speaking-dictating",
-          "label": "Speaking & dictating",
-          "gloss": "the bare act of saying",
-          "by": "assistant",
-          "at": "2026-06-23T04:04:27.371Z"
-        },
-        "source": "dic"
+        "id": "dict",
+        "surface": "dict",
+        "gloss": "to speak",
+        "source": "dicere"
       }
     ],
     "root": "dic",
@@ -5373,24 +5373,24 @@
       "parent": null,
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "contradiction": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "contra",
+        "surface": "contra",
+        "gloss": "against",
+        "source": "contra-"
+      },
+      {
         "kind": "root",
-        "id": "dic",
-        "gloss": "Latin",
-        "surface": "dic",
-        "origin": {
-          "id": "speaking-dictating",
-          "label": "Speaking & dictating",
-          "gloss": "the bare act of saying",
-          "by": "assistant",
-          "at": "2026-06-23T04:04:27.371Z"
-        },
-        "source": "dic"
+        "id": "dict",
+        "surface": "dict",
+        "gloss": "to speak",
+        "source": "dicere"
       }
     ],
     "root": "dic",
@@ -5401,24 +5401,24 @@
       "parent": "contradict",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "contradictory": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "contra",
+        "surface": "contra",
+        "gloss": "against",
+        "source": "contra-"
+      },
+      {
         "kind": "root",
-        "id": "dic",
-        "gloss": "Latin",
-        "surface": "dic",
-        "origin": {
-          "id": "speaking-dictating",
-          "label": "Speaking & dictating",
-          "gloss": "the bare act of saying",
-          "by": "assistant",
-          "at": "2026-06-23T04:04:27.371Z"
-        },
-        "source": "dic"
+        "id": "dict",
+        "surface": "dict",
+        "gloss": "to speak",
+        "source": "dicere"
       }
     ],
     "root": "dic",
@@ -5429,8 +5429,8 @@
       "parent": "contradict",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "interdict": {
     "parts": [
@@ -5687,18 +5687,18 @@
   "contraindicate": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "contra",
+        "surface": "contra",
+        "gloss": "against",
+        "source": "contra-"
+      },
+      {
         "kind": "root",
-        "id": "dic",
-        "gloss": "Latin",
-        "surface": "dic",
-        "origin": {
-          "id": "speaking-dictating",
-          "label": "Speaking & dictating",
-          "gloss": "the bare act of saying",
-          "by": "assistant",
-          "at": "2026-06-23T04:04:27.371Z"
-        },
-        "source": "dic"
+        "id": "dict",
+        "surface": "dict",
+        "gloss": "to speak",
+        "source": "dicere"
       }
     ],
     "root": "dic",
@@ -5709,24 +5709,24 @@
       "parent": "indicate",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "contraindication": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "contra",
+        "surface": "contra",
+        "gloss": "against",
+        "source": "contra-"
+      },
+      {
         "kind": "root",
-        "id": "dic",
-        "gloss": "Latin",
-        "surface": "dic",
-        "origin": {
-          "id": "speaking-dictating",
-          "label": "Speaking & dictating",
-          "gloss": "the bare act of saying",
-          "by": "assistant",
-          "at": "2026-06-23T04:04:27.371Z"
-        },
-        "source": "dic"
+        "id": "dict",
+        "surface": "dict",
+        "gloss": "to speak",
+        "source": "dicere"
       }
     ],
     "root": "dic",
@@ -5737,8 +5737,8 @@
       "parent": "contraindicate",
       "by": "assistant"
     },
-    "source": "family verified",
-    "mwVerified": false
+    "source": "M-W verified",
+    "mwVerified": true
   },
   "preindication": {
     "parts": [
