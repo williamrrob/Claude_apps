@@ -1,0 +1,237 @@
+{
+  "_note": "Editor data for spin family (Proto-Germanic *spinnan-, 'to spin, extend'). 25 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "spin",
+  "rootLabel": "*spinnan-",
+  "rootGloss": "Proto-Germanic · to spin, twist, extend",
+  "regions": [
+    {
+      "id": "twisting-rotation",
+      "label": "Twisting & rotation",
+      "gloss": "spinning fibers into thread; rotating, twisting",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "extension-drawing",
+      "label": "Extension & drawing",
+      "gloss": "drawing out fibers; extending, prolonging",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "fabrication-creation",
+      "label": "Fabrication & creation",
+      "gloss": "creating by spinning; fabricating, making",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "spin",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To rotate rapidly; or to draw out fibers and twist into thread. From Proto-Germanic *spinnan-."
+    },
+    {
+      "w": "spinner",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who spins; or a rotating device. From spin + -er."
+    },
+    {
+      "w": "spinning",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of rotating; or the craft of making thread. From spin + -ing."
+    },
+    {
+      "w": "spinster",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "spinner",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A woman who spins; or an unmarried woman. From spin + -ster."
+    },
+    {
+      "w": "spindle",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A rod on which thread is wound; or anything long and thin. From spin + -dle."
+    },
+    {
+      "w": "spindly",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "spindle",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Long and thin; resembling a spindle. From spindle + -y."
+    },
+    {
+      "w": "spin-off",
+      "s": null,
+      "region": "extension-drawing",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Something separated or produced from a parent company or project. From spin + off."
+    },
+    {
+      "w": "spun",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Past participle of spin. From Old English spunnen."
+    },
+    {
+      "w": "respun",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Spun again. From re- + spun."
+    },
+    {
+      "w": "outspin",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To surpass in spinning. From out- + spin."
+    },
+    {
+      "w": "spider",
+      "s": null,
+      "region": "fabrication-creation",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An arachnid that spins webs. From Proto-Germanic *spinnan-."
+    },
+    {
+      "w": "spider-web",
+      "s": null,
+      "region": "fabrication-creation",
+      "parent": "spider",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A web spun by a spider. From spider + web."
+    },
+    {
+      "w": "spindrift",
+      "s": null,
+      "region": "extension-drawing",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Spray swept from the crests of waves. From spin + drift."
+    },
+    {
+      "w": "spine",
+      "s": null,
+      "region": "extension-drawing",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The vertebral column; something extending like a line. From Proto-Germanic *spinnan- (that which is spun/extended)."
+    },
+    {
+      "w": "spinal",
+      "s": null,
+      "region": "extension-drawing",
+      "parent": "spine",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to the spine. From spine + -al."
+    },
+    {
+      "w": "spineless",
+      "s": null,
+      "region": "extension-drawing",
+      "parent": "spine",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Lacking a spine; also lacking courage or resolution. From spine + -less."
+    },
+    {
+      "w": "spindly",
+      "s": null,
+      "region": "extension-drawing",
+      "parent": "spindle",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Thin and weak-looking. From spindle + -y."
+    },
+    {
+      "w": "unspin",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To reverse the spinning of; to undo spinning. From un- + spin."
+    },
+    {
+      "w": "unspinning",
+      "s": null,
+      "region": "twisting-rotation",
+      "parent": "unspin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Reversing the spinning. From unspin + -ing."
+    },
+    {
+      "w": "spinoff",
+      "s": null,
+      "region": "fabrication-creation",
+      "parent": "spin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A byproduct or secondary result. From spin + off."
+    }
+  ],
+  "collapse": {
+    "spun": {
+      "l": "spin",
+      "t": "simple past and past participle of (also separate placement)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "spinning": {
+      "l": "spin",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "respun": {
+      "l": "spin",
+      "t": "past tense of respun",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "unspinning": {
+      "l": "unspin",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "_note": "Editor data for grow family (Proto-Germanic *grōwan-, 'to grow, become green'). 24 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "grow",
+  "rootLabel": "*grōwan-",
+  "rootGloss": "Proto-Germanic · to grow, increase, become green",
+  "regions": [
+    {
+      "id": "expansion-increase",
+      "label": "Expansion & increase",
+      "gloss": "growing larger; increasing in size or amount",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "cultivation-production",
+      "label": "Cultivation & production",
+      "gloss": "growing plants; cultivation, farming",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "emergence-development",
+      "label": "Emergence & development",
+      "gloss": "growing from; developing, maturing, becoming",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "grow",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To increase in size or amount; to develop. From Proto-Germanic *grōwan-."
+    },
+    {
+      "w": "growing",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": "grow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Increasing in size; developing. From grow + -ing."
+    },
+    {
+      "w": "grown",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": "grow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Having reached full size or development. From Old English growen."
+    },
+    {
+      "w": "growth",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": "grow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The process of growing; or an abnormal mass. From grow + -th."
+    },
+    {
+      "w": "grower",
+      "s": null,
+      "region": "cultivation-production",
+      "parent": "grow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who grows plants. From grow + -er."
+    },
+    {
+      "w": "overgrow",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": "grow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To grow excessively; to become covered with vegetation. From over- + grow."
+    },
+    {
+      "w": "overgrown",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": "overgrow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Grown excessively; covered with wild vegetation. From overgrow + -n."
+    },
+    {
+      "w": "overgrowing",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": "overgrow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Growing excessively. From overgrow + -ing."
+    },
+    {
+      "w": "upgrow",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": "grow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To grow upward. From up- + grow."
+    },
+    {
+      "w": "regrow",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": "grow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To grow again after being cut or removed. From re- + grow."
+    },
+    {
+      "w": "regrowing",
+      "s": null,
+      "region": "expansion-increase",
+      "parent": "regrow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Growing again. From regrow + -ing."
+    },
+    {
+      "w": "undergrow",
+      "s": null,
+      "region": "emergence-development",
+      "parent": "grow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Vegetation growing beneath larger plants. From under- + grow."
+    },
+    {
+      "w": "downgrow",
+      "s": null,
+      "region": "emergence-development",
+      "parent": "grow",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To grow downward; to decrease. From down- + grow."
+    },
+    {
+      "w": "grass",
+      "s": null,
+      "region": "cultivation-production",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Green herbaceous plants; from Proto-Germanic *grasaw- (that which grows green)."
+    },
+    {
+      "w": "grassy",
+      "s": null,
+      "region": "cultivation-production",
+      "parent": "grass",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Covered with or resembling grass. From grass + -y."
+    },
+    {
+      "w": "grassland",
+      "s": null,
+      "region": "cultivation-production",
+      "parent": "grass",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Land covered with grass. From grass + land."
+    },
+    {
+      "w": "green",
+      "s": null,
+      "region": "cultivation-production",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The color of growing plants; or not ripe/inexperienced. From Proto-Germanic *grōnaz (that which grows)."
+    },
+    {
+      "w": "greenery",
+      "s": null,
+      "region": "cultivation-production",
+      "parent": "green",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Green plants or foliage collectively. From green + -ery."
+    },
+    {
+      "w": "greenish",
+      "s": null,
+      "region": "cultivation-production",
+      "parent": "green",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Somewhat green. From green + -ish."
+    },
+    {
+      "w": "greening",
+      "s": null,
+      "region": "cultivation-production",
+      "parent": "green",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Becoming green; or environmental conservation. From green + -ing."
+    },
+    {
+      "w": "ingredient",
+      "s": null,
+      "region": "emergence-development",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A component part; from Latin ingredi (in- + gradi from *grow)."
+    },
+    {
+      "w": "ingrain",
+      "s": null,
+      "region": "emergence-development",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To establish deeply; from in- + grain."
+    }
+  ],
+  "collapse": {
+    "grew": {
+      "l": "grow",
+      "t": "simple past of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "growing": {
+      "l": "grow",
+      "t": "present participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "grown": {
+      "l": "grow",
+      "t": "past participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "overgrown": {
+      "l": "overgrow",
+      "t": "past participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "overgrowing": {
+      "l": "overgrow",
+      "t": "present participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "regrowing": {
+      "l": "regrow",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

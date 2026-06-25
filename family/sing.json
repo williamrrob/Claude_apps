@@ -1,0 +1,252 @@
+{
+  "_note": "Editor data for sing family (Proto-Germanic *singan-, 'to sing, resound'). 22 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "sing",
+  "rootLabel": "*singan-",
+  "rootGloss": "Proto-Germanic · to sing, sound, resound",
+  "regions": [
+    {
+      "id": "vocalization-music",
+      "label": "Vocalization & music",
+      "gloss": "producing song; singing, musical utterance",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "resonance-vibration",
+      "label": "Resonance & vibration",
+      "gloss": "resonating, vibrating, making sound",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "narrative-expression",
+      "label": "Narrative & expression",
+      "gloss": "expressing in song or verse; recounting",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "sing",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To produce musical sounds with the voice. From Proto-Germanic *singan-."
+    },
+    {
+      "w": "singer",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "sing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who sings. From sing + -er."
+    },
+    {
+      "w": "singing",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "sing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of producing song. From sing + -ing."
+    },
+    {
+      "w": "song",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "sing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A piece of music or verse meant to be sung. From Old English sang, from singan."
+    },
+    {
+      "w": "songbird",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "song",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A bird that sings. From song + bird."
+    },
+    {
+      "w": "songwriter",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "song",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who writes songs. From song + writer."
+    },
+    {
+      "w": "songstress",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "song",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A female singer. From song + -stress (feminine)."
+    },
+    {
+      "w": "songster",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "song",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who sings or writes songs. From song + -ster."
+    },
+    {
+      "w": "unsinging",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "sing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not singing; silent. From un- + singing."
+    },
+    {
+      "w": "outsing",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "sing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To surpass in singing. From out- + sing."
+    },
+    {
+      "w": "resing",
+      "s": null,
+      "region": "vocalization-music",
+      "parent": "sing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To sing again. From re- + sing."
+    },
+    {
+      "w": "singe",
+      "s": null,
+      "region": "resonance-vibration",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To burn lightly; related to Proto-Germanic singan (to scorch, sing)."
+    },
+    {
+      "w": "singed",
+      "s": null,
+      "region": "resonance-vibration",
+      "parent": "singe",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Burned lightly; scorched. From singe + -ed."
+    },
+    {
+      "w": "singeing",
+      "s": null,
+      "region": "resonance-vibration",
+      "parent": "singe",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Burning lightly; scorching. From singe + -ing."
+    },
+    {
+      "w": "sinner",
+      "s": null,
+      "region": "narrative-expression",
+      "parent": "sing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who sins; one who has committed sin. From sin (from *singan-) + -er."
+    },
+    {
+      "w": "sin",
+      "s": null,
+      "region": "narrative-expression",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A transgression or moral offense; originally related to 'sin' as 'to go astray' from Proto-Germanic *singan-."
+    },
+    {
+      "w": "sinful",
+      "s": null,
+      "region": "narrative-expression",
+      "parent": "sin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Wicked or immoral. From sin + -ful."
+    },
+    {
+      "w": "sinfully",
+      "s": null,
+      "region": "narrative-expression",
+      "parent": "sinful",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a sinful manner. From sinful + -ly."
+    },
+    {
+      "w": "sinless",
+      "s": null,
+      "region": "narrative-expression",
+      "parent": "sin",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Free from sin; innocent. From sin + -less."
+    },
+    {
+      "w": "sinlessly",
+      "s": null,
+      "region": "narrative-expression",
+      "parent": "sinless",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a sinless manner. From sinless + -ly."
+    },
+    {
+      "w": "absurd",
+      "s": null,
+      "region": "narrative-expression",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Unreasonable or ridiculous; from Latin absurdus (ab- + surdus, deaf to reason/song)."
+    }
+  ],
+  "collapse": {
+    "sang": {
+      "l": "sing",
+      "t": "simple past of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "sung": {
+      "l": "sing",
+      "t": "past participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "singing": {
+      "l": "sing",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "singed": {
+      "l": "singe",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "singeing": {
+      "l": "singe",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

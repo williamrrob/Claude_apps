@@ -1,0 +1,364 @@
+{
+  "_note": "Editor data for bind family (Proto-Germanic *bindan-, 'to bind, tie'). 33 verified placements across 4 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "bind",
+  "rootLabel": "*bindan-",
+  "rootGloss": "Proto-Germanic · to bind, tie, constrain",
+  "regions": [
+    {
+      "id": "fastening-joining",
+      "label": "Fastening & joining",
+      "gloss": "binding together; tying, fastening, connecting",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "constraint-obligation",
+      "label": "Constraint & obligation",
+      "gloss": "constraining; obligating, compelling",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "substance-material",
+      "label": "Substance & material",
+      "gloss": "binding substances; bands, bonds, connections",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "restriction-limitation",
+      "label": "Restriction & limitation",
+      "gloss": "limiting; restraining, confining",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "bind",
+      "s": null,
+      "region": "fastening-joining",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To fasten or tie with cord; to hold together. From Proto-Germanic *bindan-."
+    },
+    {
+      "w": "binding",
+      "s": null,
+      "region": "fastening-joining",
+      "parent": "bind",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Something that binds; the act of fastening. From bind + -ing."
+    },
+    {
+      "w": "binder",
+      "s": null,
+      "region": "fastening-joining",
+      "parent": "bind",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Something or someone that binds. From bind + -er."
+    },
+    {
+      "w": "bound",
+      "s": null,
+      "region": "fastening-joining",
+      "parent": "bind",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Fastened or tied; or under obligation. From Old English bunden."
+    },
+    {
+      "w": "rebind",
+      "s": null,
+      "region": "fastening-joining",
+      "parent": "bind",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To bind again. From re- + bind."
+    },
+    {
+      "w": "rebinding",
+      "s": null,
+      "region": "fastening-joining",
+      "parent": "rebind",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Binding again. From rebind + -ing."
+    },
+    {
+      "w": "unbind",
+      "s": null,
+      "region": "fastening-joining",
+      "parent": "bind",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To unfasten or untie. From un- + bind."
+    },
+    {
+      "w": "unbinding",
+      "s": null,
+      "region": "fastening-joining",
+      "parent": "unbind",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Unfastening or untying. From unbind + -ing."
+    },
+    {
+      "w": "bond",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A link or connection; or a financial instrument. From Old English bond."
+    },
+    {
+      "w": "bonded",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": "bond",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Connected by a bond. From bond + -ed."
+    },
+    {
+      "w": "bonding",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": "bond",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The action of forming a bond. From bond + -ing."
+    },
+    {
+      "w": "bondage",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": "bond",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The state of being bound or confined; slavery. From bond + -age."
+    },
+    {
+      "w": "bondswoman",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": "bondage",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A woman held in bondage. From bond + -s + woman."
+    },
+    {
+      "w": "bondsman",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": "bondage",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A person who provides bail or security. From bond + -s + man."
+    },
+    {
+      "w": "unbonded",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": "bonded",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not bonded or tied together. From un- + bonded."
+    },
+    {
+      "w": "band",
+      "s": null,
+      "region": "substance-material",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A thin strip binding things together; or a group. From Old English band, from *bindan-."
+    },
+    {
+      "w": "banded",
+      "s": null,
+      "region": "substance-material",
+      "parent": "band",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Marked with bands; or joined together. From band + -ed."
+    },
+    {
+      "w": "bandage",
+      "s": null,
+      "region": "substance-material",
+      "parent": "band",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A strip of cloth for binding wounds. From band + -age."
+    },
+    {
+      "w": "bandaged",
+      "s": null,
+      "region": "substance-material",
+      "parent": "bandage",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Wrapped with a bandage. From bandage + -ed."
+    },
+    {
+      "w": "bandaging",
+      "s": null,
+      "region": "substance-material",
+      "parent": "bandage",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Wrapping with a bandage. From bandage + -ing."
+    },
+    {
+      "w": "bandage",
+      "s": null,
+      "region": "substance-material",
+      "parent": "band",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A strip of cloth for binding wounds. From band + -age."
+    },
+    {
+      "w": "disband",
+      "s": null,
+      "region": "restriction-limitation",
+      "parent": "band",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To break up a group; to cease being united. From dis- + band."
+    },
+    {
+      "w": "disbanded",
+      "s": null,
+      "region": "restriction-limitation",
+      "parent": "disband",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Broke up or ceased to exist as a group. From disband + -ed."
+    },
+    {
+      "w": "disbanding",
+      "s": null,
+      "region": "restriction-limitation",
+      "parent": "disband",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Breaking up a group. From disband + -ing."
+    },
+    {
+      "w": "constrain",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To force or compel; to bind with constraint. From Latin constringere."
+    },
+    {
+      "w": "constraint",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": "constrain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A limitation or restriction. From constrain + -int."
+    },
+    {
+      "w": "constrained",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": "constrain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Forced or restricted. From constrain + -ed."
+    },
+    {
+      "w": "unconstrained",
+      "s": null,
+      "region": "constraint-obligation",
+      "parent": "constrained",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not constrained; free. From un- + constrained."
+    }
+  ],
+  "collapse": {
+    "bound": {
+      "l": "bind",
+      "t": "simple past and past participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "binding": {
+      "l": "bind",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "rebinding": {
+      "l": "rebind",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "unbinding": {
+      "l": "unbind",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "bonded": {
+      "l": "bond",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "bonding": {
+      "l": "bond",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "banded": {
+      "l": "band",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "bandaged": {
+      "l": "bandage",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "bandaging": {
+      "l": "bandage",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "disbanded": {
+      "l": "disband",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "disbanding": {
+      "l": "disband",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "constrained": {
+      "l": "constrain",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

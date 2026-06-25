@@ -1,0 +1,303 @@
+{
+  "_note": "Editor data for bring family (Proto-Germanic *bringan-, 'to bring, carry'). 26 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "bring",
+  "rootLabel": "*bringan-",
+  "rootGloss": "Proto-Germanic · to bring, carry, produce",
+  "regions": [
+    {
+      "id": "conveyance-transport",
+      "label": "Conveyance & transport",
+      "gloss": "bringing or carrying from one place to another",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "causation-production",
+      "label": "Causation & production",
+      "gloss": "causing to happen; producing, effecting",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "presentation-offering",
+      "label": "Presentation & offering",
+      "gloss": "bringing forward; presenting, offering, introducing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "bring",
+      "s": null,
+      "region": "conveyance-transport",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To carry or transport something from one place to another. From Proto-Germanic *bringan-."
+    },
+    {
+      "w": "bringing",
+      "s": null,
+      "region": "conveyance-transport",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of carrying or transporting. From bring + -ing."
+    },
+    {
+      "w": "brought",
+      "s": null,
+      "region": "conveyance-transport",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Past tense of bring. From Old English brohte."
+    },
+    {
+      "w": "rebring",
+      "s": null,
+      "region": "conveyance-transport",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To bring again. From re- + bring."
+    },
+    {
+      "w": "rebringing",
+      "s": null,
+      "region": "conveyance-transport",
+      "parent": "rebring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Bringing again. From rebring + -ing."
+    },
+    {
+      "w": "inbring",
+      "s": null,
+      "region": "conveyance-transport",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To bring in; to introduce. From in- + bring."
+    },
+    {
+      "w": "inbringing",
+      "s": null,
+      "region": "conveyance-transport",
+      "parent": "inbring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Bringing in; introducing. From inbring + -ing."
+    },
+    {
+      "w": "bring-about",
+      "s": null,
+      "region": "causation-production",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To cause to happen; to effect. From bring + about."
+    },
+    {
+      "w": "bringing-about",
+      "s": null,
+      "region": "causation-production",
+      "parent": "bring-about",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Causing to happen. From bring-about + -ing."
+    },
+    {
+      "w": "bring-back",
+      "s": null,
+      "region": "conveyance-transport",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To restore to a previous state or condition. From bring + back."
+    },
+    {
+      "w": "bring-down",
+      "s": null,
+      "region": "causation-production",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To cause to fall or decrease. From bring + down."
+    },
+    {
+      "w": "bring-forth",
+      "s": null,
+      "region": "presentation-offering",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To produce or give birth to. From bring + forth."
+    },
+    {
+      "w": "bring-in",
+      "s": null,
+      "region": "presentation-offering",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To introduce or earn. From bring + in."
+    },
+    {
+      "w": "bringing-in",
+      "s": null,
+      "region": "presentation-offering",
+      "parent": "bring-in",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Introducing or earning. From bring-in + -ing."
+    },
+    {
+      "w": "bring-out",
+      "s": null,
+      "region": "presentation-offering",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To reveal or produce; to introduce in society. From bring + out."
+    },
+    {
+      "w": "bringing-out",
+      "s": null,
+      "region": "presentation-offering",
+      "parent": "bring-out",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Revealing or introducing. From bring-out + -ing."
+    },
+    {
+      "w": "bring-up",
+      "s": null,
+      "region": "causation-production",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To raise or educate a child. From bring + up."
+    },
+    {
+      "w": "bringing-up",
+      "s": null,
+      "region": "causation-production",
+      "parent": "bring-up",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The rearing of a child; upbringing. From bring-up + -ing."
+    },
+    {
+      "w": "upbring",
+      "s": null,
+      "region": "causation-production",
+      "parent": "bring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To raise or rear. From up- + bring."
+    },
+    {
+      "w": "upbringing",
+      "s": null,
+      "region": "causation-production",
+      "parent": "upbring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The treatment and instruction a child receives. From upbring + -ing."
+    },
+    {
+      "w": "offspring",
+      "s": null,
+      "region": "causation-production",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A child or children produced; descendants. From off- + spring (from *bringan-)."
+    },
+    {
+      "w": "spring",
+      "s": null,
+      "region": "causation-production",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A season; or to jump or emerge suddenly. Related to Proto-Germanic *bringan- (to produce)."
+    },
+    {
+      "w": "springer",
+      "s": null,
+      "region": "causation-production",
+      "parent": "spring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One that springs; or a type of dog. From spring + -er."
+    },
+    {
+      "w": "springtime",
+      "s": null,
+      "region": "causation-production",
+      "parent": "spring",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The spring season. From spring + time."
+    }
+  ],
+  "collapse": {
+    "brought": {
+      "l": "bring",
+      "t": "simple past and past participle of (also separate placement)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "bringing": {
+      "l": "bring",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "rebringing": {
+      "l": "rebring",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "inbringing": {
+      "l": "inbring",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "bringing-about": {
+      "l": "bring-about",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "bringing-in": {
+      "l": "bring-in",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "bringing-out": {
+      "l": "bring-out",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "bringing-up": {
+      "l": "bring-up",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "upbringing": {
+      "l": "upbring",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

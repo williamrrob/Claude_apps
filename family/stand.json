@@ -1,0 +1,530 @@
+{
+  "_note": "Editor data for stand family (Proto-Germanic *standan-, 'to stand'). 58 verified placements across 5 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "stand",
+  "rootLabel": "*standan-",
+  "rootGloss": "Proto-Germanic · to stand, be upright, remain",
+  "regions": [
+    {
+      "id": "upright-position",
+      "label": "Upright position",
+      "gloss": "standing upright; taking a position",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "enduring-lasting",
+      "label": "Enduring & lasting",
+      "gloss": "standing firm; remaining constant, withstanding",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "comprehension-understanding",
+      "label": "Comprehension & understanding",
+      "gloss": "standing under; comprehending, understanding the basis",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "condition-status",
+      "label": "Condition & status",
+      "gloss": "a way of standing; circumstance, situation, rank",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "place-location",
+      "label": "Place & location",
+      "gloss": "a place where one stands; position, station",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "stand",
+      "s": null,
+      "region": "upright-position",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To be in an upright position on the feet. From Proto-Germanic *standan-."
+    },
+    {
+      "w": "standing",
+      "s": null,
+      "region": "upright-position",
+      "parent": "stand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an upright position; or one's rank or status. From stand + -ing."
+    },
+    {
+      "w": "stood",
+      "s": null,
+      "region": "upright-position",
+      "parent": "stand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Past tense of stand. From Old English stōd."
+    },
+    {
+      "w": "standee",
+      "s": null,
+      "region": "upright-position",
+      "parent": "stand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who stands, especially on public transport. From stand + -ee."
+    },
+    {
+      "w": "standpoint",
+      "s": null,
+      "region": "upright-position",
+      "parent": "stand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A point of view; a position from which to view something. From stand + point."
+    },
+    {
+      "w": "outstanding",
+      "s": null,
+      "region": "upright-position",
+      "parent": "stand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Standing out; conspicuous, excellent. From out- + standing."
+    },
+    {
+      "w": "outstandingly",
+      "s": null,
+      "region": "upright-position",
+      "parent": "outstanding",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an outstanding manner. From outstanding + -ly."
+    },
+    {
+      "w": "withstand",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To resist; to endure against opposition. From with- + stand."
+    },
+    {
+      "w": "withstanding",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": "withstand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Resisting; enduring. From withstand + -ing."
+    },
+    {
+      "w": "withstood",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": "withstand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Past tense of withstand. From Old English withstōd."
+    },
+    {
+      "w": "understand",
+      "s": null,
+      "region": "comprehension-understanding",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To comprehend; to grasp the meaning of. From under- + stand."
+    },
+    {
+      "w": "understanding",
+      "s": null,
+      "region": "comprehension-understanding",
+      "parent": "understand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Comprehension; or empathetic awareness. From understand + -ing."
+    },
+    {
+      "w": "understood",
+      "s": null,
+      "region": "comprehension-understanding",
+      "parent": "understand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Past tense of understand. From Old English understōd."
+    },
+    {
+      "w": "understandable",
+      "s": null,
+      "region": "comprehension-understanding",
+      "parent": "understand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Able to be understood. From understand + -able."
+    },
+    {
+      "w": "understandably",
+      "s": null,
+      "region": "comprehension-understanding",
+      "parent": "understandable",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an understandable manner. From understandable + -ly."
+    },
+    {
+      "w": "misunderstand",
+      "s": null,
+      "region": "comprehension-understanding",
+      "parent": "understand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To fail to understand correctly. From mis- + understand."
+    },
+    {
+      "w": "misunderstanding",
+      "s": null,
+      "region": "comprehension-understanding",
+      "parent": "misunderstand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A failure to understand correctly; a disagreement. From misunderstand + -ing."
+    },
+    {
+      "w": "misunderstood",
+      "s": null,
+      "region": "comprehension-understanding",
+      "parent": "misunderstand",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not understood correctly. From misunderstand + -ed."
+    },
+    {
+      "w": "circumstance",
+      "s": null,
+      "region": "condition-status",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A condition or fact affecting a situation; from circum (around) + stantia (standing)."
+    },
+    {
+      "w": "circumstances",
+      "s": null,
+      "region": "condition-status",
+      "parent": "circumstance",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Multiple conditions affecting situations. From circumstance + -s."
+    },
+    {
+      "w": "circumstantial",
+      "s": null,
+      "region": "condition-status",
+      "parent": "circumstance",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to circumstances; based on circumstantial evidence. From circumstance + -ial."
+    },
+    {
+      "w": "circumstantially",
+      "s": null,
+      "region": "condition-status",
+      "parent": "circumstantial",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a circumstantial manner. From circumstantial + -ly."
+    },
+    {
+      "w": "standard",
+      "s": null,
+      "region": "condition-status",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A level of quality or attainment; or a flag or banner. From stand + -ard."
+    },
+    {
+      "w": "standardize",
+      "s": null,
+      "region": "condition-status",
+      "parent": "standard",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To bring into conformity with a standard. From standard + -ize."
+    },
+    {
+      "w": "standardized",
+      "s": null,
+      "region": "condition-status",
+      "parent": "standardize",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Brought into conformity with a standard. From standardize + -ed."
+    },
+    {
+      "w": "standardization",
+      "s": null,
+      "region": "condition-status",
+      "parent": "standardize",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The process of standardizing. From standardize + -ation."
+    },
+    {
+      "w": "instance",
+      "s": null,
+      "region": "condition-status",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An example or occurrence; from in- (upon) + stantia (standing)."
+    },
+    {
+      "w": "instances",
+      "s": null,
+      "region": "condition-status",
+      "parent": "instance",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Multiple examples or occurrences. From instance + -s."
+    },
+    {
+      "w": "substance",
+      "s": null,
+      "region": "condition-status",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Matter or material; essential nature; from sub- (under) + stantia (standing)."
+    },
+    {
+      "w": "substantial",
+      "s": null,
+      "region": "condition-status",
+      "parent": "substance",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Of considerable importance or size; solid. From substance + -ial."
+    },
+    {
+      "w": "substantially",
+      "s": null,
+      "region": "condition-status",
+      "parent": "substantial",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a substantial manner; to a great extent. From substantial + -ly."
+    },
+    {
+      "w": "insubstantial",
+      "s": null,
+      "region": "condition-status",
+      "parent": "substantial",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Lacking substance; not solid. From in- + substantial."
+    },
+    {
+      "w": "assistance",
+      "s": null,
+      "region": "condition-status",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Help or support; from ad- (toward) + sistentia (standing)."
+    },
+    {
+      "w": "assistant",
+      "s": null,
+      "region": "condition-status",
+      "parent": "assistance",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who assists. From assistance + -ant."
+    },
+    {
+      "w": "resistance",
+      "s": null,
+      "region": "condition-status",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of resisting; opposition; from re- (back) + sistentia (standing)."
+    },
+    {
+      "w": "resistant",
+      "s": null,
+      "region": "condition-status",
+      "parent": "resistance",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Offering resistance; able to resist. From resistance + -ant."
+    },
+    {
+      "w": "resist",
+      "s": null,
+      "region": "condition-status",
+      "parent": "resistance",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To oppose or refuse to comply. From Latin resistere (re- + sistere, from stand)."
+    },
+    {
+      "w": "distance",
+      "s": null,
+      "region": "place-location",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The extent of space between things; from dis- (apart) + stantia (standing)."
+    },
+    {
+      "w": "distant",
+      "s": null,
+      "region": "place-location",
+      "parent": "distance",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Far away in space or time. From distance + -ant."
+    },
+    {
+      "w": "distantly",
+      "s": null,
+      "region": "place-location",
+      "parent": "distant",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a distant manner; far away. From distant + -ly."
+    },
+    {
+      "w": "constant",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Occurring continuously; unchanging; from cum- (with) + stans (standing)."
+    },
+    {
+      "w": "constantly",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": "constant",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a constant manner; continuously. From constant + -ly."
+    },
+    {
+      "w": "inconstant",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": "constant",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not constant; changing; fickle. From in- + constant."
+    },
+    {
+      "w": "persist",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To continue firmly or stubbornly. From per- (through) + sistere (stand)."
+    },
+    {
+      "w": "persistence",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": "persist",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The quality of persisting. From persist + -ence."
+    },
+    {
+      "w": "persistent",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": "persist",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Continuing firmly; refusing to give up. From persist + -ent."
+    },
+    {
+      "w": "persistently",
+      "s": null,
+      "region": "enduring-lasting",
+      "parent": "persistent",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a persistent manner. From persistent + -ly."
+    }
+  ],
+  "collapse": {
+    "stood": {
+      "l": "stand",
+      "t": "simple past of (also separate placement)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "standing": {
+      "l": "stand",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "withstood": {
+      "l": "withstand",
+      "t": "simple past of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "withstanding": {
+      "l": "withstand",
+      "t": "present participle of (also separate placement as preposition)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "understood": {
+      "l": "understand",
+      "t": "simple past of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "understanding": {
+      "l": "understand",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "misunderstood": {
+      "l": "misunderstand",
+      "t": "simple past of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "misunderstanding": {
+      "l": "misunderstand",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "standardized": {
+      "l": "standardize",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "standardizing": {
+      "l": "standardize",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

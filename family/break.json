@@ -1,0 +1,316 @@
+{
+  "_note": "Editor data for break family (Proto-Germanic *brekan-, 'to break'). 35 verified placements across 4 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "break",
+  "rootLabel": "*brekan-",
+  "rootGloss": "Proto-Germanic · to break, fracture, shatter",
+  "regions": [
+    {
+      "id": "breaking-shattering",
+      "label": "Breaking & shattering",
+      "gloss": "breaking into fragments; shattering, fracturing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "breach-violation",
+      "label": "Breach & violation",
+      "gloss": "breaking through barriers; violating, breaching agreements",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "interruption-cessation",
+      "label": "Interruption & cessation",
+      "gloss": "breaking continuity; interrupting, stopping",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "breakthrough-emergence",
+      "label": "Breakthrough & emergence",
+      "gloss": "breaking through to success; emergent discovery, progress",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "break",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To fracture or sever; to cause to separate into pieces. From Proto-Germanic *brekan-."
+    },
+    {
+      "w": "broken",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Fractured or severed; no longer in one piece. From Old English brocen, past participle of brecan."
+    },
+    {
+      "w": "breaking",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The action of fracturing or severing. From break + -ing."
+    },
+    {
+      "w": "breaker",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A thing or person that breaks; a device for breaking connections. From break + -er."
+    },
+    {
+      "w": "breakage",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The action or process of breaking; or damage caused by breaking. From break + -age."
+    },
+    {
+      "w": "unbreakable",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not able to be broken. From un- + break + -able."
+    },
+    {
+      "w": "unbreakably",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "unbreakable",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an unbreakable manner. From unbreakable + -ly."
+    },
+    {
+      "w": "breakable",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Able to be broken; fragile. From break + -able."
+    },
+    {
+      "w": "outbreak",
+      "s": null,
+      "region": "breach-violation",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A sudden eruption or occurrence; especially of disease. From out- + break."
+    },
+    {
+      "w": "outbreaks",
+      "s": null,
+      "region": "breach-violation",
+      "parent": "outbreak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Multiple sudden eruptions. From outbreak + -s (plural)."
+    },
+    {
+      "w": "breach",
+      "s": null,
+      "region": "breach-violation",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An opening or gap; or a violation of an agreement. From Old English bræc, from brecan."
+    },
+    {
+      "w": "breached",
+      "s": null,
+      "region": "breach-violation",
+      "parent": "breach",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Made an opening through; violated. From breach + -ed."
+    },
+    {
+      "w": "breaching",
+      "s": null,
+      "region": "breach-violation",
+      "parent": "breach",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Making an opening through; violating. From breach + -ing."
+    },
+    {
+      "w": "break-in",
+      "s": null,
+      "region": "interruption-cessation",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An illegal forced entry; or the process of wearing in something new. From break + in."
+    },
+    {
+      "w": "breakdown",
+      "s": null,
+      "region": "interruption-cessation",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A failure or collapse; or an analysis separated into component parts. From break + down."
+    },
+    {
+      "w": "breakup",
+      "s": null,
+      "region": "interruption-cessation",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An end or dissolution of a relationship. From break + up."
+    },
+    {
+      "w": "interbreak",
+      "s": null,
+      "region": "interruption-cessation",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A pause or interruption between continuous actions. From inter- + break."
+    },
+    {
+      "w": "breakthrough",
+      "s": null,
+      "region": "breakthrough-emergence",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A significant or sudden advance; breaking through a barrier. From break + through."
+    },
+    {
+      "w": "breakthroughs",
+      "s": null,
+      "region": "breakthrough-emergence",
+      "parent": "breakthrough",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Multiple significant advances. From breakthrough + -s (plural)."
+    },
+    {
+      "w": "breakout",
+      "s": null,
+      "region": "breakthrough-emergence",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An escape; or sudden emergence into prominence. From break + out."
+    },
+    {
+      "w": "rebreak",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To break again. From re- + break."
+    },
+    {
+      "w": "rebreaking",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "rebreak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Breaking again. From rebreak + -ing."
+    },
+    {
+      "w": "daybreak",
+      "s": null,
+      "region": "breakthrough-emergence",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The emergence of day; dawn. From day + break (dawn breaks)."
+    },
+    {
+      "w": "heartbreak",
+      "s": null,
+      "region": "breach-violation",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Overwhelming distress; rupture of the heart's emotional state. From heart + break."
+    },
+    {
+      "w": "heartbroken",
+      "s": null,
+      "region": "breach-violation",
+      "parent": "heartbreak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Overwhelmed by grief or loss. From heartbreak + -en."
+    },
+    {
+      "w": "fastbreak",
+      "s": null,
+      "region": "breakthrough-emergence",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A quick offensive maneuver in sports. From fast + break."
+    },
+    {
+      "w": "jailbreak",
+      "s": null,
+      "region": "breakthrough-emergence",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An escape from jail. From jail + break."
+    },
+    {
+      "w": "windbreak",
+      "s": null,
+      "region": "breaking-shattering",
+      "parent": "break",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A barrier that breaks or reduces the force of wind. From wind + break."
+    }
+  ],
+  "collapse": {
+    "broke": {
+      "l": "break",
+      "t": "simple past of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "breaking": {
+      "l": "break",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "breached": {
+      "l": "breach",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "breaching": {
+      "l": "breach",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

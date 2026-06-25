@@ -1,0 +1,309 @@
+{
+  "_note": "Editor data for build family (Proto-Germanic *buthlon-, 'to build, construct'). 29 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "build",
+  "rootLabel": "*buthlon-",
+  "rootGloss": "Proto-Germanic · to build, construct, create structures",
+  "regions": [
+    {
+      "id": "construction-creation",
+      "label": "Construction & creation",
+      "gloss": "building structures; constructing, erecting",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "development-growth",
+      "label": "Development & growth",
+      "gloss": "building up; developing, accumulating",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "structure-form",
+      "label": "Structure & form",
+      "gloss": "the built structure; form, framework, arrangement",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "build",
+      "s": null,
+      "region": "construction-creation",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To construct or erect a structure. From Proto-Germanic *buthlon-."
+    },
+    {
+      "w": "builder",
+      "s": null,
+      "region": "construction-creation",
+      "parent": "build",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who builds. From build + -er."
+    },
+    {
+      "w": "building",
+      "s": null,
+      "region": "construction-creation",
+      "parent": "build",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A constructed structure; or the act of constructing. From build + -ing."
+    },
+    {
+      "w": "built",
+      "s": null,
+      "region": "construction-creation",
+      "parent": "build",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Constructed or erected. From Old English byldan."
+    },
+    {
+      "w": "rebuild",
+      "s": null,
+      "region": "construction-creation",
+      "parent": "build",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To build again; to reconstruct. From re- + build."
+    },
+    {
+      "w": "rebuilding",
+      "s": null,
+      "region": "construction-creation",
+      "parent": "rebuild",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Constructing again; reconstruction. From rebuild + -ing."
+    },
+    {
+      "w": "rebuilt",
+      "s": null,
+      "region": "construction-creation",
+      "parent": "rebuild",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Constructed again. From rebuild + -t."
+    },
+    {
+      "w": "unbuild",
+      "s": null,
+      "region": "construction-creation",
+      "parent": "build",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To demolish or take apart. From un- + build."
+    },
+    {
+      "w": "unbuilt",
+      "s": null,
+      "region": "construction-creation",
+      "parent": "unbuild",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not built; undeveloped. From un- + built."
+    },
+    {
+      "w": "buildup",
+      "s": null,
+      "region": "development-growth",
+      "parent": "build",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An accumulation or gradual increase. From build + up."
+    },
+    {
+      "w": "buildups",
+      "s": null,
+      "region": "development-growth",
+      "parent": "buildup",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Multiple accumulations. From buildup + -s."
+    },
+    {
+      "w": "upbuild",
+      "s": null,
+      "region": "development-growth",
+      "parent": "build",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To build up; to develop. From up- + build."
+    },
+    {
+      "w": "upbuilding",
+      "s": null,
+      "region": "development-growth",
+      "parent": "upbuild",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Building up; development. From upbuild + -ing."
+    },
+    {
+      "w": "house",
+      "s": null,
+      "region": "structure-form",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A dwelling built for habitation. From Old English hus, related to Proto-Germanic *hustiz (built shelter)."
+    },
+    {
+      "w": "housed",
+      "s": null,
+      "region": "structure-form",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Provided with shelter. From house + -ed."
+    },
+    {
+      "w": "housing",
+      "s": null,
+      "region": "structure-form",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Dwellings collectively; or a covering. From house + -ing."
+    },
+    {
+      "w": "household",
+      "s": null,
+      "region": "structure-form",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A domestic group; a family and servants. From house + hold."
+    },
+    {
+      "w": "householder",
+      "s": null,
+      "region": "structure-form",
+      "parent": "household",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The head of a household. From household + -er."
+    },
+    {
+      "w": "housekeeper",
+      "s": null,
+      "region": "structure-form",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who manages a household. From house + keeper."
+    },
+    {
+      "w": "housework",
+      "s": null,
+      "region": "structure-form",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Work done in managing a household. From house + work."
+    },
+    {
+      "w": "housewarming",
+      "s": null,
+      "region": "structure-form",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A party celebrating moving into a new house. From house + warming."
+    },
+    {
+      "w": "warehouse",
+      "s": null,
+      "region": "structure-form",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A large building for storing goods. From ware + house."
+    },
+    {
+      "w": "in-house",
+      "s": null,
+      "region": "structure-form",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Existing or done within an organization. From in- + house."
+    },
+    {
+      "w": "houseless",
+      "s": null,
+      "region": "structure-form",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Without a house; homeless. From house + -less."
+    },
+    {
+      "w": "booth",
+      "s": null,
+      "region": "structure-form",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A small, enclosed area; a temporary shelter. From Old Norse búth, from *buthlon-."
+    },
+    {
+      "w": "bothy",
+      "s": null,
+      "region": "structure-form",
+      "parent": "booth",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A small hut or cottage. From booth + -y."
+    }
+  ],
+  "collapse": {
+    "built": {
+      "l": "build",
+      "t": "simple past and past participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "building": {
+      "l": "build",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "rebuilding": {
+      "l": "rebuild",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "rebuilt": {
+      "l": "rebuild",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "upbuilding": {
+      "l": "upbuild",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "housed": {
+      "l": "house",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "housing": {
+      "l": "house",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

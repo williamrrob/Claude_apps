@@ -1,0 +1,336 @@
+{
+  "_note": "Editor data for speak family (Proto-Germanic *sprekan-, 'to speak, spray'). 28 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "speak",
+  "rootLabel": "*sprekan-",
+  "rootGloss": "Proto-Germanic · to speak, utter, spray",
+  "regions": [
+    {
+      "id": "speech-utterance",
+      "label": "Speech & utterance",
+      "gloss": "speaking words; uttering sounds, discourse",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "dispersal-scattering",
+      "label": "Dispersal & scattering",
+      "gloss": "spreading widely; dispersing, spraying",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "disclosure-revelation",
+      "label": "Disclosure & revelation",
+      "gloss": "speaking out; revealing, making known",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "speak",
+      "s": null,
+      "region": "speech-utterance",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To utter words; to communicate verbally. From Proto-Germanic *sprekan-."
+    },
+    {
+      "w": "speaker",
+      "s": null,
+      "region": "speech-utterance",
+      "parent": "speak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who speaks. From speak + -er."
+    },
+    {
+      "w": "speaking",
+      "s": null,
+      "region": "speech-utterance",
+      "parent": "speak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Uttering words; or public address. From speak + -ing."
+    },
+    {
+      "w": "speech",
+      "s": null,
+      "region": "speech-utterance",
+      "parent": "speak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The faculty or act of speaking; a formal address. From Old English spǣc."
+    },
+    {
+      "w": "speechless",
+      "s": null,
+      "region": "speech-utterance",
+      "parent": "speech",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Unable to speak; astounded into silence. From speech + -less."
+    },
+    {
+      "w": "speechlessly",
+      "s": null,
+      "region": "speech-utterance",
+      "parent": "speechless",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In a speechless manner. From speechless + -ly."
+    },
+    {
+      "w": "spokesman",
+      "s": null,
+      "region": "speech-utterance",
+      "parent": "speak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A person who makes statements on behalf of a group. From speak + -s- + man."
+    },
+    {
+      "w": "spokeswoman",
+      "s": null,
+      "region": "speech-utterance",
+      "parent": "spokesman",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A woman who speaks on behalf of a group. From spokesman (female equivalent)."
+    },
+    {
+      "w": "outspeak",
+      "s": null,
+      "region": "disclosure-revelation",
+      "parent": "speak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To speak out; to surpass in speaking. From out- + speak."
+    },
+    {
+      "w": "outspeaking",
+      "s": null,
+      "region": "disclosure-revelation",
+      "parent": "outspeak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Speaking out. From outspeak + -ing."
+    },
+    {
+      "w": "outspoken",
+      "s": null,
+      "region": "disclosure-revelation",
+      "parent": "speak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Frank and candid; openly expressed. From out- + spoke."
+    },
+    {
+      "w": "outspeakenly",
+      "s": null,
+      "region": "disclosure-revelation",
+      "parent": "outspoken",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an outspoken manner. From outspoken + -ly."
+    },
+    {
+      "w": "unspeakable",
+      "s": null,
+      "region": "disclosure-revelation",
+      "parent": "speak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Too horrible or bad to be spoken of. From un- + speak + -able."
+    },
+    {
+      "w": "unspeakably",
+      "s": null,
+      "region": "disclosure-revelation",
+      "parent": "unspeakable",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "In an unspeakable manner. From unspeakable + -ly."
+    },
+    {
+      "w": "speak-out",
+      "s": null,
+      "region": "disclosure-revelation",
+      "parent": "speak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A public disclosure or criticism. From speak + out."
+    },
+    {
+      "w": "spray",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Fine mist of liquid; or to scatter in a mist. From Proto-Germanic *sprekan- (to spread)."
+    },
+    {
+      "w": "sprayed",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": "spray",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Scattered in a mist. From spray + -ed."
+    },
+    {
+      "w": "spraying",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": "spray",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Scattering in a mist. From spray + -ing."
+    },
+    {
+      "w": "sprayer",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": "spray",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A device that sprays. From spray + -er."
+    },
+    {
+      "w": "sprain",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To wrench or twist; injury to a joint without fracture. Related to spray/spread sense."
+    },
+    {
+      "w": "sprained",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": "sprain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Wrenched or twisted. From sprain + -ed."
+    },
+    {
+      "w": "sprout",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A new shoot or growth; or to begin to grow. Related to spread sense."
+    },
+    {
+      "w": "sprouted",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": "sprout",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Began to grow. From sprout + -ed."
+    },
+    {
+      "w": "sprouting",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": "sprout",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Beginning to grow. From sprout + -ing."
+    },
+    {
+      "w": "sprung",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": "sprout",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Past participle of spring (related to sprout). From Old English sprungen."
+    },
+    {
+      "w": "spread",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To extend over a surface; to scatter. Related to Germanic *sprekan- root."
+    },
+    {
+      "w": "spreading",
+      "s": null,
+      "region": "dispersal-scattering",
+      "parent": "spread",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Extending over a surface. From spread + -ing."
+    }
+  ],
+  "collapse": {
+    "spoke": {
+      "l": "speak",
+      "t": "simple past of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "spoken": {
+      "l": "speak",
+      "t": "past participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "speaking": {
+      "l": "speak",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "sprayed": {
+      "l": "spray",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "spraying": {
+      "l": "spray",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "sprained": {
+      "l": "sprain",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "sprouted": {
+      "l": "sprout",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "sprouting": {
+      "l": "sprout",
+      "t": "present participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "spread": {
+      "l": "spread",
+      "t": "simple past of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "spreading": {
+      "l": "spread",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

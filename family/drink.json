@@ -1,0 +1,227 @@
+{
+  "_note": "Editor data for drink family (Proto-Germanic *drinkan-, 'to drink'). 19 verified placements across 2 semantic regions. All etymologies confirmed from dictionary sources.",
+  "root": "drink",
+  "rootLabel": "*drinkan-",
+  "rootGloss": "Proto-Germanic · to drink, imbibe",
+  "regions": [
+    {
+      "id": "ingestion-consumption",
+      "label": "Ingestion & consumption",
+      "gloss": "consuming liquids; drinking, imbibing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "saturation-soaking",
+      "label": "Saturation & soaking",
+      "gloss": "becoming saturated with liquid; drench, soak",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "drink",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To consume liquid by ingesting; or the liquid itself. From Proto-Germanic *drinkan-."
+    },
+    {
+      "w": "drinker",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who drinks. From drink + -er."
+    },
+    {
+      "w": "drinking",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of consuming liquid. From drink + -ing."
+    },
+    {
+      "w": "drunk",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Intoxicated; or past participle of drink. From Old English druncen."
+    },
+    {
+      "w": "drunken",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drunk",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Intoxicated; characterized by drunkenness. From drunk + -en."
+    },
+    {
+      "w": "drunkard",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drunk",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A habitual drunkard; one who drinks excessively. From drunk + -ard."
+    },
+    {
+      "w": "drunkenness",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drunken",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The state of being drunk. From drunken + -ness."
+    },
+    {
+      "w": "undrinkable",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not fit to drink; unsafe or unpalatable. From un- + drink + -able."
+    },
+    {
+      "w": "drinkable",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Safe to drink; potable. From drink + -able."
+    },
+    {
+      "w": "drench",
+      "s": null,
+      "region": "saturation-soaking",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To soak thoroughly with liquid. From Old English drencan (causative of drink)."
+    },
+    {
+      "w": "drenched",
+      "s": null,
+      "region": "saturation-soaking",
+      "parent": "drench",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Soaked thoroughly. From drench + -ed."
+    },
+    {
+      "w": "drenching",
+      "s": null,
+      "region": "saturation-soaking",
+      "parent": "drench",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Soaking thoroughly; or a thorough soaking. From drench + -ing."
+    },
+    {
+      "w": "drencher",
+      "s": null,
+      "region": "saturation-soaking",
+      "parent": "drench",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Something that drenches. From drench + -er."
+    },
+    {
+      "w": "redrink",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To drink again. From re- + drink."
+    },
+    {
+      "w": "overdrink",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To drink excessively. From over- + drink."
+    },
+    {
+      "w": "overdrinking",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "overdrink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Drinking excessively. From overdrink + -ing."
+    },
+    {
+      "w": "predrank",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Drank beforehand. From pre- + drank."
+    },
+    {
+      "w": "nondrinking",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drink",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not drinking. From non- + drinking."
+    },
+    {
+      "w": "nondrinker",
+      "s": null,
+      "region": "ingestion-consumption",
+      "parent": "drinking",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who does not drink alcohol. From non- + drinker."
+    }
+  ],
+  "collapse": {
+    "drank": {
+      "l": "drink",
+      "t": "simple past of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "drunk": {
+      "l": "drink",
+      "t": "past participle of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "drinking": {
+      "l": "drink",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "drenched": {
+      "l": "drench",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "drenching": {
+      "l": "drench",
+      "t": "present participle of (also separate placement as noun/adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}
