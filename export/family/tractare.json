@@ -1,0 +1,113 @@
+{
+  "_note": "Editor data for tractare family. 9 verified placements.",
+  "root": "tractare",
+  "rootLabel": "tractare",
+  "rootGloss": "Latin \u00b7 to pull, drag, treat, discuss",
+  "regions": [
+    {
+      "id": "pulling-drawing",
+      "label": "Pulling & drawing",
+      "gloss": "pulling, dragging, drawing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "treating-handling",
+      "label": "Treating & handling",
+      "gloss": "handling, treating, managing",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "contracting-binding",
+      "label": "Contracting & binding",
+      "gloss": "drawing together, binding",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "tract",
+      "s": null,
+      "region": "pulling-drawing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Region of land. From Latin tractus, from trahere."
+    },
+    {
+      "w": "treat",
+      "s": null,
+      "region": "treating-handling",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To handle. From Latin tractare (from trahere)."
+    },
+    {
+      "w": "contract",
+      "s": null,
+      "region": "contracting-binding",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Agreement. From Latin contrahere (con- + trahere)."
+    },
+    {
+      "w": "extract",
+      "s": null,
+      "region": "pulling-drawing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Pull out. From Latin extrahere (ex- + trahere)."
+    },
+    {
+      "w": "attract",
+      "s": null,
+      "region": "pulling-drawing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Pull toward. From Latin attrahere (ad- + trahere)."
+    },
+    {
+      "w": "subtract",
+      "s": null,
+      "region": "pulling-drawing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Take away. From Latin subtrahere (sub- + trahere)."
+    },
+    {
+      "w": "retract",
+      "s": null,
+      "region": "pulling-drawing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Draw back. From Latin retrahere (re- + trahere)."
+    },
+    {
+      "w": "abstract",
+      "s": null,
+      "region": "pulling-drawing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Drawn away. From Latin abstrahere (abs- + trahere)."
+    },
+    {
+      "w": "distract",
+      "s": null,
+      "region": "pulling-drawing",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Pull away. From Latin distrahere (dis- + trahere)."
+    }
+  ],
+  "collapse": {}
+}

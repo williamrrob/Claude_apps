@@ -1,0 +1,68 @@
+{
+  "_note": "Editor data for pendere family. 4 verified placements.",
+  "root": "pendere",
+  "rootLabel": "pend\u0113re",
+  "rootGloss": "Latin \u00b7 to hang, suspend, weigh",
+  "regions": [
+    {
+      "id": "hanging-suspending",
+      "label": "Hanging & suspending",
+      "gloss": "hanging from, suspending",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "depending-contingent",
+      "label": "Depending & contingent",
+      "gloss": "depending on, contingent",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "weighing-pondering",
+      "label": "Weighing & pondering",
+      "gloss": "weighing, considering",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "pendant",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Hanging ornament. From Latin pendens, from pendere."
+    },
+    {
+      "w": "suspend",
+      "s": null,
+      "region": "hanging-suspending",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To hang from. From Latin suspendere (sub- + pendere)."
+    },
+    {
+      "w": "depend",
+      "s": null,
+      "region": "depending-contingent",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To rely on. From Latin dependere (de- + pendere)."
+    },
+    {
+      "w": "dispense",
+      "s": null,
+      "region": "weighing-pondering",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To distribute. From Latin dispensare (dis- + pendere)."
+    }
+  ],
+  "collapse": {}
+}
