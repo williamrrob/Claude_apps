@@ -1083,6 +1083,78 @@
       "gloss": "abbreviation of Latin confer — “compare”",
       "by": "user",
       "at": "2026-06-23T14:19:25.810Z"
+    },
+    {
+      "w": "feral",
+      "s": null,
+      "region": "wild-untamed",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:18:58.342Z",
+      "note": "Wild, savage, untamed. From Latin feralis (wild), from ferus (wild animal)."
+    },
+    {
+      "w": "ferine",
+      "s": null,
+      "region": "wild-untamed",
+      "parent": "feral",
+      "by": "assistant",
+      "at": "2026-06-25T00:18:58.342Z",
+      "note": "Resembling or characteristic of a wild animal. From Latin ferīnus (wild)."
+    },
+    {
+      "w": "fervid",
+      "s": null,
+      "region": "fire-intensity",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:18:58.342Z",
+      "note": "Intensely passionate or zealous; ardent. From Latin fervidus (hot, boiling), from fervēre (to boil)."
+    },
+    {
+      "w": "fervor",
+      "s": null,
+      "region": "fire-intensity",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:18:58.342Z",
+      "note": "Passionate intensity or enthusiasm. From Latin fervor (a boiling, heat, passion), from fervēre (to boil)."
+    },
+    {
+      "w": "reefer",
+      "s": null,
+      "region": "bearing-production",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:18:58.342Z",
+      "note": "A thick jacket; also a reef (ridge). From reef + -er."
+    },
+    {
+      "w": "surfer",
+      "s": null,
+      "region": "bearing-production",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:18:58.342Z",
+      "note": "One who surfs. From surf + -er."
+    },
+    {
+      "w": "ferment",
+      "s": null,
+      "region": "fire-intensity",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:18:58.342Z",
+      "note": "To undergo chemical change; to cause unrest or excitement. From Latin fermentāre (to leaven), from fermentum (fermentation agent)."
+    },
+    {
+      "w": "fervent",
+      "s": null,
+      "region": "fire-intensity",
+      "parent": "fervor",
+      "by": "assistant",
+      "at": "2026-06-25T00:18:58.342Z",
+      "note": "Intensely hot or passionate. From Latin ferventis (boiling), present participle of fervēre."
     }
   ],
   "collapse": {},

@@ -1,5 +1,5 @@
 {
- "_note": "Editor data for the mit-/miss- family (Latin mittere, 'to send, let go'). Placement format with provenance; regenerators MUST preserve by:user.",
+ "_note": "Editor data for the mit-/miss- family (Latin mittere, 'to send, let go'). Hand-filtered from engine matches; EXCLUDES false positives: miss/mite/missy/amiss/mitten (Germanic), amity/enmity/comity (from amīcus 'friend'), eremite/mitosis/amitosis (Greek), imitate/marmite/dimity/dynamite/catamite/chromite/dolomite (unrelated roots). Placement format with provenance; regenerators MUST preserve by:assistant.",
  "root": "mit",
  "rootLabel": "mittere",
  "rootGloss": "Latin · to send, let go",
