@@ -1,0 +1,100 @@
+{
+  "total_original_words": 77519,
+  "total_lemmas": 71406,
+  "inflections_consolidated": 6384,
+  "estimated_reduction": 6113,
+  "reduction_percentage": 7.9,
+  "final_word_count": 71406,
+  "inflections_by_type": {
+    "adverbial_remove_ly": 2410,
+    "present_participle_remove_ing": 1361,
+    "past_tense_remove_ed": 1082,
+    "present_participle_restore_e": 663,
+    "plural_remove_s": 626,
+    "past_tense_doubled": 131,
+    "plural_remove_es": 63,
+    "plural_y_to_ies": 48
+  },
+  "top_lemmas_by_derivative_count": [
+    {
+      "lemma": "bar",
+      "derivative_count": 4
+    },
+    {
+      "lemma": "hay",
+      "derivative_count": 4
+    },
+    {
+      "lemma": "master",
+      "derivative_count": 4
+    },
+    {
+      "lemma": "part",
+      "derivative_count": 4
+    },
+    {
+      "lemma": "sight",
+      "derivative_count": 4
+    },
+    {
+      "lemma": "slop",
+      "derivative_count": 4
+    },
+    {
+      "lemma": "strip",
+      "derivative_count": 4
+    },
+    {
+      "lemma": "tap",
+      "derivative_count": 4
+    },
+    {
+      "lemma": "accept",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "aid",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "air",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "arch",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "arm",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "barrel",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "bead",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "bend",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "blind",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "brief",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "burn",
+      "derivative_count": 3
+    },
+    {
+      "lemma": "clear",
+      "derivative_count": 3
+    }
+  ]
+}
