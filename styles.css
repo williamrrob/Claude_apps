@@ -451,7 +451,7 @@ body {
 .entry { position: relative; margin: 8px 0 4px; opacity: 0; transform: translateY(8px);
   transition: opacity .4s var(--ease), transform .4s var(--ease); }
 .entry.in { opacity: 1; transform: none; }
-.entry-rule-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; padding-right: 50px; }
+.entry-rule-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; padding-right: 0; margin-left: calc(-1 * var(--pad)); margin-right: calc(-1 * var(--pad)); padding-left: var(--pad); padding-right: var(--pad); }
 .entry-rule { flex: 1; border-top: 1px solid var(--suffix); border-bottom: 1px solid var(--suffix); height: 5px; }
 .entry-pos { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
 .entry-word { font-size: 38px; font-weight: 700; letter-spacing: .01em; line-height: 1.06; }
@@ -502,17 +502,8 @@ body {
 /* half-circle letter badge by the word — tap to browse that letter */
 /* current-letter thumb tab: a half-circle on the right edge, up top */
 .entry-letter {
-  position: absolute; top: 44px; right: calc(-1 * var(--pad)); z-index: 2;
-  width: 22px; height: 44px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 700; color: #f3e7d2;
-  background: var(--prefix); border: none; border-radius: 22px 0 0 22px;
-  /* page sits above the cutout: the page lip casts a shadow onto the tab */
-  box-shadow: inset 4px 0 6px -2px rgba(0,0,0,0.55), inset 0 5px 6px -3px rgba(0,0,0,0.5),
-    inset 0 -5px 6px -3px rgba(0,0,0,0.5);
-  cursor: pointer; -webkit-tap-highlight-color: transparent;
+  display: none;
 }
-.entry-letter:active { transform: scale(0.94); }
 
 /* verification status badge */
 .verification-badge {
