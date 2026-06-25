@@ -2,7 +2,7 @@
   "_note": "Editor data for petere family. 5 verified placements.",
   "root": "petere",
   "rootLabel": "petere",
-  "rootGloss": "Latin \u00b7 to seek, ask, request",
+  "rootGloss": "Latin · to seek, ask, request",
   "regions": [
     {
       "id": "seeking-requesting",
@@ -28,24 +28,6 @@
   ],
   "placements": [
     {
-      "w": "petition",
-      "s": null,
-      "region": "seeking-requesting",
-      "parent": null,
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Formal request. From Latin petitio, from petere."
-    },
-    {
-      "w": "appetite",
-      "s": null,
-      "region": "appetite-desire",
-      "parent": null,
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Desire for food/satisfaction. From Latin appetitus (craving)."
-    },
-    {
       "w": "compete",
       "s": null,
       "region": "competing-striving",
@@ -64,6 +46,51 @@
       "note": "Having suitable skill."
     },
     {
+      "w": "competition",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "compete",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of competing; rivalry. From Latin competītiō, from competere."
+    },
+    {
+      "w": "competitive",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "competition",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relating to or involving competition. From competītus + -ive."
+    },
+    {
+      "w": "competitor",
+      "s": null,
+      "region": "competing-striving",
+      "parent": "compete",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who competes. From Latin competitor."
+    },
+    {
+      "w": "appetite",
+      "s": null,
+      "region": "appetite-desire",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Desire for food/satisfaction. From Latin appetitus (craving)."
+    },
+    {
+      "w": "petition",
+      "s": null,
+      "region": "seeking-requesting",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Formal request. From Latin petitio, from petere."
+    },
+    {
       "w": "repeat",
       "s": null,
       "region": "seeking-requesting",
@@ -71,6 +98,15 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
       "note": "To do again. From Latin repetere (re- + petere)."
+    },
+    {
+      "w": "petitioner",
+      "s": null,
+      "region": "seeking-requesting",
+      "parent": "petition",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who petitions. From petition + -er."
     }
   ],
   "collapse": {}
