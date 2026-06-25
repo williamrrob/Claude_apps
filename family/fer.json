@@ -1157,7 +1157,188 @@
       "note": "Intensely hot or passionate. From Latin ferventis (boiling), present participle of fervēre."
     }
   ],
-  "collapse": {},
+  "collapse": {
+    "offered": {
+      "l": "offer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "offering": {
+      "l": "offer",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "offers": {
+      "l": "offer",
+      "t": "third person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "suffered": {
+      "l": "suffer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "suffering": {
+      "l": "suffer",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "suffers": {
+      "l": "suffer",
+      "t": "third person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "deferred": {
+      "l": "defer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "deferring": {
+      "l": "defer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "defers": {
+      "l": "defer",
+      "t": "third person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "referred": {
+      "l": "refer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "referring": {
+      "l": "refer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "refers": {
+      "l": "refer",
+      "t": "third person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "preferred": {
+      "l": "prefer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "preferring": {
+      "l": "prefer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "prefers": {
+      "l": "prefer",
+      "t": "third person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "transferred": {
+      "l": "transfer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "transferring": {
+      "l": "transfer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "transfers": {
+      "l": "transfer",
+      "t": "third person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "inferred": {
+      "l": "infer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "inferring": {
+      "l": "infer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "infers": {
+      "l": "infer",
+      "t": "third person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "conferred": {
+      "l": "confer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "conferring": {
+      "l": "confer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "confers": {
+      "l": "confer",
+      "t": "third person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "differed": {
+      "l": "differ",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "differing": {
+      "l": "differ",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "differs": {
+      "l": "differ",
+      "t": "third person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "fermented": {
+      "l": "ferment",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "fermenting": {
+      "l": "ferment",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "ferments": {
+      "l": "ferment",
+      "t": "third person singular present of (also plural noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  },
   "meta": {
     "version": 1,
     "updated": "2026-06-23T05:28:10.421Z"

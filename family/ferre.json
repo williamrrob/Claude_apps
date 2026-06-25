@@ -411,5 +411,126 @@
       "note": "Of, relating to, or containing iron in the ferric state. From Latin ferrum + -ic."
     }
   ],
-  "collapse": {}
+  "collapse": {
+    "offered": {
+      "l": "offer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "offering": {
+      "l": "offer",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "suffered": {
+      "l": "suffer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "suffering": {
+      "l": "suffer",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "deferred": {
+      "l": "defer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "deferring": {
+      "l": "defer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "referred": {
+      "l": "refer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "referring": {
+      "l": "refer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "preferred": {
+      "l": "prefer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "preferring": {
+      "l": "prefer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "transferred": {
+      "l": "transfer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "transferring": {
+      "l": "transfer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "inferred": {
+      "l": "infer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "inferring": {
+      "l": "infer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "conferred": {
+      "l": "confer",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "conferring": {
+      "l": "confer",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "differed": {
+      "l": "differ",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "differing": {
+      "l": "differ",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "fermented": {
+      "l": "ferment",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "fermenting": {
+      "l": "ferment",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
 }
