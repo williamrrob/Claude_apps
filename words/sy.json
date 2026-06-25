@@ -3967,14 +3967,22 @@
     "i": "/ˈsɪndɪk/",
     "b": [
       {
-        "s": "syndic",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "syndicalism": {
     "d": [
@@ -4085,14 +4093,22 @@
     "rs": "SIN-di-kuht",
     "b": [
       {
-        "s": "syndic",
-        "k": "root"
-      },
-      {
-        "s": "ate",
-        "k": "suffix"
+        "s": "dic",
+        "k": "root",
+        "id": "dic",
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
-    ]
+    ],
+    "root": "dic",
+    "family": "family/dic.json"
   },
   "syndication": {
     "d": [
@@ -4113,20 +4129,22 @@
     "rs": "sin-di-KAY-shuhn",
     "b": [
       {
-        "s": "syndic",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
-      },
-      {
-        "s": "ation",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "syndicator": {
     "d": [

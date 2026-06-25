@@ -103,14 +103,22 @@
     "i": "/ˌoʊdəˈɹɪfəɹəs/",
     "b": [
       {
-        "s": "odoriferous",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "odorless": {
     "d": [

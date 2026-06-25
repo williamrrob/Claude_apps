@@ -217,14 +217,22 @@
     "i": "/bækˈsɪfəɹəs/",
     "b": [
       {
-        "s": "bacciferous",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "baccivorous": {
     "d": [
@@ -1867,26 +1875,22 @@
     "rs": "BAN-duhjd",
     "b": [
       {
-        "s": "band",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "age",
-        "k": "suffix",
-        "id": "age",
-        "g": "act, state, or condition"
-      },
-      {
-        "s": "d",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "banded": {
     "d": [
@@ -1917,20 +1921,22 @@
     "rs": "BAN-did",
     "b": [
       {
-        "s": "band",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "bandy": {
     "d": [
@@ -12255,14 +12261,22 @@
     "rs": "band",
     "b": [
       {
-        "s": "band",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "bandage": {
     "d": [
@@ -12300,20 +12314,22 @@
     "rs": "BAN-dij",
     "b": [
       {
-        "s": "band",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "age",
-        "k": "suffix",
-        "id": "age",
-        "g": "act, state, or condition"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "bandaging": {
     "d": [
@@ -12333,26 +12349,22 @@
     ],
     "b": [
       {
-        "s": "band",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "ag",
-        "k": "suffix",
-        "id": "age",
-        "g": "act, state, or condition"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "bandana": {
     "d": [

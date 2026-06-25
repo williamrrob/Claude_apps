@@ -2496,17 +2496,19 @@
         "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "binocular": {
     "d": [
@@ -7285,11 +7287,19 @@
         "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "binder": {
     "d": [
@@ -7326,17 +7336,19 @@
         "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "bindery": {
     "d": [
@@ -7802,7 +7814,25 @@
     ],
     "e": "Proto-Indo-European *gʷeyh₃-der. Ancient Greek βῐ́ος (bĭ́os) Ancient Greek βῐο- (bĭo-)der. English bio- English diversity English biodiversity From bio- + diversity.",
     "i": "/ˌbaɪoʊdəˈvɚsəti/",
-    "rs": "by-oh-dy-VUR-suh-tee"
+    "rs": "by-oh-dy-VUR-suh-tee",
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "bioelectricity": {
     "d": [

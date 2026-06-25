@@ -468,10 +468,22 @@
     "rs": "bilt",
     "b": [
       {
-        "s": "built",
-        "k": "word"
+        "s": "build",
+        "k": "root",
+        "id": "build",
+        "g": "Proto-Germanic",
+        "src": "build",
+        "ori": {
+          "id": "construction-creation",
+          "label": "Construction & creation",
+          "gloss": "building structures; constructing, erecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "build",
+    "family": "family/build.json"
   },
   "buirdly": {
     "d": [
@@ -4591,11 +4603,19 @@
         "s": "build",
         "k": "root",
         "id": "build",
-        "g": "to build, construct, create structures"
+        "g": "Proto-Germanic",
+        "src": "build",
+        "ori": {
+          "id": "construction-creation",
+          "label": "Construction & creation",
+          "gloss": "building structures; constructing, erecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "build",
-    "family": "/home/user/Claude_apps/family/build.json"
+    "family": "family/build.json"
   },
   "builder": {
     "d": [
@@ -4638,17 +4658,19 @@
         "s": "build",
         "k": "root",
         "id": "build",
-        "g": "to build, construct, create structures"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Proto-Germanic",
+        "src": "build",
+        "ori": {
+          "id": "construction-creation",
+          "label": "Construction & creation",
+          "gloss": "building structures; constructing, erecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "build",
-    "family": "/home/user/Claude_apps/family/build.json"
+    "family": "family/build.json"
   },
   "building": {
     "d": [
@@ -4695,17 +4717,19 @@
         "s": "build",
         "k": "root",
         "id": "build",
-        "g": "to build, construct, create structures"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "build",
+        "ori": {
+          "id": "construction-creation",
+          "label": "Construction & creation",
+          "gloss": "building structures; constructing, erecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "build",
-    "family": "/home/user/Claude_apps/family/build.json"
+    "family": "family/build.json"
   },
   "buildup": {
     "d": [
@@ -4731,13 +4755,21 @@
     "b": [
       {
         "s": "build",
-        "k": "root"
-      },
-      {
-        "s": "up",
-        "k": "root"
+        "k": "root",
+        "id": "build",
+        "g": "Proto-Germanic",
+        "src": "build",
+        "ori": {
+          "id": "construction-creation",
+          "label": "Construction & creation",
+          "gloss": "building structures; constructing, erecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "build",
+    "family": "family/build.json"
   },
   "bujumbura": {
     "d": [
@@ -12037,5 +12069,25 @@
       }
     ],
     "e": "Proto-Indo-European *gʷṓws Proto-Hellenic *gʷous Ancient Greek βοῦς (boûs) Proto-Indo-European *tewh₂- Proto-Indo-European *-rós Proto-Indo-European *tuh₂rós Proto-Hellenic *tūrós Ancient Greek τῡρός (tūrós) Ancient Greek βούτῡρος (boútūros)der. …"
+  },
+  "buildups": {
+    "b": [
+      {
+        "s": "build",
+        "k": "root",
+        "id": "build",
+        "g": "Proto-Germanic",
+        "src": "build",
+        "ori": {
+          "id": "construction-creation",
+          "label": "Construction & creation",
+          "gloss": "building structures; constructing, erecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "build",
+    "family": "family/build.json"
   }
 }

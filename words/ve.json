@@ -1213,14 +1213,22 @@
     "i": "/vəˈɹɪdɪkəl/",
     "b": [
       {
-        "s": "veridical",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "verifiable": {
     "d": [
@@ -1618,14 +1626,22 @@
     "rs": "VUR-suh-tuhl",
     "b": [
       {
-        "s": "versatile",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "versed": {
     "d": [
@@ -1654,14 +1670,22 @@
     "rs": "vurst",
     "b": [
       {
-        "s": "versed",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "vertebral": {
     "d": [
@@ -1706,7 +1730,25 @@
       "ischiovertebral"
     ],
     "i": "/vɚˈti.bɹəl/",
-    "rs": "VUR-tuh-bruhl"
+    "rs": "VUR-tuh-bruhl",
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "vertebrate": {
     "d": [
@@ -1735,14 +1777,22 @@
     "rs": "VUR-tuh-brayt",
     "b": [
       {
-        "s": "vertebr",
-        "k": "root"
-      },
-      {
-        "s": "ate",
-        "k": "suffix"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "vertical": {
     "d": [
@@ -1787,10 +1837,22 @@
     "rs": "VUR-ti-kuhl",
     "b": [
       {
-        "s": "vertical",
-        "k": "word"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "verticillate": {
     "d": [
@@ -1856,7 +1918,25 @@
       "vertiginously",
       "vertiginousness"
     ],
-    "i": "/vɜː(ɹ)ˈtɪd͡ʒɪnəs/"
+    "i": "/vɜː(ɹ)ˈtɪd͡ʒɪnəs/",
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "very": {
     "d": [
@@ -2527,14 +2607,22 @@
     "rs": "VUR-ti-klee",
     "b": [
       {
-        "s": "vertical",
-        "k": "root"
-      },
-      {
-        "s": "ly",
-        "k": "suffix"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "vexatiously": {
     "d": [
@@ -5243,14 +5331,22 @@
     "rs": "VUR-dikt",
     "b": [
       {
-        "s": "verdict",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "verdigris": {
     "d": [
@@ -6039,14 +6135,22 @@
     "i": "/ˈvɜː(ɹ)sənt/",
     "b": [
       {
-        "s": "versant",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "versatility": {
     "d": [
@@ -6060,20 +6164,22 @@
     "rs": "vur-suh-TI-luh-tee",
     "b": [
       {
-        "s": "versatil",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ity",
-        "k": "suffix",
-        "id": "ity",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "verse": {
     "d": [
@@ -6135,14 +6241,22 @@
     "rs": "vurs",
     "b": [
       {
-        "s": "verse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "versicle": {
     "d": [
@@ -6182,7 +6296,25 @@
       "versifier",
       "versify",
       "lineation"
-    ]
+    ],
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "versifier": {
     "d": [
@@ -6289,14 +6421,22 @@
     "rs": "VUR-zhuhn",
     "b": [
       {
-        "s": "version",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "verso": {
     "d": [
@@ -6322,14 +6462,22 @@
     ],
     "b": [
       {
-        "s": "verso",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "verst": {
     "d": [
@@ -6354,14 +6502,22 @@
     "rs": "VUR-tuh-bruh",
     "b": [
       {
-        "s": "vertebra",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "vertebrata": {
     "d": [
@@ -6369,7 +6525,25 @@
         "p": "n.",
         "g": "fishes;  amphibians;  reptiles;  birds;  mammals"
       }
-    ]
+    ],
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "vertex": {
     "d": [
@@ -6408,14 +6582,22 @@
     "rs": "VUR-tehks",
     "b": [
       {
-        "s": "vertex",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "verthandi": {
     "d": [
@@ -6438,7 +6620,25 @@
       "erectness",
       "uprightness"
     ],
-    "i": "/ˌvɚtəˈkæləti/"
+    "i": "/ˌvɚtəˈkæləti/",
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "verticalness": {
     "d": [
@@ -6452,7 +6652,25 @@
       "verticality",
       "erectness",
       "uprightness"
-    ]
+    ],
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "verticil": {
     "d": [
@@ -6511,14 +6729,22 @@
     "rs": "VUR-ti-goh",
     "b": [
       {
-        "s": "vertigo",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "vertu": {
     "d": [
@@ -7846,14 +8072,22 @@
     "i": "/ˈvɜː(ɹ)sɪfaɪ/",
     "b": [
       {
-        "s": "vers",
-        "k": "root"
-      },
-      {
-        "s": "ify",
-        "k": "suffix"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "vesicate": {
     "d": [
@@ -7953,19 +8187,41 @@
   "versions": {
     "b": [
       {
-        "s": "version",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "s",
-        "k": "suffix",
-        "id": "s",
-        "g": "plural; third-person singular"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
+  },
+  "vertebrae": {
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   }
 }

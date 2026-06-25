@@ -136,20 +136,22 @@
     "i": "/əˈkwɪfəɹəs/",
     "b": [
       {
-        "s": "aquifer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ous",
-        "k": "suffix",
-        "id": "ous",
-        "g": "full of, having"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "aquiline": {
     "d": [
@@ -458,7 +460,25 @@
       "periaqueduct"
     ],
     "i": "/ˈæk.wəˌdʌkt/",
-    "rs": "A-kwuh-duhkt"
+    "rs": "A-kwuh-duhkt",
+    "b": [
+      {
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
+      }
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "aquiculture": {
     "d": [
@@ -499,14 +519,22 @@
     "rs": "A-kwuh-fur",
     "b": [
       {
-        "s": "aquifer",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "aquifoliaceae": {
     "d": [

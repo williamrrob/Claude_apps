@@ -964,38 +964,22 @@
     ],
     "b": [
       {
-        "s": "ir",
-        "k": "prefix",
-        "id": "in-neg",
-        "g": "not"
-      },
-      {
-        "s": "re",
-        "k": "prefix",
-        "id": "re",
-        "g": "again, back"
-      },
-      {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
         "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
-      },
-      {
-        "s": "ible",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "irresistible": {
     "d": [
@@ -1140,32 +1124,22 @@
     "rs": "i-ri-VUR-suh-buhl",
     "b": [
       {
-        "s": "ir",
-        "k": "prefix",
-        "id": "in-neg",
-        "g": "not"
-      },
-      {
-        "s": "re",
-        "k": "prefix",
-        "id": "re",
-        "g": "again, back"
-      },
-      {
-        "s": "vers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ible",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "irrevocable": {
     "d": [
@@ -1620,38 +1594,22 @@
     "rs": "i-ri-VUR-suh-blee",
     "b": [
       {
-        "s": "ir",
-        "k": "prefix",
-        "id": "in-neg",
-        "g": "not"
-      },
-      {
-        "s": "re",
-        "k": "prefix",
-        "id": "re",
-        "g": "again, back"
-      },
-      {
-        "s": "vers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ibl",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
-      },
-      {
-        "s": "y",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "irrevocably": {
     "d": [
@@ -3062,7 +3020,25 @@
     "e": "From irreversible + -ity or ir- + reversibility.",
     "a": [
       "reversibility"
-    ]
+    ],
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "irridenta": {
     "d": [

@@ -1044,14 +1044,22 @@
     "rs": "AW-fur",
     "b": [
       {
-        "s": "offer",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "offerer": {
     "d": [
@@ -1070,20 +1078,22 @@
     "rs": "AW-fur-ur",
     "b": [
       {
-        "s": "offer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "offering": {
     "d": [
@@ -1119,20 +1129,22 @@
     "rs": "AW-fur-ing",
     "b": [
       {
-        "s": "offer",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "offeror": {
     "d": [
@@ -1150,20 +1162,22 @@
     "i": "/ˈɔfəɹɚ/",
     "b": [
       {
-        "s": "offer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "offertory": {
     "d": [
@@ -1189,7 +1203,25 @@
       "oblate",
       "oblation"
     ],
-    "i": "/ˈɑfəɹˌtɔɹi/"
+    "i": "/ˈɑfəɹˌtɔɹi/",
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "office": {
     "d": [
@@ -1601,14 +1633,22 @@
     "rs": "AWF-spring",
     "b": [
       {
-        "s": "offspring",
+        "s": "bring",
         "k": "root",
         "id": "bring",
-        "g": "to bring, carry, produce"
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bring",
-    "family": "/home/user/Claude_apps/family/bring.json"
+    "family": "family/bring.json"
   },
   "ofo": {
     "d": [

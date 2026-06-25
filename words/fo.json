@@ -8155,14 +8155,22 @@
     "i": "/ˌfɔɹəˈmɪnəfɚ/",
     "b": [
       {
-        "s": "foraminifer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "foraminifera": {
     "d": [
@@ -8181,7 +8189,25 @@
       }
     ],
     "e": "Learned borrowing from New Latin Foraminifera (subphylum name), from French foraminifère (“foraminifer, foraminifera”), from French Foraminifères, coined by the French naturalist Alcide d’Orbigny (1802–1857) in an 1826 article. Foraminifère is derived from Latin forāmina (“apertures, holes”) + -fer (“-bearing”).",
-    "i": "/fəˌɹæməˈnɪf(ə)ɹə/"
+    "i": "/fəˌɹæməˈnɪf(ə)ɹə/",
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "foray": {
     "d": [

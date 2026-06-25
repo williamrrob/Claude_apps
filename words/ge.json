@@ -160,14 +160,22 @@
     "e": "From Latin gemma (“bud”) + -ferous. Compare French gemmifère.",
     "b": [
       {
-        "s": "gemmiferous",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "genealogic": {
     "d": [

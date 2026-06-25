@@ -232,20 +232,22 @@
     "rs": "TRAK-tuh-buhl",
     "b": [
       {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "able",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "tractile": {
     "d": [
@@ -287,14 +289,22 @@
     "i": "/ˈtɹækˌtaɪl/",
     "b": [
       {
-        "s": "tractile",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "tractive": {
     "d": [
@@ -306,14 +316,22 @@
     ],
     "b": [
       {
-        "s": "tractive",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "trademarked": {
     "d": [
@@ -1166,23 +1184,25 @@
     "rs": "tran-SFUR-uh-buhl",
     "b": [
       {
-        "s": "transfer",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
-      },
-      {
-        "s": "able",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "vars": [
       "transferrable"
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "transferrable": {
     "d": [
@@ -1780,7 +1800,25 @@
       "intransmissible",
       "nontransmissible",
       "untransmissible"
-    ]
+    ],
+    "b": [
+      {
+        "s": "mit",
+        "k": "root",
+        "id": "mit",
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
+      }
+    ],
+    "root": "mit",
+    "family": "family/mit.json"
   },
   "transmittable": {
     "d": [
@@ -2311,7 +2349,25 @@
       "transversally",
       "transverse"
     ],
-    "i": "/tɹænsˈvɝsəl/"
+    "i": "/tɹænsˈvɝsəl/",
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "transverse": {
     "d": [
@@ -2354,14 +2410,22 @@
     "rs": "tranz-VURS",
     "b": [
       {
-        "s": "trans",
-        "k": "prefix"
-      },
-      {
-        "s": "verse",
-        "k": "root"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "transvestic": {
     "d": [
@@ -2645,20 +2709,22 @@
     ],
     "b": [
       {
-        "s": "travers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "able",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "treacherous": {
     "d": [
@@ -5743,22 +5809,22 @@
     "e": "From transversal + -ly.",
     "b": [
       {
-        "s": "trans",
-        "k": "prefix"
-      },
-      {
-        "s": "vers",
-        "k": "root"
-      },
-      {
-        "s": "al",
-        "k": "suffix"
-      },
-      {
-        "s": "ly",
-        "k": "suffix"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "transversely": {
     "d": [
@@ -5774,18 +5840,22 @@
     ],
     "b": [
       {
-        "s": "trans",
-        "k": "prefix"
-      },
-      {
-        "s": "verse",
-        "k": "root"
-      },
-      {
-        "s": "ly",
-        "k": "suffix"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "treacherously": {
     "d": [
@@ -6815,14 +6885,22 @@
     "rs": "trakt",
     "b": [
       {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "tractability": {
     "d": [
@@ -6914,20 +6992,22 @@
     "rs": "TRAK-shuhn",
     "b": [
       {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "tractor": {
     "d": [
@@ -6965,20 +7045,22 @@
     "rs": "TRAK-tur",
     "b": [
       {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "tracy": {
     "d": [
@@ -9166,7 +9248,25 @@
       "transcribbler"
     ],
     "i": "/trænˈskraɪbɚ/",
-    "rs": "tran-SKRY-bur"
+    "rs": "tran-SKRY-bur",
+    "b": [
+      {
+        "s": "scrib",
+        "k": "root",
+        "id": "scrib",
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
+      }
+    ],
+    "root": "scrib",
+    "family": "family/scrib.json"
   },
   "transcript": {
     "d": [
@@ -9214,7 +9314,25 @@
       "transcriptomics"
     ],
     "i": "/ˈtɹeə̯nˌskɹɪpt/",
-    "rs": "TRAN-skript"
+    "rs": "TRAN-skript",
+    "b": [
+      {
+        "s": "scrib",
+        "k": "root",
+        "id": "scrib",
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
+      }
+    ],
+    "root": "scrib",
+    "family": "family/scrib.json"
   },
   "transcriptase": {
     "d": [
@@ -9280,7 +9398,25 @@
       "posttranscription"
     ],
     "i": "/tɹænˈskɹɪpʃən/",
-    "rs": "tran-SKRIP-shuhn"
+    "rs": "tran-SKRIP-shuhn",
+    "b": [
+      {
+        "s": "scrib",
+        "k": "root",
+        "id": "scrib",
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
+      }
+    ],
+    "root": "scrib",
+    "family": "family/scrib.json"
   },
   "transducer": {
     "d": [
@@ -9466,14 +9602,22 @@
     "rs": "tran-SFUR",
     "b": [
       {
-        "s": "transfer",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "transferability": {
     "d": [
@@ -9504,7 +9648,25 @@
         "g": "Any of various enzymes that catalyze the transfer of a functional group, such as amine or phosphate from one molecule to another."
       }
     ],
-    "e": "Proto-Indo-European *terh₂- Proto-Indo-European *-t Proto-Indo-European *térh₂t Proto-Indo-European *-ónts Proto-Indo-European *tr̥h₂ónts Proto-Indo-European *tr̥h₂n̥ts Proto-Italic *trāns Proto-Italic *trāns- Latin trāns- Proto-Indo-European *bʰer- Proto-Indo-European *bʰéreti Proto-Italic *ferō Latin ferō Latin trāns …"
+    "e": "Proto-Indo-European *terh₂- Proto-Indo-European *-t Proto-Indo-European *térh₂t Proto-Indo-European *-ónts Proto-Indo-European *tr̥h₂ónts Proto-Indo-European *tr̥h₂n̥ts Proto-Italic *trāns Proto-Italic *trāns- Latin trāns- Proto-Indo-European *bʰer- Proto-Indo-European *bʰéreti Proto-Italic *ferō Latin ferō Latin trāns …",
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "transferee": {
     "d": [
@@ -9520,20 +9682,22 @@
     "e": "Latin trānsferōder. English transfer English -ee English transferee From transfer + -ee.",
     "b": [
       {
-        "s": "transfer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ee",
-        "k": "suffix",
-        "id": "ee",
-        "g": "one who is or does"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "transference": {
     "d": [
@@ -9569,20 +9733,22 @@
     "rs": "tran-SFUR-uhns",
     "b": [
       {
-        "s": "transfer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ence",
-        "k": "suffix",
-        "id": "ance",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "transferer": {
     "d": [
@@ -9596,20 +9762,22 @@
     ],
     "b": [
       {
-        "s": "transfer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "transferor": {
     "d": [
@@ -9621,20 +9789,22 @@
     "e": "From transfer + -or.",
     "b": [
       {
-        "s": "transfer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "transferral": {
     "d": [
@@ -9652,14 +9822,22 @@
     ],
     "b": [
       {
-        "s": "transferr",
-        "k": "root"
-      },
-      {
-        "s": "al",
-        "k": "suffix"
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
-    ]
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "transferrer": {
     "d": [
@@ -9684,7 +9862,25 @@
     "s": [
       "siderophilin"
     ],
-    "i": "/tɹænzˈfɛɹɪn/"
+    "i": "/tɹænzˈfɛɹɪn/",
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "transfiguration": {
     "d": [
@@ -10499,14 +10695,22 @@
     "rs": "tran-SMI-shuhn",
     "b": [
       {
-        "s": "transmission",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "transmittal": {
     "d": [
@@ -10602,7 +10806,25 @@
       }
     ],
     "i": "/trænˈsmɪtɪŋ/",
-    "rs": "tran-SMI-ting"
+    "rs": "tran-SMI-ting",
+    "b": [
+      {
+        "s": "mit",
+        "k": "root",
+        "id": "mit",
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
+      }
+    ],
+    "root": "mit",
+    "family": "family/mit.json"
   },
   "transmogrification": {
     "d": [
@@ -12212,20 +12434,22 @@
     ],
     "b": [
       {
-        "s": "travers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "al",
-        "k": "suffix",
-        "id": "ial",
-        "g": "relating to"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "traverse": {
     "d": [
@@ -12269,14 +12493,29 @@
     "rs": "TRA-vurs",
     "b": [
       {
-        "s": "traverse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      },
+      {
+        "s": "1",
+        "k": "suffix",
+        "id": "1",
+        "src": "-1",
+        "ori": "Latin/Old English"
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "traverser": {
     "d": [
@@ -12969,14 +13208,22 @@
     "rs": "treet",
     "b": [
       {
-        "s": "treat",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "treater": {
     "d": [
@@ -13060,20 +13307,22 @@
     "rs": "TREET-muhnt",
     "b": [
       {
-        "s": "treat",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ment",
-        "k": "suffix",
-        "id": "ment",
-        "g": "result or means of an action"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "treaty": {
     "d": [
@@ -21752,14 +22001,22 @@
     "rs": "tran-SKRYB",
     "b": [
       {
-        "s": "transcribe",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "transduce": {
     "d": [

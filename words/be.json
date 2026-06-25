@@ -10760,14 +10760,22 @@
     "rs": "BEH-nuh-dikt",
     "b": [
       {
-        "s": "benedict",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "benediction": {
     "d": [

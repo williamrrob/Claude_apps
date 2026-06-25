@@ -1063,18 +1063,22 @@
     "rs": "oh-vur-GROHN",
     "b": [
       {
-        "s": "over",
-        "k": "prefix"
-      },
-      {
         "s": "grow",
-        "k": "root"
-      },
-      {
-        "s": "n",
-        "k": "suffix"
+        "k": "root",
+        "id": "grow",
+        "g": "Proto-Germanic",
+        "src": "grow",
+        "ori": {
+          "id": "expansion-increase",
+          "label": "Expansion & increase",
+          "gloss": "growing larger; increasing in size or amount",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "grow",
+    "family": "family/grow.json"
   },
   "overhand": {
     "d": [
@@ -2197,7 +2201,25 @@
     "e": "Proto-Indo-European *úp Proto-Indo-European *-er Proto-Indo-European *upér Proto-Germanic *uber Old English ofer- Middle English over- English over- English suspicious English oversuspicious From over- + suspicious.",
     "r": [
       "oversuspiciously"
-    ]
+    ],
+    "b": [
+      {
+        "s": "spec",
+        "k": "root",
+        "id": "spec",
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
+      }
+    ],
+    "root": "spec",
+    "family": "family/spec.json"
   },
   "overt": {
     "d": [
@@ -2238,14 +2260,22 @@
     "rs": "oh-VURT",
     "b": [
       {
-        "s": "overt",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "overturned": {
     "d": [
@@ -2868,20 +2898,22 @@
     "rs": "oh-VURT-lee",
     "b": [
       {
-        "s": "overt",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "overwhelmingly": {
     "d": [
@@ -6945,7 +6977,25 @@
         "x": "If there is ivy overgrowing things, then we shall clean it up."
       }
     ],
-    "e": "Proto-Indo-European *úp Proto-Indo-European *-er Proto-Indo-European *upér Proto-Germanic *uber Old English ofer- Middle English over- English over- English grow English overgrow From over- + grow."
+    "e": "Proto-Indo-European *úp Proto-Indo-European *-er Proto-Indo-European *upér Proto-Germanic *uber Old English ofer- Middle English over- English over- English grow English overgrow From over- + grow.",
+    "b": [
+      {
+        "s": "grow",
+        "k": "root",
+        "id": "grow",
+        "g": "Proto-Germanic",
+        "src": "grow",
+        "ori": {
+          "id": "expansion-increase",
+          "label": "Expansion & increase",
+          "gloss": "growing larger; increasing in size or amount",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "grow",
+    "family": "family/grow.json"
   },
   "overhear": {
     "d": [
@@ -8317,5 +8367,65 @@
         "k": "suffix"
       }
     ]
+  },
+  "overdrink": {
+    "b": [
+      {
+        "s": "drink",
+        "k": "root",
+        "id": "drink",
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "drink",
+    "family": "family/drink.json"
+  },
+  "overdrinking": {
+    "b": [
+      {
+        "s": "drink",
+        "k": "root",
+        "id": "drink",
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "drink",
+    "family": "family/drink.json"
+  },
+  "overgrowing": {
+    "b": [
+      {
+        "s": "grow",
+        "k": "root",
+        "id": "grow",
+        "g": "Proto-Germanic",
+        "src": "grow",
+        "ori": {
+          "id": "expansion-increase",
+          "label": "Expansion & increase",
+          "gloss": "growing larger; increasing in size or amount",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "grow",
+    "family": "family/grow.json"
   }
 }

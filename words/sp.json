@@ -764,17 +764,19 @@
         "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "special": {
     "d": [
@@ -1015,14 +1017,22 @@
     "rs": "spuh-SI-fik",
     "b": [
       {
-        "s": "specific",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "specified": {
     "d": [
@@ -1092,14 +1102,22 @@
     ],
     "b": [
       {
-        "s": "specious",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "specked": {
     "d": [
@@ -1498,14 +1516,22 @@
     "rs": "SPEECH-luhs",
     "b": [
       {
-        "s": "speech",
-        "k": "root"
-      },
-      {
-        "s": "less",
-        "k": "suffix"
+        "s": "speak",
+        "k": "root",
+        "id": "speak",
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "speak",
+    "family": "family/speak.json"
   },
   "speedy": {
     "d": [
@@ -2084,20 +2110,22 @@
     "rs": "SPY-see",
     "b": [
       {
-        "s": "spic",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
-      },
-      {
-        "s": "y",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "spiderlike": {
     "d": [
@@ -2368,17 +2396,19 @@
         "s": "spin",
         "k": "root",
         "id": "spin",
-        "g": "to spin, twist, extend"
-      },
-      {
-        "s": "al",
-        "k": "suffix",
-        "id": "ial",
-        "g": "relating to"
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "spin",
-    "family": "/home/user/Claude_apps/family/spin.json"
+    "family": "family/spin.json"
   },
   "spindly": {
     "d": [
@@ -2397,23 +2427,19 @@
         "s": "spin",
         "k": "root",
         "id": "spin",
-        "g": "to spin, twist, extend"
-      },
-      {
-        "s": "d",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "spin",
-    "family": "/home/user/Claude_apps/family/spin.json"
+    "family": "family/spin.json"
   },
   "spineless": {
     "d": [
@@ -2443,14 +2469,22 @@
     "rs": "SPYN-luhs",
     "b": [
       {
-        "s": "spine",
-        "k": "root"
-      },
-      {
-        "s": "less",
-        "k": "suffix"
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
   },
   "spinnable": {
     "d": [
@@ -4052,14 +4086,22 @@
     "rs": "sprehd",
     "b": [
       {
-        "s": "spread",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "sprigged": {
     "d": [
@@ -4236,20 +4278,22 @@
     "rs": "SPROW-tid",
     "b": [
       {
-        "s": "sprout",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "spruce": {
     "d": [
@@ -4834,18 +4878,22 @@
     "e": "English speechless Middle English -ly English -ly English speechlessly From speechless + -ly.",
     "b": [
       {
-        "s": "speech",
-        "k": "root"
-      },
-      {
-        "s": "less",
-        "k": "suffix"
-      },
-      {
-        "s": "ly",
-        "k": "suffix"
+        "s": "speak",
+        "k": "root",
+        "id": "speak",
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "speak",
+    "family": "family/speak.json"
   },
   "speedily": {
     "d": [
@@ -7358,17 +7406,19 @@
         "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "speakerphone": {
     "d": [
@@ -8044,20 +8094,22 @@
     "rs": "speh-si-fi-KAY-shuhn",
     "b": [
       {
-        "s": "specific",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
-      },
-      {
-        "s": "ation",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "specificity": {
     "d": [
@@ -8111,20 +8163,22 @@
     "rs": "speh-suh-FI-suh-tee",
     "b": [
       {
-        "s": "specific",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
-      },
-      {
-        "s": "ity",
-        "k": "suffix",
-        "id": "ity",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "specifier": {
     "d": [
@@ -8467,20 +8521,22 @@
     "rs": "SPEHK-tay-tur",
     "b": [
       {
-        "s": "spectat",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "specter": {
     "d": [
@@ -8521,14 +8577,22 @@
     ],
     "b": [
       {
-        "s": "specter",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "spectinomycin": {
     "d": [
@@ -8936,10 +9000,22 @@
     "rs": "speech",
     "b": [
       {
-        "s": "speech",
-        "k": "word"
+        "s": "speak",
+        "k": "root",
+        "id": "speak",
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "speak",
+    "family": "family/speak.json"
   },
   "speechifier": {
     "d": [
@@ -10844,14 +10920,22 @@
     "rs": "spys",
     "b": [
       {
-        "s": "spice",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "spiceberry": {
     "d": [
@@ -10925,7 +11009,25 @@
         "g": "the property of being seasoned with spice and so highly flavored"
       }
     ],
-    "e": "From Middle English spicerie, from Old French espicerie; equivalent to spice + -ery."
+    "e": "From Middle English spicerie, from Old French espicerie; equivalent to spice + -ery.",
+    "b": [
+      {
+        "s": "spec",
+        "k": "root",
+        "id": "spec",
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
+      }
+    ],
+    "root": "spec",
+    "family": "family/spec.json"
   },
   "spiciness": {
     "d": [
@@ -11055,14 +11157,22 @@
     "rs": "SPY-dur",
     "b": [
       {
-        "s": "spider",
+        "s": "spin",
         "k": "root",
         "id": "spin",
-        "g": "to spin, twist, extend"
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "spin",
-    "family": "/home/user/Claude_apps/family/spin.json"
+    "family": "family/spin.json"
   },
   "spiderflower": {
     "d": [
@@ -11636,11 +11746,19 @@
         "s": "spin",
         "k": "root",
         "id": "spin",
-        "g": "to spin, twist, extend"
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "spin",
-    "family": "/home/user/Claude_apps/family/spin.json"
+    "family": "family/spin.json"
   },
   "spinach": {
     "d": [
@@ -11717,10 +11835,22 @@
     "rs": "SPIN-duhl",
     "b": [
       {
-        "s": "spindle",
-        "k": "word"
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
   },
   "spindleberry": {
     "d": [
@@ -11794,13 +11924,21 @@
     "b": [
       {
         "s": "spin",
-        "k": "root"
-      },
-      {
-        "s": "drift",
-        "k": "root"
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
   },
   "spine": {
     "d": [
@@ -11845,10 +11983,22 @@
     "rs": "spyn",
     "b": [
       {
-        "s": "spine",
-        "k": "word"
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
   },
   "spinel": {
     "d": [
@@ -12018,14 +12168,22 @@
     "rs": "SPI-nur",
     "b": [
       {
-        "s": "spinn",
-        "k": "root"
-      },
-      {
-        "s": "er",
-        "k": "suffix"
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
   },
   "spinney": {
     "d": [
@@ -12070,7 +12228,25 @@
       }
     ],
     "i": "/ˈspɪnɪŋ/",
-    "rs": "SPI-ning"
+    "rs": "SPI-ning",
+    "b": [
+      {
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
   },
   "spinoza": {
     "d": [
@@ -12115,10 +12291,22 @@
     "rs": "SPIN-stur",
     "b": [
       {
-        "s": "spinster",
-        "k": "word"
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
   },
   "spinsterhood": {
     "d": [
@@ -14400,7 +14588,25 @@
     ],
     "e": "From spoke (“past participle of speak”) + -s- + man.",
     "i": "/ˈspoʊksmən/",
-    "rs": "SPOHK-smuhn"
+    "rs": "SPOHK-smuhn",
+    "b": [
+      {
+        "s": "speak",
+        "k": "root",
+        "id": "speak",
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "speak",
+    "family": "family/speak.json"
   },
   "spokesperson": {
     "d": [
@@ -14428,7 +14634,25 @@
     ],
     "e": "From spoke (“past participle of speak”) + -s- + woman.",
     "i": "/ˈspoʊkˌswʊmən/",
-    "rs": "SPOHK-swuu-muhn"
+    "rs": "SPOHK-swuu-muhn",
+    "b": [
+      {
+        "s": "speak",
+        "k": "root",
+        "id": "speak",
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "speak",
+    "family": "family/speak.json"
   },
   "spoliation": {
     "d": [
@@ -16065,14 +16289,22 @@
     "rs": "sprayn",
     "b": [
       {
-        "s": "sprain",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "sprat": {
     "d": [
@@ -16204,14 +16436,22 @@
     "rs": "spray",
     "b": [
       {
-        "s": "spray",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "sprayer": {
     "d": [
@@ -16238,20 +16478,22 @@
     "rs": "SPRAY-ur",
     "b": [
       {
-        "s": "spray",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "spraying": {
     "d": [
@@ -16270,20 +16512,22 @@
     "rs": "SPRAY-ing",
     "b": [
       {
-        "s": "spray",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "spreader": {
     "d": [
@@ -16363,20 +16607,22 @@
     "rs": "SPREH-ding",
     "b": [
       {
-        "s": "spread",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "spreadsheet": {
     "d": [
@@ -16619,14 +16865,22 @@
     "rs": "spring",
     "b": [
       {
-        "s": "spring",
+        "s": "bring",
         "k": "root",
         "id": "bring",
-        "g": "to bring, carry, produce"
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bring",
-    "family": "/home/user/Claude_apps/family/bring.json"
+    "family": "family/bring.json"
   },
   "springboard": {
     "d": [
@@ -16733,20 +16987,22 @@
     "rs": "SPRING-ur",
     "b": [
       {
-        "s": "spring",
+        "s": "bring",
         "k": "root",
         "id": "bring",
-        "g": "to bring, carry, produce"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bring",
-    "family": "/home/user/Claude_apps/family/bring.json"
+    "family": "family/bring.json"
   },
   "springfield": {
     "d": [
@@ -16834,14 +17090,22 @@
     "rs": "SPRING-tym",
     "b": [
       {
-        "s": "spring",
-        "k": "root"
-      },
-      {
-        "s": "time",
-        "k": "root"
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
   },
   "sprinkle": {
     "d": [
@@ -17298,14 +17562,22 @@
     "rs": "sprowt",
     "b": [
       {
-        "s": "sprout",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "sprouting": {
     "d": [
@@ -17325,20 +17597,22 @@
     "rs": "SPROW-ting",
     "b": [
       {
-        "s": "sprout",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "spruceness": {
     "d": [
@@ -18118,11 +18392,19 @@
         "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "specialise": {
     "d": [
@@ -18265,13 +18547,21 @@
     "b": [
       {
         "s": "spec",
-        "k": "root"
-      },
-      {
-        "s": "ify",
-        "k": "suffix"
+        "k": "root",
+        "id": "spec",
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
-    ]
+    ],
+    "root": "spec",
+    "family": "family/spec.json"
   },
   "spectate": {
     "d": [
@@ -18288,14 +18578,22 @@
     "i": "/spɛkˈteɪt/",
     "b": [
       {
-        "s": "spectate",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "speculate": {
     "d": [
@@ -18824,37 +19122,161 @@
   "sprayed": {
     "b": [
       {
-        "s": "spray",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "sprained": {
     "b": [
       {
-        "s": "sprain",
+        "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
+  },
+  "speak-out": {
+    "b": [
+      {
+        "s": "speak",
+        "k": "root",
+        "id": "speak",
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "speak",
+    "family": "family/speak.json"
+  },
+  "sprung": {
+    "b": [
+      {
+        "s": "speak",
+        "k": "root",
+        "id": "speak",
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "speak",
+    "family": "family/speak.json"
+  },
+  "spin-off": {
+    "b": [
+      {
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
+  },
+  "spun": {
+    "b": [
+      {
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
+  },
+  "spider-web": {
+    "b": [
+      {
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
+  },
+  "spinoff": {
+    "b": [
+      {
+        "s": "spin",
+        "k": "root",
+        "id": "spin",
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "spin",
+    "family": "family/spin.json"
   }
 }

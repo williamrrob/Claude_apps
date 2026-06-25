@@ -4626,14 +4626,22 @@
     ],
     "b": [
       {
-        "s": "wind",
-        "k": "root"
-      },
-      {
         "s": "break",
-        "k": "root"
+        "k": "root",
+        "id": "break",
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "break",
+    "family": "family/break.json"
   },
   "windbreaker": {
     "d": [
@@ -8022,20 +8030,22 @@
     "rs": "with-STAND",
     "b": [
       {
-        "s": "with",
-        "k": "prefix",
-        "id": "with",
-        "g": "against, back"
-      },
-      {
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "wive": {
     "d": [
@@ -8055,25 +8065,41 @@
   "withstanding": {
     "b": [
       {
-        "s": "with",
-        "k": "prefix",
-        "id": "with",
-        "g": "against, back"
-      },
+        "s": "stand",
+        "k": "root",
+        "id": "stand",
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "stand",
+    "family": "family/stand.json"
+  },
+  "withstood": {
+    "b": [
       {
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   }
 }

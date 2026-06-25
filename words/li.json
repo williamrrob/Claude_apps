@@ -5663,14 +5663,22 @@
     "rs": "loo-TEH-nuhnt",
     "b": [
       {
-        "s": "lieutenant",
+        "s": "tenere",
         "k": "root",
         "id": "tenere",
-        "g": "to hold, keep, maintain, possess"
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tenere",
-    "family": "/home/user/Claude_apps/family/tenere.json"
+    "family": "family/tenere.json"
   },
   "life": {
     "d": [

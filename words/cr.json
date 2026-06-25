@@ -2911,20 +2911,22 @@
     "i": "/kɹuˈsɪfəɹəs/",
     "b": [
       {
-        "s": "crucifer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ous",
-        "k": "suffix",
-        "id": "ous",
-        "g": "full of, having"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "cruciform": {
     "d": [
@@ -12566,14 +12568,22 @@
     "i": "/ˈkɹu.sɪ.fəɹ/",
     "b": [
       {
-        "s": "crucifer",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "cruciferae": {
     "d": [
@@ -12581,7 +12591,25 @@
         "p": "n.",
         "g": ""
       }
-    ]
+    ],
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "crucifix": {
     "d": [

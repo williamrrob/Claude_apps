@@ -426,7 +426,25 @@
         "p": "adjective satellite",
         "g": "closely encircling"
       }
-    ]
+    ],
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "circumferential": {
     "d": [
@@ -571,14 +589,22 @@
     "rs": "SUR-kuhm-spehkt",
     "b": [
       {
-        "s": "circumspect",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "circumstantial": {
     "d": [
@@ -628,7 +654,25 @@
       "uncircumstantial"
     ],
     "i": "/səɹ.kəmˈstænʃəl/",
-    "rs": "sur-kuhm-STAN-shuhl"
+    "rs": "sur-kuhm-STAN-shuhl",
+    "b": [
+      {
+        "s": "stand",
+        "k": "root",
+        "id": "stand",
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "stand",
+    "family": "family/stand.json"
   },
   "cisalpine": {
     "d": [
@@ -1069,7 +1113,25 @@
     ],
     "e": "English circumstantial Middle English -ly English -ly English circumstantially From circumstantial + -ly.",
     "i": "/sɝ.kəmˈstæn.ʃə.li/",
-    "rs": "sur-kuhm-STAN-shuh-lee"
+    "rs": "sur-kuhm-STAN-shuh-lee",
+    "b": [
+      {
+        "s": "stand",
+        "k": "root",
+        "id": "stand",
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "stand",
+    "family": "family/stand.json"
   },
   "civilly": {
     "d": [
@@ -2737,14 +2799,22 @@
     "rs": "sur-KUHM-fruhns",
     "b": [
       {
-        "s": "circumference",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "circumflex": {
     "d": [
@@ -2892,26 +2962,22 @@
     "i": "/ˌsɝ.kəmˈskɹɪp.ʃən/",
     "b": [
       {
-        "s": "circum",
-        "k": "prefix",
-        "id": "circum",
-        "g": "around"
-      },
-      {
-        "s": "script",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "circumspection": {
     "d": [
@@ -2933,20 +2999,22 @@
     "rs": "sur-kuhm-SPEHK-shuhn",
     "b": [
       {
-        "s": "circumspect",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "circumstance": {
     "d": [
@@ -2985,14 +3053,22 @@
     "rs": "SUR-kuhm-stans",
     "b": [
       {
-        "s": "circumstance",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "circumstances": {
     "d": [
@@ -3013,20 +3089,22 @@
     "rs": "SUR-kuhm-stan-suhz",
     "b": [
       {
-        "s": "circumstance",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "s",
-        "k": "suffix",
-        "id": "s",
-        "g": "plural; third-person singular"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "circumvention": {
     "d": [
@@ -4568,20 +4646,22 @@
     "rs": "sur-kuhm-SKRYB",
     "b": [
       {
-        "s": "circum",
-        "k": "prefix",
-        "id": "circum",
-        "g": "around"
-      },
-      {
-        "s": "scribe",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "circumstantiate": {
     "d": [

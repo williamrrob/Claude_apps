@@ -787,14 +787,22 @@
     "rs": "FEE-lyn",
     "b": [
       {
-        "s": "feline",
+        "s": "felis",
         "k": "root",
         "id": "felis",
-        "g": "cat, wildcat, marten"
+        "g": "Latin",
+        "src": "felis",
+        "ori": {
+          "id": "feline-animal",
+          "label": "Feline animal",
+          "gloss": "the cat family; feline creatures",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "felis",
-    "family": "/home/user/Claude_apps/family/felis.json"
+    "family": "family/felis.json"
   },
   "fell": {
     "d": [
@@ -1168,14 +1176,22 @@
     "rs": "FEH-ruhl",
     "b": [
       {
-        "s": "feral",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "ferial": {
     "d": [
@@ -1209,16 +1225,20 @@
       {
         "s": "fer",
         "k": "root",
-        "g": "wild (ferus)",
-        "o": "Latin",
-        "src": "ferus"
-      },
-      {
-        "s": "ine",
-        "k": "suffix",
-        "g": "of the nature of"
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
-    ]
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "fermentable": {
     "d": [
@@ -1425,14 +1445,22 @@
     "i": "/ˈfɛɹɪk/",
     "b": [
       {
-        "s": "ferric",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "ferromagnetic": {
     "d": [
@@ -1479,14 +1507,22 @@
     "rs": "FEH-ruhs",
     "b": [
       {
-        "s": "ferrous",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "fertile": {
     "d": [
@@ -1530,14 +1566,22 @@
     "rs": "FUR-tuhl",
     "b": [
       {
-        "s": "fertile",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "fertilizable": {
     "d": [
@@ -1549,26 +1593,22 @@
     "e": "English fertilize Proto-Indo-European *-tḗr Proto-Indo-European *-dʰlom Proto-Indo-European *-dʰlis Proto-Italic *-ðlis Latin -bilis Latin -ābilis Old French -ablebor. Middle English -able English -able English fertilizable From fertilize + -able.",
     "b": [
       {
-        "s": "fertil",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "iz",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
-      },
-      {
-        "s": "able",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "fervent": {
     "d": [
@@ -1607,18 +1647,22 @@
     "rs": "FUR-vuhnt",
     "b": [
       {
-        "s": "ferv",
+        "s": "fer",
         "k": "root",
-        "g": "to boil, glow (fervēre)",
-        "o": "Latin",
-        "src": "fervēre"
-      },
-      {
-        "s": "ent",
-        "k": "suffix",
-        "g": "being"
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
-    ]
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "fervid": {
     "d": [
@@ -1650,14 +1694,22 @@
     "rs": "FUR-vuhd",
     "b": [
       {
-        "s": "fervid",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "festal": {
     "d": [
@@ -4321,7 +4373,25 @@
     "s": [
       "feline"
     ],
-    "i": "/ˈfilɪd/"
+    "i": "/ˈfilɪd/",
+    "b": [
+      {
+        "s": "felis",
+        "k": "root",
+        "id": "felis",
+        "g": "Latin",
+        "src": "felis",
+        "ori": {
+          "id": "feline-animal",
+          "label": "Feline animal",
+          "gloss": "the cat family; feline creatures",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "felis",
+    "family": "family/felis.json"
   },
   "felidae": {
     "d": [
@@ -5648,14 +5718,22 @@
     "rs": "fur-MEHNT",
     "b": [
       {
-        "s": "ferment",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "fermentation": {
     "d": [
@@ -5691,20 +5769,22 @@
     "rs": "fur-muhn-TAY-shuhn",
     "b": [
       {
-        "s": "ferment",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
-      },
-      {
-        "s": "ation",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "fermenting": {
     "d": [
@@ -6118,14 +6198,22 @@
     "rs": "FEH-ree",
     "b": [
       {
-        "s": "ferry",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "ferryboat": {
     "d": [
@@ -6186,14 +6274,22 @@
     "rs": "FEH-ree-muhn",
     "b": [
       {
-        "s": "ferry",
-        "k": "root"
-      },
-      {
-        "s": "man",
-        "k": "root"
+        "s": "ferre",
+        "k": "root",
+        "id": "ferre",
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "ferre",
+    "family": "family/ferre.json"
   },
   "fertilisation": {
     "d": [
@@ -6230,7 +6326,25 @@
       "l": "fertilizer",
       "by": "assistant",
       "at": "2026-06-23T05:47:54.405Z"
-    }
+    },
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "fertility": {
     "d": [
@@ -6272,20 +6386,22 @@
     "rs": "fur-TI-luh-tee",
     "b": [
       {
-        "s": "fertil",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
-      },
-      {
-        "s": "ity",
-        "k": "suffix",
-        "id": "ity",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "fertilization": {
     "d": [
@@ -6362,21 +6478,25 @@
     "rs": "FUR-tuh-ly-zur",
     "b": [
       {
-        "s": "fertil",
-        "k": "root"
-      },
-      {
-        "s": "ize",
-        "k": "suffix"
-      },
-      {
-        "s": "r",
-        "k": "suffix"
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "vars": [
       "fertiliser"
-    ]
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "ferule": {
     "d": [
@@ -6485,17 +6605,25 @@
     "rs": "FUR-vur",
     "b": [
       {
-        "s": "fervor",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "vars": [
       "fervour"
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "fervour": {
     "d": [
@@ -7947,20 +8075,22 @@
     },
     "b": [
       {
-        "s": "fertil",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ise",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "fertilize": {
     "d": [
@@ -7999,23 +8129,25 @@
     "rs": "FUR-tuh-lyz",
     "b": [
       {
-        "s": "fertil",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ize",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "vars": [
       "fertilise"
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "festinate": {
     "d": [

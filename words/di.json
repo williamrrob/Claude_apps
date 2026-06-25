@@ -1542,20 +1542,22 @@
     "rs": "DI-fur-uhnt",
     "b": [
       {
-        "s": "differ",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ent",
-        "k": "suffix",
-        "id": "ant",
-        "g": "one who; having the quality of"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "differentiable": {
     "d": [
@@ -1627,26 +1629,22 @@
     "rs": "di-fur-EHN-shuhl",
     "b": [
       {
-        "s": "differ",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
-      },
-      {
-        "s": "ent",
-        "k": "suffix",
-        "id": "ant",
-        "g": "one who; having the quality of"
-      },
-      {
-        "s": "ial",
-        "k": "suffix",
-        "id": "ial",
-        "g": "relating to"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "differentiated": {
     "d": [
@@ -1723,14 +1721,22 @@
     "rs": "DI-fuh-kuhlt",
     "b": [
       {
-        "s": "difficult",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "diffident": {
     "d": [
@@ -7423,20 +7429,22 @@
     "rs": "di-SPEHNST",
     "b": [
       {
-        "s": "dispense",
+        "s": "pendere",
         "k": "root",
         "id": "pendere",
-        "g": "to hang, suspend, weigh"
-      },
-      {
-        "s": "d",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "pendere",
-    "family": "/home/user/Claude_apps/family/pendere.json"
+    "family": "family/pendere.json"
   },
   "dispersed": {
     "d": [
@@ -8084,29 +8092,25 @@
     "rs": "dis-ri-SPEHKT-fuhl",
     "b": [
       {
-        "s": "dis",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "respect",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
-      },
-      {
-        "s": "ful",
-        "k": "suffix",
-        "id": "ful",
-        "g": "full of"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "forms": [
       "disrespectfully"
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "disrupted": {
     "d": [
@@ -8196,14 +8200,22 @@
     ],
     "b": [
       {
-        "s": "dis",
-        "k": "prefix"
-      },
-      {
-        "s": "satisfactory",
-        "k": "root"
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "dissatisfied": {
     "d": [
@@ -8231,7 +8243,25 @@
       "dissatisfiedness"
     ],
     "i": "/dɪsˈsætɪsˌfaɪd/",
-    "rs": "di-SA-tuh-sfyd"
+    "rs": "di-SA-tuh-sfyd",
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "dissected": {
     "d": [
@@ -8746,10 +8776,22 @@
     "rs": "DI-stuhnt",
     "b": [
       {
-        "s": "distant",
-        "k": "word"
+        "s": "stand",
+        "k": "root",
+        "id": "stand",
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "stand",
+    "family": "family/stand.json"
   },
   "distasteful": {
     "d": [
@@ -9704,20 +9746,22 @@
     "rs": "DY-vurz",
     "b": [
       {
-        "s": "di",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "vers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "diverse": {
     "d": [
@@ -9777,20 +9821,22 @@
     "rs": "dy-VURS",
     "b": [
       {
-        "s": "di",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "verse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "diversified": {
     "d": [
@@ -9823,14 +9869,22 @@
     "rs": "dy-VUR-suh-fyd",
     "b": [
       {
-        "s": "divers",
-        "k": "root"
-      },
-      {
-        "s": "ified",
-        "k": "suffix"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "diversionary": {
     "d": [
@@ -9845,32 +9899,22 @@
     "rs": "dy-VUR-zhuh-neh-ree",
     "b": [
       {
-        "s": "di",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "version",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ar",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
-      },
-      {
-        "s": "y",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "diverted": {
     "d": [
@@ -9895,20 +9939,22 @@
     "rs": "dy-VUR-tid",
     "b": [
       {
-        "s": "divert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "diverting": {
     "d": [
@@ -10492,26 +10538,22 @@
     "rs": "DI-fruhnt-lee",
     "b": [
       {
-        "s": "differ",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ent",
-        "k": "suffix",
-        "id": "ant",
-        "g": "one who; having the quality of"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "diffidently": {
     "d": [
@@ -11785,14 +11827,22 @@
     "e": "Proto-Indo-European *dwóh₁ Proto-Indo-European *d(w)is- Proto-Italic *dis- Latin dis- Proto-Indo-European *steh₂- Proto-Indo-European *-éh₁ti Proto-Indo-European *-yeti Proto-Indo-European *-éh₁yeti Proto-Indo-European *sth₂éh₁yeti Proto-Italic *staēōder. Latin stō Latin distō Latin distānsder. Old French distantbor. …",
     "b": [
       {
-        "s": "distant",
-        "k": "root"
-      },
-      {
-        "s": "ly",
-        "k": "suffix"
+        "s": "stand",
+        "k": "root",
+        "id": "stand",
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "stand",
+    "family": "family/stand.json"
   },
   "distastefully": {
     "d": [
@@ -11998,26 +12048,22 @@
     "i": "/dɪˈvɝs.li/",
     "b": [
       {
-        "s": "di",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "verse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "divertingly": {
     "d": [
@@ -14910,14 +14956,22 @@
     "rs": "dik-TAYT",
     "b": [
       {
-        "s": "dictate",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "dictation": {
     "d": [
@@ -14954,20 +15008,22 @@
     "rs": "dik-TAY-shuhn",
     "b": [
       {
-        "s": "dictat",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "dictator": {
     "d": [
@@ -15010,20 +15066,22 @@
     "rs": "dik-TAY-tur",
     "b": [
       {
-        "s": "dictat",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "dictatorship": {
     "d": [
@@ -15065,22 +15123,22 @@
     "rs": "dik-TAY-tur-ship",
     "b": [
       {
-        "s": "dict",
-        "k": "root"
-      },
-      {
-        "s": "at",
-        "k": "suffix"
-      },
-      {
-        "s": "or",
-        "k": "suffix"
-      },
-      {
-        "s": "ship",
-        "k": "suffix"
+        "s": "dic",
+        "k": "root",
+        "id": "dic",
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
-    ]
+    ],
+    "root": "dic",
+    "family": "family/dic.json"
   },
   "diction": {
     "d": [
@@ -15119,14 +15177,22 @@
     "rs": "DIK-shuhn",
     "b": [
       {
-        "s": "diction",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "dictionary": {
     "d": [
@@ -15168,7 +15234,26 @@
       "dictionarian"
     ],
     "i": "/ˈdɪk.ʃəˌnɛ.ɹi/",
-    "rs": "DIK-shuh-neh-ree"
+    "rs": "DIK-shuh-neh-ree",
+    "b": [
+      {
+        "s": "dicti",
+        "k": "root",
+        "id": "dic",
+        "g": "speech, word, expression",
+        "src": "dictiō (from dicere, to speak)",
+        "ori": "Latin"
+      },
+      {
+        "s": "ary",
+        "k": "suffix",
+        "id": "ary",
+        "g": "relating to, connected with",
+        "src": "-arius/-ārium",
+        "ori": "Latin"
+      }
+    ],
+    "root": "dic"
   },
   "dictostylium": {
     "d": [
@@ -16126,20 +16211,22 @@
     "rs": "DI-fur-uhns",
     "b": [
       {
-        "s": "differ",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
-      },
-      {
-        "s": "ence",
-        "k": "suffix",
-        "id": "ance",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "differentia": {
     "d": [
@@ -16150,7 +16237,25 @@
       }
     ],
     "e": "From Latin differentia. Doublet of difference.",
-    "i": "/dɪfəˈɹɛnʃɪə/"
+    "i": "/dɪfəˈɹɛnʃɪə/",
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "differentiation": {
     "d": [
@@ -16256,20 +16361,22 @@
     "rs": "DI-fuh-kuhl-tee",
     "b": [
       {
-        "s": "difficult",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "y",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "diffidence": {
     "d": [
@@ -26154,26 +26261,22 @@
     "rs": "di-SPEHN-sur-ee",
     "b": [
       {
-        "s": "dispens",
+        "s": "pendere",
         "k": "root",
         "id": "pendere",
-        "g": "to hang, suspend, weigh"
-      },
-      {
-        "s": "ar",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
-      },
-      {
-        "s": "y",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "pendere",
-    "family": "/home/user/Claude_apps/family/pendere.json"
+    "family": "family/pendere.json"
   },
   "dispensation": {
     "d": [
@@ -26208,20 +26311,22 @@
     "rs": "di-spuhn-SAY-shuhn",
     "b": [
       {
-        "s": "dispens",
+        "s": "pendere",
         "k": "root",
         "id": "pendere",
-        "g": "to hang, suspend, weigh"
-      },
-      {
-        "s": "ation",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "pendere",
-    "family": "/home/user/Claude_apps/family/pendere.json"
+    "family": "family/pendere.json"
   },
   "dispenser": {
     "d": [
@@ -26249,14 +26354,22 @@
     "rs": "di-SPEHN-sur",
     "b": [
       {
-        "s": "dispense",
-        "k": "root"
-      },
-      {
-        "s": "r",
-        "k": "suffix"
+        "s": "pendere",
+        "k": "root",
+        "id": "pendere",
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "pendere",
+    "family": "family/pendere.json"
   },
   "dispersal": {
     "d": [
@@ -27153,20 +27266,22 @@
     "rs": "dis-ri-SPEHKT",
     "b": [
       {
-        "s": "dis",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "respect",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "disruption": {
     "d": [
@@ -27240,20 +27355,22 @@
     "rs": "di-sa-ti-SFAK-shuhn",
     "b": [
       {
-        "s": "dis",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "satisfaction",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "dissection": {
     "d": [
@@ -28079,14 +28196,22 @@
     "rs": "DI-stuhns",
     "b": [
       {
-        "s": "distance",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "distaste": {
     "d": [
@@ -28639,26 +28764,22 @@
     "rs": "di-STRAK-shuhn",
     "b": [
       {
-        "s": "dis",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "distraint": {
     "d": [
@@ -29829,26 +29950,22 @@
     ],
     "b": [
       {
-        "s": "di",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "verse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ness",
-        "k": "suffix",
-        "id": "ness",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "diversification": {
     "d": [
@@ -29884,7 +30001,25 @@
       "underdiversification"
     ],
     "i": "/dɪˌvɝsɪfɪˈkeɪʃən/",
-    "rs": "dy-vur-suh-fuh-KAY-shuhn"
+    "rs": "dy-vur-suh-fuh-KAY-shuhn",
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "diversion": {
     "d": [
@@ -29925,20 +30060,22 @@
     "rs": "dy-VUR-zhuhn",
     "b": [
       {
-        "s": "di",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "version",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "diversionist": {
     "d": [
@@ -29961,18 +30098,22 @@
     ],
     "b": [
       {
-        "s": "divers",
-        "k": "root"
-      },
-      {
-        "s": "ion",
-        "k": "suffix"
-      },
-      {
-        "s": "ist",
-        "k": "suffix"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "diversity": {
     "d": [
@@ -30012,26 +30153,22 @@
     "rs": "di-VUR-si-tee",
     "b": [
       {
-        "s": "di",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "vers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ity",
-        "k": "suffix",
-        "id": "ity",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "diverticulitis": {
     "d": [
@@ -30042,14 +30179,22 @@
     ],
     "b": [
       {
-        "s": "diverticulitis",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "diverticulosis": {
     "d": [
@@ -30062,14 +30207,22 @@
     "e": "English diverticula Proto-Indo-European *-tis Ancient Greek -τις (-tis) Ancient Greek -σῐς (-sĭs) Ancient Greek -ωσις (-ōsis)bor. New Latin -ōsislbor. English -osis English diverticulosis From diverticula + -osis.",
     "b": [
       {
-        "s": "diverticulosis",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "diverticulum": {
     "d": [
@@ -30084,14 +30237,22 @@
     "rs": "dy-vur-TI-kyuh-luhm",
     "b": [
       {
-        "s": "diverticulum",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "divertimento": {
     "d": [
@@ -30108,10 +30269,22 @@
     "rs": "di-vur-tuh-MEHN-toh",
     "b": [
       {
-        "s": "divertimento",
-        "k": "word"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "divestiture": {
     "d": [
@@ -31134,14 +31307,22 @@
     "rs": "DI-fur",
     "b": [
       {
-        "s": "differ",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "differentiate": {
     "d": [
@@ -32286,20 +32467,22 @@
     "rs": "dis-BAND",
     "b": [
       {
-        "s": "dis",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "band",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "disbar": {
     "d": [
@@ -34255,14 +34438,22 @@
     "rs": "di-SMIS",
     "b": [
       {
-        "s": "dismiss",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "disobey": {
     "d": [
@@ -34644,14 +34835,22 @@
     "rs": "di-SPEHNS",
     "b": [
       {
-        "s": "dispense",
+        "s": "pendere",
         "k": "root",
         "id": "pendere",
-        "g": "to hang, suspend, weigh"
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "pendere",
-    "family": "/home/user/Claude_apps/family/pendere.json"
+    "family": "family/pendere.json"
   },
   "disperse": {
     "d": [
@@ -35774,20 +35973,22 @@
     "rs": "di-STRAKT",
     "b": [
       {
-        "s": "dis",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "distrain": {
     "d": [
@@ -36128,14 +36329,22 @@
     "rs": "dy-VUR-suh-fy",
     "b": [
       {
-        "s": "divers",
-        "k": "root"
-      },
-      {
-        "s": "ify",
-        "k": "suffix"
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "divert": {
     "d": [
@@ -36177,17 +36386,25 @@
     "rs": "dy-VURT",
     "b": [
       {
-        "s": "divert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "forms": [
       "diverts"
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "divest": {
     "d": [
@@ -36317,85 +36534,81 @@
   "disbanded": {
     "b": [
       {
-        "s": "dis",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "band",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "disbanding": {
     "b": [
       {
-        "s": "dis",
-        "k": "prefix",
-        "id": "dis",
-        "g": "apart, not"
-      },
-      {
-        "s": "band",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "difficultly": {
     "b": [
       {
-        "s": "difficult",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "dispensing": {
     "b": [
       {
-        "s": "dispens",
+        "s": "pendere",
         "k": "root",
         "id": "pendere",
-        "g": "to hang, suspend, weigh"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "pendere",
-    "family": "/home/user/Claude_apps/family/pendere.json"
+    "family": "family/pendere.json"
   }
 }

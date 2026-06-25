@@ -215,7 +215,25 @@
       }
     ],
     "e": "Latin abdicō Latin abdicātusbor. English abdicate Proto-Indo-European *-dʰlom Proto-Indo-European *-dʰlis Proto-Italic *-ðlis Latin -bilis Latin -ābilis Old French -ablebor. Middle English -able English -able English abdicable From abdicate + -able.",
-    "i": "/ˈæb.də.kə.bəl/"
+    "i": "/ˈæb.də.kə.bəl/",
+    "b": [
+      {
+        "s": "dic",
+        "k": "root",
+        "id": "dic",
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
+      }
+    ],
+    "root": "dic",
+    "family": "family/dic.json"
   },
   "abdominal": {
     "d": [
@@ -315,7 +333,25 @@
     "a": [
       "adducent"
     ],
-    "i": "/æbˈdus.ənt/"
+    "i": "/æbˈdus.ənt/",
+    "b": [
+      {
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
+      }
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "abducting": {
     "d": [
@@ -2088,14 +2124,22 @@
     "rs": "ab-STRAKT",
     "b": [
       {
-        "s": "abstract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "abstracted": {
     "d": [
@@ -2151,7 +2195,25 @@
       "nonfigurative",
       "nonobjective"
     ],
-    "i": "/æbˈstɹæk.ʃən.əst/"
+    "i": "/æbˈstɹæk.ʃən.əst/",
+    "b": [
+      {
+        "s": "tractare",
+        "k": "root",
+        "id": "tractare",
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "tractare",
+    "family": "family/tractare.json"
   },
   "abstractive": {
     "d": [
@@ -2175,20 +2237,22 @@
     "i": "/æbˈstɹæk.tɪv/",
     "b": [
       {
-        "s": "abstract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "abstruse": {
     "d": [
@@ -2271,14 +2335,22 @@
     "rs": "uhb-SURD",
     "b": [
       {
-        "s": "absurd",
+        "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   },
   "abulic": {
     "d": [
@@ -3034,26 +3106,22 @@
     "i": "/əbˈstɹæk.tɪd.li/",
     "b": [
       {
-        "s": "abstract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "abstractly": {
     "d": [
@@ -3075,20 +3143,22 @@
     "i": "/æbˈstɹækt.li/",
     "b": [
       {
-        "s": "abstract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "abstrusely": {
     "d": [
@@ -4040,20 +4110,22 @@
     "rs": "ab-di-KAY-shuhn",
     "b": [
       {
-        "s": "abdicat",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "abdicator": {
     "d": [
@@ -4071,20 +4143,22 @@
     "i": "/ˈæb.dɪˌkeɪ.tɚ/",
     "b": [
       {
-        "s": "abdicat",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "abdomen": {
     "d": [
@@ -4265,20 +4339,22 @@
     "rs": "ab-DUHK-shuhn",
     "b": [
       {
-        "s": "abduct",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "abductor": {
     "d": [
@@ -4309,20 +4385,22 @@
     "rs": "ab-DUHK-tur",
     "b": [
       {
-        "s": "abduct",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "abecedarius": {
     "d": [
@@ -7109,20 +7187,22 @@
     ],
     "b": [
       {
-        "s": "abstract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "abstraction": {
     "d": [
@@ -7165,20 +7245,22 @@
     "rs": "ab-STRAK-shuhn",
     "b": [
       {
-        "s": "abstract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "abstractionism": {
     "d": [
@@ -7192,7 +7274,25 @@
       }
     ],
     "e": "English abstraction Proto-Indo-European *-id- Proto-Indo-European *-yéti Proto-Indo-European *-idyéti Proto-Hellenic *-íďďō Ancient Greek -ῐ́ζω (-ĭ́zō) Proto-Indo-European *-mos Proto-Indo-European *-mós Ancient Greek -μός (-mós) Ancient Greek -ισμός (-ismós)der. …",
-    "i": "/æbˈstɹæk.ʃn̩ˌɪz.m̩/"
+    "i": "/æbˈstɹæk.ʃn̩ˌɪz.m̩/",
+    "b": [
+      {
+        "s": "tractare",
+        "k": "root",
+        "id": "tractare",
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "tractare",
+    "family": "family/tractare.json"
   },
   "abstractness": {
     "d": [
@@ -7209,20 +7309,22 @@
     "i": "/æbˈstɹæk.nəs/",
     "b": [
       {
-        "s": "abstract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ness",
-        "k": "suffix",
-        "id": "ness",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "abstractor": {
     "d": [
@@ -7248,20 +7350,22 @@
     },
     "b": [
       {
-        "s": "abstract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "abstruseness": {
     "d": [
@@ -7947,14 +8051,22 @@
     "rs": "AB-duh-kayt",
     "b": [
       {
-        "s": "abdicate",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "abduce": {
     "d": [
@@ -7976,14 +8088,22 @@
     "i": "/æbˈdus/",
     "b": [
       {
-        "s": "abduce",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "abduct": {
     "d": [
@@ -8027,17 +8147,25 @@
     "rs": "ab-DUHKT",
     "b": [
       {
-        "s": "abduct",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "forms": [
       "abducting"
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "aberrate": {
     "d": [

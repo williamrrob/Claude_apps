@@ -1673,20 +1673,22 @@
     "i": "/ˈap.ɪˌtaɪ̯.tɪv/",
     "b": [
       {
-        "s": "appetit",
+        "s": "petere",
         "k": "root",
         "id": "petere",
-        "g": "to seek, ask, request"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "petere",
+        "ori": {
+          "id": "seeking-requesting",
+          "label": "Seeking & requesting",
+          "gloss": "asking for, requesting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "petere",
-    "family": "/home/user/Claude_apps/family/petere.json"
+    "family": "family/petere.json"
   },
   "appetizing": {
     "d": [
@@ -1726,7 +1728,25 @@
     "rs": "A-pi-ty-zing",
     "vars": [
       "appetising"
-    ]
+    ],
+    "b": [
+      {
+        "s": "petere",
+        "k": "root",
+        "id": "petere",
+        "g": "Latin",
+        "src": "petere",
+        "ori": {
+          "id": "seeking-requesting",
+          "label": "Seeking & requesting",
+          "gloss": "asking for, requesting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "petere",
+    "family": "family/petere.json"
   },
   "applaudable": {
     "d": [
@@ -5480,20 +5500,22 @@
     "rs": "uh-PEHN-dij",
     "b": [
       {
-        "s": "append",
+        "s": "pendere",
         "k": "root",
         "id": "pendere",
-        "g": "to hang, suspend, weigh"
-      },
-      {
-        "s": "age",
-        "k": "suffix",
-        "id": "age",
-        "g": "act, state, or condition"
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "pendere",
-    "family": "/home/user/Claude_apps/family/pendere.json"
+    "family": "family/pendere.json"
   },
   "appendectomy": {
     "d": [
@@ -5614,7 +5636,25 @@
       "vermix"
     ],
     "i": "/əˈpɛn.dɪks/",
-    "rs": "uh-PEHN-diks"
+    "rs": "uh-PEHN-diks",
+    "b": [
+      {
+        "s": "pendere",
+        "k": "root",
+        "id": "pendere",
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "pendere",
+    "family": "family/pendere.json"
   },
   "appenzeller": {
     "d": [
@@ -5663,7 +5703,25 @@
       "appetite",
       "appetency"
     ],
-    "i": "/ˈæp.ɪ.təns/"
+    "i": "/ˈæp.ɪ.təns/",
+    "b": [
+      {
+        "s": "petere",
+        "k": "root",
+        "id": "petere",
+        "g": "Latin",
+        "src": "petere",
+        "ori": {
+          "id": "seeking-requesting",
+          "label": "Seeking & requesting",
+          "gloss": "asking for, requesting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "petere",
+    "family": "family/petere.json"
   },
   "appetency": {
     "d": [
@@ -5675,7 +5733,25 @@
     "s": [
       "appetite",
       "appetence"
-    ]
+    ],
+    "b": [
+      {
+        "s": "petere",
+        "k": "root",
+        "id": "petere",
+        "g": "Latin",
+        "src": "petere",
+        "ori": {
+          "id": "seeking-requesting",
+          "label": "Seeking & requesting",
+          "gloss": "asking for, requesting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "petere",
+    "family": "family/petere.json"
   },
   "appetiser": {
     "d": [
@@ -5749,14 +5825,22 @@
     "rs": "A-puh-tyt",
     "b": [
       {
-        "s": "appetite",
+        "s": "petere",
         "k": "root",
         "id": "petere",
-        "g": "to seek, ask, request"
+        "g": "Latin",
+        "src": "petere",
+        "ori": {
+          "id": "seeking-requesting",
+          "label": "Seeking & requesting",
+          "gloss": "asking for, requesting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "petere",
-    "family": "/home/user/Claude_apps/family/petere.json"
+    "family": "family/petere.json"
   },
   "appetizer": {
     "d": [
@@ -5783,17 +5867,25 @@
     "rs": "A-puh-ty-zur",
     "b": [
       {
-        "s": "appetize",
-        "k": "root"
-      },
-      {
-        "s": "r",
-        "k": "suffix"
+        "s": "petere",
+        "k": "root",
+        "id": "petere",
+        "g": "Latin",
+        "src": "petere",
+        "ori": {
+          "id": "seeking-requesting",
+          "label": "Seeking & requesting",
+          "gloss": "asking for, requesting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "vars": [
       "appetiser"
-    ]
+    ],
+    "root": "petere",
+    "family": "family/petere.json"
   },
   "appetizingness": {
     "d": [
@@ -7819,14 +7911,22 @@
     "rs": "uh-PEHND",
     "b": [
       {
-        "s": "append",
+        "s": "pendere",
         "k": "root",
         "id": "pendere",
-        "g": "to hang, suspend, weigh"
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "pendere",
-    "family": "/home/user/Claude_apps/family/pendere.json"
+    "family": "family/pendere.json"
   },
   "apperceive": {
     "d": [
@@ -8353,19 +8453,21 @@
   "appended": {
     "b": [
       {
-        "s": "append",
+        "s": "pendere",
         "k": "root",
         "id": "pendere",
-        "g": "to hang, suspend, weigh"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "pendere",
-    "family": "/home/user/Claude_apps/family/pendere.json"
+    "family": "family/pendere.json"
   }
 }

@@ -728,20 +728,22 @@
     "rs": "drehncht",
     "b": [
       {
-        "s": "drench",
+        "s": "drink",
         "k": "root",
         "id": "drink",
-        "g": "to drink, imbibe"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "drink",
-    "family": "/home/user/Claude_apps/family/drink.json"
+    "family": "family/drink.json"
   },
   "dress": {
     "d": [
@@ -985,17 +987,19 @@
         "s": "drink",
         "k": "root",
         "id": "drink",
-        "g": "to drink, imbibe"
-      },
-      {
-        "s": "able",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "drink",
-    "family": "/home/user/Claude_apps/family/drink.json"
+    "family": "family/drink.json"
   },
   "dripless": {
     "d": [
@@ -1464,10 +1468,22 @@
     "rs": "druhngk",
     "b": [
       {
-        "s": "drunk",
-        "k": "word"
+        "s": "drink",
+        "k": "root",
+        "id": "drink",
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "drink",
+    "family": "family/drink.json"
   },
   "drunken": {
     "d": [
@@ -1510,14 +1526,22 @@
     "rs": "DRUHNG-kuhn",
     "b": [
       {
-        "s": "drunk",
-        "k": "root"
-      },
-      {
-        "s": "en",
-        "k": "suffix"
+        "s": "drink",
+        "k": "root",
+        "id": "drink",
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "drink",
+    "family": "family/drink.json"
   },
   "drupaceous": {
     "d": [
@@ -4297,20 +4321,22 @@
     "rs": "DREHN-ching",
     "b": [
       {
-        "s": "drench",
+        "s": "drink",
         "k": "root",
         "id": "drink",
-        "g": "to drink, imbibe"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "drink",
-    "family": "/home/user/Claude_apps/family/drink.json"
+    "family": "family/drink.json"
   },
   "drepanididae": {
     "d": [
@@ -5022,11 +5048,19 @@
         "s": "drink",
         "k": "root",
         "id": "drink",
-        "g": "to drink, imbibe"
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "drink",
-    "family": "/home/user/Claude_apps/family/drink.json"
+    "family": "family/drink.json"
   },
   "drinker": {
     "d": [
@@ -5069,17 +5103,19 @@
         "s": "drink",
         "k": "root",
         "id": "drink",
-        "g": "to drink, imbibe"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "drink",
-    "family": "/home/user/Claude_apps/family/drink.json"
+    "family": "family/drink.json"
   },
   "drinking": {
     "d": [
@@ -5119,17 +5155,19 @@
         "s": "drink",
         "k": "root",
         "id": "drink",
-        "g": "to drink, imbibe"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "drink",
-    "family": "/home/user/Claude_apps/family/drink.json"
+    "family": "family/drink.json"
   },
   "drip": {
     "d": [
@@ -6979,14 +7017,22 @@
     "rs": "DRUHNG-kurd",
     "b": [
       {
-        "s": "drunk",
-        "k": "root"
-      },
-      {
-        "s": "ard",
-        "k": "suffix"
+        "s": "drink",
+        "k": "root",
+        "id": "drink",
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "drink",
+    "family": "family/drink.json"
   },
   "drunkenness": {
     "d": [
@@ -7015,18 +7061,22 @@
     "rs": "DRUHNG-kuhn-nuhs",
     "b": [
       {
-        "s": "drunk",
-        "k": "root"
-      },
-      {
-        "s": "en",
-        "k": "suffix"
-      },
-      {
-        "s": "ness",
-        "k": "suffix"
+        "s": "drink",
+        "k": "root",
+        "id": "drink",
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "drink",
+    "family": "family/drink.json"
   },
   "drupe": {
     "d": [
@@ -7505,14 +7555,22 @@
     "rs": "drehnch",
     "b": [
       {
-        "s": "drench",
+        "s": "drink",
         "k": "root",
         "id": "drink",
-        "g": "to drink, imbibe"
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "drink",
-    "family": "/home/user/Claude_apps/family/drink.json"
+    "family": "family/drink.json"
   },
   "dropforge": {
     "d": [
@@ -7613,19 +7671,21 @@
   "drencher": {
     "b": [
       {
-        "s": "drench",
+        "s": "drink",
         "k": "root",
         "id": "drink",
-        "g": "to drink, imbibe"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "drink",
-    "family": "/home/user/Claude_apps/family/drink.json"
+    "family": "family/drink.json"
   }
 }

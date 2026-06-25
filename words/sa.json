@@ -3138,18 +3138,22 @@
     "rs": "sa-tuh-SFAK-tree",
     "b": [
       {
-        "s": "satis",
-        "k": "root"
-      },
-      {
-        "s": "fact",
-        "k": "root"
-      },
-      {
-        "s": "ory",
-        "k": "suffix"
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "satisfiable": {
     "d": [
@@ -3195,7 +3199,25 @@
       "unsatisfiedly"
     ],
     "i": "/ˈsætɪsfaɪd/",
-    "rs": "SA-tuh-sfyd"
+    "rs": "SA-tuh-sfyd",
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "satisfying": {
     "d": [
@@ -3230,7 +3252,25 @@
       "satisfyingness"
     ],
     "i": "/ˈsætɪsfaɪ.ɪŋ/",
-    "rs": "SA-ti-sfy-ing"
+    "rs": "SA-ti-sfy-ing",
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "saturated": {
     "d": [
@@ -4125,22 +4165,22 @@
     "rs": "sa-ti-SFAK-truh-lee",
     "b": [
       {
-        "s": "satis",
-        "k": "root"
-      },
-      {
-        "s": "fact",
-        "k": "root"
-      },
-      {
-        "s": "ori",
-        "k": "suffix"
-      },
-      {
-        "s": "ly",
-        "k": "suffix"
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "satisfyingly": {
     "d": [
@@ -4153,7 +4193,25 @@
     "e": "English satisfying Middle English -ly English -ly English satisfyingly From satisfying + -ly.",
     "s": [
       "gratifyingly"
-    ]
+    ],
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "saucily": {
     "d": [
@@ -14326,14 +14384,22 @@
     "rs": "sa-tuh-SFAK-shuhn",
     "b": [
       {
-        "s": "satisfaction",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "satisfactoriness": {
     "d": [
@@ -17055,7 +17121,25 @@
       "resatisfy"
     ],
     "i": "/ˈsætɪsfaɪ/",
-    "rs": "SA-tuh-sfy"
+    "rs": "SA-tuh-sfy",
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "saturate": {
     "d": [

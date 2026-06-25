@@ -1002,14 +1002,22 @@
     "rs": "EE-dikt",
     "b": [
       {
-        "s": "edict",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "edification": {
     "d": [
@@ -1335,7 +1343,25 @@
     "e": "From educate + -ee.",
     "a": [
       "educator"
-    ]
+    ],
+    "b": [
+      {
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
+      }
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "education": {
     "d": [
@@ -1373,14 +1399,31 @@
     "rs": "eh-juh-KAY-shuhn",
     "b": [
       {
-        "s": "educat",
-        "k": "root"
+        "s": "e",
+        "k": "prefix",
+        "id": "e",
+        "g": "out, out of",
+        "src": "ex",
+        "ori": "Latin"
       },
       {
-        "s": "ion",
-        "k": "suffix"
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "to lead, draw, conduct",
+        "src": "ducere",
+        "ori": "Latin"
+      },
+      {
+        "s": "ation",
+        "k": "suffix",
+        "id": "ion",
+        "g": "act, process, or result of",
+        "src": "-atio/-tiō",
+        "ori": "Latin"
       }
-    ]
+    ],
+    "root": "duc"
   },
   "educationalist": {
     "d": [
@@ -1395,22 +1438,22 @@
     ],
     "b": [
       {
-        "s": "educat",
-        "k": "root"
-      },
-      {
-        "s": "ion",
-        "k": "suffix"
-      },
-      {
-        "s": "al",
-        "k": "suffix"
-      },
-      {
-        "s": "ist",
-        "k": "suffix"
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
-    ]
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "educationist": {
     "d": [
@@ -1464,20 +1507,22 @@
     "rs": "EH-juh-kay-tur",
     "b": [
       {
-        "s": "educat",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "edutainment": {
     "d": [
@@ -1691,14 +1736,22 @@
     "rs": "EH-juh-kayt",
     "b": [
       {
-        "s": "educate",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "educe": {
     "d": [
@@ -1738,14 +1791,22 @@
     "i": "/ɪˈduːs/",
     "b": [
       {
-        "s": "educe",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "edulcorate": {
     "d": [

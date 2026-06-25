@@ -14052,11 +14052,19 @@
         "s": "house",
         "k": "root",
         "id": "house",
-        "g": "dwelling, shelter (from PIE *bhudh- 'to hide')"
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "house",
-    "family": "/home/user/Claude_apps/family/house.json"
+    "family": "family/house.json"
   },
   "houseboat": {
     "d": [
@@ -14373,13 +14381,21 @@
     "b": [
       {
         "s": "house",
-        "k": "root"
-      },
-      {
-        "s": "hold",
-        "k": "root"
+        "k": "root",
+        "id": "house",
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "house",
+    "family": "family/house.json"
   },
   "householder": {
     "d": [
@@ -14410,17 +14426,21 @@
     "b": [
       {
         "s": "house",
-        "k": "root"
-      },
-      {
-        "s": "hold",
-        "k": "root"
-      },
-      {
-        "s": "er",
-        "k": "suffix"
+        "k": "root",
+        "id": "house",
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "house",
+    "family": "family/house.json"
   },
   "househusband": {
     "d": [
@@ -14455,17 +14475,21 @@
     "b": [
       {
         "s": "house",
-        "k": "root"
-      },
-      {
-        "s": "keep",
-        "k": "root"
-      },
-      {
-        "s": "er",
-        "k": "suffix"
+        "k": "root",
+        "id": "house",
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "house",
+    "family": "family/house.json"
   },
   "housekeeping": {
     "d": [
@@ -14763,13 +14787,21 @@
     "b": [
       {
         "s": "house",
-        "k": "root"
-      },
-      {
-        "s": "warming",
-        "k": "root"
+        "k": "root",
+        "id": "house",
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "house",
+    "family": "family/house.json"
   },
   "housewife": {
     "d": [
@@ -14813,13 +14845,21 @@
     "b": [
       {
         "s": "house",
-        "k": "root"
-      },
-      {
-        "s": "wife",
-        "k": "root"
+        "k": "root",
+        "id": "house",
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "house",
+    "family": "family/house.json"
   },
   "housewifery": {
     "d": [
@@ -14868,13 +14908,21 @@
     "b": [
       {
         "s": "house",
-        "k": "root"
-      },
-      {
-        "s": "work",
-        "k": "root"
+        "k": "root",
+        "id": "house",
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "house",
+    "family": "family/house.json"
   },
   "housewrecker": {
     "d": [
@@ -14927,20 +14975,22 @@
     "rs": "HOW-zing",
     "b": [
       {
-        "s": "hous",
+        "s": "house",
         "k": "root",
         "id": "house",
-        "g": "dwelling, shelter (from PIE *bhudh- 'to hide')"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "house",
-    "family": "/home/user/Claude_apps/family/house.json"
+    "family": "family/house.json"
   },
   "housman": {
     "d": [
@@ -15859,17 +15909,19 @@
         "s": "house",
         "k": "root",
         "id": "house",
-        "g": "dwelling, shelter (from PIE *bhudh- 'to hide')"
-      },
-      {
-        "s": "d",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "house",
-    "family": "/home/user/Claude_apps/family/house.json"
+    "family": "family/house.json"
   },
   "houseless": {
     "b": [
@@ -15877,16 +15929,18 @@
         "s": "house",
         "k": "root",
         "id": "house",
-        "g": "dwelling, shelter (from PIE *bhudh- 'to hide')"
-      },
-      {
-        "s": "less",
-        "k": "suffix",
-        "id": "less",
-        "g": "without, lacking"
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "house",
-    "family": "/home/user/Claude_apps/family/house.json"
+    "family": "family/house.json"
   }
 }

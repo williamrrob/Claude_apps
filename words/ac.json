@@ -445,23 +445,25 @@
     "rs": "ak-SEHP-tuh-buhl",
     "b": [
       {
-        "s": "accept",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
-      },
-      {
-        "s": "able",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "forms": [
       "acceptableness"
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "acceptant": {
     "d": [
@@ -486,20 +488,22 @@
     "i": "/ækˈsɛp.tənt/",
     "b": [
       {
-        "s": "accept",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
-      },
-      {
-        "s": "ant",
-        "k": "suffix",
-        "id": "ant",
-        "g": "one who; having the quality of"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "accepted": {
     "d": [
@@ -567,20 +571,22 @@
     "i": "/ækˈsɛp.tɪv/",
     "b": [
       {
-        "s": "accept",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "accessary": {
     "d": [
@@ -5453,20 +5459,22 @@
     "i": "/əkˈsɛp.tɚ/",
     "b": [
       {
-        "s": "accept",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "access": {
     "d": [
@@ -5580,14 +5588,22 @@
     "rs": "uhk-SEH-shuhn",
     "b": [
       {
-        "s": "access",
-        "k": "root"
-      },
-      {
-        "s": "ion",
-        "k": "suffix"
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "accho": {
     "d": [
@@ -10279,14 +10295,23 @@
     "rs": "AK-shuhn",
     "b": [
       {
-        "s": "act",
-        "k": "root"
+        "s": "ag",
+        "k": "root",
+        "id": "ag",
+        "g": "to drive, cause to move, do",
+        "src": "agere",
+        "ori": "Latin"
       },
       {
-        "s": "ion",
-        "k": "suffix"
+        "s": "tion",
+        "k": "suffix",
+        "id": "ion",
+        "g": "activity, act, legal process; noun suffix",
+        "src": "-tiōn-, -tiō",
+        "ori": "Latin"
       }
-    ]
+    ],
+    "root": "ag"
   },
   "actitis": {
     "d": [
@@ -11055,20 +11080,22 @@
     "rs": "ak-SEED",
     "b": [
       {
-        "s": "ac",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "cede",
+        "s": "cedere",
         "k": "root",
         "id": "cedere",
-        "g": "to go, move, yield, grant"
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "cedere",
-    "family": "/home/user/Claude_apps/family/cedere.json"
+    "family": "family/cedere.json"
   },
   "accelerate": {
     "d": [
@@ -11235,14 +11262,22 @@
     ],
     "b": [
       {
-        "s": "accept",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "acclimate": {
     "d": [

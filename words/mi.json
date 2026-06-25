@@ -3628,14 +3628,22 @@
     "rs": "mi-suhn-dur-STUUD",
     "b": [
       {
-        "s": "mis",
-        "k": "prefix"
-      },
-      {
-        "s": "understood",
-        "k": "root"
+        "s": "stand",
+        "k": "root",
+        "id": "stand",
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "stand",
+    "family": "family/stand.json"
   },
   "misused": {
     "d": [
@@ -14900,7 +14908,25 @@
       "missalette"
     ],
     "i": "/ˈmɪsəl/",
-    "rs": "MI-suhl"
+    "rs": "MI-suhl",
+    "b": [
+      {
+        "s": "mit",
+        "k": "root",
+        "id": "mit",
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
+      }
+    ],
+    "root": "mit",
+    "family": "family/mit.json"
   },
   "misshapenness": {
     "d": [
@@ -14963,14 +14989,22 @@
     "rs": "MI-suhl",
     "b": [
       {
-        "s": "missile",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "mission": {
     "d": [
@@ -15045,14 +15079,22 @@
     "rs": "MI-shuhn",
     "b": [
       {
-        "s": "mission",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "missioner": {
     "d": [
@@ -15142,14 +15184,22 @@
     "rs": "MI-siv",
     "b": [
       {
-        "s": "missive",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "missoula": {
     "d": [
@@ -15823,32 +15873,22 @@
     "rs": "mi-suhn-dur-STAN-ding",
     "b": [
       {
-        "s": "mis",
-        "k": "prefix",
-        "id": "mis",
-        "g": "wrong, badly"
-      },
-      {
-        "s": "under",
-        "k": "prefix",
-        "id": "under",
-        "g": "under, beneath; among"
-      },
-      {
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "misuse": {
     "d": [
@@ -18746,26 +18786,22 @@
     "rs": "mi-suhn-dur-STAND",
     "b": [
       {
-        "s": "mis",
-        "k": "prefix",
-        "id": "mis",
-        "g": "wrong, badly"
-      },
-      {
-        "s": "under",
-        "k": "prefix",
-        "id": "under",
-        "g": "under, beneath; among"
-      },
-      {
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "mitigate": {
     "d": [

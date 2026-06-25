@@ -658,7 +658,25 @@
       "nonomission"
     ],
     "i": "/oʊˈmɪʃ.ən/",
-    "rs": "oh-MI-shuhn"
+    "rs": "oh-MI-shuhn",
+    "b": [
+      {
+        "s": "mit",
+        "k": "root",
+        "id": "mit",
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
+      }
+    ],
+    "root": "mit",
+    "family": "family/mit.json"
   },
   "omiya": {
     "d": [
@@ -970,13 +988,21 @@
     "rs": "oh-MIT",
     "b": [
       {
-        "s": "omit",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   }
 }

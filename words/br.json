@@ -1480,17 +1480,19 @@
         "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
-      },
-      {
-        "s": "able",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "breakaway": {
     "d": [
@@ -2987,14 +2989,22 @@
     "rs": "BROH-kuhn",
     "b": [
       {
-        "s": "brok",
-        "k": "root"
-      },
-      {
-        "s": "en",
-        "k": "suffix"
+        "s": "break",
+        "k": "root",
+        "id": "break",
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "break",
+    "family": "family/break.json"
   },
   "brokenhearted": {
     "d": [
@@ -7219,14 +7229,22 @@
     "rs": "breech",
     "b": [
       {
-        "s": "breach",
+        "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "bread": {
     "d": [
@@ -7630,11 +7648,19 @@
         "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "breakability": {
     "d": [
@@ -7694,17 +7720,19 @@
         "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
-      },
-      {
-        "s": "age",
-        "k": "suffix",
-        "id": "age",
-        "g": "act, state, or condition"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "breakax": {
     "d": [
@@ -7762,13 +7790,21 @@
     "b": [
       {
         "s": "break",
-        "k": "root"
-      },
-      {
-        "s": "down",
-        "k": "root"
+        "k": "root",
+        "id": "break",
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "break",
+    "family": "family/break.json"
   },
   "breaker": {
     "d": [
@@ -7814,17 +7850,19 @@
         "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "breakers": {
     "d": [
@@ -7936,17 +7974,19 @@
         "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "breakout": {
     "d": [
@@ -7979,13 +8019,21 @@
     "b": [
       {
         "s": "break",
-        "k": "root"
-      },
-      {
-        "s": "out",
-        "k": "root"
+        "k": "root",
+        "id": "break",
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "break",
+    "family": "family/break.json"
   },
   "breakstone": {
     "d": [
@@ -8053,13 +8101,21 @@
     "b": [
       {
         "s": "break",
-        "k": "root"
-      },
-      {
-        "s": "through",
-        "k": "root"
+        "k": "root",
+        "id": "break",
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "break",
+    "family": "family/break.json"
   },
   "breakup": {
     "d": [
@@ -8095,13 +8151,21 @@
     "b": [
       {
         "s": "break",
-        "k": "root"
-      },
-      {
-        "s": "up",
-        "k": "root"
+        "k": "root",
+        "id": "break",
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "break",
+    "family": "family/break.json"
   },
   "breakwater": {
     "d": [
@@ -10867,17 +10931,19 @@
         "s": "bring",
         "k": "root",
         "id": "bring",
-        "g": "to bring, carry, produce"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bring",
-    "family": "/home/user/Claude_apps/family/bring.json"
+    "family": "family/bring.json"
   },
   "brininess": {
     "d": [
@@ -15220,11 +15286,19 @@
         "s": "bring",
         "k": "root",
         "id": "bring",
-        "g": "to bring, carry, produce"
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bring",
-    "family": "/home/user/Claude_apps/family/bring.json"
+    "family": "family/bring.json"
   },
   "brisken": {
     "d": [
@@ -15427,37 +15501,321 @@
   "breached": {
     "b": [
       {
-        "s": "breach",
+        "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "breaching": {
     "b": [
       {
-        "s": "breach",
+        "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
+  },
+  "break-in": {
+    "b": [
+      {
+        "s": "break",
+        "k": "root",
+        "id": "break",
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "break",
+    "family": "family/break.json"
+  },
+  "breakthroughs": {
+    "b": [
+      {
+        "s": "break",
+        "k": "root",
+        "id": "break",
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "break",
+    "family": "family/break.json"
+  },
+  "brought": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bring-about": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bringing-about": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bring-back": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bring-down": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bring-forth": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bring-in": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bringing-in": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bring-out": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bringing-out": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bring-up": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
+  },
+  "bringing-up": {
+    "b": [
+      {
+        "s": "bring",
+        "k": "root",
+        "id": "bring",
+        "g": "Proto-Germanic",
+        "src": "bring",
+        "ori": {
+          "id": "conveyance-transport",
+          "label": "Conveyance & transport",
+          "gloss": "bringing or carrying from one place to another",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bring",
+    "family": "family/bring.json"
   }
 }

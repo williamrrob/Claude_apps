@@ -1489,14 +1489,22 @@
     "rs": "PEHN-duhnt",
     "b": [
       {
-        "s": "pendant",
+        "s": "pendere",
         "k": "root",
         "id": "pendere",
-        "g": "to hang, suspend, weigh"
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "pendere",
-    "family": "/home/user/Claude_apps/family/pendere.json"
+    "family": "family/pendere.json"
   },
   "pendent": {
     "d": [
@@ -1529,7 +1537,25 @@
       "pendently",
       "semipendent"
     ],
-    "i": "/ˈpɛndənt/"
+    "i": "/ˈpɛndənt/",
+    "b": [
+      {
+        "s": "pendere",
+        "k": "root",
+        "id": "pendere",
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "pendere",
+    "family": "family/pendere.json"
   },
   "pending": {
     "d": [
@@ -1562,7 +1588,25 @@
       "nonpending"
     ],
     "i": "/ˈpɛndɪŋ/",
-    "rs": "PEHN-ding"
+    "rs": "PEHN-ding",
+    "b": [
+      {
+        "s": "pendere",
+        "k": "root",
+        "id": "pendere",
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "pendere",
+    "family": "family/pendere.json"
   },
   "pendulous": {
     "d": [
@@ -2511,23 +2555,25 @@
     "rs": "pur-SEHP-tiv",
     "b": [
       {
-        "s": "percept",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "forms": [
       "perceptiveness"
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "perceptual": {
     "d": [
@@ -2854,14 +2900,22 @@
     "rs": "pur-FEHKT",
     "b": [
       {
-        "s": "perfect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "perfected": {
     "d": [
@@ -2874,20 +2928,22 @@
     "rs": "pur-FEHK-tid",
     "b": [
       {
-        "s": "perfect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "perfectible": {
     "d": [
@@ -4050,20 +4106,22 @@
     ],
     "b": [
       {
-        "s": "per",
-        "k": "prefix",
-        "id": "per",
-        "g": "through, thoroughly"
-      },
-      {
-        "s": "missive",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "permutable": {
     "d": [
@@ -4384,20 +4442,22 @@
     "rs": "pur-SI-stuhnt",
     "b": [
       {
-        "s": "persist",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ent",
-        "k": "suffix",
-        "id": "ant",
-        "g": "one who; having the quality of"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "persisting": {
     "d": [
@@ -4811,7 +4871,25 @@
       "irrelevant"
     ],
     "i": "/ˈpɚtɪnənt/",
-    "rs": "PUR-ti-nint"
+    "rs": "PUR-ti-nint",
+    "b": [
+      {
+        "s": "tenere",
+        "k": "root",
+        "id": "tenere",
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "tenere",
+    "family": "family/tenere.json"
   },
   "perturbed": {
     "d": [
@@ -4968,20 +5046,22 @@
     "rs": "pur-VURS",
     "b": [
       {
-        "s": "per",
-        "k": "prefix",
-        "id": "per",
-        "g": "through, thoroughly"
-      },
-      {
-        "s": "verse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "perversive": {
     "d": [
@@ -4994,7 +5074,25 @@
     "s": [
       "corruptive",
       "pestiferous"
-    ]
+    ],
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "perverted": {
     "d": [
@@ -5033,20 +5131,22 @@
     "rs": "pur-VUR-tid",
     "b": [
       {
-        "s": "pervert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "pervious": {
     "d": [
@@ -5266,14 +5366,22 @@
     "i": "/ˌpɛsˈtɪfəɹəs/",
     "b": [
       {
-        "s": "pestiferous",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "pestilent": {
     "d": [
@@ -6228,20 +6336,22 @@
     "rs": "PUR-fuhkt-lee",
     "b": [
       {
-        "s": "perfect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "perfidiously": {
     "d": [
@@ -6594,26 +6704,22 @@
     "rs": "pur-SI-stuhnt-lee",
     "b": [
       {
-        "s": "persist",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ent",
-        "k": "suffix",
-        "id": "ant",
-        "g": "one who; having the quality of"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "personally": {
     "d": [
@@ -6769,26 +6875,22 @@
     "rs": "pur-VUR-slee",
     "b": [
       {
-        "s": "per",
-        "k": "prefix",
-        "id": "per",
-        "g": "through, thoroughly"
-      },
-      {
-        "s": "verse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "pessimistically": {
     "d": [
@@ -11231,14 +11333,22 @@
     "rs": "PEHN-juh-luhm",
     "b": [
       {
-        "s": "pend",
-        "k": "root"
-      },
-      {
-        "s": "ulum",
-        "k": "suffix"
+        "s": "pendere",
+        "k": "root",
+        "id": "pendere",
+        "g": "Latin",
+        "src": "pendere",
+        "ori": {
+          "id": "hanging-suspending",
+          "label": "Hanging & suspending",
+          "gloss": "hanging from, suspending",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "pendere",
+    "family": "family/pendere.json"
   },
   "peneidae": {
     "d": [
@@ -13851,14 +13961,22 @@
     "rs": "PUR-sehpt",
     "b": [
       {
-        "s": "percept",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "perceptibility": {
     "d": [
@@ -14628,20 +14746,22 @@
     "rs": "pur-FEHK-shuhn",
     "b": [
       {
-        "s": "perfect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "perfectionism": {
     "d": [
@@ -14709,22 +14829,22 @@
     "rs": "pur-FEHK-shuh-nuhst",
     "b": [
       {
-        "s": "per",
-        "k": "prefix"
-      },
-      {
-        "s": "fect",
-        "k": "root"
-      },
-      {
-        "s": "ion",
-        "k": "suffix"
-      },
-      {
-        "s": "ist",
-        "k": "suffix"
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "perfective": {
     "d": [
@@ -17061,14 +17181,22 @@
     "rs": "pur-MIT",
     "b": [
       {
-        "s": "permit",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "permutability": {
     "d": [
@@ -17847,20 +17975,22 @@
     "rs": "pur-SI-stuhns",
     "b": [
       {
-        "s": "persist",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ence",
-        "k": "suffix",
-        "id": "ance",
-        "g": "state or quality of"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "persistency": {
     "d": [
@@ -18276,14 +18406,22 @@
     "rs": "pur-SPEHK-tiv",
     "b": [
       {
-        "s": "perspective",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "perspex": {
     "d": [
@@ -18856,26 +18994,22 @@
     ],
     "b": [
       {
-        "s": "per",
-        "k": "prefix",
-        "id": "per",
-        "g": "through, thoroughly"
-      },
-      {
-        "s": "verse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ness",
-        "k": "suffix",
-        "id": "ness",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "perversion": {
     "d": [
@@ -18909,20 +19043,22 @@
     "rs": "pur-VUR-zhuhn",
     "b": [
       {
-        "s": "per",
-        "k": "prefix",
-        "id": "per",
-        "g": "through, thoroughly"
-      },
-      {
-        "s": "version",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "perversity": {
     "d": [
@@ -18945,26 +19081,22 @@
     "rs": "pur-VUR-suh-tee",
     "b": [
       {
-        "s": "per",
-        "k": "prefix",
-        "id": "per",
-        "g": "through, thoroughly"
-      },
-      {
-        "s": "vers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ity",
-        "k": "suffix",
-        "id": "ity",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "pervert": {
     "d": [
@@ -19047,14 +19179,22 @@
     "rs": "PUR-vurt",
     "b": [
       {
-        "s": "pervert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "perviousness": {
     "d": [
@@ -19897,14 +20037,22 @@
     "rs": "puh-TI-shuhn",
     "b": [
       {
-        "s": "petition",
+        "s": "petere",
         "k": "root",
         "id": "petere",
-        "g": "to seek, ask, request"
+        "g": "Latin",
+        "src": "petere",
+        "ori": {
+          "id": "seeking-requesting",
+          "label": "Seeking & requesting",
+          "gloss": "asking for, requesting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "petere",
-    "family": "/home/user/Claude_apps/family/petere.json"
+    "family": "family/petere.json"
   },
   "petitioner": {
     "d": [
@@ -19932,20 +20080,22 @@
     "rs": "puh-TI-shuh-nur",
     "b": [
       {
-        "s": "petition",
+        "s": "petere",
         "k": "root",
         "id": "petere",
-        "g": "to seek, ask, request"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "petere",
+        "ori": {
+          "id": "seeking-requesting",
+          "label": "Seeking & requesting",
+          "gloss": "asking for, requesting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "petere",
-    "family": "/home/user/Claude_apps/family/petere.json"
+    "family": "family/petere.json"
   },
   "petrarca": {
     "d": [
@@ -20966,14 +21116,22 @@
     "rs": "pur-SEEV",
     "b": [
       {
-        "s": "perceive",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "percuss": {
     "d": [
@@ -21573,14 +21731,22 @@
     "rs": "pur-SIST",
     "b": [
       {
-        "s": "persist",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "personalise": {
     "d": [
@@ -21871,14 +22037,22 @@
     "rs": "pur-TAYN",
     "b": [
       {
-        "s": "pertain",
+        "s": "tenere",
         "k": "root",
         "id": "tenere",
-        "g": "to hold, keep, maintain, possess"
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tenere",
-    "family": "/home/user/Claude_apps/family/tenere.json"
+    "family": "family/tenere.json"
   },
   "perturb": {
     "d": [
@@ -22115,37 +22289,81 @@
   "perfecting": {
     "b": [
       {
-        "s": "perfect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "petitioning": {
     "b": [
       {
-        "s": "petition",
+        "s": "petere",
         "k": "root",
         "id": "petere",
-        "g": "to seek, ask, request"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Latin",
+        "src": "petere",
+        "ori": {
+          "id": "seeking-requesting",
+          "label": "Seeking & requesting",
+          "gloss": "asking for, requesting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "petere",
-    "family": "/home/user/Claude_apps/family/petere.json"
+    "family": "family/petere.json"
+  },
+  "perfectionistic": {
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
+  },
+  "perfectionistically": {
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   }
 }

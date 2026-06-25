@@ -1673,14 +1673,22 @@
     "e": "English emancipation Proto-Indo-European *-id- Proto-Indo-European *-yéti Proto-Indo-European *-idyéti Proto-Hellenic *-íďďō Ancient Greek -ῐ́ζω (-ĭ́zō) Proto-Hellenic *-tās Ancient Greek -τής (-tḗs) Ancient Greek -ῐστής (-ĭstḗs)bor. Latin -istader. Old French -istebor. …",
     "b": [
       {
-        "s": "emancipationist",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "emancipator": {
     "d": [
@@ -3326,7 +3334,25 @@
       "emissaryship"
     ],
     "i": "/ˈɛmɪˌsɛɹi/",
-    "rs": "EH-muh-seh-ree"
+    "rs": "EH-muh-seh-ree",
+    "b": [
+      {
+        "s": "mit",
+        "k": "root",
+        "id": "mit",
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
+      }
+    ],
+    "root": "mit",
+    "family": "family/mit.json"
   },
   "emission": {
     "d": [
@@ -3363,7 +3389,25 @@
       "superemission"
     ],
     "i": "/ɪˈmɪʃ.ən/",
-    "rs": "i-MI-shuhn"
+    "rs": "i-MI-shuhn",
+    "b": [
+      {
+        "s": "mit",
+        "k": "root",
+        "id": "mit",
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
+      }
+    ],
+    "root": "mit",
+    "family": "family/mit.json"
   },
   "emitter": {
     "d": [
@@ -5475,14 +5519,22 @@
     "rs": "i-MIT",
     "b": [
       {
-        "s": "emit",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "emote": {
     "d": [

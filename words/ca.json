@@ -719,14 +719,22 @@
     "i": "/kælˈsɪfəɹəs/",
     "b": [
       {
-        "s": "calciferous",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "calcific": {
     "d": [
@@ -2836,14 +2844,22 @@
     "rs": "KAY-puh-buhl",
     "b": [
       {
-        "s": "capable",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "capacious": {
     "d": [
@@ -3373,14 +3389,22 @@
     "i": "/ˈkæpʃəs/",
     "b": [
       {
-        "s": "captious",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "captivated": {
     "d": [
@@ -3516,14 +3540,22 @@
     "rs": "KAP-tiv",
     "b": [
       {
-        "s": "capt",
-        "k": "root"
-      },
-      {
-        "s": "ive",
-        "k": "suffix"
+        "s": "cap",
+        "k": "root",
+        "id": "cap",
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
-    ]
+    ],
+    "root": "cap",
+    "family": "family/cap.json"
   },
   "caramel": {
     "d": [
@@ -10807,14 +10839,22 @@
     ],
     "b": [
       {
-        "s": "calciferol",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "calcification": {
     "d": [
@@ -17801,14 +17841,23 @@
     "rs": "kuh-PA-suh-tee",
     "b": [
       {
-        "s": "capacit",
-        "k": "root"
+        "s": "capac",
+        "k": "root",
+        "id": "cap",
+        "g": "able to hold, spacious",
+        "src": "capax (from capere, to take, hold)",
+        "ori": "Latin"
       },
       {
-        "s": "y",
-        "k": "suffix"
+        "s": "ity",
+        "k": "suffix",
+        "id": "ity",
+        "g": "state or quality of",
+        "src": "-itas",
+        "ori": "Latin"
       }
-    ]
+    ],
+    "root": "cap"
   },
   "caparison": {
     "d": [
@@ -19309,14 +19358,22 @@
     "rs": "KAP-shuhn",
     "b": [
       {
-        "s": "caption",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "captivation": {
     "d": [
@@ -19359,18 +19416,22 @@
     "rs": "kap-TI-vuh-tee",
     "b": [
       {
-        "s": "capt",
-        "k": "root"
-      },
-      {
-        "s": "iv",
-        "k": "suffix"
-      },
-      {
-        "s": "ity",
-        "k": "suffix"
+        "s": "cap",
+        "k": "root",
+        "id": "cap",
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
-    ]
+    ],
+    "root": "cap",
+    "family": "family/cap.json"
   },
   "captopril": {
     "d": [
@@ -19416,14 +19477,22 @@
     "rs": "KAP-tur",
     "b": [
       {
-        "s": "capt",
-        "k": "root"
-      },
-      {
-        "s": "or",
-        "k": "suffix"
+        "s": "cap",
+        "k": "root",
+        "id": "cap",
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
-    ]
+    ],
+    "root": "cap",
+    "family": "family/cap.json"
   },
   "capture": {
     "d": [
@@ -19519,14 +19588,22 @@
     "rs": "KAP-chur",
     "b": [
       {
-        "s": "capture",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "capturer": {
     "d": [
@@ -19539,7 +19616,25 @@
         "g": "a person who captures and holds people or animals"
       }
     ],
-    "e": "English capture Proto-Indo-European *-yósder. Proto-Italic *-āzijos Latin -āriusnom. Latin -āriusbor. Proto-Germanic *-ārijaz Proto-West Germanic *-ārī Old English -ere Middle English -ere English -er English capturer From capture + -er."
+    "e": "English capture Proto-Indo-European *-yósder. Proto-Italic *-āzijos Latin -āriusnom. Latin -āriusbor. Proto-Germanic *-ārijaz Proto-West Germanic *-ārī Old English -ere Middle English -ere English -er English capturer From capture + -er.",
+    "b": [
+      {
+        "s": "cap",
+        "k": "root",
+        "id": "cap",
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
+      }
+    ],
+    "root": "cap",
+    "family": "family/cap.json"
   },
   "capuchin": {
     "d": [

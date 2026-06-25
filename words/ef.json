@@ -44,20 +44,22 @@
     "rs": "i-FEHK-tid",
     "b": [
       {
-        "s": "effect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "effective": {
     "d": [
@@ -108,20 +110,22 @@
     "rs": "i-FEHK-tiv",
     "b": [
       {
-        "s": "effect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "effectual": {
     "d": [
@@ -139,7 +143,25 @@
     "a": [
       "ineffectual"
     ],
-    "i": "/iˈfɛkt͡ʃuəl/"
+    "i": "/iˈfɛkt͡ʃuəl/",
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "effeminate": {
     "d": [
@@ -220,14 +242,22 @@
     "rs": "EH-fur-uhnt",
     "b": [
       {
-        "s": "efferent",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "effervescent": {
     "d": [
@@ -578,26 +608,22 @@
     "rs": "i-FEHK-tiv-lee",
     "b": [
       {
-        "s": "effect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "effectually": {
     "d": [
@@ -611,7 +637,25 @@
     "a": [
       "ineffectually"
     ],
-    "i": "/ɪˈfɛkt͡ʃuːəli/"
+    "i": "/ɪˈfɛkt͡ʃuːəli/",
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "efficaciously": {
     "d": [
@@ -774,14 +818,22 @@
     "rs": "i-FEHKT",
     "b": [
       {
-        "s": "effect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "effecter": {
     "d": [
@@ -844,26 +896,22 @@
     "rs": "i-FEHK-tiv-nuhs",
     "b": [
       {
-        "s": "effect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
-      },
-      {
-        "s": "ness",
-        "k": "suffix",
-        "id": "ness",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "effectivity": {
     "d": [
@@ -1018,7 +1066,25 @@
     "e": "English effectuate Proto-Indo-European *-tis Proto-Indo-European *-Hō Proto-Indo-European *-tiHō Proto-Italic *-tiō Latin -tiō Latin -ātiōlbor. Old French -ationbor. Middle English -acioun English -ation English -ion English effectuation From effectuate + -ion.",
     "s": [
       "implementation"
-    ]
+    ],
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "effeminacy": {
     "d": [
@@ -1661,7 +1727,25 @@
       "effect"
     ],
     "i": "/ɪˈfɛktʃuˌeɪt/",
-    "rs": "i-FEHK-choo-ayt"
+    "rs": "i-FEHK-choo-ayt",
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "effeminise": {
     "d": [
@@ -1793,19 +1877,21 @@
   "effecting": {
     "b": [
       {
-        "s": "effect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   }
 }

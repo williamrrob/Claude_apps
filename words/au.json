@@ -556,14 +556,22 @@
     "i": "/ɔːˈɹɪfəɹəs/",
     "b": [
       {
-        "s": "auriferous",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "auriform": {
     "d": [
@@ -718,23 +726,25 @@
     "rs": "ah-SPI-shuhs",
     "b": [
       {
-        "s": "auspic",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
-      },
-      {
-        "s": "ious",
-        "k": "suffix",
-        "id": "ous",
-        "g": "full of, having"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "forms": [
       "auspiciousness"
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "austenitic": {
     "d": [
@@ -4035,14 +4045,22 @@
     "rs": "AW-spis",
     "b": [
       {
-        "s": "auspice",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "auspices": {
     "d": [
@@ -6460,7 +6478,25 @@
     "e": "From Latin auspicatus, past participle of auspicari \"to take auspices\", from auspex \"bird seer\", \"augur\", a contraction of avispex; avis \"bird\" + specere, spicere, \"to view\".",
     "r": [
       "inauspicate"
-    ]
+    ],
+    "b": [
+      {
+        "s": "spec",
+        "k": "root",
+        "id": "spec",
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
+      }
+    ],
+    "root": "spec",
+    "family": "family/spec.json"
   },
   "authenticate": {
     "d": [

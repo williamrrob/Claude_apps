@@ -1846,20 +1846,22 @@
     "rs": "SIN-fuhl",
     "b": [
       {
-        "s": "sin",
+        "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
-      },
-      {
-        "s": "ful",
-        "k": "suffix",
-        "id": "ful",
-        "g": "full of"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   },
   "singable": {
     "d": [
@@ -1944,17 +1946,19 @@
         "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   },
   "single": {
     "d": [
@@ -2300,20 +2304,22 @@
     "i": "/ˈsɪnləs/",
     "b": [
       {
-        "s": "sin",
+        "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
-      },
-      {
-        "s": "less",
-        "k": "suffix",
-        "id": "less",
-        "g": "without, lacking"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   },
   "sinning": {
     "d": [
@@ -8579,14 +8585,22 @@
     "rs": "sin",
     "b": [
       {
-        "s": "sin",
+        "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   },
   "sinai": {
     "d": [
@@ -8995,17 +9009,19 @@
         "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   },
   "singleness": {
     "d": [
@@ -9464,14 +9480,22 @@
     "rs": "SI-nur",
     "b": [
       {
-        "s": "sinn",
-        "k": "root"
-      },
-      {
-        "s": "er",
-        "k": "suffix"
+        "s": "sing",
+        "k": "root",
+        "id": "sing",
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "sing",
+    "family": "family/sing.json"
   },
   "sinningia": {
     "d": [
@@ -11527,11 +11551,19 @@
         "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   },
   "singularise": {
     "d": [
@@ -11727,49 +11759,41 @@
   "sinfully": {
     "b": [
       {
-        "s": "sin",
+        "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
-      },
-      {
-        "s": "ful",
-        "k": "suffix",
-        "id": "ful",
-        "g": "full of"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   },
   "sinlessly": {
     "b": [
       {
-        "s": "sin",
+        "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
-      },
-      {
-        "s": "less",
-        "k": "suffix",
-        "id": "less",
-        "g": "without, lacking"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   }
 }

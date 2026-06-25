@@ -437,20 +437,22 @@
     "rs": "uh-DIK-tiv",
     "b": [
       {
-        "s": "addict",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "additional": {
     "d": [
@@ -649,7 +651,25 @@
         "g": "especially of muscles;  bringing together or drawing toward the midline of the body or toward an adjacent part"
       }
     ],
-    "e": "From Latin adducens, present participle of adducere."
+    "e": "From Latin adducens, present participle of adducere.",
+    "b": [
+      {
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
+      }
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "adducting": {
     "d": [
@@ -683,26 +703,22 @@
     ],
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "duct",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "adenocarcinomatous": {
     "d": [
@@ -2800,26 +2816,22 @@
     "i": "/ədˈvɝsəˌtɪv/",
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "vers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ative",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "adverse": {
     "d": [
@@ -2861,20 +2873,22 @@
     "rs": "ad-VURS",
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "verse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advertent": {
     "d": [
@@ -2919,26 +2933,22 @@
     "rs": "AD-vur-tyzd",
     "b": [
       {
-        "s": "advert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ise",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
-      },
-      {
-        "s": "d",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advisable": {
     "d": [
@@ -3455,26 +3465,22 @@
     "rs": "ad-VUR-slee",
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "verse",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advertently": {
     "d": [
@@ -4158,14 +4164,22 @@
     ],
     "b": [
       {
-        "s": "addict",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "addiction": {
     "d": [
@@ -4210,20 +4224,22 @@
     "rs": "uh-DIK-shuhn",
     "b": [
       {
-        "s": "addict",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "addition": {
     "d": [
@@ -4405,7 +4421,25 @@
         "g": "a discussant who offers an example or a reason or a proof"
       }
     ],
-    "e": "English adduce Proto-Indo-European *-yósder. Proto-Italic *-āzijos Latin -āriusnom. Latin -āriusbor. Proto-Germanic *-ārijaz Proto-West Germanic *-ārī Old English -ere Middle English -ere English -er English adducer From adduce + -er."
+    "e": "English adduce Proto-Indo-European *-yósder. Proto-Italic *-āzijos Latin -āriusnom. Latin -āriusbor. Proto-Germanic *-ārijaz Proto-West Germanic *-ārī Old English -ere Middle English -ere English -er English adducer From adduce + -er.",
+    "b": [
+      {
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
+      }
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "adducing": {
     "d": [
@@ -4457,20 +4491,22 @@
     ],
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "duct",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "adduction": {
     "d": [
@@ -4499,26 +4535,22 @@
     "i": "/əˈdʌk.ʃn̩/",
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "duct",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "adductor": {
     "d": [
@@ -4540,26 +4572,22 @@
     "i": "/əˈdʌktəɹ/",
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "duct",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "ade": {
     "d": [
@@ -7377,32 +7405,22 @@
     "rs": "AD-vur-seh-ree",
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "vers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ar",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
-      },
-      {
-        "s": "y",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "adversity": {
     "d": [
@@ -7428,26 +7446,22 @@
     "rs": "ad-VUR-si-tee",
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "vers",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ity",
-        "k": "suffix",
-        "id": "ity",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advert": {
     "d": [
@@ -7493,14 +7507,22 @@
     "rs": "AD-vurt",
     "b": [
       {
-        "s": "advert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advertence": {
     "d": [
@@ -7514,20 +7536,22 @@
     ],
     "b": [
       {
-        "s": "advert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ence",
-        "k": "suffix",
-        "id": "ance",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advertency": {
     "d": [
@@ -7541,20 +7565,22 @@
     ],
     "b": [
       {
-        "s": "advert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ency",
-        "k": "suffix",
-        "id": "ance",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advertisement": {
     "d": [
@@ -7602,29 +7628,25 @@
     "rs": "ad-VUR-tuhz-muhnt",
     "b": [
       {
-        "s": "advert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ise",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
-      },
-      {
-        "s": "ment",
-        "k": "suffix",
-        "id": "ment",
-        "g": "result or means of an action"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "vars": [
       "advertizement"
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advertiser": {
     "d": [
@@ -7643,7 +7665,25 @@
       "adman"
     ],
     "i": "/ˈædvɚˌtaɪzɚ/",
-    "rs": "AD-vur-ty-zur"
+    "rs": "AD-vur-ty-zur",
+    "b": [
+      {
+        "s": "vert",
+        "k": "root",
+        "id": "vert",
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "vert",
+    "family": "family/vert.json"
   },
   "advertising": {
     "d": [
@@ -7685,26 +7725,22 @@
     "rs": "AD-vur-ty-zing",
     "b": [
       {
-        "s": "advert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "is",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advertizement": {
     "d": [
@@ -7728,26 +7764,22 @@
     },
     "b": [
       {
-        "s": "advert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ize",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
-      },
-      {
-        "s": "ment",
-        "k": "suffix",
-        "id": "ment",
-        "g": "result or means of an action"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advertizer": {
     "d": [
@@ -8281,20 +8313,22 @@
     "i": "/əˈd(j)uːs/",
     "b": [
       {
-        "s": "ad",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "duce",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "adhere": {
     "d": [
@@ -8742,14 +8776,22 @@
     "rs": "uhd-MIT",
     "b": [
       {
-        "s": "admit",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "admix": {
     "d": [
@@ -9053,20 +9095,22 @@
     ],
     "b": [
       {
-        "s": "advert",
+        "s": "vert",
         "k": "root",
         "id": "vert",
-        "g": "to turn, rotate, spin"
-      },
-      {
-        "s": "ise",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
+        "g": "Latin",
+        "src": "vert",
+        "ori": {
+          "id": "rotational-spatial",
+          "label": "Rotational & spatial turning",
+          "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "vert",
-    "family": "/home/user/Claude_apps/family/vert.json"
+    "family": "family/vert.json"
   },
   "advertize": {
     "d": [

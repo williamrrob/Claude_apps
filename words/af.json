@@ -117,20 +117,22 @@
     "rs": "uh-FEHK-tid",
     "b": [
       {
-        "s": "affect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "affecting": {
     "d": [
@@ -151,20 +153,22 @@
     "rs": "uh-FEHK-ting",
     "b": [
       {
-        "s": "affect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "affectional": {
     "d": [
@@ -224,7 +228,25 @@
       "nonaffectionate"
     ],
     "i": "/əˈfɛkʃənət/",
-    "rs": "uh-FEHK-shuh-nuht"
+    "rs": "uh-FEHK-shuh-nuht",
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "affective": {
     "d": [
@@ -294,14 +316,22 @@
     "rs": "A-fur-uhnt",
     "b": [
       {
-        "s": "afferent",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "affiliated": {
     "d": [
@@ -1302,7 +1332,25 @@
       "dear"
     ],
     "i": "/əˈfɛkʃənətli/",
-    "rs": "uh-FEHK-shuh-nuht-lee"
+    "rs": "uh-FEHK-shuh-nuht-lee",
+    "b": [
+      {
+        "s": "facere",
+        "k": "root",
+        "id": "facere",
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "facere",
+    "family": "family/facere.json"
   },
   "affirmatively": {
     "d": [
@@ -1609,14 +1657,22 @@
     "rs": "uh-FEHKT",
     "b": [
       {
-        "s": "affect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "affectation": {
     "d": [
@@ -1711,20 +1767,22 @@
     "rs": "uh-FEHK-shuhn",
     "b": [
       {
-        "s": "affect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "affectionateness": {
     "d": [
@@ -3169,43 +3227,41 @@
   "affectless": {
     "b": [
       {
-        "s": "affect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "less",
-        "k": "suffix",
-        "id": "less",
-        "g": "without, lacking"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   },
   "affectlessness": {
     "b": [
       {
-        "s": "affect",
+        "s": "facere",
         "k": "root",
         "id": "facere",
-        "g": "to make, do, create"
-      },
-      {
-        "s": "less",
-        "k": "suffix",
-        "id": "less",
-        "g": "without, lacking"
-      },
-      {
-        "s": "ness",
-        "k": "suffix",
-        "id": "ness",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "facere",
+        "ori": {
+          "id": "making-creating",
+          "label": "Making & creating",
+          "gloss": "creating, manufacturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "facere",
-    "family": "/home/user/Claude_apps/family/facere.json"
+    "family": "family/facere.json"
   }
 }

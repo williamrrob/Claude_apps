@@ -2495,20 +2495,22 @@
     "rs": "SKRIP-tid",
     "b": [
       {
-        "s": "script",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "scriptural": {
     "d": [
@@ -2545,20 +2547,22 @@
     "rs": "SKRIP-chur-uhl",
     "b": [
       {
-        "s": "scriptur",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
-      },
-      {
-        "s": "al",
-        "k": "suffix",
-        "id": "ial",
-        "g": "relating to"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "scrivened": {
     "d": [
@@ -12718,17 +12722,19 @@
         "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
-      },
-      {
-        "s": "ble",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "scribbler": {
     "d": [
@@ -12842,14 +12848,22 @@
     "rs": "skryb",
     "b": [
       {
-        "s": "scribe",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "scriber": {
     "d": [
@@ -12864,7 +12878,25 @@
     ],
     "e": "From scribe + -er.",
     "i": "/ˈskraɪbɚ/",
-    "rs": "SKRY-bur"
+    "rs": "SKRY-bur",
+    "b": [
+      {
+        "s": "scrib",
+        "k": "root",
+        "id": "scrib",
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
+      }
+    ],
+    "root": "scrib",
+    "family": "family/scrib.json"
   },
   "scrim": {
     "d": [
@@ -13095,14 +13127,22 @@
     "rs": "skript",
     "b": [
       {
-        "s": "script",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "scriptorium": {
     "d": [
@@ -13152,14 +13192,22 @@
     "rs": "SKRIP-chur",
     "b": [
       {
-        "s": "scripture",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "scriptwriter": {
     "d": [

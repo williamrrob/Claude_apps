@@ -6566,10 +6566,22 @@
     "i": "/ˈsɛʃən/",
     "b": [
       {
-        "s": "cession",
-        "k": "word"
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "cesspit": {
     "d": [
@@ -6881,14 +6893,22 @@
     "rs": "seed",
     "b": [
       {
-        "s": "cede",
+        "s": "cedere",
         "k": "root",
         "id": "cedere",
-        "g": "to go, move, yield, grant"
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "cedere",
-    "family": "/home/user/Claude_apps/family/cedere.json"
+    "family": "family/cedere.json"
   },
   "celebrate": {
     "d": [

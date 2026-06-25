@@ -780,14 +780,22 @@
     "rs": "STAN-durd",
     "b": [
       {
-        "s": "standard",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "standardised": {
     "d": [
@@ -823,26 +831,22 @@
     "rs": "STAN-dur-dyzd",
     "b": [
       {
-        "s": "standard",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ize",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
-      },
-      {
-        "s": "d",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "standby": {
     "d": [
@@ -924,17 +928,19 @@
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "standoffish": {
     "d": [
@@ -11347,11 +11353,19 @@
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "standardisation": {
     "d": [
@@ -11417,26 +11431,22 @@
     ],
     "b": [
       {
-        "s": "standard",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "iz",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
-      },
-      {
-        "s": "ation",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "standardizer": {
     "d": [
@@ -11489,17 +11499,19 @@
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ee",
-        "k": "suffix",
-        "id": "ee",
-        "g": "one who is or does"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "stander": {
     "d": [
@@ -11671,17 +11683,19 @@
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "point",
-        "k": "root",
-        "id": "point",
-        "g": "point, position"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "standstill": {
     "d": [
@@ -13215,14 +13229,23 @@
     "rs": "STAY-shuhn",
     "b": [
       {
-        "s": "stat",
-        "k": "root"
+        "s": "sta",
+        "k": "root",
+        "id": "sta",
+        "g": "to stand, be in a particular place or state",
+        "src": "stare",
+        "ori": "Latin"
       },
       {
-        "s": "ion",
-        "k": "suffix"
+        "s": "tion",
+        "k": "suffix",
+        "id": "ion",
+        "g": "place, condition, or act; noun suffix",
+        "src": "-tiōn-, -tiō",
+        "ori": "Latin"
       }
-    ]
+    ],
+    "root": "sta"
   },
   "stationariness": {
     "d": [
@@ -21643,14 +21666,22 @@
     "rs": "STAWR-hows",
     "b": [
       {
-        "s": "store",
-        "k": "root"
-      },
-      {
         "s": "house",
-        "k": "root"
+        "k": "root",
+        "id": "house",
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "house",
+    "family": "family/house.json"
   },
   "storekeeper": {
     "d": [
@@ -28690,16 +28721,18 @@
     "rs": "STAN-dur-dyz",
     "b": [
       {
-        "s": "standard",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ize",
-        "k": "suffix",
-        "id": "ize",
-        "g": "to make, to become"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "rel": {
@@ -28709,7 +28742,7 @@
       "at": "2026-06-23T05:47:54.405Z"
     },
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "stargaze": {
     "d": [
@@ -29917,5 +29950,25 @@
       "t": "plural of",
       "l": "stimulus"
     }
+  },
+  "stood": {
+    "b": [
+      {
+        "s": "stand",
+        "k": "root",
+        "id": "stand",
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "stand",
+    "family": "family/stand.json"
   }
 }

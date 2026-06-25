@@ -1401,26 +1401,22 @@
     "rs": "uh-TRAK-tiv",
     "b": [
       {
-        "s": "at",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "attributable": {
     "d": [
@@ -1694,32 +1690,22 @@
     "rs": "uh-TRAK-tiv-lee",
     "b": [
       {
-        "s": "at",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "attributively": {
     "d": [
@@ -3795,20 +3781,22 @@
     "rs": "uh-TAYN-muhnt",
     "b": [
       {
-        "s": "attain",
+        "s": "tenere",
         "k": "root",
         "id": "tenere",
-        "g": "to hold, keep, maintain, possess"
-      },
-      {
-        "s": "ment",
-        "k": "suffix",
-        "id": "ment",
-        "g": "result or means of an action"
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tenere",
-    "family": "/home/user/Claude_apps/family/tenere.json"
+    "family": "family/tenere.json"
   },
   "attalea": {
     "d": [
@@ -4571,26 +4559,22 @@
     "rs": "uh-TRAK-shuhn",
     "b": [
       {
-        "s": "at",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "attractiveness": {
     "d": [
@@ -4612,32 +4596,22 @@
     "rs": "uh-TRAK-tiv-nuhs",
     "b": [
       {
-        "s": "at",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
-      },
-      {
-        "s": "ness",
-        "k": "suffix",
-        "id": "ness",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "attractor": {
     "d": [
@@ -4660,26 +4634,22 @@
     ],
     "b": [
       {
-        "s": "at",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "attribute": {
     "d": [
@@ -5020,14 +4990,22 @@
     "rs": "uh-TAYN",
     "b": [
       {
-        "s": "attain",
+        "s": "tenere",
         "k": "root",
         "id": "tenere",
-        "g": "to hold, keep, maintain, possess"
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tenere",
-    "family": "/home/user/Claude_apps/family/tenere.json"
+    "family": "family/tenere.json"
   },
   "attaint": {
     "d": [
@@ -5329,20 +5307,22 @@
     "rs": "uh-TRAKT",
     "b": [
       {
-        "s": "at",
-        "k": "prefix",
-        "id": "ad",
-        "g": "to, toward"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "attune": {
     "d": [

@@ -1526,14 +1526,22 @@
     "rs": "TEH-nuh-buhl",
     "b": [
       {
-        "s": "tenable",
+        "s": "tenere",
         "k": "root",
         "id": "tenere",
-        "g": "to hold, keep, maintain, possess"
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tenere",
-    "family": "/home/user/Claude_apps/family/tenere.json"
+    "family": "family/tenere.json"
   },
   "tenacious": {
     "d": [
@@ -1577,14 +1585,22 @@
     "rs": "tuh-NAY-shuhs",
     "b": [
       {
-        "s": "tenacious",
+        "s": "tenere",
         "k": "root",
         "id": "tenere",
-        "g": "to hold, keep, maintain, possess"
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tenere",
-    "family": "/home/user/Claude_apps/family/tenere.json"
+    "family": "family/tenere.json"
   },
   "tenanted": {
     "d": [
@@ -6927,7 +6943,25 @@
       "videoteleconference"
     ],
     "i": "/ˈtɛləˌkɒnfəɹəns/",
-    "rs": "teh-luh-KAHN-fruhns"
+    "rs": "teh-luh-KAHN-fruhns",
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "teleconferencing": {
     "d": [
@@ -9236,7 +9270,25 @@
       "tenaciously"
     ],
     "i": "/təˈnæsəti/",
-    "rs": "tuh-NA-si-tee"
+    "rs": "tuh-NA-si-tee",
+    "b": [
+      {
+        "s": "tenere",
+        "k": "root",
+        "id": "tenere",
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "tenere",
+    "family": "family/tenere.json"
   },
   "tenancy": {
     "d": [
@@ -9305,14 +9357,22 @@
     "rs": "TEH-nuhnt",
     "b": [
       {
-        "s": "tenant",
+        "s": "tenere",
         "k": "root",
         "id": "tenere",
-        "g": "to hold, keep, maintain, possess"
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tenere",
-    "family": "/home/user/Claude_apps/family/tenere.json"
+    "family": "family/tenere.json"
   },
   "tenantry": {
     "d": [
@@ -9806,10 +9866,22 @@
     "rs": "TEH-nuh-muhnt",
     "b": [
       {
-        "s": "tenement",
-        "k": "word"
+        "s": "tenere",
+        "k": "root",
+        "id": "tenere",
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "tenere",
+    "family": "family/tenere.json"
   },
   "tenerife": {
     "d": [
@@ -10744,10 +10816,22 @@
     "rs": "TEHN-yur",
     "b": [
       {
-        "s": "tenure",
-        "k": "word"
+        "s": "tenere",
+        "k": "root",
+        "id": "tenere",
+        "g": "Latin",
+        "src": "tenere",
+        "ori": {
+          "id": "holding-grasping",
+          "label": "Holding & grasping",
+          "gloss": "holding something firmly; possession and tenacity",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "tenere",
+    "family": "family/tenere.json"
   },
   "tepal": {
     "d": [

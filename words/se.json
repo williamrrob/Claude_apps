@@ -2541,7 +2541,25 @@
         "g": "having characteristics of a semiconductor;  that is having electrical conductivity greater than insulators but less than good conductors"
       }
     ],
-    "e": "Proto-Indo-European *sem- Proto-Indo-European *sēmi Latin sēmi-bor. English semi- English conducting English semiconducting From semi- + conducting."
+    "e": "Proto-Indo-European *sem- Proto-Indo-European *sēmi Latin sēmi-bor. English semi- English conducting English semiconducting From semi- + conducting.",
+    "b": [
+      {
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
+      }
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "semiconductive": {
     "d": [
@@ -2557,14 +2575,22 @@
     "e": "From semi- + conductive.",
     "b": [
       {
-        "s": "semi",
-        "k": "prefix"
-      },
-      {
-        "s": "conductive",
-        "k": "root"
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
-    ]
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "semiconscious": {
     "d": [
@@ -5241,14 +5267,22 @@
     "rs": "SUR-puhn-tyn",
     "b": [
       {
-        "s": "serpent",
-        "k": "root"
-      },
-      {
-        "s": "ine",
-        "k": "suffix"
+        "s": "serpens",
+        "k": "root",
+        "id": "serpens",
+        "g": "Latin",
+        "src": "serpens",
+        "ori": {
+          "id": "serpent-snake",
+          "label": "Serpent & snake",
+          "gloss": "the creature itself; snakes and serpentine forms",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "serpens",
+    "family": "family/serpens.json"
   },
   "serrate": {
     "d": [
@@ -9019,18 +9053,22 @@
     "rs": "si-SEH-shuhn",
     "b": [
       {
-        "s": "se",
-        "k": "prefix"
-      },
-      {
-        "s": "cess",
-        "k": "root"
-      },
-      {
-        "s": "ion",
-        "k": "suffix"
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "secessionism": {
     "d": [
@@ -10340,7 +10378,25 @@
       "seductress"
     ],
     "i": "/sɪˈdusɚ/",
-    "rs": "si-DOO-sur"
+    "rs": "si-DOO-sur",
+    "b": [
+      {
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
+      }
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "seduction": {
     "d": [
@@ -13046,7 +13102,25 @@
       "silicon"
     ],
     "i": "/ˌsɛmikənˈdʌktɚ/",
-    "rs": "seh-mee-kuhn-DUHK-tur"
+    "rs": "seh-mee-kuhn-DUHK-tur",
+    "b": [
+      {
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
+      }
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "semiconsciousness": {
     "d": [
@@ -17500,14 +17574,22 @@
     "rs": "SUR-puhnt",
     "b": [
       {
-        "s": "serpent",
+        "s": "serpens",
         "k": "root",
         "id": "serpens",
-        "g": "to crawl, creep (serpere); snake (serpens)"
+        "g": "Latin",
+        "src": "serpens",
+        "ori": {
+          "id": "serpent-snake",
+          "label": "Serpent & snake",
+          "gloss": "the creature itself; snakes and serpentine forms",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "serpens",
-    "family": "/home/user/Claude_apps/family/serpens.json"
+    "family": "family/serpens.json"
   },
   "serpentes": {
     "d": [
@@ -20031,14 +20113,22 @@
     "rs": "si-SEED",
     "b": [
       {
-        "s": "secede",
+        "s": "cedere",
         "k": "root",
         "id": "cedere",
-        "g": "to go, move, yield, grant"
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "cedere",
-    "family": "/home/user/Claude_apps/family/cedere.json"
+    "family": "family/cedere.json"
   },
   "secern": {
     "d": [
@@ -20307,14 +20397,22 @@
     "rs": "si-DOOS",
     "b": [
       {
-        "s": "seduce",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "seel": {
     "d": [

@@ -368,20 +368,22 @@
     "e": "English ascribe Proto-Indo-European *-dʰlom Proto-Indo-European *-dʰlis Proto-Italic *-ðlis Latin -bilis Latin -ābilis Old French -ablebor. Middle English -able English -able English ascribable From ascribe + -able.",
     "b": [
       {
-        "s": "ascrib",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
-      },
-      {
-        "s": "able",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "aseptic": {
     "d": [
@@ -1486,14 +1488,22 @@
     "rs": "uh-SI-stuhnt",
     "b": [
       {
-        "s": "assist",
-        "k": "root"
-      },
-      {
-        "s": "ant",
-        "k": "suffix"
+        "s": "stand",
+        "k": "root",
+        "id": "stand",
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "stand",
+    "family": "family/stand.json"
   },
   "assisted": {
     "d": [
@@ -3871,18 +3881,22 @@
     ],
     "b": [
       {
-        "s": "a",
-        "k": "prefix"
-      },
-      {
-        "s": "script",
-        "k": "root"
-      },
-      {
-        "s": "ion",
-        "k": "suffix"
+        "s": "scrib",
+        "k": "root",
+        "id": "scrib",
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
-    ]
+    ],
+    "root": "scrib",
+    "family": "family/scrib.json"
   },
   "ascus": {
     "d": [
@@ -4611,14 +4625,22 @@
     "rs": "A-spehkt",
     "b": [
       {
-        "s": "aspect",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "aspen": {
     "d": [
@@ -6560,14 +6582,22 @@
     "rs": "uh-SI-stuhns",
     "b": [
       {
-        "s": "assistance",
+        "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "assize": {
     "d": [
@@ -8384,14 +8414,22 @@
     "rs": "uh-SKRYB",
     "b": [
       {
-        "s": "ascribe",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "ask": {
     "d": [

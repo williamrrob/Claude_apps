@@ -1115,18 +1115,22 @@
     "rs": "OWT-SPOH-kuhn",
     "b": [
       {
-        "s": "out",
-        "k": "prefix"
-      },
-      {
-        "s": "spok",
-        "k": "root"
-      },
-      {
-        "s": "en",
-        "k": "suffix"
+        "s": "speak",
+        "k": "root",
+        "id": "speak",
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "speak",
+    "family": "family/speak.json"
   },
   "outspread": {
     "d": [
@@ -1183,26 +1187,22 @@
     "rs": "owt-STAN-ding",
     "b": [
       {
-        "s": "out",
-        "k": "prefix",
-        "id": "out",
-        "g": "out, beyond; surpassing"
-      },
-      {
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "outstretched": {
     "d": [
@@ -1410,32 +1410,22 @@
     "rs": "owt-STAN-ding-lee",
     "b": [
       {
-        "s": "out",
-        "k": "prefix",
-        "id": "out",
-        "g": "out, beyond; surpassing"
-      },
-      {
         "s": "stand",
         "k": "root",
         "id": "stand",
-        "g": "to stand, be upright, remain"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
-      },
-      {
-        "s": "ly",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Proto-Germanic",
+        "src": "stand",
+        "ori": {
+          "id": "upright-position",
+          "label": "Upright position",
+          "gloss": "standing upright; taking a position",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "stand",
-    "family": "/home/user/Claude_apps/family/stand.json"
+    "family": "family/stand.json"
   },
   "outwardly": {
     "d": [
@@ -1757,20 +1747,22 @@
     "rs": "OWT-brayk",
     "b": [
       {
-        "s": "out",
-        "k": "prefix",
-        "id": "out",
-        "g": "out, beyond; surpassing"
-      },
-      {
         "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "outbuilding": {
     "d": [
@@ -2406,20 +2398,22 @@
     "rs": "OWT-hows",
     "b": [
       {
-        "s": "out",
-        "k": "prefix",
-        "id": "out",
-        "g": "out, beyond; surpassing"
-      },
-      {
         "s": "house",
         "k": "root",
         "id": "house",
-        "g": "dwelling, shelter (from PIE *bhudh- 'to hide')"
+        "g": "Proto-Germanic",
+        "src": "house",
+        "ori": {
+          "id": "dwelling-shelter",
+          "label": "Dwelling & shelter",
+          "gloss": "a place of shelter; residential structure",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "house",
-    "family": "/home/user/Claude_apps/family/house.json"
+    "family": "family/house.json"
   },
   "outing": {
     "d": [
@@ -4658,103 +4652,121 @@
   "outbreaks": {
     "b": [
       {
-        "s": "out",
-        "k": "prefix",
-        "id": "out",
-        "g": "out, beyond; surpassing"
-      },
-      {
         "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
-      },
-      {
-        "s": "s",
-        "k": "suffix",
-        "id": "s",
-        "g": "plural; third-person singular"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "outsing": {
     "b": [
       {
-        "s": "out",
-        "k": "prefix",
-        "id": "out",
-        "g": "out, beyond; surpassing"
-      },
-      {
         "s": "sing",
         "k": "root",
         "id": "sing",
-        "g": "to sing, sound, resound"
+        "g": "Proto-Germanic",
+        "src": "sing",
+        "ori": {
+          "id": "vocalization-music",
+          "label": "Vocalization & music",
+          "gloss": "producing song; singing, musical utterance",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "sing",
-    "family": "/home/user/Claude_apps/family/sing.json"
+    "family": "family/sing.json"
   },
   "outspeak": {
     "b": [
       {
-        "s": "out",
-        "k": "prefix",
-        "id": "out",
-        "g": "out, beyond; surpassing"
-      },
-      {
         "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "outspeaking": {
     "b": [
       {
-        "s": "out",
-        "k": "prefix",
-        "id": "out",
-        "g": "out, beyond; surpassing"
-      },
-      {
         "s": "speak",
         "k": "root",
         "id": "speak",
-        "g": "to speak, utter, spray"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "speak",
-    "family": "/home/user/Claude_apps/family/speak.json"
+    "family": "family/speak.json"
   },
   "outspin": {
     "b": [
       {
-        "s": "out",
-        "k": "prefix",
-        "id": "out",
-        "g": "out, beyond; surpassing"
-      },
-      {
         "s": "spin",
         "k": "root",
         "id": "spin",
-        "g": "to spin, twist, extend"
+        "g": "Proto-Germanic",
+        "src": "spin",
+        "ori": {
+          "id": "twisting-rotation",
+          "label": "Twisting & rotation",
+          "gloss": "spinning fibers into thread; rotating, twisting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "spin",
-    "family": "/home/user/Claude_apps/family/spin.json"
+    "family": "family/spin.json"
+  },
+  "outspeakenly": {
+    "b": [
+      {
+        "s": "speak",
+        "k": "root",
+        "id": "speak",
+        "g": "Proto-Germanic",
+        "src": "speak",
+        "ori": {
+          "id": "speech-utterance",
+          "label": "Speech & utterance",
+          "gloss": "speaking words; uttering sounds, discourse",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "speak",
+    "family": "family/speak.json"
   }
 }

@@ -7053,14 +7053,22 @@
     "rs": "DAY-brayk",
     "b": [
       {
-        "s": "daybreak",
+        "s": "break",
         "k": "root",
         "id": "break",
-        "g": "to break, fracture, shatter"
+        "g": "Proto-Germanic",
+        "src": "break",
+        "ori": {
+          "id": "breaking-shattering",
+          "label": "Breaking & shattering",
+          "gloss": "breaking into fragments; shattering, fracturing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "break",
-    "family": "/home/user/Claude_apps/family/break.json"
+    "family": "family/break.json"
   },
   "daycare": {
     "d": [

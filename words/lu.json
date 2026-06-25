@@ -1961,14 +1961,22 @@
     "rs": "LOO-suh-fur",
     "b": [
       {
-        "s": "lucifer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "luciferin": {
     "d": [
@@ -1977,7 +1985,25 @@
         "g": "Any of a class of polycyclic heterocycles that are responsible for the bioluminescence of fireflies, being converted to oxyluciferin by luciferase in the process."
       }
     ],
-    "e": "Proto-Indo-European *lewk- Proto-Indo-European *-s Proto-Indo-European *léwks Proto-Italic *louks Latin lūx Proto-Indo-European *bʰer- Proto-Indo-European *-ós Proto-Indo-European *bʰorós Proto-Italic *-foros Latin -fer Latin lūcifer Proto-Indo-European *-nós Proto-Indo-European *-iHnos Proto-Italic *-īnos Latin -īnusd …"
+    "e": "Proto-Indo-European *lewk- Proto-Indo-European *-s Proto-Indo-European *léwks Proto-Italic *louks Latin lūx Proto-Indo-European *bʰer- Proto-Indo-European *-ós Proto-Indo-European *bʰorós Proto-Italic *-foros Latin -fer Latin lūcifer Proto-Indo-European *-nós Proto-Indo-European *-iHnos Proto-Italic *-īnos Latin -īnusd …",
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "lucilia": {
     "d": [

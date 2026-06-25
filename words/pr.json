@@ -661,10 +661,22 @@
     "rs": "PREH-si-duhnt",
     "b": [
       {
-        "s": "precedent",
-        "k": "word"
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "precedented": {
     "d": [
@@ -1837,20 +1849,22 @@
     "rs": "PREH-fur-uh-buhl",
     "b": [
       {
-        "s": "prefer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "able",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "preferent": {
     "d": [
@@ -1865,20 +1879,22 @@
     ],
     "b": [
       {
-        "s": "prefer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ent",
-        "k": "suffix",
-        "id": "ant",
-        "g": "one who; having the quality of"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "preferential": {
     "d": [
@@ -1910,26 +1926,22 @@
     "rs": "preh-fur-EHN-shuhl",
     "b": [
       {
-        "s": "prefer",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
-      },
-      {
-        "s": "ent",
-        "k": "suffix",
-        "id": "ant",
-        "g": "one who; having the quality of"
-      },
-      {
-        "s": "ial",
-        "k": "suffix",
-        "id": "ial",
-        "g": "relating to"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "preferred": {
     "d": [
@@ -1958,7 +1970,25 @@
       "antipreferred"
     ],
     "i": "/pɹɪˈfɝd/",
-    "rs": "pruh-FURD"
+    "rs": "pruh-FURD",
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "prefigurative": {
     "d": [
@@ -3295,26 +3325,22 @@
     "rs": "pruh-SKRIP-shuhn",
     "b": [
       {
-        "s": "pre",
-        "k": "prefix",
-        "id": "pre",
-        "g": "before"
-      },
-      {
-        "s": "script",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "prescriptive": {
     "d": [
@@ -3342,26 +3368,22 @@
     "i": "/pɹɪˈskɹɪptɪv/",
     "b": [
       {
-        "s": "pre",
-        "k": "prefix",
-        "id": "pre",
-        "g": "before"
-      },
-      {
-        "s": "script",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "present": {
     "d": [
@@ -6048,7 +6070,25 @@
       "proceduralism"
     ],
     "i": "/pɹəˈsiːd͡ʒ(ə)ɹəl/",
-    "rs": "pruh-SEE-jur-uhl"
+    "rs": "pruh-SEE-jur-uhl",
+    "b": [
+      {
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "processed": {
     "d": [
@@ -6126,22 +6166,22 @@
     "rs": "pruh-SEH-shuh-nuhl",
     "b": [
       {
-        "s": "pro",
-        "k": "prefix"
-      },
-      {
-        "s": "cess",
-        "k": "root"
-      },
-      {
-        "s": "ion",
-        "k": "suffix"
-      },
-      {
-        "s": "al",
-        "k": "suffix"
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "proclaimed": {
     "d": [
@@ -8772,20 +8812,22 @@
     "rs": "pruh-SPEHK-tiv",
     "b": [
       {
-        "s": "prospect",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "prospering": {
     "d": [
@@ -9469,20 +9511,22 @@
     ],
     "b": [
       {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
-        "s": "tractile",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "protruding": {
     "d": [
@@ -10774,26 +10818,22 @@
     "rs": "PREH-fur-uh-blee",
     "b": [
       {
-        "s": "prefer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "abl",
-        "k": "suffix",
-        "id": "able",
-        "g": "able to be"
-      },
-      {
-        "s": "y",
-        "k": "suffix",
-        "id": "ly",
-        "g": "in the manner of"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "preferentially": {
     "d": [
@@ -13921,10 +13961,22 @@
     "rs": "PREH-suh-duhns",
     "b": [
       {
-        "s": "precedence",
-        "k": "word"
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "precedency": {
     "d": [
@@ -13938,7 +13990,25 @@
       "precedence",
       "priority"
     ],
-    "i": "/ˈpɹɛsɪdənsi/"
+    "i": "/ˈpɹɛsɪdənsi/",
+    "b": [
+      {
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "precentor": {
     "d": [
@@ -14023,14 +14093,22 @@
     "rs": "PREE-sehpt",
     "b": [
       {
-        "s": "precept",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "preceptor": {
     "d": [
@@ -14088,14 +14166,22 @@
     "e": "From preceptor + -ship.",
     "b": [
       {
-        "s": "preceptor",
-        "k": "root"
-      },
-      {
-        "s": "ship",
-        "k": "suffix"
+        "s": "cap",
+        "k": "root",
+        "id": "cap",
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
-    ]
+    ],
+    "root": "cap",
+    "family": "family/cap.json"
   },
   "precession": {
     "d": [
@@ -14669,26 +14755,22 @@
     "rs": "pree-kuhn-SEHP-shuhn",
     "b": [
       {
-        "s": "pre",
-        "k": "prefix",
-        "id": "pre",
-        "g": "before"
-      },
-      {
-        "s": "concept",
+        "s": "cap",
         "k": "root",
         "id": "cap",
-        "g": "to take, seize"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "cap",
+        "ori": {
+          "id": "seizing-capturing",
+          "label": "Seizing & capturing",
+          "gloss": "physically take, hold, catch",
+          "by": "assistant",
+          "at": "2026-06-23T01:02:21.631Z"
+        }
       }
     ],
     "root": "cap",
-    "family": "/home/user/Claude_apps/family/cap.json"
+    "family": "family/cap.json"
   },
   "precondition": {
     "d": [
@@ -15109,14 +15191,22 @@
     ],
     "b": [
       {
-        "s": "predicate",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "predication": {
     "d": [
@@ -15253,20 +15343,22 @@
     "rs": "pri-DIK-tur",
     "b": [
       {
-        "s": "predict",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "predilection": {
     "d": [
@@ -15767,20 +15859,22 @@
     "rs": "PREH-fur-uhns",
     "b": [
       {
-        "s": "prefer",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
-      },
-      {
-        "s": "ence",
-        "k": "suffix",
-        "id": "ance",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "preferment": {
     "d": [
@@ -15805,20 +15899,22 @@
     "i": "/pɹɪˈfəːmənt/",
     "b": [
       {
-        "s": "prefer",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
-      },
-      {
-        "s": "ment",
-        "k": "suffix",
-        "id": "ment",
-        "g": "result or means of an action"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "prefiguration": {
     "d": [
@@ -16075,26 +16171,22 @@
     ],
     "b": [
       {
-        "s": "pre",
-        "k": "prefix",
-        "id": "pre",
-        "g": "before"
-      },
-      {
-        "s": "indicat",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "prejudgement": {
     "d": [
@@ -16580,14 +16672,22 @@
     },
     "b": [
       {
-        "s": "premiss",
+        "s": "mit",
         "k": "root",
         "id": "mit",
-        "g": "to send, let go"
+        "g": "Latin",
+        "src": "mit",
+        "ori": {
+          "id": "emitting",
+          "label": "Emitting & emissaries",
+          "gloss": "send out",
+          "by": "assistant",
+          "at": "2026-06-23T04:09:20.695Z"
+        }
       }
     ],
     "root": "mit",
-    "family": "/home/user/Claude_apps/family/mit.json"
+    "family": "family/mit.json"
   },
   "premix": {
     "d": [
@@ -17414,20 +17514,22 @@
     "i": "/ˈpɹiːskɹɪpt/",
     "b": [
       {
-        "s": "pre",
-        "k": "prefix",
-        "id": "pre",
-        "g": "before"
-      },
-      {
-        "s": "script",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "prescriptivism": {
     "d": [
@@ -22333,7 +22435,25 @@
       "procedural"
     ],
     "i": "/pɹəˈsi.d͡ʒɚ/",
-    "rs": "pruh-SEE-jur"
+    "rs": "pruh-SEE-jur",
+    "b": [
+      {
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "proceeding": {
     "d": [
@@ -22366,20 +22486,22 @@
     "rs": "pruh-SEE-ding",
     "b": [
       {
-        "s": "proceed",
+        "s": "cedere",
         "k": "root",
         "id": "cedere",
-        "g": "to go, move, yield, grant"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "cedere",
-    "family": "/home/user/Claude_apps/family/cedere.json"
+    "family": "family/cedere.json"
   },
   "proceedings": {
     "d": [
@@ -22592,18 +22714,22 @@
     "rs": "pruh-SEH-shuhn",
     "b": [
       {
-        "s": "pro",
-        "k": "prefix"
-      },
-      {
-        "s": "cess",
-        "k": "root"
-      },
-      {
-        "s": "ion",
-        "k": "suffix"
+        "s": "cedere",
+        "k": "root",
+        "id": "cedere",
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "cedere",
+    "family": "family/cedere.json"
   },
   "processor": {
     "d": [
@@ -23606,20 +23732,22 @@
     "rs": "pruh-DOOS",
     "b": [
       {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
-        "s": "duce",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "producer": {
     "d": [
@@ -23660,7 +23788,25 @@
       "producerism"
     ],
     "i": "/pɹəˈdusɚ/",
-    "rs": "pruh-DOO-sur"
+    "rs": "pruh-DOO-sur",
+    "b": [
+      {
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
+      }
+    ],
+    "root": "duc",
+    "family": "family/duc.json"
   },
   "product": {
     "d": [
@@ -23739,20 +23885,22 @@
     "rs": "PRAH-duhkt",
     "b": [
       {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
-        "s": "duct",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "production": {
     "d": [
@@ -23794,17 +23942,30 @@
     "b": [
       {
         "s": "pro",
-        "k": "prefix"
+        "k": "prefix",
+        "id": "pro",
+        "g": "forward, before, for",
+        "src": "pro",
+        "ori": "Latin"
       },
       {
-        "s": "duct",
-        "k": "root"
+        "s": "duc",
+        "k": "root",
+        "id": "duc",
+        "g": "to lead, draw, conduct",
+        "src": "ducere",
+        "ori": "Latin"
       },
       {
-        "s": "ion",
-        "k": "suffix"
+        "s": "tion",
+        "k": "suffix",
+        "id": "ion",
+        "g": "act or process of; noun suffix",
+        "src": "-tiōn-, -tiō",
+        "ori": "Latin"
       }
-    ]
+    ],
+    "root": "duc"
   },
   "productiveness": {
     "d": [
@@ -23823,32 +23984,22 @@
     ],
     "b": [
       {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
-        "s": "duct",
+        "s": "duc",
         "k": "root",
         "id": "duc",
-        "g": "to lead"
-      },
-      {
-        "s": "ive",
-        "k": "suffix",
-        "id": "ive",
-        "g": "tending to, having the nature of"
-      },
-      {
-        "s": "ness",
-        "k": "suffix",
-        "id": "ness",
-        "g": "state or quality of"
+        "g": "Latin",
+        "src": "duc",
+        "ori": {
+          "id": "channels-conduction",
+          "label": "Channels & conduction",
+          "gloss": "leading fluid, current, heat",
+          "by": "assistant",
+          "at": "2026-06-23T04:06:47.530Z"
+        }
       }
     ],
     "root": "duc",
-    "family": "/home/user/Claude_apps/family/duc.json"
+    "family": "family/duc.json"
   },
   "productivity": {
     "d": [
@@ -24259,7 +24410,25 @@
       "unproffered"
     ],
     "i": "/ˈpɹɑfɚ/",
-    "rs": "PRAH-fur"
+    "rs": "PRAH-fur",
+    "b": [
+      {
+        "s": "fer",
+        "k": "root",
+        "id": "fer",
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
+      }
+    ],
+    "root": "fer",
+    "family": "family/fer.json"
   },
   "proficiency": {
     "d": [
@@ -28570,26 +28739,22 @@
     "rs": "proh-SKRIP-shuhn",
     "b": [
       {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
-        "s": "script",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "prose": {
     "d": [
@@ -29033,14 +29198,22 @@
     "rs": "PRAH-spehkt",
     "b": [
       {
-        "s": "prospect",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "prospector": {
     "d": [
@@ -29061,20 +29234,22 @@
     "rs": "PRAW-spehk-tur",
     "b": [
       {
-        "s": "prospect",
+        "s": "spec",
         "k": "root",
         "id": "spec",
-        "g": "to look, see"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "spec",
+        "ori": {
+          "id": "looking-watching",
+          "label": "Looking & watching",
+          "gloss": "physical observation",
+          "by": "assistant",
+          "at": "2026-06-22T23:09:07.791Z"
+        }
       }
     ],
     "root": "spec",
-    "family": "/home/user/Claude_apps/family/spec.json"
+    "family": "family/spec.json"
   },
   "prospectus": {
     "d": [
@@ -30847,26 +31022,22 @@
     ],
     "b": [
       {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "ion",
-        "k": "suffix",
-        "id": "ion",
-        "g": "act, process, or result of"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "protractor": {
     "d": [
@@ -30892,26 +31063,22 @@
     "i": "/pɹəˈtɹæktə(ɹ)/",
     "b": [
       {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
-      },
-      {
-        "s": "or",
-        "k": "suffix",
-        "id": "er-agent",
-        "g": "one who, that which"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "protriptyline": {
     "d": [
@@ -32492,20 +32659,22 @@
     "rs": "pri-SEED",
     "b": [
       {
-        "s": "pre",
-        "k": "prefix",
-        "id": "pre",
-        "g": "before"
-      },
-      {
-        "s": "cede",
+        "s": "cedere",
         "k": "root",
         "id": "cedere",
-        "g": "to go, move, yield, grant"
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "cedere",
-    "family": "/home/user/Claude_apps/family/cedere.json"
+    "family": "family/cedere.json"
   },
   "precess": {
     "d": [
@@ -32771,14 +32940,22 @@
     "rs": "pri-DIKT",
     "b": [
       {
-        "s": "predict",
+        "s": "dic",
         "k": "root",
         "id": "dic",
-        "g": "to say, speak"
+        "g": "Latin",
+        "src": "dic",
+        "ori": {
+          "id": "speaking-dictating",
+          "label": "Speaking & dictating",
+          "gloss": "the bare act of saying",
+          "by": "assistant",
+          "at": "2026-06-23T04:04:27.371Z"
+        }
       }
     ],
     "root": "dic",
-    "family": "/home/user/Claude_apps/family/dic.json"
+    "family": "family/dic.json"
   },
   "predigest": {
     "d": [
@@ -32964,14 +33141,22 @@
     "rs": "pruh-FUR",
     "b": [
       {
-        "s": "prefer",
+        "s": "ferre",
         "k": "root",
         "id": "ferre",
-        "g": "to bear, carry, produce, endure"
+        "g": "Latin",
+        "src": "ferre",
+        "ori": {
+          "id": "bearing-carrying",
+          "label": "Bearing & carrying",
+          "gloss": "physically bearing or carrying something; movement of bearing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "ferre",
-    "family": "/home/user/Claude_apps/family/ferre.json"
+    "family": "family/ferre.json"
   },
   "prefigure": {
     "d": [
@@ -33440,20 +33625,22 @@
     "rs": "pruh-SKRYB",
     "b": [
       {
-        "s": "pre",
-        "k": "prefix",
-        "id": "pre",
-        "g": "before"
-      },
-      {
-        "s": "scribe",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "preside": {
     "d": [
@@ -34057,14 +34244,22 @@
     "rs": "pruh-SEED",
     "b": [
       {
-        "s": "proceed",
+        "s": "cedere",
         "k": "root",
         "id": "cedere",
-        "g": "to go, move, yield, grant"
+        "g": "Latin",
+        "src": "cedere",
+        "ori": {
+          "id": "yielding-conceding",
+          "label": "Yielding & conceding",
+          "gloss": "giving way, yielding, granting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "cedere",
-    "family": "/home/user/Claude_apps/family/cedere.json"
+    "family": "family/cedere.json"
   },
   "proclaim": {
     "d": [
@@ -34404,14 +34599,22 @@
     "rs": "proh-LI-fur-ayt",
     "b": [
       {
-        "s": "proliferate",
+        "s": "fer",
         "k": "root",
         "id": "fer",
-        "g": "to carry, bear"
+        "g": "Latin",
+        "src": "fer",
+        "ori": {
+          "id": "conferring-referring",
+          "label": "Bringing to mind",
+          "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+          "by": "assistant",
+          "at": "2026-06-23T05:28:10.421Z"
+        }
       }
     ],
     "root": "fer",
-    "family": "/home/user/Claude_apps/family/fer.json"
+    "family": "family/fer.json"
   },
   "prologise": {
     "d": [
@@ -35109,20 +35312,22 @@
     "rs": "proh-SKRYB",
     "b": [
       {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
-        "s": "scribe",
+        "s": "scrib",
         "k": "root",
         "id": "scrib",
-        "g": "to write"
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "root": "scrib",
-    "family": "/home/user/Claude_apps/family/scrib.json"
+    "family": "family/scrib.json"
   },
   "prosecute": {
     "d": [
@@ -35356,20 +35561,22 @@
     "rs": "proh-TRAKT",
     "b": [
       {
-        "s": "pro",
-        "k": "prefix",
-        "id": "pro",
-        "g": "forward, for"
-      },
-      {
-        "s": "tract",
+        "s": "tractare",
         "k": "root",
         "id": "tractare",
-        "g": "to pull, drag, treat, discuss"
+        "g": "Latin",
+        "src": "tractare",
+        "ori": {
+          "id": "pulling-drawing",
+          "label": "Pulling & drawing",
+          "gloss": "pulling, dragging, drawing, extracting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "tractare",
-    "family": "/home/user/Claude_apps/family/tractare.json"
+    "family": "family/tractare.json"
   },
   "protrude": {
     "d": [
@@ -35583,26 +35790,45 @@
     ],
     "b": [
       {
-        "s": "pre",
-        "k": "prefix",
-        "g": "before",
-        "o": "Latin"
-      },
-      {
         "s": "scrib",
         "k": "root",
-        "g": "to write",
-        "o": "Latin"
-      },
-      {
-        "s": "er",
-        "k": "suffix",
-        "g": "one who"
+        "id": "scrib",
+        "g": "Latin",
+        "src": "scrib",
+        "ori": {
+          "id": "writing-copying",
+          "label": "Writing & copying",
+          "gloss": "the act, its agents, artefacts, reproduction",
+          "by": "assistant",
+          "at": "2026-06-22T19:09:01.098Z"
+        }
       }
     ],
     "rel": {
       "t": "derived from",
       "l": "prescribe"
-    }
+    },
+    "root": "scrib",
+    "family": "family/scrib.json"
+  },
+  "predrank": {
+    "b": [
+      {
+        "s": "drink",
+        "k": "root",
+        "id": "drink",
+        "g": "Proto-Germanic",
+        "src": "drink",
+        "ori": {
+          "id": "ingestion-consumption",
+          "label": "Ingestion & consumption",
+          "gloss": "consuming liquids; drinking, imbibing",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "drink",
+    "family": "family/drink.json"
   }
 }

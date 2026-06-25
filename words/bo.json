@@ -2596,10 +2596,22 @@
     "rs": "bownd",
     "b": [
       {
-        "s": "bound",
-        "k": "word"
+        "s": "bind",
+        "k": "root",
+        "id": "bind",
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
-    ]
+    ],
+    "root": "bind",
+    "family": "family/bind.json"
   },
   "bounded": {
     "d": [
@@ -7177,14 +7189,22 @@
     "rs": "bahnd",
     "b": [
       {
-        "s": "bond",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "bondage": {
     "d": [
@@ -7219,20 +7239,22 @@
     "rs": "BAHN-dij",
     "b": [
       {
-        "s": "bond",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "age",
-        "k": "suffix",
-        "id": "age",
-        "g": "act, state, or condition"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "bondholder": {
     "d": [
@@ -7288,20 +7310,22 @@
     "rs": "BAHN-ding",
     "b": [
       {
-        "s": "bond",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "ing",
-        "k": "suffix",
-        "id": "ing",
-        "g": "action or process; present participle"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
   },
   "bondmaid": {
     "d": [
@@ -7363,7 +7387,25 @@
       "bondswoman",
       "bondsmanship"
     ],
-    "i": "/ˈbɑndzmən/"
+    "i": "/ˈbɑndzmən/",
+    "b": [
+      {
+        "s": "bind",
+        "k": "root",
+        "id": "bind",
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bind",
+    "family": "family/bind.json"
   },
   "bondswoman": {
     "d": [
@@ -7375,7 +7417,25 @@
     "e": "Middle English bonden English bond English -s- Proto-Germanic *wībą Proto-West Germanic *wīb Old English wīf Proto-Indo-European *mon- Proto-Germanic *mann- Proto-West Germanic *mann Old English mann Old English wīfmann Middle English womman English woman English bondswoman From bond + -s- + woman.",
     "s": [
       "bondsman"
-    ]
+    ],
+    "b": [
+      {
+        "s": "bind",
+        "k": "root",
+        "id": "bind",
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "bind",
+    "family": "family/bind.json"
   },
   "bonduc": {
     "d": [
@@ -9707,14 +9767,22 @@
     "rs": "booth",
     "b": [
       {
-        "s": "booth",
+        "s": "build",
         "k": "root",
         "id": "build",
-        "g": "to build, construct, create structures"
+        "g": "Proto-Germanic",
+        "src": "build",
+        "ori": {
+          "id": "construction-creation",
+          "label": "Construction & creation",
+          "gloss": "building structures; constructing, erecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "build",
-    "family": "/home/user/Claude_apps/family/build.json"
+    "family": "family/build.json"
   },
   "boothose": {
     "d": [
@@ -15016,19 +15084,41 @@
   "bonded": {
     "b": [
       {
-        "s": "bond",
+        "s": "bind",
         "k": "root",
         "id": "bind",
-        "g": "to bind, tie, constrain"
-      },
-      {
-        "s": "ed",
-        "k": "suffix",
-        "id": "ed",
-        "g": "past tense; having"
+        "g": "Proto-Germanic",
+        "src": "bind",
+        "ori": {
+          "id": "fastening-joining",
+          "label": "Fastening & joining",
+          "gloss": "binding together; tying, fastening, connecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
       }
     ],
     "root": "bind",
-    "family": "/home/user/Claude_apps/family/bind.json"
+    "family": "family/bind.json"
+  },
+  "bothy": {
+    "b": [
+      {
+        "s": "build",
+        "k": "root",
+        "id": "build",
+        "g": "Proto-Germanic",
+        "src": "build",
+        "ori": {
+          "id": "construction-creation",
+          "label": "Construction & creation",
+          "gloss": "building structures; constructing, erecting",
+          "by": "assistant",
+          "at": "2026-06-25T00:00:00.000Z"
+        }
+      }
+    ],
+    "root": "build",
+    "family": "family/build.json"
   }
 }
