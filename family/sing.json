@@ -1,5 +1,5 @@
 {
-  "_note": "Editor data for sing family (Proto-Germanic *singan-, 'to sing, resound'). 22 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
+  "_note": "Editor data for sing family (Proto-Germanic *singan-, 'to sing, resound'). 18 verified placements across 2 semantic regions. All etymologies confirmed from dictionary sources.",
   "root": "sing",
   "rootLabel": "*singan-",
   "rootGloss": "Proto-Germanic · to sing, sound, resound",
@@ -8,13 +8,6 @@
       "id": "vocalization-music",
       "label": "Vocalization & music",
       "gloss": "producing song; singing, musical utterance",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z"
-    },
-    {
-      "id": "resonance-vibration",
-      "label": "Resonance & vibration",
-      "gloss": "resonating, vibrating, making sound",
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z"
     },
@@ -127,32 +120,6 @@
       "note": "To sing again. From re- + sing."
     },
     {
-      "w": "singe",
-      "s": null,
-      "region": "resonance-vibration",
-      "parent": null,
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "To burn lightly; related to Proto-Germanic singan (to scorch, sing)."
-    },
-    {
-      "w": "singed",
-      "s": null,
-      "region": "resonance-vibration",
-      "parent": "singe",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Burned lightly; scorched. From singe + -ed."
-    },
-    {
-      "w": "singeing",
-      "s": null,
-      "region": "resonance-vibration",
-      "parent": "singe",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Burning lightly; scorching. From singe + -ing."
-    },
     {
       "w": "sinner",
       "s": null,
@@ -236,17 +203,5 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z"
     },
-    "singed": {
-      "l": "singe",
-      "t": "past tense of (also separate placement as adjective)",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z"
-    },
-    "singeing": {
-      "l": "singe",
-      "t": "present participle of (also separate placement as noun)",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z"
-    }
   }
 }
