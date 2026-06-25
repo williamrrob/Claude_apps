@@ -49,57 +49,194 @@
     return { prefix: "prefix", root: "root", suffix: "suffix", linker: "link", unknown: "stem", word: "word" }[k] || k;
   }
 
-  // ---------- etymology request system ----------
-  async function isMWVerified(rec) {
-    if (!rec || !rec.m) return false;
-    return rec.m.verified === true || (rec.m.source && rec.m.source.includes("M-W"));
-  }
+  // ---------- API keys (Claude + GitHub) stored in localStorage ----------
+  const CLAUDE_KEY_LS = "rootwork.claudeKey";
+  const GH_KEY_LS = "rootwork.ghToken";
+  const GH_REPO = "williamrrob/Claude_apps";
+  const GH_BRANCH = "claude/visual-etymology-app-093c1d";
 
-  function submitEtymologyRequest(word) {
-    const requestId = "req_" + Date.now() + "_" + Math.random().toString(36).substr(2, 9);
-    const request = {
-      id: requestId,
-      word: word,
-      status: "pending",
-      requested_at: new Date().toISOString(),
-      requested_by: "app_user",
-      etymology: null,
-      morpheme_breakdown: null,
-      mw_verified: false,
-      notes: null
-    };
-    // Log to console for backend monitoring
-    console.log("Etymology request submitted:", request);
-    // Also try to save to localStorage for persistence
-    try {
-      let requests = JSON.parse(localStorage.getItem("etymology_requests") || "[]");
-      requests.push(request);
-      localStorage.setItem("etymology_requests", JSON.stringify(requests));
-    } catch (e) {
-      console.warn("Could not save request to localStorage:", e);
+  function getClaudeKey() { try { return localStorage.getItem(CLAUDE_KEY_LS) || ""; } catch (e) { return ""; } }
+  function setClaudeKey(k) { try { localStorage.setItem(CLAUDE_KEY_LS, k); } catch (e) {} }
+  function getGhToken() { try { return localStorage.getItem(GH_KEY_LS) || ""; } catch (e) { return ""; } }
+  function setGhToken(k) { try { localStorage.setItem(GH_KEY_LS, k); } catch (e) {} }
+
+  // ---------- Claude call: web-search for M-W, then apply etymology principles ----------
+  // System prompt is intentionally compact (references ETYMOLOGY_PRINCIPLES.md in the repo).
+  const VERIFY_SYSTEM = `You are the morpheme analyzer for the Rootwork etymology app.
+
+Search Merriam-Webster (merriam-webster.com) to verify the word's etymology, then apply these principles:
+1. Trace every morpheme to its deepest known ancestor — preferably Proto-Indo-European (PIE)
+2. Cognate surface forms from the same PIE root share one conceptual entry (e.g. mar/mor/moor/mere all = PIE *móri)
+3. Cover all source languages: Old English, Old Norse, Old French, Arabic, Irish/Gaelic, Dutch, etc.
+
+Output ONLY valid JSON — no commentary, no markdown fences:
+{"b":[{"s":"<exact_substring_in_word>","k":"prefix|root|suffix","src":"<source_word>","o":"<language>","g":"<gloss_max_60_chars>"},...]}
+Critical rules:
+• All "s" values concatenated must equal the full English word exactly
+• "src": actual word in the source language (e.g. *móri, marinus, -ais, frangere)
+• "o": full language name (e.g. "Proto-Indo-European", "Old French", "Arabic")
+• No meaningful decomposition → {"b":[{"s":"<full_word>","k":"word"}]}`;
+
+  async function callClaude(word, etymStr) {
+    const key = getClaudeKey();
+    if (!key) throw new Error("No Claude API key. Add one in Settings (⚙).");
+
+    const userMsg = "Analyze morpheme structure of: " + word + "\nKnown etymology: " + (etymStr || "(check Merriam-Webster online)");
+    let messages = [{ role: "user", content: userMsg }];
+
+    // Tool-use loop: the web_search_20250305 tool is server-side (Anthropic executes
+    // the search). We loop up to 5 rounds to handle multi-step tool use.
+    for (let round = 0; round < 5; round++) {
+      const res = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: {
+          "x-api-key": key,
+          "anthropic-version": "2023-06-01",
+          "content-type": "application/json",
+          "anthropic-dangerous-direct-browser-access": "true"
+        },
+        body: JSON.stringify({
+          model: "claude-sonnet-4-6",
+          max_tokens: 1500,
+          system: VERIFY_SYSTEM,
+          tools: [{ type: "web_search_20250305", name: "web_search" }],
+          messages: messages
+        })
+      });
+
+      if (!res.ok) {
+        const errData = await res.json().catch(function () { return {}; });
+        throw new Error((errData.error && errData.error.message) || "API error " + res.status);
+      }
+
+      const data = await res.json();
+
+      if (data.stop_reason === "end_turn") {
+        const textBlock = (data.content || []).find(function (b) { return b.type === "text"; });
+        if (!textBlock) throw new Error("Empty response from Claude");
+        const match = textBlock.text.match(/\{[\s\S]*\}/);
+        if (!match) throw new Error("No JSON found in response");
+        return JSON.parse(match[0]);
+      }
+
+      if (data.stop_reason === "tool_use") {
+        // Server-side tool: Anthropic executes search, we acknowledge and continue
+        const toolUses = (data.content || []).filter(function (b) { return b.type === "tool_use"; });
+        messages.push({ role: "assistant", content: data.content });
+        messages.push({
+          role: "user",
+          content: toolUses.map(function (t) {
+            return { type: "tool_result", tool_use_id: t.id, content: "" };
+          })
+        });
+        continue;
+      }
+
+      break;
     }
-    return { status: "submitted", request_id: requestId, message: "Request submitted. Backend will process it when available." };
+    throw new Error("Verification did not complete in expected rounds");
   }
 
-  function buildRequestButton(word) {
-    const btn = el("button", "etymology-request-btn", "📝 Request M-W verification");
+  // ---------- GitHub API: commit updated word shard directly to the repo ----------
+  async function commitBreakdownToGitHub(word, newBreakdown) {
+    const token = getGhToken();
+    if (!token) throw new Error("No GitHub token. Add one in Settings (⚙).");
+
+    const shardKey = String(word).slice(0, 2).toLowerCase();
+    const filePath = "words/" + shardKey + ".json";
+    const apiBase = "https://api.github.com/repos/" + GH_REPO + "/contents/" + filePath;
+
+    // 1. Fetch current file (need SHA for the PUT)
+    const getRes = await fetch(apiBase + "?ref=" + GH_BRANCH, {
+      headers: { Authorization: "token " + token, Accept: "application/vnd.github.v3+json" }
+    });
+    if (!getRes.ok) throw new Error("GitHub GET failed: " + getRes.status);
+    const fileData = await getRes.json();
+
+    // 2. Decode → parse → patch → re-encode
+    const currentContent = JSON.parse(atob(fileData.content.replace(/\n/g, "")));
+    if (!currentContent[word]) currentContent[word] = {};
+    currentContent[word].b = newBreakdown;
+    currentContent[word]._claudeVerified = true;
+    const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(currentContent))));
+
+    // 3. Commit
+    const putRes = await fetch(apiBase, {
+      method: "PUT",
+      headers: {
+        Authorization: "token " + token,
+        Accept: "application/vnd.github.v3+json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: "Verify " + word + " etymology via Rootwork app",
+        content: encoded,
+        sha: fileData.sha,
+        branch: GH_BRANCH
+      })
+    });
+    if (!putRes.ok) {
+      const errData = await putRes.json().catch(function () { return {}; });
+      throw new Error("GitHub commit failed: " + (errData.message || putRes.status));
+    }
+    return await putRes.json();
+  }
+
+  // ---------- Verify button: one press → Claude + web search → GitHub commit ----------
+  function buildVerifyButton(word, rec) {
+    if (!getClaudeKey()) return null;
+    const btn = el("button", "verify-btn");
     btn.type = "button";
-    btn.setAttribute("aria-label", "Request Merriam-Webster etymology verification for this word");
-    btn.addEventListener("click", function () {
+    btn.setAttribute("aria-label", "Verify etymology with Claude + Merriam-Webster");
+
+    const hasGh = !!getGhToken();
+    btn.textContent = hasGh ? "Verify & commit to database" : "Verify with Claude";
+
+    btn.addEventListener("click", async function () {
       btn.disabled = true;
-      const originalText = btn.textContent;
-      btn.textContent = "Processing…";
-      const result = submitEtymologyRequest(word);
-      if (result.status === "submitted") {
-        btn.textContent = "✓ Request #" + result.request_id.slice(-9);
-        btn.title = "Your request has been submitted to the backend. Check console logs for status.";
-        setTimeout(function () { btn.textContent = originalText; btn.disabled = false; }, 3000);
-      } else {
-        btn.textContent = "Error";
-        setTimeout(function () { btn.textContent = originalText; btn.disabled = false; }, 2000);
+      btn.className = "verify-btn loading";
+      btn.textContent = "Searching M-W…";
+      try {
+        const result = await callClaude(word, rec && rec.e);
+        if (!result || !result.b || !result.b.length) throw new Error("No breakdown returned");
+
+        if (getGhToken()) {
+          btn.textContent = "Committing to database…";
+          await commitBreakdownToGitHub(word, result.b);
+          // Invalidate shard cache so the next getWord() fetches fresh data
+          delete shardCache[String(word).slice(0, 2).toLowerCase()];
+          btn.className = "verify-btn success";
+          btn.textContent = "✓ Verified & committed";
+          // Reload the word after a brief pause so the user can read the status
+          setTimeout(function () { run(word); }, 1200);
+        } else {
+          // No GitHub token — store in localStorage only
+          try {
+            const ov = JSON.parse(localStorage.getItem("rootwork.overrides") || "{}");
+            ov[word] = Object.assign({}, rec || {}, { b: result.b, _claudeVerified: true });
+            localStorage.setItem("rootwork.overrides", JSON.stringify(ov));
+          } catch (e) {}
+          btn.className = "verify-btn success";
+          btn.textContent = "✓ Verified (add GitHub token to persist)";
+          setTimeout(function () { run(word); }, 1200);
+        }
+      } catch (e) {
+        btn.className = "verify-btn error";
+        btn.textContent = "Error: " + (e.message || "Unknown");
+        btn.disabled = false;
+        setTimeout(function () {
+          btn.className = "verify-btn";
+          btn.textContent = hasGh ? "Retry — Verify & commit" : "Retry — Verify with Claude";
+          btn.disabled = false;
+        }, 4000);
       }
     });
     return btn;
+  }
+
+  function isMWVerified(rec) {
+    if (!rec) return false;
+    return !!(rec._claudeVerified || (rec.m && (rec.m.verified === true || (rec.m.source && rec.m.source.includes("M-W")))));
   }
 
   // ---------- theme ----------
@@ -118,7 +255,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "42";
+  const DATA_V = "43";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -142,6 +279,11 @@
     return shardCache[key];
   }
   function getWord(word) {
+    // Check localStorage overrides first (written when GitHub token is absent)
+    try {
+      const ov = JSON.parse(localStorage.getItem("rootwork.overrides") || "{}");
+      if (ov[word]) return Promise.resolve(ov[word]);
+    } catch (e) {}
     const key = String(word || "").slice(0, 2).toLowerCase();
     return fetchShard(key).then(function (sh) { return sh ? (sh[word] || null) : null; });
   }
@@ -683,11 +825,14 @@
       });
       entryEl.appendChild(av);
     }
-    // Add request button if word lacks M-W verification
+    // Add verify button if word lacks M-W verification and a Claude key is present
     if (!isVerified && rec && rec.d && rec.d.length) {
-      const reqSection = el("div", "entry-request-section");
-      reqSection.appendChild(buildRequestButton(result.word));
-      entryEl.appendChild(reqSection);
+      const vBtn = buildVerifyButton(result.word, rec);
+      if (vBtn) {
+        const reqSection = el("div", "entry-request-section");
+        reqSection.appendChild(vBtn);
+        entryEl.appendChild(reqSection);
+      }
     }
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
     await delay(28); if (token !== runToken) return;
@@ -2088,6 +2233,56 @@
     });
     suggestEl.hidden = false;
   }
+
+  // ---------- settings overlay ----------
+  const settingsBtn = $("settingsBtn");
+  const settingsOverlay = $("settingsOverlay");
+  const settingsClose = $("settingsClose");
+  const claudeKeyInput = $("claudeKeyInput");
+  const saveKeyBtn = $("saveKeyBtn");
+  const keyStatus = $("keyStatus");
+  const githubTokenInput = $("githubTokenInput");
+  const saveGhBtn = $("saveGhBtn");
+  const ghStatus = $("ghStatus");
+
+  function openSettings() {
+    if (claudeKeyInput) claudeKeyInput.value = getClaudeKey() ? "••••••••" : "";
+    if (githubTokenInput) githubTokenInput.value = getGhToken() ? "••••••••" : "";
+    if (settingsOverlay) settingsOverlay.hidden = false;
+  }
+  function closeSettings() { if (settingsOverlay) settingsOverlay.hidden = true; }
+
+  if (settingsBtn) settingsBtn.addEventListener("click", openSettings);
+  if (settingsClose) settingsClose.addEventListener("click", closeSettings);
+  if (settingsOverlay) settingsOverlay.addEventListener("click", function (e) {
+    if (e.target === settingsOverlay) closeSettings();
+  });
+  if (saveKeyBtn) saveKeyBtn.addEventListener("click", function () {
+    const v = (claudeKeyInput && claudeKeyInput.value.trim()) || "";
+    if (v && v !== "••••••••") {
+      setClaudeKey(v);
+      if (keyStatus) { keyStatus.textContent = "Saved."; keyStatus.className = "key-status ok"; }
+    } else if (!v) {
+      setClaudeKey("");
+      if (keyStatus) { keyStatus.textContent = "Cleared."; keyStatus.className = "key-status"; }
+    } else {
+      if (keyStatus) { keyStatus.textContent = "Key unchanged."; keyStatus.className = "key-status"; }
+    }
+    setTimeout(function () { if (keyStatus) keyStatus.textContent = ""; }, 2200);
+  });
+  if (saveGhBtn) saveGhBtn.addEventListener("click", function () {
+    const v = (githubTokenInput && githubTokenInput.value.trim()) || "";
+    if (v && v !== "••••••••") {
+      setGhToken(v);
+      if (ghStatus) { ghStatus.textContent = "Saved."; ghStatus.className = "key-status ok"; }
+    } else if (!v) {
+      setGhToken("");
+      if (ghStatus) { ghStatus.textContent = "Cleared."; ghStatus.className = "key-status"; }
+    } else {
+      if (ghStatus) { ghStatus.textContent = "Token unchanged."; ghStatus.className = "key-status"; }
+    }
+    setTimeout(function () { if (ghStatus) ghStatus.textContent = ""; }, 2200);
+  });
 
   // ---------- events ----------
   function submit() { input.blur(); hideSuggest(); run(input.value); }
