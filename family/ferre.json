@@ -1,5 +1,5 @@
 {
-  "_note": "Editor data for the ferre family (Latin ferre, 'to bear, carry, produce, endure'). 40 verified placements across 5 semantic regions. EXCLUDES false positives: bear/bearer/bearing (from Proto-Germanic *bʰerh-, not ferre), proliferous/soporiferous (not in dictionary). Root meaning extends from physical bearing (carrying) to productive/fertile capacity to abstract endurance and comparison. Placement format with provenance; regenerators MUST preserve by:assistant.",
+  "_note": "Editor data for the ferre family (Latin ferre, 'to bear, carry, produce, endure'). 41 verified placements across 5 semantic regions. EXCLUDES false positives: bear/bearer/bearing (from Proto-Germanic *bʰerh-, not ferre), proliferous (not in dictionary). Root meaning extends from physical bearing (carrying) to productive/fertile capacity to abstract endurance and comparison. Placement format with provenance; regenerators MUST preserve by:assistant.",
   "root": "ferre",
   "rootLabel": "ferre",
   "rootGloss": "Latin · to bear, carry, produce, endure",
@@ -346,6 +346,15 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
       "note": "Bearing pestilence; noxious, harmful. From Latin pestifer (plague-bearing), from pestis + -ferous (bearing)."
+    },
+    {
+      "w": "soporiferous",
+      "s": null,
+      "region": "fertile-productive",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Sleep-inducing; causing sleep. From Latin sopor (sleep) + -ferous (bearing)."
     },
     {
       "w": "aquifer",
