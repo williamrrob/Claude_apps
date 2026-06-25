@@ -283,5 +283,156 @@
       "note": "One who holds the place of another; a military officer. From Middle English lieutenant, from Old French lieu tenant (one holding the place), from lieu (place) + tenant (holding)."
     }
   ],
-  "collapse": {}
+  "collapse": {
+    "contained": {
+      "l": "contain",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "containing": {
+      "l": "contain",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "contains": {
+      "l": "contain",
+      "t": "3rd person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "pertained": {
+      "l": "pertain",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "pertaining": {
+      "l": "pertain",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "pertains": {
+      "l": "pertain",
+      "t": "3rd person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "maintained": {
+      "l": "maintain",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "maintaining": {
+      "l": "maintain",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "maintains": {
+      "l": "maintain",
+      "t": "3rd person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "sustained": {
+      "l": "sustain",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "sustaining": {
+      "l": "sustain",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "sustains": {
+      "l": "sustain",
+      "t": "3rd person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "detained": {
+      "l": "detain",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "detaining": {
+      "l": "detain",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "detains": {
+      "l": "detain",
+      "t": "3rd person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "retained": {
+      "l": "retain",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "retaining": {
+      "l": "retain",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "retains": {
+      "l": "retain",
+      "t": "3rd person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "obtained": {
+      "l": "obtain",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "obtaining": {
+      "l": "obtain",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "obtains": {
+      "l": "obtain",
+      "t": "3rd person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "attained": {
+      "l": "attain",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "attaining": {
+      "l": "attain",
+      "t": "present participle of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "attains": {
+      "l": "attain",
+      "t": "3rd person singular present of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "tenaciously": {
+      "l": "tenacious",
+      "t": "adverbial form of",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
 }
