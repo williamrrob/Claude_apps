@@ -1,0 +1,179 @@
+{
+  "education": {
+    "parts": [
+      {
+        "kind": "prefix",
+        "id": "e",
+        "gloss": "out, out of",
+        "surface": "e",
+        "origin": "Latin",
+        "source": "ex"
+      },
+      {
+        "kind": "root",
+        "id": "duc",
+        "gloss": "to lead, draw, conduct",
+        "surface": "duc",
+        "origin": "Latin",
+        "source": "ducere"
+      },
+      {
+        "kind": "suffix",
+        "id": "ion",
+        "gloss": "act, process, or result of",
+        "surface": "ation",
+        "origin": "Latin",
+        "source": "-atio/-tiō"
+      }
+    ],
+    "root": "duc",
+    "family": null,
+    "mwEtymology": "Latin educatus, past participle of educare (to lead out, educate), from e- + ducere (to lead)"
+  },
+  "nation": {
+    "parts": [
+      {
+        "kind": "root",
+        "id": "nat",
+        "gloss": "to be born; birth, race, nation",
+        "surface": "nat",
+        "origin": "Latin",
+        "source": "natio (from nasci, to be born)"
+      },
+      {
+        "kind": "suffix",
+        "id": "ion",
+        "gloss": "act, process, or result of; or noun suffix",
+        "surface": "ion",
+        "origin": "Latin",
+        "source": "-iō/-tion"
+      }
+    ],
+    "root": "nat",
+    "family": null,
+    "mwEtymology": "Middle English nacioun, from Anglo-French naciun, from Latin nation-, natio (birth, race, nation), from nasci (to be born)"
+  },
+  "action": {
+    "parts": [
+      {
+        "kind": "root",
+        "id": "ag",
+        "gloss": "to drive, cause to move, do",
+        "surface": "ag",
+        "origin": "Latin",
+        "source": "agere"
+      },
+      {
+        "kind": "suffix",
+        "id": "ion",
+        "gloss": "activity, act, legal process; noun suffix",
+        "surface": "tion",
+        "origin": "Latin",
+        "source": "-tiōn-, -tiō"
+      }
+    ],
+    "root": "ag",
+    "family": null,
+    "mwEtymology": "Middle English accioun, from Anglo-French accion, from Latin actiōn-, actiō (activity, act), from agere (to do, act) + -tiōn, -tiō (noun suffix)"
+  },
+  "station": {
+    "parts": [
+      {
+        "kind": "root",
+        "id": "sta",
+        "gloss": "to stand, be in a particular place or state",
+        "surface": "sta",
+        "origin": "Latin",
+        "source": "stare"
+      },
+      {
+        "kind": "suffix",
+        "id": "ion",
+        "gloss": "place, condition, or act; noun suffix",
+        "surface": "tion",
+        "origin": "Latin",
+        "source": "-tiōn-, -tiō"
+      }
+    ],
+    "root": "sta",
+    "family": null,
+    "mwEtymology": "Latin statiōn-, statiō (act of standing), from stare (to stand) + -tiōn, -tiō"
+  },
+  "production": {
+    "parts": [
+      {
+        "kind": "prefix",
+        "id": "pro",
+        "gloss": "forward, before, for",
+        "surface": "pro",
+        "origin": "Latin",
+        "source": "pro"
+      },
+      {
+        "kind": "root",
+        "id": "duc",
+        "gloss": "to lead, draw, conduct",
+        "surface": "duc",
+        "origin": "Latin",
+        "source": "ducere"
+      },
+      {
+        "kind": "suffix",
+        "id": "ion",
+        "gloss": "act or process of; noun suffix",
+        "surface": "tion",
+        "origin": "Latin",
+        "source": "-tiōn-, -tiō"
+      }
+    ],
+    "root": "duc",
+    "family": null,
+    "mwEtymology": "Latin productiōn-, productiō (a bringing forth), from pro (forward) + ducere (to lead) + -tiō (noun suffix)"
+  },
+  "dictionary": {
+    "parts": [
+      {
+        "kind": "root",
+        "id": "dic",
+        "gloss": "speech, word, expression",
+        "surface": "dicti",
+        "origin": "Latin",
+        "source": "dictiō (from dicere, to speak)"
+      },
+      {
+        "kind": "suffix",
+        "id": "ary",
+        "gloss": "relating to, connected with",
+        "surface": "ary",
+        "origin": "Latin",
+        "source": "-arius/-ārium"
+      }
+    ],
+    "root": "dic",
+    "family": null,
+    "mwEtymology": "Medieval Latin dictiōnārium, from Latin dictiōn-, dictiō (speech, word, expression, from dicere to speak) + -ārium/-arius (relating to)"
+  },
+  "capacity": {
+    "parts": [
+      {
+        "kind": "root",
+        "id": "cap",
+        "gloss": "able to hold, spacious",
+        "surface": "capac",
+        "origin": "Latin",
+        "source": "capax (from capere, to take, hold)"
+      },
+      {
+        "kind": "suffix",
+        "id": "ity",
+        "gloss": "state or quality of",
+        "surface": "ity",
+        "origin": "Latin",
+        "source": "-itas"
+      }
+    ],
+    "root": "cap",
+    "family": null,
+    "mwEtymology": "Middle English capacite, from Middle French capacité, from Latin capacitat-, capacitas (state of being able to hold), from capax (able, spacious, from capere to take, hold) + -itas (noun suffix)"
+  }
+}
