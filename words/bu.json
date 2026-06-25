@@ -483,7 +483,28 @@
       }
     ],
     "root": "build",
-    "family": "family/build.json"
+    "family": "family/build.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "build",
+          "gloss": "Proto-Germanic",
+          "surface": "build",
+          "origin": {
+            "id": "construction-creation",
+            "label": "Construction & creation",
+            "gloss": "building structures; constructing, erecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "build"
+        }
+      ],
+      "root": "build",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "buirdly": {
     "d": [
@@ -4615,7 +4636,28 @@
       }
     ],
     "root": "build",
-    "family": "family/build.json"
+    "family": "family/build.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "build",
+          "gloss": "Proto-Germanic",
+          "surface": "build",
+          "origin": {
+            "id": "construction-creation",
+            "label": "Construction & creation",
+            "gloss": "building structures; constructing, erecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "build"
+        }
+      ],
+      "root": "build",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "builder": {
     "d": [
@@ -4670,7 +4712,28 @@
       }
     ],
     "root": "build",
-    "family": "family/build.json"
+    "family": "family/build.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "build",
+          "gloss": "Proto-Germanic",
+          "surface": "build",
+          "origin": {
+            "id": "construction-creation",
+            "label": "Construction & creation",
+            "gloss": "building structures; constructing, erecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "build"
+        }
+      ],
+      "root": "build",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "building": {
     "d": [
@@ -4729,7 +4792,28 @@
       }
     ],
     "root": "build",
-    "family": "family/build.json"
+    "family": "family/build.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "build",
+          "gloss": "Proto-Germanic",
+          "surface": "build",
+          "origin": {
+            "id": "construction-creation",
+            "label": "Construction & creation",
+            "gloss": "building structures; constructing, erecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "build"
+        }
+      ],
+      "root": "build",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "buildup": {
     "d": [
@@ -4769,7 +4853,28 @@
       }
     ],
     "root": "build",
-    "family": "family/build.json"
+    "family": "family/build.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "build",
+          "gloss": "Proto-Germanic",
+          "surface": "build",
+          "origin": {
+            "id": "construction-creation",
+            "label": "Construction & creation",
+            "gloss": "building structures; constructing, erecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "build"
+        }
+      ],
+      "root": "build",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "bujumbura": {
     "d": [
@@ -12088,6 +12193,27 @@
       }
     ],
     "root": "build",
-    "family": "family/build.json"
+    "family": "family/build.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "build",
+          "gloss": "Proto-Germanic",
+          "surface": "build",
+          "origin": {
+            "id": "construction-creation",
+            "label": "Construction & creation",
+            "gloss": "building structures; constructing, erecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "build"
+        }
+      ],
+      "root": "build",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

@@ -247,7 +247,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tractile": {
     "d": [
@@ -304,7 +325,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tractive": {
     "d": [
@@ -331,7 +373,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "trademarked": {
     "d": [
@@ -1202,7 +1265,28 @@
       "transferrable"
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ferre",
+          "gloss": "Latin",
+          "surface": "ferre",
+          "origin": {
+            "id": "bearing-carrying",
+            "label": "Bearing & carrying",
+            "gloss": "physically bearing or carrying something; movement of bearing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transferrable": {
     "d": [
@@ -1818,7 +1902,28 @@
       }
     ],
     "root": "mit",
-    "family": "family/mit.json"
+    "family": "family/mit.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "mit",
+          "gloss": "Latin",
+          "surface": "mit",
+          "origin": {
+            "id": "emitting",
+            "label": "Emitting & emissaries",
+            "gloss": "send out",
+            "by": "assistant",
+            "at": "2026-06-23T04:09:20.695Z"
+          },
+          "source": "mit"
+        }
+      ],
+      "root": "mit",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transmittable": {
     "d": [
@@ -2367,7 +2472,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transverse": {
     "d": [
@@ -2425,7 +2551,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transvestic": {
     "d": [
@@ -2724,7 +2871,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "treacherous": {
     "d": [
@@ -5824,7 +5992,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transversely": {
     "d": [
@@ -5855,7 +6044,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "treacherously": {
     "d": [
@@ -6900,7 +7110,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tractability": {
     "d": [
@@ -7007,7 +7238,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tractor": {
     "d": [
@@ -7060,7 +7312,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tracy": {
     "d": [
@@ -9266,7 +9539,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transcript": {
     "d": [
@@ -9332,7 +9626,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transcriptase": {
     "d": [
@@ -9416,7 +9731,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transducer": {
     "d": [
@@ -9617,7 +9953,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "trans",
+          "surface": "trans",
+          "gloss": "trans- prefix",
+          "source": "trans-"
+        },
+        {
+          "kind": "root",
+          "id": "fer",
+          "surface": "fer",
+          "gloss": "to carry",
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "transferability": {
     "d": [
@@ -9666,7 +10023,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transferee": {
     "d": [
@@ -9697,7 +10075,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transference": {
     "d": [
@@ -9748,7 +10147,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transferer": {
     "d": [
@@ -9777,7 +10197,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transferor": {
     "d": [
@@ -9804,7 +10245,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transferral": {
     "d": [
@@ -9837,7 +10299,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transferrer": {
     "d": [
@@ -9880,7 +10363,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transfiguration": {
     "d": [
@@ -10710,7 +11214,28 @@
       }
     ],
     "root": "mit",
-    "family": "family/mit.json"
+    "family": "family/mit.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "mit",
+          "gloss": "Latin",
+          "surface": "mit",
+          "origin": {
+            "id": "emitting",
+            "label": "Emitting & emissaries",
+            "gloss": "send out",
+            "by": "assistant",
+            "at": "2026-06-23T04:09:20.695Z"
+          },
+          "source": "mit"
+        }
+      ],
+      "root": "mit",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transmittal": {
     "d": [
@@ -10824,7 +11349,28 @@
       }
     ],
     "root": "mit",
-    "family": "family/mit.json"
+    "family": "family/mit.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "mit",
+          "gloss": "Latin",
+          "surface": "mit",
+          "origin": {
+            "id": "emitting",
+            "label": "Emitting & emissaries",
+            "gloss": "send out",
+            "by": "assistant",
+            "at": "2026-06-23T04:09:20.695Z"
+          },
+          "source": "mit"
+        }
+      ],
+      "root": "mit",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "transmogrification": {
     "d": [
@@ -12449,7 +12995,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "traverse": {
     "d": [
@@ -12515,7 +13082,36 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        },
+        {
+          "kind": "suffix",
+          "id": "1",
+          "gloss": "",
+          "surface": "1",
+          "origin": "Latin/Old English",
+          "source": "-1"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "traverser": {
     "d": [
@@ -13223,7 +13819,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "treater": {
     "d": [
@@ -13322,7 +13939,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "treaty": {
     "d": [
@@ -22016,7 +22654,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "trans",
+          "surface": "trans",
+          "gloss": "trans- prefix",
+          "source": "trans-"
+        },
+        {
+          "kind": "root",
+          "id": "script",
+          "surface": "script",
+          "gloss": "root",
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "transduce": {
     "d": [

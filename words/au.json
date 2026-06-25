@@ -571,7 +571,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "auriform": {
     "d": [
@@ -744,7 +765,28 @@
       "auspiciousness"
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "austenitic": {
     "d": [
@@ -4060,7 +4102,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "auspices": {
     "d": [
@@ -6496,7 +6559,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "authenticate": {
     "d": [

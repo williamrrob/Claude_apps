@@ -745,7 +745,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonadhesive": {
     "d": [
@@ -1568,7 +1589,28 @@
       }
     ],
     "root": "mit",
-    "family": "family/mit.json"
+    "family": "family/mit.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "mit",
+          "gloss": "Latin",
+          "surface": "mit",
+          "origin": {
+            "id": "emitting",
+            "label": "Emitting & emissaries",
+            "gloss": "send out",
+            "by": "assistant",
+            "at": "2026-06-23T04:09:20.695Z"
+          },
+          "source": "mit"
+        }
+      ],
+      "root": "mit",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "noncommittal": {
     "d": [
@@ -1649,7 +1691,28 @@
       }
     ],
     "root": "petere",
-    "family": "family/petere.json"
+    "family": "family/petere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "petere",
+          "gloss": "Latin",
+          "surface": "petere",
+          "origin": {
+            "id": "seeking-requesting",
+            "label": "Seeking & requesting",
+            "gloss": "asking for, requesting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "petere"
+        }
+      ],
+      "root": "petere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "noncompliant": {
     "d": [
@@ -1758,7 +1821,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonconductive": {
     "d": [
@@ -1789,7 +1873,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonconforming": {
     "d": [
@@ -1922,7 +2027,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonconvergent": {
     "d": [
@@ -2114,7 +2240,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nondenominational": {
     "d": [
@@ -2184,7 +2331,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nondigestible": {
     "d": [
@@ -4606,7 +4774,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonproductive": {
     "d": [
@@ -4652,7 +4841,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonprofessional": {
     "d": [
@@ -5387,7 +5597,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonrhythmic": {
     "d": [
@@ -5854,7 +6085,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonspherical": {
     "d": [
@@ -6415,7 +6667,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nontranslational": {
     "d": [
@@ -6472,7 +6745,28 @@
       }
     ],
     "root": "mit",
-    "family": "family/mit.json"
+    "family": "family/mit.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "mit",
+          "gloss": "Latin",
+          "surface": "mit",
+          "origin": {
+            "id": "emitting",
+            "label": "Emitting & emissaries",
+            "gloss": "send out",
+            "by": "assistant",
+            "at": "2026-06-23T04:09:20.695Z"
+          },
+          "source": "mit"
+        }
+      ],
+      "root": "mit",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonturbulent": {
     "d": [
@@ -10253,7 +10547,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nonaccomplishment": {
     "d": [
@@ -10867,7 +11182,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "nondriver": {
     "d": [
@@ -15128,6 +15464,27 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

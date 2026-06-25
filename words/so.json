@@ -1897,7 +1897,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "somnific": {
     "d": [
@@ -2445,7 +2466,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ferre",
+          "gloss": "Latin",
+          "surface": "ferre",
+          "origin": {
+            "id": "bearing-carrying",
+            "label": "Bearing & carrying",
+            "gloss": "physically bearing or carrying something; movement of bearing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "soporific": {
     "d": [
@@ -9933,7 +9975,28 @@
       }
     ],
     "root": "sing",
-    "family": "family/sing.json"
+    "family": "family/sing.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "sing",
+          "gloss": "Proto-Germanic",
+          "surface": "sing",
+          "origin": {
+            "id": "vocalization-music",
+            "label": "Vocalization & music",
+            "gloss": "producing song; singing, musical utterance",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "sing"
+        }
+      ],
+      "root": "sing",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "songbird": {
     "d": [
@@ -9979,7 +10042,28 @@
       }
     ],
     "root": "sing",
-    "family": "family/sing.json"
+    "family": "family/sing.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "sing",
+          "gloss": "Proto-Germanic",
+          "surface": "sing",
+          "origin": {
+            "id": "vocalization-music",
+            "label": "Vocalization & music",
+            "gloss": "producing song; singing, musical utterance",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "sing"
+        }
+      ],
+      "root": "sing",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "songbook": {
     "d": [
@@ -10068,7 +10152,28 @@
       }
     ],
     "root": "sing",
-    "family": "family/sing.json"
+    "family": "family/sing.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "sing",
+          "gloss": "Proto-Germanic",
+          "surface": "sing",
+          "origin": {
+            "id": "vocalization-music",
+            "label": "Vocalization & music",
+            "gloss": "producing song; singing, musical utterance",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "sing"
+        }
+      ],
+      "root": "sing",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "songstress": {
     "d": [
@@ -10104,7 +10209,28 @@
       }
     ],
     "root": "sing",
-    "family": "family/sing.json"
+    "family": "family/sing.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "sing",
+          "gloss": "Proto-Germanic",
+          "surface": "sing",
+          "origin": {
+            "id": "vocalization-music",
+            "label": "Vocalization & music",
+            "gloss": "producing song; singing, musical utterance",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "sing"
+        }
+      ],
+      "root": "sing",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "songwriter": {
     "d": [
@@ -10137,7 +10263,28 @@
       }
     ],
     "root": "sing",
-    "family": "family/sing.json"
+    "family": "family/sing.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "sing",
+          "gloss": "Proto-Germanic",
+          "surface": "sing",
+          "origin": {
+            "id": "vocalization-music",
+            "label": "Vocalization & music",
+            "gloss": "producing song; singing, musical utterance",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "sing"
+        }
+      ],
+      "root": "sing",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "sonnet": {
     "d": [

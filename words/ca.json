@@ -734,7 +734,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "calcific": {
     "d": [
@@ -2859,7 +2880,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "capacious": {
     "d": [
@@ -3404,7 +3446,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "captivated": {
     "d": [
@@ -3555,7 +3618,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "caramel": {
     "d": [
@@ -10854,7 +10938,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "calcification": {
     "d": [
@@ -17857,7 +17962,29 @@
         "ori": "Latin"
       }
     ],
-    "root": "cap"
+    "root": "cap",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "capac",
+          "surface": "capac",
+          "gloss": "",
+          "source": "-capac"
+        },
+        {
+          "kind": "suffix",
+          "id": "ity",
+          "surface": "ity",
+          "gloss": "state or quality of",
+          "source": "-ity"
+        }
+      ],
+      "root": "cap",
+      "verified": true,
+      "source": "M-W corrected",
+      "etymology": "Middle English capacite, from Middle French capacité, from Latin capacitat-, capacitas (state of being able to hold), from capax (able, spacious, from capere to take, hold) + -itas (noun suffix)"
+    }
   },
   "caparison": {
     "d": [
@@ -19373,7 +19500,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "captivation": {
     "d": [
@@ -19431,7 +19579,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "captiv",
+          "surface": "captiv",
+          "gloss": "",
+          "source": "-captiv"
+        },
+        {
+          "kind": "suffix",
+          "id": "ity",
+          "surface": "ity",
+          "gloss": "state or quality of",
+          "source": "-ity"
+        }
+      ],
+      "root": "cap",
+      "verified": true,
+      "source": "M-W corrected"
+    }
   },
   "captopril": {
     "d": [
@@ -19492,7 +19661,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "capture": {
     "d": [
@@ -19603,7 +19793,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "capturer": {
     "d": [
@@ -19634,7 +19845,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "capuchin": {
     "d": [

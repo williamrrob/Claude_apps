@@ -11250,6 +11250,27 @@
       }
     ],
     "root": "grow",
-    "family": "family/grow.json"
+    "family": "family/grow.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "grow",
+          "gloss": "Proto-Germanic",
+          "surface": "grow",
+          "origin": {
+            "id": "expansion-increase",
+            "label": "Expansion & increase",
+            "gloss": "growing larger; increasing in size or amount",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "grow"
+        }
+      ],
+      "root": "grow",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

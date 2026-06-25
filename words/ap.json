@@ -1688,7 +1688,28 @@
       }
     ],
     "root": "petere",
-    "family": "family/petere.json"
+    "family": "family/petere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "petere",
+          "gloss": "Latin",
+          "surface": "petere",
+          "origin": {
+            "id": "seeking-requesting",
+            "label": "Seeking & requesting",
+            "gloss": "asking for, requesting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "petere"
+        }
+      ],
+      "root": "petere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "appetizing": {
     "d": [
@@ -1746,7 +1767,28 @@
       }
     ],
     "root": "petere",
-    "family": "family/petere.json"
+    "family": "family/petere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "petere",
+          "gloss": "Latin",
+          "surface": "petere",
+          "origin": {
+            "id": "seeking-requesting",
+            "label": "Seeking & requesting",
+            "gloss": "asking for, requesting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "petere"
+        }
+      ],
+      "root": "petere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "applaudable": {
     "d": [
@@ -5515,7 +5557,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "appendectomy": {
     "d": [
@@ -5654,7 +5717,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "appenzeller": {
     "d": [
@@ -5721,7 +5805,28 @@
       }
     ],
     "root": "petere",
-    "family": "family/petere.json"
+    "family": "family/petere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "petere",
+          "gloss": "Latin",
+          "surface": "petere",
+          "origin": {
+            "id": "seeking-requesting",
+            "label": "Seeking & requesting",
+            "gloss": "asking for, requesting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "petere"
+        }
+      ],
+      "root": "petere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "appetency": {
     "d": [
@@ -5751,7 +5856,28 @@
       }
     ],
     "root": "petere",
-    "family": "family/petere.json"
+    "family": "family/petere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "petere",
+          "gloss": "Latin",
+          "surface": "petere",
+          "origin": {
+            "id": "seeking-requesting",
+            "label": "Seeking & requesting",
+            "gloss": "asking for, requesting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "petere"
+        }
+      ],
+      "root": "petere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "appetiser": {
     "d": [
@@ -5840,7 +5966,28 @@
       }
     ],
     "root": "petere",
-    "family": "family/petere.json"
+    "family": "family/petere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "petere",
+          "gloss": "Latin",
+          "surface": "petere",
+          "origin": {
+            "id": "seeking-requesting",
+            "label": "Seeking & requesting",
+            "gloss": "asking for, requesting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "petere"
+        }
+      ],
+      "root": "petere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "appetizer": {
     "d": [
@@ -5885,7 +6032,28 @@
       "appetiser"
     ],
     "root": "petere",
-    "family": "family/petere.json"
+    "family": "family/petere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "petere",
+          "gloss": "Latin",
+          "surface": "petere",
+          "origin": {
+            "id": "seeking-requesting",
+            "label": "Seeking & requesting",
+            "gloss": "asking for, requesting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "petere"
+        }
+      ],
+      "root": "petere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "appetizingness": {
     "d": [
@@ -7926,7 +8094,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "apperceive": {
     "d": [
@@ -8468,6 +8657,27 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

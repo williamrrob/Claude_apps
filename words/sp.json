@@ -776,7 +776,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "special": {
     "d": [
@@ -1032,7 +1053,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "specified": {
     "d": [
@@ -1117,7 +1159,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "specked": {
     "d": [
@@ -1531,7 +1594,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "speedy": {
     "d": [
@@ -2125,7 +2209,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spiderlike": {
     "d": [
@@ -2408,7 +2513,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spindly": {
     "d": [
@@ -2439,7 +2565,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spineless": {
     "d": [
@@ -2484,7 +2631,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spinnable": {
     "d": [
@@ -4101,7 +4269,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "sprigged": {
     "d": [
@@ -4293,7 +4482,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spruce": {
     "d": [
@@ -4893,7 +5103,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "speedily": {
     "d": [
@@ -7418,7 +7649,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "speakerphone": {
     "d": [
@@ -8109,7 +8361,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "specificity": {
     "d": [
@@ -8178,7 +8451,35 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "surface": "spec",
+          "gloss": "",
+          "source": "-spec"
+        },
+        {
+          "kind": "root",
+          "id": "ific",
+          "surface": "ific",
+          "gloss": "",
+          "source": "-ific"
+        },
+        {
+          "kind": "suffix",
+          "id": "ity",
+          "surface": "ity",
+          "gloss": "state or quality of",
+          "source": "-ity"
+        }
+      ],
+      "root": "spec",
+      "verified": true,
+      "source": "M-W corrected"
+    }
   },
   "specifier": {
     "d": [
@@ -8536,7 +8837,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "specter": {
     "d": [
@@ -8592,7 +8914,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spectinomycin": {
     "d": [
@@ -9015,7 +9358,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "speechifier": {
     "d": [
@@ -10935,7 +11299,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spiceberry": {
     "d": [
@@ -11027,7 +11412,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spiciness": {
     "d": [
@@ -11172,7 +11578,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spiderflower": {
     "d": [
@@ -11758,7 +12185,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spinach": {
     "d": [
@@ -11850,7 +12298,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spindleberry": {
     "d": [
@@ -11938,7 +12407,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spine": {
     "d": [
@@ -11998,7 +12488,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spinel": {
     "d": [
@@ -12183,7 +12694,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spinney": {
     "d": [
@@ -12246,7 +12778,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spinoza": {
     "d": [
@@ -12306,7 +12859,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spinsterhood": {
     "d": [
@@ -14606,7 +15180,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spokesperson": {
     "d": [
@@ -14652,7 +15247,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spoliation": {
     "d": [
@@ -16304,7 +16920,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "sprat": {
     "d": [
@@ -16451,7 +17088,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "sprayer": {
     "d": [
@@ -16493,7 +17151,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spraying": {
     "d": [
@@ -16527,7 +17206,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spreader": {
     "d": [
@@ -16622,7 +17322,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spreadsheet": {
     "d": [
@@ -16880,7 +17601,28 @@
       }
     ],
     "root": "bring",
-    "family": "family/bring.json"
+    "family": "family/bring.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bring",
+          "gloss": "Proto-Germanic",
+          "surface": "bring",
+          "origin": {
+            "id": "conveyance-transport",
+            "label": "Conveyance & transport",
+            "gloss": "bringing or carrying from one place to another",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bring"
+        }
+      ],
+      "root": "bring",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "springboard": {
     "d": [
@@ -17002,7 +17744,28 @@
       }
     ],
     "root": "bring",
-    "family": "family/bring.json"
+    "family": "family/bring.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bring",
+          "gloss": "Proto-Germanic",
+          "surface": "bring",
+          "origin": {
+            "id": "conveyance-transport",
+            "label": "Conveyance & transport",
+            "gloss": "bringing or carrying from one place to another",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bring"
+        }
+      ],
+      "root": "bring",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "springfield": {
     "d": [
@@ -17105,7 +17868,28 @@
       }
     ],
     "root": "bring",
-    "family": "family/bring.json"
+    "family": "family/bring.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bring",
+          "gloss": "Proto-Germanic",
+          "surface": "bring",
+          "origin": {
+            "id": "conveyance-transport",
+            "label": "Conveyance & transport",
+            "gloss": "bringing or carrying from one place to another",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bring"
+        }
+      ],
+      "root": "bring",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "sprinkle": {
     "d": [
@@ -17577,7 +18361,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "sprouting": {
     "d": [
@@ -17612,7 +18417,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spruceness": {
     "d": [
@@ -18404,7 +19230,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "specialise": {
     "d": [
@@ -18561,7 +19408,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spectate": {
     "d": [
@@ -18593,7 +19461,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "speculate": {
     "d": [
@@ -19137,7 +20026,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "sprained": {
     "b": [
@@ -19157,7 +20067,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "speak-out": {
     "b": [
@@ -19177,7 +20108,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "sprung": {
     "b": [
@@ -19197,7 +20149,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spin-off": {
     "b": [
@@ -19217,7 +20190,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spun": {
     "b": [
@@ -19237,7 +20231,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spider-web": {
     "b": [
@@ -19257,7 +20272,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "spinoff": {
     "b": [
@@ -19277,6 +20313,27 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

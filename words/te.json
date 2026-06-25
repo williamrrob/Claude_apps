@@ -1541,7 +1541,28 @@
       }
     ],
     "root": "tenere",
-    "family": "family/tenere.json"
+    "family": "family/tenere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tenere",
+          "gloss": "Latin",
+          "surface": "tenere",
+          "origin": {
+            "id": "holding-grasping",
+            "label": "Holding & grasping",
+            "gloss": "holding something firmly; possession and tenacity",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tenere"
+        }
+      ],
+      "root": "tenere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tenacious": {
     "d": [
@@ -1600,7 +1621,28 @@
       }
     ],
     "root": "tenere",
-    "family": "family/tenere.json"
+    "family": "family/tenere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tenere",
+          "gloss": "Latin",
+          "surface": "tenere",
+          "origin": {
+            "id": "holding-grasping",
+            "label": "Holding & grasping",
+            "gloss": "holding something firmly; possession and tenacity",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tenere"
+        }
+      ],
+      "root": "tenere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tenanted": {
     "d": [
@@ -6961,7 +7003,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "teleconferencing": {
     "d": [
@@ -9288,7 +9351,28 @@
       }
     ],
     "root": "tenere",
-    "family": "family/tenere.json"
+    "family": "family/tenere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tenac",
+          "surface": "tenac",
+          "gloss": "",
+          "source": "-tenac"
+        },
+        {
+          "kind": "suffix",
+          "id": "ity",
+          "surface": "ity",
+          "gloss": "state or quality of",
+          "source": "-ity"
+        }
+      ],
+      "root": "tenere",
+      "verified": true,
+      "source": "M-W corrected"
+    }
   },
   "tenancy": {
     "d": [
@@ -9372,7 +9456,28 @@
       }
     ],
     "root": "tenere",
-    "family": "family/tenere.json"
+    "family": "family/tenere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tenere",
+          "gloss": "Latin",
+          "surface": "tenere",
+          "origin": {
+            "id": "holding-grasping",
+            "label": "Holding & grasping",
+            "gloss": "holding something firmly; possession and tenacity",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tenere"
+        }
+      ],
+      "root": "tenere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tenantry": {
     "d": [
@@ -9881,7 +9986,28 @@
       }
     ],
     "root": "tenere",
-    "family": "family/tenere.json"
+    "family": "family/tenere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tenere",
+          "gloss": "Latin",
+          "surface": "tenere",
+          "origin": {
+            "id": "holding-grasping",
+            "label": "Holding & grasping",
+            "gloss": "holding something firmly; possession and tenacity",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tenere"
+        }
+      ],
+      "root": "tenere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tenerife": {
     "d": [
@@ -10831,7 +10957,28 @@
       }
     ],
     "root": "tenere",
-    "family": "family/tenere.json"
+    "family": "family/tenere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tenere",
+          "gloss": "Latin",
+          "surface": "tenere",
+          "origin": {
+            "id": "holding-grasping",
+            "label": "Holding & grasping",
+            "gloss": "holding something firmly; possession and tenacity",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tenere"
+        }
+      ],
+      "root": "tenere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "tepal": {
     "d": [

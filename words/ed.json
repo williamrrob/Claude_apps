@@ -1017,7 +1017,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "edification": {
     "d": [
@@ -1361,7 +1382,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "education": {
     "d": [
@@ -1423,7 +1465,39 @@
         "ori": "Latin"
       }
     ],
-    "root": "duc"
+    "root": "duc",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "e",
+          "gloss": "out, out of",
+          "surface": "e",
+          "origin": "Latin",
+          "source": "ex"
+        },
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "to lead, draw, conduct",
+          "surface": "duc",
+          "origin": "Latin",
+          "source": "ducere"
+        },
+        {
+          "kind": "suffix",
+          "id": "ion",
+          "gloss": "act, process, or result of",
+          "surface": "ation",
+          "origin": "Latin",
+          "source": "-atio/-tiō"
+        }
+      ],
+      "root": "duc",
+      "verified": true,
+      "source": "M-W research",
+      "etymology": "Latin educatus, past participle of educare (to lead out, educate), from e- + ducere (to lead)"
+    }
   },
   "educationalist": {
     "d": [
@@ -1453,7 +1527,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "educationist": {
     "d": [
@@ -1522,7 +1617,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "edutainment": {
     "d": [
@@ -1751,7 +1867,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "educe": {
     "d": [
@@ -1806,7 +1943,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "edulcorate": {
     "d": [

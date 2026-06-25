@@ -233,7 +233,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abdominal": {
     "d": [
@@ -351,7 +372,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abducting": {
     "d": [
@@ -2139,7 +2181,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstracted": {
     "d": [
@@ -2213,7 +2276,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstractive": {
     "d": [
@@ -2252,7 +2336,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstruse": {
     "d": [
@@ -2350,7 +2455,28 @@
       }
     ],
     "root": "sing",
-    "family": "family/sing.json"
+    "family": "family/sing.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "sing",
+          "gloss": "Proto-Germanic",
+          "surface": "sing",
+          "origin": {
+            "id": "vocalization-music",
+            "label": "Vocalization & music",
+            "gloss": "producing song; singing, musical utterance",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "sing"
+        }
+      ],
+      "root": "sing",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abulic": {
     "d": [
@@ -3121,7 +3247,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstractly": {
     "d": [
@@ -3158,7 +3305,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstrusely": {
     "d": [
@@ -4125,7 +4293,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abdicator": {
     "d": [
@@ -4158,7 +4347,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abdomen": {
     "d": [
@@ -4354,7 +4564,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abductor": {
     "d": [
@@ -4400,7 +4631,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abecedarius": {
     "d": [
@@ -7202,7 +7454,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstraction": {
     "d": [
@@ -7260,7 +7533,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstractionism": {
     "d": [
@@ -7292,7 +7586,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstractness": {
     "d": [
@@ -7324,7 +7639,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstractor": {
     "d": [
@@ -7365,7 +7701,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abstruseness": {
     "d": [
@@ -8066,7 +8423,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abduce": {
     "d": [
@@ -8103,7 +8481,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "abduct": {
     "d": [
@@ -8165,7 +8564,28 @@
       "abducting"
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "aberrate": {
     "d": [

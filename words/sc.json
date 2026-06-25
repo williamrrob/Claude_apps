@@ -2510,7 +2510,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "scriptural": {
     "d": [
@@ -2562,7 +2583,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "scrivened": {
     "d": [
@@ -12734,7 +12776,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "scribbler": {
     "d": [
@@ -12863,7 +12926,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "scriber": {
     "d": [
@@ -12896,7 +12980,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "scrim": {
     "d": [
@@ -13142,7 +13247,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "scriptorium": {
     "d": [
@@ -13207,7 +13333,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "scriptwriter": {
     "d": [

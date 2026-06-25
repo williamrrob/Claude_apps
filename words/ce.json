@@ -6581,7 +6581,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "cesspit": {
     "d": [
@@ -6908,7 +6929,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "celebrate": {
     "d": [

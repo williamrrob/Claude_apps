@@ -1771,7 +1771,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "malefic": {
     "d": [
@@ -3448,7 +3469,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "manx": {
     "d": [
@@ -12140,7 +12182,28 @@
       }
     ],
     "root": "tenere",
-    "family": "family/tenere.json"
+    "family": "family/tenere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tenere",
+          "gloss": "Latin",
+          "surface": "tenere",
+          "origin": {
+            "id": "holding-grasping",
+            "label": "Holding & grasping",
+            "gloss": "holding something firmly; possession and tenacity",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tenere"
+        }
+      ],
+      "root": "tenere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "maintenon": {
     "d": [
@@ -14926,7 +14989,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "mal",
+          "surface": "mal",
+          "gloss": "mal- prefix",
+          "source": "mal-"
+        },
+        {
+          "kind": "root",
+          "id": "vers",
+          "surface": "vers",
+          "gloss": "root",
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "mam": {
     "d": [
@@ -16718,7 +16802,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "manginess": {
     "d": [
@@ -18920,7 +19025,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "manufacturer": {
     "d": [
@@ -18953,7 +19079,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "manufacturing": {
     "d": [
@@ -19151,7 +19298,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "manzanilla": {
     "d": [
@@ -28944,7 +29112,28 @@
       }
     ],
     "root": "tenere",
-    "family": "family/tenere.json"
+    "family": "family/tenere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tenere",
+          "gloss": "Latin",
+          "surface": "tenere",
+          "origin": {
+            "id": "holding-grasping",
+            "label": "Holding & grasping",
+            "gloss": "holding something firmly; possession and tenacity",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tenere"
+        }
+      ],
+      "root": "tenere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "malinger": {
     "d": [
@@ -29057,7 +29246,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "manage": {
     "d": [
@@ -29280,7 +29490,28 @@
       }
     ],
     "root": "mit",
-    "family": "family/mit.json"
+    "family": "family/mit.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "mit",
+          "gloss": "Latin",
+          "surface": "mit",
+          "origin": {
+            "id": "emitting",
+            "label": "Emitting & emissaries",
+            "gloss": "send out",
+            "by": "assistant",
+            "at": "2026-06-23T04:09:20.695Z"
+          },
+          "source": "mit"
+        }
+      ],
+      "root": "mit",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "marbleise": {
     "d": [

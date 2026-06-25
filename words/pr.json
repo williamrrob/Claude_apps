@@ -676,7 +676,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "precedented": {
     "d": [
@@ -1864,7 +1885,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "preferent": {
     "d": [
@@ -1894,7 +1936,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "preferential": {
     "d": [
@@ -1941,7 +2004,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ferre",
+          "gloss": "Latin",
+          "surface": "ferre",
+          "origin": {
+            "id": "bearing-carrying",
+            "label": "Bearing & carrying",
+            "gloss": "physically bearing or carrying something; movement of bearing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "preferred": {
     "d": [
@@ -1988,7 +2072,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prefigurative": {
     "d": [
@@ -3340,7 +3445,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prescriptive": {
     "d": [
@@ -3383,7 +3509,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "present": {
     "d": [
@@ -6088,7 +6235,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "processed": {
     "d": [
@@ -6181,7 +6349,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "proclaimed": {
     "d": [
@@ -8827,7 +9016,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prospering": {
     "d": [
@@ -9526,7 +9736,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "protruding": {
     "d": [
@@ -10833,7 +11064,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "preferentially": {
     "d": [
@@ -13976,7 +14228,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "precedency": {
     "d": [
@@ -14008,7 +14281,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "precentor": {
     "d": [
@@ -14108,7 +14402,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "preceptor": {
     "d": [
@@ -14181,7 +14496,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "precession": {
     "d": [
@@ -14770,7 +15106,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "precondition": {
     "d": [
@@ -15206,7 +15563,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "predication": {
     "d": [
@@ -15358,7 +15736,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "predilection": {
     "d": [
@@ -15874,7 +16273,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ferre",
+          "gloss": "Latin",
+          "surface": "ferre",
+          "origin": {
+            "id": "bearing-carrying",
+            "label": "Bearing & carrying",
+            "gloss": "physically bearing or carrying something; movement of bearing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "preferment": {
     "d": [
@@ -15914,7 +16334,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prefiguration": {
     "d": [
@@ -16186,7 +16627,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prejudgement": {
     "d": [
@@ -16687,7 +17149,28 @@
       }
     ],
     "root": "mit",
-    "family": "family/mit.json"
+    "family": "family/mit.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "mit",
+          "gloss": "Latin",
+          "surface": "mit",
+          "origin": {
+            "id": "emitting",
+            "label": "Emitting & emissaries",
+            "gloss": "send out",
+            "by": "assistant",
+            "at": "2026-06-23T04:09:20.695Z"
+          },
+          "source": "mit"
+        }
+      ],
+      "root": "mit",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "premix": {
     "d": [
@@ -17529,7 +18012,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prescriptivism": {
     "d": [
@@ -22453,7 +22957,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "proceeding": {
     "d": [
@@ -22501,7 +23026,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "proceedings": {
     "d": [
@@ -22729,7 +23275,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "processor": {
     "d": [
@@ -23747,7 +24314,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "pro",
+          "surface": "pro",
+          "gloss": "pro- prefix",
+          "source": "pro-"
+        },
+        {
+          "kind": "root",
+          "id": "duct",
+          "surface": "duct",
+          "gloss": "root",
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "producer": {
     "d": [
@@ -23806,7 +24394,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "product": {
     "d": [
@@ -23900,7 +24509,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "production": {
     "d": [
@@ -23965,7 +24595,39 @@
         "ori": "Latin"
       }
     ],
-    "root": "duc"
+    "root": "duc",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "pro",
+          "gloss": "forward, before, for",
+          "surface": "pro",
+          "origin": "Latin",
+          "source": "pro"
+        },
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "to lead, draw, conduct",
+          "surface": "duc",
+          "origin": "Latin",
+          "source": "ducere"
+        },
+        {
+          "kind": "suffix",
+          "id": "ion",
+          "gloss": "act or process of; noun suffix",
+          "surface": "tion",
+          "origin": "Latin",
+          "source": "-tiōn-, -tiō"
+        }
+      ],
+      "root": "duc",
+      "verified": true,
+      "source": "M-W research",
+      "etymology": "Latin productiōn-, productiō (a bringing forth), from pro (forward) + ducere (to lead) + -tiō (noun suffix)"
+    }
   },
   "productiveness": {
     "d": [
@@ -23999,7 +24661,28 @@
       }
     ],
     "root": "duc",
-    "family": "family/duc.json"
+    "family": "family/duc.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "duc",
+          "gloss": "Latin",
+          "surface": "duc",
+          "origin": {
+            "id": "channels-conduction",
+            "label": "Channels & conduction",
+            "gloss": "leading fluid, current, heat",
+            "by": "assistant",
+            "at": "2026-06-23T04:06:47.530Z"
+          },
+          "source": "duc"
+        }
+      ],
+      "root": "duc",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "productivity": {
     "d": [
@@ -24428,7 +25111,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "proficiency": {
     "d": [
@@ -28754,7 +29458,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prose": {
     "d": [
@@ -29213,7 +29938,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "pro",
+          "surface": "pro",
+          "gloss": "pro- prefix",
+          "source": "pro-"
+        },
+        {
+          "kind": "root",
+          "id": "spect",
+          "surface": "spect",
+          "gloss": "to look",
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "prospector": {
     "d": [
@@ -29249,7 +29995,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prospectus": {
     "d": [
@@ -31037,7 +31804,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "protractor": {
     "d": [
@@ -31078,7 +31866,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "protriptyline": {
     "d": [
@@ -32674,7 +33483,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "precess": {
     "d": [
@@ -32955,7 +33785,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "predigest": {
     "d": [
@@ -33156,7 +34007,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ferre",
+          "gloss": "Latin",
+          "surface": "ferre",
+          "origin": {
+            "id": "bearing-carrying",
+            "label": "Bearing & carrying",
+            "gloss": "physically bearing or carrying something; movement of bearing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prefigure": {
     "d": [
@@ -33640,7 +34512,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "preside": {
     "d": [
@@ -34259,7 +35152,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "proclaim": {
     "d": [
@@ -34614,7 +35528,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prologise": {
     "d": [
@@ -35327,7 +36262,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "prosecute": {
     "d": [
@@ -35576,7 +36532,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "protrude": {
     "d": [
@@ -35809,7 +36786,28 @@
       "l": "prescribe"
     },
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "predrank": {
     "b": [
@@ -35829,6 +36827,27 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

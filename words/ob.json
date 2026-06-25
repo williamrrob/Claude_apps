@@ -4238,7 +4238,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "obviation": {
     "d": [
@@ -4719,7 +4740,28 @@
       }
     ],
     "root": "tenere",
-    "family": "family/tenere.json"
+    "family": "family/tenere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tenere",
+          "gloss": "Latin",
+          "surface": "tenere",
+          "origin": {
+            "id": "holding-grasping",
+            "label": "Holding & grasping",
+            "gloss": "holding something firmly; possession and tenacity",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tenere"
+        }
+      ],
+      "root": "tenere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "obtrude": {
     "d": [

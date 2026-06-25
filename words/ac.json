@@ -463,7 +463,28 @@
       "acceptableness"
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "acceptant": {
     "d": [
@@ -503,7 +524,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "accepted": {
     "d": [
@@ -586,7 +628,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "accessary": {
     "d": [
@@ -5474,7 +5537,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cap",
+          "gloss": "Latin",
+          "surface": "cap",
+          "origin": {
+            "id": "seizing-capturing",
+            "label": "Seizing & capturing",
+            "gloss": "physically take, hold, catch",
+            "by": "assistant",
+            "at": "2026-06-23T01:02:21.631Z"
+          },
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "access": {
     "d": [
@@ -5603,7 +5687,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "accho": {
     "d": [
@@ -10311,7 +10416,31 @@
         "ori": "Latin"
       }
     ],
-    "root": "ag"
+    "root": "ag",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ag",
+          "gloss": "to drive, cause to move, do",
+          "surface": "ag",
+          "origin": "Latin",
+          "source": "agere"
+        },
+        {
+          "kind": "suffix",
+          "id": "ion",
+          "gloss": "activity, act, legal process; noun suffix",
+          "surface": "tion",
+          "origin": "Latin",
+          "source": "-tiōn-, -tiō"
+        }
+      ],
+      "root": "ag",
+      "verified": true,
+      "source": "M-W research",
+      "etymology": "Middle English accioun, from Anglo-French accion, from Latin actiōn-, actiō (activity, act), from agere (to do, act) + -tiōn, -tiō (noun suffix)"
+    }
   },
   "actitis": {
     "d": [
@@ -11095,7 +11224,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "ac",
+          "surface": "ac",
+          "gloss": "ac- prefix",
+          "source": "ac-"
+        },
+        {
+          "kind": "root",
+          "id": "cede",
+          "surface": "cede",
+          "gloss": "root",
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "accelerate": {
     "d": [
@@ -11277,7 +11427,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "ac",
+          "surface": "ac",
+          "gloss": "ac- prefix",
+          "source": "ac-"
+        },
+        {
+          "kind": "root",
+          "id": "cept",
+          "surface": "cept",
+          "gloss": "root",
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "acclimate": {
     "d": [

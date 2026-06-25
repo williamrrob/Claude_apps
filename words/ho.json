@@ -14064,7 +14064,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "houseboat": {
     "d": [
@@ -14395,7 +14416,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "householder": {
     "d": [
@@ -14440,7 +14482,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "househusband": {
     "d": [
@@ -14489,7 +14552,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "housekeeping": {
     "d": [
@@ -14801,7 +14885,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "housewife": {
     "d": [
@@ -14859,7 +14964,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "housewifery": {
     "d": [
@@ -14922,7 +15048,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "housewrecker": {
     "d": [
@@ -14990,7 +15137,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "housman": {
     "d": [
@@ -15921,7 +16089,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "houseless": {
     "b": [
@@ -15941,6 +16130,27 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

@@ -59,7 +59,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "effective": {
     "d": [
@@ -125,7 +146,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "effectual": {
     "d": [
@@ -161,7 +203,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "effeminate": {
     "d": [
@@ -257,7 +320,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ferre",
+          "gloss": "Latin",
+          "surface": "ferre",
+          "origin": {
+            "id": "bearing-carrying",
+            "label": "Bearing & carrying",
+            "gloss": "physically bearing or carrying something; movement of bearing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "effervescent": {
     "d": [
@@ -623,7 +707,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "effectually": {
     "d": [
@@ -655,7 +760,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "efficaciously": {
     "d": [
@@ -833,7 +959,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "effecter": {
     "d": [
@@ -911,7 +1058,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "effectivity": {
     "d": [
@@ -1084,7 +1252,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "effeminacy": {
     "d": [
@@ -1745,7 +1934,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "effeminise": {
     "d": [
@@ -1892,6 +2102,27 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

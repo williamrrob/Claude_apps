@@ -232,7 +232,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "baccivorous": {
     "d": [
@@ -1890,7 +1911,28 @@
       }
     ],
     "root": "bind",
-    "family": "family/bind.json"
+    "family": "family/bind.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bind",
+          "gloss": "Proto-Germanic",
+          "surface": "bind",
+          "origin": {
+            "id": "fastening-joining",
+            "label": "Fastening & joining",
+            "gloss": "binding together; tying, fastening, connecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bind"
+        }
+      ],
+      "root": "bind",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "banded": {
     "d": [
@@ -1936,7 +1978,28 @@
       }
     ],
     "root": "bind",
-    "family": "family/bind.json"
+    "family": "family/bind.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bind",
+          "gloss": "Proto-Germanic",
+          "surface": "bind",
+          "origin": {
+            "id": "fastening-joining",
+            "label": "Fastening & joining",
+            "gloss": "binding together; tying, fastening, connecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bind"
+        }
+      ],
+      "root": "bind",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "bandy": {
     "d": [
@@ -12276,7 +12339,28 @@
       }
     ],
     "root": "bind",
-    "family": "family/bind.json"
+    "family": "family/bind.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bind",
+          "gloss": "Proto-Germanic",
+          "surface": "bind",
+          "origin": {
+            "id": "fastening-joining",
+            "label": "Fastening & joining",
+            "gloss": "binding together; tying, fastening, connecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bind"
+        }
+      ],
+      "root": "bind",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "bandage": {
     "d": [
@@ -12329,7 +12413,28 @@
       }
     ],
     "root": "bind",
-    "family": "family/bind.json"
+    "family": "family/bind.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bind",
+          "gloss": "Proto-Germanic",
+          "surface": "bind",
+          "origin": {
+            "id": "fastening-joining",
+            "label": "Fastening & joining",
+            "gloss": "binding together; tying, fastening, connecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bind"
+        }
+      ],
+      "root": "bind",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "bandaging": {
     "d": [
@@ -12364,7 +12469,28 @@
       }
     ],
     "root": "bind",
-    "family": "family/bind.json"
+    "family": "family/bind.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bind",
+          "gloss": "Proto-Germanic",
+          "surface": "bind",
+          "origin": {
+            "id": "fastening-joining",
+            "label": "Fastening & joining",
+            "gloss": "binding together; tying, fastening, connecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bind"
+        }
+      ],
+      "root": "bind",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "bandana": {
     "d": [

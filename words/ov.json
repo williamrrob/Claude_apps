@@ -1078,7 +1078,28 @@
       }
     ],
     "root": "grow",
-    "family": "family/grow.json"
+    "family": "family/grow.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "grow",
+          "gloss": "Proto-Germanic",
+          "surface": "grow",
+          "origin": {
+            "id": "expansion-increase",
+            "label": "Expansion & increase",
+            "gloss": "growing larger; increasing in size or amount",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "grow"
+        }
+      ],
+      "root": "grow",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "overhand": {
     "d": [
@@ -2219,7 +2240,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "overt": {
     "d": [
@@ -2275,7 +2317,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "overturned": {
     "d": [
@@ -2913,7 +2976,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "overwhelmingly": {
     "d": [
@@ -6995,7 +7079,28 @@
       }
     ],
     "root": "grow",
-    "family": "family/grow.json"
+    "family": "family/grow.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "grow",
+          "gloss": "Proto-Germanic",
+          "surface": "grow",
+          "origin": {
+            "id": "expansion-increase",
+            "label": "Expansion & increase",
+            "gloss": "growing larger; increasing in size or amount",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "grow"
+        }
+      ],
+      "root": "grow",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "overhear": {
     "d": [
@@ -8386,7 +8491,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "overdrinking": {
     "b": [
@@ -8406,7 +8532,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "overgrowing": {
     "b": [
@@ -8426,6 +8573,27 @@
       }
     ],
     "root": "grow",
-    "family": "family/grow.json"
+    "family": "family/grow.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "grow",
+          "gloss": "Proto-Germanic",
+          "surface": "grow",
+          "origin": {
+            "id": "expansion-increase",
+            "label": "Expansion & increase",
+            "gloss": "growing larger; increasing in size or amount",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "grow"
+        }
+      ],
+      "root": "grow",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

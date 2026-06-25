@@ -1557,7 +1557,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "dif",
+          "surface": "dif",
+          "gloss": "dif- prefix",
+          "source": "dif-"
+        },
+        {
+          "kind": "root",
+          "id": "fer",
+          "surface": "fer",
+          "gloss": "to carry",
+          "source": "ferre"
+        }
+      ],
+      "root": "fer",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "differentiable": {
     "d": [
@@ -1644,7 +1665,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ferre",
+          "gloss": "Latin",
+          "surface": "ferre",
+          "origin": {
+            "id": "bearing-carrying",
+            "label": "Bearing & carrying",
+            "gloss": "physically bearing or carrying something; movement of bearing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "differentiated": {
     "d": [
@@ -1736,7 +1778,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diffident": {
     "d": [
@@ -7444,7 +7507,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dispersed": {
     "d": [
@@ -8110,7 +8194,28 @@
       "disrespectfully"
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "disrupted": {
     "d": [
@@ -8215,7 +8320,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dissatisfied": {
     "d": [
@@ -8261,7 +8387,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dissected": {
     "d": [
@@ -8791,7 +8938,28 @@
       }
     ],
     "root": "stand",
-    "family": "family/stand.json"
+    "family": "family/stand.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "stand",
+          "gloss": "Proto-Germanic",
+          "surface": "stand",
+          "origin": {
+            "id": "upright-position",
+            "label": "Upright position",
+            "gloss": "standing upright; taking a position",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "stand"
+        }
+      ],
+      "root": "stand",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "distasteful": {
     "d": [
@@ -9761,7 +9929,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diverse": {
     "d": [
@@ -9836,7 +10025,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diversified": {
     "d": [
@@ -9884,7 +10094,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diversionary": {
     "d": [
@@ -9914,7 +10145,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diverted": {
     "d": [
@@ -9954,7 +10206,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diverting": {
     "d": [
@@ -10553,7 +10826,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diffidently": {
     "d": [
@@ -11842,7 +12136,28 @@
       }
     ],
     "root": "stand",
-    "family": "family/stand.json"
+    "family": "family/stand.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "stand",
+          "gloss": "Proto-Germanic",
+          "surface": "stand",
+          "origin": {
+            "id": "upright-position",
+            "label": "Upright position",
+            "gloss": "standing upright; taking a position",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "stand"
+        }
+      ],
+      "root": "stand",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "distastefully": {
     "d": [
@@ -12063,7 +12378,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "divertingly": {
     "d": [
@@ -14971,7 +15307,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dictation": {
     "d": [
@@ -15023,7 +15380,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dictator": {
     "d": [
@@ -15081,7 +15459,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dictatorship": {
     "d": [
@@ -15138,7 +15537,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diction": {
     "d": [
@@ -15192,7 +15612,28 @@
       }
     ],
     "root": "dic",
-    "family": "family/dic.json"
+    "family": "family/dic.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "Latin",
+          "surface": "dic",
+          "origin": {
+            "id": "speaking-dictating",
+            "label": "Speaking & dictating",
+            "gloss": "the bare act of saying",
+            "by": "assistant",
+            "at": "2026-06-23T04:04:27.371Z"
+          },
+          "source": "dic"
+        }
+      ],
+      "root": "dic",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dictionary": {
     "d": [
@@ -15253,7 +15694,31 @@
         "ori": "Latin"
       }
     ],
-    "root": "dic"
+    "root": "dic",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "dic",
+          "gloss": "speech, word, expression",
+          "surface": "dicti",
+          "origin": "Latin",
+          "source": "dictiō (from dicere, to speak)"
+        },
+        {
+          "kind": "suffix",
+          "id": "ary",
+          "gloss": "relating to, connected with",
+          "surface": "ary",
+          "origin": "Latin",
+          "source": "-arius/-ārium"
+        }
+      ],
+      "root": "dic",
+      "verified": true,
+      "source": "M-W research",
+      "etymology": "Medieval Latin dictiōnārium, from Latin dictiōn-, dictiō (speech, word, expression, from dicere to speak) + -ārium/-arius (relating to)"
+    }
   },
   "dictostylium": {
     "d": [
@@ -16226,7 +16691,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ferre",
+          "gloss": "Latin",
+          "surface": "ferre",
+          "origin": {
+            "id": "bearing-carrying",
+            "label": "Bearing & carrying",
+            "gloss": "physically bearing or carrying something; movement of bearing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "differentia": {
     "d": [
@@ -16255,7 +16741,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "differentiation": {
     "d": [
@@ -16376,7 +16883,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diffidence": {
     "d": [
@@ -26276,7 +26804,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dispensation": {
     "d": [
@@ -26326,7 +26875,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dispenser": {
     "d": [
@@ -26369,7 +26939,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dispersal": {
     "d": [
@@ -27281,7 +27872,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "dis",
+          "surface": "dis",
+          "gloss": "dis- prefix",
+          "source": "dis-"
+        },
+        {
+          "kind": "root",
+          "id": "spect",
+          "surface": "spect",
+          "gloss": "to look",
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "disruption": {
     "d": [
@@ -27370,7 +27982,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dissection": {
     "d": [
@@ -28211,7 +28844,28 @@
       }
     ],
     "root": "stand",
-    "family": "family/stand.json"
+    "family": "family/stand.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "stand",
+          "gloss": "Proto-Germanic",
+          "surface": "stand",
+          "origin": {
+            "id": "upright-position",
+            "label": "Upright position",
+            "gloss": "standing upright; taking a position",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "stand"
+        }
+      ],
+      "root": "stand",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "distaste": {
     "d": [
@@ -28779,7 +29433,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "distraint": {
     "d": [
@@ -29965,7 +30640,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diversification": {
     "d": [
@@ -30019,7 +30715,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diversion": {
     "d": [
@@ -30075,7 +30792,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diversionist": {
     "d": [
@@ -30113,7 +30851,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diversity": {
     "d": [
@@ -30168,7 +30927,35 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "di",
+          "surface": "di",
+          "gloss": "",
+          "source": "-di"
+        },
+        {
+          "kind": "root",
+          "id": "vers",
+          "surface": "vers",
+          "gloss": "",
+          "source": "-vers"
+        },
+        {
+          "kind": "suffix",
+          "id": "ity",
+          "surface": "ity",
+          "gloss": "state or quality of",
+          "source": "-ity"
+        }
+      ],
+      "root": "vert",
+      "verified": true,
+      "source": "M-W corrected"
+    }
   },
   "diverticulitis": {
     "d": [
@@ -30194,7 +30981,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diverticulosis": {
     "d": [
@@ -30222,7 +31030,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "diverticulum": {
     "d": [
@@ -30252,7 +31081,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "divertimento": {
     "d": [
@@ -30284,7 +31134,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "divestiture": {
     "d": [
@@ -31322,7 +32193,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "dif",
+          "surface": "dif",
+          "gloss": "dif- prefix",
+          "source": "dif-"
+        },
+        {
+          "kind": "root",
+          "id": "fer",
+          "surface": "fer",
+          "gloss": "to carry",
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "differentiate": {
     "d": [
@@ -32482,7 +33374,28 @@
       }
     ],
     "root": "bind",
-    "family": "family/bind.json"
+    "family": "family/bind.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bind",
+          "gloss": "Proto-Germanic",
+          "surface": "bind",
+          "origin": {
+            "id": "fastening-joining",
+            "label": "Fastening & joining",
+            "gloss": "binding together; tying, fastening, connecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bind"
+        }
+      ],
+      "root": "bind",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "disbar": {
     "d": [
@@ -34453,7 +35366,28 @@
       }
     ],
     "root": "mit",
-    "family": "family/mit.json"
+    "family": "family/mit.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "mit",
+          "gloss": "Latin",
+          "surface": "mit",
+          "origin": {
+            "id": "emitting",
+            "label": "Emitting & emissaries",
+            "gloss": "send out",
+            "by": "assistant",
+            "at": "2026-06-23T04:09:20.695Z"
+          },
+          "source": "mit"
+        }
+      ],
+      "root": "mit",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "disobey": {
     "d": [
@@ -34850,7 +35784,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "disperse": {
     "d": [
@@ -35988,7 +36943,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "distrain": {
     "d": [
@@ -36344,7 +37320,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "divert": {
     "d": [
@@ -36404,7 +37401,28 @@
       "diverts"
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "divest": {
     "d": [
@@ -36549,7 +37567,28 @@
       }
     ],
     "root": "bind",
-    "family": "family/bind.json"
+    "family": "family/bind.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bind",
+          "gloss": "Proto-Germanic",
+          "surface": "bind",
+          "origin": {
+            "id": "fastening-joining",
+            "label": "Fastening & joining",
+            "gloss": "binding together; tying, fastening, connecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bind"
+        }
+      ],
+      "root": "bind",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "disbanding": {
     "b": [
@@ -36569,7 +37608,28 @@
       }
     ],
     "root": "bind",
-    "family": "family/bind.json"
+    "family": "family/bind.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bind",
+          "gloss": "Proto-Germanic",
+          "surface": "bind",
+          "origin": {
+            "id": "fastening-joining",
+            "label": "Fastening & joining",
+            "gloss": "binding together; tying, fastening, connecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bind"
+        }
+      ],
+      "root": "bind",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "difficultly": {
     "b": [
@@ -36589,7 +37649,28 @@
       }
     ],
     "root": "facere",
-    "family": "family/facere.json"
+    "family": "family/facere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "facere",
+          "gloss": "Latin",
+          "surface": "facere",
+          "origin": {
+            "id": "making-creating",
+            "label": "Making & creating",
+            "gloss": "creating, manufacturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "facere"
+        }
+      ],
+      "root": "facere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dispensing": {
     "b": [
@@ -36609,6 +37690,27 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

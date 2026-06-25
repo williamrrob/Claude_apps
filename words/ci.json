@@ -444,7 +444,28 @@
       }
     ],
     "root": "fer",
-    "family": "family/fer.json"
+    "family": "family/fer.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "fer",
+          "gloss": "Latin",
+          "surface": "fer",
+          "origin": {
+            "id": "conferring-referring",
+            "label": "Bringing to mind",
+            "gloss": "carry a thought to bear — infer, refer, prefer, confer",
+            "by": "assistant",
+            "at": "2026-06-23T05:28:10.421Z"
+          },
+          "source": "fer"
+        }
+      ],
+      "root": "fer",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "circumferential": {
     "d": [
@@ -604,7 +625,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "circum",
+          "surface": "circum",
+          "gloss": "circum- prefix",
+          "source": "circum-"
+        },
+        {
+          "kind": "root",
+          "id": "spect",
+          "surface": "spect",
+          "gloss": "to look",
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "circumstantial": {
     "d": [
@@ -672,7 +714,28 @@
       }
     ],
     "root": "stand",
-    "family": "family/stand.json"
+    "family": "family/stand.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "stand",
+          "gloss": "Proto-Germanic",
+          "surface": "stand",
+          "origin": {
+            "id": "upright-position",
+            "label": "Upright position",
+            "gloss": "standing upright; taking a position",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "stand"
+        }
+      ],
+      "root": "stand",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "cisalpine": {
     "d": [
@@ -1131,7 +1194,28 @@
       }
     ],
     "root": "stand",
-    "family": "family/stand.json"
+    "family": "family/stand.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "stand",
+          "gloss": "Proto-Germanic",
+          "surface": "stand",
+          "origin": {
+            "id": "upright-position",
+            "label": "Upright position",
+            "gloss": "standing upright; taking a position",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "stand"
+        }
+      ],
+      "root": "stand",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "civilly": {
     "d": [
@@ -2814,7 +2898,28 @@
       }
     ],
     "root": "ferre",
-    "family": "family/ferre.json"
+    "family": "family/ferre.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "ferre",
+          "gloss": "Latin",
+          "surface": "ferre",
+          "origin": {
+            "id": "bearing-carrying",
+            "label": "Bearing & carrying",
+            "gloss": "physically bearing or carrying something; movement of bearing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "ferre"
+        }
+      ],
+      "root": "ferre",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "circumflex": {
     "d": [
@@ -2977,7 +3082,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "circumspection": {
     "d": [
@@ -3014,7 +3140,28 @@
       }
     ],
     "root": "spec",
-    "family": "family/spec.json"
+    "family": "family/spec.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spec",
+          "gloss": "Latin",
+          "surface": "spec",
+          "origin": {
+            "id": "looking-watching",
+            "label": "Looking & watching",
+            "gloss": "physical observation",
+            "by": "assistant",
+            "at": "2026-06-22T23:09:07.791Z"
+          },
+          "source": "spec"
+        }
+      ],
+      "root": "spec",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "circumstance": {
     "d": [
@@ -3068,7 +3215,28 @@
       }
     ],
     "root": "stand",
-    "family": "family/stand.json"
+    "family": "family/stand.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "stand",
+          "gloss": "Proto-Germanic",
+          "surface": "stand",
+          "origin": {
+            "id": "upright-position",
+            "label": "Upright position",
+            "gloss": "standing upright; taking a position",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "stand"
+        }
+      ],
+      "root": "stand",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "circumstances": {
     "d": [
@@ -3104,7 +3272,28 @@
       }
     ],
     "root": "stand",
-    "family": "family/stand.json"
+    "family": "family/stand.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "stand",
+          "gloss": "Proto-Germanic",
+          "surface": "stand",
+          "origin": {
+            "id": "upright-position",
+            "label": "Upright position",
+            "gloss": "standing upright; taking a position",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "stand"
+        }
+      ],
+      "root": "stand",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "circumvention": {
     "d": [
@@ -4661,7 +4850,28 @@
       }
     ],
     "root": "scrib",
-    "family": "family/scrib.json"
+    "family": "family/scrib.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "scrib",
+          "gloss": "Latin",
+          "surface": "scrib",
+          "origin": {
+            "id": "writing-copying",
+            "label": "Writing & copying",
+            "gloss": "the act, its agents, artefacts, reproduction",
+            "by": "assistant",
+            "at": "2026-06-22T19:09:01.098Z"
+          },
+          "source": "scrib"
+        }
+      ],
+      "root": "scrib",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "circumstantiate": {
     "d": [

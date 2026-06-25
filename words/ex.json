@@ -550,7 +550,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "excessive": {
     "d": [
@@ -590,7 +611,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "exchangeable": {
     "d": [
@@ -2576,7 +2618,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "expensive": {
     "d": [
@@ -2645,7 +2708,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "experienced": {
     "d": [
@@ -5053,7 +5137,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extravert": {
     "d": [
@@ -5107,7 +5212,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extraverted": {
     "d": [
@@ -5151,7 +5277,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extravertive": {
     "d": [
@@ -5186,7 +5333,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extreme": {
     "d": [
@@ -5421,7 +5589,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extrovert": {
     "d": [
@@ -5473,7 +5662,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extroverted": {
     "d": [
@@ -5530,7 +5740,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extrovertish": {
     "d": [
@@ -5557,7 +5788,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extrovertive": {
     "d": [
@@ -5596,7 +5848,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extrusive": {
     "d": [
@@ -5930,7 +6203,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "excitedly": {
     "d": [
@@ -6211,7 +6505,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "experimentally": {
     "d": [
@@ -10921,7 +11236,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "expense": {
     "d": [
@@ -13409,7 +13745,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extraction": {
     "d": [
@@ -13466,7 +13823,28 @@
       }
     ],
     "root": "tractare",
-    "family": "family/tractare.json"
+    "family": "family/tractare.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "tractare",
+          "gloss": "Latin",
+          "surface": "tractare",
+          "origin": {
+            "id": "pulling-drawing",
+            "label": "Pulling & drawing",
+            "gloss": "pulling, dragging, drawing, extracting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "tractare"
+        }
+      ],
+      "root": "tractare",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extractor": {
     "d": [
@@ -13769,7 +14147,28 @@
       }
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extremeness": {
     "d": [
@@ -13957,7 +14356,28 @@
       "extraversion"
     ],
     "root": "vert",
-    "family": "family/vert.json"
+    "family": "family/vert.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "vert",
+          "gloss": "Latin",
+          "surface": "vert",
+          "origin": {
+            "id": "rotational-spatial",
+            "label": "Rotational & spatial turning",
+            "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "vert"
+        }
+      ],
+      "root": "vert",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "extrusion": {
     "d": [
@@ -14412,7 +14832,28 @@
       }
     ],
     "root": "cedere",
-    "family": "family/cedere.json"
+    "family": "family/cedere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "cedere",
+          "gloss": "Latin",
+          "surface": "cedere",
+          "origin": {
+            "id": "yielding-conceding",
+            "label": "Yielding & conceding",
+            "gloss": "giving way, yielding, granting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "cedere"
+        }
+      ],
+      "root": "cedere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "excel": {
     "d": [
@@ -14533,7 +14974,28 @@
       }
     ],
     "root": "cap",
-    "family": "family/cap.json"
+    "family": "family/cap.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "prefix",
+          "id": "ex",
+          "surface": "ex",
+          "gloss": "ex- prefix",
+          "source": "ex-"
+        },
+        {
+          "kind": "root",
+          "id": "cept",
+          "surface": "cept",
+          "gloss": "root",
+          "source": "cap"
+        }
+      ],
+      "root": "cap",
+      "verified": true,
+      "source": "M-W verified"
+    }
   },
   "excite": {
     "d": [
@@ -15658,7 +16120,28 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "expiate": {
     "d": [
@@ -17000,6 +17483,27 @@
       }
     ],
     "root": "pendere",
-    "family": "family/pendere.json"
+    "family": "family/pendere.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "pendere",
+          "gloss": "Latin",
+          "surface": "pendere",
+          "origin": {
+            "id": "hanging-suspending",
+            "label": "Hanging & suspending",
+            "gloss": "hanging from, suspending",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "pendere"
+        }
+      ],
+      "root": "pendere",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

@@ -743,7 +743,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dress": {
     "d": [
@@ -999,7 +1020,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dripless": {
     "d": [
@@ -1483,7 +1525,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "drunken": {
     "d": [
@@ -1541,7 +1604,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "drupaceous": {
     "d": [
@@ -4336,7 +4420,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "drepanididae": {
     "d": [
@@ -5060,7 +5165,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "drinker": {
     "d": [
@@ -5115,7 +5241,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "drinking": {
     "d": [
@@ -5167,7 +5314,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "drip": {
     "d": [
@@ -7032,7 +7200,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "drunkenness": {
     "d": [
@@ -7076,7 +7265,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "drupe": {
     "d": [
@@ -7570,7 +7780,28 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "dropforge": {
     "d": [
@@ -7686,6 +7917,27 @@
       }
     ],
     "root": "drink",
-    "family": "family/drink.json"
+    "family": "family/drink.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "drink",
+          "gloss": "Proto-Germanic",
+          "surface": "drink",
+          "origin": {
+            "id": "ingestion-consumption",
+            "label": "Ingestion & consumption",
+            "gloss": "consuming liquids; drinking, imbibing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "drink"
+        }
+      ],
+      "root": "drink",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

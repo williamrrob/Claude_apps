@@ -7068,7 +7068,28 @@
       }
     ],
     "root": "break",
-    "family": "family/break.json"
+    "family": "family/break.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "break",
+          "gloss": "Proto-Germanic",
+          "surface": "break",
+          "origin": {
+            "id": "breaking-shattering",
+            "label": "Breaking & shattering",
+            "gloss": "breaking into fragments; shattering, fracturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "break"
+        }
+      ],
+      "root": "break",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "daycare": {
     "d": [

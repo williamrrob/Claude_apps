@@ -1557,7 +1557,28 @@
       }
     ],
     "root": "bring",
-    "family": "family/bring.json"
+    "family": "family/bring.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bring",
+          "gloss": "Proto-Germanic",
+          "surface": "bring",
+          "origin": {
+            "id": "conveyance-transport",
+            "label": "Conveyance & transport",
+            "gloss": "bringing or carrying from one place to another",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bring"
+        }
+      ],
+      "root": "bring",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "upcast": {
     "d": [
@@ -2966,7 +2987,28 @@
       }
     ],
     "root": "bring",
-    "family": "family/bring.json"
+    "family": "family/bring.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "bring",
+          "gloss": "Proto-Germanic",
+          "surface": "bring",
+          "origin": {
+            "id": "conveyance-transport",
+            "label": "Conveyance & transport",
+            "gloss": "bringing or carrying from one place to another",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "bring"
+        }
+      ],
+      "root": "bring",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "upbuild": {
     "b": [
@@ -2986,7 +3028,28 @@
       }
     ],
     "root": "build",
-    "family": "family/build.json"
+    "family": "family/build.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "build",
+          "gloss": "Proto-Germanic",
+          "surface": "build",
+          "origin": {
+            "id": "construction-creation",
+            "label": "Construction & creation",
+            "gloss": "building structures; constructing, erecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "build"
+        }
+      ],
+      "root": "build",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "upbuilding": {
     "b": [
@@ -3006,7 +3069,28 @@
       }
     ],
     "root": "build",
-    "family": "family/build.json"
+    "family": "family/build.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "build",
+          "gloss": "Proto-Germanic",
+          "surface": "build",
+          "origin": {
+            "id": "construction-creation",
+            "label": "Construction & creation",
+            "gloss": "building structures; constructing, erecting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "build"
+        }
+      ],
+      "root": "build",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "upgrow": {
     "b": [
@@ -3026,6 +3110,27 @@
       }
     ],
     "root": "grow",
-    "family": "family/grow.json"
+    "family": "family/grow.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "grow",
+          "gloss": "Proto-Germanic",
+          "surface": "grow",
+          "origin": {
+            "id": "expansion-increase",
+            "label": "Expansion & increase",
+            "gloss": "growing larger; increasing in size or amount",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "grow"
+        }
+      ],
+      "root": "grow",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }

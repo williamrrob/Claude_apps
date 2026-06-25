@@ -5403,7 +5403,31 @@
         "ori": "Latin"
       }
     ],
-    "root": "nat"
+    "root": "nat",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "nat",
+          "gloss": "to be born; birth, race, nation",
+          "surface": "nat",
+          "origin": "Latin",
+          "source": "natio (from nasci, to be born)"
+        },
+        {
+          "kind": "suffix",
+          "id": "ion",
+          "gloss": "act, process, or result of; or noun suffix",
+          "surface": "ion",
+          "origin": "Latin",
+          "source": "-iō/-tion"
+        }
+      ],
+      "root": "nat",
+      "verified": true,
+      "source": "M-W research",
+      "etymology": "Middle English nacioun, from Anglo-French naciun, from Latin nation-, natio (birth, race, nation), from nasci (to be born)"
+    }
   },
   "nationalisation": {
     "d": [

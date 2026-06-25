@@ -1130,7 +1130,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outspread": {
     "d": [
@@ -1202,7 +1223,28 @@
       }
     ],
     "root": "stand",
-    "family": "family/stand.json"
+    "family": "family/stand.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "stand",
+          "gloss": "Proto-Germanic",
+          "surface": "stand",
+          "origin": {
+            "id": "upright-position",
+            "label": "Upright position",
+            "gloss": "standing upright; taking a position",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "stand"
+        }
+      ],
+      "root": "stand",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outstretched": {
     "d": [
@@ -1425,7 +1467,28 @@
       }
     ],
     "root": "stand",
-    "family": "family/stand.json"
+    "family": "family/stand.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "stand",
+          "gloss": "Proto-Germanic",
+          "surface": "stand",
+          "origin": {
+            "id": "upright-position",
+            "label": "Upright position",
+            "gloss": "standing upright; taking a position",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "stand"
+        }
+      ],
+      "root": "stand",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outwardly": {
     "d": [
@@ -1762,7 +1825,28 @@
       }
     ],
     "root": "break",
-    "family": "family/break.json"
+    "family": "family/break.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "break",
+          "gloss": "Proto-Germanic",
+          "surface": "break",
+          "origin": {
+            "id": "breaking-shattering",
+            "label": "Breaking & shattering",
+            "gloss": "breaking into fragments; shattering, fracturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "break"
+        }
+      ],
+      "root": "break",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outbuilding": {
     "d": [
@@ -2413,7 +2497,28 @@
       }
     ],
     "root": "house",
-    "family": "family/house.json"
+    "family": "family/house.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "house",
+          "gloss": "Proto-Germanic",
+          "surface": "house",
+          "origin": {
+            "id": "dwelling-shelter",
+            "label": "Dwelling & shelter",
+            "gloss": "a place of shelter; residential structure",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "house"
+        }
+      ],
+      "root": "house",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outing": {
     "d": [
@@ -4667,7 +4772,28 @@
       }
     ],
     "root": "break",
-    "family": "family/break.json"
+    "family": "family/break.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "break",
+          "gloss": "Proto-Germanic",
+          "surface": "break",
+          "origin": {
+            "id": "breaking-shattering",
+            "label": "Breaking & shattering",
+            "gloss": "breaking into fragments; shattering, fracturing",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "break"
+        }
+      ],
+      "root": "break",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outsing": {
     "b": [
@@ -4687,7 +4813,28 @@
       }
     ],
     "root": "sing",
-    "family": "family/sing.json"
+    "family": "family/sing.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "sing",
+          "gloss": "Proto-Germanic",
+          "surface": "sing",
+          "origin": {
+            "id": "vocalization-music",
+            "label": "Vocalization & music",
+            "gloss": "producing song; singing, musical utterance",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "sing"
+        }
+      ],
+      "root": "sing",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outspeak": {
     "b": [
@@ -4707,7 +4854,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outspeaking": {
     "b": [
@@ -4727,7 +4895,28 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outspin": {
     "b": [
@@ -4747,7 +4936,28 @@
       }
     ],
     "root": "spin",
-    "family": "family/spin.json"
+    "family": "family/spin.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "spin",
+          "gloss": "Proto-Germanic",
+          "surface": "spin",
+          "origin": {
+            "id": "twisting-rotation",
+            "label": "Twisting & rotation",
+            "gloss": "spinning fibers into thread; rotating, twisting",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "spin"
+        }
+      ],
+      "root": "spin",
+      "verified": false,
+      "source": "family verified"
+    }
   },
   "outspeakenly": {
     "b": [
@@ -4767,6 +4977,27 @@
       }
     ],
     "root": "speak",
-    "family": "family/speak.json"
+    "family": "family/speak.json",
+    "m": {
+      "parts": [
+        {
+          "kind": "root",
+          "id": "speak",
+          "gloss": "Proto-Germanic",
+          "surface": "speak",
+          "origin": {
+            "id": "speech-utterance",
+            "label": "Speech & utterance",
+            "gloss": "speaking words; uttering sounds, discourse",
+            "by": "assistant",
+            "at": "2026-06-25T00:00:00.000Z"
+          },
+          "source": "speak"
+        }
+      ],
+      "root": "speak",
+      "verified": false,
+      "source": "family verified"
+    }
   }
 }
