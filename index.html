@@ -12,13 +12,43 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=73" />
+  <link rel="stylesheet" href="styles.css?v=74" />
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark">◐</button>
+      <button id="settingsBtn" class="settings-btn" type="button" aria-label="Settings">⚙</button>
     </header>
+
+    <div id="settingsOverlay" class="settings-overlay" hidden role="dialog" aria-modal="true" aria-label="Settings">
+      <div class="settings-panel">
+        <button class="settings-close" id="settingsClose" type="button" aria-label="Close">✕</button>
+        <h2 class="settings-title">Settings</h2>
+
+        <div class="settings-section">
+          <label class="settings-label" for="claudeKeyInput">Claude API Key</label>
+          <p class="settings-hint">Sonnet 4.6 · used for etymology verification with web search</p>
+          <div class="key-row">
+            <input type="password" id="claudeKeyInput" class="key-input"
+              placeholder="sk-ant-api03-…" autocomplete="off" spellcheck="false" />
+            <button id="saveKeyBtn" class="save-key-btn" type="button">Save</button>
+          </div>
+          <div id="keyStatus" class="key-status"></div>
+        </div>
+
+        <div class="settings-section">
+          <label class="settings-label" for="githubTokenInput">GitHub Token</label>
+          <p class="settings-hint">PAT with repo write · commits verified breakdowns directly to the database</p>
+          <div class="key-row">
+            <input type="password" id="githubTokenInput" class="key-input"
+              placeholder="ghp_…" autocomplete="off" spellcheck="false" />
+            <button id="saveGhBtn" class="save-key-btn" type="button">Save</button>
+          </div>
+          <div id="ghStatus" class="key-status"></div>
+        </div>
+      </div>
+    </div>
     <div class="minihead" id="miniHead"></div>
 
     <main class="content" id="content">
@@ -95,6 +125,6 @@
 
   <script src="data.js?v=60"></script>
   <script src="engine.js?v=58"></script>
-  <script src="app.js?v=81"></script>
+  <script src="app.js?v=82"></script>
 </body>
 </html>

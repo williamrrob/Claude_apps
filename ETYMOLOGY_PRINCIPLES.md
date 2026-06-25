@@ -109,5 +109,5 @@ When adding a word, note its doublets and cognates. The `e` (etymology) field sh
 
 ## Branch
 
-All development goes on: `claude/visual-etymology-app-093c1d`  
+All development goes on: `claude/latin-roots-word-sort-oy28hh`  
 Deployed at: `williamrrob.github.io/Claude_apps`
