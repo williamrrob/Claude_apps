@@ -1,0 +1,287 @@
+{
+  "_note": "Editor data for the tenere family (Latin tenēre, 'to hold, keep, maintain'). 26 carefully verified placements across 6 semantic regions. All etymologies explicitly confirmed to derive from Latin teneō/tenēre or prefixed forms (con-, de-, ob-, per-, re-, sub-, at-, un-). EXCLUDES: tendon (from Greek tenōn), tent (from Vulgar Latin *tenta), extend/extent (from extendō, different root). Root meaning extends from physical holding to abstract possession, maintenance, containment, and capacity. Placement format with provenance; regenerators MUST preserve by:assistant.",
+  "root": "tenere",
+  "rootLabel": "tenēre",
+  "rootGloss": "Latin · to hold, keep, maintain, possess",
+  "regions": [
+    {
+      "id": "holding-grasping",
+      "label": "Holding & grasping",
+      "gloss": "holding something firmly; possession and tenacity",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "containing-comprehending",
+      "label": "Containing & comprehending",
+      "gloss": "holding together; comprising, containing, pertaining to",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "maintaining-sustaining",
+      "label": "Maintaining & sustaining",
+      "gloss": "holding up, keeping going; supporting and preserving",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "restraining-holding-back",
+      "label": "Restraining & holding back",
+      "gloss": "holding in check; detaining, retaining, restraint",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "obtaining-attaining",
+      "label": "Obtaining & attaining",
+      "gloss": "getting hold of; reaching, achieving",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "holdable-tenable",
+      "label": "Holdable & tenable",
+      "gloss": "capable of being held; defensible, maintainable",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "tenant",
+      "s": null,
+      "region": "holding-grasping",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who holds or possesses land; an occupant. From Latin tenēns (holding), present participle of tenēre."
+    },
+    {
+      "w": "tenure",
+      "s": null,
+      "region": "holding-grasping",
+      "parent": "tenant",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act or right of holding something; the period of holding office. From Vulgar Latin *tenitura, from tenēre."
+    },
+    {
+      "w": "tenement",
+      "s": null,
+      "region": "holding-grasping",
+      "parent": "tenant",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A holding of land; a building held by tenants. From Medieval Latin tenementum, from tenēre."
+    },
+    {
+      "w": "tenacious",
+      "s": null,
+      "region": "holding-grasping",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Holding firmly; persistent, stubborn. From Latin tenāx (holding fast), from tenēre."
+    },
+    {
+      "w": "tenacity",
+      "s": null,
+      "region": "holding-grasping",
+      "parent": "tenacious",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The quality of holding firm; persistence. From Latin tenācitās, from tenāx."
+    },
+    {
+      "w": "contain",
+      "s": null,
+      "region": "containing-comprehending",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To hold together; to comprise. From Latin continēre (to hold together), from con- + tenēre."
+    },
+    {
+      "w": "container",
+      "s": null,
+      "region": "containing-comprehending",
+      "parent": "contain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Something that contains. From contain + -er."
+    },
+    {
+      "w": "content",
+      "s": null,
+      "region": "containing-comprehending",
+      "parent": "contain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "What is held or contained; subject matter. From Latin contentus (held in, contained), past participle of continēre."
+    },
+    {
+      "w": "pertain",
+      "s": null,
+      "region": "containing-comprehending",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To relate or belong to. From Latin pertinēre (to hold throughout, reach to), from per- + tenēre."
+    },
+    {
+      "w": "pertinent",
+      "s": null,
+      "region": "containing-comprehending",
+      "parent": "pertain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Relevant, applicable. From Latin pertinens, from pertinēre."
+    },
+    {
+      "w": "maintain",
+      "s": null,
+      "region": "maintaining-sustaining",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To keep in existence or operation; to support. From Latin manutenēre (to hold in hand), from manu (by hand) + tenēre."
+    },
+    {
+      "w": "maintenance",
+      "s": null,
+      "region": "maintaining-sustaining",
+      "parent": "maintain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of maintaining. From maintain + -ance."
+    },
+    {
+      "w": "sustain",
+      "s": null,
+      "region": "maintaining-sustaining",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To keep up, maintain; to support from below. From Latin sustinēre (to uphold), from sub- + tenēre."
+    },
+    {
+      "w": "sustenance",
+      "s": null,
+      "region": "maintaining-sustaining",
+      "parent": "sustain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "That which sustains; nourishment. From sustain + -ance."
+    },
+    {
+      "w": "sustainable",
+      "s": null,
+      "region": "maintaining-sustaining",
+      "parent": "sustain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Capable of being sustained. From sustain + -able."
+    },
+    {
+      "w": "detain",
+      "s": null,
+      "region": "restraining-holding-back",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To hold or keep back; to restrain from departure. From Latin dētinēre (to hold back), from de- + tenēre."
+    },
+    {
+      "w": "detention",
+      "s": null,
+      "region": "restraining-holding-back",
+      "parent": "detain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of detaining; confinement. From Latin dētentiō, from dētinēre."
+    },
+    {
+      "w": "retain",
+      "s": null,
+      "region": "restraining-holding-back",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To keep or hold back; to continue to possess. From Latin retinēre (to hold back), from re- + tenēre."
+    },
+    {
+      "w": "retention",
+      "s": null,
+      "region": "restraining-holding-back",
+      "parent": "retain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The act of retaining; something retained. From Latin retentiō, from retinēre."
+    },
+    {
+      "w": "retentive",
+      "s": null,
+      "region": "restraining-holding-back",
+      "parent": "retention",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Able to retain; holding fast. From Medieval Latin retentivus, from retinēre."
+    },
+    {
+      "w": "obtain",
+      "s": null,
+      "region": "obtaining-attaining",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To get or acquire; to secure hold of. From Latin obtinēre (to hold toward, obtain), from ob- + tenēre."
+    },
+    {
+      "w": "attain",
+      "s": null,
+      "region": "obtaining-attaining",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "To reach or achieve; to come to hold. From Latin attinēre (to reach toward), from ad- + tenēre."
+    },
+    {
+      "w": "attainment",
+      "s": null,
+      "region": "obtaining-attaining",
+      "parent": "attain",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "An achievement; something attained. From attain + -ment."
+    },
+    {
+      "w": "tenable",
+      "s": null,
+      "region": "holdable-tenable",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Capable of being held or maintained; defensible. From French tenable, from tenir (to hold), from Latin tenēre."
+    },
+    {
+      "w": "untenable",
+      "s": null,
+      "region": "holdable-tenable",
+      "parent": "tenable",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Not capable of being held or defended. From un- + tenable."
+    },
+    {
+      "w": "lieutenant",
+      "s": null,
+      "region": "holdable-tenable",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who holds the place of another; a military officer. From Middle English lieutenant, from Old French lieu tenant (one holding the place), from lieu (place) + tenant (holding)."
+    }
+  ],
+  "collapse": {}
+}
