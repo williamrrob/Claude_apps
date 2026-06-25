@@ -15891,18 +15891,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "re",
+          "gloss": "re",
+          "surface": "re",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "build",
-          "gloss": "Proto-Germanic",
+          "gloss": "build",
           "surface": "build",
-          "origin": {
-            "id": "construction-creation",
-            "label": "Construction & creation",
-            "gloss": "building structures; constructing, erecting",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "build"
+          "origin": "Germanic"
         }
       ],
       "root": "build",
@@ -40342,18 +40342,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "re",
+          "gloss": "re",
+          "surface": "re",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "build",
-          "gloss": "Proto-Germanic",
+          "gloss": "build",
           "surface": "build",
-          "origin": {
-            "id": "construction-creation",
-            "label": "Construction & creation",
-            "gloss": "building structures; constructing, erecting",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "build"
+          "origin": "Germanic"
         }
       ],
       "root": "build",

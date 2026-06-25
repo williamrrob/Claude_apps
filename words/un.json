@@ -10312,18 +10312,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "under",
+          "gloss": "under",
+          "surface": "under",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "stand",
-          "gloss": "Proto-Germanic",
+          "gloss": "stand",
           "surface": "stand",
-          "origin": {
-            "id": "upright-position",
-            "label": "Upright position",
-            "gloss": "standing upright; taking a position",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "stand"
+          "origin": "Germanic"
         }
       ],
       "root": "stand",
@@ -10403,18 +10403,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "under",
+          "gloss": "under",
+          "surface": "under",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "stand",
-          "gloss": "Proto-Germanic",
+          "gloss": "stand",
           "surface": "stand",
-          "origin": {
-            "id": "upright-position",
-            "label": "Upright position",
-            "gloss": "standing upright; taking a position",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "stand"
+          "origin": "Germanic"
         }
       ],
       "root": "stand",
@@ -52863,18 +52863,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "under",
+          "gloss": "under",
+          "surface": "under",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "stand",
-          "gloss": "Proto-Germanic",
+          "gloss": "stand",
           "surface": "stand",
-          "origin": {
-            "id": "upright-position",
-            "label": "Upright position",
-            "gloss": "standing upright; taking a position",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "stand"
+          "origin": "Germanic"
         }
       ],
       "root": "stand",
@@ -55813,18 +55813,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "un",
+          "gloss": "un",
+          "surface": "un",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
-          "id": "build",
-          "gloss": "Proto-Germanic",
-          "surface": "build",
-          "origin": {
-            "id": "construction-creation",
-            "label": "Construction & creation",
-            "gloss": "building structures; constructing, erecting",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "build"
+          "id": "built",
+          "gloss": "built",
+          "surface": "built",
+          "origin": "Germanic"
         }
       ],
       "root": "build",

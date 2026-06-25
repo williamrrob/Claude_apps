@@ -814,6 +814,13 @@
   "breaking": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "break",
+        "gloss": "break",
+        "surface": "break",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "break",
         "gloss": "Proto-Germanic",
@@ -841,6 +848,13 @@
   },
   "breaker": {
     "parts": [
+      {
+        "kind": "prefix",
+        "id": "break",
+        "gloss": "break",
+        "surface": "break",
+        "origin": "Germanic"
+      },
       {
         "kind": "root",
         "id": "break",
@@ -1234,18 +1248,18 @@
   "breakthrough": {
     "parts": [
       {
-        "kind": "root",
+        "kind": "prefix",
         "id": "break",
-        "gloss": "Proto-Germanic",
+        "gloss": "break",
         "surface": "break",
-        "origin": {
-          "id": "breaking-shattering",
-          "label": "Breaking & shattering",
-          "gloss": "breaking into fragments; shattering, fracturing",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "break"
+        "origin": "Germanic"
+      },
+      {
+        "kind": "root",
+        "id": "through",
+        "gloss": "through",
+        "surface": "through",
+        "origin": "Germanic"
       }
     ],
     "root": "break",
@@ -2046,18 +2060,18 @@
   "upbring": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "up",
+        "gloss": "up",
+        "surface": "up",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "bring",
-        "gloss": "Proto-Germanic",
+        "gloss": "bring",
         "surface": "bring",
-        "origin": {
-          "id": "conveyance-transport",
-          "label": "Conveyance & transport",
-          "gloss": "bringing or carrying from one place to another",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "bring"
+        "origin": "Germanic"
       }
     ],
     "root": "bring",
@@ -2074,18 +2088,18 @@
   "upbringing": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "up",
+        "gloss": "up",
+        "surface": "up",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "bring",
-        "gloss": "Proto-Germanic",
+        "gloss": "bring",
         "surface": "bring",
-        "origin": {
-          "id": "conveyance-transport",
-          "label": "Conveyance & transport",
-          "gloss": "bringing or carrying from one place to another",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "bring"
+        "origin": "Germanic"
       }
     ],
     "root": "bring",
@@ -2326,18 +2340,18 @@
   "rebuild": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "re",
+        "gloss": "re",
+        "surface": "re",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "build",
-        "gloss": "Proto-Germanic",
+        "gloss": "build",
         "surface": "build",
-        "origin": {
-          "id": "construction-creation",
-          "label": "Construction & creation",
-          "gloss": "building structures; constructing, erecting",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "build"
+        "origin": "Germanic"
       }
     ],
     "root": "build",
@@ -2354,18 +2368,18 @@
   "rebuilding": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "re",
+        "gloss": "re",
+        "surface": "re",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "build",
-        "gloss": "Proto-Germanic",
+        "gloss": "build",
         "surface": "build",
-        "origin": {
-          "id": "construction-creation",
-          "label": "Construction & creation",
-          "gloss": "building structures; constructing, erecting",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "build"
+        "origin": "Germanic"
       }
     ],
     "root": "build",
@@ -2438,18 +2452,18 @@
   "unbuilt": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "un",
+        "gloss": "un",
+        "surface": "un",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
-        "id": "build",
-        "gloss": "Proto-Germanic",
-        "surface": "build",
-        "origin": {
-          "id": "construction-creation",
-          "label": "Construction & creation",
-          "gloss": "building structures; constructing, erecting",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "build"
+        "id": "built",
+        "gloss": "built",
+        "surface": "built",
+        "origin": "Germanic"
       }
     ],
     "root": "build",
@@ -23648,18 +23662,18 @@
   "outstanding": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "out",
+        "gloss": "out",
+        "surface": "out",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "stand",
-        "gloss": "Proto-Germanic",
+        "gloss": "stand",
         "surface": "stand",
-        "origin": {
-          "id": "upright-position",
-          "label": "Upright position",
-          "gloss": "standing upright; taking a position",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "stand"
+        "origin": "Germanic"
       }
     ],
     "root": "stand",
@@ -23704,18 +23718,18 @@
   "withstand": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "with",
+        "gloss": "with",
+        "surface": "with",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "stand",
-        "gloss": "Proto-Germanic",
+        "gloss": "stand",
         "surface": "stand",
-        "origin": {
-          "id": "upright-position",
-          "label": "Upright position",
-          "gloss": "standing upright; taking a position",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "stand"
+        "origin": "Germanic"
       }
     ],
     "root": "stand",
@@ -23732,18 +23746,18 @@
   "withstanding": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "with",
+        "gloss": "with",
+        "surface": "with",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "stand",
-        "gloss": "Proto-Germanic",
+        "gloss": "stand",
         "surface": "stand",
-        "origin": {
-          "id": "upright-position",
-          "label": "Upright position",
-          "gloss": "standing upright; taking a position",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "stand"
+        "origin": "Germanic"
       }
     ],
     "root": "stand",
@@ -23760,18 +23774,18 @@
   "withstood": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "with",
+        "gloss": "with",
+        "surface": "with",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "stand",
-        "gloss": "Proto-Germanic",
+        "gloss": "stand",
         "surface": "stand",
-        "origin": {
-          "id": "upright-position",
-          "label": "Upright position",
-          "gloss": "standing upright; taking a position",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "stand"
+        "origin": "Germanic"
       }
     ],
     "root": "stand",
@@ -23788,18 +23802,18 @@
   "understand": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "under",
+        "gloss": "under",
+        "surface": "under",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "stand",
-        "gloss": "Proto-Germanic",
+        "gloss": "stand",
         "surface": "stand",
-        "origin": {
-          "id": "upright-position",
-          "label": "Upright position",
-          "gloss": "standing upright; taking a position",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "stand"
+        "origin": "Germanic"
       }
     ],
     "root": "stand",
@@ -23816,18 +23830,18 @@
   "understanding": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "under",
+        "gloss": "under",
+        "surface": "under",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "stand",
-        "gloss": "Proto-Germanic",
+        "gloss": "stand",
         "surface": "stand",
-        "origin": {
-          "id": "upright-position",
-          "label": "Upright position",
-          "gloss": "standing upright; taking a position",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "stand"
+        "origin": "Germanic"
       }
     ],
     "root": "stand",
@@ -23844,18 +23858,18 @@
   "understood": {
     "parts": [
       {
+        "kind": "prefix",
+        "id": "under",
+        "gloss": "under",
+        "surface": "under",
+        "origin": "Germanic"
+      },
+      {
         "kind": "root",
         "id": "stand",
-        "gloss": "Proto-Germanic",
+        "gloss": "stand",
         "surface": "stand",
-        "origin": {
-          "id": "upright-position",
-          "label": "Upright position",
-          "gloss": "standing upright; taking a position",
-          "by": "assistant",
-          "at": "2026-06-25T00:00:00.000Z"
-        },
-        "source": "stand"
+        "origin": "Germanic"
       }
     ],
     "root": "stand",

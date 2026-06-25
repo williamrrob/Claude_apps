@@ -8070,18 +8070,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "with",
+          "gloss": "with",
+          "surface": "with",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "stand",
-          "gloss": "Proto-Germanic",
+          "gloss": "stand",
           "surface": "stand",
-          "origin": {
-            "id": "upright-position",
-            "label": "Upright position",
-            "gloss": "standing upright; taking a position",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "stand"
+          "origin": "Germanic"
         }
       ],
       "root": "stand",
@@ -8126,18 +8126,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "with",
+          "gloss": "with",
+          "surface": "with",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "stand",
-          "gloss": "Proto-Germanic",
+          "gloss": "stand",
           "surface": "stand",
-          "origin": {
-            "id": "upright-position",
-            "label": "Upright position",
-            "gloss": "standing upright; taking a position",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "stand"
+          "origin": "Germanic"
         }
       ],
       "root": "stand",
@@ -8167,18 +8167,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "with",
+          "gloss": "with",
+          "surface": "with",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "stand",
-          "gloss": "Proto-Germanic",
+          "gloss": "stand",
           "surface": "stand",
-          "origin": {
-            "id": "upright-position",
-            "label": "Upright position",
-            "gloss": "standing upright; taking a position",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "stand"
+          "origin": "Germanic"
         }
       ],
       "root": "stand",

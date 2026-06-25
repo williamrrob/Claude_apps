@@ -1561,18 +1561,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "up",
+          "gloss": "up",
+          "surface": "up",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "bring",
-          "gloss": "Proto-Germanic",
+          "gloss": "bring",
           "surface": "bring",
-          "origin": {
-            "id": "conveyance-transport",
-            "label": "Conveyance & transport",
-            "gloss": "bringing or carrying from one place to another",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "bring"
+          "origin": "Germanic"
         }
       ],
       "root": "bring",
@@ -2991,18 +2991,18 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "up",
+          "gloss": "up",
+          "surface": "up",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "bring",
-          "gloss": "Proto-Germanic",
+          "gloss": "bring",
           "surface": "bring",
-          "origin": {
-            "id": "conveyance-transport",
-            "label": "Conveyance & transport",
-            "gloss": "bringing or carrying from one place to another",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "bring"
+          "origin": "Germanic"
         }
       ],
       "root": "bring",

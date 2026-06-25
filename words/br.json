@@ -7992,6 +7992,13 @@
     "m": {
       "parts": [
         {
+          "kind": "prefix",
+          "id": "break",
+          "gloss": "break",
+          "surface": "break",
+          "origin": "Germanic"
+        },
+        {
           "kind": "root",
           "id": "break",
           "gloss": "Proto-Germanic",
@@ -8136,6 +8143,13 @@
     "family": "family/break.json",
     "m": {
       "parts": [
+        {
+          "kind": "prefix",
+          "id": "break",
+          "gloss": "break",
+          "surface": "break",
+          "origin": "Germanic"
+        },
         {
           "kind": "root",
           "id": "break",
@@ -8308,18 +8322,18 @@
     "m": {
       "parts": [
         {
-          "kind": "root",
+          "kind": "prefix",
           "id": "break",
-          "gloss": "Proto-Germanic",
+          "gloss": "break",
           "surface": "break",
-          "origin": {
-            "id": "breaking-shattering",
-            "label": "Breaking & shattering",
-            "gloss": "breaking into fragments; shattering, fracturing",
-            "by": "assistant",
-            "at": "2026-06-25T00:00:00.000Z"
-          },
-          "source": "break"
+          "origin": "Germanic"
+        },
+        {
+          "kind": "root",
+          "id": "through",
+          "gloss": "through",
+          "surface": "through",
+          "origin": "Germanic"
         }
       ],
       "root": "break",
