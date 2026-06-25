@@ -1,0 +1,201 @@
+{
+  "_note": "Editor data for house family (Proto-Germanic *hustiz, from PIE *bhudh-, 'to hide, shelter, dwelling'). 16 verified placements. All etymologies confirmed from dictionary sources.",
+  "root": "house",
+  "rootLabel": "*hustiz",
+  "rootGloss": "Proto-Germanic · dwelling, shelter (from PIE *bhudh- 'to hide')",
+  "regions": [
+    {
+      "id": "dwelling-shelter",
+      "label": "Dwelling & shelter",
+      "gloss": "a place of shelter; residential structure",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "family-household",
+      "label": "Family & household",
+      "gloss": "domestic group; family unit and its affairs",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    {
+      "id": "storage-collection",
+      "label": "Storage & collection",
+      "gloss": "a place where things are kept; repository",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "house",
+      "s": null,
+      "region": "dwelling-shelter",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A dwelling built for habitation. From Old English hus, from Proto-Germanic *hustiz, from PIE *bhudh- (to hide, shelter)."
+    },
+    {
+      "w": "housed",
+      "s": null,
+      "region": "dwelling-shelter",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Provided with shelter; put into a house. From house + -ed."
+    },
+    {
+      "w": "housing",
+      "s": null,
+      "region": "dwelling-shelter",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Dwellings collectively; or a protective covering. From house + -ing."
+    },
+    {
+      "w": "houseless",
+      "s": null,
+      "region": "dwelling-shelter",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Without a house; homeless. From house + -less."
+    },
+    {
+      "w": "household",
+      "s": null,
+      "region": "family-household",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A domestic group; a family and those who live in a house. From house + hold."
+    },
+    {
+      "w": "householder",
+      "s": null,
+      "region": "family-household",
+      "parent": "household",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "The head of a household. From household + -er."
+    },
+    {
+      "w": "housekeeper",
+      "s": null,
+      "region": "family-household",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "One who manages a household; a domestic servant. From house + keeper."
+    },
+    {
+      "w": "housework",
+      "s": null,
+      "region": "family-household",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Work done in managing a household. From house + work."
+    },
+    {
+      "w": "housewarming",
+      "s": null,
+      "region": "family-household",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A party celebrating moving into a new house. From house + warming."
+    },
+    {
+      "w": "housewife",
+      "s": null,
+      "region": "family-household",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A married woman who manages a household. From house + wife."
+    },
+    {
+      "w": "in-house",
+      "s": null,
+      "region": "family-household",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Existing or done within an organization. From in- + house."
+    },
+    {
+      "w": "warehouse",
+      "s": null,
+      "region": "storage-collection",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A large building for storing goods. From ware + house (warehouse = goods-house)."
+    },
+    {
+      "w": "warehoused",
+      "s": null,
+      "region": "storage-collection",
+      "parent": "warehouse",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Stored in a warehouse. From warehouse + -ed."
+    },
+    {
+      "w": "warehousing",
+      "s": null,
+      "region": "storage-collection",
+      "parent": "warehouse",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "Storing in a warehouse. From warehouse + -ing."
+    },
+    {
+      "w": "storehouse",
+      "s": null,
+      "region": "storage-collection",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A building used for storage. From store + house."
+    },
+    {
+      "w": "outhouse",
+      "s": null,
+      "region": "dwelling-shelter",
+      "parent": "house",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z",
+      "note": "A small structure outside a main building; a latrine. From out- + house."
+    }
+  ],
+  "collapse": {
+    "housed": {
+      "l": "house",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "housing": {
+      "l": "house",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "warehoused": {
+      "l": "warehouse",
+      "t": "past tense of (also separate placement as adjective)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    },
+    "warehousing": {
+      "l": "warehouse",
+      "t": "present participle of (also separate placement as noun)",
+      "by": "assistant",
+      "at": "2026-06-25T00:00:00.000Z"
+    }
+  }
+}

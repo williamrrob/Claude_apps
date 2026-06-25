@@ -1,5 +1,5 @@
 {
-  "_note": "Editor data for build family (Proto-Germanic *buthlon-, 'to build, construct'). 29 verified placements across 3 semantic regions. All etymologies confirmed from dictionary sources.",
+  "_note": "Editor data for build family (Proto-Germanic *buthlon-, 'to build, construct'). 15 verified placements across 2 semantic regions. All etymologies confirmed from dictionary sources.",
   "root": "build",
   "rootLabel": "*buthlon-",
   "rootGloss": "Proto-Germanic · to build, construct, create structures",
@@ -18,13 +18,6 @@
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z"
     },
-    {
-      "id": "structure-form",
-      "label": "Structure & form",
-      "gloss": "the built structure; form, framework, arrangement",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z"
-    }
   ],
   "placements": [
     {
@@ -145,108 +138,9 @@
       "note": "Building up; development. From upbuild + -ing."
     },
     {
-      "w": "house",
-      "s": null,
-      "region": "structure-form",
-      "parent": null,
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "A dwelling built for habitation. From Old English hus, related to Proto-Germanic *hustiz (built shelter)."
-    },
-    {
-      "w": "housed",
-      "s": null,
-      "region": "structure-form",
-      "parent": "house",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Provided with shelter. From house + -ed."
-    },
-    {
-      "w": "housing",
-      "s": null,
-      "region": "structure-form",
-      "parent": "house",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Dwellings collectively; or a covering. From house + -ing."
-    },
-    {
-      "w": "household",
-      "s": null,
-      "region": "structure-form",
-      "parent": "house",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "A domestic group; a family and servants. From house + hold."
-    },
-    {
-      "w": "householder",
-      "s": null,
-      "region": "structure-form",
-      "parent": "household",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "The head of a household. From household + -er."
-    },
-    {
-      "w": "housekeeper",
-      "s": null,
-      "region": "structure-form",
-      "parent": "house",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "One who manages a household. From house + keeper."
-    },
-    {
-      "w": "housework",
-      "s": null,
-      "region": "structure-form",
-      "parent": "house",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Work done in managing a household. From house + work."
-    },
-    {
-      "w": "housewarming",
-      "s": null,
-      "region": "structure-form",
-      "parent": "house",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "A party celebrating moving into a new house. From house + warming."
-    },
-    {
-      "w": "warehouse",
-      "s": null,
-      "region": "structure-form",
-      "parent": "house",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "A large building for storing goods. From ware + house."
-    },
-    {
-      "w": "in-house",
-      "s": null,
-      "region": "structure-form",
-      "parent": "house",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Existing or done within an organization. From in- + house."
-    },
-    {
-      "w": "houseless",
-      "s": null,
-      "region": "structure-form",
-      "parent": "house",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z",
-      "note": "Without a house; homeless. From house + -less."
-    },
-    {
       "w": "booth",
       "s": null,
-      "region": "structure-form",
+      "region": "development-growth",
       "parent": null,
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
@@ -255,7 +149,7 @@
     {
       "w": "bothy",
       "s": null,
-      "region": "structure-form",
+      "region": "development-growth",
       "parent": "booth",
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z",
@@ -289,18 +183,6 @@
     },
     "upbuilding": {
       "l": "upbuild",
-      "t": "present participle of (also separate placement as noun)",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z"
-    },
-    "housed": {
-      "l": "house",
-      "t": "past tense of (also separate placement as adjective)",
-      "by": "assistant",
-      "at": "2026-06-25T00:00:00.000Z"
-    },
-    "housing": {
-      "l": "house",
       "t": "present participle of (also separate placement as noun)",
       "by": "assistant",
       "at": "2026-06-25T00:00:00.000Z"
