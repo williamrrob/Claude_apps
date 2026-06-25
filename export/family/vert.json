@@ -1,0 +1,996 @@
+{
+ "_note": "Editor data for the vert-/vers- family (Latin vertere, 'to turn, rotate'). Hand-filtered from ~274 raw; EXCLUDES: vertu (from virtus, not vert), verst (Russian unit), versace (proper noun), poverty (from paupertas), cleavers (plant), evers (non-standard). Allomorphic stem variation: vert- (nominative/infinitive), vers- (oblique/oblique cases, combining forms). Placement format with provenance; regenerators MUST preserve by:assistant.",
+ "root": "vert",
+ "rootLabel": "vertere",
+ "rootGloss": "Latin · to turn, rotate, spin",
+ "regions": [
+  {
+   "id": "rotational-spatial",
+   "label": "Rotational & spatial turning",
+   "gloss": "vertex, vertical, vertigo, evert, invert — physical rotation or turning in space; orientation",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "id": "reversal-opposition",
+   "label": "Reversal & opposition",
+   "gloss": "reverse, revert, adverse, averse, divert — turning back, away, or against a direction or course",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "id": "transformation-conversion",
+   "label": "Transformation & conversion",
+   "gloss": "convert, reconvert, version — turning something into another form or condition",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "id": "attention-discourse",
+   "label": "Attention & discourse",
+   "gloss": "advert, avert, advertise, converse, conversation — turning attention or words toward/away; exchange of discourse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "id": "differentiation-diversity",
+   "label": "Differentiation & diversity",
+   "gloss": "diverse, divert, diversity — turning in different directions; becoming manifold or varied",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "id": "orientation-perspective",
+   "label": "Orientation & perspective",
+   "gloss": "introvert, extrovert, universe, traverse, transverse — turning inward/outward; turning across",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "id": "controversy-disputation",
+   "label": "Controversy & disputation",
+   "gloss": "controvert, controversy — turning against; opposing through argument",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  }
+ ],
+ "placements": [
+  {
+   "w": "avert",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "advert",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "advertise",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "advert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "advertised",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "advertise",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "advertiser",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "advertise",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "advertisement",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "advertise",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "advertising",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "advertise",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "evert",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "eversion",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "evert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "overt",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "covert",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "covertly",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "covert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "divert",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "diverted",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "divert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "diversion",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "divert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "diverse",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "diversity",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "diverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "diversify",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "diverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "invert",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "inverted",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "invert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "inversion",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "invert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "inverse",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "invert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "revert",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "reversion",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "revert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "reverse",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "reversed",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "reverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "reversal",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "reverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "obverse",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "adverse",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "adversity",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "adverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "adversary",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "adverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "averse",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "convert",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "converted",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": "convert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "converter",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": "convert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "conversion",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": "convert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "convertible",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": "convert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "reconvert",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": "convert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "converse",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "conversation",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "converse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "conversant",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "converse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "conversational",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "conversation",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "conversationally",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "conversational",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "converso",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "converse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "vertex",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "vertical",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "vertex",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "vertically",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "vertical",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "vertebra",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "vertebrate",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "vertebra",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "vertebral",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "vertebra",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "vertigo",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "vertiginous",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "vertigo",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "traverse",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "traversal",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "traverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "traverse",
+   "s": 1,
+   "region": "orientation-perspective",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "transverse",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "traverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "transversely",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "transverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "universe",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "universal",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "universe",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "universality",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "universal",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "universally",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "universal",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "university",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "universal",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "extrovert",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "extroverted",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "extrovert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "extroversion",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "extrovert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "introvert",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "introverted",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "introvert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "introversion",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "introvert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "controvert",
+   "s": null,
+   "region": "controversy-disputation",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "controversy",
+   "s": null,
+   "region": "controversy-disputation",
+   "parent": "controvert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "controversial",
+   "s": null,
+   "region": "controversy-disputation",
+   "parent": "controversy",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "controversially",
+   "s": null,
+   "region": "controversy-disputation",
+   "parent": "controversial",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "pervert",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "perverted",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "pervert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "perversion",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "pervert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "subvert",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "subversion",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "subvert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "subversive",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "subversion",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "versatile",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "versatility",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "versatile",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "revers",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "verso",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "animadvert",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "advert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "inadvertence",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "advert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "advertence",
+   "s": null,
+   "region": "attention-discourse",
+   "parent": "advert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "averred",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "aversion",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "averse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "aversive",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "averse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "diversely",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "diverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "diversification",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "diversify",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "diversionist",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "diversion",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "divertimento",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "divert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "invertase",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "invert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "reversible",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "reverse",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "irreversible",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "reversible",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "convertibility",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": "convertible",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "inconvertible",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": "convertible",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "unconverted",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": "convert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "reconversion",
+   "s": null,
+   "region": "transformation-conversion",
+   "parent": "reconvert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "extravert",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "extraverted",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "extravert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "extraversion",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "extravert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "introvertish",
+   "s": null,
+   "region": "orientation-perspective",
+   "parent": "introvert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "versed",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "malversate",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "malversation",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "malversate",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "retrovert",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "retroversion",
+   "s": null,
+   "region": "reversal-opposition",
+   "parent": "retrovert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "biodiversity",
+   "s": null,
+   "region": "differentiation-diversity",
+   "parent": "diversity",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "overtly",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "overt",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  {
+   "w": "covertness",
+   "s": null,
+   "region": "rotational-spatial",
+   "parent": "covert",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  }
+ ],
+ "collapse": {
+  "averted": {
+   "l": "avert",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  "everted": {
+   "l": "evert",
+   "t": "past tense of",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  "diverts": {
+   "l": "divert",
+   "t": "third person singular of",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  "reverses": {
+   "l": "reverse",
+   "t": "third person singular of",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  "reverts": {
+   "l": "revert",
+   "t": "third person singular of",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  "converts": {
+   "l": "convert",
+   "t": "third person singular of",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  },
+  "converses": {
+   "l": "converse",
+   "t": "third person singular of",
+   "by": "assistant",
+   "at": "2026-06-25T00:00:00.000Z"
+  }
+ },
+ "meta": {
+  "version": 1,
+  "updated": "2026-06-25T00:00:00.000Z",
+  "by": "assistant"
+ }
+}
