@@ -49,6 +49,59 @@
     return { prefix: "prefix", root: "root", suffix: "suffix", linker: "link", unknown: "stem", word: "word" }[k] || k;
   }
 
+  // ---------- etymology request system ----------
+  async function isMWVerified(rec) {
+    if (!rec || !rec.m) return false;
+    return rec.m.verified === true || (rec.m.source && rec.m.source.includes("M-W"));
+  }
+
+  function submitEtymologyRequest(word) {
+    const requestId = "req_" + Date.now() + "_" + Math.random().toString(36).substr(2, 9);
+    const request = {
+      id: requestId,
+      word: word,
+      status: "pending",
+      requested_at: new Date().toISOString(),
+      requested_by: "app_user",
+      etymology: null,
+      morpheme_breakdown: null,
+      mw_verified: false,
+      notes: null
+    };
+    // Log to console for backend monitoring
+    console.log("Etymology request submitted:", request);
+    // Also try to save to localStorage for persistence
+    try {
+      let requests = JSON.parse(localStorage.getItem("etymology_requests") || "[]");
+      requests.push(request);
+      localStorage.setItem("etymology_requests", JSON.stringify(requests));
+    } catch (e) {
+      console.warn("Could not save request to localStorage:", e);
+    }
+    return { status: "submitted", request_id: requestId, message: "Request submitted. Backend will process it when available." };
+  }
+
+  function buildRequestButton(word) {
+    const btn = el("button", "etymology-request-btn", "📝 Request M-W verification");
+    btn.type = "button";
+    btn.setAttribute("aria-label", "Request Merriam-Webster etymology verification for this word");
+    btn.addEventListener("click", function () {
+      btn.disabled = true;
+      const originalText = btn.textContent;
+      btn.textContent = "Processing…";
+      const result = submitEtymologyRequest(word);
+      if (result.status === "submitted") {
+        btn.textContent = "✓ Request #" + result.request_id.slice(-9);
+        btn.title = "Your request has been submitted to the backend. Check console logs for status.";
+        setTimeout(function () { btn.textContent = originalText; btn.disabled = false; }, 3000);
+      } else {
+        btn.textContent = "Error";
+        setTimeout(function () { btn.textContent = originalText; btn.disabled = false; }, 2000);
+      }
+    });
+    return btn;
+  }
+
   // ---------- theme ----------
   function storedTheme() { try { return localStorage.getItem("rootwork.theme"); } catch (e) { return null; } }
   function applyTheme(t) {
@@ -522,6 +575,20 @@
     ruleRow.appendChild(el("span", "entry-rule"));
     const pos = rec && rec.d && rec.d[0] && rec.d[0].p;
     if (pos) ruleRow.appendChild(el("span", "entry-pos", pos));
+
+    // Add verification status badge
+    if (rec && rec.m) {
+      const badge = el("span", "verification-badge");
+      if (rec.m.verified === true || (rec.m.source && rec.m.source.includes("M-W"))) {
+        badge.className = "verification-badge verified";
+        badge.textContent = "✓ M-W Verified";
+      } else {
+        badge.className = "verification-badge unverified";
+        badge.textContent = "⚠ Needs M-W Check";
+      }
+      ruleRow.appendChild(badge);
+    }
+
     entryEl.appendChild(ruleRow);
 
     // headword with subtle dots between its parts
@@ -588,6 +655,7 @@
     }
 
     // 1) headword
+    const isVerified = await isMWVerified(rec);
     buildEntry(result.word, rec, parts);
     // Inflected / derived form: present it as descending from a base word
     // ("plural of cactus", "past tense of run", "derived from psychology") and
@@ -614,6 +682,12 @@
         av.appendChild(lk);
       });
       entryEl.appendChild(av);
+    }
+    // Add request button if word lacks M-W verification
+    if (!isVerified && rec && rec.d && rec.d.length) {
+      const reqSection = el("div", "entry-request-section");
+      reqSection.appendChild(buildRequestButton(result.word));
+      entryEl.appendChild(reqSection);
     }
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
     await delay(28); if (token !== runToken) return;

@@ -514,6 +514,33 @@ body {
 }
 .entry-letter:active { transform: scale(0.94); }
 
+/* verification status badge */
+.verification-badge {
+  font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px; white-space: nowrap;
+}
+.verification-badge.verified {
+  background: rgba(76, 175, 80, 0.15); color: #4caf50;
+}
+.verification-badge.unverified {
+  background: rgba(255, 152, 0, 0.15); color: #ff9800;
+}
+
+/* etymology request section */
+.entry-request-section { margin-top: 12px; }
+.etymology-request-btn {
+  font: 13px/1.5 var(--font); font-weight: 600;
+  color: #b5651d; background: var(--glass-sheen), var(--field);
+  border: 1px solid var(--bd); border-radius: 8px; padding: 8px 14px;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-hi), var(--glass-shadow);
+  transition: background-color 0.2s, color 0.2s;
+}
+.etymology-request-btn:hover { background: var(--glass-sheen), var(--panel); }
+.etymology-request-btn:active { transform: scale(0.98); }
+.etymology-request-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
 /* tree button — collapse the word card into the family tree */
 .tree-btn {
   flex: 0 0 auto; width: 40px; height: 40px; display: grid; place-items: center;
