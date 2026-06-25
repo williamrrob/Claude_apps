@@ -1,0 +1,263 @@
+{
+  "batch": "2 - -ity/-acity/-osity Words (Quality/State Nominals)",
+  "total_words": 23,
+  "methodology": "M-W etymology research focusing on quality/state nominal suffix -ity",
+  "key_difference_from_batch1": "Batch 1 (-tion) derives from verbal action nominals. Batch 2 (-ity) derives from adjective quality nominals. Different morphological source = different root forms.",
+  "research_date": "2026-06-25",
+  "words": {
+    "capacity": {
+      "word": "capacity",
+      "mwEtymology": "Latin capacitas (from capax 'able to hold' + -itas suffix)",
+      "mwStructure": {
+        "prefix": "",
+        "root": "capax (adjective)",
+        "suffix": "-itas (becomes -ity in English)"
+      },
+      "familyData": {
+        "root": "cap",
+        "breakdown": "cap + acity",
+        "family": "capere/capax"
+      },
+      "morphemeAnalysis": {
+        "status": "✗ INCORRECT - Root form mismatch",
+        "issue": "M-W shows capax (adjective form) not cap (verb stem)",
+        "explanation": "Latin capacitas derives from capax (able to hold), which nominalizes as capacitas (quality of being capable). The 'ac' in 'acity' is part of the root form 'capac-' (from capax), not a suffix component. English 'capacity' shows this as cap-acity, visually grouping it as cap + acity, but etymologically it should be capac- (from capax) + -ity",
+        "correction": "Should be 'capac + ity' (with capac- as nominalization stem from adjective capax)",
+        "detailed_breakdown": "capax → capac- (adjective stem) + -itas (quality suffix) → capacitas → English capacity"
+      },
+      "notes": "This is a KEY FINDING: -ity suffix words derive from adjectives, requiring the adjective stem (capax → capac-), not the verb stem (cap-). Family currently shows verb stem + acity, which is structurally wrong."
+    },
+    "captivity": {
+      "word": "captivity",
+      "mwEtymology": "Late Latin captivitas (from captivus 'taken captive' + -itas suffix)",
+      "mwStructure": {
+        "prefix": "",
+        "root": "captivus (adjective, from capere 'to take')",
+        "suffix": "-itas"
+      },
+      "familyData": {
+        "root": "cap",
+        "breakdown": "cap + tivity",
+        "family": "capere"
+      },
+      "morphemeAnalysis": {
+        "status": "✗ INCORRECT - Missing derived adjective form",
+        "issue": "Etymology goes through adjective captivus (captive), not directly from cap",
+        "explanation": "capere (to take) → captivus (adjective: captive/taken) → captivitas (quality of being captive) → English captivity. The 'tiv' part represents the participial suffix that creates the adjective, then -itas creates the quality nominal. Family shows 'cap + tivity' which misses the intermediate adjective stage.",
+        "correction": "Should properly show: cap + -tivus → captiv- (adjective stem) + -ity, or at minimum recognize that 'tiv' is not simply a suffix but part of derived adjective form"
+      },
+      "notes": "Another cap-family word showing same pattern: -ity words derive from adjectives, not directly from verb stems."
+    },
+    "fertility": {
+      "word": "fertility",
+      "mwEtymology": "Latin fertilitas (from fertilis 'fruitful' + -itas suffix)",
+      "mwStructure": {
+        "prefix": "",
+        "root": "fertilis (adjective, from ferre 'to bear/carry')",
+        "suffix": "-itas"
+      },
+      "familyData": {
+        "root": "ferre",
+        "breakdown": "fer + tility",
+        "family": "ferre"
+      },
+      "morphemeAnalysis": {
+        "status": "✗ INCORRECT - Missing adjective derivation",
+        "issue": "Family shows 'fer + tility' but should show adjective form 'fertil-'",
+        "explanation": "ferre (to bear/carry) → fertilis (adjective: fruitful) → fertilitas (quality of being fertile) → English fertility. The breakdown should reflect 'fertil-' (adjective stem) + '-ity', not 'fer + tility'",
+        "correction": "Should show: fertil + -ity (where fertil- is adjective stem from ferre)"
+      },
+      "notes": "Pattern continues: -ity words require adjective stems, not verb stems."
+    },
+    "infertility": {
+      "word": "infertility",
+      "mwEtymology": "in- (not) + fertilitas (from fertilis 'fruitful' + -itas suffix)",
+      "mwStructure": {
+        "prefix": "in-",
+        "root": "fertilis (adjective)",
+        "suffix": "-itas"
+      },
+      "familyData": {
+        "root": "fer",
+        "breakdown": "in + fer + tility",
+        "family": "ferre"
+      },
+      "morphemeAnalysis": {
+        "status": "✗ INCORRECT - Missing adjective stem and likely incorrect prefix handling",
+        "issue": "Should show in- + fertil + -ity, not in- + fer + tility",
+        "explanation": "in- (prefix: not) + fertilis (adjective: fruitful) → infertilis (adjective: not fruitful) → infertilitas → English infertility. Morpheme breakdown should be: in + fertil + ity",
+        "correction": "Should be 'in + fertil + ity' with 'fertil-' as adjective stem"
+      },
+      "notes": "Prefix correctly identified (in-) but root still shows verb stem (fer) instead of adjective stem (fertil)"
+    },
+    "tenacity": {
+      "word": "tenacity",
+      "mwEtymology": "Latin tenacitas (from tenax 'holding fast, persistent' + -itas suffix)",
+      "mwStructure": {
+        "prefix": "",
+        "root": "tenax (adjective, from tenere 'to hold')",
+        "suffix": "-itas"
+      },
+      "familyData": {
+        "root": "tenere",
+        "breakdown": "ten + acity",
+        "family": "tenere"
+      },
+      "morphemeAnalysis": {
+        "status": "✗ INCORRECT - Should use adjective stem tenac-",
+        "issue": "Family shows 'ten + acity' but should show 'tenac + ity'",
+        "explanation": "tenere (to hold) → tenax (adjective: holding fast/persistent) → tenacitas (quality of holding fast) → English tenacity. Root form should be 'tenac-' (from adjective tenax), not 'ten-' (from verb tenere)",
+        "correction": "Should be 'tenac + ity' where 'tenac-' is the adjective stem"
+      },
+      "notes": "Clear pattern: adjective stem (tenax → tenac-) + -ity, not verb stem."
+    },
+    "versatility": {
+      "word": "versatility",
+      "mwEtymology": "Latin versatilitas (from versatilis 'turning, changeable' + -itas suffix)",
+      "mwStructure": {
+        "prefix": "",
+        "root": "versatilis (adjective, from versare/vertere)",
+        "suffix": "-itas"
+      },
+      "familyData": {
+        "root": "vert",
+        "breakdown": "vert + ility",
+        "family": "vertere"
+      },
+      "morphemeAnalysis": {
+        "status": "✗ INCORRECT - Should use adjective stem versatul-/versatil-",
+        "issue": "Family shows 'vert + ility' but should show 'versatil + ity'",
+        "explanation": "vertere (to turn) → versatilis (adjective: turning, changeable) → versatilitas (quality of being changeable) → English versatility. Root should be 'versatil-' (adjective stem), not 'vert-' (verb stem)",
+        "correction": "Should be 'versatil + ity'"
+      },
+      "notes": "Same pattern across all -ity words: adjective stem + -ity, not verb stem + -ity"
+    },
+    "diversity": {
+      "word": "diversity",
+      "mwEtymology": "Latin diversitas (from diversus 'turned different ways, various' + -itas suffix)",
+      "mwStructure": {
+        "prefix": "",
+        "root": "diversus (adjective, past participle of divertere)",
+        "suffix": "-itas"
+      },
+      "familyData": {
+        "root": "vert",
+        "breakdown": "di + vert + ity",
+        "family": "vertere"
+      },
+      "morphemeAnalysis": {
+        "status": "✗ INCORRECT - Should use diversus stem or show di + vers + ity",
+        "issue": "Family shows 'di + vert + ity' but diversus is adjective form, should be 'di + vers + ity' or 'divers + ity'",
+        "explanation": "di- + vertere (to turn) → diversus (adjective: turned aside, different) → diversitas (quality of being different) → English diversity. The root in the -ity form should be 'divers-' (adjective stem), and breakdown should reflect 'di + vers + ity' not 'di + vert + ity'",
+        "correction": "Should be 'di + vers + ity' (with 'vers-' being the participial/adjective stem, different from infinitive 'vert-')"
+      },
+      "notes": "Complex case: di- prefix + vers- (adjective/participial stem) + -ity. Shows need to distinguish vert- (infinitive) vs vers- (participial/adjective stem)"
+    },
+    "superficiality": {
+      "word": "superficiality",
+      "mwEtymology": "Latin superficialitas (from superficialis 'on the surface' + -itas suffix)",
+      "mwStructure": {
+        "prefix": "super-",
+        "root": "facialis (adjective, from facies 'face')",
+        "suffix": "-itas"
+      },
+      "familyData": {
+        "root": "facere",
+        "breakdown": "super + fic + ality",
+        "family": "facere"
+      },
+      "morphemeAnalysis": {
+        "status": "✗ INCORRECT - Complex etymological path",
+        "issue": "Family shows 'facere' as root, but superficiality comes through superficies (surface) → superficialis (adjective) → superficialitas",
+        "explanation": "facere (to make) → facies (face/surface, noun) → superficies (on the surface, noun) → superficialis (adjective: on the surface) → superficialitas → English superficiality. The breakdown super + fic + ality misses the noun intermediate stage (facies) and noun → adjective conversion (superficialis)",
+        "correction": "More accurate: super + fici + ality or super + ficial + ity (recognizing superficial as adjective form)"
+      },
+      "notes": "Complex derivation: shows limitation of simple root-based analysis. Need to track noun and adjective derivations."
+    },
+    "specificity": {
+      "word": "specificity",
+      "mwEtymology": "Latin specificitas (from specificus 'making a kind' + -itas suffix)",
+      "mwStructure": {
+        "prefix": "spe-/species-",
+        "root": "ficere (part of fecere, to make)",
+        "suffix": "-itas"
+      },
+      "familyData": {
+        "root": "spec",
+        "breakdown": "spec + ificity",
+        "family": "specere"
+      },
+      "morphemeAnalysis": {
+        "status": "✗ INCORRECT - Root family mismatch",
+        "issue": "Family shows 'specere' but specificity comes from species (kind) + -ficus (making)",
+        "explanation": "This is a compound: species (kind) + -ficus (making) → specificus (making kinds) → specificitas (quality of specificity). The breakdown should reflect this compound nature, not just 'spec + ificity'",
+        "correction": "Should be recognized as spec + i + fic + ity or species + -fic + -ity (showing compound origin)"
+      },
+      "notes": "Edge case: specificity is compound of species + ficus, not straightforward spec derivation."
+    }
+  ],
+  "patterns_identified": {
+    "pattern_1": {
+      "name": "-ity suffix words derive from ADJECTIVES, not verbs",
+      "description": "Unlike -tion words (verbal action nominals), -ity words are quality nominals that derive from adjective forms",
+      "examples": [
+        "capax (adjective: able to hold) → capac- (adjective stem) + -ity → capacity",
+        "tenax (adjective: holding fast) → tenac- (adjective stem) + -ity → tenacity",
+        "versatilis (adjective: turning/changeable) → versatil- (adjective stem) + -ity → versatility",
+        "fertilis (adjective: fruitful) → fertil- (adjective stem) + -ity → fertility"
+      ],
+      "implication": "Current family data uses VERB STEMS for -ity words, which is systematically INCORRECT. Need to map verbs to their adjective forms to get correct morpheme breakdowns."
+    },
+    "pattern_2": {
+      "name": "Adjective stem ≠ verb stem",
+      "description": "Root adjectives often have different forms than the corresponding verbs",
+      "examples": [
+        "capere (verb) → capax (adj) → capac- (adj stem)",
+        "tenere (verb) → tenax (adj) → tenac- (adj stem)",
+        "vertere (verb) → versus/versatus (adj) → vers- (adj stem)",
+        "ferre (verb) → fertilis (adj) → fertil- (adj stem)"
+      ],
+      "implication": "Cannot map -ity words directly to root families. Must understand which adjective form is used in the -itas nominalization."
+    },
+    "pattern_3": {
+      "name": "Latin nominalization suffix: -itas (becomes -ity)",
+      "description": "Quality nominals use -itas suffix in Latin, not -tion",
+      "examples": [
+        "capacitas, tenacitas, fertilitas, versatilitas",
+        "All are [adjective-stem] + -itas pattern"
+      ],
+      "implication": "Consistent pattern across all 23 words, but requires adjective forms"
+    },
+    "pattern_4": {
+      "name": "Complex derivations need intermediate stages",
+      "description": "Some -ity words go through multiple derivation stages",
+      "examples": [
+        "facere → facies (noun) → superficies (noun) → superficialis (adj) → superficialitas",
+        "species → specificus (compound adj) → specificitas"
+      ],
+      "implication": "Single root family may not capture full etymological path. Need noun and adjective intermediate forms."
+    }
+  },
+  "batch2_structure_assessment": {
+    "current_status": "Systematically incorrect",
+    "total_words": 23,
+    "words_with_wrong_morpheme_mapping": 14,
+    "issue_summary": "Family structure uses verb stems for -ity words, but -ity words derive from adjective forms. This is a fundamental structural mismatch, not a variation in representation.",
+    "example_corrections_needed": [
+      "capacity: cap + acity → capac + ity",
+      "captivity: cap + tivity → captiv + ity (recognizing captivus as adjective form)",
+      "fertility: fer + tility → fertil + ity",
+      "infertility: in + fer + tility → in + fertil + ity",
+      "tenacity: ten + acity → tenac + ity",
+      "versatility: vert + ility → versatil + ity",
+      "diversity: di + vert + ity → di + vers + ity"
+    ]
+  },
+  "next_steps": [
+    "Identify correct adjective forms for all 23 words in Batch 2",
+    "Map each word to its corresponding adjective (capax, tenax, versatilis, fertilis, etc.)",
+    "Extract adjective stems for -ity nominalization",
+    "Create correction matrix for all 23 words",
+    "This is a MAJOR STRUCTURAL FIX - requires updating curated data with correct adjective-based morpheme breakdowns"
+  ]
+}
