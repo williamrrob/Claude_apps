@@ -49,24 +49,6 @@
   ],
   "placements": [
     {
-      "w": "captain",
-      "s": null,
-      "region": "authority-leadership",
-      "parent": null,
-      "by": "assistant",
-      "at": "2026-06-25T00:18:58.331Z",
-      "note": "A leader or commander; the master of a ship. From Latin capitaneus (chief), from caput (head)."
-    },
-    {
-      "w": "captaincy",
-      "s": null,
-      "region": "authority-leadership",
-      "parent": "captain",
-      "by": "assistant",
-      "at": "2026-06-25T00:18:58.331Z",
-      "note": "The rank or position of captain. From captain + -cy."
-    },
-    {
       "w": "accept",
       "s": null,
       "region": "accepting",
@@ -81,15 +63,6 @@
       "parent": null,
       "by": "assistant",
       "at": "2026-06-23T01:02:21.631Z"
-    },
-    {
-      "w": "cape",
-      "s": null,
-      "region": "acquiring-control",
-      "parent": null,
-      "by": "assistant",
-      "at": "2026-06-25T00:18:58.331Z",
-      "note": "A pointed piece of land projecting into water; also a sleeveless cloak. From Latin caput (head) and/or Latin cappa (head covering). Both extend the root metaphor."
     },
     {
       "w": "caption",
@@ -268,33 +241,6 @@
       "at": "2026-06-23T01:02:21.631Z"
     },
     {
-      "w": "caper",
-      "s": null,
-      "region": "acquiring-control",
-      "parent": "cape",
-      "by": "assistant",
-      "at": "2026-06-25T00:18:58.331Z",
-      "note": "A playful leap or trick; also a shrubby plant. Originally from capriole (a horse jump), related to cape/caput."
-    },
-    {
-      "w": "capful",
-      "s": null,
-      "region": "acquiring-control",
-      "parent": "cap",
-      "by": "assistant",
-      "at": "2026-06-25T00:18:58.331Z",
-      "note": "The amount that a cap can hold. From cap + -ful."
-    },
-    {
-      "w": "capped",
-      "s": null,
-      "region": "acquiring-control",
-      "parent": "cap",
-      "by": "assistant",
-      "at": "2026-06-25T00:18:58.331Z",
-      "note": "Wearing or topped with a cap; limited or crowned. From cap + -ed."
-    },
-    {
       "w": "captive",
       "s": null,
       "region": "seizing-capturing",
@@ -407,15 +353,6 @@
       "at": "2026-06-23T01:02:21.631Z"
     },
     {
-      "w": "recap",
-      "s": null,
-      "region": "acquiring-control",
-      "parent": "cap",
-      "by": "assistant",
-      "at": "2026-06-25T00:18:58.331Z",
-      "note": "To recapitulate or summarize. From re- + cap-."
-    },
-    {
       "w": "receipt",
       "s": null,
       "region": "receiving",
@@ -440,30 +377,12 @@
       "at": "2026-06-23T01:02:21.631Z"
     },
     {
-      "w": "seascape",
-      "s": null,
-      "region": "acquiring-control",
-      "parent": "cape",
-      "by": "assistant",
-      "at": "2026-06-25T00:18:58.331Z",
-      "note": "A view or picture of the sea. From sea + -scape (from escap-, a variant of cape, a view)."
-    },
-    {
       "w": "unacceptable",
       "s": null,
       "region": "accepting",
       "parent": "acceptable",
       "by": "assistant",
       "at": "2026-06-23T01:02:21.631Z"
-    },
-    {
-      "w": "uncapped",
-      "s": null,
-      "region": "acquiring-control",
-      "parent": "capped",
-      "by": "assistant",
-      "at": "2026-06-25T00:18:58.331Z",
-      "note": "Not wearing a cap; unrestricted or unlimited. From un- + capped."
     },
     {
       "w": "unexceptionable",
