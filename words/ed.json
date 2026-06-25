@@ -1,1 +1,1784 @@
-{"edacious":{"d":[{"p":"adj.","g":"Having an insatiable appetite; voracious; ravenous; piggish."}],"e":"From Latin edā(c) (“gluttonous, greedy”) (from edō (“to eat”)) + -ious (adjectival suffix).","s":["esurient","rapacious","ravening","ravenous","voracious","wolfish"]},"edematous":{"d":[{"p":"adj.","g":"Afflicted with edema.","x":"[…] Mary grew nearly blind in her sixties, in part because constant weeping had caused her corneas to become edematous."}],"e":"By surface analysis, edemato- + -ous.","s":["dropsical"],"i":"/əˈdɛmətəs/"},"edental":{"d":[{"p":"adjective satellite","g":"having few if any teeth"}],"e":"Coined by English philosopher and historian of science William Whewell in 1840, as both an adjective and noun.","s":["edentate","edentulate"]},"edentate":{"d":[{"p":"adj.","g":"Lacking teeth.","x":"an edentate quadruped; an edentate leaf"},{"p":"adj.","g":"Belonging to the Edentata."},{"p":"n.","g":"Any mammal that has few or no teeth, but especially the anteaters, armadillos, and sloths of the former order Edentata."}],"e":"New Latin edentatusbor. English edentate Borrowed from New Latin edentatus.","s":["edental","edentulate"]},"edentulate":{"d":[{"p":"adj.","g":"Lacking teeth."}],"s":["edental","edentate"]},"edentulous":{"d":[{"p":"adj.","g":"Toothless.","x":"A Malay elder crawled on to the veranda, greeted Crabbe with an edentulous \"Tabek!\" and then crouched in a dark corner, chewing a quid of sireh with hard gums."}],"e":"Latin edentulus, which is in turn derived from the prefix e-, meaning \"without\", and the word dens, meaning \"tooth.\"","i":"/iˈdɛnt.jʊ.ləs/"},"edged":{"d":[{"p":"v.","g":"simple past and past participle of edge","x":"Already a mentally fragile boy, he now edged towards insanity."},{"p":"adj.","g":"That has a sharp planar surface.","x":"The monks were forbidden to carry edged weapons such as swords and axes."},{"p":"adj.","g":"Having an edging of a certain material, color, and so on.","x":"a coat edged with fur"}],"e":"From Middle English egged, from Old English ecged; equivalent to edge + -ed.","r":["nonedged"],"i":"/ɛd͡ʒd/","rs":"ehjd"},"edgeless":{"d":[{"p":"adj.","g":"Not having an edge, or whose boundary is unclear."},{"p":"adj.","g":"Not having a sharp cutting edge; blunt."},{"p":"adj.","g":"Lacking edginess; bland and unchallenging.","x":"edgeless writing"}],"e":"English edge Proto-Indo-European *lewh₁- Proto-Indo-European *lewHs-der. Proto-Germanic *leusaną Proto-Germanic *lausaz Proto-Germanic *-lausaz Proto-West Germanic *-laus Old English -lēas Middle English -les English -less English edgeless From edge + -less.","r":["edgelessly","edgelessness"]},"edgy":{"d":[{"p":"adj.","g":"Nervous, apprehensive."},{"p":"adj.","g":"Creatively challenging; cutting edge; leading edge."},{"p":"adj.","g":"On the edge between acceptable and offensive; pushing the boundaries of good taste; risqué."},{"p":"adj.","g":"Irritable.","x":"an edgy temper"}],"e":"From edge + -y. Compare German eckig (“angular, edgy”).","s":["jittery","jumpy","nervy","overstrung","restive","uptight"],"r":["edgelord","edgesphere","edgily","edginess","unedgy"],"i":"/ˈɛd͡ʒi/","rs":"EH-jee","b":[{"s":"edg","k":"root"},{"s":"y","k":"suffix"}]},"edible":{"d":[{"p":"adj.","g":"Capable of being eaten without harm; suitable for consumption; innocuous to humans.","x":"edible fruit"},{"p":"adj.","g":"Capable of being eaten without disgust or disrelish.","x":"Although stale, the bread was edible."},{"p":"adj.","g":"In which edible plants are grown for human consumption."},{"p":"n.","g":"Anything edible."}],"e":"From Late Latin edibilis, from Latin edō (“eat”). Doublet of eatable.","s":["comestible","eatable","eatworthy","consumable","esculent","nibbleable","stomachable","palatable"],"a":["inedible","uneatable"],"r":["food","edibility","edibleness","inedible","nonedible","unedible","medible"],"i":"/ˈɛdəbəl/","rs":"EH-duh-buhl","b":[{"s":"edible","k":"word"}]},"edified":{"d":[{"p":"v.","g":"simple past and past participle of edify"},{"p":"adj.","g":"Furnished with buildings.","x":"Long they thus travelled in friendly wise, / Through countreyes waste, and eke well edifyde [...]."},{"p":"adj.","g":"Built or constructed.","x":"Summing up, the designed buildings' generic ontology intends to establish a generalist organization for edified structures, based on the CityGML standard."},{"p":"adj.","g":"Morally or intellectually improved.","x":"Will you allow then at once, that their feeling, and their notion of being more edified, will justify their heresies and their schism?"}],"e":"English edify English -ed English edified From edify + -ed.","r":["unedified"],"i":"/ˈɛdɪfaɪd/"},"edifying":{"d":[{"p":"adj.","g":"That educates, informs, illuminates or instructs."},{"p":"adj.","g":"That enlightens or uplifts."},{"p":"v.","g":"present participle and gerund of edify","x":"Do not let any corrupt communication proceed out of your mouth, but that which is good for the use of edifying that it may minister grace unto the hearers."},{"p":"n.","g":"Edification."}],"s":["enlightening"],"a":["unedifying","unenlightening"],"r":["edifyingly","edifyingness","unedifying"],"i":"/ˈɛd.ɪˌfaɪ.ɪŋ/","rs":"EH-duh-fy-ing"},"edited":{"d":[{"p":"v.","g":"simple past and past participle of edit","x":"A user edited the Web page."},{"p":"adj.","g":"Having been altered from the original version."}],"s":["emended"],"a":["unedited"],"i":"/ˈɛdɪtɪd/","rs":"EH-duh-tuhd"},"editorial":{"d":[{"p":"adj.","g":"Of or relating to an editor, editing or an editorial.","x":"editorial labours; editorial remarks"},{"p":"adj.","g":"Appropriate for high fashion magazines."},{"p":"n.","g":"An article in a publication giving the opinion of its editors on a given topic or current event."},{"p":"n.","g":"A similar commentary on radio or television."}],"e":"Medieval Latin ēdō Proto-Indo-European *-tōr Proto-Italic *-tōr Medieval Latin -tor Medieval Latin ēditorder. English editor Proto-Indo-European *h₂el-der.? Proto-Italic *-ālis Latin -ālisder. Old French -ialder. Middle English -ial English -ial English editorial From editor + -ial.","s":["column"],"r":["advertorial","editorialise","editorialist","editorialization","editorialize","editorially","idiotorial","noneditorial","subeditorial","wikitorial"],"i":"/ˌɛdɪˈtɔɹiəl/","rs":"eh-duh-TAW-ree-uhl"},"educated":{"d":[{"p":"adj.","g":"Having attained a level of higher education, such as a college degree."},{"p":"adj.","g":"Based on relevant information.","x":"an educated guess"},{"p":"adj.","g":"Knowledgeable.","x":"She cast an educated eye over the antiques."},{"p":"v.","g":"simple past and past participle of educate"}],"e":"English educate English -ed English educated From educate + -ed.","a":["noneducated","uneducated"],"r":["educatedness","hypereducated","ineducated","noneducated","overeducated","semieducated","undereducated","uneducated"],"i":"/ˈɛd͡ʒəkeɪtɪd/","rs":"EH-juh-kay-tid"},"educational":{"d":[{"p":"adj.","g":"Of, or relating to education.","x":"A school is an educational establishment."},{"p":"adj.","g":"Instructive, or helping to educate.","x":"They were shown an educational film about VD."},{"p":"n.","g":"A free (or low cost) trip for travel consultants, provided by a travel operator or airline as a means of promoting their service. A fam trip"},{"p":"n.","g":"An educational seminar, workshop, etc."}],"e":"Latin ēducātiōder. English education Proto-Indo-European *h₂el-der.? Proto-Italic *-ālis Latin -ālisbor. Old French -albor. ▲ Latin -ālis Old French -elbor. ▲ Latin -ālisbor. Middle English -al English -al English educational From education + -al.","i":"/ˌɛd͡ʒəˈkeɪʃənəl/","rs":"eh-juh-KAY-shuh-nuhl","b":[{"s":"educat","k":"root"},{"s":"ion","k":"suffix"},{"s":"al","k":"suffix"}]},"educative":{"d":[{"p":"adj.","g":"Serving to educate; educational."}],"e":"English educate Proto-Indo-European *-wós Proto-Indo-European *-iHwósder. Latin -īvus Old French -ifbor. Middle English -yf English -ive English educative From educate + -ive.","i":"/ˌɛdʒɪˈkeɪtɪv/","rs":"eh-ji-KAY-tiv"},"edwardian":{"d":[{"p":"adj.","g":"of or relating to or characteristic of the era of Edward VII in England"},{"p":"n.","g":"someone belonging to (or as if belonging to) the era of Edward VII"}],"i":"/ɛˈdwɔrdiən/","rs":"eh-DWAWR-dee-uhn"},"edgeways":{"d":[{"p":"adv.","g":"With the edge facing in the direction of movement."},{"p":"adv.","g":"With the edge uppermost."},{"p":"adj.","g":"With the edge facing in the direction of movement.","x":"an edgeways motion"},{"p":"adj.","g":"With the edge uppermost."}],"e":"English edge English -ways English edgeways From edge + -ways.","s":["edgewise"],"i":"/ˈɛdʒˌweɪz/","rs":"EHJ-wayz","b":[{"s":"edge","k":"root"},{"s":"ways","k":"root"}]},"edgewise":{"d":[{"p":"adv.","g":"Edgeways.","x":"By placing the sword edgewise, the weaver keeps the countershed open, in order to shoot through the shuttle."},{"p":"adv.","g":"As if by an edge.","x":"Once his boss got started, Jim just couldn’t get a word in edgewise."},{"p":"adj.","g":"Edgeways."}],"e":"From edge + -wise. Compare English edgeling (“edgeways”) and edgelong.","s":["edgeways"],"i":"/ˈɛd͡ʒwaɪz/","rs":"EHJ-wyz","b":[{"s":"edge","k":"root"},{"s":"wise","k":"suffix"}]},"editorially":{"d":[{"p":"adv.","g":"In the manner of an editor."},{"p":"adv.","g":"In the manner of an editorial."}],"e":"English editorial Middle English -ly English -ly English editorially From editorial + -ly.","i":"/ˌɛdəˈtɔriəli/","rs":"eh-duh-TAW-ree-uh-lee"},"educationally":{"d":[{"p":"adv.","g":"In an educational manner."}],"e":"English educational Middle English -ly English -ly English educationally From educational + -ly.","i":"/ˌɛdʒəˈkeɪʃənəli/","rs":"eh-juh-KAY-shuh-nuh-lee","b":[{"s":"educat","k":"root"},{"s":"ion","k":"suffix"},{"s":"al","k":"suffix"},{"s":"ly","k":"suffix"}]},"ed":{"d":[{"p":"n.","g":"edition"},{"p":"n.","g":"editor"},{"p":"n.","g":"education (uncountable)"}],"e":"Shortening.","i":"/ɛd/","rs":"ehd","b":[{"s":"ed","k":"word"}]},"edacity":{"d":[{"p":"n.","g":"excessive desire to eat"}],"e":"From Latin edacitas.","s":["esurience","ravenousness","voracity","voraciousness"],"i":"/ɪˈdæsəti/"},"edam":{"d":[{"p":"n.","g":"mild yellow Dutch cheese made in balls encased in a red covering"}],"i":"/ˈidəm/","rs":"EE-duhm","b":[{"s":"edam","k":"word"}]},"edaphosauridae":{"d":[{"p":"n.","g":"a family of reptiles of the order Pelycosauria"}]},"edaphosaurus":{"d":[{"p":"n.","g":"Any of several synapsids of the genus Edaphosaurus, from the Carboniferous and Permian periods, that had a distinctive dorsal sail or crest."}],"e":"From Ancient Greek ἔδαφος (édaphos, “ground, soil”) + -saurus. By surface analysis, edapho- + -saurus."},"edd":{"d":[{"p":"n.","g":"a doctor's degree in education"}]},"edda":{"d":[{"p":"n.","g":"tropical starchy tuberous root"}],"s":["taro","cocoyam","dasheen"]},"eddington":{"d":[{"p":"n.","g":"English astronomer remembered for his popular elucidation of relativity theory (1882-1944)"}],"i":"/ˈɛdɪŋtən/","rs":"EH-ding-tuhn"},"eddo":{"d":[{"p":"n.","g":"A plant (Colocasia esculenta, but often identified as Colocasia antiquorum, among numerous other synonyms), which is usually considered a variety of C. esculenta, with edible starchy tubers."},{"p":"n.","g":"The tubers of this plant."}],"e":"From a West African language.","s":["taro","cocoyam","dasheen"]},"eddy":{"d":[{"p":"n.","g":"A current of air or water running back, or in an opposite direction to the main current."},{"p":"n.","g":"A circular current; a whirlpool.","x":"And smiling eddies dimpled on the main."},{"p":"v.","g":"To form an eddy; to move in, or as if in, an eddy; to move in a circle.","x":"He waded out, the stream eddying around his legs."},{"p":"n.","g":"A marijuana edible.","x":"These eddies are made with both fruits and veggies, and weed of course, with cozy flavor profiles like honey lemon and apple pie."}],"e":"Proto-Indo-European *éti Proto-Germanic *idi- Proto-West Germanic *id- Old English ed- Proto-Indo-European *h₂ékʷeh₂ Proto-Germanic *ahwō Proto-West Germanic *ahu Old English ēa Old English edēa Middle English eddy English eddy From Middle English eddy, from Old English edēa, from ed- (“turning, back, reverse”) + ēa (“ …","s":["purl","whirlpool","swirl","whirl"],"r":["countercurrent","eddyline"],"i":"/ˈɛd.i/","rs":"EH-dee","b":[{"s":"eddy","k":"word"}]},"edecrin":{"d":[{"p":"n.","g":"diuretic (trade name Edecrin) used to treat edema"}]},"edelweiss":{"d":[{"p":"n.","g":"A European perennial alpine plant (Leontopodium alpinum), with downy leaves and small white flower heads in a dense cluster.","x":"And that will mean farewell to the edelweiss, adieu the eider goose."}],"e":"Borrowed from German Edelweiß, from edel (“noble”) + weiß (“white”).","i":"/ˈeɪdəlvaɪs/","rs":"AY-duhl-vys","b":[{"s":"edelweiss","k":"word"}]},"edema":{"d":[{"p":"n.","g":"An excessive accumulation of serum in tissue spaces or a body cavity.","x":"dependent edema"},{"p":"n.","g":"A similar swelling in plants caused by excessive accumulation of water."}],"e":"From New Latin oedēma, from Ancient Greek οἴδημα (oídēma, “swelling”), from οἰδέω (oidéō, “I swell”).","s":["hydrops","dropsy","hydropsy"],"r":["extravasation","acroedema","angioedema","antiedema","blepharedema","edemagenic","edematic","edemogen","leucoedema","leukoedema"],"i":"/ɪˈdiː.mə/","rs":"i-DEE-muh","vars":["oedema"]},"eden":{"d":[{"p":"n.","g":"Alternative letter-case form of Eden (“a paradise”)."}],"s":["paradise","nirvana","heaven"],"i":"/ˈiː.dən/","rs":"EE-duhn","b":[{"s":"eden","k":"word"}]},"edentata":{"d":[{"p":"n.","g":"order of mammals having few or no teeth including: New World anteaters;  sloths;  armadillos"}]},"ederle":{"d":[{"p":"n.","g":"United States swimmer who in 1926 became the first woman to swim the English Channel (1906-2003)"}]},"edgar":{"d":[{"p":"n.","g":"the younger brother of Edwy who became king of Northumbria when it renounced Edwy;  on Edwy's death he succeeded to the throne of England (944-975)"}],"i":"/ˈɛdgɚ/","rs":"EHD-gur","b":[{"s":"edgar","k":"word"}]},"edge":{"d":[{"p":"n.","g":"The boundary line of a surface."},{"p":"n.","g":"A one-dimensional face of a polytope. In particular, the joining line between two vertices of a polygon; the place where two faces of a polyhedron meet."},{"p":"n.","g":"An advantage.","x":"I have the edge on him."},{"p":"n.","g":"The thin cutting side of the blade of an instrument, such as an ax, knife, sword, or scythe; that which cuts as an edge does, or wounds deeply, etc.","x":"No, 'tis slander; / Whose edge is sharper than the sword;"}],"e":"From Middle English egge, from Old English eċġ, from Proto-West Germanic *aggju, from Proto-Germanic *agjō, from Proto-Indo-European *h₂eḱ- (“sharp”). …","s":["border","inch"],"i":"/ɛd͡ʒ/","rs":"ehj","b":[{"s":"edge","k":"word"}]},"edger":{"d":[{"p":"n.","g":"A tool that is used to trim the edges of a lawn."},{"p":"n.","g":"A woodworking tool for straightening the edges of wood and cutting it into boards."},{"p":"n.","g":"One who practises the sexual technique of edging."}],"e":"English edge Proto-Indo-European *-yósder. Proto-Italic *-āzijos Latin -āriusnom. Latin -āriusbor. Proto-Germanic *-ārijaz Proto-West Germanic *-ārī Old English -ere Middle English -ere English -er English edger From edge + -er.","r":["edgerman"],"i":"/ˈɛdʒɚ/","rs":"EH-jur"},"edginess":{"d":[{"p":"n.","g":"The state of being edgy."}],"e":"English edgy Proto-Germanic *-inōną Proto-Indo-European *-dyé- Proto-Germanic *-atjaną Proto-Indo-European *-tus Proto-Germanic *-þuz Proto-Germanic *-assuz Proto-Germanic *-inassuz Proto-West Germanic *-nassī Old English -nes Middle English -nesse English -ness English edginess From edgy + -ness.","s":["uneasiness","inquietude","disquietude"],"i":"/ˈɛdʒinəs/","rs":"EH-jee-nuhs"},"edging":{"d":[{"p":"v.","g":"present participle and gerund of edge"},{"p":"n.","g":"Anything that forms, defines, or marks the edge of something.","x":"The decorative edging around the door makes it easier to find in the dark."},{"p":"n.","g":"A technique involving the placement of the edge of the climbing shoe on a sharp hold."},{"p":"n.","g":"The operation of shaping or dressing the edge of anything, as of a piece of metal."}],"a":["smearing"],"i":"/ˈɛd͡ʒ.ɪŋ/","rs":"EH-jing"},"edibility":{"d":[{"p":"n.","g":"suitability for use as food"}],"e":"English edible Proto-Indo-European *-teh₂ Proto-Indo-European *-ts Proto-Indo-European *-teh₂ts Latin -itāsder. Old French -itebor. Middle English -ite English -ity English edibility From edible + -ity.","s":["edibleness"]},"edibleness":{"d":[{"p":"n.","g":"edibility"}],"e":"English edible Proto-Germanic *-inōną Proto-Indo-European *-dyé- Proto-Germanic *-atjaną Proto-Indo-European *-tus Proto-Germanic *-þuz Proto-Germanic *-assuz Proto-Germanic *-inassuz Proto-West Germanic *-nassī Old English -nes Middle English -nesse English -ness English edibleness From edible + -ness.","s":["edibility"]},"edict":{"d":[{"p":"n.","g":"A proclamation of law or other authoritative command.","x":"By this time the edict had gone forth that the railways were to be nationalised on January 1, 1948."},{"p":"n.","g":"a formal or authoritative proclamation"}],"e":"From Middle English edycte, borrowed from Latin edictum; earlier form edit, from Old French edit, from the same Latin word.","r":["edictal"],"i":"/ˈiː.dɪkt/","rs":"EE-dikt"},"edification":{"d":[{"p":"n.","g":"The act of edifying, or the state of being edified or improved; a building process, especially morally, emotionally, or spiritually.","x":"Let euery one of vs please his neighbour for his good to edification."}],"e":"From Old French, from Latin aedificationem (“building, construction”), an accusative form of aedificatio, from aedificare.","s":["sophistication"],"r":["edificant","edificator","edificatory","edifice","edificial","edifier","edify","edifyingly","edifyingness","disedification"],"i":"/ˌɛdɪfɪˈkeɪʃən/","rs":"eh-duh-fuh-KAY-shuhn"},"edifice":{"d":[{"p":"n.","g":"A building; a structure; an architectural fabric, especially a large and spectacular one."},{"p":"n.","g":"An abstract structure, such as a school of thought, an argument, a theoretical position, etc.","x":"The real difficulty was moral, not intellectual. Was the whole edifice of Ptolemy to be destroyed?"}],"e":"From Middle English edifice, from Old French edifice, a classical borrowing of Latin aedificium (“building”), derived from aedificāre (“to build, establish”) (whence also English edify).","s":["building"],"r":["edificant","edification","edificator","edificatory","edificial","edifier","edify","edifyingly","edifyingness"],"i":"/ˈɛd.ɪ.fɪs/","rs":"EH-duh-fuhs","b":[{"s":"edifice","k":"word"}]},"edinburgh":{"d":[{"p":"n.","g":"the capital of Scotland;  located in the Lothian Region on the south side of the Firth of Forth"}],"i":"/ˈɛdənbɚoʊ/","rs":"EH-duhn-bur-oh"},"edirne":{"d":[{"p":"n.","g":"a city in northwestern Turkey;  a Thracian town that was rebuilt and renamed by the Roman Emperor Hadrian"}]},"edison":{"d":[{"p":"n.","g":"United States inventor;  inventions included the phonograph and incandescent electric light and the microphone and the Kinetoscope (1847-1931)"}],"i":"/ˈɛdɪsən/","rs":"EH-di-suhn"},"editing":{"d":[{"p":"v.","g":"present participle and gerund of edit"},{"p":"n.","g":"An act or instance of something being edited."}],"s":["redaction"],"i":"/ˈɛdɪtɪŋ/","rs":"EH-duh-ting"},"edition":{"d":[{"p":"n.","g":"A written work edited and published, as by a certain editor or in a certain manner, or at a certain time.","x":"She wanted a copy of the Clericotes edition, but had to settle for the 1921 edition. She had never liked abridged editions."},{"p":"n.","g":"The whole number of copies of a work printed and published at one time.","x":"The first edition was soon sold."},{"p":"n.","g":"An instance of the first or second sense.","x":"What he had found was a particularly valuable first edition."},{"p":"n.","g":"A particular instance of an event.","x":"The 2014 edition of the Tour de France started in Leeds, Yorkshire."}],"e":"From French édition, from Latin ēditiō, from ēdere (“to publish”).","r":["coedition","editioned","editioning","interedition","misedition"],"i":"/ɪˈdɪʃ(ə)n/","rs":"uh-DI-shuhn","b":[{"s":"edit","k":"root"},{"s":"ion","k":"suffix"}]},"editor":{"d":[{"p":"n.","g":"A person who edits or makes changes to documents."},{"p":"n.","g":"A copy editor."},{"p":"n.","g":"A person who edited a specific document.","x":"John Johnson wrote this term paper and the editor was Joan Johnson."},{"p":"n.","g":"A person at a newspaper, publisher or similar institution who edits stories and/or decides which ones to publish.","x":"John is the city editor at the Daily Times."}],"e":"Medieval Latin ēdō Proto-Indo-European *-tōr Proto-Italic *-tōr Medieval Latin -tor Medieval Latin ēditorder. English editor From Medieval Latin ēditor, from Late Latin ēditor, from ēditus, perfect passive participle of ēdō (“give out, put forth, publish”).","r":["coeditor","deaditor","edit","editorial","editorializing","editorless","editorlike","editorship","editress","faned"],"i":"/ˈɛd.ɪ.təɹ/","rs":"EH-duh-tur","b":[{"s":"edit","k":"root"},{"s":"or","k":"suffix"}]},"editorialist":{"d":[{"p":"n.","g":"One who writes opinion pieces, especially for a newspaper."}],"e":"English editorial Proto-Indo-European *-id- Proto-Indo-European *-yéti Proto-Indo-European *-idyéti Proto-Hellenic *-íďďō Ancient Greek -ῐ́ζω (-ĭ́zō) Proto-Hellenic *-tās Ancient Greek -τής (-tḗs) Ancient Greek -ῐστής (-ĭstḗs)bor. Latin -istader. Old French -istebor. …","s":["columnist"],"i":"/ˌɛdəˈtɔriəlɪst/","rs":"eh-duh-TAW-ree-uh-list"},"editorship":{"d":[{"p":"n.","g":"The position or job of being an editor","x":"With this issue Mr. W. A. Willox regretfully relinquishes the editorship of THE RAILWAY MAGAZINE"}],"e":"Medieval Latin ēdō Proto-Indo-European *-tōr Proto-Italic *-tōr Medieval Latin -tor Medieval Latin ēditorder. English editor Proto-Germanic *skapjaną Proto-Germanic *-skapiz Proto-West Germanic *-skapi Old English -sċiepe Middle English -schipe English -ship English editorship From editor + -ship.","i":"/ˈɛdətɚˌʃɪp/","rs":"EH-duh-tur-ship","b":[{"s":"edit","k":"root"},{"s":"or","k":"suffix"},{"s":"ship","k":"suffix"}]},"edmonton":{"d":[{"p":"n.","g":"the capital of the province of Alberta"}],"i":"/ˈɛdməntən/","rs":"EHD-muhn-tuhn"},"edmontonia":{"d":[{"p":"n.","g":"heavily armored and highly spiked dinosaur with semi-upright posture"}]},"edmontosaurus":{"d":[{"p":"n.","g":"duck-billed dinosaur from Canada found as a fossilized mummy with skin"}]},"edo":{"d":[{"p":"n.","g":"a member of a west African people living in the tropical forest region of southern Nigeria"}],"i":"/ˈidoʊ/","rs":"EE-doh"},"edp":{"d":[{"p":"n.","g":"automatic data processing by electronic means without the use of tabulating cards or punched tapes"}]},"edronax":{"d":[{"p":"n.","g":"an antidepressant drug that blocks the reuptake of norepinephrine"}],"s":["reboxetine"]},"eds":{"d":[{"p":"n.","g":"plural of ed"}]},"edta":{"d":[{"p":"n.","g":"a complex molecule used medically to chelate metal ions in cases of lead or heavy metal poisoning"}]},"educatee":{"d":[{"p":"n.","g":"Someone who is being educated."},{"p":"n.","g":"a learner who is enrolled in an educational institution"}],"e":"From educate + -ee.","a":["educator"]},"education":{"d":[{"p":"n.","g":"The process of imparting knowledge, skill and judgment.","x":"Good education is essential for a well-run society."},{"p":"n.","g":"Facts, skills and ideas that have been learned, especially through formal instruction.","x":"Nuh-nuh-doin'-duh... Nuh-nuh-doin'-duh... We don't need no education...\nYes, you do. You've just used a double negative."}],"e":"Borrowed from Middle French éducation, from Latin ēducātiō (“a breeding, bringing up, rearing”), from ēducō (“to educate, train”), from ēdūcō (“to lead forth, to take out; to raise up, to erect”). See educate. Morphologically educate + -ion.","s":["instruction","teaching","pedagogy","didactics"],"r":["educate","edutainment","schooling","training","teaching","instructing","tutoring","school","college","university"],"i":"/ˌɛd͡ʒ.əˈkeɪ.ʃən/","rs":"eh-juh-KAY-shuhn","b":[{"s":"educat","k":"root"},{"s":"ion","k":"suffix"}]},"educationalist":{"d":[{"p":"n.","g":"a specialist in the theory of education."}],"e":"English educational Proto-Indo-European *-id- Proto-Indo-European *-yéti Proto-Indo-European *-idyéti Proto-Hellenic *-íďďō Ancient Greek -ῐ́ζω (-ĭ́zō) Proto-Hellenic *-tās Ancient Greek -τής (-tḗs) Ancient Greek -ῐστής (-ĭstḗs)bor. Latin -istader. Old French -istebor. …","s":["educationist"],"b":[{"s":"educat","k":"root"},{"s":"ion","k":"suffix"},{"s":"al","k":"suffix"},{"s":"ist","k":"suffix"}]},"educationist":{"d":[{"p":"n.","g":"A specialist in the theory of education.","x":"And there was Talbot's great diseased appetite to corroborate a belief that expatriate educationists ate hoggishly."}],"e":"Latin ēducātiōder. English education Proto-Indo-European *-id- Proto-Indo-European *-yéti Proto-Indo-European *-idyéti Proto-Hellenic *-íďďō Ancient Greek -ῐ́ζω (-ĭ́zō) Proto-Hellenic *-tās Ancient Greek -τής (-tḗs) Ancient Greek -ῐστής (-ĭstḗs)bor. Latin -istader. Old French -istebor. …","s":["educationalist"],"b":[{"s":"educat","k":"root"},{"s":"ion","k":"suffix"},{"s":"ist","k":"suffix"}]},"educator":{"d":[{"p":"n.","g":"A person distinguished for their educational work, a teacher."},{"p":"n.","g":"someone who educates young people"}],"e":"From Latin ēducātor. By surface analysis, educate + -or.","r":["educatorese","educatress","educrat","noneducator","paraeducator","phonicator","psychoeducator"],"i":"/ˈɛd͡ʒəkeɪtɚ/","rs":"EH-juh-kay-tur","b":[{"s":"educat","k":"root"},{"s":"or","k":"suffix"}]},"edutainment":{"d":[{"p":"n.","g":"Educational entertainment, a form of programming (cinematic, television, live action, games or any material) that provides both education and entertainment."}],"e":"Blend of education + entertainment.","i":"/ˌɛd͡ʒ.əˈteɪn.mənt/"},"edward":{"d":[{"p":"n.","g":"King of England and Ireland in 1936;  his marriage to Wallis Warfield Simpson created a constitutional crisis leading to his abdication (1894-1972)"}],"i":"/ˈɛdwɚd/","rs":"EH-dwurd","b":[{"s":"edward","k":"word"}]},"edwards":{"d":[{"p":"n.","g":"American theologian whose sermons and writings stimulated a period of renewed interest in religion in America (1703-1758)"}],"i":"/ˈɛdwɚdz/","rs":"EH-dwurdz","b":[{"s":"edwards","k":"word"}]},"edwin":{"d":[{"p":"n.","g":"king of Northumbria who was converted to Christianity (585-633)"}],"i":"/ˈɛdwən/","rs":"EH-dwuhn","b":[{"s":"ed","k":"prefix"},{"s":"win","k":"root"}]},"edwy":{"d":[{"p":"n.","g":"King of England who was renounced by Northumbria in favor of his brother Edgar (died in 959)"}]},"edify":{"d":[{"p":"v.","g":"To instruct or improve morally or intellectually.","x":"frustrate the best endeavours in the edifying of the church"}],"e":"From Old French edifier (“to build, to edify”), from Latin aedificare (“build”).","s":["enlighten"],"r":["edification","edificator","edifice","edifier","edifying","disedify","reedify"],"i":"/ˈɛdɪfaɪ/","rs":"EH-duh-fy","b":[{"s":"edify","k":"word"}]},"edit":{"d":[{"p":"n.","g":"A change to the text of a document."},{"p":"n.","g":"A change in the text of a file, a website or the code of software.","x":"He has made 5780 edits on Wikipedia so far."},{"p":"n.","g":"An edited piece of media, especially video footage.","x":"An early edit of the film included a romantic subplot."},{"p":"n.","g":"A compilation of memorable moments (in a show, sport, etc.), often featuring stylized camera effects and intense music.","x":"a basketball edit, a Thor edit"}],"e":"Back-formation from editor, influenced by French éditer (“edit, publish”) and Latin editus.","s":["cut"],"r":["coedit","editability","editable","editathon","edition","editless","editome","editor","editorial","editosome"],"i":"/ˈɛdɪt/","rs":"EH-duht","b":[{"s":"edit","k":"word"}]},"editorialise":{"d":[{"p":"v.","g":"Alternative spelling of editorialize."}],"e":"English editorial English -ise English editorialise From editorial + -ise.","s":["editorialize"],"rel":{"t":"variant of","l":"editorialize","by":"assistant","at":"2026-06-23T05:47:54.405Z"}},"editorialize":{"d":[{"p":"v.","g":"To introduce or insert personal opinions, judgments or subjective interpretations into news reporting or factual accounts where objectivity is expected.","x":"Jerry Falwell's right-wing fundamentalist publication \"Moral Majority Inc.\" editorialized that AIDS was God's \"deserved punishments\" against homosexuals."}],"e":"Medieval Latin ēdō Proto-Indo-European *-tōr Proto-Italic *-tōr Medieval Latin -tor Medieval Latin ēditorder. English editor Proto-Indo-European *h₂el-der.? Proto-Italic *-ālis Latin -ālisder. Old French -ialder. …","s":["editorialise"],"i":"/ˌed.əˈtɔːr.i.ə.laɪz/","rs":"eh-duh-TAW-ree-uh-lyz","vars":["editorialise"]},"educate":{"d":[{"p":"v.","g":"To instruct or train.","x":"Wang said such changes to the Baishui glacier provide the chance to educate visitors about global warming."},{"p":"v.","g":"give an education to"}],"e":"From Middle English educaten, from educat(e) (“educated”, also used as the past participle of educaten) + -en (verb-forming suffix), from Latin ēducātus, the perfect passive participle of ēducō (“(of a child, physically or mentally) to bring up, train, nourish; (of a person in learning or art) to rear, educate, train; …","r":["educatability","educatable","educatee","educating","education","educative","educatory","miseducate","overeducate","reeducate"],"i":"/ˈɛd͡ʒ.əˌkeɪt/","rs":"EH-juh-kayt"},"educe":{"d":[{"p":"v.","g":"To infer or deduce (a result, theory etc.) from existing data or premises."},{"p":"v.","g":"To draw out or bring forth from some basic or potential state; to elicit, to develop."},{"p":"v.","g":"To isolate (a substance) from a compound; to extract.","dom":"chemistry"},{"p":"v.","g":"To cause or generate; to bring about."},{"p":"n.","g":"An inference."},{"p":"v.","g":"deduce (a principle) or construe (a meaning)"}],"e":"Borrowed from Latin ēdūcere (“lead out, raise up”); from ex- (“out, up”) + dūcō (“lead, pull”).","r":["educement","educer","educible","eduction"],"i":"/ɪˈduːs/"},"edulcorate":{"d":[{"p":"v.","g":"To sweeten."},{"p":"v.","g":"To make more acceptable or palatable.","x":"I guess I am simply accustomed to dealing with more edulcorated versions of xenophobia."},{"p":"v.","g":"To free from acidity."}],"e":"From Medieval Latin ēdulcōrō. Compare French édulcorer.","s":["sweeten","dulcify","dulcorate"],"a":["sour","acidify","acidulate","acetify"],"r":["edulcoration","edulcorator"],"i":"/əˈdʌlkəɹeɪt/"}}
+{
+  "edacious": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Having an insatiable appetite; voracious; ravenous; piggish."
+      }
+    ],
+    "e": "From Latin edā(c) (“gluttonous, greedy”) (from edō (“to eat”)) + -ious (adjectival suffix).",
+    "s": [
+      "esurient",
+      "rapacious",
+      "ravening",
+      "ravenous",
+      "voracious",
+      "wolfish"
+    ]
+  },
+  "edematous": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Afflicted with edema.",
+        "x": "[…] Mary grew nearly blind in her sixties, in part because constant weeping had caused her corneas to become edematous."
+      }
+    ],
+    "e": "By surface analysis, edemato- + -ous.",
+    "s": [
+      "dropsical"
+    ],
+    "i": "/əˈdɛmətəs/"
+  },
+  "edental": {
+    "d": [
+      {
+        "p": "adjective satellite",
+        "g": "having few if any teeth"
+      }
+    ],
+    "e": "Coined by English philosopher and historian of science William Whewell in 1840, as both an adjective and noun.",
+    "s": [
+      "edentate",
+      "edentulate"
+    ]
+  },
+  "edentate": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Lacking teeth.",
+        "x": "an edentate quadruped; an edentate leaf"
+      },
+      {
+        "p": "adj.",
+        "g": "Belonging to the Edentata."
+      },
+      {
+        "p": "n.",
+        "g": "Any mammal that has few or no teeth, but especially the anteaters, armadillos, and sloths of the former order Edentata."
+      }
+    ],
+    "e": "New Latin edentatusbor. English edentate Borrowed from New Latin edentatus.",
+    "s": [
+      "edental",
+      "edentulate"
+    ]
+  },
+  "edentulate": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Lacking teeth."
+      }
+    ],
+    "s": [
+      "edental",
+      "edentate"
+    ]
+  },
+  "edentulous": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Toothless.",
+        "x": "A Malay elder crawled on to the veranda, greeted Crabbe with an edentulous \"Tabek!\" and then crouched in a dark corner, chewing a quid of sireh with hard gums."
+      }
+    ],
+    "e": "Latin edentulus, which is in turn derived from the prefix e-, meaning \"without\", and the word dens, meaning \"tooth.\"",
+    "i": "/iˈdɛnt.jʊ.ləs/"
+  },
+  "edged": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "simple past and past participle of edge",
+        "x": "Already a mentally fragile boy, he now edged towards insanity."
+      },
+      {
+        "p": "adj.",
+        "g": "That has a sharp planar surface.",
+        "x": "The monks were forbidden to carry edged weapons such as swords and axes."
+      },
+      {
+        "p": "adj.",
+        "g": "Having an edging of a certain material, color, and so on.",
+        "x": "a coat edged with fur"
+      }
+    ],
+    "e": "From Middle English egged, from Old English ecged; equivalent to edge + -ed.",
+    "r": [
+      "nonedged"
+    ],
+    "i": "/ɛd͡ʒd/",
+    "rs": "ehjd"
+  },
+  "edgeless": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Not having an edge, or whose boundary is unclear."
+      },
+      {
+        "p": "adj.",
+        "g": "Not having a sharp cutting edge; blunt."
+      },
+      {
+        "p": "adj.",
+        "g": "Lacking edginess; bland and unchallenging.",
+        "x": "edgeless writing"
+      }
+    ],
+    "e": "English edge Proto-Indo-European *lewh₁- Proto-Indo-European *lewHs-der. Proto-Germanic *leusaną Proto-Germanic *lausaz Proto-Germanic *-lausaz Proto-West Germanic *-laus Old English -lēas Middle English -les English -less English edgeless From edge + -less.",
+    "r": [
+      "edgelessly",
+      "edgelessness"
+    ]
+  },
+  "edgy": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Nervous, apprehensive."
+      },
+      {
+        "p": "adj.",
+        "g": "Creatively challenging; cutting edge; leading edge."
+      },
+      {
+        "p": "adj.",
+        "g": "On the edge between acceptable and offensive; pushing the boundaries of good taste; risqué."
+      },
+      {
+        "p": "adj.",
+        "g": "Irritable.",
+        "x": "an edgy temper"
+      }
+    ],
+    "e": "From edge + -y. Compare German eckig (“angular, edgy”).",
+    "s": [
+      "jittery",
+      "jumpy",
+      "nervy",
+      "overstrung",
+      "restive",
+      "uptight"
+    ],
+    "r": [
+      "edgelord",
+      "edgesphere",
+      "edgily",
+      "edginess",
+      "unedgy"
+    ],
+    "i": "/ˈɛd͡ʒi/",
+    "rs": "EH-jee",
+    "b": [
+      {
+        "s": "edg",
+        "k": "root"
+      },
+      {
+        "s": "y",
+        "k": "suffix"
+      }
+    ]
+  },
+  "edible": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Capable of being eaten without harm; suitable for consumption; innocuous to humans.",
+        "x": "edible fruit"
+      },
+      {
+        "p": "adj.",
+        "g": "Capable of being eaten without disgust or disrelish.",
+        "x": "Although stale, the bread was edible."
+      },
+      {
+        "p": "adj.",
+        "g": "In which edible plants are grown for human consumption."
+      },
+      {
+        "p": "n.",
+        "g": "Anything edible."
+      }
+    ],
+    "e": "From Late Latin edibilis, from Latin edō (“eat”). Doublet of eatable.",
+    "s": [
+      "comestible",
+      "eatable",
+      "eatworthy",
+      "consumable",
+      "esculent",
+      "nibbleable",
+      "stomachable",
+      "palatable"
+    ],
+    "a": [
+      "inedible",
+      "uneatable"
+    ],
+    "r": [
+      "food",
+      "edibility",
+      "edibleness",
+      "inedible",
+      "nonedible",
+      "unedible",
+      "medible"
+    ],
+    "i": "/ˈɛdəbəl/",
+    "rs": "EH-duh-buhl",
+    "b": [
+      {
+        "s": "edible",
+        "k": "word"
+      }
+    ]
+  },
+  "edified": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "simple past and past participle of edify"
+      },
+      {
+        "p": "adj.",
+        "g": "Furnished with buildings.",
+        "x": "Long they thus travelled in friendly wise, / Through countreyes waste, and eke well edifyde [...]."
+      },
+      {
+        "p": "adj.",
+        "g": "Built or constructed.",
+        "x": "Summing up, the designed buildings' generic ontology intends to establish a generalist organization for edified structures, based on the CityGML standard."
+      },
+      {
+        "p": "adj.",
+        "g": "Morally or intellectually improved.",
+        "x": "Will you allow then at once, that their feeling, and their notion of being more edified, will justify their heresies and their schism?"
+      }
+    ],
+    "e": "English edify English -ed English edified From edify + -ed.",
+    "r": [
+      "unedified"
+    ],
+    "i": "/ˈɛdɪfaɪd/"
+  },
+  "edifying": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "That educates, informs, illuminates or instructs."
+      },
+      {
+        "p": "adj.",
+        "g": "That enlightens or uplifts."
+      },
+      {
+        "p": "v.",
+        "g": "present participle and gerund of edify",
+        "x": "Do not let any corrupt communication proceed out of your mouth, but that which is good for the use of edifying that it may minister grace unto the hearers."
+      },
+      {
+        "p": "n.",
+        "g": "Edification."
+      }
+    ],
+    "s": [
+      "enlightening"
+    ],
+    "a": [
+      "unedifying",
+      "unenlightening"
+    ],
+    "r": [
+      "edifyingly",
+      "edifyingness",
+      "unedifying"
+    ],
+    "i": "/ˈɛd.ɪˌfaɪ.ɪŋ/",
+    "rs": "EH-duh-fy-ing"
+  },
+  "edited": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "simple past and past participle of edit",
+        "x": "A user edited the Web page."
+      },
+      {
+        "p": "adj.",
+        "g": "Having been altered from the original version."
+      }
+    ],
+    "s": [
+      "emended"
+    ],
+    "a": [
+      "unedited"
+    ],
+    "i": "/ˈɛdɪtɪd/",
+    "rs": "EH-duh-tuhd"
+  },
+  "editorial": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Of or relating to an editor, editing or an editorial.",
+        "x": "editorial labours; editorial remarks"
+      },
+      {
+        "p": "adj.",
+        "g": "Appropriate for high fashion magazines."
+      },
+      {
+        "p": "n.",
+        "g": "An article in a publication giving the opinion of its editors on a given topic or current event."
+      },
+      {
+        "p": "n.",
+        "g": "A similar commentary on radio or television."
+      }
+    ],
+    "e": "Medieval Latin ēdō Proto-Indo-European *-tōr Proto-Italic *-tōr Medieval Latin -tor Medieval Latin ēditorder. English editor Proto-Indo-European *h₂el-der.? Proto-Italic *-ālis Latin -ālisder. Old French -ialder. Middle English -ial English -ial English editorial From editor + -ial.",
+    "s": [
+      "column"
+    ],
+    "r": [
+      "advertorial",
+      "editorialise",
+      "editorialist",
+      "editorialization",
+      "editorialize",
+      "editorially",
+      "idiotorial",
+      "noneditorial",
+      "subeditorial",
+      "wikitorial"
+    ],
+    "i": "/ˌɛdɪˈtɔɹiəl/",
+    "rs": "eh-duh-TAW-ree-uhl"
+  },
+  "educated": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Having attained a level of higher education, such as a college degree."
+      },
+      {
+        "p": "adj.",
+        "g": "Based on relevant information.",
+        "x": "an educated guess"
+      },
+      {
+        "p": "adj.",
+        "g": "Knowledgeable.",
+        "x": "She cast an educated eye over the antiques."
+      },
+      {
+        "p": "v.",
+        "g": "simple past and past participle of educate"
+      }
+    ],
+    "e": "English educate English -ed English educated From educate + -ed.",
+    "a": [
+      "noneducated",
+      "uneducated"
+    ],
+    "r": [
+      "educatedness",
+      "hypereducated",
+      "ineducated",
+      "noneducated",
+      "overeducated",
+      "semieducated",
+      "undereducated",
+      "uneducated"
+    ],
+    "i": "/ˈɛd͡ʒəkeɪtɪd/",
+    "rs": "EH-juh-kay-tid"
+  },
+  "educational": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Of, or relating to education.",
+        "x": "A school is an educational establishment."
+      },
+      {
+        "p": "adj.",
+        "g": "Instructive, or helping to educate.",
+        "x": "They were shown an educational film about VD."
+      },
+      {
+        "p": "n.",
+        "g": "A free (or low cost) trip for travel consultants, provided by a travel operator or airline as a means of promoting their service. A fam trip"
+      },
+      {
+        "p": "n.",
+        "g": "An educational seminar, workshop, etc."
+      }
+    ],
+    "e": "Latin ēducātiōder. English education Proto-Indo-European *h₂el-der.? Proto-Italic *-ālis Latin -ālisbor. Old French -albor. ▲ Latin -ālis Old French -elbor. ▲ Latin -ālisbor. Middle English -al English -al English educational From education + -al.",
+    "i": "/ˌɛd͡ʒəˈkeɪʃənəl/",
+    "rs": "eh-juh-KAY-shuh-nuhl",
+    "b": [
+      {
+        "s": "educat",
+        "k": "root"
+      },
+      {
+        "s": "ion",
+        "k": "suffix"
+      },
+      {
+        "s": "al",
+        "k": "suffix"
+      }
+    ]
+  },
+  "educative": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Serving to educate; educational."
+      }
+    ],
+    "e": "English educate Proto-Indo-European *-wós Proto-Indo-European *-iHwósder. Latin -īvus Old French -ifbor. Middle English -yf English -ive English educative From educate + -ive.",
+    "i": "/ˌɛdʒɪˈkeɪtɪv/",
+    "rs": "eh-ji-KAY-tiv"
+  },
+  "edwardian": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "of or relating to or characteristic of the era of Edward VII in England"
+      },
+      {
+        "p": "n.",
+        "g": "someone belonging to (or as if belonging to) the era of Edward VII"
+      }
+    ],
+    "i": "/ɛˈdwɔrdiən/",
+    "rs": "eh-DWAWR-dee-uhn"
+  },
+  "edgeways": {
+    "d": [
+      {
+        "p": "adv.",
+        "g": "With the edge facing in the direction of movement."
+      },
+      {
+        "p": "adv.",
+        "g": "With the edge uppermost."
+      },
+      {
+        "p": "adj.",
+        "g": "With the edge facing in the direction of movement.",
+        "x": "an edgeways motion"
+      },
+      {
+        "p": "adj.",
+        "g": "With the edge uppermost."
+      }
+    ],
+    "e": "English edge English -ways English edgeways From edge + -ways.",
+    "s": [
+      "edgewise"
+    ],
+    "i": "/ˈɛdʒˌweɪz/",
+    "rs": "EHJ-wayz",
+    "b": [
+      {
+        "s": "edge",
+        "k": "root"
+      },
+      {
+        "s": "ways",
+        "k": "root"
+      }
+    ]
+  },
+  "edgewise": {
+    "d": [
+      {
+        "p": "adv.",
+        "g": "Edgeways.",
+        "x": "By placing the sword edgewise, the weaver keeps the countershed open, in order to shoot through the shuttle."
+      },
+      {
+        "p": "adv.",
+        "g": "As if by an edge.",
+        "x": "Once his boss got started, Jim just couldn’t get a word in edgewise."
+      },
+      {
+        "p": "adj.",
+        "g": "Edgeways."
+      }
+    ],
+    "e": "From edge + -wise. Compare English edgeling (“edgeways”) and edgelong.",
+    "s": [
+      "edgeways"
+    ],
+    "i": "/ˈɛd͡ʒwaɪz/",
+    "rs": "EHJ-wyz",
+    "b": [
+      {
+        "s": "edge",
+        "k": "root"
+      },
+      {
+        "s": "wise",
+        "k": "suffix"
+      }
+    ]
+  },
+  "editorially": {
+    "d": [
+      {
+        "p": "adv.",
+        "g": "In the manner of an editor."
+      },
+      {
+        "p": "adv.",
+        "g": "In the manner of an editorial."
+      }
+    ],
+    "e": "English editorial Middle English -ly English -ly English editorially From editorial + -ly.",
+    "i": "/ˌɛdəˈtɔriəli/",
+    "rs": "eh-duh-TAW-ree-uh-lee"
+  },
+  "educationally": {
+    "d": [
+      {
+        "p": "adv.",
+        "g": "In an educational manner."
+      }
+    ],
+    "e": "English educational Middle English -ly English -ly English educationally From educational + -ly.",
+    "i": "/ˌɛdʒəˈkeɪʃənəli/",
+    "rs": "eh-juh-KAY-shuh-nuh-lee",
+    "b": [
+      {
+        "s": "educat",
+        "k": "root"
+      },
+      {
+        "s": "ion",
+        "k": "suffix"
+      },
+      {
+        "s": "al",
+        "k": "suffix"
+      },
+      {
+        "s": "ly",
+        "k": "suffix"
+      }
+    ]
+  },
+  "ed": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "edition"
+      },
+      {
+        "p": "n.",
+        "g": "editor"
+      },
+      {
+        "p": "n.",
+        "g": "education (uncountable)"
+      }
+    ],
+    "e": "Shortening.",
+    "i": "/ɛd/",
+    "rs": "ehd",
+    "b": [
+      {
+        "s": "ed",
+        "k": "word"
+      }
+    ]
+  },
+  "edacity": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "excessive desire to eat"
+      }
+    ],
+    "e": "From Latin edacitas.",
+    "s": [
+      "esurience",
+      "ravenousness",
+      "voracity",
+      "voraciousness"
+    ],
+    "i": "/ɪˈdæsəti/"
+  },
+  "edam": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "mild yellow Dutch cheese made in balls encased in a red covering"
+      }
+    ],
+    "i": "/ˈidəm/",
+    "rs": "EE-duhm",
+    "b": [
+      {
+        "s": "edam",
+        "k": "word"
+      }
+    ]
+  },
+  "edaphosauridae": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "a family of reptiles of the order Pelycosauria"
+      }
+    ]
+  },
+  "edaphosaurus": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "Any of several synapsids of the genus Edaphosaurus, from the Carboniferous and Permian periods, that had a distinctive dorsal sail or crest."
+      }
+    ],
+    "e": "From Ancient Greek ἔδαφος (édaphos, “ground, soil”) + -saurus. By surface analysis, edapho- + -saurus."
+  },
+  "edd": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "a doctor's degree in education"
+      }
+    ]
+  },
+  "edda": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "tropical starchy tuberous root"
+      }
+    ],
+    "s": [
+      "taro",
+      "cocoyam",
+      "dasheen"
+    ]
+  },
+  "eddington": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "English astronomer remembered for his popular elucidation of relativity theory (1882-1944)"
+      }
+    ],
+    "i": "/ˈɛdɪŋtən/",
+    "rs": "EH-ding-tuhn"
+  },
+  "eddo": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A plant (Colocasia esculenta, but often identified as Colocasia antiquorum, among numerous other synonyms), which is usually considered a variety of C. esculenta, with edible starchy tubers."
+      },
+      {
+        "p": "n.",
+        "g": "The tubers of this plant."
+      }
+    ],
+    "e": "From a West African language.",
+    "s": [
+      "taro",
+      "cocoyam",
+      "dasheen"
+    ]
+  },
+  "eddy": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A current of air or water running back, or in an opposite direction to the main current."
+      },
+      {
+        "p": "n.",
+        "g": "A circular current; a whirlpool.",
+        "x": "And smiling eddies dimpled on the main."
+      },
+      {
+        "p": "v.",
+        "g": "To form an eddy; to move in, or as if in, an eddy; to move in a circle.",
+        "x": "He waded out, the stream eddying around his legs."
+      },
+      {
+        "p": "n.",
+        "g": "A marijuana edible.",
+        "x": "These eddies are made with both fruits and veggies, and weed of course, with cozy flavor profiles like honey lemon and apple pie."
+      }
+    ],
+    "e": "Proto-Indo-European *éti Proto-Germanic *idi- Proto-West Germanic *id- Old English ed- Proto-Indo-European *h₂ékʷeh₂ Proto-Germanic *ahwō Proto-West Germanic *ahu Old English ēa Old English edēa Middle English eddy English eddy From Middle English eddy, from Old English edēa, from ed- (“turning, back, reverse”) + ēa (“ …",
+    "s": [
+      "purl",
+      "whirlpool",
+      "swirl",
+      "whirl"
+    ],
+    "r": [
+      "countercurrent",
+      "eddyline"
+    ],
+    "i": "/ˈɛd.i/",
+    "rs": "EH-dee",
+    "b": [
+      {
+        "s": "eddy",
+        "k": "word"
+      }
+    ]
+  },
+  "edecrin": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "diuretic (trade name Edecrin) used to treat edema"
+      }
+    ]
+  },
+  "edelweiss": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A European perennial alpine plant (Leontopodium alpinum), with downy leaves and small white flower heads in a dense cluster.",
+        "x": "And that will mean farewell to the edelweiss, adieu the eider goose."
+      }
+    ],
+    "e": "Borrowed from German Edelweiß, from edel (“noble”) + weiß (“white”).",
+    "i": "/ˈeɪdəlvaɪs/",
+    "rs": "AY-duhl-vys",
+    "b": [
+      {
+        "s": "edelweiss",
+        "k": "word"
+      }
+    ]
+  },
+  "edema": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "An excessive accumulation of serum in tissue spaces or a body cavity.",
+        "x": "dependent edema"
+      },
+      {
+        "p": "n.",
+        "g": "A similar swelling in plants caused by excessive accumulation of water."
+      }
+    ],
+    "e": "From New Latin oedēma, from Ancient Greek οἴδημα (oídēma, “swelling”), from οἰδέω (oidéō, “I swell”).",
+    "s": [
+      "hydrops",
+      "dropsy",
+      "hydropsy"
+    ],
+    "r": [
+      "extravasation",
+      "acroedema",
+      "angioedema",
+      "antiedema",
+      "blepharedema",
+      "edemagenic",
+      "edematic",
+      "edemogen",
+      "leucoedema",
+      "leukoedema"
+    ],
+    "i": "/ɪˈdiː.mə/",
+    "rs": "i-DEE-muh",
+    "vars": [
+      "oedema"
+    ]
+  },
+  "eden": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "Alternative letter-case form of Eden (“a paradise”)."
+      }
+    ],
+    "s": [
+      "paradise",
+      "nirvana",
+      "heaven"
+    ],
+    "i": "/ˈiː.dən/",
+    "rs": "EE-duhn",
+    "b": [
+      {
+        "s": "eden",
+        "k": "word"
+      }
+    ]
+  },
+  "edentata": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "order of mammals having few or no teeth including: New World anteaters;  sloths;  armadillos"
+      }
+    ]
+  },
+  "ederle": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "United States swimmer who in 1926 became the first woman to swim the English Channel (1906-2003)"
+      }
+    ]
+  },
+  "edgar": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "the younger brother of Edwy who became king of Northumbria when it renounced Edwy;  on Edwy's death he succeeded to the throne of England (944-975)"
+      }
+    ],
+    "i": "/ˈɛdgɚ/",
+    "rs": "EHD-gur",
+    "b": [
+      {
+        "s": "edgar",
+        "k": "word"
+      }
+    ]
+  },
+  "edge": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "The boundary line of a surface."
+      },
+      {
+        "p": "n.",
+        "g": "A one-dimensional face of a polytope. In particular, the joining line between two vertices of a polygon; the place where two faces of a polyhedron meet."
+      },
+      {
+        "p": "n.",
+        "g": "An advantage.",
+        "x": "I have the edge on him."
+      },
+      {
+        "p": "n.",
+        "g": "The thin cutting side of the blade of an instrument, such as an ax, knife, sword, or scythe; that which cuts as an edge does, or wounds deeply, etc.",
+        "x": "No, 'tis slander; / Whose edge is sharper than the sword;"
+      }
+    ],
+    "e": "From Middle English egge, from Old English eċġ, from Proto-West Germanic *aggju, from Proto-Germanic *agjō, from Proto-Indo-European *h₂eḱ- (“sharp”). …",
+    "s": [
+      "border",
+      "inch"
+    ],
+    "i": "/ɛd͡ʒ/",
+    "rs": "ehj",
+    "b": [
+      {
+        "s": "edge",
+        "k": "word"
+      }
+    ]
+  },
+  "edger": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A tool that is used to trim the edges of a lawn."
+      },
+      {
+        "p": "n.",
+        "g": "A woodworking tool for straightening the edges of wood and cutting it into boards."
+      },
+      {
+        "p": "n.",
+        "g": "One who practises the sexual technique of edging."
+      }
+    ],
+    "e": "English edge Proto-Indo-European *-yósder. Proto-Italic *-āzijos Latin -āriusnom. Latin -āriusbor. Proto-Germanic *-ārijaz Proto-West Germanic *-ārī Old English -ere Middle English -ere English -er English edger From edge + -er.",
+    "r": [
+      "edgerman"
+    ],
+    "i": "/ˈɛdʒɚ/",
+    "rs": "EH-jur"
+  },
+  "edginess": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "The state of being edgy."
+      }
+    ],
+    "e": "English edgy Proto-Germanic *-inōną Proto-Indo-European *-dyé- Proto-Germanic *-atjaną Proto-Indo-European *-tus Proto-Germanic *-þuz Proto-Germanic *-assuz Proto-Germanic *-inassuz Proto-West Germanic *-nassī Old English -nes Middle English -nesse English -ness English edginess From edgy + -ness.",
+    "s": [
+      "uneasiness",
+      "inquietude",
+      "disquietude"
+    ],
+    "i": "/ˈɛdʒinəs/",
+    "rs": "EH-jee-nuhs"
+  },
+  "edging": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "present participle and gerund of edge"
+      },
+      {
+        "p": "n.",
+        "g": "Anything that forms, defines, or marks the edge of something.",
+        "x": "The decorative edging around the door makes it easier to find in the dark."
+      },
+      {
+        "p": "n.",
+        "g": "A technique involving the placement of the edge of the climbing shoe on a sharp hold."
+      },
+      {
+        "p": "n.",
+        "g": "The operation of shaping or dressing the edge of anything, as of a piece of metal."
+      }
+    ],
+    "a": [
+      "smearing"
+    ],
+    "i": "/ˈɛd͡ʒ.ɪŋ/",
+    "rs": "EH-jing"
+  },
+  "edibility": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "suitability for use as food"
+      }
+    ],
+    "e": "English edible Proto-Indo-European *-teh₂ Proto-Indo-European *-ts Proto-Indo-European *-teh₂ts Latin -itāsder. Old French -itebor. Middle English -ite English -ity English edibility From edible + -ity.",
+    "s": [
+      "edibleness"
+    ]
+  },
+  "edibleness": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "edibility"
+      }
+    ],
+    "e": "English edible Proto-Germanic *-inōną Proto-Indo-European *-dyé- Proto-Germanic *-atjaną Proto-Indo-European *-tus Proto-Germanic *-þuz Proto-Germanic *-assuz Proto-Germanic *-inassuz Proto-West Germanic *-nassī Old English -nes Middle English -nesse English -ness English edibleness From edible + -ness.",
+    "s": [
+      "edibility"
+    ]
+  },
+  "edict": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A proclamation of law or other authoritative command.",
+        "x": "By this time the edict had gone forth that the railways were to be nationalised on January 1, 1948."
+      },
+      {
+        "p": "n.",
+        "g": "a formal or authoritative proclamation"
+      }
+    ],
+    "e": "From Middle English edycte, borrowed from Latin edictum; earlier form edit, from Old French edit, from the same Latin word.",
+    "r": [
+      "edictal"
+    ],
+    "i": "/ˈiː.dɪkt/",
+    "rs": "EE-dikt",
+    "b": [
+      {
+        "s": "edict",
+        "k": "root",
+        "id": "dic",
+        "g": "to say, speak"
+      }
+    ],
+    "root": "dic",
+    "family": "/home/user/Claude_apps/family/dic.json"
+  },
+  "edification": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "The act of edifying, or the state of being edified or improved; a building process, especially morally, emotionally, or spiritually.",
+        "x": "Let euery one of vs please his neighbour for his good to edification."
+      }
+    ],
+    "e": "From Old French, from Latin aedificationem (“building, construction”), an accusative form of aedificatio, from aedificare.",
+    "s": [
+      "sophistication"
+    ],
+    "r": [
+      "edificant",
+      "edificator",
+      "edificatory",
+      "edifice",
+      "edificial",
+      "edifier",
+      "edify",
+      "edifyingly",
+      "edifyingness",
+      "disedification"
+    ],
+    "i": "/ˌɛdɪfɪˈkeɪʃən/",
+    "rs": "eh-duh-fuh-KAY-shuhn"
+  },
+  "edifice": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A building; a structure; an architectural fabric, especially a large and spectacular one."
+      },
+      {
+        "p": "n.",
+        "g": "An abstract structure, such as a school of thought, an argument, a theoretical position, etc.",
+        "x": "The real difficulty was moral, not intellectual. Was the whole edifice of Ptolemy to be destroyed?"
+      }
+    ],
+    "e": "From Middle English edifice, from Old French edifice, a classical borrowing of Latin aedificium (“building”), derived from aedificāre (“to build, establish”) (whence also English edify).",
+    "s": [
+      "building"
+    ],
+    "r": [
+      "edificant",
+      "edification",
+      "edificator",
+      "edificatory",
+      "edificial",
+      "edifier",
+      "edify",
+      "edifyingly",
+      "edifyingness"
+    ],
+    "i": "/ˈɛd.ɪ.fɪs/",
+    "rs": "EH-duh-fuhs",
+    "b": [
+      {
+        "s": "edifice",
+        "k": "word"
+      }
+    ]
+  },
+  "edinburgh": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "the capital of Scotland;  located in the Lothian Region on the south side of the Firth of Forth"
+      }
+    ],
+    "i": "/ˈɛdənbɚoʊ/",
+    "rs": "EH-duhn-bur-oh"
+  },
+  "edirne": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "a city in northwestern Turkey;  a Thracian town that was rebuilt and renamed by the Roman Emperor Hadrian"
+      }
+    ]
+  },
+  "edison": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "United States inventor;  inventions included the phonograph and incandescent electric light and the microphone and the Kinetoscope (1847-1931)"
+      }
+    ],
+    "i": "/ˈɛdɪsən/",
+    "rs": "EH-di-suhn"
+  },
+  "editing": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "present participle and gerund of edit"
+      },
+      {
+        "p": "n.",
+        "g": "An act or instance of something being edited."
+      }
+    ],
+    "s": [
+      "redaction"
+    ],
+    "i": "/ˈɛdɪtɪŋ/",
+    "rs": "EH-duh-ting"
+  },
+  "edition": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A written work edited and published, as by a certain editor or in a certain manner, or at a certain time.",
+        "x": "She wanted a copy of the Clericotes edition, but had to settle for the 1921 edition. She had never liked abridged editions."
+      },
+      {
+        "p": "n.",
+        "g": "The whole number of copies of a work printed and published at one time.",
+        "x": "The first edition was soon sold."
+      },
+      {
+        "p": "n.",
+        "g": "An instance of the first or second sense.",
+        "x": "What he had found was a particularly valuable first edition."
+      },
+      {
+        "p": "n.",
+        "g": "A particular instance of an event.",
+        "x": "The 2014 edition of the Tour de France started in Leeds, Yorkshire."
+      }
+    ],
+    "e": "From French édition, from Latin ēditiō, from ēdere (“to publish”).",
+    "r": [
+      "coedition",
+      "editioned",
+      "editioning",
+      "interedition",
+      "misedition"
+    ],
+    "i": "/ɪˈdɪʃ(ə)n/",
+    "rs": "uh-DI-shuhn",
+    "b": [
+      {
+        "s": "edit",
+        "k": "root"
+      },
+      {
+        "s": "ion",
+        "k": "suffix"
+      }
+    ]
+  },
+  "editor": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A person who edits or makes changes to documents."
+      },
+      {
+        "p": "n.",
+        "g": "A copy editor."
+      },
+      {
+        "p": "n.",
+        "g": "A person who edited a specific document.",
+        "x": "John Johnson wrote this term paper and the editor was Joan Johnson."
+      },
+      {
+        "p": "n.",
+        "g": "A person at a newspaper, publisher or similar institution who edits stories and/or decides which ones to publish.",
+        "x": "John is the city editor at the Daily Times."
+      }
+    ],
+    "e": "Medieval Latin ēdō Proto-Indo-European *-tōr Proto-Italic *-tōr Medieval Latin -tor Medieval Latin ēditorder. English editor From Medieval Latin ēditor, from Late Latin ēditor, from ēditus, perfect passive participle of ēdō (“give out, put forth, publish”).",
+    "r": [
+      "coeditor",
+      "deaditor",
+      "edit",
+      "editorial",
+      "editorializing",
+      "editorless",
+      "editorlike",
+      "editorship",
+      "editress",
+      "faned"
+    ],
+    "i": "/ˈɛd.ɪ.təɹ/",
+    "rs": "EH-duh-tur",
+    "b": [
+      {
+        "s": "edit",
+        "k": "root"
+      },
+      {
+        "s": "or",
+        "k": "suffix"
+      }
+    ]
+  },
+  "editorialist": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "One who writes opinion pieces, especially for a newspaper."
+      }
+    ],
+    "e": "English editorial Proto-Indo-European *-id- Proto-Indo-European *-yéti Proto-Indo-European *-idyéti Proto-Hellenic *-íďďō Ancient Greek -ῐ́ζω (-ĭ́zō) Proto-Hellenic *-tās Ancient Greek -τής (-tḗs) Ancient Greek -ῐστής (-ĭstḗs)bor. Latin -istader. Old French -istebor. …",
+    "s": [
+      "columnist"
+    ],
+    "i": "/ˌɛdəˈtɔriəlɪst/",
+    "rs": "eh-duh-TAW-ree-uh-list"
+  },
+  "editorship": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "The position or job of being an editor",
+        "x": "With this issue Mr. W. A. Willox regretfully relinquishes the editorship of THE RAILWAY MAGAZINE"
+      }
+    ],
+    "e": "Medieval Latin ēdō Proto-Indo-European *-tōr Proto-Italic *-tōr Medieval Latin -tor Medieval Latin ēditorder. English editor Proto-Germanic *skapjaną Proto-Germanic *-skapiz Proto-West Germanic *-skapi Old English -sċiepe Middle English -schipe English -ship English editorship From editor + -ship.",
+    "i": "/ˈɛdətɚˌʃɪp/",
+    "rs": "EH-duh-tur-ship",
+    "b": [
+      {
+        "s": "edit",
+        "k": "root"
+      },
+      {
+        "s": "or",
+        "k": "suffix"
+      },
+      {
+        "s": "ship",
+        "k": "suffix"
+      }
+    ]
+  },
+  "edmonton": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "the capital of the province of Alberta"
+      }
+    ],
+    "i": "/ˈɛdməntən/",
+    "rs": "EHD-muhn-tuhn"
+  },
+  "edmontonia": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "heavily armored and highly spiked dinosaur with semi-upright posture"
+      }
+    ]
+  },
+  "edmontosaurus": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "duck-billed dinosaur from Canada found as a fossilized mummy with skin"
+      }
+    ]
+  },
+  "edo": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "a member of a west African people living in the tropical forest region of southern Nigeria"
+      }
+    ],
+    "i": "/ˈidoʊ/",
+    "rs": "EE-doh"
+  },
+  "edp": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "automatic data processing by electronic means without the use of tabulating cards or punched tapes"
+      }
+    ]
+  },
+  "edronax": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "an antidepressant drug that blocks the reuptake of norepinephrine"
+      }
+    ],
+    "s": [
+      "reboxetine"
+    ]
+  },
+  "eds": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "plural of ed"
+      }
+    ]
+  },
+  "edta": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "a complex molecule used medically to chelate metal ions in cases of lead or heavy metal poisoning"
+      }
+    ]
+  },
+  "educatee": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "Someone who is being educated."
+      },
+      {
+        "p": "n.",
+        "g": "a learner who is enrolled in an educational institution"
+      }
+    ],
+    "e": "From educate + -ee.",
+    "a": [
+      "educator"
+    ]
+  },
+  "education": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "The process of imparting knowledge, skill and judgment.",
+        "x": "Good education is essential for a well-run society."
+      },
+      {
+        "p": "n.",
+        "g": "Facts, skills and ideas that have been learned, especially through formal instruction.",
+        "x": "Nuh-nuh-doin'-duh... Nuh-nuh-doin'-duh... We don't need no education...\nYes, you do. You've just used a double negative."
+      }
+    ],
+    "e": "Borrowed from Middle French éducation, from Latin ēducātiō (“a breeding, bringing up, rearing”), from ēducō (“to educate, train”), from ēdūcō (“to lead forth, to take out; to raise up, to erect”). See educate. Morphologically educate + -ion.",
+    "s": [
+      "instruction",
+      "teaching",
+      "pedagogy",
+      "didactics"
+    ],
+    "r": [
+      "educate",
+      "edutainment",
+      "schooling",
+      "training",
+      "teaching",
+      "instructing",
+      "tutoring",
+      "school",
+      "college",
+      "university"
+    ],
+    "i": "/ˌɛd͡ʒ.əˈkeɪ.ʃən/",
+    "rs": "eh-juh-KAY-shuhn",
+    "b": [
+      {
+        "s": "educat",
+        "k": "root"
+      },
+      {
+        "s": "ion",
+        "k": "suffix"
+      }
+    ]
+  },
+  "educationalist": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "a specialist in the theory of education."
+      }
+    ],
+    "e": "English educational Proto-Indo-European *-id- Proto-Indo-European *-yéti Proto-Indo-European *-idyéti Proto-Hellenic *-íďďō Ancient Greek -ῐ́ζω (-ĭ́zō) Proto-Hellenic *-tās Ancient Greek -τής (-tḗs) Ancient Greek -ῐστής (-ĭstḗs)bor. Latin -istader. Old French -istebor. …",
+    "s": [
+      "educationist"
+    ],
+    "b": [
+      {
+        "s": "educat",
+        "k": "root"
+      },
+      {
+        "s": "ion",
+        "k": "suffix"
+      },
+      {
+        "s": "al",
+        "k": "suffix"
+      },
+      {
+        "s": "ist",
+        "k": "suffix"
+      }
+    ]
+  },
+  "educationist": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A specialist in the theory of education.",
+        "x": "And there was Talbot's great diseased appetite to corroborate a belief that expatriate educationists ate hoggishly."
+      }
+    ],
+    "e": "Latin ēducātiōder. English education Proto-Indo-European *-id- Proto-Indo-European *-yéti Proto-Indo-European *-idyéti Proto-Hellenic *-íďďō Ancient Greek -ῐ́ζω (-ĭ́zō) Proto-Hellenic *-tās Ancient Greek -τής (-tḗs) Ancient Greek -ῐστής (-ĭstḗs)bor. Latin -istader. Old French -istebor. …",
+    "s": [
+      "educationalist"
+    ],
+    "b": [
+      {
+        "s": "educat",
+        "k": "root"
+      },
+      {
+        "s": "ion",
+        "k": "suffix"
+      },
+      {
+        "s": "ist",
+        "k": "suffix"
+      }
+    ]
+  },
+  "educator": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A person distinguished for their educational work, a teacher."
+      },
+      {
+        "p": "n.",
+        "g": "someone who educates young people"
+      }
+    ],
+    "e": "From Latin ēducātor. By surface analysis, educate + -or.",
+    "r": [
+      "educatorese",
+      "educatress",
+      "educrat",
+      "noneducator",
+      "paraeducator",
+      "phonicator",
+      "psychoeducator"
+    ],
+    "i": "/ˈɛd͡ʒəkeɪtɚ/",
+    "rs": "EH-juh-kay-tur",
+    "b": [
+      {
+        "s": "educat",
+        "k": "root",
+        "id": "duc",
+        "g": "to lead"
+      },
+      {
+        "s": "or",
+        "k": "suffix",
+        "id": "er-agent",
+        "g": "one who, that which"
+      }
+    ],
+    "root": "duc",
+    "family": "/home/user/Claude_apps/family/duc.json"
+  },
+  "edutainment": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "Educational entertainment, a form of programming (cinematic, television, live action, games or any material) that provides both education and entertainment."
+      }
+    ],
+    "e": "Blend of education + entertainment.",
+    "i": "/ˌɛd͡ʒ.əˈteɪn.mənt/"
+  },
+  "edward": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "King of England and Ireland in 1936;  his marriage to Wallis Warfield Simpson created a constitutional crisis leading to his abdication (1894-1972)"
+      }
+    ],
+    "i": "/ˈɛdwɚd/",
+    "rs": "EH-dwurd",
+    "b": [
+      {
+        "s": "edward",
+        "k": "word"
+      }
+    ]
+  },
+  "edwards": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "American theologian whose sermons and writings stimulated a period of renewed interest in religion in America (1703-1758)"
+      }
+    ],
+    "i": "/ˈɛdwɚdz/",
+    "rs": "EH-dwurdz",
+    "b": [
+      {
+        "s": "edwards",
+        "k": "word"
+      }
+    ]
+  },
+  "edwin": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "king of Northumbria who was converted to Christianity (585-633)"
+      }
+    ],
+    "i": "/ˈɛdwən/",
+    "rs": "EH-dwuhn",
+    "b": [
+      {
+        "s": "ed",
+        "k": "prefix"
+      },
+      {
+        "s": "win",
+        "k": "root"
+      }
+    ]
+  },
+  "edwy": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "King of England who was renounced by Northumbria in favor of his brother Edgar (died in 959)"
+      }
+    ]
+  },
+  "edify": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "To instruct or improve morally or intellectually.",
+        "x": "frustrate the best endeavours in the edifying of the church"
+      }
+    ],
+    "e": "From Old French edifier (“to build, to edify”), from Latin aedificare (“build”).",
+    "s": [
+      "enlighten"
+    ],
+    "r": [
+      "edification",
+      "edificator",
+      "edifice",
+      "edifier",
+      "edifying",
+      "disedify",
+      "reedify"
+    ],
+    "i": "/ˈɛdɪfaɪ/",
+    "rs": "EH-duh-fy",
+    "b": [
+      {
+        "s": "edify",
+        "k": "word"
+      }
+    ]
+  },
+  "edit": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A change to the text of a document."
+      },
+      {
+        "p": "n.",
+        "g": "A change in the text of a file, a website or the code of software.",
+        "x": "He has made 5780 edits on Wikipedia so far."
+      },
+      {
+        "p": "n.",
+        "g": "An edited piece of media, especially video footage.",
+        "x": "An early edit of the film included a romantic subplot."
+      },
+      {
+        "p": "n.",
+        "g": "A compilation of memorable moments (in a show, sport, etc.), often featuring stylized camera effects and intense music.",
+        "x": "a basketball edit, a Thor edit"
+      }
+    ],
+    "e": "Back-formation from editor, influenced by French éditer (“edit, publish”) and Latin editus.",
+    "s": [
+      "cut"
+    ],
+    "r": [
+      "coedit",
+      "editability",
+      "editable",
+      "editathon",
+      "edition",
+      "editless",
+      "editome",
+      "editor",
+      "editorial",
+      "editosome"
+    ],
+    "i": "/ˈɛdɪt/",
+    "rs": "EH-duht",
+    "b": [
+      {
+        "s": "edit",
+        "k": "word"
+      }
+    ]
+  },
+  "editorialise": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "Alternative spelling of editorialize."
+      }
+    ],
+    "e": "English editorial English -ise English editorialise From editorial + -ise.",
+    "s": [
+      "editorialize"
+    ],
+    "rel": {
+      "t": "variant of",
+      "l": "editorialize",
+      "by": "assistant",
+      "at": "2026-06-23T05:47:54.405Z"
+    }
+  },
+  "editorialize": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "To introduce or insert personal opinions, judgments or subjective interpretations into news reporting or factual accounts where objectivity is expected.",
+        "x": "Jerry Falwell's right-wing fundamentalist publication \"Moral Majority Inc.\" editorialized that AIDS was God's \"deserved punishments\" against homosexuals."
+      }
+    ],
+    "e": "Medieval Latin ēdō Proto-Indo-European *-tōr Proto-Italic *-tōr Medieval Latin -tor Medieval Latin ēditorder. English editor Proto-Indo-European *h₂el-der.? Proto-Italic *-ālis Latin -ālisder. Old French -ialder. …",
+    "s": [
+      "editorialise"
+    ],
+    "i": "/ˌed.əˈtɔːr.i.ə.laɪz/",
+    "rs": "eh-duh-TAW-ree-uh-lyz",
+    "vars": [
+      "editorialise"
+    ]
+  },
+  "educate": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "To instruct or train.",
+        "x": "Wang said such changes to the Baishui glacier provide the chance to educate visitors about global warming."
+      },
+      {
+        "p": "v.",
+        "g": "give an education to"
+      }
+    ],
+    "e": "From Middle English educaten, from educat(e) (“educated”, also used as the past participle of educaten) + -en (verb-forming suffix), from Latin ēducātus, the perfect passive participle of ēducō (“(of a child, physically or mentally) to bring up, train, nourish; (of a person in learning or art) to rear, educate, train; …",
+    "r": [
+      "educatability",
+      "educatable",
+      "educatee",
+      "educating",
+      "education",
+      "educative",
+      "educatory",
+      "miseducate",
+      "overeducate",
+      "reeducate"
+    ],
+    "i": "/ˈɛd͡ʒ.əˌkeɪt/",
+    "rs": "EH-juh-kayt",
+    "b": [
+      {
+        "s": "educate",
+        "k": "root",
+        "id": "duc",
+        "g": "to lead"
+      }
+    ],
+    "root": "duc",
+    "family": "/home/user/Claude_apps/family/duc.json"
+  },
+  "educe": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "To infer or deduce (a result, theory etc.) from existing data or premises."
+      },
+      {
+        "p": "v.",
+        "g": "To draw out or bring forth from some basic or potential state; to elicit, to develop."
+      },
+      {
+        "p": "v.",
+        "g": "To isolate (a substance) from a compound; to extract.",
+        "dom": "chemistry"
+      },
+      {
+        "p": "v.",
+        "g": "To cause or generate; to bring about."
+      },
+      {
+        "p": "n.",
+        "g": "An inference."
+      },
+      {
+        "p": "v.",
+        "g": "deduce (a principle) or construe (a meaning)"
+      }
+    ],
+    "e": "Borrowed from Latin ēdūcere (“lead out, raise up”); from ex- (“out, up”) + dūcō (“lead, pull”).",
+    "r": [
+      "educement",
+      "educer",
+      "educible",
+      "eduction"
+    ],
+    "i": "/ɪˈduːs/",
+    "b": [
+      {
+        "s": "educe",
+        "k": "root",
+        "id": "duc",
+        "g": "to lead"
+      }
+    ],
+    "root": "duc",
+    "family": "/home/user/Claude_apps/family/duc.json"
+  },
+  "edulcorate": {
+    "d": [
+      {
+        "p": "v.",
+        "g": "To sweeten."
+      },
+      {
+        "p": "v.",
+        "g": "To make more acceptable or palatable.",
+        "x": "I guess I am simply accustomed to dealing with more edulcorated versions of xenophobia."
+      },
+      {
+        "p": "v.",
+        "g": "To free from acidity."
+      }
+    ],
+    "e": "From Medieval Latin ēdulcōrō. Compare French édulcorer.",
+    "s": [
+      "sweeten",
+      "dulcify",
+      "dulcorate"
+    ],
+    "a": [
+      "sour",
+      "acidify",
+      "acidulate",
+      "acetify"
+    ],
+    "r": [
+      "edulcoration",
+      "edulcorator"
+    ],
+    "i": "/əˈdʌlkəɹeɪt/"
+  }
+}

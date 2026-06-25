@@ -1,1 +1,749 @@
-{"umbellar":{"d":[{"p":"adj.","g":"Of, pertaining to, bearing or having the form of an umbel."}],"e":"English umbel English -ar English umbellar From umbel + -ar.","s":["umbellate"]},"umbellate":{"d":[{"p":"adj.","g":"Having umbels."}],"e":"From umbel + -ate (adjective-forming suffix).","s":["umbellar"]},"umbelliferous":{"d":[{"p":"adj.","g":"Bearing umbels."},{"p":"adj.","g":"Pertaining to a member of the family Umbelliferae."}],"e":"English umbel English -iferous English umbelliferous From umbel + -iferous."},"umbelliform":{"d":[{"p":"adj.","g":"Having the shape of an umbel."}],"e":"From umbel + -iform."},"umber":{"d":[{"p":"n.","g":"A brown clay, somewhat darker than ochre, which contains iron and manganese oxides.","x":"I'll put myself in poor and mean attire,\nAnd with a kind of umber smirch my face;\nThe like do you; so shall we pass along,\nAnd never stir assailants."},{"p":"n.","g":"Alternative form of umbrere."},{"p":"n.","g":"A grayling."},{"p":"n.","g":"A dusky brown African wading bird (Scopus umbretta) allied to the shoebill and herons; a hamerkop."}],"e":"From Middle French ombre (“umber”), from terre d'ombre (“dark ochre”), from Old French umbre (“shade, shadow”), from Latin umbra. Doublet of umbra.","i":"/ˈʌmbɚ/","b":[{"s":"umber","k":"word"}]},"umbilical":{"d":[{"p":"adj.","g":"Of, or relating to, the navel (umbilicus) or the umbilical cord."},{"p":"adj.","g":"Such that the curvatures of normal sections are all equal to each other."},{"p":"n.","g":"A cord connecting an astronaut to a spacecraft, or a craft to ground control prior to launch, etc."}],"e":"From Latin umbilicus (“navel”) + -al. By surface analysis, umbilic- + -al.","r":["paraumbilical","periumbilical","postumbilical","preumbilical","pseudoumbilical","subumbilical","transumbilical"],"i":"/ʌmˈbɪ.lɪ.kəl/","rs":"uhm-BI-li-kuhl","b":[{"s":"umbilic","k":"root","g":"of or pertaining to the navel","o":"Latin"},{"s":"al","k":"suffix"}]},"umbilicate":{"d":[{"p":"adj.","g":"Having a navel."},{"p":"adj.","g":"Having a small umbo in a central depression, or a depression in the center of the cap."},{"p":"adj.","g":"Supported by a central stalk."}],"e":"Borrowed from New Latin umbilicātus, from umbilicus (“navel”) + -ātus. By surface analysis, umbilic- + -ate (adjective-forming suffix).","r":["umbilication"],"b":[{"s":"umbilic","k":"root","g":"of or pertaining to the navel","o":"Latin"},{"s":"ate","k":"suffix"}]},"umbrageous":{"d":[{"p":"adj.","g":"Having or providing shade; shady.","x":"... without which the stem could not have supported its heavy and umbrageous top."},{"p":"adj.","g":"Irritable, easily upset."}],"e":"From Middle French ombrageux, or from umbrage + -ous.","s":["shady","shadowed","shadowy"],"r":["umbrous","umbral","umbrageously","umbrageousness"],"i":"/ʌmˈbɹeɪdʒəs/","b":[{"s":"umbrage","k":"root"},{"s":"ous","k":"suffix"}]},"umbrella":{"d":[{"p":"n.","g":"A cloth-covered frame used for protection against rain or sun.","x":"Quick, grab that umbrella before you get rained on!"},{"p":"n.","g":"Anything that provides similar protection.","x":"The fighters provide a defensive air umbrella over the battle group."},{"p":"n.","g":"Anything that provides similar overarching coverage of a range of concepts, purposes, groups, etc.","x":"The test facility was established under the umbrella of the company's quality program."},{"p":"n.","g":"A strategy in which five players in the offensive zone form an umbrella-shaped formation around the opposition's goal net."}],"e":"Borrowed from Italian ombrella (“parasol, sunshade”), from Late Latin umbrella (influenced by umbra (“shadow, shade”)), from Latin umbella, from umbra + -la (diminutive suffix).","s":["chatta","chatra","rainshade","parapluie","gamp","bumbershoot","umbershoot"],"r":["umbra","umbrel","umbrere","awning","bumbershoot","gamp","parasol","shield","cumbrella","exumbrella"],"i":"/ʌmˈbɹɛl.ə/","rs":"uhm-BREH-luh","b":[{"s":"umbrella","k":"word"}]},"umbrellalike":{"d":[{"p":"adj.","g":"Resembling or characteristic of an umbrella."}],"e":"From umbrella + -like.","b":[{"s":"umbrella","k":"root"},{"s":"like","k":"suffix"}]},"umpteen":{"d":[{"p":"det.","g":"Relatively large but unspecified in number.","x":"She's taking umpteen friends with her to the party."}],"e":"From ump (“a colloquial name for the dash \"—\" in Morse code”) + -teen. Unrelated to ump as in umpire, and simply a mnemonic rhyming aid.","s":["umteen"],"i":"/ˈʌmp.tiːn/","rs":"UHMP-TEEN","b":[{"s":"ump","k":"root"},{"s":"teen","k":"suffix"}]},"umpteenth":{"d":[{"p":"adj.","g":"Occurring in a relatively large but unspecified position in a sequence.","x":"That's the umpteenth time I've had to tell him not to swear in front of the children."}],"e":"English umpteen English -th English umpteenth From umpteen + -th.","s":["umteenth","umptieth"],"i":"/ˈʌmp.tiːnθ/","rs":"UHMP-teenth","b":[{"s":"ump","k":"root"},{"s":"teen","k":"suffix"},{"s":"th","k":"suffix"}],"vars":["umteenth"]},"umptieth":{"d":[{"p":"adj.","g":"A generic ordinal number; a last or one of the latest in a long series; implies repetition.","x":"After he retied the knot for the umptieth time, he finally figured out how to make it stay tied."}],"e":"English umpty English -eth English umptieth From umpty + -eth.","s":["umpteenth","umteenth"]},"umteen":{"d":[{"p":"adjective satellite","g":"innumerable but many"}],"s":["umpteen"]},"umteenth":{"d":[{"p":"adj.","g":"Alternative spelling of umpteenth."}],"s":["umpteenth","umptieth"],"rel":{"t":"variant of","l":"umpteenth","by":"assistant","at":"2026-06-23T05:47:54.405Z"}},"uma":{"d":[{"p":"n.","g":"a benevolent aspect of Devi;  `splendor'"}],"i":"/ˈjumə/","rs":"YOO-muh"},"umayyad":{"d":[{"p":"n.","g":"the first dynasty of Arab caliphs whose capital was Damascus"}]},"umbel":{"d":[{"p":"n.","g":"A flat-topped or rounded flower-cluster (= inflorescence) in which the individual flower stalks arise from the same point, the youngest flowers being at the centre."},{"p":"n.","g":"The pileus of certain fungi."}],"e":"Borrowed from Latin umbella (“umbrella”). Compare umbrella, composed of the same etymological elements but formed independently.","r":["umbellar","umbellaster","umbelled","umbellet","umbellifer","umbelliferous","umbelliform","umbellulate","umbellule"],"i":"/ʌmbəl/","rs":"UHM-buhl"},"umbellales":{"d":[{"p":"n.","g":"plants having umbels or corymbs of uniovulate flowers;  includes the Umbelliferae (chiefly herbs) and Cornaceae (chiefly trees or shrubs)"}]},"umbellifer":{"d":[{"p":"n.","g":"Any plant of the family Apiaceae, also called Umbelliferae, whose inflorescence is an umbel, such as a carrot or celery."}],"e":"English umbell(a) Latin -i-bor. English -i- Proto-Indo-European *bʰer- Proto-Indo-European *-ós Proto-Indo-European *bʰorós Proto-Italic *-foros Latin -ferder. English -fer English umbellifer From umbell(a) + -i- + -fer."},"umbelliferae":{"d":[{"p":"n.","g":"plants having flowers in umbels: parsley;  carrot;  anise;  caraway;  celery;  dill"}]},"umbellularia":{"d":[{"p":"n.","g":"aromatic evergreen trees of Pacific coast"}]},"umbilicus":{"d":[{"p":"n.","g":"A navel."},{"p":"n.","g":"Umbilical cord","x":"She ate the umbilicus, and the afterbirth, which is supposed to be good for them. Then she licked off the first kitten and was ready for the next."},{"p":"n.","g":"A hilum."},{"p":"n.","g":"A depression or opening in the center of the base of many spiral shells."}],"e":"Proto-Indo-European *h₃nóbʰōl Latin umbilīcusbor. English umbilicus Borrowed from Latin umbilīcus (“navel”).","s":["navel","bellybutton","omphalos","omphalus"],"r":["umbilical"],"i":"/ˌʌmˈbɪlɪkəs/"},"umbo":{"d":[{"p":"n.","g":"The boss of a shield, at or near the middle and usually projecting, sometimes in a sharp spike.","x":"It is thirteen inches diameter, made of wood covered with leather, and an iron plate decorated with nails and mouldings; the boss or umbo projects four inches."},{"p":"n.","g":"An inward projection of the tympanic membrane of the ear."},{"p":"n.","g":"One of the lateral prominences just above the hinge of a bivalve shell."},{"p":"n.","g":"A bump or protrusion on the cap of a mushroom or toadstool."}],"e":"Borrowed from Latin umbō (“a shield boss”). Doublet of umbone.","r":["boss","umbonal","umbonic"],"i":"/ˈʌm.boʊ/"},"umbra":{"d":[{"p":"n.","g":"The fully shaded inner region of a shadow cast by an opaque object."},{"p":"n.","g":"The area on the earth or moon experiencing the total phase of an eclipse."},{"p":"n.","g":"The central region of a sunspot."},{"p":"n.","g":"A shadow."}],"e":"Borrowed from Latin umbra (“shadow”). Doublet of umber.","r":["adumbrate","antumbra","penumbra","umbral","umbrella"],"i":"/ˈʌmbɹə/","rs":"UHM-bruh"},"umbrage":{"d":[{"p":"n.","g":"A feeling of anger or annoyance caused by something offensive.","x":"—He took umbrage at something or other, that muchinjured but on the whole eventempered person declared, I let slip."},{"p":"n.","g":"A feeling of doubt."},{"p":"n.","g":"Leaves that provide shade, as the foliage of trees.","x":"It was a relief to change the cheerful meadow for the dark umbrage of the forest which they now entered."},{"p":"v.","g":"To displease or cause offense."}],"e":"From Middle French ombrage (“umbrage”), from Old French ombrage, from Latin umbrāticus (“in the shade”), from umbra (“shadow, shade”).","s":["offense","offence"],"r":["umbrageous"],"i":"/ˈʌm.bɹɪd͡ʒ/","rs":"UHM-brij","b":[{"s":"umbrage","k":"word"}]},"umbrellawort":{"d":[{"p":"n.","g":"Any of various plants in the genus Mirabilis."},{"p":"n.","g":"Any of various plants in the genus Tauschia."}],"e":"From umbrella + wort."},"umbria":{"d":[{"p":"n.","g":"a mountainous region in central Italy"}],"i":"/ˈʌmbriə/","rs":"UHM-bree-uh"},"umbrian":{"d":[{"p":"n.","g":"an extinct Italic language of ancient southern Italy"}]},"umbrina":{"d":[{"p":"n.","g":"croakers"}]},"umbundu":{"d":[{"p":"n.","g":"a Bantu language spoken in Angola"}]},"umlaut":{"d":[{"p":"n.","g":"An assimilatory process whereby a vowel is pronounced more like a following vocoid that is separated by one or more consonants.","x":"In fits of concealed despair that went unnoticed even by those close enough to touch, Julien cursed the language of umlauts, eszetts, and gerunds."},{"p":"n.","g":"The umlaut process (as above) that occurred historically in Germanic languages whereby back vowels became front vowels when followed by syllable containing a front vocoid (e.g. Germanic lūsiz > Old English lȳs(i) > Modern English lice)."},{"p":"n.","g":"A vowel so assimilated."},{"p":"n.","g":"The diacritical mark ( ¨ ) placed over a vowel when it indicates a (rounded) front vowel"}],"e":"German um- Proto-Indo-European *ḱlew- Proto-Indo-European *-tós Proto-Indo-European *ḱlutós Proto-Germanic *hlūdaz Proto-West Germanic *hlūd Old High German lūt Middle High German lūt German Laut German Umlautbor. …","s":["trema"],"r":["diaeresis","dieresis"],"i":"/ˈʊm.laʊt/","b":[{"s":"umlaut","k":"word"}]},"umma":{"d":[{"p":"n.","g":"Alternative spelling of ummah."}],"rel":{"t":"variant of","l":"ummah","by":"assistant","at":"2026-06-23T05:47:54.405Z"}},"ummah":{"d":[{"p":"n.","g":"The worldwide Muslim community.","x":"That concept of a united ummah has survived all subsequent divisions in Islam, including the great and so far permanent rupture between Sunni and Shī‘a [...]."}],"e":"Borrowed from Arabic أُمَّة (ʔumma, “community”). Cognate to Hebrew אומה / אֻמָּה (ʾummā, “nation”).","i":"/ˈʊmə/","vars":["umma"]},"ump":{"d":[{"p":"n.","g":"An umpire.","x":"If you take it to court, you're the guy who screams at the ump ’cause they don't like the call at the plate."},{"p":"v.","g":"To act as an umpire (in).","x":"On the block when we were growing up we called him Ronnie the Enforcer because he umped all the stickball games and reffed the hockey."}],"e":"Clipping of umpire.","s":["umpire"],"i":"/ʌmp/"},"umpirage":{"d":[{"p":"n.","g":"mediation by an umpire"}],"e":"From umpire + -age."},"umpire":{"d":[{"p":"n.","g":"An official who presides over a sports match."},{"p":"n.","g":"The official who presides over a tennis match sat on a high chair."},{"p":"n.","g":"One of the two white-coated officials who preside over a cricket match."},{"p":"n.","g":"One of the officials who preside over a baseball game.","x":"The umpire called the pitch a strike."}],"e":"From a Middle English rebracketing of a noumper as an oumper, from Old French nonper (“odd number, not even (as a tie-breaking arbitrator)”), from non (“not”) + per (“equal”), from Latin par (“equal”). Doublet of nonpareil.","s":["ump","referee"],"r":["nonpareil"],"i":"/ˈʌm.paɪɹ/","rs":"UHM-py-ur","b":[{"s":"umpire","k":"word"}]}}
+{
+  "umbellar": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Of, pertaining to, bearing or having the form of an umbel."
+      }
+    ],
+    "e": "English umbel English -ar English umbellar From umbel + -ar.",
+    "s": [
+      "umbellate"
+    ]
+  },
+  "umbellate": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Having umbels."
+      }
+    ],
+    "e": "From umbel + -ate (adjective-forming suffix).",
+    "s": [
+      "umbellar"
+    ]
+  },
+  "umbelliferous": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Bearing umbels."
+      },
+      {
+        "p": "adj.",
+        "g": "Pertaining to a member of the family Umbelliferae."
+      }
+    ],
+    "e": "English umbel English -iferous English umbelliferous From umbel + -iferous."
+  },
+  "umbelliform": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Having the shape of an umbel."
+      }
+    ],
+    "e": "From umbel + -iform."
+  },
+  "umber": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A brown clay, somewhat darker than ochre, which contains iron and manganese oxides.",
+        "x": "I'll put myself in poor and mean attire,\nAnd with a kind of umber smirch my face;\nThe like do you; so shall we pass along,\nAnd never stir assailants."
+      },
+      {
+        "p": "n.",
+        "g": "Alternative form of umbrere."
+      },
+      {
+        "p": "n.",
+        "g": "A grayling."
+      },
+      {
+        "p": "n.",
+        "g": "A dusky brown African wading bird (Scopus umbretta) allied to the shoebill and herons; a hamerkop."
+      }
+    ],
+    "e": "From Middle French ombre (“umber”), from terre d'ombre (“dark ochre”), from Old French umbre (“shade, shadow”), from Latin umbra. Doublet of umbra.",
+    "i": "/ˈʌmbɚ/",
+    "b": [
+      {
+        "s": "umber",
+        "k": "word"
+      }
+    ]
+  },
+  "umbilical": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Of, or relating to, the navel (umbilicus) or the umbilical cord."
+      },
+      {
+        "p": "adj.",
+        "g": "Such that the curvatures of normal sections are all equal to each other."
+      },
+      {
+        "p": "n.",
+        "g": "A cord connecting an astronaut to a spacecraft, or a craft to ground control prior to launch, etc."
+      }
+    ],
+    "e": "From Latin umbilicus (“navel”) + -al. By surface analysis, umbilic- + -al.",
+    "r": [
+      "paraumbilical",
+      "periumbilical",
+      "postumbilical",
+      "preumbilical",
+      "pseudoumbilical",
+      "subumbilical",
+      "transumbilical"
+    ],
+    "i": "/ʌmˈbɪ.lɪ.kəl/",
+    "rs": "uhm-BI-li-kuhl",
+    "b": [
+      {
+        "s": "umbilic",
+        "k": "root",
+        "g": "of or pertaining to the navel",
+        "o": "Latin"
+      },
+      {
+        "s": "al",
+        "k": "suffix"
+      }
+    ]
+  },
+  "umbilicate": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Having a navel."
+      },
+      {
+        "p": "adj.",
+        "g": "Having a small umbo in a central depression, or a depression in the center of the cap."
+      },
+      {
+        "p": "adj.",
+        "g": "Supported by a central stalk."
+      }
+    ],
+    "e": "Borrowed from New Latin umbilicātus, from umbilicus (“navel”) + -ātus. By surface analysis, umbilic- + -ate (adjective-forming suffix).",
+    "r": [
+      "umbilication"
+    ],
+    "b": [
+      {
+        "s": "umbilic",
+        "k": "root",
+        "g": "of or pertaining to the navel",
+        "o": "Latin"
+      },
+      {
+        "s": "ate",
+        "k": "suffix"
+      }
+    ]
+  },
+  "umbrageous": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Having or providing shade; shady.",
+        "x": "... without which the stem could not have supported its heavy and umbrageous top."
+      },
+      {
+        "p": "adj.",
+        "g": "Irritable, easily upset."
+      }
+    ],
+    "e": "From Middle French ombrageux, or from umbrage + -ous.",
+    "s": [
+      "shady",
+      "shadowed",
+      "shadowy"
+    ],
+    "r": [
+      "umbrous",
+      "umbral",
+      "umbrageously",
+      "umbrageousness"
+    ],
+    "i": "/ʌmˈbɹeɪdʒəs/",
+    "b": [
+      {
+        "s": "umbrage",
+        "k": "root"
+      },
+      {
+        "s": "ous",
+        "k": "suffix"
+      }
+    ]
+  },
+  "umbrella": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A cloth-covered frame used for protection against rain or sun.",
+        "x": "Quick, grab that umbrella before you get rained on!"
+      },
+      {
+        "p": "n.",
+        "g": "Anything that provides similar protection.",
+        "x": "The fighters provide a defensive air umbrella over the battle group."
+      },
+      {
+        "p": "n.",
+        "g": "Anything that provides similar overarching coverage of a range of concepts, purposes, groups, etc.",
+        "x": "The test facility was established under the umbrella of the company's quality program."
+      },
+      {
+        "p": "n.",
+        "g": "A strategy in which five players in the offensive zone form an umbrella-shaped formation around the opposition's goal net."
+      }
+    ],
+    "e": "Borrowed from Italian ombrella (“parasol, sunshade”), from Late Latin umbrella (influenced by umbra (“shadow, shade”)), from Latin umbella, from umbra + -la (diminutive suffix).",
+    "s": [
+      "chatta",
+      "chatra",
+      "rainshade",
+      "parapluie",
+      "gamp",
+      "bumbershoot",
+      "umbershoot"
+    ],
+    "r": [
+      "umbra",
+      "umbrel",
+      "umbrere",
+      "awning",
+      "bumbershoot",
+      "gamp",
+      "parasol",
+      "shield",
+      "cumbrella",
+      "exumbrella"
+    ],
+    "i": "/ʌmˈbɹɛl.ə/",
+    "rs": "uhm-BREH-luh",
+    "b": [
+      {
+        "s": "umbrella",
+        "k": "word"
+      }
+    ]
+  },
+  "umbrellalike": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Resembling or characteristic of an umbrella."
+      }
+    ],
+    "e": "From umbrella + -like.",
+    "b": [
+      {
+        "s": "umbrella",
+        "k": "root"
+      },
+      {
+        "s": "like",
+        "k": "suffix"
+      }
+    ]
+  },
+  "umpteen": {
+    "d": [
+      {
+        "p": "det.",
+        "g": "Relatively large but unspecified in number.",
+        "x": "She's taking umpteen friends with her to the party."
+      }
+    ],
+    "e": "From ump (“a colloquial name for the dash \"—\" in Morse code”) + -teen. Unrelated to ump as in umpire, and simply a mnemonic rhyming aid.",
+    "s": [
+      "umteen"
+    ],
+    "i": "/ˈʌmp.tiːn/",
+    "rs": "UHMP-TEEN",
+    "b": [
+      {
+        "s": "ump",
+        "k": "root"
+      },
+      {
+        "s": "teen",
+        "k": "suffix"
+      }
+    ]
+  },
+  "umpteenth": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Occurring in a relatively large but unspecified position in a sequence.",
+        "x": "That's the umpteenth time I've had to tell him not to swear in front of the children."
+      }
+    ],
+    "e": "English umpteen English -th English umpteenth From umpteen + -th.",
+    "s": [
+      "umteenth",
+      "umptieth"
+    ],
+    "i": "/ˈʌmp.tiːnθ/",
+    "rs": "UHMP-teenth",
+    "b": [
+      {
+        "s": "ump",
+        "k": "root"
+      },
+      {
+        "s": "teen",
+        "k": "suffix"
+      },
+      {
+        "s": "th",
+        "k": "suffix"
+      }
+    ],
+    "vars": [
+      "umteenth"
+    ]
+  },
+  "umptieth": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "A generic ordinal number; a last or one of the latest in a long series; implies repetition.",
+        "x": "After he retied the knot for the umptieth time, he finally figured out how to make it stay tied."
+      }
+    ],
+    "e": "English umpty English -eth English umptieth From umpty + -eth.",
+    "s": [
+      "umpteenth",
+      "umteenth"
+    ]
+  },
+  "umteen": {
+    "d": [
+      {
+        "p": "adjective satellite",
+        "g": "innumerable but many"
+      }
+    ],
+    "s": [
+      "umpteen"
+    ]
+  },
+  "umteenth": {
+    "d": [
+      {
+        "p": "adj.",
+        "g": "Alternative spelling of umpteenth."
+      }
+    ],
+    "s": [
+      "umpteenth",
+      "umptieth"
+    ],
+    "rel": {
+      "t": "variant of",
+      "l": "umpteenth",
+      "by": "assistant",
+      "at": "2026-06-23T05:47:54.405Z"
+    }
+  },
+  "uma": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "a benevolent aspect of Devi;  `splendor'"
+      }
+    ],
+    "i": "/ˈjumə/",
+    "rs": "YOO-muh"
+  },
+  "umayyad": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "the first dynasty of Arab caliphs whose capital was Damascus"
+      }
+    ]
+  },
+  "umbel": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A flat-topped or rounded flower-cluster (= inflorescence) in which the individual flower stalks arise from the same point, the youngest flowers being at the centre."
+      },
+      {
+        "p": "n.",
+        "g": "The pileus of certain fungi."
+      }
+    ],
+    "e": "Borrowed from Latin umbella (“umbrella”). Compare umbrella, composed of the same etymological elements but formed independently.",
+    "r": [
+      "umbellar",
+      "umbellaster",
+      "umbelled",
+      "umbellet",
+      "umbellifer",
+      "umbelliferous",
+      "umbelliform",
+      "umbellulate",
+      "umbellule"
+    ],
+    "i": "/ʌmbəl/",
+    "rs": "UHM-buhl"
+  },
+  "umbellales": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "plants having umbels or corymbs of uniovulate flowers;  includes the Umbelliferae (chiefly herbs) and Cornaceae (chiefly trees or shrubs)"
+      }
+    ]
+  },
+  "umbellifer": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "Any plant of the family Apiaceae, also called Umbelliferae, whose inflorescence is an umbel, such as a carrot or celery."
+      }
+    ],
+    "e": "English umbell(a) Latin -i-bor. English -i- Proto-Indo-European *bʰer- Proto-Indo-European *-ós Proto-Indo-European *bʰorós Proto-Italic *-foros Latin -ferder. English -fer English umbellifer From umbell(a) + -i- + -fer.",
+    "b": [
+      {
+        "s": "umbellifer",
+        "k": "root",
+        "id": "fer",
+        "g": "to carry, bear"
+      }
+    ],
+    "root": "fer",
+    "family": "/home/user/Claude_apps/family/fer.json"
+  },
+  "umbelliferae": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "plants having flowers in umbels: parsley;  carrot;  anise;  caraway;  celery;  dill"
+      }
+    ]
+  },
+  "umbellularia": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "aromatic evergreen trees of Pacific coast"
+      }
+    ]
+  },
+  "umbilicus": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A navel."
+      },
+      {
+        "p": "n.",
+        "g": "Umbilical cord",
+        "x": "She ate the umbilicus, and the afterbirth, which is supposed to be good for them. Then she licked off the first kitten and was ready for the next."
+      },
+      {
+        "p": "n.",
+        "g": "A hilum."
+      },
+      {
+        "p": "n.",
+        "g": "A depression or opening in the center of the base of many spiral shells."
+      }
+    ],
+    "e": "Proto-Indo-European *h₃nóbʰōl Latin umbilīcusbor. English umbilicus Borrowed from Latin umbilīcus (“navel”).",
+    "s": [
+      "navel",
+      "bellybutton",
+      "omphalos",
+      "omphalus"
+    ],
+    "r": [
+      "umbilical"
+    ],
+    "i": "/ˌʌmˈbɪlɪkəs/"
+  },
+  "umbo": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "The boss of a shield, at or near the middle and usually projecting, sometimes in a sharp spike.",
+        "x": "It is thirteen inches diameter, made of wood covered with leather, and an iron plate decorated with nails and mouldings; the boss or umbo projects four inches."
+      },
+      {
+        "p": "n.",
+        "g": "An inward projection of the tympanic membrane of the ear."
+      },
+      {
+        "p": "n.",
+        "g": "One of the lateral prominences just above the hinge of a bivalve shell."
+      },
+      {
+        "p": "n.",
+        "g": "A bump or protrusion on the cap of a mushroom or toadstool."
+      }
+    ],
+    "e": "Borrowed from Latin umbō (“a shield boss”). Doublet of umbone.",
+    "r": [
+      "boss",
+      "umbonal",
+      "umbonic"
+    ],
+    "i": "/ˈʌm.boʊ/"
+  },
+  "umbra": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "The fully shaded inner region of a shadow cast by an opaque object."
+      },
+      {
+        "p": "n.",
+        "g": "The area on the earth or moon experiencing the total phase of an eclipse."
+      },
+      {
+        "p": "n.",
+        "g": "The central region of a sunspot."
+      },
+      {
+        "p": "n.",
+        "g": "A shadow."
+      }
+    ],
+    "e": "Borrowed from Latin umbra (“shadow”). Doublet of umber.",
+    "r": [
+      "adumbrate",
+      "antumbra",
+      "penumbra",
+      "umbral",
+      "umbrella"
+    ],
+    "i": "/ˈʌmbɹə/",
+    "rs": "UHM-bruh"
+  },
+  "umbrage": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "A feeling of anger or annoyance caused by something offensive.",
+        "x": "—He took umbrage at something or other, that muchinjured but on the whole eventempered person declared, I let slip."
+      },
+      {
+        "p": "n.",
+        "g": "A feeling of doubt."
+      },
+      {
+        "p": "n.",
+        "g": "Leaves that provide shade, as the foliage of trees.",
+        "x": "It was a relief to change the cheerful meadow for the dark umbrage of the forest which they now entered."
+      },
+      {
+        "p": "v.",
+        "g": "To displease or cause offense."
+      }
+    ],
+    "e": "From Middle French ombrage (“umbrage”), from Old French ombrage, from Latin umbrāticus (“in the shade”), from umbra (“shadow, shade”).",
+    "s": [
+      "offense",
+      "offence"
+    ],
+    "r": [
+      "umbrageous"
+    ],
+    "i": "/ˈʌm.bɹɪd͡ʒ/",
+    "rs": "UHM-brij",
+    "b": [
+      {
+        "s": "umbrage",
+        "k": "word"
+      }
+    ]
+  },
+  "umbrellawort": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "Any of various plants in the genus Mirabilis."
+      },
+      {
+        "p": "n.",
+        "g": "Any of various plants in the genus Tauschia."
+      }
+    ],
+    "e": "From umbrella + wort."
+  },
+  "umbria": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "a mountainous region in central Italy"
+      }
+    ],
+    "i": "/ˈʌmbriə/",
+    "rs": "UHM-bree-uh"
+  },
+  "umbrian": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "an extinct Italic language of ancient southern Italy"
+      }
+    ]
+  },
+  "umbrina": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "croakers"
+      }
+    ]
+  },
+  "umbundu": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "a Bantu language spoken in Angola"
+      }
+    ]
+  },
+  "umlaut": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "An assimilatory process whereby a vowel is pronounced more like a following vocoid that is separated by one or more consonants.",
+        "x": "In fits of concealed despair that went unnoticed even by those close enough to touch, Julien cursed the language of umlauts, eszetts, and gerunds."
+      },
+      {
+        "p": "n.",
+        "g": "The umlaut process (as above) that occurred historically in Germanic languages whereby back vowels became front vowels when followed by syllable containing a front vocoid (e.g. Germanic lūsiz > Old English lȳs(i) > Modern English lice)."
+      },
+      {
+        "p": "n.",
+        "g": "A vowel so assimilated."
+      },
+      {
+        "p": "n.",
+        "g": "The diacritical mark ( ¨ ) placed over a vowel when it indicates a (rounded) front vowel"
+      }
+    ],
+    "e": "German um- Proto-Indo-European *ḱlew- Proto-Indo-European *-tós Proto-Indo-European *ḱlutós Proto-Germanic *hlūdaz Proto-West Germanic *hlūd Old High German lūt Middle High German lūt German Laut German Umlautbor. …",
+    "s": [
+      "trema"
+    ],
+    "r": [
+      "diaeresis",
+      "dieresis"
+    ],
+    "i": "/ˈʊm.laʊt/",
+    "b": [
+      {
+        "s": "umlaut",
+        "k": "word"
+      }
+    ]
+  },
+  "umma": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "Alternative spelling of ummah."
+      }
+    ],
+    "rel": {
+      "t": "variant of",
+      "l": "ummah",
+      "by": "assistant",
+      "at": "2026-06-23T05:47:54.405Z"
+    }
+  },
+  "ummah": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "The worldwide Muslim community.",
+        "x": "That concept of a united ummah has survived all subsequent divisions in Islam, including the great and so far permanent rupture between Sunni and Shī‘a [...]."
+      }
+    ],
+    "e": "Borrowed from Arabic أُمَّة (ʔumma, “community”). Cognate to Hebrew אומה / אֻמָּה (ʾummā, “nation”).",
+    "i": "/ˈʊmə/",
+    "vars": [
+      "umma"
+    ]
+  },
+  "ump": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "An umpire.",
+        "x": "If you take it to court, you're the guy who screams at the ump ’cause they don't like the call at the plate."
+      },
+      {
+        "p": "v.",
+        "g": "To act as an umpire (in).",
+        "x": "On the block when we were growing up we called him Ronnie the Enforcer because he umped all the stickball games and reffed the hockey."
+      }
+    ],
+    "e": "Clipping of umpire.",
+    "s": [
+      "umpire"
+    ],
+    "i": "/ʌmp/"
+  },
+  "umpirage": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "mediation by an umpire"
+      }
+    ],
+    "e": "From umpire + -age."
+  },
+  "umpire": {
+    "d": [
+      {
+        "p": "n.",
+        "g": "An official who presides over a sports match."
+      },
+      {
+        "p": "n.",
+        "g": "The official who presides over a tennis match sat on a high chair."
+      },
+      {
+        "p": "n.",
+        "g": "One of the two white-coated officials who preside over a cricket match."
+      },
+      {
+        "p": "n.",
+        "g": "One of the officials who preside over a baseball game.",
+        "x": "The umpire called the pitch a strike."
+      }
+    ],
+    "e": "From a Middle English rebracketing of a noumper as an oumper, from Old French nonper (“odd number, not even (as a tie-breaking arbitrator)”), from non (“not”) + per (“equal”), from Latin par (“equal”). Doublet of nonpareil.",
+    "s": [
+      "ump",
+      "referee"
+    ],
+    "r": [
+      "nonpareil"
+    ],
+    "i": "/ˈʌm.paɪɹ/",
+    "rs": "UHM-py-ur",
+    "b": [
+      {
+        "s": "umpire",
+        "k": "word"
+      }
+    ]
+  }
+}
