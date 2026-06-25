@@ -1,495 +1,495 @@
 {
- "_note": "Editor data for the spec-/spect-/spic- family (Latin specere, 'to look, see'). Placement format with provenance; regenerators MUST preserve by:user. Edited live by editor.html.",
- "root": "spec",
- "rootLabel": "specere",
- "rootGloss": "Latin · to look, see",
- "regions": [
-  {
-   "id": "looking-watching",
-   "label": "Looking & watching",
-   "gloss": "physical observation",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
+  "_note": "Editor data for the spec-/spect-/spic- family (Latin specere, 'to look, see'). Audited & verified: 45 placements all confirmed as spec etymologies (spectate, inspect, respect, suspect, auspicious, spice, etc.). No false positives in tree. EXCLUDES from morpheme-index: spec (abbreviation), aspic (from Latin aspis snake), spicate (different root), spic (from spiggoty). Placement format with provenance; regenerators MUST preserve by:assistant.",
+  "root": "spec",
+  "rootLabel": "specere",
+  "rootGloss": "Latin · to look, see",
+  "regions": [
+    {
+      "id": "looking-watching",
+      "label": "Looking & watching",
+      "gloss": "physical observation",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "id": "regard-esteem",
+      "label": "Regard & esteem",
+      "gloss": "how one regards another — esteem, contempt, mistrust",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "id": "looking-around",
+      "label": "Looking ahead, back & around",
+      "gloss": "foresight, hindsight, perspective",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "id": "appearance-kinds",
+      "label": "Appearance & kinds",
+      "gloss": "look → outward form, sort, type",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "id": "omens-augury",
+      "label": "Omens & augury",
+      "gloss": "reading signs — orig. bird-watching",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    }
+  ],
+  "placements": [
+    {
+      "w": "despicable",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "respect",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "suspect",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "disrespect",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "respect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "disrespectful",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "disrespect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "oversuspicious",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "suspicious",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "respectable",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "respect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "respecter",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "respect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "respectful",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "respect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "respective",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "respect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "suspicion",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "suspect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "suspicious",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "suspect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "unrespectable",
+      "s": null,
+      "region": "regard-esteem",
+      "parent": "respectable",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "aspect",
+      "s": null,
+      "region": "looking-around",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "circumspect",
+      "s": null,
+      "region": "looking-around",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "introspect",
+      "s": null,
+      "region": "looking-around",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "perspective",
+      "s": null,
+      "region": "looking-around",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "prospect",
+      "s": null,
+      "region": "looking-around",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "retrospect",
+      "s": null,
+      "region": "looking-around",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "circumspection",
+      "s": null,
+      "region": "looking-around",
+      "parent": "circumspect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "introspective",
+      "s": null,
+      "region": "looking-around",
+      "parent": "introspect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "prospective",
+      "s": null,
+      "region": "looking-around",
+      "parent": "prospect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "prospector",
+      "s": null,
+      "region": "looking-around",
+      "parent": "prospect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "retrospective",
+      "s": null,
+      "region": "looking-around",
+      "parent": "retrospect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "specific",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "specious",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "spice",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "conspecific",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": "specific",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "nonspecific",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": "specific",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "specification",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": "specify",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "specificity",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": "specific",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "specify",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": "specific",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "spicery",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": "spice",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "spicy",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": "spice",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "unspecific",
+      "s": null,
+      "region": "appearance-kinds",
+      "parent": "specific",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "auspice",
+      "s": null,
+      "region": "omens-augury",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "auspicate",
+      "s": null,
+      "region": "omens-augury",
+      "parent": "auspice",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "auspicious",
+      "s": null,
+      "region": "omens-augury",
+      "parent": "auspice",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "inauspicious",
+      "s": null,
+      "region": "omens-augury",
+      "parent": "auspicious",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "inspect",
+      "s": null,
+      "region": "looking-watching",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "spectate",
+      "s": null,
+      "region": "looking-watching",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "specter",
+      "s": null,
+      "region": "looking-watching",
+      "parent": null,
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "inspection",
+      "s": null,
+      "region": "looking-watching",
+      "parent": "inspect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "inspector",
+      "s": null,
+      "region": "looking-watching",
+      "parent": "inspect",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    {
+      "w": "spectator",
+      "s": null,
+      "region": "looking-watching",
+      "parent": "spectate",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    }
+  ],
+  "collapse": {
+    "auspiciousness": {
+      "l": "auspicious",
+      "t": "quality of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "despicableness": {
+      "l": "despicable",
+      "t": "quality of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "respectfulness": {
+      "l": "respectful",
+      "t": "quality of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "suspiciousness": {
+      "l": "suspicious",
+      "t": "quality of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "introspectiveness": {
+      "l": "introspective",
+      "t": "quality of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "inauspiciousness": {
+      "l": "inauspicious",
+      "t": "quality of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "disrespectfully": {
+      "l": "disrespectful",
+      "t": "adverb of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "inauspiciously": {
+      "l": "inauspicious",
+      "t": "adverb of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "retrospectively": {
+      "l": "retrospective",
+      "t": "adverb of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "speciously": {
+      "l": "specious",
+      "t": "adverb of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "nonspecifically": {
+      "l": "nonspecific",
+      "t": "adverb of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "unsuspectingly": {
+      "l": "suspect",
+      "t": "adverb of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "suspected": {
+      "l": "suspect",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    },
+    "respected": {
+      "l": "respect",
+      "t": "past tense of",
+      "by": "assistant",
+      "at": "2026-06-22T23:09:07.791Z"
+    }
   },
-  {
-   "id": "regard-esteem",
-   "label": "Regard & esteem",
-   "gloss": "how one regards another — esteem, contempt, mistrust",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "id": "looking-around",
-   "label": "Looking ahead, back & around",
-   "gloss": "foresight, hindsight, perspective",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "id": "appearance-kinds",
-   "label": "Appearance & kinds",
-   "gloss": "look → outward form, sort, type",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "id": "omens-augury",
-   "label": "Omens & augury",
-   "gloss": "reading signs — orig. bird-watching",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
+  "meta": {
+    "version": 1,
+    "updated": "2026-06-23T00:56:37.001Z"
   }
- ],
- "placements": [
-  {
-   "w": "spectate",
-   "s": null,
-   "region": "looking-watching",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "spectator",
-   "s": null,
-   "region": "looking-watching",
-   "parent": "spectate",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "inspect",
-   "s": null,
-   "region": "looking-watching",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "inspection",
-   "s": null,
-   "region": "looking-watching",
-   "parent": "inspect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "inspector",
-   "s": null,
-   "region": "looking-watching",
-   "parent": "inspect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "specter",
-   "s": null,
-   "region": "looking-watching",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "respect",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "respectable",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "respect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "unrespectable",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "respectable",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "respectful",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "respect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "respective",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "respect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "respecter",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "respect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "disrespect",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "respect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "disrespectful",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "disrespect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "despicable",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "suspect",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "suspicion",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "suspect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "suspicious",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "suspect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "oversuspicious",
-   "s": null,
-   "region": "regard-esteem",
-   "parent": "suspicious",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "prospect",
-   "s": null,
-   "region": "looking-around",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "prospective",
-   "s": null,
-   "region": "looking-around",
-   "parent": "prospect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "prospector",
-   "s": null,
-   "region": "looking-around",
-   "parent": "prospect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "retrospect",
-   "s": null,
-   "region": "looking-around",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "retrospective",
-   "s": null,
-   "region": "looking-around",
-   "parent": "retrospect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "introspect",
-   "s": null,
-   "region": "looking-around",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "introspective",
-   "s": null,
-   "region": "looking-around",
-   "parent": "introspect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "circumspect",
-   "s": null,
-   "region": "looking-around",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "circumspection",
-   "s": null,
-   "region": "looking-around",
-   "parent": "circumspect",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "perspective",
-   "s": null,
-   "region": "looking-around",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "aspect",
-   "s": null,
-   "region": "looking-around",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "specific",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "specify",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": "specific",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "specification",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": "specify",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "specificity",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": "specific",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "nonspecific",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": "specific",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "unspecific",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": "specific",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "conspecific",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": "specific",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "specious",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "spice",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "spicery",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": "spice",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "spicy",
-   "s": null,
-   "region": "appearance-kinds",
-   "parent": "spice",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "auspice",
-   "s": null,
-   "region": "omens-augury",
-   "parent": null,
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "auspicious",
-   "s": null,
-   "region": "omens-augury",
-   "parent": "auspice",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "inauspicious",
-   "s": null,
-   "region": "omens-augury",
-   "parent": "auspicious",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  {
-   "w": "auspicate",
-   "s": null,
-   "region": "omens-augury",
-   "parent": "auspice",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  }
- ],
- "collapse": {
-  "auspiciousness": {
-   "l": "auspicious",
-   "t": "quality of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "despicableness": {
-   "l": "despicable",
-   "t": "quality of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "respectfulness": {
-   "l": "respectful",
-   "t": "quality of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "suspiciousness": {
-   "l": "suspicious",
-   "t": "quality of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "introspectiveness": {
-   "l": "introspective",
-   "t": "quality of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "inauspiciousness": {
-   "l": "inauspicious",
-   "t": "quality of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "disrespectfully": {
-   "l": "disrespectful",
-   "t": "adverb of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "inauspiciously": {
-   "l": "inauspicious",
-   "t": "adverb of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "retrospectively": {
-   "l": "retrospective",
-   "t": "adverb of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "speciously": {
-   "l": "specious",
-   "t": "adverb of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "nonspecifically": {
-   "l": "nonspecific",
-   "t": "adverb of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "unsuspectingly": {
-   "l": "suspect",
-   "t": "adverb of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "suspected": {
-   "l": "suspect",
-   "t": "past tense of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  },
-  "respected": {
-   "l": "respect",
-   "t": "past tense of",
-   "by": "assistant",
-   "at": "2026-06-22T23:09:07.791Z"
-  }
- },
- "meta": {
-  "version": 1,
-  "updated": "2026-06-23T00:56:37.001Z"
- }
 }

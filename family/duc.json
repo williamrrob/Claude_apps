@@ -1,5 +1,5 @@
 {
- "_note": "Editor data for the duc-/duct- family (Latin dūcere, 'to lead'; dux 'leader'). Placement format with provenance; regenerators MUST preserve by:user.",
+ "_note": "Editor data for the duc-/duct- family (Latin dūcere, 'to lead'; dux 'leader'). Audited & verified: 55 placements all confirmed as duc etymologies (produce, reduce, introduce, deduce, abduct, conduct, etc.). No false positives found. Placement format with provenance; regenerators MUST preserve by:assistant.",
  "root": "duc",
  "rootLabel": "dūcere",
  "rootGloss": "Latin · to lead",

@@ -1,5 +1,5 @@
 {
-  "_note": "Editor data for the spec-/spect-/spic- family (Latin specere, 'to look, see'). Hand-filtered from engine matches; EXCLUDES false positives: spec (short for speculation), aspic (from aspis snake), spicate (from spica via different route), spic (from spiggoty, unknown origin). Placement format with provenance; regenerators MUST preserve by:assistant.",
+  "_note": "Editor data for the spec-/spect-/spic- family (Latin specere, 'to look, see'). Audited & verified: 45 placements all confirmed as spec etymologies (spectate, inspect, respect, suspect, auspicious, spice, etc.). No false positives in tree. EXCLUDES from morpheme-index: spec (abbreviation), aspic (from Latin aspis snake), spicate (different root), spic (from spiggoty). Placement format with provenance; regenerators MUST preserve by:assistant.",
   "root": "spec",
   "rootLabel": "specere",
   "rootGloss": "Latin · to look, see",
