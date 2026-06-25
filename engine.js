@@ -130,7 +130,7 @@
         }
         // Move into the suffix zone without consuming.
         const t = rec(pos, 2);
-        if (!best || t.score > best.score) best = t;
+        if (t && (!best || t.score > best.score)) best = t;
       } else {
         matchesAt(SUFFIX_INDEX, word, pos).forEach(function (m) {
           const rest = rec(pos + m.form.length, 2);
@@ -142,10 +142,22 @@
         }
       }
 
-      // Fallback (root/suffix zones only): swallow one character as "unknown" so
-      // the search can always reach the end. Adjacent unknowns merge later.
-      const restU = rec(pos + 1, phase);
-      consider(part("unknown", word[pos], null, pos), restU, UNKNOWN_PENALTY);
+      // Fallback (root/suffix zones only): only in phase 2 (suffix zone).
+      // Never emit single-letter unknowns. Instead: collect all consecutive
+      // unrecognized characters and treat as one unit.
+      if (phase === 2 && pos < word.length) {
+        let unknownEnd = pos;
+        while (unknownEnd < word.length && !matchesAt(SUFFIX_INDEX, word, unknownEnd).length) {
+          unknownEnd++;
+        }
+        if (unknownEnd > pos) {
+          const unknownSpan = word.slice(pos, unknownEnd);
+          const restU = rec(unknownEnd, phase);
+          if (restU) {
+            consider(part("unknown", unknownSpan, null, pos), restU, UNKNOWN_PENALTY * unknownSpan.length);
+          }
+        }
+      }
 
       memo.set(key, best);
       return best;

@@ -280,6 +280,7 @@ const MORPHEMES = {
     { id: "tude", forms: ["itude", "tude"], origin: "Latin", source: "-tudo", meaning: "state or quality of" },
     { id: "ty", forms: ["ty"], origin: "Latin", source: "-tas", meaning: "state or quality of" },
     { id: "ure", forms: ["ture", "ure", "tur", "ur"], origin: "Latin", source: "-ura", meaning: "act, process, or result of" },
+    { id: "um", forms: ["um"], origin: "Latin", source: "-um", meaning: "nominative singular (Latin: e.g. aluminium, helium, stadium)" },
     { id: "y", forms: ["y"], origin: "Old English", source: "-ig", meaning: "characterized by, full of" },
     { id: "ing", forms: ["ing"], origin: "Old English", source: "-ing", meaning: "action or process; present participle" },
     { id: "s-plural", forms: ["es", "s"], origin: "Old English", source: "-s", meaning: "plural; or third-person singular verb" },
