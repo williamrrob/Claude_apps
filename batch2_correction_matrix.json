@@ -1,0 +1,292 @@
+{
+  "batch": "2 - Correction Matrix for -ity words",
+  "title": "Mapping incorrect verb-stem breakdowns to correct adjective-stem breakdowns",
+  "total_words": 23,
+  "corrections": {
+    "capacity": {
+      "word": "capacity",
+      "current_breakdown": "cap + acity",
+      "current_family_root": "cap",
+      "source_adjective": "capax (Latin: 'able to hold, capable')",
+      "adjective_stem": "capac-",
+      "correct_breakdown": "capac + ity",
+      "correct_family_root": "capax",
+      "mwEtymology": "Latin capacitas (from capax + -itas)",
+      "priority": "HIGH - User specifically flagged this as incorrect"
+    },
+    "captivity": {
+      "word": "captivity",
+      "current_breakdown": "cap + tivity",
+      "current_family_root": "cap",
+      "source_adjective": "captivus (Latin: 'taken captive', from capere 'to take')",
+      "adjective_stem": "captiv-",
+      "correct_breakdown": "captiv + ity",
+      "correct_family_root": "captivus (derived from cap/capere)",
+      "mwEtymology": "Late Latin captivitas (from captivus + -itas)",
+      "notes": "Derives from cap but through participial adjective captivus"
+    },
+    "facility": {
+      "word": "facility",
+      "current_breakdown": "fac + ility",
+      "current_family_root": "facere",
+      "source_adjective": "facilis (Latin: 'easy, fluent', from facere 'to do/make')",
+      "adjective_stem": "facil-",
+      "correct_breakdown": "facil + ity",
+      "correct_family_root": "facilis (derived from facere)",
+      "mwEtymology": "Latin facilitas (from facilis + -itas)"
+    },
+    "fertility": {
+      "word": "fertility",
+      "current_breakdown": "fer + tility",
+      "current_family_root": "ferre",
+      "source_adjective": "fertilis (Latin: 'fruitful', from ferre 'to bear/carry')",
+      "adjective_stem": "fertil-",
+      "correct_breakdown": "fertil + ity",
+      "correct_family_root": "fertilis (derived from ferre)",
+      "mwEtymology": "Latin fertilitas (from fertilis + -itas)"
+    },
+    "infertility": {
+      "word": "infertility",
+      "current_breakdown": "in + fer + tility",
+      "current_family_root": "ferre",
+      "source_adjective": "infertilis (Latin: 'not fruitful', in- + fertilis)",
+      "adjective_stem": "infertil-",
+      "correct_breakdown": "in + fertil + ity",
+      "correct_family_root": "ferre (through fertilis)",
+      "mwEtymology": "Latin infertilitas (from infertilis + -itas)"
+    },
+    "tenacity": {
+      "word": "tenacity",
+      "current_breakdown": "ten + acity",
+      "current_family_root": "tenere",
+      "source_adjective": "tenax (Latin: 'holding fast, persistent', from tenere 'to hold')",
+      "adjective_stem": "tenac-",
+      "correct_breakdown": "tenac + ity",
+      "correct_family_root": "tenax (derived from tenere)",
+      "mwEtymology": "Latin tenacitas (from tenax + -itas)",
+      "priority": "HIGH - Common word"
+    },
+    "superficiality": {
+      "word": "superficiality",
+      "current_breakdown": "super + fic + ality",
+      "current_family_root": "facere",
+      "source_adjective": "superficialis (Latin: 'on the surface', super- + facies 'face')",
+      "adjective_stem": "superficial-",
+      "correct_breakdown": "super + ficial + ity",
+      "correct_family_root": "facies (noun: face/surface), superficialis (adj)",
+      "mwEtymology": "Latin superficialitas (from superficialis + -itas)",
+      "notes": "Complex: fac- → facies (noun) → superficial- (adj from superficies)"
+    },
+    "specificity": {
+      "word": "specificity",
+      "current_breakdown": "spec + ificity",
+      "current_family_root": "specere",
+      "source_adjective": "specificus (Latin: 'making a kind', species + -ficus)",
+      "adjective_stem": "specific-",
+      "correct_breakdown": "spec + ific + ity",
+      "correct_family_root": "species (noun) + ficus (making)",
+      "mwEtymology": "Latin specificitas (from specificus + -itas)",
+      "notes": "Compound: species + -ficus rather than pure specere derivation"
+    },
+    "diversity": {
+      "word": "diversity",
+      "current_breakdown": "di + vert + ity",
+      "current_family_root": "vert",
+      "source_adjective": "diversus (Latin: 'turned aside, various', di- + versus)",
+      "adjective_stem": "divers-",
+      "correct_breakdown": "di + vers + ity",
+      "correct_family_root": "vert (through diversus)",
+      "mwEtymology": "Latin diversitas (from diversus + -itas)",
+      "notes": "Note: vert- (infinitive) vs vers- (participial/adj stem)"
+    },
+    "biodiversity": {
+      "word": "biodiversity",
+      "current_breakdown": "bio + di + vert + ity",
+      "current_family_root": "vert",
+      "source_adjective": "diversus (Latin: 'various')",
+      "adjective_stem": "divers-",
+      "correct_breakdown": "bio + di + vers + ity",
+      "correct_family_root": "vert (through diversus)",
+      "mwEtymology": "Modern English: bio- (life) + diversity",
+      "notes": "Modern compound combining bio- + diversity; uses same divers- stem"
+    },
+    "multiversity": {
+      "word": "multiversity",
+      "current_breakdown": "multi + vert + ity",
+      "current_family_root": "vert",
+      "source_adjective": "diversus (Latin) but with multi- prefix",
+      "adjective_stem": "divers-",
+      "correct_breakdown": "multi + vers + ity",
+      "correct_family_root": "vert (through diversus)",
+      "mwEtymology": "Modern English: multi- + diversity",
+      "notes": "Modern English compound: multi- (many) + diversity"
+    },
+    "universality": {
+      "word": "universality",
+      "current_breakdown": "uni + vers + al + ity",
+      "current_family_root": "vert",
+      "source_adjective": "universalis (Latin: 'universal', from universus)",
+      "adjective_stem": "universal-",
+      "correct_breakdown": "uni + vers + al + ity",
+      "correct_family_root": "vert (through universus/universalis)",
+      "mwEtymology": "Latin universalitas (from universalis + -itas)",
+      "notes": "Already correctly parsed: uni + vers + al + ity (universalis is adjective from universus)"
+    },
+    "university": {
+      "word": "university",
+      "current_breakdown": "uni + vers + ity",
+      "current_family_root": "vert",
+      "source_noun": "universitas (Latin: 'the whole, totality', from universus)",
+      "noun_stem": "universit-",
+      "correct_breakdown": "uni + vers + ity",
+      "correct_family_root": "vert (through universitas)",
+      "mwEtymology": "Late Latin universitas (corporation/body of persons)",
+      "notes": "This is noun form 'universitas' (corporation), not adjective + -ity. May already be correct or represents different pattern."
+    },
+    "adversity": {
+      "word": "adversity",
+      "current_breakdown": "ad + vers + ity",
+      "current_family_root": "vert",
+      "source_adjective": "adversus (Latin: 'turned against, opposite', ad- + versus)",
+      "adjective_stem": "advers-",
+      "correct_breakdown": "ad + vers + ity",
+      "correct_family_root": "vert (through adversus)",
+      "mwEtymology": "Latin adversitas (from adversus + -itas)",
+      "notes": "Already correctly parsed: ad + vers + ity"
+    },
+    "perversity": {
+      "word": "perversity",
+      "current_breakdown": "per + vers + ity",
+      "current_family_root": "vert",
+      "source_adjective": "perversus (Latin: 'twisted, perverted', per- + versus)",
+      "adjective_stem": "pervers-",
+      "correct_breakdown": "per + vers + ity",
+      "correct_family_root": "vert (through perversus)",
+      "mwEtymology": "Latin perversitas (from perversus + -itas)",
+      "notes": "Already correctly parsed: per + vers + ity"
+    },
+    "versatility": {
+      "word": "versatility",
+      "current_breakdown": "vert + ility",
+      "current_family_root": "vert",
+      "source_adjective": "versatilis (Latin: 'turning, changeable', from versare/vertere)",
+      "adjective_stem": "versatil-",
+      "correct_breakdown": "versatil + ity",
+      "correct_family_root": "vert (through versatilis)",
+      "mwEtymology": "Latin versatilitas (from versatilis + -itas)"
+    },
+    "verticality": {
+      "word": "verticality",
+      "current_breakdown": "vert + ic + ality",
+      "current_family_root": "vert",
+      "source_adjective": "verticalis (Latin: 'relating to the vertical', from vertix 'peak/summit')",
+      "adjective_stem": "vertical-",
+      "correct_breakdown": "vertic + al + ity",
+      "correct_family_root": "vert (through verticalis)",
+      "mwEtymology": "Latin verticalitas (from verticalis + -itas)",
+      "notes": "Compare: vertical + ity or vertic + al + ity (capturing adjective derivation)"
+    },
+    "reversibility": {
+      "word": "reversibility",
+      "current_breakdown": "re + vers + ibil + ity",
+      "current_family_root": "vert",
+      "source_adjective": "reversibilis (Latin: 'able to be reversed')",
+      "adjective_stem": "reversibl-",
+      "correct_breakdown": "re + vers + ibl + ity",
+      "correct_family_root": "vert (through reversibilis)",
+      "mwEtymology": "Latin reversibilitas (from reversibilis + -itas)",
+      "notes": "Note: -ibilis suffix makes adjective from verb, then -itas makes noun from adjective"
+    },
+    "irreversibility": {
+      "word": "irreversibility",
+      "current_breakdown": "ir + re + vers + ibil + ity",
+      "current_family_root": "vert",
+      "source_adjective": "irreversibilis (in- + reversibilis)",
+      "adjective_stem": "irreversibl-",
+      "correct_breakdown": "ir + re + vers + ibl + ity",
+      "correct_family_root": "vert (through irreversibilis)",
+      "mwEtymology": "Latin irreversibilitas (from irreversibilis + -itas)"
+    },
+    "convertibility": {
+      "word": "convertibility",
+      "current_breakdown": "con + vers + ibil + ity",
+      "current_family_root": "vert",
+      "source_adjective": "convertibilis (Latin: 'able to be converted')",
+      "adjective_stem": "convertibl-",
+      "correct_breakdown": "con + vers + ibl + ity",
+      "correct_family_root": "vert (through convertibilis)",
+      "mwEtymology": "Latin convertibilitas (from convertibilis + -itas)"
+    },
+    "inconvertibility": {
+      "word": "inconvertibility",
+      "current_breakdown": "in + con + vers + ibil + ity",
+      "current_family_root": "vert",
+      "source_adjective": "inconvertibilis (in- + convertibilis)",
+      "adjective_stem": "inconvertibl-",
+      "correct_breakdown": "in + con + vers + ibl + ity",
+      "correct_family_root": "vert (through inconvertibilis)",
+      "mwEtymology": "Latin inconvertibilitas (from inconvertibilis + -itas)"
+    },
+    "incontrovertibility": {
+      "word": "incontrovertibility",
+      "current_breakdown": "in + contra + vers + ibil + ity",
+      "current_family_root": "vert",
+      "source_adjective": "incontrovertibilis (in- + controvertibilis)",
+      "adjective_stem": "incontrovertbl-",
+      "correct_breakdown": "in + contro + vers + ibl + ity",
+      "correct_family_root": "vert (through incontrovertibilis)",
+      "mwEtymology": "Latin incontrovertibilitas (from incontrovertibilis + -itas)"
+    },
+    "superconductivity": {
+      "word": "superconductivity",
+      "current_breakdown": "super + con + duc + tivity",
+      "current_family_root": "duc",
+      "source_adjective": "superconductivus (Modern English: super- + conductive, from ducere)",
+      "adjective_stem": "superconductive-",
+      "correct_breakdown": "super + con + duct + ivity",
+      "correct_family_root": "duc (through conductive/conductivity)",
+      "mwEtymology": "Modern English: super- + conductivity",
+      "notes": "Modern scientific term. -ivity is variant of -ity for technical terms"
+    }
+  },
+  "summary_statistics": {
+    "total_words": 23,
+    "already_correct_parsing": 3,
+    "need_morpheme_adjustment": 20,
+    "patterns_in_errors": {
+      "verb_stem_instead_of_adjective_stem": 11,
+      "missing_adjective_suffix_recognition": 9,
+      "compound_origin_misrepresented": 2,
+      "modern_english_formations": 1
+    }
+  },
+  "high_priority_corrections": [
+    {
+      "word": "capacity",
+      "reason": "User specifically identified this as incorrect",
+      "change": "cap + acity → capac + ity"
+    },
+    {
+      "word": "tenacity",
+      "reason": "Common word, clear adjective (tenax) source",
+      "change": "ten + acity → tenac + ity"
+    },
+    {
+      "word": "fertility",
+      "reason": "Common word, clear adjective (fertilis) source",
+      "change": "fer + tility → fertil + ity"
+    },
+    {
+      "word": "versatility",
+      "reason": "Common word, clear adjective (versatilis) source",
+      "change": "vert + ility → versatil + ity"
+    }
+  ],
+  "implementation_notes": [
+    "Batch 2 requires CURATED DATA UPDATE - not just flagging as needs review",
+    "Need to map verb roots to adjective forms in Latin root inventory",
+    "Consider creating separate 'adjective form' field in root family data",
+    "For -ity words, morpheme breakdown must use adjective stem, not verb stem",
+    "This is a systematic architectural issue affecting all -ity words"
+  ]
+}
