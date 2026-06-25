@@ -110,13 +110,17 @@ Critical rules:
       }
 
       const data = await res.json();
+      console.log("[callClaude] Round " + round + ", stop_reason:", data.stop_reason);
 
       if (data.stop_reason === "end_turn") {
         const textBlock = (data.content || []).find(function (b) { return b.type === "text"; });
         if (!textBlock) throw new Error("Empty response from Claude");
+        console.log("[callClaude] Response text:", textBlock.text);
         const match = textBlock.text.match(/\{[\s\S]*\}/);
-        if (!match) throw new Error("No JSON found in response");
-        return JSON.parse(match[0]);
+        if (!match) throw new Error("No JSON found in response: " + textBlock.text.slice(0, 200));
+        const result = JSON.parse(match[0]);
+        console.log("[callClaude] Parsed breakdown:", result);
+        return result;
       }
 
       if (data.stop_reason === "tool_use") {
@@ -145,13 +149,18 @@ Critical rules:
     const shardKey = String(word).slice(0, 2).toLowerCase();
     const filePath = "words/" + shardKey + ".json";
     const apiBase = "https://api.github.com/repos/" + GH_REPO + "/contents/" + filePath;
+    console.log("[commitBreakdownToGitHub] Committing", word, "to", filePath, "on branch", GH_BRANCH);
 
     // 1. Fetch current file (need SHA for the PUT)
     const getRes = await fetch(apiBase + "?ref=" + GH_BRANCH, {
       headers: { Authorization: "token " + token, Accept: "application/vnd.github.v3+json" }
     });
-    if (!getRes.ok) throw new Error("GitHub GET failed: " + getRes.status);
+    if (!getRes.ok) {
+      const err = await getRes.json().catch(function () { return {}; });
+      throw new Error("GitHub GET failed: " + getRes.status + " " + (err.message || JSON.stringify(err)));
+    }
     const fileData = await getRes.json();
+    console.log("[commitBreakdownToGitHub] Got file SHA:", fileData.sha);
 
     // 2. Decode → parse → patch → re-encode
     const currentContent = JSON.parse(atob(fileData.content.replace(/\n/g, "")));
@@ -159,6 +168,7 @@ Critical rules:
     currentContent[word].b = newBreakdown;
     currentContent[word]._claudeVerified = true;
     const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(currentContent))));
+    console.log("[commitBreakdownToGitHub] Updated content, encoded length:", encoded.length);
 
     // 3. Commit
     const putRes = await fetch(apiBase, {
@@ -177,7 +187,7 @@ Critical rules:
     });
     if (!putRes.ok) {
       const errData = await putRes.json().catch(function () { return {}; });
-      throw new Error("GitHub commit failed: " + (errData.message || putRes.status));
+      throw new Error("GitHub commit failed: " + putRes.status + " " + (errData.message || JSON.stringify(errData)));
     }
     return await putRes.json();
   }
@@ -196,21 +206,28 @@ Critical rules:
       btn.disabled = true;
       btn.className = "verify-btn loading";
       btn.textContent = "Searching M-W…";
+      console.log("[verify-btn] Clicked for word:", word);
       try {
+        console.log("[verify-btn] Calling Claude...");
         const result = await callClaude(word, rec && rec.e);
+        console.log("[verify-btn] Claude returned:", result);
         if (!result || !result.b || !result.b.length) throw new Error("No breakdown returned");
 
         if (getGhToken()) {
           btn.textContent = "Committing to database…";
+          console.log("[verify-btn] GitHub token found, committing...");
           await commitBreakdownToGitHub(word, result.b);
+          console.log("[verify-btn] Commit successful, invalidating cache...");
           // Invalidate shard cache so the next getWord() fetches fresh data
           delete shardCache[String(word).slice(0, 2).toLowerCase()];
           btn.className = "verify-btn success";
           btn.textContent = "✓ Verified & committed";
           // Reload the word after a brief pause so the user can read the status
-          setTimeout(function () { run(word); }, 1200);
+          console.log("[verify-btn] Reloading word...");
+          setTimeout(function () { console.log("[verify-btn] Running word:", word); run(word); }, 1200);
         } else {
           // No GitHub token — store in localStorage only
+          console.log("[verify-btn] No GitHub token, storing in localStorage...");
           try {
             const ov = JSON.parse(localStorage.getItem("rootwork.overrides") || "{}");
             ov[word] = Object.assign({}, rec || {}, { b: result.b, _claudeVerified: true });
@@ -221,6 +238,7 @@ Critical rules:
           setTimeout(function () { run(word); }, 1200);
         }
       } catch (e) {
+        console.error("[verify-btn] Error:", e);
         btn.className = "verify-btn error";
         btn.textContent = "Error: " + (e.message || "Unknown");
         btn.disabled = false;
