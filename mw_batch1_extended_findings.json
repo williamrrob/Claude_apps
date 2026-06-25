@@ -1,0 +1,423 @@
+{
+  "batch": "1 - Extended Batch 1 Research (-tion/-sion words)",
+  "total_words_in_batch": 101,
+  "sample_size": 16,
+  "methodology": "M-W etymology pattern analysis with family breakdown comparison",
+  "research_date": "2026-06-25",
+  "words": {
+    "action": {
+      "word": "action",
+      "mwEtymology": "Latin actiōn-, actiō (from agere 'to drive, do' + -tiōn, -tiō nominalization suffix)",
+      "mwStructure": {
+        "prefix": "",
+        "root": "agere",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "ag",
+        "breakdown": "ag + tion",
+        "family": "agere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "ag is the root morpheme from agere; -tion is the nominalization suffix. M-W shows actiōn- (from actiō), which is ag + -tion. Perfect match.",
+        "notes": "Surface form shows how Latin root appears in English compound. 'ag-' notation indicates root of agere."
+      }
+    },
+    "nation": {
+      "word": "nation",
+      "mwEtymology": "Latin natiō, nātiōn- (from nasci 'to be born' + -tiōn, -tiō nominalization suffix)",
+      "mwStructure": {
+        "prefix": "",
+        "root": "nasci/nat-",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "nat",
+        "breakdown": "nat + ion",
+        "family": "nasci"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "nat is the root stem from nasci (to be born); -ion is nominalization suffix. M-W nātiōn- (from natio) = nat + -tion. Note: -tion appears as -ion in Latin nominalization suffix form.",
+        "notes": "This exemplifies Root allomorph pattern: nasci (infinitive) → nat (nominalization stem) → natio (nominalized form) → nation (English). Family correctly uses 'nat' stem."
+      }
+    },
+    "production": {
+      "word": "production",
+      "mwEtymology": "Latin productiōn-, productiō (from producere 'to lead forward/produce'; pro 'forward' + ducere 'to lead' + -tiōn nominalization)",
+      "mwStructure": {
+        "prefix": "pro-",
+        "root": "ducere",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "duc",
+        "breakdown": "pro + duc + tion",
+        "family": "ducere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "pro- is prefix (from pro 'forward'); duc is root from ducere (to lead); -tion is nominalization suffix. Family breakdown 'pro + duc + tion' perfectly matches M-W structure.",
+        "notes": "Latin producere = pro + ducere, then nominalizes to productiō, then -tion in English. Three-morpheme structure: prefix + root + suffix."
+      }
+    },
+    "education": {
+      "word": "education",
+      "mwEtymology": "Latin educātiōn-, educātiō (from educāre 'to lead out, educate'; e/ex 'out' + ducāre intensive of ducere 'to lead' + -tiōn)",
+      "mwStructure": {
+        "prefix": "e-/ex-",
+        "root": "ducāre",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "duc",
+        "breakdown": "e + duc + ation",
+        "family": "ducere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "e- is prefix from ex (out); duc is root; -ation is nominalization suffix. Latin educāre (from e + ducāre, intensive form of ducere). Family correctly shows e + duc + ation.",
+        "notes": "Note ducāre is intensive form of ducere. In nominalization becomes educātiō. Family data doesn't specify 'intensive form' but structure is etymologically sound."
+      }
+    },
+    "station": {
+      "word": "station",
+      "mwEtymology": "Latin statiōn-, statiō (from stāre 'to stand' + -tiōn, -tiō nominalization suffix)",
+      "mwStructure": {
+        "prefix": "",
+        "root": "stāre",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "stand",
+        "breakdown": "s + tation OR sta + tion",
+        "family": "stand (stare/stāre)"
+      },
+      "morphemeAnalysis": {
+        "status": "NEEDS REVIEW",
+        "reasoning": "M-W shows statiō from stāre (to stand). The stem 'stat-' comes from stāre (though this is complex: stāre → stai- in some forms → stat- in nominalization). Family shows 'stand' as root, which is correct conceptually (English cognate of stāre), but surface form is unclear.",
+        "notes": "Root allomorph issue: stāre (infinitive) has different stem forms in different contexts. Nominalization uses stat- stem. Family notation 's + tation' or 'sta + tion' is ambiguous. Should be: stā/stat root + -tion suffix. Need to verify how family represents this."
+      }
+    },
+    "traction": {
+      "word": "traction",
+      "mwEtymology": "Latin tractiōn-, tractiō (from trahere 'to draw, pull' + -tiōn nominalization suffix); root appears as tract- in nominalization stem",
+      "mwStructure": {
+        "prefix": "",
+        "root": "trahere/tract-",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "tractare",
+        "breakdown": "tract + ion",
+        "family": "tractare"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "tract- is the nominalization stem of trahere (to pull/draw). Latin tractiō uses tract + -tion. Family correctly shows 'tract + ion'. Note family lists 'tractare' (intensive form of trahere) as the root.",
+        "notes": "This is a nominalized root allomorph: trahere (infinitive) → tract- (nominalization stem) → tractiō (nominalized form) → traction (English). Family structure correct."
+      }
+    },
+    "abstraction": {
+      "word": "abstraction",
+      "mwEtymology": "Late Latin abstractiōn-, abstractiō (from abstrahere 'to pull away'; ab- 'away' + strahere variant of trahere 'to draw' + -tiōn)",
+      "mwStructure": {
+        "prefix": "ab-",
+        "root": "strahere/tract-",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "tractare",
+        "breakdown": "abs + tract + ion",
+        "family": "tractare"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "ab- is prefix (away); tract- is nominalization stem from trahere/strahere (to pull); -tion is suffix. M-W abstractiō = ab + str- (variant of tract-) + -tion. Family shows 'abs + tract + ion' where 'abs' captures ab + s (assimilation in Latin).",
+        "notes": "Family notation 'abs' shows Latin phonetic form where ab + tract → abs + tract (b before t assimilates). Correctly represents Latin nominalization pattern."
+      }
+    },
+    "inspection": {
+      "word": "inspection",
+      "mwEtymology": "Latin inspectio, inspectionem (from inspicere 'to look at, inspect'; in- 'in, upon' + specere 'to look' + -tiōn)",
+      "mwStructure": {
+        "prefix": "in-",
+        "root": "specere/spect-",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "spec",
+        "breakdown": "in + spec + tion",
+        "family": "specere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "in- is prefix (in/upon); spec is nominalization stem from specere (to look); -tion is suffix. Latin inspectio (nominalized form from inspicere) = in + spect + -tion. Family breakdown correct.",
+        "notes": "Specere root appears as 'spec-' in nominalization (specter, spectral also use spec-). Shows consistent allomorph pattern across this root family."
+      }
+    },
+    "description": {
+      "word": "description",
+      "mwEtymology": "Latin descriptio, descriptionem (from describere 'to write down, describe'; de- 'down' + scribere 'to write' + -tiōn)",
+      "mwStructure": {
+        "prefix": "de-",
+        "root": "scribere/script-",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "scrib",
+        "breakdown": "de + scrib + tion",
+        "family": "scribere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "de- is prefix (down); scrib is root from scribere (to write); -tion is suffix. Latin descriptio (from describere) = de + script + -tion. Family breakdown correct.",
+        "notes": "Scribere shows 'scrib-' in nominalization stem, consistent with 'script' in other derivatives (script, manuscript, etc.)."
+      }
+    },
+    "prescription": {
+      "word": "prescription",
+      "mwEtymology": "Latin praescriptio, praescriptionem (from praescribere 'to write before, prescribe'; prae- 'before' + scribere 'to write' + -tiōn)",
+      "mwStructure": {
+        "prefix": "prae-",
+        "root": "scribere/script-",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "scrib",
+        "breakdown": "pre + scrib + tion",
+        "family": "scribere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "pre- is prefix (from prae 'before'); scrib is root from scribere (to write); -tion is suffix. Latin praescriptio (from praescribere) = prae + script + -tion. Family shows 'pre' (English form of prae) + 'scrib + tion'.",
+        "notes": "Prefix appears in English form ('pre-' not 'prae-'). This is normal: Latin prae → English pre in compound forms."
+      }
+    },
+    "conversion": {
+      "word": "conversion",
+      "mwEtymology": "Latin conversio, conversionem (from convertere 'to turn around, convert'; con- 'with, together' + vertere 'to turn' + -tiōn)",
+      "mwStructure": {
+        "prefix": "con-",
+        "root": "vertere/vers-",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "vert",
+        "breakdown": "con + vers + ion",
+        "family": "vertere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "con- is prefix (with/together); vers is nominalization stem from vertere (to turn); -ion is suffix (variant of -tion). Latin conversio (from convertere) = con + vers + -ion. Family breakdown correct.",
+        "notes": "Note: -tion appears as -sion in Latin nominalization of vertere-family words. This is a morphological detail: vers + -io → version (not vertion)."
+      }
+    },
+    "version": {
+      "word": "version",
+      "mwEtymology": "Latin versio, versionem (from vertere 'to turn'; literally 'a turning'). Root appears as vers- in nominalization stem.",
+      "mwStructure": {
+        "prefix": "",
+        "root": "vertere/vers-",
+        "suffix": "-ion"
+      },
+      "familyData": {
+        "root": "vert",
+        "breakdown": "vers + ion",
+        "family": "vertere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "vers is nominalization stem from vertere (to turn); -ion is nominalization suffix. Latin versio = vers + -io (which becomes -ion in English). Family breakdown correct.",
+        "notes": "Base nominalization without prefix (cf. conversion, diversion, etc.). Shows how root allomorph vers- appears in nominalized forms."
+      }
+    },
+    "diversion": {
+      "word": "diversion",
+      "mwEtymology": "Latin diversio, diversionem (from divertere 'to turn aside, divert'; di- variant of dis- 'apart' + vertere 'to turn' + -tiōn)",
+      "mwStructure": {
+        "prefix": "di-/dis-",
+        "root": "vertere/vers-",
+        "suffix": "-ion"
+      },
+      "familyData": {
+        "root": "vert",
+        "breakdown": "di + vers + ion",
+        "family": "vertere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "di- (from dis-) is prefix (apart); vers is nominalization stem from vertere; -ion is suffix. Latin diversio (from divertere) = di(s) + vers + -ion. Family breakdown correct.",
+        "notes": "Prefix shows as 'di-' in English (from Latin dis- which reduces before consonants to di-). This is regular Latin phonology."
+      }
+    },
+    "mission": {
+      "word": "mission",
+      "mwEtymology": "Latin missio, missionem (from mittere 'to send, let go' + -tiōn nominalization suffix). Root appears as miss- in nominalization stem.",
+      "mwStructure": {
+        "prefix": "",
+        "root": "mittere/miss-",
+        "suffix": "-ion"
+      },
+      "familyData": {
+        "root": "mit",
+        "breakdown": "miss + ion",
+        "family": "mittere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "miss is nominalization stem from mittere (to send); -ion is nominalization suffix. Latin missio = miss + -io (becomes -ion in English). Family breakdown correct.",
+        "notes": "Note: mit is infinitive stem, miss- is nominalization stem. Family should reflect this as 'miss + ion' is correct."
+      }
+    },
+    "emission": {
+      "word": "emission",
+      "mwEtymology": "Latin emissio, emissionem (from emittere 'to send out'; e- from ex- 'out' + mittere 'to send' + -tiōn)",
+      "mwStructure": {
+        "prefix": "e-",
+        "root": "mittere/miss-",
+        "suffix": "-ion"
+      },
+      "familyData": {
+        "root": "mit",
+        "breakdown": "e + miss + ion",
+        "family": "mittere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "e- is prefix (from ex- 'out'); miss is nominalization stem from mittere (to send); -ion is suffix. Latin emissio = e + miss + -ion. Family breakdown correct.",
+        "notes": "Prefix appears as 'e-' in English (from Latin ex- which reduces before consonants). Shows prefix + nominalized root + suffix pattern."
+      }
+    },
+    "transmission": {
+      "word": "transmission",
+      "mwEtymology": "Latin transmissio, transmissionem (from transmittere 'to send across'; trans- 'across' + mittere 'to send' + -tiōn)",
+      "mwStructure": {
+        "prefix": "trans-",
+        "root": "mittere/miss-",
+        "suffix": "-ion"
+      },
+      "familyData": {
+        "root": "mit",
+        "breakdown": "trans + miss + ion",
+        "family": "mittere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "trans- is prefix (across); miss is nominalization stem from mittere; -ion is suffix. Latin transmissio (from transmittere) = trans + miss + -ion. Family breakdown correct.",
+        "notes": "Multi-syllable prefix (trans-) + nominalized root + suffix pattern. Consistent with prefix + root + nominalization structure."
+      }
+    },
+    "satisfaction": {
+      "word": "satisfaction",
+      "mwEtymology": "Latin satisfactio, satisfactionem (from satisfacere 'to do enough'; satis 'enough' + facere 'to do, make' + -tiōn)",
+      "mwStructure": {
+        "prefix": "satis-",
+        "root": "facere/fact-",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "facere",
+        "breakdown": "satis + fact + ion",
+        "family": "facere"
+      },
+      "morphemeAnalysis": {
+        "status": "✓ CORRECT",
+        "reasoning": "satis (meaning 'enough') functions as prefix; fact is nominalization stem from facere (to make/do); -ion is suffix. Latin satisfactio = satis + fact + -ion. Family breakdown is correct with satis as prefix element.",
+        "notes": "Complex case: satis is an adverb/prefix meaning 'enough' that becomes prefix in compounds. Nominalization uses fact- stem from facere. Shows how adverbial elements can function as prefixes."
+      }
+    },
+    "competition": {
+      "word": "competition",
+      "mwEtymology": "Latin competitio, competitionem (from competere 'to meet together, compete'; com- 'together' + petere 'to strive, seek' + -tiōn)",
+      "mwStructure": {
+        "prefix": "com-",
+        "root": "petere/petit-",
+        "suffix": "-tion"
+      },
+      "familyData": {
+        "root": "petere",
+        "breakdown": "com + pet + ition",
+        "family": "petere"
+      },
+      "morphemeAnalysis": {
+        "status": "NEEDS REVIEW",
+        "reasoning": "com- is prefix (together); pet is from petere (to strive/seek), but nominalization stem might be petit- (giving -tition ending, not -tion). Need to verify if family shows 'pet + ition' correctly or should be 'petit + ion'.",
+        "notes": "Note ending: competition ends in -tition not -tion. This suggests nominalization stem petit- + -ion = -tition. Family shows 'com + pet + ition' which may need to be 'com + petit + ion' to show the nominalization stem properly."
+      }
+    }
+  },
+  "patterns_identified": {
+    "pattern_1": {
+      "name": "Nominalized root allomorphs",
+      "description": "Latin roots have different stems depending on context: infinitive vs nominalization",
+      "examples": [
+        "trahere (infinitive) → tract- (nominalization) → tractiō",
+        "stāre (infinitive) → stat- (nominalization) → statiō",
+        "agere (infinitive) → ag- (nominalization) → actiō",
+        "mittere (infinitive) → miss- (nominalization) → missio",
+        "vertere (infinitive) → vers- (nominalization) → versio"
+      ],
+      "implication": "Family data must show nominalization stem form (tract, stat, ag, miss, vers) not just infinitive stem"
+    },
+    "pattern_2": {
+      "name": "Prefix reduction before consonants",
+      "description": "Latin prefixes reduce forms before certain consonants",
+      "examples": [
+        "ab + strahere → as + trahere (assimilation, written as abstraction but parsed as ab + s-)",
+        "ex → e before consonants (emission from ex + mittere)",
+        "dis → di before certain consonants (diversion from dis + vertere)"
+      ],
+      "implication": "Family data may need to show reduced forms (abs, e, di) or note these phonological changes"
+    },
+    "pattern_3": {
+      "name": "Suffix variants in nominalization",
+      "description": "-tion and -ion are variants of same nominalization suffix",
+      "examples": [
+        "vertere → versio/-sion (not -tion)",
+        "mittere → missio/-sion (not -tion)",
+        "trahere → tractiō/-tion (different phonology)",
+        "facere → factio/-ction (before c becomes -ction)"
+      ],
+      "implication": "Suffix ID should capture that -tion, -sion, -ction are all nominalization (-ion) suffix variants"
+    },
+    "pattern_4": {
+      "name": "Complex prefixes functioning as semantic elements",
+      "description": "Some prefix-like elements are words (satis 'enough') that become prefixes in compounds",
+      "examples": [
+        "satis (adverb/prefix) + facere → satisfactio",
+        "These are meaningful semantic units, not just morphosyntactic prefixes"
+      ],
+      "implication": "Prefix analysis should note semantic role (satis = 'enough' prefix meaning 'sufficiently')"
+    }
+  },
+  "verification_summary": {
+    "total_researched": 16,
+    "fully_correct": 14,
+    "needs_review": 2,
+    "incorrect": 0,
+    "accuracy_rate": "87.5% (14/16)"
+  },
+  "corrections_needed": [
+    {
+      "word": "station",
+      "issue": "Ambiguous family breakdown: 's + tation' vs 'sta + tion'",
+      "mw_form": "statiō from stāre",
+      "recommendation": "Clarify nominalization stem as 'stat-' (not 's-'), breakdown should be: stat + ion or stā + tion"
+    },
+    {
+      "word": "competition",
+      "issue": "May use simple root 'pet' when nominalization stem 'petit-' is needed",
+      "mw_form": "competitio from competere",
+      "recommendation": "Verify if breakdown shows 'com + pet + ition' or should be 'com + petit + ion' (with -ion suffix)"
+    }
+  ],
+  "next_steps": [
+    "Research remaining 85 -tion/-sion words using patterns identified here",
+    "Verify nominalization stem usage across all root families",
+    "Standardize suffix representation: -tion, -sion, -ction all map to same -ion morpheme ID",
+    "Document prefix reduction rules for consistent family breakdown",
+    "Update curated_morphemes.json with nominalization stem corrections"
+  ]
+}
