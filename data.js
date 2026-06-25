@@ -148,7 +148,8 @@ const MORPHEMES = {
     { id: "luc", forms: ["lumin", "luc", "lustr"], origin: "Latin", source: "lux", meaning: "light" },
     { id: "magn", forms: ["magni", "magn"], origin: "Latin", source: "magnus", meaning: "great, large" },
     { id: "man", forms: ["manu", "man"], origin: "Latin", source: "manus", meaning: "hand" },
-    { id: "mar", forms: ["marin", "mar"], origin: "Latin", source: "mare", meaning: "sea" },
+    // *móri family: Latin mare, OE mere, PGmc *mōraz (moor), Dutch moer (morass) all from PIE *móri
+    { id: "mori", forms: ["mar", "mare", "mari", "marin", "mor", "moor", "mere"], origin: "Proto-Indo-European", source: "*móri", meaning: "body of water — sea, lake, marsh" },
     { id: "mater", forms: ["matri", "mater", "matr"], origin: "Latin", source: "mater", meaning: "mother" },
     { id: "ment", forms: ["mente", "ment"], origin: "Latin", source: "mens", meaning: "mind" },
     { id: "meter", forms: ["meter", "metr"], origin: "Greek", source: "metron", meaning: "measure" },
@@ -227,6 +228,12 @@ const MORPHEMES = {
     { id: "vor", forms: ["vor"], origin: "Latin", source: "vorare", meaning: "to devour, eat" },
     { id: "volv", forms: ["volv", "volut", "volu"], origin: "Latin", source: "volvere", meaning: "to roll, turn" },
     { id: "zo", forms: ["zoo", "zo"], origin: "Greek", source: "zoion", meaning: "animal, living being" },
+
+    // Wetland roots from other families (separate from *móri)
+    { id: "mire-on", forms: ["mire"], origin: "Old Norse", source: "mýrr", meaning: "bog, swamp, mire (PIE *meug-: damp, slimy)" },
+    { id: "fen-oe", forms: ["fen"], origin: "Old English", source: "fenn", meaning: "marsh, bog, mud (PIE *pen-: bog)" },
+    { id: "quag", forms: ["quag"], origin: "Old English", source: "*cwabbe", meaning: "boggy, trembling ground" },
+    { id: "bog-gael", forms: ["bog"], origin: "Irish / Scottish Gaelic", source: "bogach", meaning: "soft, boggy ground" },
 
     // Germanic roots
     { id: "stand", forms: ["stand", "stood", "sist"], origin: "Proto-Germanic", source: "*standanan", meaning: "to stand, be upright, remain" },
