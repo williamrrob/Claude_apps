@@ -165,3 +165,27 @@ node scripts/word.js list co              # list the words in a shard
 Fields: `d` definitions (`p` part-of-speech, `g` gloss, `x` example), `e`
 etymology, `s` synonyms, `a` antonyms, `r` related, `i` IPA, `rs` respelling.
 Writes preserve the shard's 2-space format, so diffs stay small.
+
+## Querying the dictionary (`scripts/build-sqlite.js` + `find.js`)
+
+To answer questions across all 77k words — *which words share a root, mention a
+meaning, or are missing a field* — compile the shards into a single SQLite file
+and query it. The DB is a derived artifact (gitignored); rebuild it any time:
+
+```bash
+npm run build:sqlite        # shards → rootwork.sqlite (words, senses, relations,
+                            #   engine morphemes, FTS over glosses+etymology) ~10s
+
+npm run find root scrib                 # words built on a root
+npm run find prefix pre                 # words with a prefix
+npm run find meaning "written order"    # full-text over glosses + etymology
+npm run find rel prescription           # a word's synonyms/antonyms/related
+npm run find missing syn --root scrib   # scrib words lacking synonyms (enrichment gaps)
+npm run find stats                      # row counts
+npm run find q "SELECT ..."             # raw SQL escape hatch
+```
+
+This makes building out richer entries cheap: a query returns just the matching
+words, so you can find candidates, related terms, and gaps without scanning
+shards. Morpheme breakdowns come from `engine.js` and are heuristic — good for
+discovery, not authoritative.

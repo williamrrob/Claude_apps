@@ -1,5 +1,7 @@
 node_modules/
 package-lock.json
+rootwork.sqlite
+rootwork.sqlite-*
 dictionary.json
 thesaurus.json
 pronunciation.json
