@@ -143,3 +143,25 @@ Add entries to the arrays in `data.js`:
 
 `forms` lists every spelling the element can take in a real word (including
 assimilated variants like `com/con/col`). Longer forms are matched first.
+
+## Editing word entries (`scripts/word.js`)
+
+The per-word data lives in `words/<xx>.json`, sharded by first two letters. The
+common shards are large (`co.json` ≈ 1.8 MB), so **don't open a shard by hand to
+change one word** — use the CLI, which edits the file in a subprocess and touches
+only the one entry:
+
+```bash
+node scripts/word.js get concord          # print one entry
+node scripts/word.js set concord  < entry.json    # create/replace whole entry (JSON on stdin)
+node scripts/word.js field concord s <<'JSON'     # set ONE field (here, synonyms)
+["accord","agreement","harmony"]
+JSON
+node scripts/word.js rmfield concord x    # delete a field
+node scripts/word.js rm concord           # delete the entry
+node scripts/word.js list co              # list the words in a shard
+```
+
+Fields: `d` definitions (`p` part-of-speech, `g` gloss, `x` example), `e`
+etymology, `s` synonyms, `a` antonyms, `r` related, `i` IPA, `rs` respelling.
+Writes preserve the shard's 2-space format, so diffs stay small.
