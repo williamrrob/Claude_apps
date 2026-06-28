@@ -94,12 +94,17 @@ function blobToF32(u8) {
 }
 const f32ToBlob = (f) => Buffer.from(f.buffer, f.byteOffset, f.byteLength);
 
-// ---- store reader (used by find.js) --------------------------------------
+// ---- store reader (used by find.js, dedupe.js, sense-merge.js, ...) -------
+// Memoized: the module holds the DatabaseSync for its whole lifetime so callers'
+// prepared statements never get finalized by GC reclaiming an unreferenced
+// handle (node:sqlite finalizes a statement when its Database is collected).
+let _store = null;
 function openStore(readOnly) {
   if (!fs.existsSync(EMB_DB)) {
     throw new Error("embeddings.sqlite missing — run: node scripts/embed.js build");
   }
-  return new DatabaseSync(EMB_DB, { readOnly: readOnly !== false });
+  if (!_store) _store = new DatabaseSync(EMB_DB, { readOnly: readOnly !== false });
+  return _store;
 }
 
 module.exports = {

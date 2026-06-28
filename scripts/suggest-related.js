@@ -35,11 +35,14 @@ const WORDS_DIR = path.join(__dirname, "..", "words");
 const arg = (n, d) => { const i = process.argv.indexOf(n); return i !== -1 ? process.argv[i + 1] : d; };
 const APPLY = process.argv.includes("--apply");
 const ALL = process.argv.includes("--all");          // include words that already have related links
+const QWEN = process.argv.includes("--qwen");        // qwen filters candidates to genuinely-related ones
 const K = parseInt(arg("--k", "6"), 10);
 const SIM = parseFloat(arg("--sim", "0.78"));
 const LIMIT = parseInt(arg("--limit", "0"), 10) || 0;
 const ONLY_SHARD = arg("--shard", null);
 const ONLY_WORD = arg("--word", null);
+const MODEL = arg("--model", "qwen2.5:3b");
+const OLLAMA = process.env.OLLAMA_HOST || "http://localhost:11434";
 const OUT = arg("--out", path.join(__dirname, "..", "suggest-related-dryrun.txt"));
 
 if (!fs.existsSync(embed.EMB_DB)) {
@@ -97,6 +100,35 @@ function neighbours(word, exclude) {
   return out;
 }
 
+// ---- optional qwen filter: keep only genuinely-related candidates ------------
+// SAFETY: qwen can only *remove* — we intersect its answer with the candidate
+// set, so it can never introduce a word that wasn't an embedding neighbour.
+async function qwenFilter(word, pos, gloss, cands) {
+  const list = cands.map((c) => c[0]).join(", ");
+  const prompt = 'The ' + (pos ? "(" + pos + ") " : EMPTY) + 'word "' + word + '"' +
+    (gloss ? ' means: ' + gloss : EMPTY) + '.\n' +
+    'Which of these candidate words are closely related in meaning to "' + word + '"? ' +
+    'Reply with ONLY the related ones as a comma-separated list, copied exactly, or the single word none.\n' +
+    'Candidates: ' + list;
+  const res = await fetch(OLLAMA + "/api/generate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ model: MODEL, prompt, stream: false, options: { temperature: 0 } }),
+  });
+  if (!res.ok) throw new Error("ollama /api/generate " + res.status + ": " + (await res.text()));
+  const kept = new Set(String((await res.json()).response || EMPTY).toLowerCase()
+    .split(/[,\n;]+/).map((s) => s.trim()).filter(Boolean));
+  return cands.filter((c) => kept.has(c[0].toLowerCase())); // intersection only
+}
+
+async function ensureModel() {
+  const res = await fetch(OLLAMA + "/api/tags").catch(() => null);
+  if (!res || !res.ok) throw new Error("Ollama not reachable at " + OLLAMA);
+  const names = (await res.json()).models.map((m) => m.name);
+  if (!names.some((n) => n === MODEL || n.startsWith(MODEL.split(":")[0] + ":")))
+    throw new Error("model " + MODEL + " not pulled — run: ollama pull " + MODEL);
+}
+
 // ---- choose which shards / words to process ---------------------------------
 let files = fs.readdirSync(WORDS_DIR).filter((f) => f.endsWith(".json")).sort();
 if (ONLY_WORD) files = [String(ONLY_WORD).slice(0, 2).toLowerCase() + ".json"];
@@ -107,56 +139,81 @@ else if (!LIMIT) {
 }
 
 const proposals = []; // [word, [[t,score],...]]
-let scanned = 0, enriched = 0, added = 0;
+let scanned = 0, enriched = 0, added = 0, qwenDropped = 0;
 
-for (const file of files) {
-  const p = path.join(WORDS_DIR, file);
-  if (!fs.existsSync(p)) continue;
-  const obj = JSON.parse(fs.readFileSync(p, "utf8"));
-  let shardChanged = false;
+main().catch((e) => { process.stderr.write("suggest-related.js: " + e.message + "\n"); process.exit(1); });
 
-  for (const word of Object.keys(obj)) {
-    if (ONLY_WORD && word !== ONLY_WORD) continue;
-    const e = obj[word];
-    const hasRel = Array.isArray(e.r) && e.r.length > 0;
-    if (!ALL && hasRel) continue;            // default: only fill gaps
-    if (!INDEX.has(word)) continue;          // no vector (no glosses)
-    if (LIMIT && scanned >= LIMIT) break;
-    scanned++;
+async function main() {
+  if (QWEN) await ensureModel();
+  const t0 = Date.now();
 
-    const nb = neighbours(word, existingLinks(e));
-    if (!nb.length) continue;
-    proposals.push([word, nb]);
-    enriched++; added += nb.length;
+  for (const file of files) {
+    const p = path.join(WORDS_DIR, file);
+    if (!fs.existsSync(p)) continue;
+    const obj = JSON.parse(fs.readFileSync(p, "utf8"));
+    let shardChanged = false;
 
-    if (APPLY) {
-      const seen = new Set((e.r || []).map((t) => String(t).toLowerCase()));
-      const merged = (e.r || []).slice();
-      for (const [t] of nb) if (!seen.has(t.toLowerCase())) { merged.push(t); seen.add(t.toLowerCase()); }
-      e.r = merged;
-      shardChanged = true;
+    for (const word of Object.keys(obj)) {
+      if (ONLY_WORD && word !== ONLY_WORD) continue;
+      const e = obj[word];
+      const hasRel = Array.isArray(e.r) && e.r.length > 0;
+      if (!ALL && hasRel) continue;            // default: only fill gaps
+      if (!INDEX.has(word)) continue;          // no vector (no glosses)
+      if (LIMIT && scanned >= LIMIT) break;
+      scanned++;
+
+      let nb = neighbours(word, existingLinks(e));
+      if (!nb.length) continue;
+      if (QWEN) {
+        const before = nb.length;
+        const d0 = (e.d && e.d[0]) || {};
+        try { nb = await qwenFilter(word, d0.p, d0.g, nb); }
+        catch (err) { process.stderr.write("  qwen failed for " + word + ": " + err.message + "\n"); continue; }
+        qwenDropped += before - nb.length;
+        if (!nb.length) continue;
+      }
+      proposals.push([word, nb]);
+      enriched++; added += nb.length;
+
+      if (APPLY) {
+        const seen = new Set((e.r || []).map((t) => String(t).toLowerCase()));
+        const merged = (e.r || []).slice();
+        for (const [t] of nb) if (!seen.has(t.toLowerCase())) { merged.push(t); seen.add(t.toLowerCase()); }
+        e.r = merged;
+        shardChanged = true;
+      }
+      if (scanned % 500 === 0)
+        process.stderr.write("  " + scanned + " words, " + enriched + " enriched" +
+          (QWEN ? " (" + qwenDropped + " dropped by qwen)" : EMPTY) +
+          "  " + (scanned / ((Date.now() - t0) / 1000)).toFixed(1) + "/s\n");
     }
+    if (APPLY && shardChanged) fs.writeFileSync(p, stringifyShard(obj));
+    if (LIMIT && scanned >= LIMIT) break;
   }
-  if (APPLY && shardChanged) fs.writeFileSync(p, stringifyShard(obj));
-  if (LIMIT && scanned >= LIMIT) break;
+  report(t0);
 }
 
 // ---- report -----------------------------------------------------------------
+function report(t0) {
 const L = [];
 L.push("SUGGEST-RELATED " + (APPLY ? "APPLIED" : "DRY RUN") +
-  " — k≤" + K + ", cosine ≥ " + SIM + (ALL ? ", all words" : ", gap words only"));
+  " — k≤" + K + ", cosine ≥ " + SIM + (ALL ? ", all words" : ", gap words only") +
+  (QWEN ? ", qwen-filtered (" + MODEL + ")" : EMPTY));
 L.push("=".repeat(60));
 L.push("words considered:   " + scanned);
 L.push("words enriched:     " + enriched);
 L.push("related links " + (APPLY ? "added:        " : "proposed:     ") + added);
+if (QWEN) L.push("candidates dropped by qwen: " + qwenDropped);
 L.push("");
 for (const [w, nb] of proposals.slice(0, 60)) {
   L.push("[" + w + "]  +" + nb.map((x) => x[0] + " (" + x[1].toFixed(2) + ")").join(", "));
 }
 if (proposals.length > 60) L.push("... (" + (proposals.length - 60) + " more in this report)");
 const allLines = [];
-allLines.push(L.slice(0, 4).join("\n"));
+allLines.push(L.slice(0, QWEN ? 5 : 4).join("\n"));
 for (const [w, nb] of proposals) allLines.push("[" + w + "]  +" + nb.map((x) => x[0] + " (" + x[1].toFixed(2) + ")").join(", "));
 fs.writeFileSync(OUT, allLines.join("\n") + "\n");
 process.stdout.write(L.join("\n") + "\n");
-process.stderr.write("\nfull report (" + proposals.length + " words) at " + OUT + "\n");
+process.stderr.write("\n" + enriched + " words enriched in " + ((Date.now() - t0) / 1000).toFixed(1) +
+  "s — full report (" + proposals.length + " words) at " + OUT + "\n");
+}

@@ -10,6 +10,8 @@
     "build:sqlite": "node --no-warnings scripts/build-sqlite.js",
     "embed": "node --no-warnings scripts/embed.js",
     "sense-merge": "node --no-warnings scripts/sense-merge.js",
+    "suggest-related": "node --no-warnings scripts/suggest-related.js",
+    "lint:refs": "node --no-warnings scripts/lint-refs.js",
     "find": "node --no-warnings scripts/find.js"
   },
   "devDependencies": {
