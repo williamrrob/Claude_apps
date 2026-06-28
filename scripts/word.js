@@ -47,10 +47,11 @@ function readShard(p) {
   try { return JSON.parse(fs.readFileSync(p, "utf8")); }
   catch (e) { fail("could not parse " + p + ": " + e.message); }
 }
-// Stable write: 2-space indent + trailing newline, matching the existing shards.
-// JSON.stringify preserves key insertion order, so edits produce minimal diffs
-// (only the touched entry changes; new words are appended).
-function writeShard(p, obj) { fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n"); }
+// Stable write: one word per line (see shard-format.js). Key insertion order is
+// preserved, so edits produce minimal diffs (only the touched word's line
+// changes; new words are appended).
+const { stringifyShard } = require("./shard-format.js");
+function writeShard(p, obj) { fs.writeFileSync(p, stringifyShard(obj)); }
 
 function readStdin() {
   const data = fs.readFileSync(0, "utf8").trim();

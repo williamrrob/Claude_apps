@@ -1,1 +1,5 @@
-{"nw":{"d":[{"p":"n.","g":"the compass point midway between north and west;  at 315 degrees"}],"s":["northwest","northwestward"]},"nwbn":{"d":[{"p":"n.","g":"the compass point that is one point north of northwest"}]},"nwbw":{"d":[{"p":"n.","g":"the compass point that is one point west of northwest"}]}}
+{
+"nw":{"d":[{"p":"n.","g":"the compass point midway between north and west;  at 315 degrees"}],"s":["northwest","northwestward"]},
+"nwbn":{"d":[{"p":"n.","g":"the compass point that is one point north of northwest"}]},
+"nwbw":{"d":[{"p":"n.","g":"the compass point that is one point west of northwest"}]}
+}

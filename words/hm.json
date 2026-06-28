@@ -1,1 +1,5 @@
-{"hmong":{"d":[{"p":"adj.","g":"of or related to the Hmong people or their language or their culture"},{"p":"n.","g":"a people living traditionally in mountain villages in southern China and adjacent areas of Vietnam and Laos and Thailand;  many have emigrated to the United States"}],"i":"/mɔŋ/","rs":"mawng"},"hm":{"d":[{"p":"intj.","g":"A shorter variant of hmm."},{"p":"det.","g":"Initialism of how much.","x":"I am selling this shirt.\nHm?\n₱50 only."}],"s":["hectometer","hectometre"],"i":"/hm/","rs":"hm"},"hmo":{"d":[{"p":"n.","g":"group insurance that entitles members to services of participating hospitals and clinics and physicians"}]}}
+{
+"hmong":{"d":[{"p":"adj.","g":"of or related to the Hmong people or their language or their culture"},{"p":"n.","g":"a people living traditionally in mountain villages in southern China and adjacent areas of Vietnam and Laos and Thailand;  many have emigrated to the United States"}],"i":"/mɔŋ/","rs":"mawng"},
+"hm":{"d":[{"p":"intj.","g":"A shorter variant of hmm."},{"p":"det.","g":"Initialism of how much.","x":"I am selling this shirt.\nHm?\n₱50 only."}],"s":["hectometer","hectometre"],"i":"/hm/","rs":"hm"},
+"hmo":{"d":[{"p":"n.","g":"group insurance that entitles members to services of participating hospitals and clinics and physicians"}]}
+}

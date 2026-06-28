@@ -1,1 +1,6 @@
-{"dna":{"d":[{"p":"n.","g":"Alternative form of DNA."}],"i":"/\u02c8di\u02cc\u025b\u02c8ne\u026a/","rs":"DEE-eh-NAY"},"dneprodzerzhinsk":{"d":[{"p":"n.","g":"port city and industrial center in east central Ukraine on the Dnieper River"}]},"dnieper":{"d":[{"p":"n.","g":"a river that rises in Russia near Smolensk and flowing south through Belarus and Ukraine to empty into the Black Sea"}],"b":[{"s":"dnieper","k":"word"}]},"dnipropetrovsk":{"d":[{"p":"n.","g":"city in east central Ukraine on the Dnieper River;  center of metallurgical industry"}]}}
+{
+"dna":{"d":[{"p":"n.","g":"Alternative form of DNA."}],"i":"/ˈdiˌɛˈneɪ/","rs":"DEE-eh-NAY"},
+"dneprodzerzhinsk":{"d":[{"p":"n.","g":"port city and industrial center in east central Ukraine on the Dnieper River"}]},
+"dnieper":{"d":[{"p":"n.","g":"a river that rises in Russia near Smolensk and flowing south through Belarus and Ukraine to empty into the Black Sea"}],"b":[{"s":"dnieper","k":"word"}]},
+"dnipropetrovsk":{"d":[{"p":"n.","g":"city in east central Ukraine on the Dnieper River;  center of metallurgical industry"}]}
+}

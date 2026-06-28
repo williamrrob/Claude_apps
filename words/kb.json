@@ -1,1 +1,5 @@
-{"kb":{"d":[{"p":"symb.","g":"Abbreviation of kbit."},{"p":"symb.","g":"kilobar"},{"p":"n.","g":"Abbreviation of kilobase."},{"p":"n.","g":"Abbreviation of keyboard."}],"s":["kilobit","kbit"],"r":["kbps"]},"kbit":{"d":[{"p":"symb.","g":"Abbreviation of kilobit."},{"p":"symb.","g":"Abbreviation of kibibit."}],"s":["kilobit","kb"]},"kbo":{"d":[{"p":"n.","g":"any of many minor planets in the Kuiper belt outside the orbit of Neptune at the edge of the solar system"}]}}
+{
+"kb":{"d":[{"p":"symb.","g":"Abbreviation of kbit."},{"p":"symb.","g":"kilobar"},{"p":"n.","g":"Abbreviation of kilobase."},{"p":"n.","g":"Abbreviation of keyboard."}],"s":["kilobit","kbit"],"r":["kbps"]},
+"kbit":{"d":[{"p":"symb.","g":"Abbreviation of kilobit."},{"p":"symb.","g":"Abbreviation of kibibit."}],"s":["kilobit","kb"]},
+"kbo":{"d":[{"p":"n.","g":"any of many minor planets in the Kuiper belt outside the orbit of Neptune at the edge of the solar system"}]}
+}

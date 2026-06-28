@@ -1,1 +1,4 @@
-{"mv":{"d":[{"p":"n.","g":"Abbreviation of millivolt."},{"p":"v.","g":"Abbreviation of move."}],"s":["millivolt"]},"mvp":{"d":[{"p":"n.","g":"the player judged to be the most important to the sport"}]}}
+{
+"mv":{"d":[{"p":"n.","g":"Abbreviation of millivolt."},{"p":"v.","g":"Abbreviation of move."}],"s":["millivolt"]},
+"mvp":{"d":[{"p":"n.","g":"the player judged to be the most important to the sport"}]}
+}

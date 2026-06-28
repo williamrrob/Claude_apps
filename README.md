@@ -164,7 +164,9 @@ node scripts/word.js list co              # list the words in a shard
 
 Fields: `d` definitions (`p` part-of-speech, `g` gloss, `x` example), `e`
 etymology, `s` synonyms, `a` antonyms, `r` related, `i` IPA, `rs` respelling.
-Writes preserve the shard's 2-space format, so diffs stay small.
+Shards are stored one word per line (canonical format in `scripts/shard-format.js`;
+re-normalize with `node scripts/normalize-shards.js`), so editing a single word
+is a one-line diff.
 
 ## Querying the dictionary (`scripts/build-sqlite.js` + `find.js`)
 

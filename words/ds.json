@@ -1,1 +1,5 @@
-{"ds":{"d":[{"p":"n.","g":"plural of d"},{"p":"adj.","g":"Abbreviation of double-stranded."}],"s":["darmstadtium"]},"dscdna":{"d":[{"p":"n.","g":"double-stranded cDNA"}]},"dsl":{"d":[{"p":"n.","g":"a generic name for digital lines that are provided by telephone companies to their local subscribers and that carry data at high speeds"}]}}
+{
+"ds":{"d":[{"p":"n.","g":"plural of d"},{"p":"adj.","g":"Abbreviation of double-stranded."}],"s":["darmstadtium"]},
+"dscdna":{"d":[{"p":"n.","g":"double-stranded cDNA"}]},
+"dsl":{"d":[{"p":"n.","g":"a generic name for digital lines that are provided by telephone companies to their local subscribers and that carry data at high speeds"}]}
+}

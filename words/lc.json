@@ -1,1 +1,4 @@
-{"lcd":{"d":[{"p":"n.","g":"a digital display that uses liquid crystal cells that change reflectivity in an applied electric field;  used for portable computer displays and watches etc."}]},"lcm":{"d":[{"p":"n.","g":"Initialism of least common multiple."}],"a":["gcd"]}}
+{
+"lcd":{"d":[{"p":"n.","g":"a digital display that uses liquid crystal cells that change reflectivity in an applied electric field;  used for portable computer displays and watches etc."}]},
+"lcm":{"d":[{"p":"n.","g":"Initialism of least common multiple."}],"a":["gcd"]}
+}

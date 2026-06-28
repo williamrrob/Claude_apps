@@ -24,6 +24,7 @@ const path = require("path");
 
 const WORDS_DIR = path.join(__dirname, "..", "words");
 const APPLY = process.argv.includes("--apply");
+const INCLUDE_T2 = process.argv.includes("--t2"); // T2 over-merges distinct senses; off by default
 const outArg = process.argv.indexOf("--out");
 const OUT = outArg !== -1 ? process.argv[outArg + 1] : path.join(__dirname, "..", "dedupe-dryrun.txt");
 
@@ -35,6 +36,8 @@ const normFull = (g) => String(g || "").toLowerCase().replace(/[^a-z ]/g, " ").r
 const subset = (a, b) => { for (const x of a) if (!b.has(x)) return false; return true; };
 // prefer the "richer" sense: has an example, then longer gloss
 const richer = (x, y) => (((y.x ? 1 : 0) - (x.x ? 1 : 0)) || ((y.g || "").length - (x.g || "").length));
+
+const { stringifyShard } = require("./shard-format.js");
 
 const files = fs.readdirSync(WORDS_DIR).filter((f) => f.endsWith(".json")).sort();
 let wordsTouched = 0, t1 = 0, t2 = 0, relDrops = 0;
@@ -66,16 +69,17 @@ for (const file of files) {
           else if (meta[i].cs.size >= 2 && meta[j].cs.size >= 2 &&
                    (subset(meta[i].cs, meta[j].cs) || subset(meta[j].cs, meta[i].cs))) tier = "t2";
           if (!tier) continue;
-          // fold the poorer of i/j into the richer; mark the poorer dropped
+          // fold the poorer of i/j into the richer
           const poorerIsJ = richer(meta[i].d, meta[j].d) <= 0;
-          const survivor = poorerIsJ ? meta[i].d : meta[j].d;
-          const victim = poorerIsJ ? meta[j].d : meta[i].d;
-          dropped[poorerIsJ ? j : i] = true;
-          if (poorerIsJ) { if (!survivor.x && victim.x) survivor.x = victim.x; } // keep an example if only the victim had one
-          else { if (!survivor.x && victim.x) survivor.x = victim.x; dropped[i] = true; }
+          const dropIdx = poorerIsJ ? j : i, keepIdx = poorerIsJ ? i : j;
           if (tier === "t1") t1++; else t2++;
-          if (examples[tier].length < 12) examples[tier].push([word, victim.g, survivor.g]);
+          if (examples[tier].length < 12) examples[tier].push([word, meta[dropIdx].d.g, meta[keepIdx].d.g]);
+          // T2 (contained) conflates distinct senses → report-only unless --t2.
+          if (tier === "t2" && !INCLUDE_T2) continue;
+          if (!meta[keepIdx].d.x && meta[dropIdx].d.x) meta[keepIdx].d.x = meta[dropIdx].d.x; // keep an example
+          dropped[dropIdx] = true;
           changed = true;
+          if (dropIdx === i) break; // i was folded away; stop comparing it
         }
       }
       if (changed) {
@@ -96,12 +100,13 @@ for (const file of files) {
       if (APPLY && out.length !== e[key].length) e[key] = out;
     }
 
-    if (changed) wordsTouched++;
+    if (changed) { wordsTouched++; shardChanged = true; }
     wordsAfter.push(word);
   }
 
-  if (APPLY && shardChanged) {} // (per-word writes handled below)
-  if (APPLY) fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n");
+  // Only rewrite shards that actually changed, so untouched shards keep their
+  // existing formatting and we don't churn all 508 files for a few edits.
+  if (APPLY && shardChanged) fs.writeFileSync(p, stringifyShard(obj));
 }
 
 // ---- guardrail: the headword set must be identical ----

@@ -1,1 +1,4 @@
-{"dvd":{"d":[{"p":"n.","g":"a digital recording (as of a movie) on an optical disk that can be played on a computer or a television set"}],"s":["videodisk","videodisc"],"i":"/\u02ccdi\u02ccvi\u02c8di/","rs":"dee-vee-DEE"},"dvorak":{"d":[{"p":"n.","g":"Czech composer who combined folk elements with traditional forms (1841-1904)"}],"i":"/\u02c8dv\u0254r\u0259k/","rs":"DVAW-ruhk","b":[{"s":"dvorak","k":"word"}]}}
+{
+"dvd":{"d":[{"p":"n.","g":"a digital recording (as of a movie) on an optical disk that can be played on a computer or a television set"}],"s":["videodisk","videodisc"],"i":"/ˌdiˌviˈdi/","rs":"dee-vee-DEE"},
+"dvorak":{"d":[{"p":"n.","g":"Czech composer who combined folk elements with traditional forms (1841-1904)"}],"i":"/ˈdvɔrək/","rs":"DVAW-ruhk","b":[{"s":"dvorak","k":"word"}]}
+}
