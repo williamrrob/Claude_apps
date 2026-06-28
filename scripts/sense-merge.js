@@ -99,6 +99,7 @@ function clean(s) {
   let t = String(s == null ? EMPTY : s).trim();
   t = t.split(/\r?\n/).map((x) => x.trim()).filter(Boolean)[0] || EMPTY; // first non-empty line
   t = t.replace(/^(merged\s+definition|definition)\s*:\s*/i, EMPTY);     // strip a label
+  t = t.replace(/^[A-Za-z][A-Za-z'-]*\s*:\s+/, EMPTY);                   // strip a leaked "Word:" prefix
   t = t.replace(/^["'`]+|["'`]+$/g, EMPTY).trim();                        // strip wrapping quotes
   return t;
 }

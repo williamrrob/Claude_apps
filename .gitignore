@@ -5,6 +5,8 @@ rootwork.sqlite
 rootwork.sqlite-*
 embeddings.sqlite
 embeddings.sqlite-*
+*-dryrun.txt
+sense-merge-applied.txt
 dictionary.json
 thesaurus.json
 pronunciation.json
