@@ -2225,8 +2225,11 @@ Critical rules:
     const key = v.slice(0, 2);
     if (v.length < 2 || !/^[a-z]{2}$/.test(key)) { hideSuggest(); return; }
     const token = ++suggestToken;
-    Promise.all([fetchShard(key), loadRoots()]).then(function (res) {
-      const sh = res[0];
+    // Suggestions render as soon as the (small) shard arrives — they are NOT
+    // blocked on roots.json (≈1 MB). Latin/Greek source words are folded in only
+    // if ROOTS is already warm (prefetched in the background after load); the
+    // first keystroke still shows headword suggestions instantly.
+    fetchShard(key).then(function (sh) {
       if (token !== suggestToken || !sh) return;
       if (input.value.trim().toLowerCase() !== v) return;
       // English headwords we have a definition for…
@@ -2338,6 +2341,14 @@ Critical rules:
   loadData();
   renderHistory();
   updateNav();
+
+  // Warm roots.json (≈1 MB) in the background once the page is idle, so source-
+  // word lookups and root suggestions are ready without ever blocking first
+  // paint or the first keystroke. Skipped where requestIdleCallback is absent
+  // (e.g. the test harness); there roots load lazily on a non-headword search.
+  if (typeof window !== "undefined" && typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(function () { loadRoots(); }, { timeout: 5000 });
+  }
 
   // Pin the word to the top: the compact header is a non-layout overlay toggled
   // purely from scroll position (with hysteresis), so it can't feed back into
