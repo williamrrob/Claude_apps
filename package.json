@@ -8,6 +8,7 @@
     "build:data": "node scripts/build-data.js",
     "build:rich": "node scripts/build-rich.js",
     "build:sqlite": "node --no-warnings scripts/build-sqlite.js",
+    "embed": "node --no-warnings scripts/embed.js",
     "find": "node --no-warnings scripts/find.js"
   },
   "devDependencies": {

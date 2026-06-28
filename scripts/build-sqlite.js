@@ -36,14 +36,20 @@ db.exec(`
   CREATE TABLE senses (word TEXT, pos TEXT, gloss TEXT, example TEXT);
   CREATE TABLE rel    (word TEXT, kind TEXT, target TEXT);
   CREATE TABLE morph  (word TEXT, kind TEXT, id TEXT, surface TEXT, origin TEXT, meaning TEXT);
-  CREATE VIRTUAL TABLE fts USING fts5(word UNINDEXED, body);
 `);
+
+// The FTS index (for `find meaning`) needs an FTS5-enabled SQLite. Node's
+// bundled SQLite only gained FTS5 in later 22.x/23+ builds, so create it when
+// available and degrade gracefully (no meaning-search) when it isn't.
+let hasFts = false;
+try { db.exec("CREATE VIRTUAL TABLE fts USING fts5(word UNINDEXED, body);"); hasFts = true; }
+catch (e) { console.error("note: SQLite has no FTS5 in this Node — skipping `fts` table (`find meaning` disabled)"); }
 
 const insWord  = db.prepare("INSERT OR REPLACE INTO words(word,ipa,rs,ety) VALUES (?,?,?,?)");
 const insSense = db.prepare("INSERT INTO senses(word,pos,gloss,example) VALUES (?,?,?,?)");
 const insRel   = db.prepare("INSERT INTO rel(word,kind,target) VALUES (?,?,?)");
 const insMorph = db.prepare("INSERT INTO morph(word,kind,id,surface,origin,meaning) VALUES (?,?,?,?,?,?)");
-const insFts   = db.prepare("INSERT INTO fts(word,body) VALUES (?,?)");
+const insFts   = hasFts ? db.prepare("INSERT INTO fts(word,body) VALUES (?,?)") : null;
 
 const files = fs.readdirSync(WORDS_DIR).filter(f => f.endsWith(".json")).sort();
 let nWords = 0, nSenses = 0, nRel = 0, nMorph = 0;
@@ -79,7 +85,7 @@ for (const file of files) {
 
     // searchable text: glosses + etymology
     const body = (glosses.join(" · ") + " " + (e.e || "")).trim();
-    if (body) insFts.run(word, body);
+    if (body && insFts) insFts.run(word, body);
   }
 }
 db.exec("COMMIT");

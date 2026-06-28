@@ -1,7 +1,10 @@
 node_modules/
 package-lock.json
+.claude/settings.local.json
 rootwork.sqlite
 rootwork.sqlite-*
+embeddings.sqlite
+embeddings.sqlite-*
 dictionary.json
 thesaurus.json
 pronunciation.json

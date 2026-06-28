@@ -12,6 +12,9 @@
  *   node scripts/find.js meaning <text...>    full-text over glosses+etymology
  *   node scripts/find.js rel <word>           a word's syn/ant/related
  *   node scripts/find.js revsyn <word>        words that list <word> as a synonym
+ *   node scripts/find.js similar <word>       nearest words by meaning (needs
+ *                                             embeddings.sqlite — build with
+ *                                             `npm run embed build`)
  *   node scripts/find.js missing <field> [--root id|--prefix id]
  *                                             gap-finder: words lacking syn|ant|
  *                                             rel|ex|ety|ipa  (great for enrichment)
@@ -60,6 +63,50 @@ switch (cmd) {
   case "revsyn":
     words("SELECT DISTINCT word FROM rel WHERE kind='syn' AND target=? ORDER BY word", [rest[0]]); break;
 
+  case "similar": {
+    // Semantic neighbours via stored gloss embeddings (embeddings.sqlite). Word
+    // vectors are L2-normalized, so cosine similarity is just a dot product.
+    const target = rest[0];
+    if (!target) { process.stderr.write("similar needs a <word>\n"); process.exit(1); }
+    const embed = require("./embed.js");
+    let store;
+    try { store = embed.openStore(true); }
+    catch (e) { process.stderr.write(e.message + "\n"); process.exit(1); }
+
+    // Look up the query word's vector; if it isn't in the store yet, embed its
+    // senses on the fly (same "doc" prefix as the corpus) so it's comparable.
+    let qv;
+    const row = store.prepare("SELECT v FROM word WHERE word=?").get(target);
+    if (row) {
+      qv = embed.blobToF32(row.v);
+    } else {
+      const senses = db.prepare("SELECT gloss FROM senses WHERE word=? AND gloss IS NOT NULL").all(target);
+      if (!senses.length) { process.stderr.write("no senses for '" + target + "' (unknown word?)\n"); process.exit(1); }
+      embed.embedTexts(senses.map((s) => s.gloss), "doc")
+        .then((vs) => { qv = embed.normalize(embed.meanVec(vs)); rank(); })
+        .catch((e) => { process.stderr.write("embed: " + e.message + "\n"); process.exit(1); });
+      break;
+    }
+    rank();
+
+    function rank() {
+      const all = store.prepare("SELECT word, v FROM word").all();
+      const scored = [];
+      for (const r of all) {
+        if (r.word === target) continue;
+        const v = embed.blobToF32(r.v);
+        let dot = 0;
+        for (let i = 0; i < v.length; i++) dot += qv[i] * v[i];
+        scored.push([r.word, dot]);
+      }
+      scored.sort((a, b) => b[1] - a[1]);
+      const top = limit > 0 ? scored.slice(0, limit) : scored;
+      for (const [w, s] of top) process.stdout.write(w + "\t" + s.toFixed(3) + "\n");
+      process.stderr.write("(" + top.length + " of " + scored.length + " embedded words)\n");
+    }
+    break;
+  }
+
   case "missing": {
     // "lacks <field>" condition, parameterized on a word-column expression so it
     // works whether we lead with the morph table (fast, when filtered) or words.
@@ -100,6 +147,6 @@ switch (cmd) {
   }
 
   default:
-    process.stderr.write("commands: root prefix suffix morph meaning rel revsyn missing stats q\n");
+    process.stderr.write("commands: root prefix suffix morph meaning rel revsyn similar missing stats q\n");
     process.exit(1);
 }
