@@ -258,13 +258,17 @@ async function main() {
     for (const key of keys) {
       const p = path.join(WORDS_DIR, key + ".json");
       const obj = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : {};
+      // case-insensitive index so capitalized Kaikki terms (e.g. "Thanatos")
+      // resolve to a lowercase existing headword ("thanatos") instead of dropping.
+      const lowerKey = new Map();
+      for (const k of Object.keys(obj)) lowerKey.set(k.toLowerCase(), k);
       let changed = false;
       for (const [w, entry] of Object.entries(pending.get(key) || {})) {
-        if (Object.prototype.hasOwnProperty.call(obj, w)) continue; // never overwrite
+        if (lowerKey.has(w.toLowerCase())) continue; // never overwrite an existing entry (any case)
         obj[w] = entry; added++; changed = true;
       }
       for (const [w, adds] of Object.entries(pendingAdd.get(key) || {})) {
-        const cur = obj[w];
+        const cur = obj[lowerKey.get(w.toLowerCase())];
         if (!cur || !Array.isArray(cur.d)) continue; // only extend a real existing entry
         const have = new Set(cur.d.map((dd) => normGloss(dd.g)));
         let room = MAX_TOTAL_SENSES - cur.d.length;
