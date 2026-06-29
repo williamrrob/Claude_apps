@@ -19,7 +19,7 @@
 "kumis":{"d":[{"p":"n.","g":"Alternative spelling of koumiss."}],"s":["koumiss"],"rel":{"t":"variant of","l":"koumiss","by":"assistant","at":"2026-06-23T05:47:54.405Z"}},
 "kummel":{"d":[{"p":"n.","g":"A German caraway liqueur.","x":"‘The best kümmel comes in those bear-shaped bottles. It comes from Russia.’"}],"e":"From German Kümmel."},
 "kumquat":{"d":[{"p":"n.","g":"A small, orange citrus-like fruit which is native to Asia (Citrus japonica, syn. Fortunella japonica)."}],"e":"From Cantonese 柑橘 (gam¹ gwat¹) or 金橘 (gam¹ gwat¹, literally “golden tangerine”). Related to loquat – same second character.","s":["cumquat"],"i":"/ˈkʌmkwɑt/","rs":"KUHM-kwaht","b":[{"s":"kumquat","k":"word"}],"vars":["cumquat"]},
-"kunlun":{"d":[{"p":"n.","g":"a mountain range in western China that extends eastward from the Indian border for 1000 miles"}]},
+"kunlun":{"d":[{"p":"n.","g":"a mountain range in western China that extends eastward from the Indian border for 1000 miles"},{"p":"n.","g":"A mythical mountain or mountain range somewhere west of the North China Plain believed to be the home of Xiwangmu and the Peaches of Immortality, as well as other gods and Taoist immortals, and previously believed to help support the dome of the sky.","x":"[…] the Yellow Riuer […] is the other famous Riuer of that Kingdome, in greatneſſe and note, which ariſesth without the Kingdome to the Weſt, out of the Hill Cunlun, conjectured to bee the ſame whence Ganges ariſeth, or one neere to it.","dom":"mysticism"}]},
 "kunzite":{"d":[{"p":"n.","g":"A pink- to lilac-colored gemstone, a variety of spodumene."}],"e":"From Kunz + -ite.","i":"/ˈkuːnˌzaɪt/","b":[{"s":"Kunz","k":"root"},{"s":"ite","k":"suffix"}]},
 "kuomintang":{"d":[{"p":"n.","g":"the political party founded in 1911 by Sun Yat-sen;  it governed China under Chiang Kai-shek from 1928 until 1949 when the Communists took power and subsequently was the official ruling party of Taiwan"}],"i":"/ˈkwoʊˌmɪnˈtæŋ/","rs":"KWOH-min-TANG","b":[{"s":"kuomintang","k":"word"}]},
 "kura":{"d":[{"p":"n.","g":"a river in western Asia;  rises in northeast Turkey and flows to the Caspian Sea"}]},
@@ -304,5 +304,8 @@
 "Kuru disease":{"d":[{"p":"n.","g":"A rare, fatal prion disease of the Fore people of Papua New Guinea, causing progressive neurological decline and historically transmitted through mortuary endocannibalism."}],"e":"From Fore kúru (literally “trembling, shivering”). Perhaps eventually from Proto-Gorokan *kút(V) (“dangling, shaking”) if cognate with the reduplicated element of Yagaria gúli gúli hu- (“be loose, rattle”)."},
 "Kulob":{"d":[{"p":"n.","g":"A city in Khatlon, Tajikistan"},{"p":"n.","g":"A district of Khatlon, Tajikistan"}],"e":"Borrowed from Tajik Кӯлоб (Külob)."},
 "Kusha":{"d":[{"p":"n.","g":"One of the twin children of Lord Rāma and his wife Sita in the Ramayana."}],"e":"Borrowed from Sanskrit कुश (kuśa)."},
-"Kumkum":{"d":[{"p":"n.","g":"A female given name from Sanskrit used in India."}],"e":"Borrowed from Sanskrit कुमकुम (kumakuma)."}
+"Kumkum":{"d":[{"p":"n.","g":"A female given name from Sanskrit used in India."}],"e":"Borrowed from Sanskrit कुमकुम (kumakuma)."},
+"Kun":{"d":[{"p":"n.","g":"A Finnish Moon god.","dom":"mysticism"}]},
+"Kuhnian":{"d":[{"p":"adj.","g":"Of or pertaining to the philosophy of Thomas Kuhn, especially the theories in his book The Structure of Scientific Revolutions.","x":"The scientific advances spurred a Kuhnian revolution.","dom":"philosophy"}],"e":"Etymology tree English Kuhn Proto-Indo-European *-nós Proto-Italic *-nos Latin -nus Latin -ānus Latin -iānusbor. English -ian English Kuhnian From Kuhn + -ian."},
+"Kukulkan":{"d":[{"p":"n.","g":"The serpent deity of Maya mythology.","dom":"mysticism"}]}
 }

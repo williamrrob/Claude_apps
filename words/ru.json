@@ -840,5 +840,7 @@
 "Rubin vase":{"d":[{"p":"n.","g":"An optical illusion that may be seen either as the profiles of two people facing each other, or as a vase (formed by the space between them)."}],"e":"Developed by Edgar Rubin."},
 "rules official":{"d":[{"p":"n.","g":"An individual who monitors the game for rules violations; a referee.","x":"Jones told Walter Hagan, who was playing with him, and a USGA rules official that a Rules infraction had occurred and that he would assess himself the one-stroke penalty appropriate for the infraction.","dom":"golf"}]},
 "rush one's fences":{"d":[{"p":"v.","g":"To act too hastily or impulsively, often resulting in mistakes or failure."},{"p":"v.","g":"Of a horse, to approach a fence too quickly before a jump."}]},
-"ruqyah":{"d":[{"p":"n.","g":"An Islamic spiritual healing practice involving the recitation of Qur'anic verses, specifically Surah Al-Fatiha and the last three Surahs along with a du'a' to seek refuge in Allah.","dom":"islam"}],"e":"Borrowed from Arabic رقية (ruqya, “charm, spell, incantation”)."}
+"ruqyah":{"d":[{"p":"n.","g":"An Islamic spiritual healing practice involving the recitation of Qur'anic verses, specifically Surah Al-Fatiha and the last three Surahs along with a du'a' to seek refuge in Allah.","dom":"islam"}],"e":"Borrowed from Arabic رقية (ruqya, “charm, spell, incantation”)."},
+"rule utilitarianism":{"d":[{"p":"n.","g":"A form of utilitarianism that says an action is right as it conforms to a rule that leads to the greatest good.","dom":"ethics"}]},
+"ruling planet":{"d":[{"p":"n.","g":"The planet (a term which in astrology includes the Sun and Moon) which is considered to have especially strong influence over a given zodiac sign; the sign is called the planet's domicile.","dom":"astrology"}]}
 }

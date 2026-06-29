@@ -841,5 +841,6 @@
 "tunaghetti":{"d":[{"p":"n.","g":"A tuna casserole made with spaghetti noodles."}],"e":"Blend of tuna + spaghetti"},
 "tuffness":{"d":[{"p":"n.","g":"The state or property of being tuff."}],"e":"From tuff + -ness."},
 "Turners Falls":{"d":[{"p":"n.","g":"A village and census-designated place in the town of Montague, Franklin County, Massachusetts, United States."}],"e":"Named after Captain William Turner."},
-"turtleflesh":{"d":[{"p":"n.","g":"The flesh of a turtle."}],"e":"Compound of turtle + flesh."}
+"turtleflesh":{"d":[{"p":"n.","g":"The flesh of a turtle."}],"e":"Compound of turtle + flesh."},
+"turbocapitalism":{"d":[{"p":"n.","g":"An accelerated form of capitalism that lacks measures to keep the system in equilibrium and prevent social unrest.","x":"It was not until the end of the 1970s that today's roaring turbo-capitalism was unleashed by the abolition of anti-competition laws and regulations left over from the 1930s, by the technological innovations thus allowed, by the privatization of whatever could be privatized, and by the removal of most important barriers.","dom":"capitalism"}],"e":"From turbo- + capitalism, popularized by Edward Luttwak in Turbo-Capitalism (1998)."}
 }

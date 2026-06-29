@@ -186,5 +186,6 @@
 "Avirala":{"d":[{"p":"n.","g":"A male given name from Sanskrit used in India."}],"e":"Borrowed from Sanskrit अविरल (avirala)."},
 "availability zone":{"d":[{"p":"n.","g":"A subset of computing infrastructure that shares no service-critical components (including power, cooling and access) with any other availability zone.","x":"Availability zones are typically geographically separated from one another, to prevent local disasters from affecting more than one of them."}]},
 "Avani":{"d":[{"p":"n.","g":"A female given name from Sanskrit used in India."}],"e":"Borrowed from Sanskrit अवनि (avani)."},
-"Avs":{"d":[{"p":"n.","g":"The Colorado Avalanche ice hockey team.","x":"The Avs on home ice remain as close to invincible as a sports team can get.","dom":"ice-hockey"}],"e":"The pluralization in this informal moniker is analogical to other team names with plural noun phrases."}
+"Avs":{"d":[{"p":"n.","g":"The Colorado Avalanche ice hockey team.","x":"The Avs on home ice remain as close to invincible as a sports team can get.","dom":"ice-hockey"}],"e":"The pluralization in this informal moniker is analogical to other team names with plural noun phrases."},
+"Averroism":{"d":[{"p":"n.","g":"The tenets of the Averroists, having to do with the doctrine of monopsychism.","x":"The first concerns the problem that Latin Averroism presented to Western philosophy in connection with its doctrine that there is only one mind for all human beings—a doctrine that has come to be called monopsychism.","dom":"philosophy"}]}
 }

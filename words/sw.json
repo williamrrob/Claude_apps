@@ -606,5 +606,6 @@
 "swarp":{"d":[{"p":"v.","g":"To strike or push with a sweeping motion."}]},
 "sword bean":{"d":[{"p":"n.","g":"Any of species Canavalia gladiata of domesticated legumes used as a vegetable in parts of India."},{"p":"n.","g":"A common jack bean (Canavalia ensiformis)."}]},
 "swamp donkey":{"d":[{"p":"n.","g":"A moose."},{"p":"n.","g":"An ugly woman.","x":"A SWAMP DONKEY IS A CHICK WHO'S UGLY AND TAKES ADVANTAGE OF DRUNK DUDES."}]},
-"swing shifter":{"d":[{"p":"n.","g":"One who works a swing shift or is employed in one."}],"e":"From swing shift + -er."}
+"swing shifter":{"d":[{"p":"n.","g":"One who works a swing shift or is employed in one."}],"e":"From swing shift + -er."},
+"switching function":{"d":[{"p":"n.","g":"Synonym of Boolean function.","dom":"logic"}]}
 }

@@ -931,5 +931,9 @@
 "ringed snake":{"d":[{"p":"n.","g":"A grass snake (Natrix natrix)."},{"p":"n.","g":"Any of genus Diadophis of small, smooth colubrid snakes having a yellowish ring about the neck."}]},
 "ring vaccination":{"d":[{"p":"n.","g":"The strategy of vaccinating those who are most likely to be infected, to inhibit the spread of a disease."},{"p":"n.","g":"An individual vaccination of this kind."}]},
 "rillest":{"d":[{"p":"adj.","g":"Realest."}],"e":"A stylized variant of realest prevalent in hip-hop."},
-"River Bend":{"d":[{"p":"n.","g":"An area in Madison County and Jersey County, Illinois, where the Mississippi River flows west to east between two bends."},{"p":"n.","g":"A village in Jackson County, Missouri."},{"p":"n.","g":"A town in Craven County, North Carolina."},{"p":"n.","g":"An unincorporated community in Kanawha County, West Virginia."}]}
+"River Bend":{"d":[{"p":"n.","g":"An area in Madison County and Jersey County, Illinois, where the Mississippi River flows west to east between two bends."},{"p":"n.","g":"A village in Jackson County, Missouri."},{"p":"n.","g":"A town in Craven County, North Carolina."},{"p":"n.","g":"An unincorporated community in Kanawha County, West Virginia."}]},
+"right-hand path":{"d":[{"p":"n.","g":"A path through life that focuses on deities or divinity rather than the terrestrial.","dom":"mysticism"}]},
+"rightdoing":{"d":[{"p":"n.","g":"Doing what is right.","dom":"ethics"}],"e":"From right + doing."},
+"rightdoer":{"d":[{"p":"n.","g":"A person who does what is right.","dom":"ethics"}],"e":"From right + doer."},
+"rivermaiden":{"d":[{"p":"n.","g":"A nymph or female spirit associated with a river.","dom":"fantasy"}]}
 }

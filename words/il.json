@@ -153,5 +153,9 @@
 "Ilarion":{"d":[{"p":"n.","g":"A male given name from Russian, Ukrainian"},{"p":"n.","g":"A transliteration of the Ukrainian male given name Іларіон (Ilarion)"},{"p":"n.","g":"A transliteration of the Russian male given name Иларион (Ilarion)"}],"e":"Borrowed from Ukrainian Іларіон (Ilarion), Russian Иларион (Ilarion)."},
 "illusionette":{"d":[{"p":"n.","g":"An illusion (magic trick) that is small in size.","x":"The next effect is really an illusionette, one that can be easily carried about."}],"e":"By surface analysis, illusion + -ette."},
 "Ilulissat":{"d":[{"p":"n.","g":"A city in Avannaata, Greenland.","x":"Every summer, Ilulissat Kangerlua, a fjord two miles south of Ilulissat, presents the spectacle of the world's largest concentration of icebergs outside of Antarctica."}],"e":"Borrowed from Greenlandic Ilulissat."},
-"Illawarra plum pine":{"d":[{"p":"n.","g":"Synonym of yellow pine (“a tree of the species Podocarpus elatus, of Australia”)"}]}
+"Illawarra plum pine":{"d":[{"p":"n.","g":"Synonym of yellow pine (“a tree of the species Podocarpus elatus, of Australia”)"}]},
+"illeity":{"d":[{"p":"n.","g":"An external embodiment of the self.","dom":"philosophy"}],"e":"From Latin ille (“that man; he”) + -ity."},
+"illocute":{"d":[{"p":"v.","g":"To perform an illocutionary act.","x":"In some such cases, at least, there will be illocutions q such that S can illocute q and thereby (among other things) convey to A that p.","dom":"linguistics"}],"e":"Back-formation from illocution."},
+"illuminationism":{"d":[{"p":"n.","g":"An Islamic philosophical and mystical school of thought introduced by Iranian philosopher Shihab al-Din Yahya ibn Habash Suhrawardi in the 12th century.","dom":"philosophy"}],"e":"From illumination + -ism."},
+"illuminationist":{"d":[{"p":"adj.","g":"Of or relating to illuminationism.","dom":"philosophy"},{"p":"n.","g":"A follower of illuminationism.","dom":"philosophy"}],"e":"From illumination + -ist."}
 }

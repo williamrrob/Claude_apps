@@ -143,5 +143,10 @@
 "gymnaxony":{"d":[{"p":"n.","g":"The situation where the placenta protrudes through the ovary.","dom":"biology"}]},
 "gym queen":{"d":[{"p":"n.","g":"A gay man who spends a lot of time at the gym, usually in order to maintain a muscular physique.","x":"‘He smiled crookedly at me as if I was a gym queen with medium-length feathered blonde hair and a toothpaste commercial smile. “Neither am I,” he said.","dom":"lgbt"}]},
 "Gyeryong":{"d":[{"p":"n.","g":"A city in South Chungcheong Province, South Korea."}],"e":"Borrowed from Korean 계룡시 (gyeryongsi)."},
-"gypsy cop":{"d":[{"p":"n.","g":"Synonym of wandering officer."}]}
+"gypsy cop":{"d":[{"p":"n.","g":"Synonym of wandering officer."}]},
+"gynandrous":{"d":[{"p":"adj.","g":"Exhibiting characteristics of both femininity and masculinity. Denotational synonym and connotational antonym of androgynous.","dom":"philosophy"},{"p":"adj.","g":"Having stamens and pistils together in a column.","x":"Orchids have gynandrous flowers.","dom":"biology"}],"e":"From Ancient Greek γύνανδρος (gúnandros, “of doubtful sex, womanish; warlike woman”); equivalent to gyno- (“woman”) + -androus.","r":["androgyny","gynandromorphic","gynandry","hemigynous","polygynandrous"]},
+"gyromancy":{"d":[{"p":"n.","g":"Divination where people walk on a circle of letters until dizzy; the letters they fall on are significant. Similar to Dervishing.","dom":"mysticism"},{"p":"n.","g":"Divination by whirling a coin on a circle of letters."}],"e":"From gyro- + -mancy.","r":["giromancy"]},
+"gynosphinx":{"d":[{"p":"n.","g":"A sphinx with the head of a woman.","dom":"mysticism"}],"e":"From gyno- + sphinx."},
+"gytrash":{"d":[{"p":"n.","g":"A legendary black dog (or sometimes a horse or mule) said to haunt lonely roads in northern England and lead people astray.","dom":"mysticism"}]},
+"Gyges":{"d":[{"p":"n.","g":"One of the Hecatoncheires.","dom":"mysticism"}]}
 }

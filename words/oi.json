@@ -87,5 +87,6 @@
 "oil diaper":{"d":[{"p":"n.","g":"Synonym of engine diaper."}]},
 "oilbrush":{"d":[{"p":"n.","g":"A brush used for oil painting.","x":"Spinning back, the world looks for a moment as if someone has taken an oilbrush and smeared it across everything."}],"e":"From oil + brush."},
 "oink out":{"d":[{"p":"v.","g":"To eat greedily; to pig out."}]},
-"oi oi saveloy":{"d":[{"p":"interj.","g":"A greeting."}],"e":"Chosen for the rhyme."}
+"oi oi saveloy":{"d":[{"p":"interj.","g":"A greeting."}],"e":"Chosen for the rhyme."},
+"oikeiosis":{"d":[{"p":"n.","g":"The perception of something as being one's own, or belonging to oneself.","dom":"ethics"}],"e":"Ancient Greek οἰκείωσις (oikeíōsis)"}
 }

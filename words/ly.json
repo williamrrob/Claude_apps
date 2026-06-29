@@ -176,5 +176,10 @@
 "Lyngstadaas syndrome":{"d":[{"p":"n.","g":"A rare autosomal-recessive liver disease involving an enzyme (steroid dehydrogenase) deficiency and dental anomalies."}],"e":"Named after Norwegian professor Ståle Petter Lyngstadaas."},
 "lynxsona":{"d":[{"p":"n.","g":"A fursona that is a lynx.","dom":"lifestyle"}],"e":"From lynx + -sona."},
 "Lyon bean":{"d":[{"p":"n.","g":"A tropical Asian legume, Mucuna niveum, grown mainly as a forage crop."},{"p":"n.","g":"Stizolobium niveum."}]},
-"Lyceus":{"d":[{"p":"n.","g":"Epithet of Apollo","x":"Apollo Lyceus","dom":"mysticism"}],"e":"Borrowed from Latin Lyceus, from Ancient Greek Λύκειος (Lúkeios), of uncertain meaning."}
+"Lyceus":{"d":[{"p":"n.","g":"Epithet of Apollo","x":"Apollo Lyceus","dom":"mysticism"}],"e":"Borrowed from Latin Lyceus, from Ancient Greek Λύκειος (Lúkeios), of uncertain meaning."},
+"Lysithea":{"d":[{"p":"n.","g":"A mistress of Zeus.","dom":"mysticism"},{"p":"n.","g":"One of the moons of Jupiter.","dom":"astronomy"}],"e":"From Ancient Greek Λυσιθέα (Lusithéa)."},
+"Lyonesse":{"d":[{"p":"n.","g":"A kingdom mentioned in Arthurian legend, consisting of a long strand of land stretching from Land's End at the southwestern tip of Cornwall, England to what is now the Isles of Scilly in the Celtic Sea portion of the Atlantic Ocean. It was considered lost after being swallowed by the ocean in a single night.","dom":"mysticism"}],"i":"/liːɒˈnɛs/"},
+"Lysithean":{"d":[{"p":"adj.","g":"Of or relating to Lysithea (a.k.a. Lysithoe) in Greek mythology.","dom":"mysticism"},{"p":"adj.","g":"Of or relating to the irregular Jovian moon named for Lysithea.","dom":"astronomy"}],"i":"/laɪˈsɪθiən/"},
+"Lynceus":{"d":[{"p":"n.","g":"Any of a number of characters in Greek mythology; see Wikipedia article.","dom":"mysticism"},{"p":"n.","g":"A crater on Janus, a moon of Saturn."}],"e":"(crater): Named after Lynceus of Messenia in the legend of Castor and Pollux."},
+"Lycean":{"d":[{"p":"adj.","g":"Epithet of Apollo","x":"Lycean Apollo","dom":"mysticism"}],"e":"From Latin Lycēus [from Ancient Greek Λύκειος (Lúkeios, of uncertain meaning; possibly “wolf-killing”, “Lycian” or “luminous”), epithet of Apollo] + -an."}
 }
