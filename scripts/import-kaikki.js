@@ -111,6 +111,11 @@ function pickDom(topics) {
   const t = specific[0] || topics[0];
   return t ? lc(t) : null;
 }
+// Some broad topics (notably "philosophy") umbrella in off-target domains in
+// Wiktionary's taxonomy (tarot/occult/astrology). A sense only counts as a topic
+// match if its SPECIFIC domain isn't one of these.
+const TOPIC_BLOCK = new Set(["mysticism", "occult", "cartomancy", "tarot", "astrology", "divination", "numerology", "religion"]);
+const senseTopicMatch = (s) => TOPICS.size > 0 && (s._t || []).some((t) => TOPICS.has(t)) && !(s.dom && TOPIC_BLOCK.has(s.dom));
 
 // Build a Rootwork entry from the accumulated kaikki lines of one word.
 function build(word, lines) {
@@ -148,7 +153,7 @@ function build(word, lines) {
       // specific Wiktionary topic, skipping broad umbrella terms.
       const dom = pickDom(s.topics);
       if (dom) sense.dom = dom;
-      for (const t of stopics) if (TOPICS.has(t)) wtopics.add(t);
+      if (senseTopicMatch(sense)) for (const t of stopics) if (TOPICS.has(t)) wtopics.add(t);
       senses.push(sense);
     }
   }
@@ -166,7 +171,7 @@ function build(word, lines) {
     const rich = senses.some((s) => s.x) || !!ety || senses.length >= 2;
     if (!rich) return null;
   }
-  const swant = (s) => ([...s._g].some((g) => GROUPS.has(g)) || s._t.some((t) => TOPICS.has(t)) ? 1 : 0);
+  const swant = (s) => ([...s._g].some((g) => GROUPS.has(g)) || senseTopicMatch(s) ? 1 : 0);
   senses.sort((a, b) => swant(b) - swant(a));
   const d = senses.slice(0, MAX_SENSES).map((s) => { const o = { p: s.p, g: s.g }; if (s.x) o.x = s.x; if (s.dom) o.dom = s.dom; return o; });
 
@@ -210,7 +215,7 @@ async function main() {
       const adds = [];
       for (const s of built.senses) {
         // sense itself must match a requested group OR topic
-        if (![...s._g].some((g) => GROUPS.has(g)) && !s._t.some((t) => TOPICS.has(t))) continue;
+        if (![...s._g].some((g) => GROUPS.has(g)) && !senseTopicMatch(s)) continue;
         const n = normGloss(s.g);
         if (!n || seen.has(n)) continue;
         seen.add(n);
