@@ -100,25 +100,40 @@ function neighbours(word, exclude) {
   return out;
 }
 
-// ---- optional qwen filter: keep only genuinely-related candidates ------------
-// SAFETY: qwen can only *remove* — we intersect its answer with the candidate
-// set, so it can never introduce a word that wasn't an embedding neighbour.
-async function qwenFilter(word, pos, gloss, cands) {
-  const list = cands.map((c) => c[0]).join(", ");
-  const prompt = 'The ' + (pos ? "(" + pos + ") " : EMPTY) + 'word "' + word + '"' +
-    (gloss ? ' means: ' + gloss : EMPTY) + '.\n' +
-    'Which of these candidate words are closely related in meaning to "' + word + '"? ' +
-    'Reply with ONLY the related ones as a comma-separated list, copied exactly, or the single word none.\n' +
-    'Candidates: ' + list;
+// Batched filter: one prompt covers many words (≈10x fewer GPU calls than one
+// call per word — the big enrichment speedup on a GPU-bound box). Returns an
+// array aligned to `items`; an entry is null when qwen's output for that line
+// couldn't be parsed (caller skips it, conservatively). Still intersection-only.
+const QBATCH = parseInt(arg("--qbatch", "12"), 10);
+const CONC = parseInt(arg("--conc", "4"), 10); // concurrent qwen batches (pairs with OLLAMA_NUM_PARALLEL)
+async function qwenFilterBatch(items) {
+  // qwen2.5:3b reliably copies words but not index codes, so we use the copy
+  // format and dedupe-match on the returned words. Speedup comes from running
+  // these batches concurrently (OLLAMA_NUM_PARALLEL), not from output size.
+  const lines = items.map((it, i) => (i + 1) + '. "' + it.word + '"' +
+    (it.gloss ? " (" + it.gloss.slice(0, 70) + ")" : EMPTY) + ": " + it.cands.map((c) => c[0]).join(", "));
+  const prompt = "For each numbered word below, given its meaning and a list of candidate words, " +
+    "keep ONLY the candidates closely related in meaning to that word. Reply with exactly one line " +
+    "per number in the form `N: word, word` (or `N: none`). Copy candidate words exactly. Output nothing else.\n\n" +
+    lines.join("\n");
   const res = await fetch(OLLAMA + "/api/generate", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ model: MODEL, prompt, stream: false, options: { temperature: 0 } }),
+    body: JSON.stringify({ model: MODEL, prompt, stream: false, options: { temperature: 0, num_predict: 30 * items.length } }),
   });
   if (!res.ok) throw new Error("ollama /api/generate " + res.status + ": " + (await res.text()));
-  const kept = new Set(String((await res.json()).response || EMPTY).toLowerCase()
-    .split(/[,\n;]+/).map((s) => s.trim()).filter(Boolean));
-  return cands.filter((c) => kept.has(c[0].toLowerCase())); // intersection only
+  const byIdx = new Map();
+  for (const line of String((await res.json()).response || EMPTY).split(/\r?\n/)) {
+    const m = line.match(/^\s*(\d+)\s*[:.)]\s*(.*)$/);
+    if (!m) continue;
+    byIdx.set(parseInt(m[1], 10) - 1, new Set(m[2].toLowerCase().split(/[,;]+/).map((s) => s.trim()).filter(Boolean)));
+  }
+  return items.map((it, i) => {
+    const kept = byIdx.get(i);
+    if (!kept) return null;                                       // unparsed → caller skips
+    if (kept.has("none")) return [];
+    return it.cands.filter((c) => kept.has(c[0].toLowerCase()));  // intersection only
+  });
 }
 
 async function ensureModel() {
@@ -151,43 +166,55 @@ async function main() {
     const p = path.join(WORDS_DIR, file);
     if (!fs.existsSync(p)) continue;
     const obj = JSON.parse(fs.readFileSync(p, "utf8"));
-    let shardChanged = false;
+    const state = { shardChanged: false };
 
-    for (const word of Object.keys(obj)) {
-      if (ONLY_WORD && word !== ONLY_WORD) continue;
-      const e = obj[word];
-      const hasRel = Array.isArray(e.r) && e.r.length > 0;
-      if (!ALL && hasRel) continue;            // default: only fill gaps
-      if (!INDEX.has(word)) continue;          // no vector (no glosses)
-      if (LIMIT && scanned >= LIMIT) break;
-      scanned++;
-
-      let nb = neighbours(word, existingLinks(e));
-      if (!nb.length) continue;
-      if (QWEN) {
-        const before = nb.length;
-        const d0 = (e.d && e.d[0]) || {};
-        try { nb = await qwenFilter(word, d0.p, d0.g, nb); }
-        catch (err) { process.stderr.write("  qwen failed for " + word + ": " + err.message + "\n"); continue; }
-        qwenDropped += before - nb.length;
-        if (!nb.length) continue;
-      }
-      proposals.push([word, nb]);
-      enriched++; added += nb.length;
-
+    const accept = (word, e, nb) => {
+      if (!nb || !nb.length) return;
+      proposals.push([word, nb]); enriched++; added += nb.length;
       if (APPLY) {
         const seen = new Set((e.r || []).map((t) => String(t).toLowerCase()));
         const merged = (e.r || []).slice();
         for (const [t] of nb) if (!seen.has(t.toLowerCase())) { merged.push(t); seen.add(t.toLowerCase()); }
-        e.r = merged;
-        shardChanged = true;
+        e.r = merged; state.shardChanged = true;
       }
+    };
+
+    // Gather this shard's gap words + their neighbours (CPU), then run the qwen
+    // batches concurrently (CONC in flight) to exploit OLLAMA_NUM_PARALLEL.
+    const batches = []; let cur = [];
+    for (const word of Object.keys(obj)) {
+      if (ONLY_WORD && word !== ONLY_WORD) continue;
+      const e = obj[word];
+      if (!ALL && Array.isArray(e.r) && e.r.length > 0) continue; // gap words only
+      if (!INDEX.has(word)) continue;
+      if (LIMIT && scanned >= LIMIT) break;
+      scanned++;
+      const nb = neighbours(word, existingLinks(e));
+      if (nb.length) { cur.push({ word, e, nb }); if (cur.length >= QBATCH) { batches.push(cur); cur = []; } }
       if (scanned % 500 === 0)
-        process.stderr.write("  " + scanned + " words, " + enriched + " enriched" +
-          (QWEN ? " (" + qwenDropped + " dropped by qwen)" : EMPTY) +
+        process.stderr.write("  scanned " + scanned + ", enriched " + enriched +
           "  " + (scanned / ((Date.now() - t0) / 1000)).toFixed(1) + "/s\n");
     }
-    if (APPLY && shardChanged) fs.writeFileSync(p, stringifyShard(obj));
+    if (cur.length) batches.push(cur);
+
+    const processBatch = async (b) => {
+      if (!QWEN) { for (const it of b) accept(it.word, it.e, it.nb); return; }
+      const items = b.map((it) => ({ word: it.word, gloss: ((it.e.d && it.e.d[0]) || {}).g, cands: it.nb }));
+      let results;
+      try { results = await qwenFilterBatch(items); }
+      catch (err) { process.stderr.write("  qwen batch failed: " + err.message + "\n"); return; }
+      for (let i = 0; i < b.length; i++) {
+        if (results[i] == null) continue;
+        qwenDropped += b[i].nb.length - results[i].length;
+        accept(b[i].word, b[i].e, results[i]);
+      }
+    };
+    // bounded-concurrency pool over the shard's batches
+    let bi = 0;
+    const worker = async () => { while (bi < batches.length) await processBatch(batches[bi++]); };
+    await Promise.all(Array.from({ length: Math.min(CONC, batches.length) || 1 }, worker));
+
+    if (APPLY && state.shardChanged) fs.writeFileSync(p, stringifyShard(obj));
     if (LIMIT && scanned >= LIMIT) break;
   }
   report(t0);
