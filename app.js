@@ -621,6 +621,20 @@
       });
       entryEl.appendChild(av);
     }
+    // Derived/inflected forms that fold into this base word ("adverb of",
+    // "plural of", ...). Each is tappable and lands on its own card.
+    if (rec && rec.forms && rec.forms.length) {
+      const fr = el("div", "entry-forms");
+      fr.appendChild(document.createTextNode("forms: "));
+      rec.forms.forEach(function (v, i) {
+        if (i) fr.appendChild(document.createTextNode(", "));
+        const lk = el("button", "rel-link", v);
+        lk.type = "button";
+        lk.addEventListener("click", function () { run(v); });
+        fr.appendChild(lk);
+      });
+      entryEl.appendChild(fr);
+    }
     requestAnimationFrame(function () { entryEl.classList.add("in"); });
     await delay(28); if (token !== runToken) return;
     fillPron(recP, result.word, token, isAbbr ? rec : null);
