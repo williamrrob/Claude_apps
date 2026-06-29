@@ -373,7 +373,7 @@
     entryEl.appendChild(d);
   }
 
-  async function run(rawWord) {
+  async function run(rawWord, sourcePart) {
     const word = String(rawWord || "").trim();
     if (!word) return;
     treeReturn = openingFromTree; openingFromTree = false; // came from a tree?
@@ -410,6 +410,17 @@
         if (token !== runToken) return;
         const rk = foldKey(result.word);
         if (ROOTS && ROOTS[rk]) { pushHistory(result.word); pushNav(result.word); renderSource(ROOTS[rk], token); return; }
+        // Came from a morpheme's "Explore the source word" arrow: the source is a
+        // classical citation form (capere, skopein) that isn't keyed in roots.json.
+        // Wiktionary either 404s the romanization (skopein) or returns a useless
+        // "form-of" stub with no word family (scribere → "…future passive of
+        // scrībō"), so prefer the morpheme we already decoded — it carries the real
+        // gloss and, via the index, the English words built on the root.
+        if (sourcePart && sourcePart.source) {
+          pushHistory(result.word); pushNav(result.word);
+          await renderSourceFromPart(sourcePart, token);
+          return;
+        }
         showStatus("Looking up “" + escapeHtml(result.word) + "” …", false);
         const online = await lookupOnline(result.word);
         if (token !== runToken) return;
@@ -482,6 +493,21 @@
       cardsEl.appendChild(link);
       requestAnimationFrame(function () { link.classList.add("in"); });
     }
+  }
+
+  // Build a source-word page from a morpheme we already decoded, used when the
+  // source's citation form (e.g. Greek "skopein", Latin "capere") isn't in
+  // roots.json and Wiktionary can't resolve the romanization. The English
+  // derivatives come from the morpheme index (validated so each chip lands on a
+  // real entry), so the page is just as rich — and works fully offline.
+  async function renderSourceFromPart(p, token) {
+    const lang = p.origin === "Greek" ? "Ancient Greek" : (p.origin || "");
+    await loadData();
+    if (token !== runToken) return;
+    const family = (MORPH && MORPH[p.id]) ? MORPH[p.id].slice() : [];
+    const en = await validateWords(family, 48);
+    if (token !== runToken) return;
+    renderSource({ l: p.source, lang: lang, g: p.meaning || "", en: en }, token);
   }
 
   // FLIP (translate only): run `mutate`, then glide each element from its old box
@@ -924,7 +950,7 @@
     if (p.source && /^[a-zà-ɏ'-]{2,}$/i.test(p.source) && foldKey(p.source) !== foldKey(currentWord)) {
       const link = el("button", "bpw-source"); link.type = "button";
       link.textContent = "Explore the source word: " + p.source + " →";
-      link.addEventListener("click", function (e) { e.stopPropagation(); run(p.source); });
+      link.addEventListener("click", function (e) { e.stopPropagation(); run(p.source, p); });
       box.appendChild(link);
     }
     // Related words used to be listed here per morpheme; the per-root tree button
