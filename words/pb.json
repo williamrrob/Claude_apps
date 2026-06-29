@@ -1,5 +1,5 @@
 {
-"pb":{"d":[{"p":"n.","g":"Abbreviation of power brakes."}],"s":["lead"]},
+"pb":{"d":[{"p":"n.","g":"Abbreviation of power brakes."}],"s":["lead"],"forms":["pbs"]},
 "pbit":{"d":[{"p":"n.","g":"a unit of information equal to 1000 terabits or 10^15 bits"}],"s":["petabit"]},
-"pbs":{"d":[{"p":"n.","g":"a solution containing a phosphate buffer"}]}
+"pbs":{"d":[{"p":"n.","g":"a solution containing a phosphate buffer"}],"rel":{"t":"plural of","l":"pb","by":"assistant","at":"2026-06-29T16:22:51.470Z"}}
 }

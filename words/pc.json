@@ -1,7 +1,7 @@
 {
-"pc":{"d":[{"p":"n.","g":"Abbreviation of piece."},{"p":"n.","g":"Abbreviation of parsec."},{"p":"n.","g":"Abbreviation of postcard."},{"p":"n.","g":"Abbreviation of percent."}],"s":["microcomputer"],"i":"/ˈpiˈsi/","rs":"PEE-SEE"},
+"pc":{"d":[{"p":"n.","g":"A part of a larger whole, usually in such a form that it is able to be separated from other parts."}],"s":["microcomputer"],"i":"/ˈpiˈsi/","rs":"PEE-SEE","rel":{"t":"abbrev of","l":"piece","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "pcp":{"d":[{"p":"n.","g":"a person who helps in identifying or preventing or treating illness or disability"}],"s":["caregiver"]},
-"pct":{"d":[{"p":"n.","g":"Abbreviation of percent."}],"s":["percentage","percent"]},
+"pct":{"d":[{"p":"adv.","g":"For every hundred (used with preceding numeral to form a noun phrase expressing a proportion)."}],"s":["percentage","percent"],"rel":{"t":"abbrev of","l":"percent","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "PC Plod":{"d":[{"p":"n.","g":"A policeman (implying that he is dull and slow)."}],"e":"From the policeman in Enid Blyton's Noddy books."},
 "PC bang":{"d":[{"p":"n.","g":"A public internet cafe where people can meet to play multiplayer computer games for a fee.","x":"In South Korea, mobile phones have created a new population called transyouths who connect to each other through screens and PC bangs (J.H-j. Choi, 2010)."}],"e":"From Korean PC방 (pisi-bang, literally “PC room”). First attested in 1999."},
 "PC communication":{"d":[{"p":"n.","g":"Nationwide computer networks that preceded the World Wide Web/Internet, with telnet-based dial-up connections and bulletin board messaging systems.","x":"Financial cyber trading in Korea has been increasing steadily in the areas of stock trading and banking via telephone networks, modem-based PC communication and the Internet."}],"e":"Calque of Korean PC통신 (PCtongsin)."},

@@ -1,7 +1,7 @@
 {
 "wtc":{"d":[{"p":"n.","g":"twin skyscrapers 110 stories high in New York City;  built 1368 feet tall in 1970 to 1973;  destroyed by a terrorist attack on September 11, 2001"}]},
 "wto":{"d":[{"p":"n.","g":"an international organization based in Geneva that monitors and enforces rules governing global trade"}]},
-"wtv":{"d":[{"p":"intj.","g":"Abbreviation of whatever."},{"p":"pron.","g":"Abbreviation of whatever.","x":"“Started my 90 day celibacy lil s— [shit] for new year’s or wtv,” she [GloRilla] wrote on X. “I’m on da 9th day & my vision blurry af !!!!! Send help😭”"}]},
+"wtv":{"d":[{"p":"n.","g":"A thing or person whose actual name is unknown or forgotten."}],"rel":{"t":"abbrev of","l":"whatever","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "WTF":{"d":[{"p":"phrase","g":"Where the fuck, why the fuck, when the fuck, or who the fuck."},{"p":"n.","g":"A bafflingly bad or unwise design decision.","x":"I think coercing numbers to booleans is a WTF - 0 should not be evaluatable as a boolean, it should be a type mismatch.","dom":"computing"}],"e":"(programming slang): Originated on The Daily WTF, a humorous blog dealing with real-world examples of bad programming."},
 "WTFO":{"d":[{"p":"phrase","g":"what the fuck, over!","dom":"government"}],"e":"Could be credited to George Carlin \"WTF\". However, he may have picked it up when he was a radar operator in the United States Air Force."},
 "wtfpwn":{"d":[{"p":"v.","g":"To dominate or defeat thoroughly (as in a video game).","x":"Up until the point where some uninvited guests show up to act as assholes and wtfpwn them.... during the wake."}],"e":"From WTF + pwn."},

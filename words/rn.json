@@ -1,5 +1,5 @@
 {
-"rn":{"d":[{"p":"adv.","g":"Initialism of right now.","x":"Barrel jeans are all the rave rn—let's see you in a pair!"}],"s":["radon"]},
+"rn":{"d":[{"p":"adv.","g":"At the present moment."}],"s":["radon"],"rel":{"t":"abbrev of","l":"right now","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "rna":{"d":[{"p":"n.","g":"(biochemistry) a long linear polymer of nucleotides found in the nucleus but mainly in the cytoplasm of a cell where it is associated with microsomes;  it transmits genetic information from DNA to the cytoplasm and controls certain chemical processes in the cell"}],"i":"/ˌɑˌrɛˈneɪ/","rs":"ah-reh-NAY"},
 "rnase":{"d":[{"p":"n.","g":"a transferase that catalyzes the hydrolysis of ribonucleic acid"}],"s":["ribonuclease","ribonucleinase"]},
 "RNG":{"d":[{"p":"n.","g":"Randomness, variability, or luck, especially that produced by random number generation.","x":"The combat in this game is way too RNG-based.","dom":"games"}]},

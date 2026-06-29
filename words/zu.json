@@ -3,7 +3,7 @@
 "zubird":{"d":[{"p":"n.","g":"evil storm god represented as a black bird"}]},
 "zucchini":{"d":[{"p":"n.","g":"A courgette; a variety of squash, Cucurbita pepo, which bears edible fruit."},{"p":"n.","g":"The edible fruit of this variety of squash."},{"p":"n.","g":"plural of zucchino"}],"e":"Borrowed from Italian zucchini, plural of zucchino, diminutive of zucca (“squash”). Ultimately related to courgette through the original Latin cucurbita. Compare Sicilian cucuzza.","s":["courgette","zuke"],"r":["zucchetto","zoodles"],"i":"/zuːˈkiː.ni/","rs":"zoo-KEE-nee","b":[{"s":"zucchini","k":"word"}]},
 "zukerman":{"d":[{"p":"n.","g":"Israeli violinist (born in 1948)"}],"i":"/ˈzukɚmən/","rs":"ZOO-kur-muhn"},
-"zulu":{"d":[{"p":"n.","g":"Alternative letter-case form of Zulu from the NATO/ICAO Phonetic Alphabet."}],"i":"/ˈzuˌlu/","rs":"ZOO-loo"},
+"zulu":{"d":[{"p":"n.","g":"A member of an African ethnic group living mainly in the KwaZulu-Natal Province in eastern South Africa."}],"i":"/ˈzuˌlu/","rs":"ZOO-loo","vars":["zulu from the nato/icao phonetic alphabet"]},
 "zuni":{"d":[{"p":"n.","g":"a member of the Pueblo people living in western New Mexico"}],"i":"/ˈzuˌni/","rs":"ZOO-nee"},
 "zurich":{"d":[{"p":"n.","g":"the largest city in Switzerland;  located in the northern part of the country"}],"i":"/ˈzʊrɪk/","rs":"ZUU-rik","b":[{"s":"zurich","k":"word"}]},
 "zurvan":{"d":[{"p":"n.","g":"the Zoroastrian god of time"}]},
@@ -59,5 +59,6 @@
 "Zuckerbucks":{"d":[{"p":"n.","g":"Political grants or donations linked to Facebook founder Mark Zuckerberg.","x":"Unsurprisingly, Maricopa County, the fourth most populous county in America and home to more than 60 percent of Arizona’s voters, received more than half of all Zuckerbucks distributed in the state.","dom":"government"}],"e":"Blend of Zuckerberg + bucks."},
 "Zucker rat":{"d":[{"p":"n.","g":"A strain of rat bred as a genetic model for research on obesity and hypertension."}],"e":"Named after researchers Lois M. Zucker and Theodore F. Zucker."},
 "Zuhayr":{"d":[{"p":"n.","g":"A male given name from Arabic.","x":"The incident happened in front of the Red Dot Design Museum at around 5.15pm. A video sent to The Straits Times by Mr Zuhayr Azman, who works at the Food Anatomy cafe in the museum, shows spluttering flames from an e-scooter lying on the floor."},{"p":"n.","g":"A surname from Arabic."}],"e":"Borrowed from Arabic زُهَيْر (zuhayr)."},
-"zuigerphobia":{"d":[{"p":"n.","g":"The fear of vacuum cleaners.","x":"i have a slight case of zuigerphobia."}],"e":"From Dutch zuiger + -phobia."}
+"zuigerphobia":{"d":[{"p":"n.","g":"The fear of vacuum cleaners.","x":"i have a slight case of zuigerphobia."}],"e":"From Dutch zuiger + -phobia."},
+"zulu from the nato/icao phonetic alphabet":{"d":[{"p":"","g":"Variant of zulu."}],"rel":{"t":"variant of","l":"zulu","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
 }

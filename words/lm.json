@@ -3,5 +3,5 @@
 "LMAO":{"d":[{"p":"v.","g":"To laugh one's ass off.","x":"Reading this website will have you ROFLing, LMAOing, and LOLing every time you read it."}],"i":"/ɛlˌɛmˌeɪˈoʊ/"},
 "lmao":{"d":[{"p":"part.","g":"Neutralises the tone of a message; denotes that a message is light-hearted or casual."}]},
 "LMDO":{"d":[{"p":"phrase","g":"Laughing my dick off."}],"e":"Variant of LMAO (“Laughing My Ass Off”)"},
-"LM lifeboat":{"d":[{"p":"n.","g":"Synonym of lunar lifeboat."}],"e":"LM stands for lunar module."}
+"LM lifeboat":{"d":[{"p":"n.","g":"In the US Apollo moon program, a lunar module repurposed as a makeshift shelter for an astronaut crew returning to earth after a mishap necessitating cancellation of a moon landing; the emergency procedure of using the lunar module in this manner."}],"e":"LM stands for lunar module.","rel":{"t":"synonym of","l":"lunar lifeboat","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
 }

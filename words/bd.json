@@ -1,5 +1,5 @@
 {
-"bd":{"d":[{"p":"n.","g":"Abbreviation of boulevard."},{"p":"n.","g":"Abbreviation of bed (“bedroom”), used in apartment listings.","x":"1 bd, 1 ba"}],"s":["blvd"]},
+"bd":{"d":[{"p":"n.","g":"A broad, well-paved and landscaped thoroughfare."}],"s":["blvd"],"rel":{"t":"abbrev of","l":"boulevard","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "bdellium":{"d":[{"p":"n.","g":"An aromatic gum-like balsam extracted from one of several species of tree in the genus Commiphora."}],"e":"Borrowed from Latin bdellium, from Ancient Greek βδέλλιον (bdéllion), itself perhaps from Hebrew בְּדֹלַח (bdólakh), cognate with Akkadian 𒁉𒁺𒌨𒄷 (bidurḫu) or from Sanskrit भिदुर (bhidura, “something brittle, fragile, easily split or broken”).","i":"/ˈdɛ.li.əm/"},
 "bdelloid rotifer":{"d":[{"p":"n.","g":"One of a class of rotifers in the class Bdelloidea, found in freshwater and moist soil."}],"e":"From bdelloid (“leech-like”), from Ancient Greek βδέλλα (bdélla, “leech”)."},
 "BDSMer":{"d":[{"p":"n.","g":"One who participates in BDSM.","x":"Rather than occasional BDSM indulgences in the bedroom, lifestyle BDSMers practice their craft 24/7.","dom":"bdsm"}],"e":"From BDSM + -er."},

@@ -1,11 +1,11 @@
 {
-"gp":{"d":[{"p":"n.","g":"Abbreviation of group."}]},
+"gp":{"d":[{"p":"n.","g":"A number of things or persons being in some relation to one another."}],"forms":["gps"],"rel":{"t":"abbrev of","l":"group","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "gpa":{"d":[{"p":"n.","g":"a measure of a student's academic achievement at a college or university;  calculated by dividing the total number of grade points received by the total number attempted"}]},
 "gpo":{"d":[{"p":"n.","g":"an agency of the legislative branch that provides printing and binding services for Congress and the departments and establishments of the federal government"}]},
-"gps":{"d":[{"p":"n.","g":"plural of gp"}],"i":"/ˈgipiˈɛs/","rs":"GEE-pee-EHS"},
+"gps":{"d":[{"p":"n.","g":"plural of gp"}],"i":"/ˈgipiˈɛs/","rs":"GEE-pee-EHS","rel":{"t":"plural of","l":"gp","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
 "GPL":{"d":[{"p":"v.","g":"To release under the General Public License.","dom":"copyright"}]},
 "GPS receiver":{"d":[{"p":"n.","g":"An audiovisual device, fitted to a civilian road vehicle, that uses the military Global Positioning System (U.S. Navstar system) as an aid to navigation."},{"p":"n.","g":"A device that uses any global positioning system satellite network."}]},
 "GP-land":{"d":[{"p":"n.","g":"The world of general practice.","x":"In GP-land people understand that you're a woman, you're going to want to have babies, it's more accepted.","dom":"medicine"}]},
-"GPS system":{"d":[{"p":"n.","g":"Synonym of GPS.","x":"How do you all feel about GPS systems in your personal vehicles? Would you pay the extra to have one?"}]},
+"GPS system":{"d":[{"p":"n.","g":"plural of gp"}],"rel":{"t":"synonym of","l":"gps","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "GPS art":{"d":[{"p":"n.","g":"Art that is based on the Global Positioning System (GPS), in particular drawings created by recording preplanned routes.","x":"While it is easy to dismiss GPS art as nothing more than the misuse of a system meant to provide information, the spatial intelligence required to create these works is something to admire (Farman, 2014)."}]}
 }

@@ -1,5 +1,5 @@
 {
-"tx":{"d":[{"p":"n.","g":"Abbreviation of telephone."},{"p":"n.","g":"Abbreviation of treatment or therapy."},{"p":"n.","g":"Abbreviation of transmission."},{"p":"n.","g":"Abbreviation of tax."}]},
+"tx":{"d":[{"p":"n.","g":"A telecommunication device which converts data or sounds (usually speech) into electrical signals which are then transmitted to enable two or more people to communicate with each other over a distance; now usually a device having a dial or keypad with numerals for entering a number, etc., to connect with a person, and means (such as a sound or vibration) for alerting one to an incoming call or transmission; also, the handset or receiver of such a device."}],"rel":{"t":"abbrev of","l":"telephone","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "txt":{"d":[{"p":"n.","g":"text, text message"},{"p":"v.","g":"To text; to send a text message (to)."},{"p":"n.","g":"a .txt file","dom":"computing"}]},
 "txalaparta":{"d":[{"p":"n.","g":"A traditional Basque percussion instrument."}],"e":"Etymology tree Basque txalapartabor. English txalaparta Borrowed from Basque txalaparta."},
 "txapela":{"d":[{"p":"n.","g":"A Basque-style beret"}],"e":"Borrowed from Basque txapela, the absolutive singular of Basque txapel.","i":"/t͡ʃəˈpɛl.ə/"}

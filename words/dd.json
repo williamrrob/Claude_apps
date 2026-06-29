@@ -1,8 +1,8 @@
 {
-"dd":{"d":[{"p":"n.","g":"Abbreviation of day, in two-digit numeric format, as in: dd/mm/yyyy."}]},
+"dd":{"d":[{"p":"n.","g":"Abbreviation of day, in two-digit numeric format, as in: dd/mm/yyyy."}],"forms":["dds"]},
 "ddc":{"d":[{"p":"n.","g":"an antiviral drug used to combat HIV infection"}],"s":["dideoxycytosine","zalcitabine"]},
 "ddi":{"d":[{"p":"n.","g":"an antiviral drug used to combat HIV infection"}],"s":["dideoxyinosine","didanosine"]},
-"dds":{"d":[{"p":"n.","g":"a doctor's degree in dental surgery"}]},
+"dds":{"d":[{"p":"n.","g":"a doctor's degree in dental surgery"}],"rel":{"t":"plural of","l":"dd","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
 "ddt":{"d":[{"p":"n.","g":"an insecticide that is also toxic to animals and humans;  banned in the United States since 1972"}],"s":["dichlorodiphenyltrichloroethane"],"i":"/ˌdiˌdiˈti/","rs":"dee-dee-TEE"},
 "DDoS":{"d":[{"p":"n.","g":"A distributed denial-of-service attack, one that originates from many different (geographically and network topographically) sources, on a network of networks such as the Internet.","x":"Some bots help refresh your Facebook feed or figure out how to rank Google search results; other bots impersonate humans and carry out devastating DDoS attacks."},{"p":"v.","g":"To attack by DDoS.","x":"Stuart Staniford, president of Silicon Defense in Eureka, Calif., notes, however, that if the zombie computers “had a long target list and a control mechanism to allow dynamic retargeting, [they] could have DDoSed servers used to map addresses to contact information, the ones used to distribute patches, the ones belonging to companies that analyze worms or distribute incident response information.[…]”"}],"i":"/ˈdiːˌdɒs/"},
 "DD-cupper":{"d":[{"p":"n.","g":"Someone with DD-cup-sized breasts.","x":"No doubt Aunt Betty was a natural DD-cupper, and although her boobs probably sagged quite a bit under their weight in air, under water they seemed to float and sway, weightless yet undeniably massive in their shadowed roundness."}]},

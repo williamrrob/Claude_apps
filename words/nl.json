@@ -1,5 +1,5 @@
 {
 "nlp":{"d":[{"p":"n.","g":"the branch of information science that deals with natural language information"}]},
 "nlrb":{"d":[{"p":"n.","g":"an independent agency of the United States government charged with mediating disputes between management and labor unions"}]},
-"NLOG":{"d":[{"p":"n.","g":"Synonym of pick-me girl."}],"e":"Initialism of not like (the) other girls."}
+"NLOG":{"d":[{"p":"n.","g":"A woman who asserts that she is unlike (and sometimes better than) most other women, in order to gain attention, approval, or validation from men."}],"e":"Initialism of not like (the) other girls.","rel":{"t":"synonym of","l":"pick-me girl","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
 }

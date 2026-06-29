@@ -1,6 +1,6 @@
 {
-"hhs":{"d":[{"p":"n.","g":"the United States federal department that administers all federal programs dealing with health and welfare;  created in 1979"}]},
-"hh":{"d":[{"p":"interj.","g":"Synonym of hhh (“a sigh; laughter”)."}]},
+"hhs":{"d":[{"p":"n.","g":"the United States federal department that administers all federal programs dealing with health and welfare;  created in 1979"}],"rel":{"t":"plural of","l":"hh","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
+"hh":{"d":[{"p":"interj.","g":"A sigh; indicates distress, discomfort, boredom or confusion."}],"rel":{"t":"synonym of","l":"hhh","by":"assistant","at":"2026-06-29T16:23:04.459Z"},"forms":["hhs"]},
 "hhh":{"d":[{"p":"interj.","g":"A sigh; indicates distress, discomfort, boredom or confusion."},{"p":"interj.","g":"Indicates laughter; haha, LOL, LMAO."}],"e":"First sense is onomatopoeic. The second sense is an abbreviation of hahaha."},
 "HHH syndrome":{"d":[{"p":"n.","g":"A rare autosomal-recessive urea cycle disorder affecting the enzyme ornithine translocase, which causes ammonia to accumulate in the blood."}],"e":"From the initial letters of hyperornithinemia, hyperammonemia and homocitrullinuria."}
 }

@@ -38,7 +38,7 @@
 "Ubben":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Ubben."},
 "Uberti":{"d":[{"p":"n.","g":"A surname from Italian."}],"e":"Borrowed from Italian Uberti."},
 "Ubuesque":{"d":[{"p":"adj.","g":"Reminiscent of Ubu Roi, an early absurdist play; absurdly grotesque.","x":"The Ubuesque elements in Tout va bien are yet another anti-Hollywood narrative device. The factory manager is portrayed as a contemporary version of Ubu, the hero of Alfred Jarry's trilogy."}],"e":"Borrowed from French ubuesque.","i":"/ubuˈɛsk/"},
-"uberleft":{"d":[{"p":"adj.","g":"Synonym of far-left.","x":"I don't concern myself with ongoing NeoCon and uberleft hypocrisy.","dom":"government"}],"e":"From uber- + left."},
+"uberleft":{"d":[{"p":"adj.","g":"Of or pertaining to the far left."}],"e":"From uber- + left.","rel":{"t":"synonym of","l":"far-left","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "Uber problem":{"d":[{"p":"n.","g":"In urban law and planning, the challenges facing municipalities when regulating major multinational transport network companies (TNCs).","x":"Rather than examining why Uber is so popular to the detriment of the taxi service industry old guard, these traditional personal transport service providers have looked to government and legal intervention to solve the Uber problem."}],"e":"Named after the American company Uber."},
 "ubiquism":{"d":[{"p":"n.","g":"Ubiquitarianism; the belief that Christ's human form is present everywhere."},{"p":"n.","g":"Ubiquity, universal presence, or a theological position positing it for something."}],"e":"From Latin ubique (“everywhere”) + -ism, after ubiquist.","i":"/ˈjuːbɪkwɪzəm/"}
 }

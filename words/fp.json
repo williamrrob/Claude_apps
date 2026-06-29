@@ -1,5 +1,5 @@
 {
 "fpd":{"d":[{"p":"n.","g":"a type of video display that is thin and flat;  commonly used in laptop computers"}]},
-"fps":{"d":[{"p":"n.","g":"Initialism of frames per second."},{"p":"n.","g":"Initialism of feet per second."}]},
-"fpoon":{"d":[{"p":"n.","g":"Synonym of spork.","x":"|> : Would a discussion of runcible spoons be appropriate to this group? If so,\n|> : I would vote in favor of it. If not, I'd have to vote against it.\n|>\n|> By all means. So would discussion of knorks, btw. […]\nWe shouldn't forget the beloved fpoon!"}],"e":"Blend of fork + spoon.","i":"/fpuːn/"}
+"fps":{"d":[{"p":"n.","g":"plural of frame per second"}],"rel":{"t":"abbrev of","l":"frames per second","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"fpoon":{"d":[{"p":"n.","g":"An eating utensil shaped like a spoon, the bowl of which is divided into tines like those of a fork, and so has the function of both implements; some sporks have a serrated edge so they can also function as a knife."}],"e":"Blend of fork + spoon.","i":"/fpuːn/","rel":{"t":"synonym of","l":"spork","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
 }

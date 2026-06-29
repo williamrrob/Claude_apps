@@ -1,5 +1,5 @@
 {
 "lcd":{"d":[{"p":"n.","g":"a digital display that uses liquid crystal cells that change reflectivity in an applied electric field;  used for portable computer displays and watches etc."}]},
-"lcm":{"d":[{"p":"n.","g":"Initialism of least common multiple."}],"a":["gcd"]},
+"lcm":{"d":[{"p":"n.","g":"The smallest positive integer which is divisible by (equivalently, is an integer multiple of) each of a specified finite set of integers."}],"a":["gcd"],"rel":{"t":"abbrev of","l":"least common multiple","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "Lchashen":{"d":[{"p":"n.","g":"A village in Gegharkunik, Armenia."}],"e":"Etymology tree Armenian Լճաշեն (Lčašen)bor. English Lchashen Borrowed from Armenian Լճաշեն (Lčašen)."}
 }

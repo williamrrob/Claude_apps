@@ -1,5 +1,5 @@
 {
-"lv":{"d":[{"p":"n.","g":"Initialism of latent variable."},{"p":"n.","g":"Initialism of launch vehicle."},{"p":"n.","g":"Initialism of left ventricle."},{"p":"n.","g":"Abbreviation of level."}]},
+"lv":{"d":[{"p":"n.","g":"A variable that is not directly measured but is inferred by means of a mathematical model from one or more directly observed variables."}],"rel":{"t":"abbrev of","l":"latent variable","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "lvi":{"d":[{"p":"adjective satellite","g":"being six more than fifty"}]},
 "lvii":{"d":[{"p":"adjective satellite","g":"being seven more than fifty"}]},
 "lviii":{"d":[{"p":"adjective satellite","g":"being eight more than fifty"}]}

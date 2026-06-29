@@ -1,4 +1,4 @@
 {
-"nm":{"d":[{"p":"intj.","g":"Initialism of never mind.","x":"A: well r u goi – B: huh? – A: nm tht was a mistake"},{"p":"det.","g":"Initialism of not much or nothing much.","x":"A: hey – B: hey, 'sup? – A: nm u?"},{"p":"n.","g":"Initialism of no message."}],"s":["nanometer","nanometre","millimicron","micromillimeter","micromillimetre"]},
+"nm":{"d":[{"p":"v.","g":"Let alone; much less."}],"s":["nanometer","nanometre","millimicron","micromillimeter","micromillimetre"],"rel":{"t":"abbrev of","l":"never mind","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "nmr":{"d":[{"p":"n.","g":"resonance of protons to radiation in a magnetic field"}],"i":"/ˌɛˌnɛˈmɑr/","rs":"eh-neh-MAHR"}
 }

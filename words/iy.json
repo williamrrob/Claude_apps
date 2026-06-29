@@ -7,5 +7,5 @@
 "Iyer":{"d":[{"p":"n.","g":"A surname from Tamil."}],"e":"Borrowed from Tamil ஐயர் (aiyar), a caste of Hindu brahmins of Tamil origin."},
 "Iyengar":{"d":[{"p":"n.","g":"A surname from Tamil."}],"e":"Borrowed from Tamil ஐயங்கார் (aiyaṅkār)."},
 "iyashikei":{"d":[{"p":"n.","g":"A genre of slice of life fiction, portraying characters living out peaceful lives in calming environments, intended to have a healing effect on the audience.","dom":"fiction"}],"e":"Borrowed from Japanese 癒(いや)し系(けい) (iyashikei)."},
-"Iyuw Iyimuun":{"d":[{"p":"n.","g":"Synonym of Naskapi (language)","x":"Along with French and English, this book has been translated into nine languages of the ten First Nations of Quebec : Aln8ba8dwaw8gan (Abenaki), Anicinape (Algonquin), Atikamekw, ᐄᔨᔨᐅᔨᒧᐎᓐ (Cree), Innu-Aimun, Kanien’kéha (Mohawk), Wolastoqey Latuwewakon (Maliseet), Mi’gmaw and Iyuw Iyimuun (Naskapi)."}],"e":"Borrowed from Naskapi ᐃᔪᐤ (iyuw, “a Native person”) + ᐃᔨᒧᐅᓐ (iyimuun, “word, language”), literally meaning \"native language\"."}
+"Iyuw Iyimuun":{"d":[{"p":"n.","g":"An Innu-speaking First Nation in eastern Quebec and Labrador."}],"e":"Borrowed from Naskapi ᐃᔪᐤ (iyuw, “a Native person”) + ᐃᔨᒧᐅᓐ (iyimuun, “word, language”), literally meaning \"native language\".","rel":{"t":"synonym of","l":"naskapi","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
 }

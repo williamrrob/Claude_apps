@@ -1,4 +1,4 @@
 {
-"vblog":{"d":[{"p":"n.","g":"Synonym of vlog."},{"p":"v.","g":"Synonym of vlog."}]},
+"vblog":{"d":[{"p":"n.","g":"A weblog using video as its primary presentation format."}],"rel":{"t":"synonym of","l":"vlog","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "VBer":{"d":[{"p":"n.","g":"A programmer who uses the Visual Basic language.","x":"VBers may find the syntax of C# a bit unpalatable.","dom":"computing"}],"e":"From VB + -er."}
 }

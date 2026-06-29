@@ -1,6 +1,6 @@
 {
 "ctenoid":{"d":[{"p":"adj.","g":"Having a toothed margin, usually fish scales"},{"p":"adj.","g":"Comb-like in shape."},{"p":"n.","g":"A ctenoidean."}],"e":"From cteno- + -oid.","i":"/ˈtiː.nɔɪd/"},
-"ct":{"d":[{"p":"n.","g":"Abbreviation of court."}],"i":"/kɔrt/","rs":"kawrt"},
+"ct":{"d":[{"p":"n.","g":"An enclosed space; a courtyard; an uncovered area shut in by the walls of a building, or by different buildings; also, a space opening from a street and nearly surrounded by houses; a blind alley."}],"i":"/kɔrt/","rs":"kawrt","rel":{"t":"abbrev of","l":"court","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "ctc":{"d":[{"p":"n.","g":"an agency that helps the Director of Central Intelligence coordinate counterterrorist efforts in order to preempt and disrupt and defeat terrorist activities at the earliest possible stage"}]},
 "ctene":{"d":[{"p":"n.","g":"A band of fused cilia on the bodies of ctenophores, used for locomotion."}],"e":"From the stem of Ancient Greek κτείς (kteís, “comb”)."},
 "ctenidium":{"d":[{"p":"n.","g":"A respiratory system, in the form of a comb, in some molluscs"},{"p":"n.","g":"A row of spines in some insects"}],"e":"Borrowed from Byzantine Greek κτενίδιον (ktenídion, “comb”). By surface analysis, cteno- + -idium.","r":["ctenidial"]},

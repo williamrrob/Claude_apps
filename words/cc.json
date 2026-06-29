@@ -1,5 +1,5 @@
 {
-"cc":{"d":[{"p":"n.","g":"Initialism of carbon copy.","x":"I had meant to cc you on this earlier. Please reply by next Thursday. Thanks."},{"p":"n.","g":"Initialism of courtesy copy."},{"p":"n.","g":"Initialism of closed caption or closed captioning."},{"p":"n.","g":"Initialism of cubic centimeter.","x":"This plastic syringe delivers one cc of medicine to the mouth of the animal. The medicine is peanut-flavored."}],"s":["milliliter","millilitre","mil","ml"],"i":"/siːˈsiː/","rs":"see-SEE"},
+"cc":{"d":[{"p":"n.","g":"A duplicate copy of an email."}],"s":["milliliter","millilitre","mil","ml"],"i":"/siːˈsiː/","rs":"see-SEE","rel":{"t":"abbrev of","l":"carbon copy","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "ccc":{"d":[{"p":"adjective satellite","g":"being one hundred more than two hundred"}]},
 "ccrc":{"d":[{"p":"n.","g":"an agency in the Department of Defense that is a national center for research on all aspects of injury control and casualty care"}]},
 "CCCP":{"d":[{"p":"n.","g":"USSR (Union of Soviet Socialist Republics)","x":"Now that the CCCP is history. I wonder if we'll find out who Suvorov really was."}],"e":"Orthographic borrowing from Russian СССР (SSSR), abbreviation of Союз Советских Социалистических Республик (Sojuz Sovetskix Socialističeskix Respublik, “(The) Union of Soviet Socialist Republics”).","i":"/si.si.si.piː/"},
@@ -8,6 +8,6 @@
 "CCITT":{"d":[{"p":"n.","g":"Former name of ITU-T."}],"e":"Borrowed from French CCITT (“Comité Consultatif International Téléphonique et Télégraphique”) (International Consultative Committee on Telephony and Telegraphy).","i":"/ˌsiːsiːaɪtiːˈtiː/"},
 "CCAV":{"d":[{"p":"n.","g":"China Central Television (CCTV)."}],"e":"Blend of CCTV (“China Central Television”) + AV (“adult video”)."},
 "CCP virus":{"d":[{"p":"n.","g":"COVID-19 virus.","x":"The CCP virus, which originated from China, ..."}],"e":"From CCP (“Chinese Communist Party”) + virus."},
-"CCTV camera":{"d":[{"p":"n.","g":"Synonym of security camera."},{"p":"n.","g":"Synonym of surveillance camera.","x":"Hong Kong has more than 54,500 public CCTV cameras used by government bodies – about seven cameras per 1,000 people, according to an estimate by Comparitech, a UK-based technology research firm."}]},
+"CCTV camera":{"d":[{"p":"n.","g":"A video camera used to protect a building from intruders and to detect crime and other issues."}],"rel":{"t":"synonym of","l":"security camera","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "CCNOT gate":{"d":[{"p":"n.","g":"Toffoli gate"}],"e":"\"Controlled-controlled-NOT gate\", see CNOT gate."}
 }

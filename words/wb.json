@@ -1,5 +1,5 @@
 {
-"wb":{"d":[{"p":"phra.","g":"Initialism of welcome back."},{"p":"phra.","g":"Initialism of write back."}],"s":["weber"]},
+"wb":{"d":[{"p":"phrase","g":"Said to someone coming back to somewhere they have been before."}],"s":["weber"],"rel":{"t":"abbrev of","l":"welcome back","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "wbc":{"d":[{"p":"n.","g":"blood cells that engulf and digest bacteria and fungi;  an important part of the body's defense system"}],"s":["leukocyte","leucocyte"]},
 "wbn":{"d":[{"p":"n.","g":"the compass point that is one point north of due west"}]},
 "wbs":{"d":[{"p":"n.","g":"the compass point that is one point south of due west"}]}

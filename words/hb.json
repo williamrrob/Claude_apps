@@ -1,5 +1,5 @@
 {
-"hb":{"d":[{"p":"n.","g":"Initialism of homeboy.","x":"Lord if you can hear me fire my hbs so they always have time to play"},{"p":"v.","g":"Alternative letter-case form of HB (“hard-block”)."}],"s":["hemoglobin","haemoglobin"]},
+"hb":{"d":[{"p":"n.","g":"Someone, particularly a male acquaintance, from one’s hometown."}],"s":["hemoglobin","haemoglobin"],"rel":{"t":"abbrev of","l":"homeboy","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "HBD":{"d":[{"p":"n.","g":"Having two of the same allele at a locus, or base at an SNP, where both copies are from a single ancestor strand."},{"p":"adj.","g":"Having two of the same allele at a locus, or base at an SNP, where both copies are from a single ancestor strand."}],"e":"Abbreviation of homozygous by descent or homozygosity by descent"},
-"HB pencil":{"d":[{"p":"n.","g":"Synonym of number 2 pencil"}],"e":"From HB (“hard black”) + pencil."}
+"HB pencil":{"d":[{"p":"n.","g":"A pencil which produces a specific shade of dark gray, often required for test-taking and the completion of official forms."}],"e":"From HB (“hard black”) + pencil.","rel":{"t":"synonym of","l":"number 2 pencil","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
 }

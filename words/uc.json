@@ -11,7 +11,7 @@
 "Uchentein":{"d":[{"p":"n.","g":"A village in Ariège department, Occitania, France."}],"e":"Borrowed from French Uchentein."},
 "uchastok":{"d":[{"p":"n.","g":"An administrative division of the Russian Empire and Russian SFSR.","x":"Although there is considerable variation, a typical uchastok contains a population of approximately 4,000 persons. There are thus 10 uchastoks to a rayon."}],"e":"Borrowed from Russian уча́сток (učástok, literally “plot”)."},
 "ucipital mapilary":{"d":[{"p":"n.","g":"The suprasternal notch, the visible dip in the human neck between the clavicles.","x":"For quotations using this term, see Citations:ucipital mapilary.","dom":"fantasy"}],"e":"Pseudo-Latinate/medical-sounding term invented for the 1941 film Suspicion, and popularized by the 1995 film Dracula: Dead and Loving It. Compare similar sounding words like occipital.","i":"/juˈsɪpɪtəl məˈpɪləɹi/"},
-"Uchatius bronze":{"d":[{"p":"n.","g":"Synonym of bronze steel."}],"e":"Invented by Franz von Uchatius (1811–1881), Austrian artillery general and inventor."},
+"Uchatius bronze":{"d":[{"p":"n.","g":"A hard tough alloy of tin, copper, and iron, formerly used for guns."}],"e":"Invented by Franz von Uchatius (1811–1881), Austrian artillery general and inventor.","rel":{"t":"synonym of","l":"bronze steel","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "uce":{"d":[{"p":"n.","g":"(chiefly among Samoan-Americans) Brother (a male comrade or friend). Similar in use to bro."}],"e":"Clipping of Samoan uso.","i":"/us/"},
 "Ucea":{"d":[{"p":"n.","g":"A river, village, and commune of Brașov County, Romania."}],"e":"Unadapted borrowing from Romanian Ucea."}
 }
