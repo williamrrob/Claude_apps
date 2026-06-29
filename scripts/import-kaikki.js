@@ -40,6 +40,9 @@ const arg = (n, d) => { const i = process.argv.indexOf(n); return i !== -1 ? pro
 const SRC = process.argv[2];
 const APPLY = process.argv.includes("--apply");
 const GROUPS = new Set((arg("--groups", "slang,idioms,rare,loan")).split(",").map((s) => s.trim()).filter(Boolean));
+// Topic-based selection (Wiktionary topics[], e.g. "philosophy","law") — picks
+// senses by domain regardless of register. Empty by default.
+const TOPICS = new Set((arg("--topics", "")).split(",").map((s) => s.trim().toLowerCase()).filter(Boolean));
 const MAX_SENSES = parseInt(arg("--max-senses", "4"), 10);
 const LIMIT = parseInt(arg("--limit", "0"), 10) || 0;
 const GATE = !process.argv.includes("--no-gate"); // quality-gate idiom/archaic-only words
@@ -112,6 +115,7 @@ function pickDom(topics) {
 // Build a Rootwork entry from the accumulated kaikki lines of one word.
 function build(word, lines) {
   const wgroups = new Set();
+  const wtopics = new Set();
   if (word.includes(" ")) wgroups.add("idioms");
   let ety = EMPTY, ipa = EMPTY;
   const syn = [], rel = [], ant = [];
@@ -135,7 +139,8 @@ function build(word, lines) {
       const gl = ((s.glosses || []).slice(-1)[0] || EMPTY).trim();
       if (!gl || isFormOf(s) || NONSENSE_RE.test(gl)) continue;
       for (const x of senseTagGroups(s)) wgroups.add(x);
-      const sense = { p: posLabel, g: gl, _g: senseTagGroups(s) };
+      const stopics = (s.topics || []).map(lc);
+      const sense = { p: posLabel, g: gl, _g: senseTagGroups(s), _t: stopics };
       const ex = (s.examples || []).find((e) => e.text);
       if (ex) sense.x = ex.text;
       // domain — match the dictionary's existing `dom` convention (one lowercase
@@ -143,6 +148,7 @@ function build(word, lines) {
       // specific Wiktionary topic, skipping broad umbrella terms.
       const dom = pickDom(s.topics);
       if (dom) sense.dom = dom;
+      for (const t of stopics) if (TOPICS.has(t)) wtopics.add(t);
       senses.push(sense);
     }
   }
@@ -150,15 +156,18 @@ function build(word, lines) {
 
   // keep matching-group senses first, cap, strip helper field
   const matched = [...wgroups].filter((g) => GROUPS.has(g));
-  if (!matched.length) return null;
+  const matchedTopics = [...wtopics];
+  if (!matched.length && !matchedTopics.length) return null;
   // Quality-gate words that qualify ONLY via the bloat-heavy groups (idioms /
   // archaic): require some richness (an example, an etymology, or 2+ senses) so
-  // we drop bare long-tail phrases but keep established ones.
-  if (GATE && matched.every((g) => g === "idioms" || g === "archaic")) {
+  // we drop bare long-tail phrases but keep established ones. A topic match
+  // (e.g. philosophy) is always worth keeping, so it bypasses the gate.
+  if (GATE && !matchedTopics.length && matched.length && matched.every((g) => g === "idioms" || g === "archaic")) {
     const rich = senses.some((s) => s.x) || !!ety || senses.length >= 2;
     if (!rich) return null;
   }
-  senses.sort((a, b) => ([...b._g].some((g) => GROUPS.has(g)) ? 1 : 0) - ([...a._g].some((g) => GROUPS.has(g)) ? 1 : 0));
+  const swant = (s) => ([...s._g].some((g) => GROUPS.has(g)) || s._t.some((t) => TOPICS.has(t)) ? 1 : 0);
+  senses.sort((a, b) => swant(b) - swant(a));
   const d = senses.slice(0, MAX_SENSES).map((s) => { const o = { p: s.p, g: s.g }; if (s.x) o.x = s.x; if (s.dom) o.dom = s.dom; return o; });
 
   const dedup = (a, cap) => [...new Set(a.map((w) => String(w)))].filter((w) => lc(w) !== lc(word)).slice(0, cap);
@@ -169,7 +178,7 @@ function build(word, lines) {
   if (A.length) e.a = A;
   if (R.length) e.r = R;
   if (ipa) e.i = ipa;
-  return { groups: wgroups, entry: e, senses };
+  return { groups: wgroups, topics: wtopics, entry: e, senses };
 }
 
 // shardable headword: first two chars ascii letters (matches word.js)
@@ -179,6 +188,7 @@ async function main() {
   const rl = readline.createInterface({ input: fs.createReadStream(SRC), crlfDelay: Infinity });
   const counts = { seen: 0, kept: 0, unshardable: 0, existingNoNew: 0, existingTouched: 0, sensesAdded: 0 };
   const byGroup = {}, byGroupEx = {}; const samples = [], samplesEx = [];
+  const byTopic = {}, byTopicEx = {};
   const pending = new Map();    // shardKey -> { word: entry }            (new headwords)
   const pendingAdd = new Map(); // shardKey -> { word: [senseObj, ...] }  (senses for existing)
 
@@ -199,7 +209,8 @@ async function main() {
       const seen = new Set(have);
       const adds = [];
       for (const s of built.senses) {
-        if (![...s._g].some((g) => GROUPS.has(g))) continue; // sense itself must match a group
+        // sense itself must match a requested group OR topic
+        if (![...s._g].some((g) => GROUPS.has(g)) && !s._t.some((t) => TOPICS.has(t))) continue;
         const n = normGloss(s.g);
         if (!n || seen.has(n)) continue;
         seen.add(n);
@@ -209,7 +220,8 @@ async function main() {
       if (!adds.length) { counts.existingNoNew++; return; }
       counts.existingTouched++; counts.sensesAdded += adds.length;
       for (const g of built.groups) if (GROUPS.has(g)) byGroupEx[g] = (byGroupEx[g] || 0) + 1;
-      if (samplesEx.length < 18) samplesEx.push([curWord, adds.slice(0, 2).map((a) => "(" + (a.p || "?") + ") " + a.g)]);
+      for (const t of built.topics) byTopicEx[t] = (byTopicEx[t] || 0) + 1;
+      if (samplesEx.length < 18) samplesEx.push([curWord, adds.slice(0, 2).map((a) => "(" + (a.p || "?") + ")" + (a.dom ? " [" + a.dom + "]" : EMPTY) + " " + a.g)]);
       if (APPLY) { if (!pendingAdd.has(key)) pendingAdd.set(key, {}); pendingAdd.get(key)[curWord] = adds; }
       return;
     }
@@ -217,7 +229,9 @@ async function main() {
     // brand-new headword
     counts.kept++;
     for (const g of built.groups) if (GROUPS.has(g)) byGroup[g] = (byGroup[g] || 0) + 1;
-    if (samples.length < 30) samples.push([curWord, [...built.groups].filter((g) => GROUPS.has(g)), built.entry]);
+    for (const t of built.topics) byTopic[t] = (byTopic[t] || 0) + 1;
+    const tag = [...[...built.groups].filter((g) => GROUPS.has(g)), ...built.topics];
+    if (samples.length < 30) samples.push([curWord, tag, built.entry]);
     if (APPLY) { if (!pending.has(key)) pending.set(key, {}); pending.get(key)[curWord] = built.entry; }
     if (LIMIT && counts.kept >= LIMIT) { rl.close(); }
   };
@@ -261,15 +275,17 @@ async function main() {
   }
 
   const L = [];
-  L.push("IMPORT-KAIKKI " + (APPLY ? "APPLIED" : "DRY RUN") + " — groups: " + [...GROUPS].join(",") +
-    (GATE ? " (idiom/archaic quality-gated)" : EMPTY));
+  L.push("IMPORT-KAIKKI " + (APPLY ? "APPLIED" : "DRY RUN") + " — groups: " + ([...GROUPS].join(",") || "(none)") +
+    (TOPICS.size ? " | topics: " + [...TOPICS].join(",") : EMPTY) + (GATE ? " (idiom/archaic quality-gated)" : EMPTY));
   L.push("=".repeat(60));
   L.push("words in source seen:     " + counts.seen);
   L.push("unshardable (non-ascii/short initial): " + counts.unshardable);
   L.push("NEW headwords kept:       " + counts.kept);
   for (const g of GROUPS) L.push("   " + g + ": " + (byGroup[g] || 0));
+  for (const t of TOPICS) L.push("   topic:" + t + ": " + (byTopic[t] || 0));
   L.push("EXISTING words gaining senses: " + counts.existingTouched + " (+" + counts.sensesAdded + " senses)");
   for (const g of GROUPS) if (byGroupEx[g]) L.push("   " + g + ": " + byGroupEx[g]);
+  for (const t of TOPICS) if (byTopicEx[t]) L.push("   topic:" + t + ": " + byTopicEx[t]);
   if (APPLY) L.push("WRITTEN: " + added + " new headwords, " + sensesWritten + " senses added, across " + shardsTouched + " shards");
   L.push("");
   L.push("---- sample NEW entries ----");
