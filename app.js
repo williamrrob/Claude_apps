@@ -2183,7 +2183,7 @@
         if (!g || g.length < 12) continue;
         if (r.rel && /\bof$/.test(r.rel.t || "")) continue;
         if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic) of\b/i.test(g)) continue;
-        if (w.length < 5) continue;
+        if (w.length < 7) continue;
         distractorPool.push({ w: w, g: shortGloss(g), p: r.d[0].p, dom: r.d[0].dom });
       }
     }
@@ -2205,16 +2205,28 @@
 
   // Distractors come from rec.r (embedding-space neighbors from suggest-related.js)
   // + rec.s (synonyms). Fallback to pre-warmed random pool.
+  function glossMentions(gloss, word) {
+    const g = (gloss || "").toLowerCase(), w = word.toLowerCase();
+    if (g.includes(w)) return true;
+    // catch morphological variants: "biographer" exposes "biography" via shared stem
+    if (w.length >= 7 && g.includes(w.slice(0, w.length - 2))) return true;
+    return false;
+  }
+
   async function getDistractors(word, rec, count) {
+    const ok = function (g) { return !glossMentions(g, word); };
     const neighborWords = qShuffle(((rec && rec.r) || []).concat((rec && rec.s) || []).filter(function (w) { return w !== word; }));
     const candidates = [];
-    for (const nw of neighborWords.slice(0, count * 4)) {
+    for (const nw of neighborWords.slice(0, count * 6)) {
       if (candidates.length >= count) break;
       const nrec = await getWord(nw);
-      if (isQuizzable(nrec)) candidates.push({ w: nw, g: shortGloss(nrec.d[0].g) });
+      if (isQuizzable(nrec)) {
+        const g = shortGloss(nrec.d[0].g);
+        if (ok(g)) candidates.push({ w: nw, g: g });
+      }
     }
     if (candidates.length >= count) return candidates.slice(0, count);
-    const extra = qShuffle(distractorPool.filter(function (d) { return d.w !== word; }));
+    const extra = qShuffle(distractorPool.filter(function (d) { return d.w !== word && ok(d.g); }));
     return candidates.concat(extra).slice(0, count);
   }
 
