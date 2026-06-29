@@ -63,6 +63,22 @@ for (let i = 0; i < N; i++) {
   MAT.set(embed.blobToF32(rows[i].v), i * DIM); // vectors are L2-normalized → dot == cosine
 }
 
+// Redirect/pointer entries ("Alternative form of X", "Misspelling of X", ...)
+// are fine to keep as headwords but make poor related/synonym suggestions — so
+// we never propose them as candidates (and don't bother enriching them).
+const PTR = /^(alternative|obsolete|archaic|dated|nonstandard|informal|rare|standard|superseded|early[ -]modern|eye[- ]?dialect|common|formal|british|american|chiefly)\b.{0,28}\b(form|spelling) of\b|^(alternative (form|spelling|letter-case form)|misspelling|synonym|antonym|initialism|abbreviation|acronym|clipping|contraction|ellipsis|inflection|plural|genitive|gerund|comparative|superlative|present participle|past tense|past participle|diminutive|honorific) of\b/i;
+const notSuggestable = new Set();
+if (!process.argv.includes("--suggest-pointers")) {
+  for (const f of fs.readdirSync(WORDS_DIR).filter((x) => x.endsWith(".json"))) {
+    const o = JSON.parse(fs.readFileSync(path.join(WORDS_DIR, f), "utf8"));
+    for (const w of Object.keys(o)) {
+      const d = o[w].d || [];
+      if (d.length && d.every((s) => PTR.test(String(s.g || "").trim()))) notSuggestable.add(w.toLowerCase());
+    }
+  }
+  process.stderr.write("excluding " + notSuggestable.size + " redirect/pointer words from suggestions\n");
+}
+
 // existing s/a/r targets per word, to avoid proposing what's already linked
 function existingLinks(e) {
   const s = new Set();
@@ -84,7 +100,7 @@ function neighbours(word, exclude) {
   for (let i = 0; i < N; i++) {
     if (i === qi) continue;
     const o = WORDS[i];
-    if (exclude.has(o.toLowerCase())) continue;
+    if (exclude.has(o.toLowerCase()) || notSuggestable.has(o.toLowerCase())) continue;
     let dot = 0; const base = i * DIM;
     for (let d = 0; d < DIM; d++) dot += MAT[q + d] * MAT[base + d];
     if (dot >= SIM) scored.push([o, dot]);
@@ -186,6 +202,7 @@ async function main() {
       if (ONLY_WORD && word !== ONLY_WORD) continue;
       const e = obj[word];
       if (!ALL && Array.isArray(e.r) && e.r.length > 0) continue; // gap words only
+      if (notSuggestable.has(word.toLowerCase())) continue;       // don't enrich redirects
       if (!INDEX.has(word)) continue;
       if (LIMIT && scanned >= LIMIT) break;
       scanned++;
