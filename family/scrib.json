@@ -463,72 +463,98 @@
    "parent": "script",
    "by": "user",
    "at": "2026-06-22T19:47:23.329Z"
+  },
+  {
+   "w": "adscript",
+   "s": null,
+   "region": "writing-copying",
+   "parent": "script",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
   }
  ],
  "collapse": {
   "adscripted": {
    "l": "adscript",
-   "t": "past tense of",
+   "t": "past participle of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "circumscribed": {
    "l": "circumscribe",
-   "t": "past tense of",
+   "t": "past participle of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "described": {
    "l": "describe",
-   "t": "past tense of",
+   "t": "past participle of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "inscribed": {
    "l": "inscribe",
-   "t": "past tense of",
+   "t": "past participle of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "prescribed": {
    "l": "prescribe",
-   "t": "past tense of",
+   "t": "past participle of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "proscribed": {
    "l": "proscribe",
-   "t": "past tense of",
+   "t": "past participle of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "subscribed": {
    "l": "subscribe",
-   "t": "past tense of",
+   "t": "past participle of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "transcribed": {
    "l": "transcribe",
-   "t": "past tense of",
+   "t": "past participle of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "descriptively": {
    "l": "descriptive",
    "t": "adverb of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "inscriptively": {
    "l": "inscriptive",
    "t": "adverb of",
    "by": "assistant",
-   "at": "2026-06-22T19:09:01.098Z"
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "scripted": {
+   "l": "script",
+   "t": "past participle of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "serial killer glasses": {
+   "l": "prescription",
+   "t": "plural of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "sub": {
+   "l": "subscription",
+   "t": "plural of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
   }
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-22T21:00:05.387Z"
+  "updated": "2026-06-29T18:15:30.206Z"
  }
 }

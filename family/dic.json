@@ -45,6 +45,13 @@
    "gloss": "legal speech; given over to",
    "by": "assistant",
    "at": "2026-06-23T04:04:27.371Z"
+  },
+  {
+   "id": "unsorted",
+   "label": "Unsorted",
+   "gloss": "newly added — file me",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
   }
  ],
  "placements": [
@@ -391,6 +398,14 @@
    "parent": "syndicate",
    "by": "assistant",
    "at": "2026-06-23T04:04:27.371Z"
+  },
+  {
+   "w": "dictionary",
+   "s": null,
+   "region": "unsorted",
+   "parent": null,
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
   }
  ],
  "collapse": {
@@ -398,17 +413,35 @@
    "l": "addict",
    "t": "past tense of",
    "by": "assistant",
-   "at": "2026-06-23T04:04:27.371Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "predicatively": {
    "l": "predicate",
    "t": "adverb of",
    "by": "assistant",
-   "at": "2026-06-23T04:04:27.371Z"
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "contradictorily": {
+   "l": "contradictory",
+   "t": "adverb of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "dedicated": {
+   "l": "dedicate",
+   "t": "past participle of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "dictated": {
+   "l": "dictate",
+   "t": "past participle of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
   }
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-23T04:04:27.371Z"
+  "updated": "2026-06-29T18:15:30.206Z"
  }
 }

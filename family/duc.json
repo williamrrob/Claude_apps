@@ -494,6 +494,22 @@
    "parent": "adduce",
    "by": "assistant",
    "at": "2026-06-23T04:06:47.530Z"
+  },
+  {
+   "w": "education",
+   "s": null,
+   "region": "education",
+   "parent": "educate",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  {
+   "w": "production",
+   "s": null,
+   "region": "production",
+   "parent": "produce",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
   }
  ],
  "collapse": {
@@ -501,41 +517,83 @@
    "l": "abduct",
    "t": "present participle of",
    "by": "assistant",
-   "at": "2026-06-23T04:06:47.530Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "adducting": {
    "l": "adduct",
    "t": "present participle of",
    "by": "assistant",
-   "at": "2026-06-23T04:06:47.530Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "induced": {
    "l": "induce",
    "t": "past tense of",
    "by": "assistant",
-   "at": "2026-06-23T04:06:47.530Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "reduced": {
    "l": "reduce",
    "t": "past tense of",
    "by": "assistant",
-   "at": "2026-06-23T04:06:47.530Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "unproductively": {
    "l": "unproductive",
    "t": "adverb of",
    "by": "assistant",
-   "at": "2026-06-23T04:06:47.530Z"
+   "at": "2026-06-29T18:15:30.206Z"
   },
   "unproductiveness": {
    "l": "unproductive",
    "t": "quality of",
    "by": "assistant",
-   "at": "2026-06-23T04:06:47.530Z"
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "adducing": {
+   "l": "adduce",
+   "t": "present participle of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "conducting": {
+   "l": "conduct",
+   "t": "present participle of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "educated": {
+   "l": "educate",
+   "t": "past participle of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "faux frais": {
+   "l": "production",
+   "t": "plural of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "inducing": {
+   "l": "induce",
+   "t": "present participle of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "reducing": {
+   "l": "reduce",
+   "t": "present participle of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
+  },
+  "table manners": {
+   "l": "conduct",
+   "t": "plural of",
+   "by": "assistant",
+   "at": "2026-06-29T18:15:30.206Z"
   }
  },
  "meta": {
   "version": 1,
-  "updated": "2026-06-23T04:06:47.530Z"
+  "updated": "2026-06-29T18:15:30.206Z"
  }
 }

@@ -19,17 +19,31 @@
  */
 "use strict";
 const fs = require("fs"), path = require("path");
-const ROOT = path.join(__dirname, ".."), WORDS = path.join(ROOT, "words");
-const rootId = process.argv.find((a, i) => i >= 2 && !a.startsWith("--")) || "scrib";
+const ROOT = path.join(__dirname, ".."), WORDS = path.join(ROOT, "words"), FAMDIR = path.join(ROOT, "family");
+const arg = process.argv.find((a, i) => i >= 2 && !a.startsWith("--")) || "scrib";
 const APPLY = process.argv.includes("--apply");
 const NOW = new Date().toISOString();
-const FAM = path.join(ROOT, "family", rootId + ".json");
 
-const entry = {};
+// load shards once (entry references the live shard object, so field edits persist)
+const entry = {}, shardOf = {}, shards = {};
 for (const f of fs.readdirSync(WORDS).filter((x) => x.endsWith(".json"))) {
-  const o = JSON.parse(fs.readFileSync(path.join(WORDS, f), "utf8"));
-  for (const w of Object.keys(o)) entry[w] = o[w];
+  shards[f] = JSON.parse(fs.readFileSync(path.join(WORDS, f), "utf8"));
+  for (const w of Object.keys(shards[f])) { entry[w] = shards[f][w]; shardOf[w] = f; }
 }
+const TOUCH = {};
+// "all" = every curated family file (skip the non-tree helper files)
+const SKIP = /^(variants|inflections|inflections_conservative|collections)$/;
+const roots = arg === "all"
+  ? fs.readdirSync(FAMDIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)).filter((r) => !SKIP.test(r))
+  : [arg];
+
+let totalNew = 0, totalWired = 0;
+for (const rootId of roots) processRoot(rootId);
+if (APPLY) for (const f of Object.keys(TOUCH)) fs.writeFileSync(path.join(WORDS, f), JSON.stringify(shards[f]));
+console.log("\nTOTAL across " + roots.length + " root(s): " + totalNew + " new members placed, " + totalWired + " members wired (root/family set)");
+
+function processRoot(rootId) {
+const FAM = path.join(FAMDIR, rootId + ".json");
 const prev = fs.existsSync(FAM) ? JSON.parse(fs.readFileSync(FAM, "utf8")) : null;
 
 // ---- membership ----
@@ -53,10 +67,9 @@ function parentOf(w) {
 // ---- build placements (preserve human, refresh assistant, add new) ----
 const placed = new Map();
 let kept = 0;
-for (const p of (prev && prev.placements) || []) {
-  if (p.by === "user") { placed.set(p.w, p); kept++; }
-  else placed.set(p.w, Object.assign({}, p, { parent: parentOf(p.w) })); // refresh assistant parent
-}
+// Preserve ALL existing placements verbatim — the curated parents are better than
+// our affix-strip guess, so we never refresh them; we only ADD new members.
+for (const p of (prev && prev.placements) || []) { placed.set(p.w, p); if (p.by === "user") kept++; }
 let added = 0, pMatch = 0, pBoth = 0;
 const regionOf = (w) => { const par = parentOf(w); const pp = par && placed.get(par); return (pp && pp.region) || "unsorted"; };
 for (const w of members) {
@@ -88,10 +101,20 @@ const out = {
   regions, placements: [...placed.values()], collapse, meta: { version: (prev && prev.meta && prev.meta.version) || 1, updated: NOW },
 };
 
-console.log("FAMILY DRAFT " + (APPLY ? "APPLIED" : "DRY RUN") + " — " + rootId);
-console.log("members: " + members.size + " | placements: " + out.placements.length +
-  " (kept by:user " + kept + ", new " + added + ") | collapse: " + Object.keys(collapse).length);
-console.log("parent agreement vs existing tree: " + pMatch + "/" + pBoth + (pBoth ? " (" + (100 * pMatch / pBoth).toFixed(0) + "%)" : ""));
-if (added) console.log("new members (sample): " + [...placed.values()].filter((p) => p.by === "assistant" && p.at === NOW).slice(0, 12).map((p) => p.w + (p.parent ? "<" + p.parent : "")).join(", "));
-if (APPLY) { fs.writeFileSync(FAM, JSON.stringify(out, null, 1)); console.log("wrote " + FAM); }
-else console.log("(dry run — pass --apply to write " + path.relative(ROOT, FAM) + ")");
+// wire members into the app: set root + family on any placed member missing it
+let wired = 0;
+if (APPLY) {
+  const famRel = "family/" + rootId + ".json";
+  for (const p of out.placements) {
+    const e = entry[p.w];
+    if (!e || e.family) continue;                 // don't override a curated family pointer
+    e.root = rootId; e.family = famRel; wired++; TOUCH[shardOf[p.w]] = true;
+  }
+}
+totalNew += added; totalWired += wired;
+console.log("[" + rootId + "] members " + members.size + " | placements " + out.placements.length +
+  " (user " + kept + ", new " + added + ") | collapse " + Object.keys(collapse).length +
+  " | parents " + pMatch + "/" + pBoth + (APPLY ? " | wired " + wired : ""));
+if (added && roots.length <= 2) console.log("  new: " + [...placed.values()].filter((p) => p.by === "assistant" && p.at === NOW).slice(0, 12).map((p) => p.w + (p.parent ? "<" + p.parent : "")).join(", "));
+if (APPLY && added > 0) fs.writeFileSync(FAM, JSON.stringify(out, null, 1)); // only rewrite changed trees
+} // end processRoot
