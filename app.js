@@ -553,6 +553,17 @@
     ruleRow.appendChild(el("span", "entry-rule"));
     const pos = rec && rec.d && rec.d[0] && rec.d[0].p;
     if (pos) ruleRow.appendChild(el("span", "entry-pos", pos));
+    const savedNow = isSaved(word);
+    const starBtn = el("button", "save-btn" + (savedNow ? " saved" : ""), savedNow ? "★" : "☆");
+    starBtn.type = "button";
+    starBtn.setAttribute("aria-label", savedNow ? "Remove from quiz" : "Save for quiz");
+    starBtn.addEventListener("click", function () {
+      const on = toggleSaved(word);
+      starBtn.textContent = on ? "★" : "☆";
+      starBtn.className = "save-btn" + (on ? " saved" : "");
+      starBtn.setAttribute("aria-label", on ? "Remove from quiz" : "Save for quiz");
+    });
+    ruleRow.appendChild(starBtn);
 
     entryEl.appendChild(ruleRow);
 
@@ -2109,4 +2120,245 @@
 
   const m = location.hash.match(/word=([a-zA-Z]+)/);
   if (m) run(m[1]);
+
+  // ---------- vocab quiz: save + SM-2 spaced repetition + MC ----------
+
+  const quizEl = $("quiz");
+  const quizBtn = $("quizBtn");
+  const quizCountEl = $("quizCount");
+  const SAVE_KEY = "rootwork.saved";
+  const SR_KEY = "rootwork.sr";
+
+  // -- saved word list (localStorage) --
+  function getSaved() { try { return JSON.parse(localStorage.getItem(SAVE_KEY) || "[]"); } catch (e) { return []; } }
+  function setSaved(arr) { try { localStorage.setItem(SAVE_KEY, JSON.stringify(arr)); } catch (e) {} }
+  function isSaved(w) { return getSaved().indexOf(w) !== -1; }
+  function toggleSaved(w) {
+    const arr = getSaved(); const i = arr.indexOf(w);
+    if (i === -1) arr.push(w); else arr.splice(i, 1);
+    setSaved(arr); updateQuizBadge(); return i === -1;
+  }
+  function updateQuizBadge() {
+    const n = getSaved().length;
+    if (quizCountEl) { quizCountEl.textContent = n || ""; quizCountEl.hidden = n === 0; }
+    if (quizBtn) quizBtn.classList.toggle("has-saved", n > 0);
+  }
+
+  // -- SM-2 spaced repetition --
+  function getSR() { try { return JSON.parse(localStorage.getItem(SR_KEY) || "{}"); } catch (e) { return {}; } }
+  function putSR(sr) { try { localStorage.setItem(SR_KEY, JSON.stringify(sr)); } catch (e) {} }
+  function srUpdate(word, correct) {
+    const sr = getSR();
+    const s = sr[word] || { ef: 2.5, interval: 0, reps: 0 };
+    const q = correct ? 4 : 1;
+    if (q >= 3) {
+      s.interval = s.reps === 0 ? 1 : s.reps === 1 ? 6 : Math.round(s.interval * s.ef);
+      s.ef = Math.max(1.3, s.ef + 0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
+      s.reps++;
+    } else {
+      s.reps = 0; s.interval = 1;
+      s.ef = Math.max(1.3, s.ef + 0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
+    }
+    s.due = Date.now() + s.interval * 86400000;
+    sr[word] = s; putSR(sr);
+  }
+
+  // -- distractor helpers --
+  let distractorPool = [];
+  async function warmPool() {
+    if (distractorPool.length > 60) return;
+    const L = "abcdefghijklmnopqrstuvwxyz";
+    const keys = [];
+    while (keys.length < 8) {
+      const k = L[Math.floor(Math.random() * 26)] + L[Math.floor(Math.random() * 26)];
+      if (keys.indexOf(k) === -1) keys.push(k);
+    }
+    for (const k of keys) {
+      const sh = await fetchShard(k);
+      if (!sh) continue;
+      for (const w of Object.keys(sh)) {
+        const r = sh[w];
+        if (!r || !r.d || !r.d.length) continue;
+        const g = r.d[0].g;
+        if (!g || g.length < 12) continue;
+        if (r.rel && /\bof$/.test(r.rel.t || "")) continue;
+        if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic) of\b/i.test(g)) continue;
+        if (w.length < 5) continue;
+        distractorPool.push({ w: w, g: shortGloss(g), p: r.d[0].p, dom: r.d[0].dom });
+      }
+    }
+  }
+
+  function isQuizzable(rec) {
+    if (!rec || !rec.d || !rec.d.length) return false;
+    const g = rec.d[0].g;
+    if (!g || g.length < 8) return false;
+    if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic) of\b/i.test(g)) return false;
+    return true;
+  }
+
+  function qShuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+
+  // Distractors come from rec.r (embedding-space neighbors from suggest-related.js)
+  // + rec.s (synonyms). Fallback to pre-warmed random pool.
+  async function getDistractors(word, rec, count) {
+    const neighborWords = qShuffle(((rec && rec.r) || []).concat((rec && rec.s) || []).filter(function (w) { return w !== word; }));
+    const candidates = [];
+    for (const nw of neighborWords.slice(0, count * 4)) {
+      if (candidates.length >= count) break;
+      const nrec = await getWord(nw);
+      if (isQuizzable(nrec)) candidates.push({ w: nw, g: shortGloss(nrec.d[0].g) });
+    }
+    if (candidates.length >= count) return candidates.slice(0, count);
+    const extra = qShuffle(distractorPool.filter(function (d) { return d.w !== word; }));
+    return candidates.concat(extra).slice(0, count);
+  }
+
+  // -- quiz state & control --
+  let quizState = null;
+  let quizToken = 0;
+
+  function openQuiz() {
+    quizEl.hidden = false;
+    const saved = getSaved();
+    if (!saved.length) { renderQuizEmpty(); return; }
+    quizEl.innerHTML = '<div class="quiz-loading">Loading…</div>';
+    startQuiz(saved);
+  }
+
+  function closeQuiz() {
+    quizToken++;
+    quizEl.hidden = true;
+    quizEl.innerHTML = "";
+    quizState = null;
+  }
+
+  async function startQuiz(saved) {
+    const tok = ++quizToken;
+    const sr = getSR();
+    const sorted = saved.slice().sort(function (a, b) {
+      return ((sr[a] || { due: 0 }).due) - ((sr[b] || { due: 0 }).due);
+    });
+    const recs = {};
+    await Promise.all(sorted.map(function (w) {
+      return getWord(w).then(function (r) { if (r) recs[w] = r; });
+    }));
+    if (tok !== quizToken) return;
+    const queue = sorted.filter(function (w) { return isQuizzable(recs[w]); });
+    if (!queue.length) { renderQuizEmpty(); return; }
+    await warmPool();
+    if (tok !== quizToken) return;
+    quizState = { queue: queue, idx: 0, recs: recs, score: { correct: 0, total: 0 }, missed: [], tok: tok };
+    renderQuestion();
+  }
+
+  async function renderQuestion() {
+    if (!quizState || quizEl.hidden) return;
+    const { queue, idx, recs, tok } = quizState;
+    if (idx >= queue.length) { renderResult(); return; }
+    const word = queue[idx];
+    const rec = recs[word];
+    const correctGloss = shortGloss(rec.d[0].g);
+    const pos = (rec.d[0] && rec.d[0].p) || "";
+    const distractors = await getDistractors(word, rec, 3);
+    if (tok !== quizToken) return;
+    const choices = qShuffle([{ g: correctGloss, correct: true }].concat(
+      distractors.slice(0, 3).map(function (d) { return { g: d.g, correct: false }; })
+    ));
+
+    quizEl.innerHTML = "";
+    const head = el("div", "quiz-head");
+    const xBtn = el("button", "quiz-close", "✕"); xBtn.type = "button";
+    xBtn.setAttribute("aria-label", "Close quiz");
+    xBtn.addEventListener("click", closeQuiz);
+    head.appendChild(xBtn);
+    head.appendChild(el("div", "quiz-title", "Quiz"));
+    head.appendChild(el("div", "quiz-prog", (idx + 1) + " / " + queue.length));
+    quizEl.appendChild(head);
+    quizEl.appendChild(el("div", "quiz-word", word));
+    if (pos) quizEl.appendChild(el("div", "quiz-pos", pos));
+
+    const choicesEl = el("div", "quiz-choices");
+    choices.forEach(function (c) {
+      const btn = el("button", "mc-btn", c.g); btn.type = "button";
+      btn.addEventListener("click", function () { onAnswer(btn, c.correct, choices, choicesEl, word, idx); });
+      choicesEl.appendChild(btn);
+    });
+    quizEl.appendChild(choicesEl);
+  }
+
+  function onAnswer(clickedBtn, correct, choices, choicesEl, word, idx) {
+    Array.prototype.forEach.call(choicesEl.children, function (btn, i) {
+      btn.disabled = true;
+      if (choices[i].correct) btn.classList.add("correct");
+      else if (btn === clickedBtn) btn.classList.add("wrong");
+    });
+    srUpdate(word, correct);
+    quizState.score.total++;
+    if (correct) quizState.score.correct++;
+    else quizState.missed.push(word);
+    const isLast = idx >= quizState.queue.length - 1;
+    const nextBtn = el("button", "quiz-next", isLast ? "See results →" : "Next →");
+    nextBtn.type = "button";
+    nextBtn.addEventListener("click", function () { quizState.idx++; renderQuestion(); });
+    quizEl.appendChild(nextBtn);
+  }
+
+  function renderResult() {
+    const { score, missed } = quizState;
+    quizEl.innerHTML = "";
+    const head = el("div", "quiz-head");
+    const xBtn = el("button", "quiz-close", "✕"); xBtn.type = "button";
+    xBtn.addEventListener("click", closeQuiz);
+    head.appendChild(xBtn);
+    head.appendChild(el("div", "quiz-title", "Quiz complete"));
+    quizEl.appendChild(head);
+    const res = el("div", "quiz-result");
+    res.appendChild(el("div", "quiz-result-score", score.correct + " / " + score.total));
+    res.appendChild(el("div", "quiz-result-label", (score.total ? Math.round(score.correct / score.total * 100) : 0) + "% correct"));
+    if (missed.length) {
+      const ms = el("div", "quiz-result-missed");
+      ms.appendChild(el("div", "quiz-result-missed-title", "REVIEW"));
+      missed.forEach(function (w) {
+        const row = el("button", "quiz-result-word", w); row.type = "button";
+        row.addEventListener("click", function () { closeQuiz(); run(w); });
+        ms.appendChild(row);
+      });
+      res.appendChild(ms);
+    }
+    const btns = el("div", "quiz-result-btns");
+    const again = el("button", "quiz-next", "Quiz again"); again.type = "button";
+    again.addEventListener("click", function () {
+      quizEl.innerHTML = '<div class="quiz-loading">Loading…</div>';
+      startQuiz(getSaved());
+    });
+    const done = el("button", "quiz-next secondary", "Done"); done.type = "button";
+    done.addEventListener("click", closeQuiz);
+    btns.appendChild(again); btns.appendChild(done);
+    res.appendChild(btns);
+    quizEl.appendChild(res);
+  }
+
+  function renderQuizEmpty() {
+    quizEl.innerHTML = "";
+    const head = el("div", "quiz-head");
+    const xBtn = el("button", "quiz-close", "✕"); xBtn.type = "button";
+    xBtn.addEventListener("click", closeQuiz);
+    head.appendChild(xBtn);
+    head.appendChild(el("div", "quiz-title", "Quiz"));
+    quizEl.appendChild(head);
+    const msg = el("div", "quiz-empty");
+    msg.appendChild(el("div", "quiz-empty-icon", "☆"));
+    msg.appendChild(el("div", "quiz-empty-text", "Star words while browsing to build a quiz deck"));
+    msg.appendChild(el("div", "quiz-empty-hint", "Tap ☆ on any word card to add it"));
+    quizEl.appendChild(msg);
+  }
+
+  if (quizBtn) quizBtn.addEventListener("click", openQuiz);
+  updateQuizBadge();
+
 })();

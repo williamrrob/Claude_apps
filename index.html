@@ -12,11 +12,14 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=74" />
+  <link rel="stylesheet" href="styles.css?v=75" />
 </head>
 <body>
   <div class="app">
     <header class="topbar">
+      <button id="quizBtn" class="quiz-btn" type="button" aria-label="Vocabulary quiz">
+        ☆<span id="quizCount" class="quiz-count" hidden></span>
+      </button>
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark">◐</button>
     </header>
 
@@ -61,6 +64,7 @@
 
     <section class="browse" id="browse" hidden aria-label="Browse words"></section>
     <section class="tree" id="tree" hidden aria-label="Word family tree"></section>
+    <section class="quiz" id="quiz" hidden aria-label="Vocabulary quiz"></section>
 
     <footer class="dock">
       <div class="recent" id="recent" hidden aria-label="Recent searches"></div>
@@ -96,6 +100,6 @@
 
   <script defer src="data.js?v=60"></script>
   <script defer src="engine.js?v=58"></script>
-  <script defer src="app.js?v=85"></script>
+  <script defer src="app.js?v=86"></script>
 </body>
 </html>

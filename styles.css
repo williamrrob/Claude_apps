@@ -646,6 +646,92 @@ body {
 .tree.tree-in { animation: treeIn .3s var(--ease) both; }
 @keyframes treeIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: none; } }
 
+/* ---------- quiz button (topbar) ---------- */
+.quiz-btn {
+  width: 32px; height: 32px; border-radius: 9px;
+  border: 1px solid var(--bd); background: var(--field);
+  color: var(--muted); font-size: 15px; cursor: pointer;
+  display: grid; place-items: center; position: relative;
+  margin-right: 6px; -webkit-tap-highlight-color: transparent;
+}
+.quiz-btn.has-saved { color: var(--suffix); border-color: var(--suffix); }
+.quiz-btn:active { transform: scale(0.92); }
+.quiz-count {
+  position: absolute; top: -5px; right: -5px;
+  background: var(--suffix); color: var(--bg);
+  font-size: 9px; font-weight: 700; border-radius: 99px;
+  min-width: 15px; height: 15px; line-height: 15px;
+  padding: 0 3px; text-align: center; pointer-events: none;
+}
+
+/* star/save button on word cards */
+.save-btn {
+  border: none; background: none; color: var(--muted);
+  font-size: 17px; line-height: 1; cursor: pointer; padding: 2px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.save-btn.saved { color: var(--suffix); }
+.save-btn:active { transform: scale(0.85); }
+
+/* ---------- quiz overlay ---------- */
+.quiz {
+  position: absolute; inset: 0; z-index: 6;
+  display: flex; flex-direction: column; background: var(--bg);
+  padding: calc(env(safe-area-inset-top) + 14px) var(--pad) calc(env(safe-area-inset-bottom) + 24px) var(--pad);
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
+}
+.quiz-head { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; flex: 0 0 auto; }
+.quiz-close {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: var(--field); border: 1px solid var(--bd);
+  color: var(--muted); cursor: pointer; font-size: 12px;
+  display: grid; place-items: center; -webkit-tap-highlight-color: transparent;
+}
+.quiz-close:active { transform: scale(0.92); }
+.quiz-title { font-size: 12.5px; letter-spacing: 0.04em; color: var(--muted); flex: 1; }
+.quiz-prog { font-size: 12px; color: var(--muted); }
+.quiz-word { font-size: 34px; font-weight: 700; color: var(--ink); text-align: center; margin-bottom: 6px; }
+.quiz-pos { text-align: center; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+.quiz-choices { display: flex; flex-direction: column; gap: 10px; }
+.mc-btn {
+  background: var(--field); border: 1px solid var(--bd);
+  color: var(--ink); text-align: left; padding: 14px 16px;
+  border-radius: 12px; font-size: 14px; line-height: 1.45;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+  transition: background 0.14s, border-color 0.14s, color 0.14s;
+}
+.mc-btn:not(:disabled):active { transform: scale(0.99); background: var(--panel); }
+.mc-btn.correct { background: rgba(127,174,122,0.25); border-color: var(--root); color: var(--ink); }
+.mc-btn.wrong { background: rgba(180,50,50,0.18); border-color: rgba(180,50,50,0.5); color: var(--muted); text-decoration: line-through; }
+.quiz-next {
+  display: block; width: 100%; margin-top: 18px;
+  padding: 14px 24px; border-radius: 12px;
+  background: var(--field); border: 1px solid var(--bd);
+  color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.quiz-next:active { transform: scale(0.98); }
+.quiz-result { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-top: 16px; }
+.quiz-result-score { font-size: 52px; font-weight: 700; color: var(--ink); }
+.quiz-result-label { font-size: 13px; color: var(--muted); }
+.quiz-result-missed { width: 100%; text-align: left; margin-top: 8px; }
+.quiz-result-missed-title { font-size: 10px; letter-spacing: .12em; color: var(--muted); margin-bottom: 8px; }
+.quiz-result-word {
+  display: block; width: 100%; text-align: left; background: none; border: none;
+  border-bottom: 1px solid var(--bd); color: var(--ink);
+  padding: 9px 0; font-size: 14px; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.quiz-result-word:active { color: var(--suffix); }
+.quiz-result-btns { display: flex; gap: 10px; width: 100%; margin-top: 12px; }
+.quiz-result-btns .quiz-next { flex: 1; margin-top: 0; }
+.quiz-result-btns .quiz-next.secondary { background: none; border-color: var(--bd); color: var(--muted); }
+.quiz-loading { color: var(--muted); font-style: italic; padding: 40px 0; text-align: center; }
+.quiz-empty { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 60px; text-align: center; }
+.quiz-empty-icon { font-size: 42px; color: var(--muted); }
+.quiz-empty-text { font-size: 15px; color: var(--ink); }
+.quiz-empty-hint { font-size: 13px; color: var(--muted); }
+
 /* cards */
 .cards { display: flex; flex-direction: column; gap: 11px; margin-top: 14px; }
 /* the Wikipedia picture always sorts to the end of the word card, regardless of
