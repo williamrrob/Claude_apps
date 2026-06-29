@@ -198,7 +198,15 @@ async function build(args) {
   let done = 0, embedded = 0, cached = 0, skipped = 0;
 
   for (const row of words) {
-    if (!force && haveWord.get(row.word)) { skipped++; continue; }
+    // Skip only if the word is already done AND every current gloss is cached.
+    // If a gloss is uncached, the word gained/changed a sense (e.g. an import
+    // added a sense to an existing headword) and must be re-embedded so the new
+    // sense lands in the cache and the word's mean vector is refreshed.
+    if (!force && haveWord.get(row.word)) {
+      let allCached = true;
+      for (const g of row.glosses) if (!getGloss.get(hashGloss(g))) { allCached = false; break; }
+      if (allCached) { skipped++; continue; }
+    }
     const glosses = row.glosses;
     const slot = new Array(glosses.length);
     const need = [], needIdx = [];

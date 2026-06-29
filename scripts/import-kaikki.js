@@ -111,10 +111,10 @@ function pickDom(topics) {
   const t = specific[0] || topics[0];
   return t ? lc(t) : null;
 }
-// Some broad topics (notably "philosophy") umbrella in off-target domains in
-// Wiktionary's taxonomy (tarot/occult/astrology). A sense only counts as a topic
-// match if its SPECIFIC domain isn't one of these.
-const TOPIC_BLOCK = new Set(["mysticism", "occult", "cartomancy", "tarot", "astrology", "divination", "numerology", "religion"]);
+// "philosophy" is taken in the broad conception (psych, myth, mysticism, religion,
+// astrology all welcome). We block only literal fortune-telling card/number
+// catalogs (e.g. "book" = the 26th Lenormand card) — clearly not philosophy.
+const TOPIC_BLOCK = new Set(["cartomancy", "numerology"]);
 const senseTopicMatch = (s) => TOPICS.size > 0 && (s._t || []).some((t) => TOPICS.has(t)) && !(s.dom && TOPIC_BLOCK.has(s.dom));
 
 // Build a Rootwork entry from the accumulated kaikki lines of one word.
