@@ -1,3 +1,5 @@
 {
-"dg":{"d":[{"p":"n.","g":"1/10 gram"}],"s":["decigram"]}
+"dg":{"d":[{"p":"n.","g":"1/10 gram"}],"s":["decigram"]},
+"DGB":{"d":[{"p":"n.","g":"The German Trade Union Confederation.","x":"The German trade union confederation (DGB) criticized the move, saying it dumped responsibility for the fight against the pandemic onto employees. “We still reject mandatory vaccination through the back door,” DGB chairman Reiner Hoffmann told Editor Network Germany."}],"e":"Borrowed from German DGB (“Deutscher Gewerkschaftsbund”)."},
+"dGPU":{"d":[{"p":"n.","g":"video card, graphics card","dom":"computer-hardware"}],"r":["GPU","iGPU","CPU","TPU"]}
 }

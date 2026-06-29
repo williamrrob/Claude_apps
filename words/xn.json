@@ -1,0 +1,5 @@
+{
+"XNAY":{"d":[{"p":"phrase","g":"Indicates the poster’s request for a message not to be stored in Usenet archives."}],"e":"Initialism of X-No-Archive: yes, a Usenet message header that indicates the message should not be retained on the server after delivery. Probably also influenced by ixnay."},
+"XNAND":{"d":[{"p":"n.","g":"XOR, a logic gate","dom":"business"}],"e":"Blend of exclusive + NAND.","a":["XAND","XNOR"]},
+"XNOR gate":{"d":[{"p":"n.","g":"A logic gate performing a Boolean logic XNOR operation; an equivalence gate.","x":"The output of the XNOR gate is high(1) when both the inputs are high (1) or low(0). In other words, the output of the XNOR gate is high(1) when both the inputs are the same. the XNOR gate can sometimes be called as Equivalence gate. In simple words, The XNOR gate is the complement of the XOR gate.","dom":"business"}]}
+}

@@ -1,5 +1,10 @@
 {
 "bb":{"d":[{"p":"n.","g":"Alternative spelling of BB."},{"p":"n.","g":"Abbreviation of baby.","x":"As a reminder, bb Lili was born on Friday, June 4, at Santa Barbara Cottage Hospital in Santa Barbara, California."}]},
 "bbl":{"d":[{"p":"n.","g":"Volumes of crude oil pumped, stored, or sold (in bulk).","x":"measured in 1000-bbl units"},{"p":"n.","g":"Barrels (casks) transported or sold, or the volume that they represent.","x":"5 bbls. flour"},{"p":"n.","g":"Venturis in carburetion.","x":"1-bbl carburetor"},{"p":"phra.","g":"Alternative form of BBL."}],"e":"Often thought to be modified from bl for barrel (b⸺l), reflecting a way of abbreviating that was used especially in previous centuries (compare do for ditto), wherein a doubled letter indicated plural count, as also with p.=page but pp.=pages and l.=line but ll.=lines; this method was used not only in English but also …","s":["barrel"]},
-"bbs":{"d":[{"p":"phra.","g":"Alternative letter-case form of BBS (be back soon)."},{"p":"n.","g":"plural of bb"}]}
+"bbs":{"d":[{"p":"phra.","g":"Alternative letter-case form of BBS (be back soon)."},{"p":"n.","g":"plural of bb"}]},
+"bbiab":{"d":[{"p":"phrase","g":"Be back in a bit.","x":"The baby's crying. I'll bbiab."}]},
+"BB gun":{"d":[{"p":"n.","g":"A gun that shoots BB-size pellets, typically using compressed air, or sometimes just a compressed spring."}],"e":"From the size of buckshot originally fired from this type of gun."},
+"BBQer":{"d":[{"p":"n.","g":"barbecuer","x":"Charlie and Arthur had learned the trade from the master BBQer Henry Perry — who worked out of an old trolley barn at 19th and Highland — around 1907."}],"e":"From BBQ + -er."},
+"BBCode":{"d":[{"p":"n.","g":"A lightweight markup language, with tags in square brackets, used to format posts on message boards."}],"e":"From BB + code, short for bulletin board code."},
+"BB cream":{"d":[{"p":"n.","g":"A type of facial cosmetic product which provides the benefits of a foundation, moisturizer and sunblock in one."}],"e":"From blemish balm.","i":"/ˈbiː biː ˈkɹiːm/"}
 }

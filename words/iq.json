@@ -1,3 +1,8 @@
 {
-"iq":{"d":[{"p":"n.","g":"a measure of a person's intelligence as indicated by an intelligence test;  the ratio of a person's mental age to their chronological age (multiplied by 100)"}],"i":"/ˈaɪˈkju/","rs":"Y-KYOO"}
+"iq":{"d":[{"p":"n.","g":"a measure of a person's intelligence as indicated by an intelligence test;  the ratio of a person's mental age to their chronological age (multiplied by 100)"}],"i":"/ˈaɪˈkju/","rs":"Y-KYOO"},
+"Iqaluit":{"d":[{"p":"n.","g":"The capital city of Nunavut, Canada."}],"e":"Borrowed from Inuktitut ᐃᖃᓗᐃᑦ (iqaloit, “place of fish”), plural of ᐃᖃᓗᒃ (iqalok, “fish”).","i":"/ɪˈkælʊ.ɪt/"},
+"Iqalungmiut":{"d":[{"p":"n.","g":"One or more inhabitants of Iqaluit (formerly Frobisher Bay)."},{"p":"adj.","g":"Of or relating to Iqaluit (formerly Frobisher Bay)."}],"e":"Borrowed from Inuktitut [Term?].","i":"/ɪkaˈlʊŋmiːʊt/"},
+"iqama":{"d":[{"p":"n.","g":"The second call to prayer, made immediately before Muslims pray.","dom":"islam"}],"e":"Borrowed from Arabic إِقَامَة (ʔiqāma).","i":"/ɪˈkɑːmə/"},
+"iqlet":{"d":[{"p":"n.","g":"A person considered very unintelligent or foolish; idiot, moron."}],"e":"From IQ + -let."},
+"IQcel":{"d":[{"p":"n.","g":"A person regarded as lacking intelligence despite claiming to have a high IQ."},{"p":"n.","g":"A self-described highly intelligent person who is socially or romantically unsuccessful."},{"p":"n.","g":"A self-identified incel whose celibacy or romantic/sexual lack of success is attributed to having a high IQ.","x":"The term you’re looking for is probably “IQlet,” as “IQcel” would imply that I am celibate due to a high IQ (true, though likely not what you meant), but none of that matters because you have an IQ of somewhere between 95 and 110, and cannot understand usage of the word “or.”"}],"e":"From IQ + -cel."}
 }

@@ -2,5 +2,11 @@
 "dm":{"d":[{"p":"n.","g":"diabetes caused by a relative or absolute deficiency of insulin and characterized by polyuria"}]},
 "dmd":{"d":[{"p":"n.","g":"a doctor's degree in dental medicine"}]},
 "dmus":{"d":[{"p":"n.","g":"a doctor's degree in music"}]},
-"dmz":{"d":[{"p":"n.","g":"a zone from which military forces or operations or installations are prohibited"}],"i":"/ˈdiˌɛmˌzi/","rs":"DEE-ehm-zee"}
+"dmz":{"d":[{"p":"n.","g":"a zone from which military forces or operations or installations are prohibited"}],"i":"/ˈdiˌɛmˌzi/","rs":"DEE-ehm-zee"},
+"DMZ host":{"d":[{"p":"n.","g":"A single node in a DMZ, typically protected by a firewall, sometimes hidden by NAT. Usually, DMZ hosts accept incoming external connections, but they cannot initiate connections with internal hosts."}]},
+"DMCA":{"d":[{"p":"v.","g":"To serve a Digital Millennium Copyright Act notification against, so as to have infringing material taken down.","x":"The record label DMCAed several Web sites that were hosting copyrighted song lyrics."}]},
+"DMs":{"d":[{"p":"n.","g":"Dr. Martens-branded boots or shoes.","x":"Lads talked about a new pair of DMs the same way those middle-class poofs talked about their new shiny Ford Cortina Mark 2, which had just come on to the market."}],"e":"Abbreviation of the brand name Dr. Martens."},
+"DMer":{"d":[{"p":"n.","g":"A person who sends a direct message (DM).","x":"You might soft-launch a new partner in an Instagram Story, or in the background in the fourth pic in a carousel, but a cute couple shot front and center on the main feed informs your most dedicated DMers that the club is closed to new members until further notice.","dom":"computing"}],"e":"From DM + -er."},
+"Dmitriev":{"d":[{"p":"n.","g":"A transliteration of the Russian surname Дмитриев (Dmitrijev)."},{"p":"n.","g":"A male surname from Russian, feminine equivalent Dmitrieva."}],"e":"Borrowed from Russian Дмитриев (Dmitrijev)."},
+"Dmosin":{"d":[{"p":"n.","g":"A village in Lodz Voivodeship, Poland."}],"e":"Unadapted borrowing from Polish Dmosin."}
 }

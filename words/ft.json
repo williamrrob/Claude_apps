@@ -3,5 +3,7 @@
 "ftc":{"d":[{"p":"n.","g":"an independent agency of the United States federal government that maintains fair and free competition;  enforces federal antitrust laws;  educates the public about identity theft"}]},
 "fthm":{"d":[{"p":"n.","g":"a linear unit of measurement (equal to 6 feet) for water depth"}],"s":["fathom"]},
 "fto":{"d":[{"p":"n.","g":""}]},
-"ftp":{"d":[{"p":"n.","g":"protocol that allows users to copy files between their local system and any system they can reach on the network"},{"p":"v.","g":"use the file transfer protocol to transfer data from one computer to another"}],"i":"/ˌɛfˌtiˈpi/","rs":"ehf-tee-PEE"}
+"ftp":{"d":[{"p":"n.","g":"protocol that allows users to copy files between their local system and any system they can reach on the network"},{"p":"v.","g":"use the file transfer protocol to transfer data from one computer to another"}],"i":"/ˌɛfˌtiˈpi/","rs":"ehf-tee-PEE"},
+"FTSE":{"d":[{"p":"n.","g":"The FTSE 100 Index."},{"p":"n.","g":"Financial Times and Stock Exchange.","x":"“It’s hard to believe that as recently as 2011, 43% of the FTSE 350 [index] still had all-male boards,” Mary O’Connor, acting senior partner at KPMG UK, said in a statement."},{"p":"n.","g":"The main stock market index code for the British stock market.","dom":"business"}],"e":"A joint venture between the Financial Times of London and the London Stock Exchange.","i":"/ˈfʊt.si/"},
+"FTPable":{"d":[{"p":"adj.","g":"accessible using FTP","x":"While all areas of engineering are not abundantly represented in the over 1000000 FTPable items, computer science reports certainly are."}],"e":"From FTP + -able."}
 }

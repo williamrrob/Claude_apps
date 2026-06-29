@@ -1,4 +1,5 @@
 {
 "fcc":{"d":[{"p":"adj.","g":"Initialism of face-centered cubic."}],"i":"/ˌɛfˌsiˈsi/","rs":"ehf-see-SEE"},
-"fcs":{"d":[{"p":"n.","g":"a cooperative nationwide system of banks and associations providing credit to farmers and related businesses;  originally capitalized by the federal government but now owned by its members and borrowers"}]}
+"fcs":{"d":[{"p":"n.","g":"a cooperative nationwide system of banks and associations providing credit to farmers and related businesses;  originally capitalized by the federal government but now owned by its members and borrowers"}]},
+"Fc receptor":{"d":[{"p":"n.","g":"A protein found on the surface of certain immune and blood cells that binds to antibodies attached to infected cells or invading pathogens, enabling antibody-mediated phagocytosis or antibody-dependent cell-mediated cytotoxicity (ADCC).","dom":"biochemistry"}],"e":"From its binding specificity for the constant part of antibodies known as the fragment crystallizable (Fc) region."}
 }

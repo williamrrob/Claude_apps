@@ -1,5 +1,8 @@
 {
 "rn":{"d":[{"p":"adv.","g":"Initialism of right now.","x":"Barrel jeans are all the rave rn—let's see you in a pair!"}],"s":["radon"]},
 "rna":{"d":[{"p":"n.","g":"(biochemistry) a long linear polymer of nucleotides found in the nucleus but mainly in the cytoplasm of a cell where it is associated with microsomes;  it transmits genetic information from DNA to the cytoplasm and controls certain chemical processes in the cell"}],"i":"/ˌɑˌrɛˈneɪ/","rs":"ah-reh-NAY"},
-"rnase":{"d":[{"p":"n.","g":"a transferase that catalyzes the hydrolysis of ribonucleic acid"}],"s":["ribonuclease","ribonucleinase"]}
+"rnase":{"d":[{"p":"n.","g":"a transferase that catalyzes the hydrolysis of ribonucleic acid"}],"s":["ribonuclease","ribonucleinase"]},
+"RNG":{"d":[{"p":"n.","g":"Randomness, variability, or luck, especially that produced by random number generation.","x":"The combat in this game is way too RNG-based.","dom":"games"}]},
+"RNGesus":{"d":[{"p":"n.","g":"A notional deity who controls RNG (“randomness; chance, luck”) in a video game or tabletop game.","x":"With Exotic Quests, there's no need to direct all your prayers to RNGesus in Destiny.","dom":"games"}],"e":"Blend of RNG + Jesus.","i":"/ɑːɹ ɛn ˈdʒiːzəs/"},
+"RNG gods":{"d":[{"p":"n.","g":"A figurative group of gods that governs RNG (“randomness; chance, luck”) in games.","dom":"games"}]}
 }

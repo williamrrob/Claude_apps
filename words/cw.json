@@ -1,4 +1,12 @@
 {
 "cwm":{"d":[{"p":"n.","g":"A valley head created through glacial erosion and with a shape similar to an amphitheatre."}],"e":"Unadapted borrowing from Welsh cwm (“valley”). Doublet of combe.","s":["cirque","corrie"],"i":"/kuːm/"},
-"cwt":{"d":[{"p":"n.","g":"Alternative spelling of cwt. (“hundredweight”)."}],"s":["hundredweight","centner","cental","quintal"]}
+"cwt":{"d":[{"p":"n.","g":"Alternative spelling of cwt. (“hundredweight”)."}],"s":["hundredweight","centner","cental","quintal"]},
+"Cwm Silicon":{"d":[{"p":"n.","g":"A technology-rich area of South Wales."}],"e":"From Welsh Cwm Silicon (“Silicon Valley”), a calque of English Silicon Valley."},
+"CW complex":{"d":[{"p":"n.","g":"A collection of balls of various dimensions, with higher-dimensional ones mapped along their respective boundaries to lower-dimensional ones.","dom":"mathematics"}],"e":"The C stands for \"closure-finite\", and the W for \"weak topology\"."},
+"cwierc":{"d":[{"p":"n.","g":"A quarter, a former Polish unit of volume equal to ¼ korzec or 2 miarka"}],"e":"Borrowed from Polish ćwierć. Doublet of tchetvert."},
+"Cwik":{"d":[{"p":"n.","g":"A surname from Polish."}],"e":"Borrowed from Polish Ćwik."},
+"Cwrt Sart":{"d":[{"p":"n.","g":"A suburban area and electoral ward in Briton Ferry community, Neath Port Talbot borough county borough, Wales (OS grid ref SS7495)."}],"e":"From Welsh cwrt.","i":"/ˌkʊə(ɹ)t ˈsɑː(ɹ)t/"},
+"Cwm Gwyn":{"d":[{"p":"n.","g":"A western suburb of Swansea, Wales (OS grid ref SS6393)."},{"p":"n.","g":"A number of Welsh valleys, in Gwynedd, Pembrokeshire, Powys and Bridgend borough county borough, Wales."}],"e":"From Welsh cwm gwyn."},
+"Cwm Capel":{"d":[{"p":"n.","g":"A small settlement in Pembrey and Burry Port Town community, Carmarthenshire, Wales (OS grid ref SN4502)."}],"e":"From Welsh cwm + capel (“valley chapel”)"},
+"Cwm Cadnant":{"d":[{"p":"n.","g":"A community (civil parish) in eastern Anglesey, Wales."}],"e":"From Welsh."}
 }

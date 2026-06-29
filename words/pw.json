@@ -1,3 +1,9 @@
 {
-"pwr":{"d":[{"p":"n.","g":"Alternative form of PWR."}]}
+"pwr":{"d":[{"p":"n.","g":"Alternative form of PWR."}]},
+"pwn":{"d":[{"p":"v.","g":"To own, to defeat or dominate (someone or something, especially a game or someone playing a game).","x":"I pwned them in game!","dom":"games"},{"p":"n.","g":"Triumph, victory. Often exclaimed after an opponent in a video game is defeated."},{"p":"n.","g":"An exploit in computer security, especially relating to machine code."}],"e":"From own, possibly born out of a typographical error (the adjacency of o and p on qwerty keyboards).","i":"/pəʊn/"},
+"pwnage":{"d":[{"p":"n.","g":"Ownage; the act of pwning.","x":"\"OMDFDG LOOK AT THIS PWNAGE SCORE!!\""}],"e":"Etymology tree English pwn Proto-Indo-European *-h₂ Proto-Indo-European *-éh₂ Proto-Indo-European *-tós Proto-Indo-European *-eh₂tos Proto-Italic *-ātos Latin -ātus Proto-Indo-European *-ikos Proto-Italic *-ikos Latin -icus Latin -āticus Latin -āticum Old French -agebor. Middle English -age English -age English pwnage From pwn + -age."},
+"pwnz0r":{"d":[{"p":"v.","g":"Synonym of pwn (“to defeat”)."},{"p":"n.","g":"One who defeats others.","x":"MYSTIC QUEST IS THE PWNZ0R."}],"e":"An extension of pwn (“to defeat”) by the addition of the plural suffix -z, a common element in leet and internet slang (cf. for example lolz), and the general-purpose leet suffix -0r."},
+"pwca":{"d":[{"p":"n.","g":"A Welsh hobgoblin"}],"e":"Borrowed from Welsh pwca."},
+"pwner":{"d":[{"p":"n.","g":"One who pwns; an owner.","x":"> [g00sey:] I am teh m00se\nI am teh pwner"}],"e":"From pwn + -er, after owner."},
+"pwnership":{"d":[{"p":"n.","g":"The state of being a pwner; ownership.","x":"Just to make sure everyone is aware, John included, it is: Total Cost 0wnership or Total Cost of pwnership or 70741 C057 0F 0\\/\\/|\\|3R5|-|1P Hope you \"get it\""}],"e":"From pwner + -ship, after ownership."}
 }

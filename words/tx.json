@@ -1,3 +1,6 @@
 {
-"tx":{"d":[{"p":"n.","g":"Abbreviation of telephone."},{"p":"n.","g":"Abbreviation of treatment or therapy."},{"p":"n.","g":"Abbreviation of transmission."},{"p":"n.","g":"Abbreviation of tax."}]}
+"tx":{"d":[{"p":"n.","g":"Abbreviation of telephone."},{"p":"n.","g":"Abbreviation of treatment or therapy."},{"p":"n.","g":"Abbreviation of transmission."},{"p":"n.","g":"Abbreviation of tax."}]},
+"txt":{"d":[{"p":"n.","g":"text, text message"},{"p":"v.","g":"To text; to send a text message (to)."},{"p":"n.","g":"a .txt file","dom":"computing"}]},
+"txalaparta":{"d":[{"p":"n.","g":"A traditional Basque percussion instrument."}],"e":"Etymology tree Basque txalapartabor. English txalaparta Borrowed from Basque txalaparta."},
+"txapela":{"d":[{"p":"n.","g":"A Basque-style beret"}],"e":"Borrowed from Basque txapela, the absolutive singular of Basque txapel.","i":"/t͡ʃəˈpɛl.ə/"}
 }

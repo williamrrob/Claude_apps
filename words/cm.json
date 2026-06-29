@@ -2,5 +2,7 @@
 "cm":{"d":[{"p":"n.","g":"a metric unit of length equal to one hundredth of a meter"}],"s":["centimeter","centimetre"]},
 "cmb":{"d":[{"p":"n.","g":"(cosmology) the cooled remnant of the hot big bang that fills the entire universe and can be observed today with an average temperature of about 2.725 kelvin"}]},
 "cmbr":{"d":[{"p":"n.","g":"(cosmology) the cooled remnant of the hot big bang that fills the entire universe and can be observed today with an average temperature of about 2.725 kelvin"}]},
-"cmv":{"d":[{"p":"n.","g":"any of a group of herpes viruses that enlarge epithelial cells and can cause birth defects;  can affect humans with impaired immunological systems"}],"s":["cytomegalovirus"]}
+"cmv":{"d":[{"p":"n.","g":"any of a group of herpes viruses that enlarge epithelial cells and can cause birth defects;  can affect humans with impaired immunological systems"}],"s":["cytomegalovirus"]},
+"cmavo":{"d":[{"p":"n.","g":"Function word(s), i.e., structural words.","x":"Cmavo are connective, syncategorematic words. They are roughly comparable to English conjunctions, prepositions, articles, numerals, and some adverbs.","dom":"grammar"}],"e":"Etymology tree Lojbanbor. English cmavo Borrowed from Lojban.","i":"/ˈʃmɑːvo/"},
+"cmene":{"d":[{"p":"n.","g":"A proper name, or proper noun, respelled according to Lojban rules; reckoned as a part of speech separate from brivla (content words) and cmavo (function words).","x":"Cmene are always written with a period at the end, and if they start with a vowel then also with a period at the beginning.","dom":"grammar"}],"e":"Etymology tree Lojbanbor. English cmene Borrowed from Lojban.","i":"/ˈʃme.ne/"}
 }

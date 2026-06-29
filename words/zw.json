@@ -2,5 +2,17 @@
 "zweig":{"d":[{"p":"n.","g":"Austrian writer (1881-1942)"}],"i":"/zwaɪg/","rs":"zwyg"},
 "zwieback":{"d":[{"p":"n.","g":"A form of rusk, usually sweetened bread enriched with eggs that is baked and then sliced and toasted until dry and crisp; considered easy to digest and therefore given to the ill and used as a teething food for toddlers.","x":"Ogden Nash, Adventures Of Isabel\nShe nibbled the zwieback that she always fed off,\nAnd when it was gone, she cut the giant's head off."}],"e":"From German Zwieback, from zwie- (“twi-, two-”) + backen (“to bake”) (i.e. “twice-baked”), a calque of Italian biscotto (but not to be confused with it).","s":["rusk"]},
 "zwingli":{"d":[{"p":"n.","g":"Swiss theologian whose sermons began the Reformation in Switzerland (1484-1531)"}]},
-"zworykin":{"d":[{"p":"n.","g":"United States physicist who invented the iconoscope (1889-1982)"}]}
+"zworykin":{"d":[{"p":"n.","g":"United States physicist who invented the iconoscope (1889-1982)"}]},
+"zwitterion":{"d":[{"p":"n.","g":"A molecule, such as an amino acid, that carries both a positive and a negative charge.","dom":"chemistry"}],"e":"Unadapted borrowing from German Zwitterion, from Zwitter (“hermaphrodite”) + Ion (“ion”).","i":"/ˈtsvɪtəɹ.aɪən/"},
+"Zwilling":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Etymology tree Proto-Indo-European *dwóh₁ Proto-Indo-European *dwinosder. Proto-Germanic *twinaz Proto-Indo-European *-lósder. Proto-Germanic *-ilaz Proto-Indo-European *-n̥kʷo-der.? Proto-Indo-European *-nós Proto-Indo-European *-iHnos Proto-Germanic *-īnaz Proto-Indo-European *-kos Proto-Germanic *-gaz ? Proto-Germanic *-ingaz Proto-Germanic *-ilingaz Proto-Germanic *twinilingaz Old High German "},
+"Zweihänder":{"d":[{"p":"n.","g":"A two-handed sword primarily of Renaissance Germany, up to a fathom in length, invented in the 14th century.","x":"Their major weapon was the pike, which could be up to 18 feet in length, but those whose duty it was to advance in the front line carried instead the fearsome Zweihänder; an enormous battle-sword around 66 inches in length."}],"e":"Borrowed from German Zweihänder (literally “two hander”), from zwei (“two”) + Hand (“hand”) + -er.","i":"/ˈtsvaɪhɛndɚ/"},
+"Zwarte Piet":{"d":[{"p":"n.","g":"Black Peter"}],"e":"Borrowed from Dutch Zwarte Piet."},
+"zwischenschach":{"d":[{"p":"n.","g":"A zwischenzug that is a check.","dom":"board-games"}],"e":"Borrowed from German Zwischenschach."},
+"Zwolinski":{"d":[{"p":"n.","g":"A surname from Polish."}],"e":"Borrowed from Polish Zwoliński."},
+"Zwoleń":{"d":[{"p":"n.","g":"A town in Masovian Voivodeship, Poland."}],"e":"Unadapted borrowing from Polish Zwoleń."},
+"Zwartewaterland":{"d":[{"p":"n.","g":"A municipality of Overijssel, Netherlands."}],"e":"Borrowed from Dutch Zwartewaterland."},
+"Zweifach":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Zweifach, a Jewish Ashkenazi surname."},
+"Zwijndrecht":{"d":[{"p":"n.","g":"A municipality of South Holland, Netherlands."}],"e":"Borrowed from Dutch Zwijndrecht."},
+"zwastika":{"d":[{"p":"n.","g":"A Z letter used by Russian nationalists, usually to support Vladimir Putin or the Russian invasion of Ukraine."}],"e":"From Russian Z + swastika, comparing the Russian nationalist usage of the Z letter to the Nazi German swastika as a symbol of war against Ukraine. See the Russian section on Z for more information."},
+"zweikanter":{"d":[{"p":"n.","g":"A type of pebble that has two curved faces formed by wind-blown sand.","dom":"geography"}],"e":"Borrowed from German Zweikanter."}
 }

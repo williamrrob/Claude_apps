@@ -2,5 +2,22 @@
 "ehadhamen":{"d":[{"p":"n.","g":"city in Tunisia"}]},
 "ehf":{"d":[{"p":"n.","g":"30 to 300 gigahertz"}]},
 "ehrenberg":{"d":[{"p":"n.","g":"Russian novelist (1891-1967)"}],"i":"/ˈɛrənbɚg/","rs":"EH-ruhn-burg"},
-"ehrlich":{"d":[{"p":"n.","g":"German bacteriologist who found a `magic bullet' to cure syphilis and was a pioneer in the study of immunology (1854-1915)"}],"i":"/ˈɝlɪk/","rs":"UR-lik"}
+"ehrlich":{"d":[{"p":"n.","g":"German bacteriologist who found a `magic bullet' to cure syphilis and was a pioneer in the study of immunology (1854-1915)"}],"i":"/ˈɝlɪk/","rs":"UR-lik"},
+"eh":{"d":[{"p":"interj.","g":"Used as a tag question, to emphasise what goes before or to request that the listener express an opinion about what has been said.","x":"These hot dogs are pretty good, eh?"},{"p":"adj.","g":"Of mediocre quality; unremarkable.","x":"My French fries were eh."},{"p":"interj.","g":"A greeting between friends (typically male) or display of approval."},{"p":"interj.","g":"In isolation, a request for repetition or clarification of what has just been said.","x":"—I've been studying Graphiurus murinus. —Eh? Studying what?"}],"e":"Natural exclamation; first recorded mid-16th century. Perhaps an unstressed variant of aye (“yes, yeah”). The Philippine sense is possibly influenced by Tagalog e and/or Spanish eh.","r":["eh eh eh"],"i":"/eɪ/"},
+"Ehime":{"d":[{"p":"n.","g":"A prefecture of Japan. Capital: Matsuyama."}],"e":"Borrowed from Japanese 愛媛(えひめ) (Ehime)."},
+"Ehlers-Danlos syndrome":{"d":[{"p":"n.","g":"Any of a group of inherited connective tissue disorders caused by a defect in the synthesis of collagen, and resulting in abnormally elastic skin, joints, muscles, etc.","x":"But [Lena] Dunham also writes, in a wry and rueful voice, about her struggles with painful chronic illness (Dunham has endometriosis and Ehlers-Danlos syndrome); […].","dom":"medicine"}],"e":"Named after two doctors, Edvard Ehlers and Henri-Alexandre Danlos, who identified the syndrome at the turn of the 20th century."},
+"Ehrlich's reagent":{"d":[{"p":"n.","g":"A reagent made from paradimethylaminobenzaldehyde, ethanol and concentrated hydrochloric acid, primarily used to identify indoles."}],"e":"Named after German scientist Paul Ehrlich."},
+"Ehrhardt":{"d":[{"p":"n.","g":"A surname."}],"e":"Borrowed from German Erhard, in turn composed of Old High German ēra (“honour”) + hart (“hardy”)."},
+"Ehlen":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Ehlen."},
+"Ehrenstein illusion":{"d":[{"p":"n.","g":"An optical illusion in which the sides of a square placed inside a pattern of concentric circles take an apparent curved shape."}],"e":"Studied by the German psychologist Walter Ehrenstein (1899–1961)."},
+"eh Tiong":{"d":[{"p":"n.","g":"A Chinese national."}],"e":"From Hokkien 阿中 (a-tiong), 中國／中国 (Tiong-kok, “China”)."},
+"Ehrmann":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Ehrmann."},
+"Ehrenreich":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Ehrenreich."},
+"Ehinger":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Ehinger."},
+"Ehrich":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Ehrich."},
+"Ehrler":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Ehrler."},
+"Ehrenfest paradox":{"d":[{"p":"n.","g":"A relativistic paradox concerning the concept of Born rigidity within special relativity, where an ideally rigid cylinder that is made to rotate about its axis of symmetry. The radius R as seen in the laboratory frame is always perpendicular to its motion and should therefore be equal to its value R₀ when stationary. However, the circumference should appear Lorentz-contracted to a smaller value than at rest. This leads to the contradiction that R = R₀ and R < R₀.","dom":"physics"}],"e":"Proposed in 1909 by Paul Ehrenfest."},
+"Ehrenfest equation":{"d":[{"p":"n.","g":"Any of a group of equations that describe changes in specific heat capacity and derivatives of specific volume in second-order phase transitions."}],"e":"Named after Paul Ehrenfest."},
+"Ehrenfest theorem":{"d":[{"p":"n.","g":"A theorem that relates the time derivative of the expectation values of the position and momentum operators x and p to the expectation value of the force F=-V'(x) on a massive particle moving in a scalar potential V(x).","dom":"physics"}],"e":"Named after Paul Ehrenfest."},
+"Ehrenfest model":{"d":[{"p":"n.","g":"A model of diffusion used to explain the second law of thermodynamics, considering a number of particles in two containers, which independently change container at a certain rate.","dom":"physics"}],"e":"Named after Paul Ehrenfest and Tatiana Ehrenfest-Afanaseva."}
 }

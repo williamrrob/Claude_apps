@@ -1,4 +1,6 @@
 {
 "vd":{"d":[{"p":"n.","g":"a communicable infection transmitted by sexual intercourse or genital contact"}],"s":["dose"]},
-"vdu":{"d":[{"p":"n.","g":"(British) British term for video display"}]}
+"vdu":{"d":[{"p":"n.","g":"(British) British term for video display"}]},
+"VDA":{"d":[{"p":"n.","g":"A standard for measuring the capacity of a car's boot or trunk.","x":"There's enough space for five passengers and 461 litres (VDA) of cargo space[.]","dom":"automotive"}],"e":"Borrowed from German VDA (“German Association of the Automotive Industry”)."},
+"VDV":{"d":[{"p":"n.","g":"the Russian Airborne Forces.","dom":"government"}],"e":"Borrowed from Russian ВДВ (VDV), acronym of Возду́шно-деса́нтные во́йска Росси́и (Vozdúšno-desántnyje vójska Rossíi, “Airborne landing force of Russia”)."}
 }

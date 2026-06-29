@@ -1,3 +1,7 @@
 {
-"iud":{"d":[{"p":"n.","g":"contraceptive device consisting of a piece of bent plastic or metal that is inserted through the vagina into the uterus"}]}
+"iud":{"d":[{"p":"n.","g":"contraceptive device consisting of a piece of bent plastic or metal that is inserted through the vagina into the uterus"}]},
+"iunno":{"d":[{"p":"interj.","g":"I don't know."}],"e":"Loose pronunciation of I dunno (“I don't know”).","i":"/ˌaɪ.əˈnəʊ/"},
+"Iu Mien":{"d":[{"p":"n.","g":"A member of the Iu Mien people, a Southeast Asian subset of the Yao people, a minority group originally from China."},{"p":"n.","g":"The language of the Iu Mien people."}]},
+"iudex non calculat":{"d":[{"p":"n.","g":"The principle that a judge should base their decision on the strength of the arguments rather than their quantity.","dom":"law"}],"e":"Unadapted borrowing from Latin iūdex nōn calculat (literally “a judge does not calculate”)."},
+"iura novit curia":{"d":[{"p":"phrase","g":"Parties to a legal dispute do not need to plead or prove the law that applies to their case.","dom":"law"}],"e":"Borrowed from Latin iura novit curia. Literally, “the court knows the law”."}
 }

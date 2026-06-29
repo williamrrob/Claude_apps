@@ -1,3 +1,7 @@
 {
-"bns":{"d":[{"p":"n.","g":"a bachelor's degree in naval science"}]}
+"bns":{"d":[{"p":"n.","g":"a bachelor's degree in naval science"}]},
+"bn":{"d":[{"p":"symbol.","g":"Billion long scale."},{"p":"symbol.","g":"Billion.","x":"Holonyms: tn, trn"},{"p":"symbol.","g":"Billion short scale.","x":"Holonyms: T, trn"}]},
+"BNC connector":{"d":[{"p":"n.","g":"A connector for a coaxial cable which keeps the central wire from touching the cable's outer shield.","dom":"communications"}],"e":"Short for bayonet Neill–Concelman, after its bayonet mount locking mechanism and its inventors, Paul Neill and Carl Concelman."},
+"BNFdom":{"d":[{"p":"n.","g":"The state or quality of being a BNF (big-name fan).","x":"There are too many fans that can't take it easy, but have to put out top drawer stuff and bootstrap themselves to BNFdom, instead of doing it graciously and quietly as Hoffman did.","dom":"lifestyle"}],"e":"From BNF + -dom."},
+"Bnei Brak":{"d":[{"p":"n.","g":"A city in Israel."}],"e":"From Hebrew בְּנֵי בְּרַק."}
 }

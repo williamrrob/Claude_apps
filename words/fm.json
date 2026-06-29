@@ -1,4 +1,6 @@
 {
 "fm":{"d":[{"p":"symb.","g":"fathoms"}],"i":"/ˈɛˈfɛm/","rs":"EH-FEHM"},
-"fmri":{"d":[{"p":"n.","g":"a form of magnetic resonance imaging of the brain that registers blood flow to functioning areas of the brain"}]}
+"fmri":{"d":[{"p":"n.","g":"a form of magnetic resonance imaging of the brain that registers blood flow to functioning areas of the brain"}]},
+"fmz":{"d":[{"p":"n.","g":"Fanzine.","x":"The ludicrous situation may arise of all Fandom producing one zine for their own consumption - but I hardly think so. […] And this situation will prove a spur to the recruiting of more fans, and the converting of fans into actifans. Partnerships will be dissolved after the war, when the new, bright crop of fmz that are promised spring up.","dom":"lifestyle"}],"e":"Abbreviation of fan magazine.","i":"/fɛmz/"},
+"FMer":{"d":[{"p":"n.","g":"An FM radio enthusiast.","x":"The FMer realizes the increasing sophistication of the hobby."}],"e":"FM + -er"}
 }

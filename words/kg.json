@@ -1,4 +1,7 @@
 {
 "kg":{"d":[{"p":"n.","g":"one thousand grams;  the basic unit of mass adopted under the Systeme International d'Unites"}],"s":["kilogram","kilo"]},
-"kgb":{"d":[{"p":"n.","g":"formerly the predominant security police organization of Soviet Russia"}],"i":"/ˌkeɪˌdʒiˈbi/","rs":"kay-jee-BEE"}
+"kgb":{"d":[{"p":"n.","g":"formerly the predominant security police organization of Soviet Russia"}],"i":"/ˌkeɪˌdʒiˈbi/","rs":"kay-jee-BEE"},
+"kgotla":{"d":[{"p":"n.","g":"Any of several types of public meeting in a Botswana village, especially one involving a gathering of tribal elders.","x":"Speaking at the Mochudi main kgotla after the graduation of at least 1 281 initiates, Kgafela said though there were few challenges, the exercise had been successful."},{"p":"n.","g":"The place where such a meeting is held."}],"e":"Borrowed from Tswana kgotla (“tribal assembly”).","r":["lekgotla","makgotla"]},
+"kgosi":{"d":[{"p":"n.","g":"A tribal chief among the Tswana people of southern Africa.","x":"Then Rasebolai said that, as was customary, he would ask the visiting dikgosi to speak."}],"e":"Etymology tree Proto-Bantu *nkócì Tswana kgosibor. English kgosi Borrowed from Tswana kgosi (“chief, chieftain; king”), from Proto-Bantu *nkócì (“lion”). Doublet of inkosi."},
+"Kgalagadi":{"d":[{"p":"n.","g":"A district in south-west Botswana, which includes much of the Kalahari Desert."},{"p":"n.","g":"A member of a Tswana people chiefly living in the Kalahari Desert."}],"e":"Etymology tree Tswana kgala Tswana -gadi Tswana Kgalagadiubor. English Kgalagadi Unadapted borrowing from Tswana Kgalagadi (literally “a large, dry area”), from kgala (“become dry”) + -gadi (“large”). Doublet of Kalahari.","i":"/ˌxalaˈxɑːdi/"}
 }

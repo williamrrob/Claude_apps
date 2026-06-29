@@ -7,5 +7,8 @@
 "mnemonist":{"d":[{"p":"n.","g":"Someone able to perform feats of memory, especially by using mnemonic techniques."}]},
 "mnemosyne":{"d":[{"p":"n.","g":"(Greek mythology) the Titaness who was goddess of memory;  mother of the Muses"}]},
 "mniaceae":{"d":[{"p":"n.","g":"family of erect mosses with club-shaped paraphyses and the hexagonal cells of the upper leaf surface;  sometimes treated as a subfamily of Bryaceae"}]},
-"mnium":{"d":[{"p":"n.","g":"mosses similar to those of genus Bryum but larger"}]}
+"mnium":{"d":[{"p":"n.","g":"mosses similar to those of genus Bryum but larger"}]},
+"mneme":{"d":[{"p":"n.","g":"Persisting effect of memory of past events.","x":"If the engraphia of the external world could sensibly modify in a few generations the hereditary mneme of the species, it appears evident that the Jewish infants of the present day would be born without prepuce, or at least with an atrophied one."}],"e":"Borrowed from German Mneme which was coined by German evolutionary biologist Richard Semon in 1904 from Ancient Greek μνήμη (mnḗmē). First attested in English in 1921 where it was capitalized Mneme.","i":"/ˈniːmi/"},
+"mnemotechnist":{"d":[{"p":"n.","g":"One who studies mnemotechny, the practice of improving one's memory."}],"e":"From mnemotechny + -ist."},
+"mnemophobia":{"d":[{"p":"n.","g":"The fear of one's own memories.","x":"Complicating matters, some people suffer from Mnemophobia, the fear of memories. Every time they try to remember when it was they first became phobic, they become even more phobic!"}],"e":"From mnemo- (“memory”) + -phobia (“fear”)."}
 }

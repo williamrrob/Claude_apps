@@ -1,3 +1,6 @@
 {
-"rv":{"d":[{"p":"n.","g":"a motorized wheeled vehicle used for camping or other recreational activities"}]}
+"rv":{"d":[{"p":"n.","g":"a motorized wheeled vehicle used for camping or other recreational activities"}]},
+"rvalue reference":{"d":[{"p":"n.","g":"In C++, a reference which is bound to an rvalue.","x":"im: has identity and can be moved from (e.g. the result of casting an lvalue to a rvalue reference) […] I note that this whole discussion/problem arise from the introduction of rvalue references and move semantics.","dom":"computing"}]},
+"RVSVP":{"d":[{"p":"phrase","g":"Used in writing to request a prompt reply to an invitation."}],"e":"Initialism of French \"répondez vite s'il vous plaît\" (\"please reply quickly\")."},
+"RVA":{"d":[{"p":"n.","g":"Richmond (the capital city of Virginia, United States).","x":"In the years since ‘RVA’ became an official brand … the community has worked to change the narrative,” says Lemon, referring to the successful RVA rebranding push launched more than a dozen years ago."}]}
 }

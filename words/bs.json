@@ -1,5 +1,9 @@
 {
 "bs":{"d":[{"p":"n.","g":"plural of b"},{"p":"n.","g":"Abbreviation of bullshit."}],"i":"/ˌbiˈɛs/","rs":"bee-EHS"},
 "bsarch":{"d":[{"p":"n.","g":"a bachelor's degree in architecture"}]},
-"bse":{"d":[{"p":"n.","g":"a fatal disease of cattle that affects the central nervous system;  causes staggering and agitation"}]}
+"bse":{"d":[{"p":"n.","g":"a fatal disease of cattle that affects the central nervous system;  causes staggering and agitation"}]},
+"BSOD":{"d":[{"p":"v.","g":"To emotionally shut down, such as in response to a traumatic personal crisis."},{"p":"v.","g":"To fail critically and display a blue screen of death.","dom":"computing"}]},
+"BSer":{"d":[{"p":"n.","g":"A bullshitter.","x":"Study participants were asked to assess their knowledge of 16 math topics on a five-point scale ranging from “never heard of it” to “know it well, understand the concept.” Crucially, three of those topics were complete fabrications […]. Those who said they were knowledgeable about the fictitious topics were categorized as BSers."}],"e":"From BS (“bullshit”) + -er."},
+"BSW":{"d":[{"p":"n.","g":"Sahra Wagenknecht Alliance, a left-conservative political party.","x":"In another worrying development for Germany’s mainstream, the fledgling Sahra Wagenknecht Alliance (BSW) – a far-left party that has questioned the country’s support for Ukraine and shares some of the AfD’s anti-immigration streak – came third in both states, despite only being founded earlier this year.","dom":"government"}],"e":"Borrowed from German BSW (“Bündnis Sahra Wagenknecht”)."},
+"bsdk":{"d":[{"p":"n.","g":"bastard, son of a whore"}],"e":"Derived from Hindi भोसड़ीके (bhosṛīke)."}
 }

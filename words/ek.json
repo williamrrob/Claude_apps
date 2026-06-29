@@ -1,4 +1,27 @@
 {
 "ekg":{"d":[{"p":"n.","g":"a graphical recording of the cardiac cycle produced by an electrocardiograph"}],"s":["electrocardiogram","cardiogram"]},
-"ekman":{"d":[{"p":"n.","g":"Swedish oceanographer who recognized the role of the Coriolis effect on ocean currents (1874-1954)"}],"i":"/ˈɛkmən/","rs":"EHK-muhn"}
+"ekman":{"d":[{"p":"n.","g":"Swedish oceanographer who recognized the role of the Coriolis effect on ocean currents (1874-1954)"}],"i":"/ˈɛkmən/","rs":"EHK-muhn"},
+"eke out":{"d":[{"p":"v.","g":"To supplement.","x":"The old man eked out his pension by selling vegetables from his garden."},{"p":"v.","g":"To obtain with difficulty or effort.","x":"Near-synonym: squeeze out"}],"e":"From obsolete eke (“to add to, augment; to increase”) + out."},
+"eka-":{"d":[{"p":"prefix.","g":"Used to form prototype names for as-yet undiscovered elements, when prepended to the known element above them in the same group of the periodic table.","dom":"chemistry"}],"e":"Etymology tree Proto-Indo-European *ís? Proto-Indo-European *h₁óynos Proto-Indo-Iranian *Háykas Proto-Indo-Aryan *Háykas Sanskrit एक (eka)bor. English eka- Borrowed from Sanskrit एक (eka, “one, first”).","i":"/ˈeɪkə/"},
+"eki":{"d":[{"p":"n.","g":"A Japanese train station."}],"e":"Borrowed from Japanese 駅(えき) (eki)."},
+"ekka":{"d":[{"p":"n.","g":"A small vehicle used in India, pulled by a single horse.","x":"He said that he was ‘going to shoot big game’, and left at half-past ten o'clock in an ekka."}],"e":"Etymology tree Hindi एक्का (ekkā)bor. English ekka Borrowed from Hindi एक्का (ekkā).","i":"/ˈɛkə/"},
+"Ekka":{"d":[{"p":"n.","g":"The Royal Queensland Show.","x":"The Queensland Chamber of Commerce questioned the Ekka (the Exhibition - Brisbane′s annual show) public holiday, complaining of loss of productivity."}],"e":"Shortened from exhibition; the show was originally called the Brisbane Exhibition.","i":"/ˈɛkə/"},
+"ekranoplan":{"d":[{"p":"n.","g":"a ground-effect vehicle","dom":"aeronautics"}],"e":"Borrowed from Russian экранопла́н (ekranoplán), itself derived from экра́н (ekrán, “screen”) as used in экранный эффе́кт (ekrannyj effékt, “ground effect”), from French écran, + the root of French planer (“to glide, to hover”)."},
+"ekmek kadayif":{"d":[{"p":"n.","g":"A Turkish bread pudding dessert, also found in Greece.","x":"[photograph] Ararat's ekmek kadayif — the topping on the honeyed cake, called kaimak, is a cream that is as rich as butter."}],"e":"From Turkish ekmek kadayıfı (“bread kataif”)."},
+"Eklund":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Eklund, an ornamental surname composed of the elements ek (“oak”) and lund (“grove”)."},
+"ekiden":{"d":[{"p":"n.","g":"A Japanese long-distance relay race, typically on roads.","x":"Kenyan runners were highly sought after to anchor teams that competed in the Japanese distance relay, known as ekiden, in which 10 runners often combine to cover more than 200 kilometers.","dom":"athletics"}],"e":"Borrowed from Japanese 駅伝."},
+"Ek":{"d":[{"p":"n.","g":"A surname from Swedish.","x":"“As you are well aware, over the last few months we’ve made a considerable effort to rein in costs, but it simply hasn’t been enough,” Daniel Ek, Spotify’s chief executive, said in a note to employees on Monday. […] Mr. Ek also announced some changes among Spotify’s executives as part of an effort to “restructure our organization.”"}],"e":"Borrowed from Swedish Ek."},
+"Ekbom's syndrome":{"d":[{"p":"n.","g":"restless legs syndrome"},{"p":"n.","g":"delusional parasitosis"}],"e":"Named after Swedish neurologist Karl-Axel Ekbom."},
+"Ekiri syndrome":{"d":[{"p":"n.","g":"Childhood shigellosis.","dom":"medicine"}],"e":"Like ekiri, from Japanese."},
+"ekagrata":{"d":[{"p":"n.","g":"Extreme focus on a particular point.","dom":"buddhism"}],"e":"Borrowed from Sanskrit एकाग्रता (ekāgratā, “concentration, singlemindedness”)."},
+"Ekman spiral":{"d":[{"p":"n.","g":"A structure of currents or winds near a horizontal boundary in which the flow direction rotates as one moves away from the boundary."}],"e":"First physically explained by Vagn Walfrid Ekman, Swedish oceanographer."},
+"ektenia":{"d":[{"p":"n.","g":"A litany in the Byzantine Rite.","dom":"christianity"}],"e":"Borrowed from Ancient Greek ἐκτένεια (ekténeia)."},
+"Ekstrom":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Ekström, an ornamental surname composed of the elements ek (“oak”) and ström (“river, current, stream”)."},
+"Ekberg":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Ekberg, from ek (“oak”) + berg (“mountain”)."},
+"Ekstrand":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Ekstrand, from ek (“oak”) + strand (“beach”)."},
+"ekiben":{"d":[{"p":"n.","g":"A bento (boxed lunch) sold at a railroad station in Japan."},{"p":"n.","g":"A sex position which consists of one participant carrying the other while penetrating them.","dom":"sex"}],"e":"Borrowed from Japanese 駅弁(えきべん) (ekiben)."},
+"Ekka flu":{"d":[{"p":"n.","g":"Colds and influenza spread during, and possibly because of, the Royal Queensland Show."}],"e":"Ekka (Show nickame) + flu"},
+"Ekdahl":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Ekdahl, from ek (“oak”) + dahl (“valley”)."},
+"Ekholm":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Ekholm, from ek (“oak”) + holm (“island”)."},
+"Ekserjyan":{"d":[{"p":"n.","g":"A surname from Armenian."}],"e":"Borrowed from Armenian Էքսերճյան (Ēkʻserčyan)."}
 }

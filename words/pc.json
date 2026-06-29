@@ -1,5 +1,9 @@
 {
 "pc":{"d":[{"p":"n.","g":"Abbreviation of piece."},{"p":"n.","g":"Abbreviation of parsec."},{"p":"n.","g":"Abbreviation of postcard."},{"p":"n.","g":"Abbreviation of percent."}],"s":["microcomputer"],"i":"/ˈpiˈsi/","rs":"PEE-SEE"},
 "pcp":{"d":[{"p":"n.","g":"a person who helps in identifying or preventing or treating illness or disability"}],"s":["caregiver"]},
-"pct":{"d":[{"p":"n.","g":"Abbreviation of percent."}],"s":["percentage","percent"]}
+"pct":{"d":[{"p":"n.","g":"Abbreviation of percent."}],"s":["percentage","percent"]},
+"PC Plod":{"d":[{"p":"n.","g":"A policeman (implying that he is dull and slow)."}],"e":"From the policeman in Enid Blyton's Noddy books."},
+"PC bang":{"d":[{"p":"n.","g":"A public internet cafe where people can meet to play multiplayer computer games for a fee.","x":"In South Korea, mobile phones have created a new population called transyouths who connect to each other through screens and PC bangs (J.H-j. Choi, 2010)."}],"e":"From Korean PC방 (pisi-bang, literally “PC room”). First attested in 1999."},
+"PC communication":{"d":[{"p":"n.","g":"Nationwide computer networks that preceded the World Wide Web/Internet, with telnet-based dial-up connections and bulletin board messaging systems.","x":"Financial cyber trading in Korea has been increasing steadily in the areas of stock trading and banking via telephone networks, modem-based PC communication and the Internet."}],"e":"Calque of Korean PC통신 (PCtongsin)."},
+"PC shaming":{"d":[{"p":"n.","g":"An act in which a user intimidates or harasses another into changing their personal opinions because they do not consider them politically correct enough.","dom":"government"}],"e":"From PC (“politically correct”) + shaming."}
 }

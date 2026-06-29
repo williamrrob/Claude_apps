@@ -1,4 +1,5 @@
 {
 "mv":{"d":[{"p":"n.","g":"Abbreviation of millivolt."},{"p":"v.","g":"Abbreviation of move."}],"s":["millivolt"]},
-"mvp":{"d":[{"p":"n.","g":"the player judged to be the most important to the sport"}]}
+"mvp":{"d":[{"p":"n.","g":"the player judged to be the most important to the sport"}]},
+"mvule":{"d":[{"p":"n.","g":"Milicia excelsa, a tropical African tree yielding iroko wood."},{"p":"n.","g":"The wood of this tree."}],"e":"Borrowed from Swahili mvule."}
 }

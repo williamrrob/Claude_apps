@@ -1,4 +1,7 @@
 {
 "pkd":{"d":[{"p":"n.","g":"kidney disease characterized by enlarged kidneys containing many cysts;  often leads to kidney failure"}]},
-"pku":{"d":[{"p":"n.","g":"a genetic disorder of metabolism;  lack of the enzyme needed to turn phenylalanine into tyrosine results in an accumulation of phenylalanine in the body fluids which causes various degrees of mental deficiency"}],"s":["phenylketonuria"]}
+"pku":{"d":[{"p":"n.","g":"a genetic disorder of metabolism;  lack of the enzyme needed to turn phenylalanine into tyrosine results in an accumulation of phenylalanine in the body fluids which causes various degrees of mental deficiency"}],"s":["phenylketonuria"]},
+"PK nail":{"d":[{"p":"n.","g":"A thick-shanked nail with an indentation in the middle of its head, driven into the ground to mark a position precisely.","dom":"geography"}],"e":"An initialism of the Parker-Kalon Company, the original manufacturer."},
+"PKK":{"d":[{"p":"n.","g":"Kurdistan Workers' Party.","x":"‘Turkey is fighting with Kurdish people. PKK. The first day I came, some of their soldiers died.’"}],"e":"Etymology tree Kurdishbor. English PKK Borrowed from a Kurdish language."},
+"pkaila":{"d":[{"p":"n.","g":"A Tunisian Jewish dish or condiment made from beans and spinach with seasonings."}]}
 }

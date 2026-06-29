@@ -1,3 +1,4 @@
 {
-"xmas":{"d":[{"p":"n.","g":"Alternative form of Xmas."}]}
+"xmas":{"d":[{"p":"n.","g":"Alternative form of Xmas."}]},
+"XmlHTTP":{"d":[{"p":"n.","g":"a set of APIs that enable binary data, HTML or XML to be transmitted to and from Web servers over the Internet using HTTP.","dom":"computing"}],"e":"from Xml + HTTP"}
 }

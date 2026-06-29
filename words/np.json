@@ -1,5 +1,7 @@
 {
 "np":{"d":[{"p":"phra.","g":"Abbreviation of no problem."},{"p":"phra.","g":"no pagination"},{"p":"phra.","g":"no place (of publication)"}],"s":["neptunium"]},
 "npa":{"d":[{"p":"n.","g":"a terrorist organization that is the militant wing of the Communist Party of the Philippines;  a Maoist organization formed to overthrow the government;  uses hit squads called Sparrow Units;  opposes United States military presence in the Philippines"}]},
-"npc":{"d":[{"p":"n.","g":"an agency that serves as the focal point for all Intelligence Community activities related to nonproliferation of weapons of mass destruction and their missile delivery systems"}]}
+"npc":{"d":[{"p":"n.","g":"an agency that serves as the focal point for all Intelligence Community activities related to nonproliferation of weapons of mass destruction and their missile delivery systems"}]},
+"NPD":{"d":[{"p":"n.","g":"The National Democratic Party.","x":"Over 2,000 police officers were on duty for the NPD march, which was allowed to go ahead on condition the demonstrators stayed out of the city centre and after two planned speakers were banned.","dom":"government"}],"e":"Etymology tree German NPDbor. English NPD Borrowed from German NPD (“Nationaldemokratische Partei Deutschlands”).","i":"/ɛn piː diː/"},
+"NPO":{"d":[{"p":"phrase","g":"\"nil per os\" (nothing by mouth - nothing may be eaten or drunk).","x":"Near-synonym: parenterally","dom":"medicine"}]}
 }
