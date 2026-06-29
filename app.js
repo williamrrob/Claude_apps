@@ -2130,7 +2130,7 @@
   const SR_KEY = "rootwork.sr";
   const SEEN_KEY = "rootwork.seen";    // rolling log of discovery words shown
   const SAVED_CAP = 10;               // max saved words per session
-  const DISCOVER_COUNT = 5;           // discovery words added every session
+  const DISCOVER_COUNT = 10;          // discovery words added every session
 
   // -- saved word list --
   function getSaved() { try { return JSON.parse(localStorage.getItem(SAVE_KEY) || "[]"); } catch (e) { return []; } }
