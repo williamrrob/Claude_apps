@@ -31,7 +31,7 @@ const { DatabaseSync } = require("node:sqlite");
 
 const ROOT = path.join(__dirname, "..");
 const SRC_DB = path.join(ROOT, "rootwork.sqlite");
-const EMB_DB = path.join(ROOT, "embeddings.sqlite");
+const EMB_DB = process.env.EMB_DB || path.join(ROOT, "embeddings.sqlite");
 
 const OLLAMA = process.env.OLLAMA_HOST || "http://localhost:11434";
 const MODEL = process.env.EMBED_MODEL || "nomic-embed-text";
@@ -197,44 +197,43 @@ async function build(args) {
   const t0 = Date.now();
   let done = 0, embedded = 0, cached = 0, skipped = 0;
 
+  // Pass 1: pick words needing work and collect their UNCACHED glosses, deduped
+  // by hash, across all words. Skip a word only if it's done AND every gloss is
+  // cached (an uncached gloss means a sense was added/changed → re-embed).
+  const todo = [];
+  const needMap = new Map(); // hash -> gloss text (unique, uncached)
   for (const row of words) {
-    // Skip only if the word is already done AND every current gloss is cached.
-    // If a gloss is uncached, the word gained/changed a sense (e.g. an import
-    // added a sense to an existing headword) and must be re-embedded so the new
-    // sense lands in the cache and the word's mean vector is refreshed.
     if (!force && haveWord.get(row.word)) {
       let allCached = true;
       for (const g of row.glosses) if (!getGloss.get(hashGloss(g))) { allCached = false; break; }
       if (allCached) { skipped++; continue; }
     }
-    const glosses = row.glosses;
-    const slot = new Array(glosses.length);
-    const need = [], needIdx = [];
-    for (let i = 0; i < glosses.length; i++) {
-      const h = hashGloss(glosses[i]);
-      const hit = getGloss.get(h);
-      if (hit) { slot[i] = blobToF32(hit.v); cached++; }
-      else { need.push(glosses[i]); needIdx.push(i); }
+    todo.push(row);
+    for (const g of row.glosses) { const h = hashGloss(g); if (!needMap.has(h) && !getGloss.get(h)) needMap.set(h, g); }
+  }
+
+  // Pass 2: embed uncached glosses in big cross-word batches (≫ the 1–2 glosses a
+  // single word has — measured ~3× faster than per-word requests on this GPU).
+  const uniq = [...needMap.values()];
+  const FLUSH = 256; // embedTexts chunks this into 64-wide requests internally
+  for (let i = 0; i < uniq.length; i += FLUSH) {
+    const chunk = uniq.slice(i, i + FLUSH);
+    const fresh = await embedTexts(chunk, "doc");
+    db.exec("BEGIN");
+    for (let k = 0; k < chunk.length; k++) { putGloss.run(hashGloss(chunk[k]), chunk[k], f32ToBlob(fresh[k])); embedded++; }
+    db.exec("COMMIT");
+    if (i % (FLUSH * 8) === 0) {
+      const rate = embedded / ((Date.now() - t0) / 1000);
+      process.stderr.write("  embedding " + embedded + "/" + uniq.length + " glosses  " + rate.toFixed(0) + "/s\n");
     }
-    if (need.length) {
-      const fresh = await embedTexts(need, "doc");
-      db.exec("BEGIN");
-      for (let k = 0; k < need.length; k++) {
-        const f = fresh[k];
-        slot[needIdx[k]] = f;
-        putGloss.run(hashGloss(need[k]), need[k], f32ToBlob(f));
-        embedded++;
-      }
-      db.exec("COMMIT");
-    }
-    const vecs = slot.filter(Boolean);
+  }
+
+  // Pass 3: every gloss is now cached — compute each word's mean vector.
+  for (const row of todo) {
+    const vecs = [];
+    for (const g of row.glosses) { const hit = getGloss.get(hashGloss(g)); if (hit) { vecs.push(blobToF32(hit.v)); cached++; } }
     if (vecs.length) putWord.run(row.word, f32ToBlob(normalize(meanVec(vecs))));
     done++;
-    if (done % 500 === 0) {
-      const rate = done / ((Date.now() - t0) / 1000);
-      process.stderr.write("  " + done + "/" + words.length + " words  (" +
-        embedded + " embedded, " + cached + " cached)  " + rate.toFixed(0) + "/s\n");
-    }
   }
   db.close();
   src.close();
