@@ -2184,15 +2184,19 @@
     return true;
   }
 
+  // Pop culture / proper noun domains in Wiktionary — not useful vocabulary.
+  const POP_DOM = /\b(television|film|cinema|video.?game|gaming|internet|web|computing|comic|anime|manga|brand|trademark|sport|baseball|football|basketball|soccer|cricket|chess|poker)\b/i;
+
   // Discovery: rare/specialized/loanword/archaic words worth learning.
-  // Signals: domain tag (specialized), long length (uncommon), etymology note
-  // (archaic and loanwords almost always have one), or archaic/rare pos marker.
+  // Domain tag qualifies only for academic/professional fields, not pop culture.
   function isDiscoveryWord(w, rec) {
     if (!isQuizzable(rec)) return false;
     if (rec.rel && /\bof$/.test(rec.rel.t || "")) return false;  // skip inflections
+    if (/^[A-Z]/.test(w)) return false;                          // skip proper nouns
+    if (w.includes(" ") || w.includes("-")) return false;        // single words only
     const s = rec.d[0];
-    if (s.dom) return true;                                        // specialized domain
-    if (w.length >= 11) return true;                               // long = uncommon
+    if (s.dom && !POP_DOM.test(s.dom)) return true;              // academic/professional domain
+    if (w.length >= 11) return true;                              // long = uncommon
     if (rec.e && typeof rec.e === "string" && rec.e.length > 15) return true; // has etymology
     if (/^(archaic|dated|rare|obsolete|poetic)\b/i.test(s.p || "")) return true;
     return false;
