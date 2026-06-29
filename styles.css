@@ -691,7 +691,12 @@ body {
 .quiz-title { font-size: 12.5px; letter-spacing: 0.04em; color: var(--muted); flex: 1; }
 .quiz-prog { font-size: 12px; color: var(--muted); }
 .quiz-word { font-size: 34px; font-weight: 700; color: var(--ink); text-align: center; margin-bottom: 6px; }
-.quiz-pos { text-align: center; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+.quiz-pos { display: flex; align-items: center; justify-content: center; gap: 8px; text-align: center; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+.quiz-new-tag { background: var(--root); color: #fff; font-size: 9px; letter-spacing: .1em; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700; opacity: .85; }
+.quiz-save-row { display: flex; justify-content: center; margin: 6px 0 -4px; }
+.quiz-save-btn { background: none; border: 1px solid var(--bd); color: var(--muted); padding: 7px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; }
+.quiz-save-btn:not(:disabled):hover { border-color: var(--root); color: var(--root); }
+.quiz-save-btn:disabled { opacity: .55; cursor: default; }
 .quiz-choices { display: flex; flex-direction: column; gap: 10px; }
 .mc-btn {
   background: var(--field); border: 1px solid var(--bd);

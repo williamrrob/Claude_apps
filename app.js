@@ -2121,15 +2121,18 @@
   const m = location.hash.match(/word=([a-zA-Z]+)/);
   if (m) run(m[1]);
 
-  // ---------- vocab quiz: save + SM-2 spaced repetition + MC ----------
+  // ---------- vocab quiz: save + SM-2 spaced repetition + MC + discovery ----------
 
   const quizEl = $("quiz");
   const quizBtn = $("quizBtn");
   const quizCountEl = $("quizCount");
   const SAVE_KEY = "rootwork.saved";
   const SR_KEY = "rootwork.sr";
+  const SEEN_KEY = "rootwork.seen";    // rolling log of discovery words shown
+  const SAVED_CAP = 10;               // max saved words per session
+  const DISCOVER_COUNT = 5;           // discovery words added every session
 
-  // -- saved word list (localStorage) --
+  // -- saved word list --
   function getSaved() { try { return JSON.parse(localStorage.getItem(SAVE_KEY) || "[]"); } catch (e) { return []; } }
   function setSaved(arr) { try { localStorage.setItem(SAVE_KEY, JSON.stringify(arr)); } catch (e) {} }
   function isSaved(w) { return getSaved().indexOf(w) !== -1; }
@@ -2142,6 +2145,15 @@
     const n = getSaved().length;
     if (quizCountEl) { quizCountEl.textContent = n || ""; quizCountEl.hidden = n === 0; }
     if (quizBtn) quizBtn.classList.toggle("has-saved", n > 0);
+  }
+
+  // -- seen log: prevents discovery words from repeating within ~300 sessions --
+  function getSeen() { try { return JSON.parse(localStorage.getItem(SEEN_KEY) || "[]"); } catch (e) { return []; } }
+  function addSeen(words) {
+    if (!words.length) return;
+    let s = getSeen().concat(words);
+    if (s.length > 400) s = s.slice(-400);
+    try { localStorage.setItem(SEEN_KEY, JSON.stringify(s)); } catch (e) {}
   }
 
   // -- SM-2 spaced repetition --
@@ -2161,6 +2173,57 @@
     }
     s.due = Date.now() + s.interval * 86400000;
     sr[word] = s; putSR(sr);
+  }
+
+  // -- word classification --
+  function isQuizzable(rec) {
+    if (!rec || !rec.d || !rec.d.length) return false;
+    const g = rec.d[0].g;
+    if (!g || g.length < 8) return false;
+    if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic) of\b/i.test(g)) return false;
+    return true;
+  }
+
+  // Discovery: rare/specialized/loanword/archaic words worth learning.
+  // Signals: domain tag (specialized), long length (uncommon), etymology note
+  // (archaic and loanwords almost always have one), or archaic/rare pos marker.
+  function isDiscoveryWord(w, rec) {
+    if (!isQuizzable(rec)) return false;
+    if (rec.rel && /\bof$/.test(rec.rel.t || "")) return false;  // skip inflections
+    const s = rec.d[0];
+    if (s.dom) return true;                                        // specialized domain
+    if (w.length >= 11) return true;                               // long = uncommon
+    if (rec.e && typeof rec.e === "string" && rec.e.length > 15) return true; // has etymology
+    if (/^(archaic|dated|rare|obsolete|poetic)\b/i.test(s.p || "")) return true;
+    return false;
+  }
+
+  function qShuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+
+  // -- discovery engine: sample random shards for interesting words --
+  async function pickDiscoveryWords(n, excludeSet, seenSet) {
+    const results = [];
+    const L = "abcdefghijklmnopqrstuvwxyz";
+    const tried = new Set();
+    while (results.length < n && tried.size < 26) {
+      const k = L[Math.floor(Math.random() * 26)] + L[Math.floor(Math.random() * 26)];
+      if (tried.has(k)) continue;
+      tried.add(k);
+      const sh = await fetchShard(k);
+      if (!sh) continue;
+      const candidates = qShuffle(Object.keys(sh).filter(function (w) {
+        return !excludeSet.has(w) && !seenSet.has(w) && isDiscoveryWord(w, sh[w]);
+      }));
+      for (const w of candidates.slice(0, 3)) {
+        if (results.length >= n) break;
+        results.push({ w: w, rec: sh[w] });
+      }
+    }
+    return results;
   }
 
   // -- distractor helpers --
@@ -2189,26 +2252,9 @@
     }
   }
 
-  function isQuizzable(rec) {
-    if (!rec || !rec.d || !rec.d.length) return false;
-    const g = rec.d[0].g;
-    if (!g || g.length < 8) return false;
-    if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic) of\b/i.test(g)) return false;
-    return true;
-  }
-
-  function qShuffle(arr) {
-    const a = arr.slice();
-    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
-    return a;
-  }
-
-  // Distractors come from rec.r (embedding-space neighbors from suggest-related.js)
-  // + rec.s (synonyms). Fallback to pre-warmed random pool.
   function glossMentions(gloss, word) {
     const g = (gloss || "").toLowerCase(), w = word.toLowerCase();
     if (g.includes(w)) return true;
-    // catch morphological variants: "biographer" exposes "biography" via shared stem
     if (w.length >= 7 && g.includes(w.slice(0, w.length - 2))) return true;
     return false;
   }
@@ -2234,12 +2280,11 @@
   let quizState = null;
   let quizToken = 0;
 
+  // Quiz always runs — discovery words fill any gap in the saved deck.
   function openQuiz() {
     quizEl.hidden = false;
-    const saved = getSaved();
-    if (!saved.length) { renderQuizEmpty(); return; }
     quizEl.innerHTML = '<div class="quiz-loading">Loading…</div>';
-    startQuiz(saved);
+    startQuiz(getSaved());
   }
 
   function closeQuiz() {
@@ -2252,30 +2297,48 @@
   async function startQuiz(saved) {
     const tok = ++quizToken;
     const sr = getSR();
+    // Sort saved by SM-2 due date (most overdue first), cap to SAVED_CAP
     const sorted = saved.slice().sort(function (a, b) {
       return ((sr[a] || { due: 0 }).due) - ((sr[b] || { due: 0 }).due);
-    });
+    }).slice(0, SAVED_CAP);
+
     const recs = {};
     await Promise.all(sorted.map(function (w) {
       return getWord(w).then(function (r) { if (r) recs[w] = r; });
     }));
     if (tok !== quizToken) return;
-    const queue = sorted.filter(function (w) { return isQuizzable(recs[w]); });
-    if (!queue.length) { renderQuizEmpty(); return; }
+    const savedQueue = sorted.filter(function (w) { return isQuizzable(recs[w]); });
+
+    // Discovery: fill remaining slots with rare/loanword/archaic/specialized words
+    const excludeSet = new Set(saved);
+    const seenSet = new Set(getSeen());
+    const discovered = await pickDiscoveryWords(DISCOVER_COUNT, excludeSet, seenSet);
+    if (tok !== quizToken) return;
+    const discoveryWords = [];
+    discovered.forEach(function (d) { recs[d.w] = d.rec; discoveryWords.push(d.w); });
+    addSeen(discoveryWords);
+
     await warmPool();
     if (tok !== quizToken) return;
-    quizState = { queue: queue, idx: 0, recs: recs, score: { correct: 0, total: 0 }, missed: [], tok: tok };
+
+    // Interleave: saved words first (they have SM-2 state), then discovery
+    const savedSet = new Set(saved);
+    const queue = savedQueue.concat(discoveryWords.filter(function (w) { return isQuizzable(recs[w]); }));
+    if (!queue.length) { renderQuizEmpty(); return; }
+
+    quizState = { queue: queue, idx: 0, recs: recs, savedSet: savedSet, score: { correct: 0, total: 0 }, missed: [], tok: tok };
     renderQuestion();
   }
 
   async function renderQuestion() {
     if (!quizState || quizEl.hidden) return;
-    const { queue, idx, recs, tok } = quizState;
+    const { queue, idx, recs, savedSet, tok } = quizState;
     if (idx >= queue.length) { renderResult(); return; }
     const word = queue[idx];
     const rec = recs[word];
     const correctGloss = shortGloss(rec.d[0].g);
     const pos = (rec.d[0] && rec.d[0].p) || "";
+    const isNew = !savedSet.has(word);
     const distractors = await getDistractors(word, rec, 3);
     if (tok !== quizToken) return;
     const choices = qShuffle([{ g: correctGloss, correct: true }].concat(
@@ -2285,25 +2348,30 @@
     quizEl.innerHTML = "";
     const head = el("div", "quiz-head");
     const xBtn = el("button", "quiz-close", "✕"); xBtn.type = "button";
-    xBtn.setAttribute("aria-label", "Close quiz");
-    xBtn.addEventListener("click", closeQuiz);
+    xBtn.setAttribute("aria-label", "Close quiz"); xBtn.addEventListener("click", closeQuiz);
     head.appendChild(xBtn);
-    head.appendChild(el("div", "quiz-title", "Quiz"));
+    head.appendChild(el("div", "quiz-title", isNew ? "Discovery" : "Quiz"));
     head.appendChild(el("div", "quiz-prog", (idx + 1) + " / " + queue.length));
     quizEl.appendChild(head);
     quizEl.appendChild(el("div", "quiz-word", word));
-    if (pos) quizEl.appendChild(el("div", "quiz-pos", pos));
+    const sub = el("div", "quiz-pos");
+    if (pos) sub.appendChild(el("span", null, pos));
+    if (isNew) {
+      const tag = el("span", "quiz-new-tag", "new");
+      sub.appendChild(tag);
+    }
+    quizEl.appendChild(sub);
 
     const choicesEl = el("div", "quiz-choices");
     choices.forEach(function (c) {
       const btn = el("button", "mc-btn", c.g); btn.type = "button";
-      btn.addEventListener("click", function () { onAnswer(btn, c.correct, choices, choicesEl, word, idx); });
+      btn.addEventListener("click", function () { onAnswer(btn, c.correct, choices, choicesEl, word, idx, isNew); });
       choicesEl.appendChild(btn);
     });
     quizEl.appendChild(choicesEl);
   }
 
-  function onAnswer(clickedBtn, correct, choices, choicesEl, word, idx) {
+  function onAnswer(clickedBtn, correct, choices, choicesEl, word, idx, isNew) {
     Array.prototype.forEach.call(choicesEl.children, function (btn, i) {
       btn.disabled = true;
       if (choices[i].correct) btn.classList.add("correct");
@@ -2313,6 +2381,19 @@
     quizState.score.total++;
     if (correct) quizState.score.correct++;
     else quizState.missed.push(word);
+    // Offer to star discovery words so they enter the SM-2 deck
+    if (isNew && !isSaved(word)) {
+      const saveRow = el("div", "quiz-save-row");
+      const saveBtn = el("button", "quiz-save-btn", "☆  Add to my deck"); saveBtn.type = "button";
+      saveBtn.addEventListener("click", function () {
+        toggleSaved(word);
+        saveBtn.textContent = "★  Added";
+        saveBtn.disabled = true;
+        quizState.savedSet.add(word);
+      });
+      saveRow.appendChild(saveBtn);
+      quizEl.appendChild(saveRow);
+    }
     const isLast = idx >= quizState.queue.length - 1;
     const nextBtn = el("button", "quiz-next", isLast ? "See results →" : "Next →");
     nextBtn.type = "button";
@@ -2364,9 +2445,8 @@
     head.appendChild(el("div", "quiz-title", "Quiz"));
     quizEl.appendChild(head);
     const msg = el("div", "quiz-empty");
-    msg.appendChild(el("div", "quiz-empty-icon", "☆"));
-    msg.appendChild(el("div", "quiz-empty-text", "Star words while browsing to build a quiz deck"));
-    msg.appendChild(el("div", "quiz-empty-hint", "Tap ☆ on any word card to add it"));
+    msg.appendChild(el("div", "quiz-empty-icon", "◈"));
+    msg.appendChild(el("div", "quiz-empty-text", "No words found — try again"));
     quizEl.appendChild(msg);
   }
 
