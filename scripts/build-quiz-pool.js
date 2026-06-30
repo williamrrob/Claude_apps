@@ -44,7 +44,13 @@ const PEOPLE = /\bmember of (a |an |the )?[^.]*\b(people|peoples|tribe|nation|cl
 const DEMO = /^(a |an )?(native|inhabitant|citizen|resident|person)( or (native|inhabitant|resident))? (of|from) (the )?[A-Z]/;
 const LANG = /^(a |an |the )?([a-z]+ )?(language|dialect|languages|dialects)\b[^.]*\b(of|spoken|used)\b|\bdialects? of\b|^(a |an |the )[a-z]+ (language|dialect)\b/i;
 const BRAND = /\b(trade ?name|trademark|brand ?name|proprietary name)\b/i;
+// bare deity/mythology headwords ("god of the underworld") are still proper nouns to
+// exclude; the FAMOUS_NAME allowance below is narrower — it only keeps *derived* words
+// (quixotic, herculean) whose gloss merely mentions a famous name in passing
 const LORE = /\b(apocryphal book|book of the bible|(greek|roman|norse|hindu|egyptian|celtic|slavic|aztec|christian|biblical|teutonic|germanic) (mytholog|deity|god)|mythological|\bdeity\b|\bgoddess\b|\bgod (of|and)\b|chief (deity|god)|worshipped|mythology)/i;
+// well-known gods/goddesses and famous legendary/literary characters: keep words derived
+// from these names — don't let the capitalized name alone trigger the proper-noun filter
+const FAMOUS_NAME = /\b(Hercules|Herculean|Zeus|Apollo|Hermes|Athena|Aphrodite|Ares|Artemis|Demeter|Dionysus|Hades|Hera|Hestia|Poseidon|Cronus|Cronos|Uranus|Gaia|Atlas|Prometheus|Promethean|Pandora|Midas|Narcissus|Cassandra|Oedipus|Oedipal|Sisyphus|Sisyphean|Tantalus|Icarus|Daedalus|Theseus|Perseus|Medusa|Hydra|Sphinx|Pegasus|Minotaur|Chimera|Cyclops|Circe|Calypso|Penelope|Odysseus|Ulysses|Achilles|Ajax|Hector|Helen|Paris|Troy|Trojan|Cupid|Venus|Mars|Martial|Mercury|Mercurial|Jupiter|Jove|Jovial|Neptune|Pluto|Juno|Vulcan|Janus|Bacchus|Diana|Minerva|Saturn|Saturnine|Titan|Titanic|Olympian|Olympus|Styx|Stygian|Quixote|Quixotic|Frankenstein|Dracula|Sherlock|Scrooge|Faust|Faustian|Pyrrhus|Pyrrhic|Gordius|Gordian|Procrustes|Procrustean|Byron|Byronic|Machiavelli|Machiavellian)\b/;
 const LANG2 = /\ban? (ancient|extinct|classical|dead|old|modern) [a-z]+ language\b|\b(language|dialect) of (ancient|the)\b/i;
 const SKY = /^(a |an |the )(star|constellation|planet|moon|asteroid|comet|galaxy|nebula)\b|\b(brightest|bright|binary|double|variable) star\b|\bstar in (the )?[a-z]/i;
 const ZODIAC = /\b(astrological sign|sign of the zodiac|zodiac sign)\b/i;
@@ -56,10 +62,11 @@ const RELADJ = /^(of or (relating|pertaining) to|relating to|pertaining to|chara
 const GEO_BROAD = /^(a |an |the )(ancient |former |historic )?(republic|country|nation|kingdom|empire|state|province|region|territory|county|city|town|village|island|river|mountain|lake|sea|commune|municipality|canton|oblast|dynasty|peninsula|archipelago|battle|war) \b[^.]*\b[A-Z][a-z]/;
 // two or more capitalized content words (excluding sentence start) => proper-noun def
 function caps2(g) {
-  const m = g.match(/\b[A-Z][a-z]{2,}/g) || [];
-  let c = m.length;
-  if (/^[A-Z][a-z]{2,}/.test(g.trim())) c--;  // ignore the sentence-initial capital
-  return c >= 2;
+  const m = g.match(/\b[A-Z][a-z]{2,}\b/g) || [];
+  const startsWithCap = /^[A-Z][a-z]{2,}/.test(g.trim());
+  const rest = startsWithCap ? m.slice(1) : m.slice();  // ignore the sentence-initial capital
+  const significant = rest.filter(w => !FAMOUS_NAME.test(w));
+  return significant.length >= 2;
 }
 function proper(g) {
   return GEO.test(g) || GEO2.test(g) || GEO_BROAD.test(g) || NAME.test(g) || CAPITAL.test(g) ||
@@ -68,7 +75,7 @@ function proper(g) {
 }
 // "form/spelling of" pointer senses and inflections make useless questions
 const POINTER = /^(form|plural|past|variant|alternative|synonym|misspelling|archaic|abbreviation|initialism|acronym|contraction) of\b/i;
-const VARIANT = /^(a |an |the )?(alternative|alt\.?|variant|obsolete|archaic|dated|nonstandard|non-standard|standard|common|eye|rare|informal|formal|colloquial|chiefly [a-z]+|british|american|canadian|australian|scottish|irish|dialectal) (spelling|spellings|form|pronunciation) of\b/i;
+const VARIANT = /^(a |an |the )?(alternative|alt\.?|variant|obsolete|archaic|dated|nonstandard|non-standard|standard|common|eye|rare|informal|formal|colloquial|chiefly [a-z]+|british|american|canadian|australian|scottish|irish|dialectal) ([a-z-]+ )?(spelling|spellings|form|pronunciation) of\b/i;
 const INFL = /^(\([^)]*\)\s*)?(simple past|past tense|past participle|present participle|present tense|gerund|third[- ]person singular|plural form|comparative|superlative)\b/i;
 function quizzableGloss(g) {
   return g && g.length >= 8 && !POINTER.test(g) && !VARIANT.test(g) && !INFL.test(g);
@@ -125,6 +132,19 @@ function score(e) {
 }
 pool.sort((a, b) => score(b) - score(a));
 const top = pool.slice(0, CAP).map(e => [e[0], e[1]]);
+
+// curated multi-word idiom headwords: capitalized + spaced, so the lowercase single-token
+// regex above never sees them, and they have no usage data to derive an era from —
+// verified to exist with real glosses, added by hand with an estimated old-ish era
+const IDIOMS = [
+  "Achilles heel", "Achilles tendon", "Pandora's box", "Trojan horse", "Midas touch",
+  "Cassandra complex", "Pyrrhic victory", "Gordian knot", "Faustian bargain",
+  "Oedipus complex", "Freudian slip",
+];
+const IDIOM_ERA = 13; // ~1825-1849, mid-band estimate
+for (const w of IDIOMS) {
+  if (gloss[w]) top.push([w, IDIOM_ERA]);
+}
 
 if (SAMPLE) {
   console.log("stats:", JSON.stringify(stats));

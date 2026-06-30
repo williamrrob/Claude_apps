@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "44";
+  const DATA_V = "45";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -2177,23 +2177,35 @@
 
   // -- word classification --
   // pointer entries ("Alternative spelling of X", "Plural of Y") make useless
-  // questions — the answer is just another form of the headword.
-  const VARIANT_RE = /^(a |an |the )?(alternative|alt\.?|variant|obsolete|archaic|dated|nonstandard|non-standard|standard|common|eye|rare|informal|formal|colloquial|chiefly [a-z]+|british|american|canadian|australian|scottish|irish|dialectal) (spelling|spellings|form|pronunciation) of\b/i;
-  function senseOk(s) {
+  // questions — the answer is just another form of the headword. The optional
+  // qualifier word (e.g. "letter-case" in "Alternative letter-case form of
+  // Islamism") keeps these from slipping through unmatched.
+  const VARIANT_RE = /^(a |an |the )?(alternative|alt\.?|variant|obsolete|archaic|dated|nonstandard|non-standard|standard|common|eye|rare|informal|formal|colloquial|chiefly [a-z]+|british|american|canadian|australian|scottish|irish|dialectal) ([a-z-]+ )?(spelling|spellings|form|pronunciation) of\b/i;
+  // The clause a quiz option shows — same first-clause split as shortGloss, but
+  // (unlike shortGloss) never hard-truncates mid-word with "…". A sense whose
+  // first clause doesn't fit in that length isn't a good multiple-choice option,
+  // so it's filtered out below rather than chopped.
+  function quizGloss(g) { return String(g).split(/;| — /)[0].trim(); }
+  // A sense whose own gloss contains the headword ("Clipping of rheumatologist"
+  // for rheum, "...in a phial" for phial) hands the answer away — skip it.
+  function senseOk(s, word) {
     const g = s && s.g;
-    if (!g || g.length < 8) return false;
-    if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic|abbreviation|initialism|acronym|contraction) of\b/i.test(g)) return false;
-    if (VARIANT_RE.test(g)) return false;
+    if (!g) return false;
+    const qg = quizGloss(g);
+    if (qg.length < 8 || qg.length > 140) return false;
+    if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic|abbreviation|initialism|acronym|contraction) of\b/i.test(qg)) return false;
+    if (VARIANT_RE.test(qg)) return false;
+    if (word && glossMentions(qg, word)) return false;
     return true;
   }
   // indices of senses good enough to ask a question about
-  function validSenseIdx(rec) {
+  function validSenseIdx(rec, word) {
     if (!rec || !rec.d) return [];
     const out = [];
-    rec.d.forEach(function (s, i) { if (senseOk(s)) out.push(i); });
+    rec.d.forEach(function (s, i) { if (senseOk(s, word)) out.push(i); });
     return out;
   }
-  function isQuizzable(rec) { return validSenseIdx(rec).length > 0; }
+  function isQuizzable(rec, word) { return validSenseIdx(rec, word).length > 0; }
 
   // Proper-noun / gazetteer / onomastic glosses (places, surnames, given names,
   // taxonomic genera). The eras pool stores these lowercased, so we detect them
@@ -2213,8 +2225,8 @@
   // Show a random valid sense (not always sense 0) so repeat review of a word
   // rotates through its meanings. Targeting *forgotten* senses needs per-sense
   // register data the corpus doesn't carry — deferred (see notes).
-  function pickSenseToShow(rec) {
-    const idxs = validSenseIdx(rec);
+  function pickSenseToShow(rec, word) {
+    const idxs = validSenseIdx(rec, word);
     return idxs[Math.floor(Math.random() * idxs.length)];
   }
 
@@ -2265,8 +2277,8 @@
     for (const c of scored) {
       if (results.length >= n) break;
       const rec = await getWord(c.w);
-      if (rec && isQuizzable(rec) && !looksProper(rec) && !(rec.rel && /\bof$/.test(rec.rel.t || ""))) {
-        results.push({ w: c.w, rec: rec, senseIdx: pickSenseToShow(rec) });
+      if (rec && isQuizzable(rec, c.w) && !looksProper(rec) && !(rec.rel && /\bof$/.test(rec.rel.t || ""))) {
+        results.push({ w: c.w, rec: rec, senseIdx: pickSenseToShow(rec, c.w) });
       }
     }
     return results;
@@ -2288,12 +2300,15 @@
       for (const w of Object.keys(sh)) {
         const r = sh[w];
         if (!r || !r.d || !r.d.length) continue;
-        const g = r.d[0].g;
-        if (!g || g.length < 12) continue;
         if (r.rel && /\bof$/.test(r.rel.t || "")) continue;
-        if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic) of\b/i.test(g)) continue;
         if (w.length < 7) continue;
-        distractorPool.push({ w: w, g: shortGloss(g), p: r.d[0].p, dom: r.d[0].dom });
+        if (looksProper(r)) continue; // random fallback pool — don't let place/name entries through
+        if (!isQuizzable(r, w)) continue;
+        const si = pickSenseToShow(r, w);
+        const sense = r.d[si];
+        const g = quizGloss(sense.g);
+        if (g.length < 12) continue;
+        distractorPool.push({ w: w, g: g, p: sense.p, dom: sense.dom });
       }
     }
   }
@@ -2305,16 +2320,70 @@
     return false;
   }
 
+  // Bigram (letter-pair) overlap — a cheap, offline stand-in for "looks/sounds
+  // similar". Used to find orthographic near-misses (importune / impertinent)
+  // as distractors: genuinely confusable, but — unlike synonyms — not at risk
+  // of secretly also being a correct answer.
+  function bigramSet(w) {
+    const s = String(w).toLowerCase();
+    const m = {};
+    for (let i = 0; i < s.length - 1; i++) { const g = s.slice(i, i + 2); m[g] = (m[g] || 0) + 1; }
+    return m;
+  }
+  function bigramSim(aMap, aTotal, b) {
+    const bMap = bigramSet(b);
+    let common = 0, bTotal = 0;
+    for (const g in bMap) bTotal += bMap[g];
+    for (const g in aMap) { if (bMap[g]) common += Math.min(aMap[g], bMap[g]); }
+    return aTotal + bTotal ? (2 * common) / (aTotal + bTotal) : 0;
+  }
+  async function getLookalikes(word, excludeSet, count) {
+    const key = word.slice(0, 2).toLowerCase();
+    const sh = await fetchShard(key);
+    if (!sh) return [];
+    const aMap = bigramSet(word);
+    let aTotal = 0; for (const g in aMap) aTotal += aMap[g];
+    const scored = [];
+    for (const w of Object.keys(sh)) {
+      if (w === word || excludeSet.has(w)) continue;
+      if (Math.abs(w.length - word.length) > 3) continue;
+      const r = sh[w];
+      if (!r || !isQuizzable(r, w) || looksProper(r)) continue;
+      const sim = bigramSim(aMap, aTotal, w);
+      if (sim < 0.3) continue;
+      scored.push({ w: w, sim: sim, rec: r });
+    }
+    scored.sort(function (a, b) { return b.sim - a.sim; });
+    return scored.slice(0, count);
+  }
+
   async function getDistractors(word, rec, count) {
     const ok = function (g) { return !glossMentions(g, word); };
-    const neighborWords = qShuffle(((rec && rec.r) || []).concat((rec && rec.s) || []).filter(function (w) { return w !== word; }));
+    // Only rec.r (morphological/embedding neighbors), never rec.s (synonyms) —
+    // a synonym's own definition will, by definition, usually also describe the
+    // target word correctly ("masturbate" for wank, "brackish" for briny,
+    // "sunfish" for mola), which made for distractors that were secretly right.
+    const neighborWords = qShuffle(((rec && rec.r) || []).filter(function (w) { return w !== word; }));
     const candidates = [];
     for (const nw of neighborWords.slice(0, count * 6)) {
       if (candidates.length >= count) break;
       const nrec = await getWord(nw);
-      if (isQuizzable(nrec)) {
-        const g = shortGloss(nrec.d[0].g);
+      if (isQuizzable(nrec, nw) && !looksProper(nrec)) {
+        const si = pickSenseToShow(nrec, nw);
+        const g = quizGloss(nrec.d[si].g);
         if (ok(g)) candidates.push({ w: nw, g: g });
+      }
+    }
+    // rec.r runs thin for rare/obscure words — rather than fall straight to a
+    // fully random word, prefer orthographic near-misses: words that look like
+    // they could be confused with this one, even though they aren't related.
+    if (candidates.length < count) {
+      const used = new Set([word].concat(candidates.map(function (c) { return c.w; })));
+      const look = await getLookalikes(word, used, count - candidates.length);
+      for (const l of look) {
+        const si = pickSenseToShow(l.rec, l.w);
+        const g = quizGloss(l.rec.d[si].g);
+        if (ok(g)) candidates.push({ w: l.w, g: g });
       }
     }
     if (candidates.length >= count) return candidates.slice(0, count);
@@ -2351,10 +2420,10 @@
     const recs = {};
     const senseIdx = {};
     await Promise.all(sorted.map(function (w) {
-      return getWord(w).then(function (r) { if (r) { recs[w] = r; senseIdx[w] = pickSenseToShow(r); } });
+      return getWord(w).then(function (r) { if (r) { recs[w] = r; senseIdx[w] = pickSenseToShow(r, w); } });
     }));
     if (tok !== quizToken) return;
-    const savedQueue = sorted.filter(function (w) { return isQuizzable(recs[w]); });
+    const savedQueue = sorted.filter(function (w) { return isQuizzable(recs[w], w); });
 
     // Discovery: fill remaining slots with rare/loanword/archaic/specialized words
     const excludeSet = new Set(saved);
@@ -2370,7 +2439,7 @@
 
     // Interleave: saved words first (they have SM-2 state), then discovery
     const savedSet = new Set(saved);
-    const queue = savedQueue.concat(discoveryWords.filter(function (w) { return isQuizzable(recs[w]); }));
+    const queue = savedQueue.concat(discoveryWords.filter(function (w) { return isQuizzable(recs[w], w); }));
     if (!queue.length) { renderQuizEmpty(); return; }
 
     quizState = { queue: queue, idx: 0, recs: recs, senseIdx: senseIdx, savedSet: savedSet, score: { correct: 0, total: 0 }, missed: [], tok: tok };
@@ -2384,13 +2453,17 @@
     const word = queue[idx];
     const rec = recs[word];
     const sense = rec.d[senseIdx[word]] || rec.d[0];
-    const correctGloss = shortGloss(sense.g);
+    const correctGloss = quizGloss(sense.g);
     const pos = sense.p || "";
     const isNew = !savedSet.has(word);
     const distractors = await getDistractors(word, rec, 3);
     if (tok !== quizToken) return;
-    const choices = qShuffle([{ g: correctGloss, correct: true }].concat(
-      distractors.slice(0, 3).map(function (d) { return { g: d.g, correct: false }; })
+    // A choice is correct if it's drawn from the target word itself OR one of its
+    // registered synonyms — a synonym's own gloss genuinely does describe the
+    // target word too, so picking it shouldn't be marked wrong.
+    const correctWords = new Set([word].concat((rec && rec.s) || []));
+    const choices = qShuffle([{ g: correctGloss, w: word, correct: true }].concat(
+      distractors.slice(0, 3).map(function (d) { return { g: d.g, w: d.w, correct: correctWords.has(d.w) }; })
     ));
 
     quizEl.innerHTML = "";
@@ -2402,6 +2475,8 @@
     head.appendChild(el("div", "quiz-prog", (idx + 1) + " / " + queue.length));
     quizEl.appendChild(head);
     quizEl.appendChild(el("div", "quiz-word", word));
+    const pronTxt = rec.i || rec.rs;
+    if (pronTxt) quizEl.appendChild(el("div", "quiz-pron", pronTxt));
     const sub = el("div", "quiz-pos");
     if (pos) sub.appendChild(el("span", null, pos));
     if (isNew) {
@@ -2499,6 +2574,8 @@
   }
 
   if (quizBtn) quizBtn.addEventListener("click", openQuiz);
+  const homeQuizBtn = $("homeQuizBtn");
+  if (homeQuizBtn) homeQuizBtn.addEventListener("click", openQuiz);
   updateQuizBadge();
 
 })();

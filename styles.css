@@ -99,7 +99,7 @@ body {
 .content > * { flex-shrink: 0; }
 
 .hint { text-align: center; margin: auto 0; max-width: 460px; align-self: center; animation: fade 0.5s var(--ease); }
-.splash-book { display: flex; justify-content: center; margin: 0 0 26px; }
+.splash-book { display: none; justify-content: center; margin: 0 0 26px; }
 .splash-book svg {
   width: 132px; height: auto;
   /* embossed gold leaf: lifted highlight on top, shadow below */
@@ -107,6 +107,16 @@ body {
 }
 .hint-title { font-size: 24px; font-weight: 750; letter-spacing: -0.02em; margin: 0 0 8px; }
 .hint-sub { color: var(--muted); margin: 0 0 22px; font-size: 15px; }
+.hint-quiz-btn {
+  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 22px;
+  background: var(--glass-sheen), var(--field);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-hi); border: 1px solid var(--root); color: var(--ink);
+  border-radius: 999px; padding: 11px 22px; font-size: 15px; font-weight: 650; cursor: pointer;
+  transition: transform 0.15s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.hint-quiz-btn:active { transform: scale(0.96); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .example {
   background: var(--glass-sheen), var(--field);
@@ -864,8 +874,9 @@ body {
 /* home-screen A–Z browse strip */
 /* A–Z as dictionary thumb-tabs down the right edge (home screen only) */
 .alpha {
+  display: none;
   position: fixed; top: 50%; right: 0; transform: translateY(-50%);
-  z-index: 5; display: flex; flex-direction: column; gap: 2px; margin: 0;
+  z-index: 5; flex-direction: column; gap: 2px; margin: 0;
 }
 .alpha-tab {
   width: 23px; height: 18px; display: flex; align-items: center; justify-content: center;
@@ -874,8 +885,6 @@ body {
   border-radius: 7px 0 0 7px; -webkit-tap-highlight-color: transparent;
 }
 .alpha-tab:active { background: var(--prefix); color: #f3e7d2; }
-/* keep the centered splash clear of the rail */
-.hint { padding-right: 30px; }
 
 /* typeahead suggestions */
 .suggest { list-style: none; margin: 0 0 9px; padding: 6px; display: flex; flex-direction: column; gap: 2px;
