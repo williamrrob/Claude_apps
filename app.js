@@ -2219,10 +2219,12 @@
         } else {
           const maxScroll = contentEl.scrollHeight - contentEl.clientHeight;
           const nearBottom = maxScroll - y < 40;
-          const scrollingDown = y > lastScrollY;
-          if (y < 24 || nearBottom || !scrollingDown) {
+          const delta = y - lastScrollY;
+          // small bounce/jitter (momentum scrolling, rubber-banding) shouldn't
+          // toggle the dock; only react once the scroll has moved a real amount.
+          if (y < 24 || nearBottom || delta < -6) {
             if (dockHidden) { dockEl.classList.remove("dock-hide"); contentEl.classList.remove("dock-hidden"); dockHidden = false; }
-          } else if (scrollingDown) {
+          } else if (delta > 6) {
             // the bottom fade mask exists to blend content into the dock; with
             // the dock tucked away there's nothing to blend into, so drop it too.
             if (!dockHidden) { dockEl.classList.add("dock-hide"); contentEl.classList.add("dock-hidden"); dockHidden = true; }

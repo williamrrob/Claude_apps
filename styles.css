@@ -1,7 +1,7 @@
 :root {
   /* vintage dictionary — dark (aged leather/espresso). No blues. */
-  --prefix: #b02b25;   /* classic dictionary red */
-  --prefix-ink: #d2685f; /* lighter red, legible as text on dark */
+  --prefix: #a8542a;   /* terracotta */
+  --prefix-ink: #dd9468; /* lighter terracotta, legible as text on dark */
   --root:   #7fae7a;   /* sage / forest green */
   --suffix: #d2b15c;   /* antique gold */
   --stem:   #a99a83;
@@ -10,7 +10,7 @@
   --bg2: #221d16;
   --ink: #ece0cc;
   --muted: #a99a83;
-  --bd: rgba(245, 235, 215, 0.26);
+  --bd: rgba(245, 235, 215, 0.15);
   --panel: rgba(245, 238, 222, 0.035);
   --field: rgba(245, 238, 222, 0.045);
   --dock: rgba(245, 238, 222, 0.02);
@@ -31,15 +31,15 @@
 /* vintage dictionary — light (parchment) */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --prefix: #a42620; --prefix-ink: #a42620; --root: #3f7050; --suffix: #946a14; --stem: #7a6e58;
-    --bg: #f1e7cf; --bg2: #efe3c6; --ink: #2c2418; --muted: #7a6e58; --bd: rgba(70,52,24,0.32);
+    --prefix: #9c4a22; --prefix-ink: #9c4a22; --root: #3f7050; --suffix: #946a14; --stem: #7a6e58;
+    --bg: #f1e7cf; --bg2: #efe3c6; --ink: #2c2418; --muted: #7a6e58; --bd: rgba(70,52,24,0.19);
     --panel: rgba(255,252,244,0.24); --field: rgba(255,253,247,0.30); --dock: rgba(255,253,248,0.12);
     --glass-hi: inset 0 1px 0 rgba(255,255,255,0.55); --glass-shadow: 0 14px 32px rgba(80,60,25,0.24), 0 3px 8px rgba(80,60,25,0.22);
   }
 }
 :root[data-theme="light"] {
-  --prefix: #a42620; --prefix-ink: #a42620; --root: #3f7050; --suffix: #946a14; --stem: #7a6e58;
-  --bg: #f1e7cf; --bg2: #efe3c6; --ink: #2c2418; --muted: #7a6e58; --bd: rgba(70,52,24,0.32);
+  --prefix: #9c4a22; --prefix-ink: #9c4a22; --root: #3f7050; --suffix: #946a14; --stem: #7a6e58;
+  --bg: #f1e7cf; --bg2: #efe3c6; --ink: #2c2418; --muted: #7a6e58; --bd: rgba(70,52,24,0.19);
   --panel: rgba(255,252,244,0.24); --field: rgba(255,253,247,0.30); --dock: rgba(241,231,207,0.12);
   --glass-hi: inset 0 1px 0 rgba(255,255,255,0.55); --glass-shadow: 0 8px 22px rgba(80,60,25,0.14);
 }
@@ -334,7 +334,7 @@ body {
 /* ---------- panels (meaning, history) ---------- */
 .panels { width: 100%; display: flex; flex-direction: column; gap: 11px; margin-top: 11px; }
 .panel {
-  border: 1px solid var(--bd); border-radius: 16px; padding: 14px 16px; background: var(--panel);
+  border: 1px solid var(--bd); border-radius: 22px; padding: 14px 16px; background: var(--panel);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-hi), var(--glass-shadow);
   opacity: 0; transform: translateY(12px); transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
@@ -412,10 +412,10 @@ body {
   position: absolute; z-index: 5; left: 0; right: 0; bottom: 0;
   margin: 0 var(--pad) calc(14px + env(safe-area-inset-bottom));
   border: 1px solid var(--bd); border-radius: 999px; background: var(--dock);
-  -webkit-backdrop-filter: blur(76px) saturate(180%); backdrop-filter: blur(76px) saturate(180%);
+  -webkit-backdrop-filter: blur(60px) saturate(170%); backdrop-filter: blur(60px) saturate(170%);
   box-shadow: var(--glass-hi), var(--glass-shadow);
-  padding: 8px 10px;
-  transition: border-radius 0.18s var(--ease), transform 0.28s var(--ease), opacity 0.22s var(--ease);
+  padding: 6px 8px;
+  transition: border-radius 0.18s var(--ease), transform 0.42s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.34s cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* a tall dock (suggestions/recent showing above the search row) would otherwise
    stretch the 999px pill radius into a stadium/circle that swallows the list */
@@ -444,16 +444,17 @@ body {
 }
 .history-chip:active { transform: scale(0.94); }
 .search {
-  display: flex; align-items: center; gap: 6px; padding: 4px;
+  display: flex; align-items: center; gap: 6px; padding: 3px 3px 3px 10px;
+  border: 1px solid var(--bd); border-radius: 999px; background: var(--field);
 }
 .search-input {
   flex: 1; min-width: 0; background: transparent; border: none; color: var(--ink);
-  font-size: 16px; padding: 6px 10px; outline: none;
+  font-size: 16px; padding: 5px 0; outline: none;
 }
 .search-input::placeholder { color: var(--muted); }
 .search-btn {
   flex: 0 0 auto; display: grid; place-items: center;
-  width: 36px; height: 36px; border-radius: 999px; cursor: pointer; color: #f3e7d2;
+  width: 32px; height: 32px; border-radius: 999px; cursor: pointer; color: #f3e7d2;
   background: var(--prefix); border: none; box-shadow: inset 0 1px 0 rgba(255,250,240,0.25);
   transition: transform 0.15s var(--ease), filter 0.15s;
   -webkit-tap-highlight-color: transparent;
@@ -857,7 +858,7 @@ body {
 .img-bubble-d { display: block; font-size: 11px; font-style: italic; color: rgba(246,236,216,0.82); margin-top: 1px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .img-bubble:active { transform: scale(0.97); }
-.card { border: 1px solid var(--bd); border-radius: 16px; padding: 14px 16px;
+.card { border: 1px solid var(--bd); border-radius: 22px; padding: 14px 16px;
   background: var(--glass-sheen), var(--panel);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-hi), var(--glass-shadow);
@@ -1001,7 +1002,7 @@ body {
    flex-basis:0 so the collapsed nav-pair contributes no width to the row. */
 .dock-row.typing { gap: 0; }
 .dock-row.typing .nav-pair { max-width: 0; flex-basis: 0; opacity: 0; pointer-events: none; }
-.nav-btn { width: 34px; height: 36px; border-radius: 999px; border: 1px solid var(--bd);
+.nav-btn { width: 32px; height: 32px; border-radius: 999px; border: 1px solid var(--bd);
   background: var(--glass-sheen), var(--field); box-shadow: var(--glass-hi);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   color: var(--ink); font-size: 19px; line-height: 1; cursor: pointer;
