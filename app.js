@@ -2126,6 +2126,17 @@
   const quizEl = $("quiz");
   const quizBtn = $("quizBtn");
   const quizCountEl = $("quizCount");
+  const quizPeekBack = $("quizPeekBack");
+  const appEl = document.querySelector(".app");
+  // open a word's full card as a frosted sheet above the quiz, leaving the
+  // quiz's DOM (and the revealed answers) untouched underneath
+  function openQuizCard(word) {
+    appEl.classList.add("quiz-peek");
+    run(word);
+  }
+  if (quizPeekBack) {
+    quizPeekBack.addEventListener("click", function () { appEl.classList.remove("quiz-peek"); });
+  }
   const SAVE_KEY = "rootwork.saved";
   const SR_KEY = "rootwork.sr";
   const SEEN_KEY = "rootwork.seen";    // rolling log of discovery words shown
@@ -2216,7 +2227,11 @@
   // as an acronym/initialism (nimby) rather than an organically grown word —
   // not the kind of vocabulary the quiz should be testing.
   const ACRONYM_ETYM_RE = /^(an? )?(acronym|initialism|abbreviation)( for| of)\b/i;
+  // confirmed case-by-case as too easily mistaken for a misspelling of a far
+  // more common word with an overlapping sense (mirrors build-quiz-pool.js)
+  const QUIZ_EXCLUDE_WORDS = new Set(["unsoluble"]);
   function isQuizzable(rec, word) {
+    if (QUIZ_EXCLUDE_WORDS.has(word)) return false;
     if (rec && rec.e && ACRONYM_ETYM_RE.test(rec.e)) return false;
     return validSenseIdx(rec, word).length > 0;
   }
@@ -2438,6 +2453,7 @@
     quizEl.hidden = true;
     quizEl.innerHTML = "";
     quizState = null;
+    appEl.classList.remove("quiz-peek");
   }
 
   async function startQuiz(saved) {
@@ -2527,7 +2543,7 @@
       const reveal = el("div", "mc-reveal"); reveal.hidden = true;
       reveal.appendChild(el("span", "mc-reveal-word", c.w));
       const openBtn = el("button", "mc-reveal-open", "Open card ›"); openBtn.type = "button";
-      openBtn.addEventListener("click", function () { closeQuiz(); run(c.w); });
+      openBtn.addEventListener("click", function () { openQuizCard(c.w); });
       reveal.appendChild(openBtn);
       row.appendChild(reveal);
       choicesEl.appendChild(row);

@@ -89,6 +89,11 @@ const ROMAN = /^m{0,4}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$/i;
 // ---- load words ----
 const QUIZ_BANNED_DOMAINS = /^(chemistry|biochemistry|alchemy)$/i;
 const ACRONYM_ETYM_RE = /^(an? )?(acronym|initialism|abbreviation)( for| of)\b/i;
+// confirmed case-by-case as too easily mistaken for a misspelling of a far more
+// common word with an overlapping sense ("unsoluble" reads as a typo of
+// "insoluble", and shares its "cannot be solved" sense) — curated by hand as
+// reports come in, not a generalizable pattern worth a regex
+const QUIZ_EXCLUDE_WORDS = new Set(["unsoluble"]);
 const gloss = {}, dom0 = {};
 for (const f of fs.readdirSync(WORDS)) {
   if (!f.endsWith(".json")) continue;
@@ -96,6 +101,7 @@ for (const f of fs.readdirSync(WORDS)) {
   for (const w of Object.keys(sh)) {
     const r = sh[w];
     if (!r || !r.d || !r.d[0] || !r.d[0].g) continue;
+    if (QUIZ_EXCLUDE_WORDS.has(w)) continue;
     if (r.e && ACRONYM_ETYM_RE.test(r.e)) continue;
     if (r.d[0].dom && QUIZ_BANNED_DOMAINS.test(r.d[0].dom)) continue;
     gloss[w] = r.d[0].g;
