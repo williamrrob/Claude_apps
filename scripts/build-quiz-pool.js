@@ -77,8 +77,11 @@ function proper(g) {
 const POINTER = /^(form|plural|past|variant|alternative|synonym|misspelling|archaic|abbreviation|initialism|acronym|contraction) of\b/i;
 const VARIANT = /^(a |an |the )?(alternative|alt\.?|variant|obsolete|archaic|dated|nonstandard|non-standard|standard|common|eye|rare|informal|formal|colloquial|chiefly [a-z]+|british|american|canadian|australian|scottish|irish|dialectal) ([a-z-]+ )?(spelling|spellings|form|pronunciation) of\b/i;
 const INFL = /^(\([^)]*\)\s*)?(simple past|past tense|past participle|present participle|present tense|gerund|third[- ]person singular|plural form|comparative|superlative)\b/i;
+// back-reference to an earlier sense of the same word ("a piece of ornamentation
+// in this style" for rococo) is unintelligible without that other sense
+const BACKREF = /\b(in|of|with|like|on|for|to) (this|that|the (same|aforementioned|above)) (style|kind|sense|manner|fashion|way|sort|type|form|context|regard)\b/i;
 function quizzableGloss(g) {
-  return g && g.length >= 8 && !POINTER.test(g) && !VARIANT.test(g) && !INFL.test(g) && !/wikipedia/i.test(g);
+  return g && g.length >= 8 && !POINTER.test(g) && !VARIANT.test(g) && !INFL.test(g) && !/wikipedia/i.test(g) && !BACKREF.test(g);
 }
 // strict, well-formed Roman numerals (lxvi, mcmxliv) — but not real words like "mid"
 const ROMAN = /^m{0,4}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$/i;

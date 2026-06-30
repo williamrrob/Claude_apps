@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "47";
+  const DATA_V = "48";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -2189,6 +2189,9 @@
   // A sense whose own gloss contains the headword ("Clipping of rheumatologist"
   // for rheum, "...in a phial" for phial) hands the answer away — skip it.
   const QUIZ_BANNED_DOMAINS = /^(chemistry|biochemistry|alchemy)$/i;
+  // "A piece of ornamentation in this style." (rococo) only makes sense after
+  // reading an earlier sense of the same word — unintelligible on its own.
+  const BACKREF_RE = /\b(in|of|with|like|on|for|to) (this|that|the (same|aforementioned|above)) (style|kind|sense|manner|fashion|way|sort|type|form|context|regard)\b/i;
   function senseOk(s, word) {
     const g = s && s.g;
     if (!g) return false;
@@ -2198,6 +2201,7 @@
     if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic|abbreviation|initialism|acronym|contraction) of\b/i.test(qg)) return false;
     if (VARIANT_RE.test(qg)) return false;
     if (/wikipedia/i.test(qg)) return false;
+    if (BACKREF_RE.test(qg)) return false;
     if (word && glossMentions(qg, word)) return false;
     return true;
   }
