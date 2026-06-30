@@ -21,6 +21,7 @@
  *   node scripts/word.js rmfield <word> <k>         # delete one field
  *   node scripts/word.js rm <word>                  # delete the entry
  *   node scripts/word.js list <xx>                  # list words in a shard (keys only)
+ *   node scripts/word.js missing <w1> <w2> ...      # check a whole candidate batch in one process
  *
  * Clusters: a lightweight tag connecting words that share a conceptual space
  * but NOT a root/morpheme (that's what family/<root>.json is for). Stored as
@@ -38,7 +39,7 @@ const fs = require("fs");
 const path = require("path");
 
 const WORDS_DIR = path.join(__dirname, "..", "words");
-const FIELDS = new Set(["d", "e", "s", "a", "r", "i", "rs", "b", "cl"]);
+const FIELDS = new Set(["d", "e", "s", "a", "r", "i", "rs", "b", "cl", "vars", "forms", "rel"]);
 
 function fail(msg) { process.stderr.write("word.js: " + msg + "\n"); process.exit(1); }
 
@@ -68,7 +69,7 @@ function readStdin() {
 }
 
 const [cmd, word, fieldKey] = process.argv.slice(2);
-if (!cmd) fail("no command. try: get|has|set|field|rmfield|rm|list|cluster|cluster-list");
+if (!cmd) fail("no command. try: get|has|set|field|rmfield|rm|list|missing|cluster|cluster-list");
 
 if (cmd === "list") {
   const key = String(word || "").toLowerCase();
@@ -77,6 +78,25 @@ if (cmd === "list") {
   const keys = Object.keys(obj);
   process.stdout.write(keys.join("\n") + (keys.length ? "\n" : ""));
   process.stderr.write("(" + keys.length + " words in " + key + ".json)\n");
+  process.exit(0);
+}
+
+if (cmd === "missing") {
+  // Check a whole candidate list in ONE process instead of N `has` calls — the
+  // cheap way to find out which words in a batch still need writing.
+  const candidates = process.argv.slice(3);
+  if (!candidates.length) fail("missing needs at least one <word>");
+  const cache = {}; // shardPath -> shard obj, so repeats in the same shard don't re-read
+  const out = [];
+  for (const w of candidates) {
+    const sp = shardPath(w);
+    if (!cache[sp]) cache[sp] = readShard(sp);
+    const exists = Object.prototype.hasOwnProperty.call(cache[sp], w);
+    out.push((exists ? "EXISTS  " : "MISSING ") + w);
+  }
+  process.stdout.write(out.join("\n") + "\n");
+  const missingCount = out.filter((l) => l.startsWith("MISSING")).length;
+  process.stderr.write(missingCount + "/" + candidates.length + " missing\n");
   process.exit(0);
 }
 
