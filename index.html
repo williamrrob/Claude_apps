@@ -12,18 +12,33 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=79" />
+  <link rel="stylesheet" href="styles.css?v=81" />
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <button id="quizBtn" class="quiz-btn" type="button" aria-label="Vocabulary quiz">
-        ☆<span id="quizCount" class="quiz-count" hidden></span>
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <path d="M12 3.5l2.47 5.18 5.53.62-4.13 3.86 1.13 5.59L12 16.9l-5 2.85 1.13-5.59-4.13-3.86 5.53-.62L12 3.5z"
+                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <span id="quizCount" class="quiz-count" hidden></span>
       </button>
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark">◐</button>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 3.5a8.5 8.5 0 0 0 0 17z" fill="currentColor"/>
+        </svg>
+      </button>
     </header>
 
     <div class="minihead" id="miniHead"></div>
+    <button id="quizPeekBack" class="quiz-peek-back" type="button">
+      <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+        <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back to quiz
+    </button>
 
     <main class="content" id="content">
       <div class="hint" id="hint">
@@ -72,9 +87,22 @@
       <ul class="suggest" id="suggest" hidden aria-label="Suggestions"></ul>
       <div class="dock-row">
         <div class="nav-pair">
-          <button id="navHome" class="nav-btn" type="button" aria-label="Home">⌂</button>
-          <button id="navBack" class="nav-btn" type="button" aria-label="Back" disabled>‹</button>
-          <button id="navFwd" class="nav-btn" type="button" aria-label="Forward" disabled>›</button>
+          <button id="navHome" class="nav-btn" type="button" aria-label="Home">
+            <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+              <path d="M4 11.5 12 4l8 7.5M6 10v9a1 1 0 0 0 1 1h3v-6h4v6h3a1 1 0 0 0 1-1v-9"
+                    fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button id="navBack" class="nav-btn" type="button" aria-label="Back" disabled>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button id="navFwd" class="nav-btn" type="button" aria-label="Forward" disabled>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+              <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
         <form id="searchForm" class="search" autocomplete="off">
           <input
@@ -101,6 +129,6 @@
 
   <script defer src="data.js?v=60"></script>
   <script defer src="engine.js?v=58"></script>
-  <script defer src="app.js?v=104"></script>
+  <script defer src="app.js?v=105"></script>
 </body>
 </html>

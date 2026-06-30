@@ -13,9 +13,9 @@
   --bd: rgba(245, 235, 215, 0.16);
   --panel: rgba(245, 238, 222, 0.07);
   --field: rgba(245, 238, 222, 0.09);
-  --dock: rgba(27, 23, 18, 0.70);
+  --dock: rgba(245, 238, 222, 0.04);
   --glass-hi: inset 0 1px 0 rgba(255, 250, 240, 0.15);
-  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.40);
+  --glass-shadow: 0 16px 38px rgba(0, 0, 0, 0.55), 0 3px 8px rgba(0, 0, 0, 0.6);
   /* subtle diagonal specular sheen layered behind the panel's content */
   --glass-sheen: linear-gradient(135deg, rgba(255,250,240,0.06), rgba(255,250,240,0.01) 40%, rgba(255,250,240,0) 58%, rgba(255,250,240,0.03));
 
@@ -33,8 +33,8 @@
   :root:not([data-theme="dark"]) {
     --prefix: #a42620; --prefix-ink: #a42620; --root: #3f7050; --suffix: #946a14; --stem: #7a6e58;
     --bg: #f1e7cf; --bg2: #efe3c6; --ink: #2c2418; --muted: #7a6e58; --bd: rgba(70,52,24,0.20);
-    --panel: rgba(255,252,244,0.50); --field: rgba(255,253,247,0.62); --dock: rgba(241,231,207,0.82);
-    --glass-hi: inset 0 1px 0 rgba(255,255,255,0.55); --glass-shadow: 0 8px 22px rgba(80,60,25,0.14);
+    --panel: rgba(255,252,244,0.50); --field: rgba(255,253,247,0.62); --dock: rgba(255,253,248,0.12);
+    --glass-hi: inset 0 1px 0 rgba(255,255,255,0.55); --glass-shadow: 0 14px 32px rgba(80,60,25,0.24), 0 3px 8px rgba(80,60,25,0.22);
   }
 }
 :root[data-theme="light"] {
@@ -389,11 +389,11 @@ body {
 /* ---------- bottom dock ---------- */
 .dock {
   position: relative; z-index: 5;
-  margin: 6px var(--pad) calc(8px + env(safe-area-inset-bottom));
+  margin: 6px var(--pad) calc(14px + env(safe-area-inset-bottom));
   border: 1px solid var(--bd); border-radius: 999px; background: var(--dock);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-hi), var(--glass-shadow);
-  padding: 8px 8px;
+  padding: 8px 10px;
 }
 .recent { display: flex; align-items: center; gap: 7px; overflow-x: auto; margin-bottom: 9px; scrollbar-width: none; }
 .recent::-webkit-scrollbar { display: none; }
@@ -753,6 +753,36 @@ body {
 .quiz-result-btns .quiz-next { flex: 1; margin-top: 0; }
 .quiz-result-btns .quiz-next.secondary { background: none; border-color: var(--bd); color: var(--muted); }
 .quiz-loading { color: var(--muted); font-style: italic; padding: 40px 0; text-align: center; }
+
+/* ---------- quiz "peek" — the word card opens as a frosted sheet above the
+   quiz instead of replacing it; the quiz screen underneath stays untouched
+   and shows through blurred, like the rest of the app's liquid-glass chrome */
+.app.quiz-peek .content {
+  position: fixed; inset: 0; z-index: 7;
+  background: var(--glass-sheen), var(--dock);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  border-radius: 22px 22px 0 0;
+  box-shadow: var(--glass-hi), 0 -14px 40px rgba(0,0,0,0.45);
+  padding-top: calc(env(safe-area-inset-top) + 54px);
+  animation: quiz-peek-up 0.24s var(--ease);
+}
+@keyframes quiz-peek-up {
+  from { transform: translateY(28px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.quiz-peek-back {
+  display: none;
+  position: fixed; top: calc(env(safe-area-inset-top) + 12px); left: var(--pad); z-index: 8;
+  align-items: center; gap: 4px;
+  background: var(--glass-sheen), var(--field); border: 1px solid var(--bd);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-hi), var(--glass-shadow);
+  border-radius: 999px; padding: 9px 16px 9px 14px;
+  font-size: 13px; color: var(--ink); cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.app.quiz-peek .quiz-peek-back { display: flex; }
+.quiz-peek-back:active { transform: scale(0.95); }
 .quiz-empty { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 60px; text-align: center; }
 .quiz-empty-icon { font-size: 42px; color: var(--muted); }
 .quiz-empty-text { font-size: 15px; color: var(--ink); }
@@ -914,10 +944,10 @@ body {
 .src-wiki:active { opacity: .7; }
 
 /* dock nav row */
-.dock-row { display: flex; align-items: center; gap: 8px; min-width: 0; transition: gap 0.26s var(--ease); }
+.dock-row { display: flex; align-items: center; gap: 10px; min-width: 0; transition: gap 0.26s var(--ease); }
 .dock-row .search { flex: 1 1 0; min-width: 0; }
 .nav-pair {
-  display: flex; gap: 4px; flex: 0 0 auto; max-width: 130px; opacity: 1; overflow: hidden;
+  display: flex; gap: 6px; flex: 0 0 auto; max-width: 130px; opacity: 1; overflow: hidden;
   transition: max-width 0.26s var(--ease), opacity 0.18s ease;
 }
 /* while typing, the nav buttons fold away and the search takes the whole dock.
