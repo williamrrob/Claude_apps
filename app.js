@@ -2520,18 +2520,28 @@
 
     const choicesEl = el("div", "quiz-choices");
     choices.forEach(function (c) {
+      const row = el("div", "mc-row");
       const btn = el("button", "mc-btn", c.g); btn.type = "button";
       btn.addEventListener("click", function () { onAnswer(btn, c.correct, choices, choicesEl, word, idx, isNew); });
-      choicesEl.appendChild(btn);
+      row.appendChild(btn);
+      const reveal = el("div", "mc-reveal"); reveal.hidden = true;
+      reveal.appendChild(el("span", "mc-reveal-word", c.w));
+      const openBtn = el("button", "mc-reveal-open", "Open card ›"); openBtn.type = "button";
+      openBtn.addEventListener("click", function () { closeQuiz(); run(c.w); });
+      reveal.appendChild(openBtn);
+      row.appendChild(reveal);
+      choicesEl.appendChild(row);
     });
     quizEl.appendChild(choicesEl);
   }
 
   function onAnswer(clickedBtn, correct, choices, choicesEl, word, idx, isNew) {
-    Array.prototype.forEach.call(choicesEl.children, function (btn, i) {
+    Array.prototype.forEach.call(choicesEl.children, function (row, i) {
+      const btn = row.querySelector(".mc-btn");
       btn.disabled = true;
       if (choices[i].correct) btn.classList.add("correct");
       else if (btn === clickedBtn) btn.classList.add("wrong");
+      row.querySelector(".mc-reveal").hidden = false;
     });
     srUpdate(word, correct);
     quizState.score.total++;
