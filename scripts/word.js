@@ -8,9 +8,10 @@
  * subprocess, so an edit costs only the tokens of the command + the one entry —
  * not the megabyte shard. It is the intended interface for editing the dictionary.
  *
- * Entry shape (see README): { d:[{p,g,x?}], e, s:[..], a:[..], r:[..], i, rs }
+ * Entry shape (see README): { d:[{p,g,x?}], e, s:[..], a:[..], r:[..], i, rs, b, cl }
  *   d=definitions (p=part of speech, g=gloss, x=example), e=etymology,
- *   s=synonyms, a=antonyms, r=related, i=IPA, rs=respelling.
+ *   s=synonyms, a=antonyms, r=related, i=IPA, rs=respelling,
+ *   b=curated breakdown override (see app.js chooseBreakdown), cl=cluster tags (see below).
  *
  * Usage:
  *   node scripts/word.js get <word>                 # print one entry (cheap read)
@@ -20,6 +21,12 @@
  *   node scripts/word.js rmfield <word> <k>         # delete one field
  *   node scripts/word.js rm <word>                  # delete the entry
  *   node scripts/word.js list <xx>                  # list words in a shard (keys only)
+ *
+ * Clusters: a lightweight tag connecting words that share a conceptual space
+ * but NOT a root/morpheme (that's what family/<root>.json is for). Stored as
+ * the `cl` field, an array of cluster-id strings, on each member word.
+ *   node scripts/word.js cluster <clusterId> <word1> <word2> ...   # tag N words in one shot
+ *   node scripts/word.js cluster-list <clusterId>                  # find every word tagged with it (scans all shards)
  *
  * Tips: pass JSON via a heredoc to avoid shell-quoting pain, e.g.
  *   node scripts/word.js field concord s <<'JSON'
@@ -31,7 +38,7 @@ const fs = require("fs");
 const path = require("path");
 
 const WORDS_DIR = path.join(__dirname, "..", "words");
-const FIELDS = new Set(["d", "e", "s", "a", "r", "i", "rs"]);
+const FIELDS = new Set(["d", "e", "s", "a", "r", "i", "rs", "b", "cl"]);
 
 function fail(msg) { process.stderr.write("word.js: " + msg + "\n"); process.exit(1); }
 
@@ -61,7 +68,7 @@ function readStdin() {
 }
 
 const [cmd, word, fieldKey] = process.argv.slice(2);
-if (!cmd) fail("no command. try: get|has|set|field|rmfield|rm|list");
+if (!cmd) fail("no command. try: get|has|set|field|rmfield|rm|list|cluster|cluster-list");
 
 if (cmd === "list") {
   const key = String(word || "").toLowerCase();
@@ -70,6 +77,41 @@ if (cmd === "list") {
   const keys = Object.keys(obj);
   process.stdout.write(keys.join("\n") + (keys.length ? "\n" : ""));
   process.stderr.write("(" + keys.length + " words in " + key + ".json)\n");
+  process.exit(0);
+}
+
+if (cmd === "cluster") {
+  const clusterId = word;
+  const members = process.argv.slice(4);
+  if (!clusterId) fail("cluster needs a <clusterId>");
+  if (!members.length) fail("cluster needs at least one word after the clusterId");
+  const missing = [];
+  const touched = {}; // shardPath -> shard obj, so words in the same shard share one read/write
+  for (const w of members) {
+    const sp = shardPath(w);
+    if (!touched[sp]) touched[sp] = readShard(sp);
+    if (!Object.prototype.hasOwnProperty.call(touched[sp], w)) { missing.push(w); continue; }
+    const e = touched[sp][w];
+    const tags = new Set(e.cl || []);
+    tags.add(clusterId);
+    e.cl = [...tags];
+  }
+  if (missing.length) fail("not found, nothing written: " + missing.join(", "));
+  for (const sp of Object.keys(touched)) writeShard(sp, touched[sp]);
+  process.stderr.write("tagged " + members.length + " word(s) with cluster \"" + clusterId + "\": " + members.join(", ") + "\n");
+  process.exit(0);
+}
+
+if (cmd === "cluster-list") {
+  const clusterId = word;
+  if (!clusterId) fail("cluster-list needs a <clusterId>");
+  const hits = [];
+  for (const f of fs.readdirSync(WORDS_DIR).filter((x) => x.endsWith(".json"))) {
+    const obj = readShard(path.join(WORDS_DIR, f));
+    for (const w of Object.keys(obj)) if ((obj[w].cl || []).includes(clusterId)) hits.push(w);
+  }
+  process.stdout.write(hits.join("\n") + (hits.length ? "\n" : ""));
+  process.stderr.write("(" + hits.length + " word(s) tagged \"" + clusterId + "\")\n");
   process.exit(0);
 }
 
