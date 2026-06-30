@@ -165,8 +165,42 @@
   function isProperDesc(desc) {
     if (!desc) return false;
     if (/^(genus|species|type|kind|family|group|class|order|unit|si unit|style|movement|colou?r|number|letter|chemical|musical instrument|dance|language|disease|condition|branch|field|study|form of|part of|process)\b/i.test(desc)) return false;
-    return /\b(\d{3,4}|born|died|politician|philosopher|mathematician|physicist|chemist|scientist|writer|author|poet|dramatist|playwright|novelist|composer|painter|sculptor|artist|architect|king|queen|emperor|empress|prince|princess|saint|pope|actor|actress|singer|musician|general|president|monarch|leader|deity|god|goddess|hero)\b/i.test(desc)
+    // a bare year only counts as a birth/death-style date when it's part of a
+    // span ("1803–1882"); a lone year ("2017 video game") is a release date,
+    // not biography, and shouldn't be mistaken for one.
+    return /\d{3,4}\s*[-–]\s*\d{3,4}/.test(desc)
+      || /\b(born|died|politician|philosopher|mathematician|physicist|chemist|scientist|writer|author|poet|dramatist|playwright|novelist|composer|painter|sculptor|artist|architect|king|queen|emperor|empress|prince|princess|saint|pope|actor|actress|singer|musician|general|president|monarch|leader|deity|god|goddess|hero)\b/i.test(desc)
       || /^(capital|city|town|municipality|village|commune|river|mountain|lake|island|countr|state|province|region|county|district|nation|kingdom|empire|sea|ocean|continent|settlement|locality|peninsula)\b/i.test(desc);
+  }
+  // Wikipedia often resolves a plain word to an unrelated film/game/album that
+  // happens to share its spelling ("absolver" → a 2017 video game) — these are
+  // never what a dictionary photo should show, regardless of how the rest of
+  // the description reads.
+  function isMediaWorkDesc(desc) {
+    if (!desc) return false;
+    return /\b(video game|film|movie|tv series|television series|novel|album|song|book|manga|anime|webcomic|podcast|magazine|comic( book)?|musical|opera|play)\b/i.test(desc);
+  }
+  // A picture only earns its place for things you'd want to *see* — a concrete,
+  // picturable animal/plant/object, or a person/place (already proper-noun-vetted
+  // above) — not abstract nouns, actions, or expressions ("guffaw" → "Laughter").
+  function isPhysicalDesc(desc) {
+    if (!desc) return false;
+    if (/\b(species|genus|breed|cultivar|variety|subspecies)\b/i.test(desc)) return true;
+    if (/\b(animal|mammal|bird|fish|reptile|amphibian|insect|arthropod|mollusk|crustacean|whale|dolphin|shark|snake|lizard|frog|spider|butterfly|moth|beetle)\b/i.test(desc)) return true;
+    if (/\b(plant|tree|shrub|flower|herb|fern|moss|fungus|fungi|mushroom|seaweed|alga)\b/i.test(desc)) return true;
+    if (/\b(device|tool|instrument|weapon|firearm|vehicle|aircraft|ship|boat|garment|clothing|fabric|textile|furniture|vessel|container|utensil|machine|appliance|structure|building)\b/i.test(desc)) return true;
+    if (/\b(mineral|gemstone|rock|metal|alloy)\b/i.test(desc)) return true;
+    if (/\b(food|dish|fruit|vegetable|grain|spice|beverage|cheese|bread)\b/i.test(desc)) return true;
+    return isProperDesc(desc);
+  }
+  // Even a picturable thing doesn't need illustrating if the word itself is
+  // everyday-common (breadth maxes out across nearly every era bucket) — "gun"
+  // and "tree" don't need a photo the way "narwhal" or "tepal" do.
+  function isUbiquitousWord(series) {
+    if (!series) return false; // no usage data — don't block on it
+    let nz = 0;
+    for (let i = 0; i < series.length; i++) if (series[i] > 0) nz++;
+    return nz > 18;
   }
   function fetchWiki(word) {
     const w = String(word || "").trim();
@@ -190,11 +224,14 @@
     fetchWiki(word).then(function (wp) {
       if (token !== runToken || !wp) return;
       if (wp.proper) capitalizeHeadword(word);
-      if (wp.type === "standard" && wp.thumb) {
+      if (wp.type !== "standard" || !wp.thumb) return;
+      if (isMediaWorkDesc(wp.desc) || !isPhysicalDesc(wp.desc)) return;
+      getUsage(word).then(function (series) {
+        if (token !== runToken || isUbiquitousWord(series)) return;
         const card = buildImageCard(wp);
         cardsEl.appendChild(card); // at the end of the word card, after the other sections
         requestAnimationFrame(function () { card.classList.add("in"); });
-      }
+      });
     });
   }
   function capitalizeHeadword(word) {
@@ -355,7 +392,11 @@
     input.value = "";
     hint.hidden = false;
     if (themeToggle) themeToggle.hidden = false; // toggle returns on the home screen
+    if (savedWordsBtn) savedWordsBtn.hidden = false; // saved-words icon lives on the home screen only
+    renderHomeChips(); // re-randomize the example words every time home is revisited
     if (contentEl) contentEl.scrollTop = 0;
+    if (dockEl) dockEl.classList.remove("dock-hide");
+    if (contentEl) contentEl.classList.remove("dock-hidden");
   }
 
   // ---------- stage ----------
@@ -383,11 +424,14 @@
     hideSuggest();
     hideRecent();
     if (themeToggle) themeToggle.hidden = true; // toggle lives on the home screen only
+    if (savedWordsBtn) savedWordsBtn.hidden = true; // saved-words icon lives on the home screen only
     if (!browseEl.hidden) closeBrowse();
     if (treeEl && !treeEl.hidden) closeTree();
     hint.hidden = true;
     loadData();
     if (contentEl) contentEl.scrollTop = 0;
+    if (dockEl) dockEl.classList.remove("dock-hide");
+    if (contentEl) contentEl.classList.remove("dock-hidden");
     try {
       if (!window.EtymologyEngine || typeof window.EtymologyEngine.decompose !== "function") {
         showStatus("The dictionary didn’t load. Pull down to refresh the page.", true);
@@ -565,7 +609,11 @@
     });
     ruleRow.appendChild(starBtn);
 
-    entryEl.appendChild(ruleRow);
+    // ruleRow + the headword live together in one wrapper so the pair can be
+    // pinned as a single fused unit in quiz-peek mode (see .entry-head in CSS) —
+    // no separate duplicate header bar, the real headword itself glues in place.
+    const headWrap = el("div", "entry-head");
+    headWrap.appendChild(ruleRow);
 
     // headword with subtle dots between its parts
     const wordEl = el("div", "entry-word");
@@ -574,7 +622,8 @@
       if (i) wordEl.appendChild(el("span", "entry-dot", "·"));
       wordEl.appendChild(el("span", "ew-part", s));
     });
-    entryEl.appendChild(wordEl);
+    headWrap.appendChild(wordEl);
+    entryEl.appendChild(headWrap);
 
     // half-circle letter badge by the word — tap to browse that letter
     const L = String(word).charAt(0).toUpperCase();
@@ -1440,6 +1489,27 @@
     return list;
   }
   function closeBrowse() { browseEl.hidden = true; browseEl.innerHTML = ""; browseToken++; }
+  function openSavedWords() {
+    browseEl.hidden = false; browseEl.innerHTML = "";
+    const head = el("div", "browse-head");
+    head.appendChild(el("div", "browse-title", "Saved words"));
+    const close = el("button", "browse-close", "✕"); close.type = "button";
+    close.addEventListener("click", closeBrowse);
+    head.appendChild(close);
+    browseEl.appendChild(head);
+    const list = el("div", "browse-list");
+    const words = getSaved();
+    if (!words.length) {
+      list.appendChild(el("div", "browse-empty", "No saved words yet — tap the star on a word card to save it."));
+    } else {
+      words.forEach(function (w) {
+        const b = el("button", "browse-word", w); b.type = "button";
+        b.addEventListener("click", function () { closeBrowse(); run(w); });
+        list.appendChild(b);
+      });
+    }
+    browseEl.appendChild(list);
+  }
   async function browseLetter(letter) {
     const L = letter.toUpperCase(), lc = letter.toLowerCase();
     const token = ++browseToken;
@@ -2092,6 +2162,29 @@
   document.querySelectorAll(".example").forEach(function (btn) {
     btn.addEventListener("click", function () { run(btn.dataset.word); });
   });
+  // Replace the static example chips with a random sample of six words drawn
+  // from quiz-pool.json — already vetted for "decent data" (real headwords,
+  // proper nouns/taxa/inflections excluded, usage breadth in a healthy band)
+  // by scripts/build-quiz-pool.js, so every chip opens to a fleshed-out entry.
+  function renderHomeChips() {
+    const chipsEl = document.querySelector(".chips");
+    if (!chipsEl) return;
+    getEraPool().then(function (pool) {
+      if (!pool.length) return;
+      const picks = qShuffle(pool).slice(0, 6);
+      chipsEl.innerHTML = "";
+      picks.forEach(function (p) {
+        const b = el("button", "example", p.w);
+        b.type = "button"; b.dataset.word = p.w;
+        b.addEventListener("click", function () { run(p.w); });
+        chipsEl.appendChild(b);
+      });
+    });
+  }
+  // deferred to a microtask: getEraPool() below closes over `eraPoolPromise`,
+  // a `let` declared further down this same scope — calling it synchronously
+  // up here hits the temporal dead zone before that line has run.
+  setTimeout(renderHomeChips, 0);
 
   buildAlpha();
   loadData();
@@ -2109,12 +2202,34 @@
   // Pin the word to the top: the compact header is a non-layout overlay toggled
   // purely from scroll position (with hysteresis), so it can't feed back into
   // the layout and flicker the way an IntersectionObserver did.
+  const dockEl = document.querySelector(".dock");
   if (contentEl && typeof contentEl.addEventListener === "function") {
     let miniShown = false;
+    let lastScrollY = 0, dockHidden = false;
     contentEl.addEventListener("scroll", function () {
       const y = contentEl.scrollTop || 0;
       if (currentWord && !miniShown && y > 72) { miniHead.classList.add("show"); miniShown = true; }
       else if (miniShown && (!currentWord || y < 40)) { miniHead.classList.remove("show"); miniShown = false; }
+
+      // on a word card, the dock tucks away while scrolling down to give the
+      // entry more room, and slides back the moment the user scrolls up.
+      if (dockEl) {
+        if (!currentWord) {
+          if (dockHidden) { dockEl.classList.remove("dock-hide"); contentEl.classList.remove("dock-hidden"); dockHidden = false; }
+        } else {
+          const maxScroll = contentEl.scrollHeight - contentEl.clientHeight;
+          const nearBottom = maxScroll - y < 40;
+          const scrollingDown = y > lastScrollY;
+          if (y < 24 || nearBottom || !scrollingDown) {
+            if (dockHidden) { dockEl.classList.remove("dock-hide"); contentEl.classList.remove("dock-hidden"); dockHidden = false; }
+          } else if (scrollingDown) {
+            // the bottom fade mask exists to blend content into the dock; with
+            // the dock tucked away there's nothing to blend into, so drop it too.
+            if (!dockHidden) { dockEl.classList.add("dock-hide"); contentEl.classList.add("dock-hidden"); dockHidden = true; }
+          }
+        }
+      }
+      lastScrollY = y;
     });
   }
 
@@ -2124,7 +2239,6 @@
   // ---------- vocab quiz: save + SM-2 spaced repetition + MC + discovery ----------
 
   const quizEl = $("quiz");
-  const quizBtn = $("quizBtn");
   const quizCountEl = $("quizCount");
   const quizPeekBack = $("quizPeekBack");
   const appEl = document.querySelector(".app");
@@ -2137,6 +2251,30 @@
   if (quizPeekBack) {
     quizPeekBack.addEventListener("click", function () { appEl.classList.remove("quiz-peek"); });
   }
+  // swipe down on the peek card to dismiss it (same action as the "Back to
+  // quiz" button) — only while the card is scrolled to its top, so the
+  // gesture doesn't fight normal upward scrolling inside the card.
+  (function () {
+    let startY = null, dragging = false;
+    contentEl.addEventListener("touchstart", function (e) {
+      if (!appEl.classList.contains("quiz-peek")) { startY = null; return; }
+      if (contentEl.scrollTop > 0) { startY = null; return; }
+      startY = e.touches[0].clientY;
+      dragging = false;
+    }, { passive: true });
+    contentEl.addEventListener("touchmove", function (e) {
+      if (startY == null) return;
+      const dy = e.touches[0].clientY - startY;
+      if (dy > 8) dragging = true;
+    }, { passive: true });
+    contentEl.addEventListener("touchend", function (e) {
+      if (startY == null) return;
+      const dy = (e.changedTouches[0] ? e.changedTouches[0].clientY : startY) - startY;
+      if (dragging && dy > 70) appEl.classList.remove("quiz-peek");
+      startY = null;
+      dragging = false;
+    }, { passive: true });
+  })();
   const SAVE_KEY = "rootwork.saved";
   const SR_KEY = "rootwork.sr";
   const SEEN_KEY = "rootwork.seen";    // rolling log of discovery words shown
@@ -2155,7 +2293,7 @@
   function updateQuizBadge() {
     const n = getSaved().length;
     if (quizCountEl) { quizCountEl.textContent = n || ""; quizCountEl.hidden = n === 0; }
-    if (quizBtn) quizBtn.classList.toggle("has-saved", n > 0);
+    if (savedWordsBtn) savedWordsBtn.classList.toggle("has-saved", n > 0);
   }
 
   // -- seen log: prevents discovery words from repeating within ~300 sessions --
@@ -2632,9 +2770,10 @@
     quizEl.appendChild(msg);
   }
 
-  if (quizBtn) quizBtn.addEventListener("click", openQuiz);
   const homeQuizBtn = $("homeQuizBtn");
   if (homeQuizBtn) homeQuizBtn.addEventListener("click", openQuiz);
+  const savedWordsBtn = $("savedWordsBtn");
+  if (savedWordsBtn) savedWordsBtn.addEventListener("click", openSavedWords);
   updateQuizBadge();
 
 })();

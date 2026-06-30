@@ -206,7 +206,22 @@
   }
 
   function decompose(rawWord) {
-    const word = String(rawWord || "").trim().toLowerCase().replace(/[^a-z]/g, "");
+    const trimmed = String(rawWord || "").trim().toLowerCase();
+    // Phrasal/compound headwords ("gun off", "well-known") aren't a single
+    // morphological unit — splicing out the space/hyphen and running
+    // compound-word analysis across the join produces nonsense splits, and
+    // (worse) the spliced form no longer matches the dictionary's lookup key,
+    // which keeps the space/hyphen. Keep the word as-is and skip decomposition.
+    if (/[\s-]/.test(trimmed) && !/^-|-$/.test(trimmed)) {
+      return {
+        word: trimmed,
+        parts: [{ kind: "word", surface: trimmed, origin: null, source: null, meaning: null, id: null, forms: null }],
+        hasRoot: false,
+        confidence: 1,
+        reading: null
+      };
+    }
+    const word = trimmed.replace(/[^a-z]/g, "");
     if (!word) return null;
 
     const parsed = bestParse(word);

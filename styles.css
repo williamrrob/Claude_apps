@@ -10,16 +10,16 @@
   --bg2: #221d16;
   --ink: #ece0cc;
   --muted: #a99a83;
-  --bd: rgba(245, 235, 215, 0.16);
-  --panel: rgba(245, 238, 222, 0.07);
-  --field: rgba(245, 238, 222, 0.09);
-  --dock: rgba(245, 238, 222, 0.04);
+  --bd: rgba(245, 235, 215, 0.26);
+  --panel: rgba(245, 238, 222, 0.035);
+  --field: rgba(245, 238, 222, 0.045);
+  --dock: rgba(245, 238, 222, 0.02);
   --glass-hi: inset 0 1px 0 rgba(255, 250, 240, 0.15);
   --glass-shadow: 0 16px 38px rgba(0, 0, 0, 0.55), 0 3px 8px rgba(0, 0, 0, 0.6);
   /* subtle diagonal specular sheen layered behind the panel's content */
   --glass-sheen: linear-gradient(135deg, rgba(255,250,240,0.06), rgba(255,250,240,0.01) 40%, rgba(255,250,240,0) 58%, rgba(255,250,240,0.03));
 
-  --glass-blur: blur(18px) saturate(140%);
+  --glass-blur: blur(56px) saturate(170%);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --pop: cubic-bezier(0.34, 1.56, 0.64, 1);
   --chase: cubic-bezier(0.5, 0, 0.9, 0.35);     /* accelerate out */
@@ -32,15 +32,15 @@
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
     --prefix: #a42620; --prefix-ink: #a42620; --root: #3f7050; --suffix: #946a14; --stem: #7a6e58;
-    --bg: #f1e7cf; --bg2: #efe3c6; --ink: #2c2418; --muted: #7a6e58; --bd: rgba(70,52,24,0.20);
-    --panel: rgba(255,252,244,0.50); --field: rgba(255,253,247,0.62); --dock: rgba(255,253,248,0.12);
+    --bg: #f1e7cf; --bg2: #efe3c6; --ink: #2c2418; --muted: #7a6e58; --bd: rgba(70,52,24,0.32);
+    --panel: rgba(255,252,244,0.24); --field: rgba(255,253,247,0.30); --dock: rgba(255,253,248,0.12);
     --glass-hi: inset 0 1px 0 rgba(255,255,255,0.55); --glass-shadow: 0 14px 32px rgba(80,60,25,0.24), 0 3px 8px rgba(80,60,25,0.22);
   }
 }
 :root[data-theme="light"] {
   --prefix: #a42620; --prefix-ink: #a42620; --root: #3f7050; --suffix: #946a14; --stem: #7a6e58;
-  --bg: #f1e7cf; --bg2: #efe3c6; --ink: #2c2418; --muted: #7a6e58; --bd: rgba(70,52,24,0.20);
-  --panel: rgba(255,252,244,0.50); --field: rgba(255,253,247,0.62); --dock: rgba(241,231,207,0.82);
+  --bg: #f1e7cf; --bg2: #efe3c6; --ink: #2c2418; --muted: #7a6e58; --bd: rgba(70,52,24,0.32);
+  --panel: rgba(255,252,244,0.24); --field: rgba(255,253,247,0.30); --dock: rgba(241,231,207,0.12);
   --glass-hi: inset 0 1px 0 rgba(255,255,255,0.55); --glass-shadow: 0 8px 22px rgba(80,60,25,0.14);
 }
 
@@ -71,7 +71,7 @@ body {
 
 /* ---------- top bar ---------- */
 .topbar {
-  display: flex; align-items: center; justify-content: flex-end;
+  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
   padding: calc(env(safe-area-inset-top) + 12px) var(--pad) 4px var(--pad);
 }
 .brand { display: flex; align-items: center; gap: 9px; }
@@ -79,20 +79,34 @@ body {
   width: 20px; height: 20px; border-radius: 6px; background: var(--prefix);
 }
 .brand-name { font-weight: 700; letter-spacing: 0.01em; font-size: 16px; color: var(--muted); }
-.theme-toggle {
-  width: 32px; height: 32px; border-radius: 9px;
+.theme-toggle, .icon-toggle {
+  position: relative;
+  width: 32px; height: 32px; border-radius: 50%;
   border: 1px solid var(--bd); background: var(--field);
   color: var(--muted); font-size: 14px; cursor: pointer;
   display: grid; place-items: center;
   -webkit-tap-highlight-color: transparent;
 }
-.theme-toggle:active { transform: scale(0.92); }
+.theme-toggle:active, .icon-toggle:active { transform: scale(0.92); }
+.icon-toggle.has-saved { border-color: var(--suffix); color: var(--suffix); }
 
 /* ---------- scrolling content ---------- */
 .content {
   flex: 1; overflow-y: auto; overflow-x: clip; -webkit-overflow-scrolling: touch;
-  padding: 6px var(--pad) 14px var(--pad);
+  padding: 6px var(--pad) calc(92px + env(safe-area-inset-bottom)) var(--pad);
   display: flex; flex-direction: column; align-items: stretch;
+  /* the dock now floats as a glass overlay (see .dock) rather than a flex
+     sibling, so content scrolls underneath it — fade it out over a longer
+     stretch as it nears the dock instead of an abrupt cut, echoing how the
+     dock's own backdrop-filter blurs whatever passes behind it. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 96px), transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 96px), transparent 100%);
+}
+/* with the dock tucked away there's nothing at the bottom to fade into —
+   drop the mask so content doesn't appear to fade into empty space. */
+.content.dock-hidden {
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 /* children must not shrink, or a flex column will collapse them when the
    content overflows (this is what was crushing the pronunciation row to 0). */
@@ -108,16 +122,20 @@ body {
 .hint-title { font-size: 24px; font-weight: 750; letter-spacing: -0.02em; margin: 0 0 8px; }
 .hint-sub { color: var(--muted); margin: 0 0 22px; font-size: 15px; }
 .hint-quiz-btn {
-  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 22px;
-  background: var(--glass-sheen), var(--field);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-hi); border: 1px solid var(--root); color: var(--ink);
-  border-radius: 999px; padding: 11px 22px; font-size: 15px; font-weight: 650; cursor: pointer;
+  position: relative;
+  display: inline-flex; align-items: center; gap: 9px; margin: 0 0 36px;
+  background: var(--suffix); color: var(--bg); border: none;
+  border-radius: 999px; padding: 16px 32px; font-size: 17px; font-weight: 750;
+  letter-spacing: 0.01em; cursor: pointer;
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--suffix) 22%, transparent),
+              inset 0 1px 0 rgba(255, 255, 255, 0.35);
   transition: transform 0.15s var(--ease);
   -webkit-tap-highlight-color: transparent;
 }
 .hint-quiz-btn:active { transform: scale(0.96); }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.hint-sub + .hint-quiz-btn,
+.splash-book + .hint-quiz-btn { margin-top: 4px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 4px; }
 .example {
   background: var(--glass-sheen), var(--field);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
@@ -387,13 +405,28 @@ body {
 .first-rec .sub { color: var(--muted); margin: 0 6px 0 0; }
 
 /* ---------- bottom dock ---------- */
+/* floats as an overlay above .content (not a flex sibling taking its own
+   row) so the backdrop-filter blurs the live scrolling text behind it —
+   genuine glass, instead of a flat-tinted box sitting on matching bg. */
 .dock {
-  position: relative; z-index: 5;
-  margin: 6px var(--pad) calc(14px + env(safe-area-inset-bottom));
+  position: absolute; z-index: 5; left: 0; right: 0; bottom: 0;
+  margin: 0 var(--pad) calc(14px + env(safe-area-inset-bottom));
   border: 1px solid var(--bd); border-radius: 999px; background: var(--dock);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: blur(76px) saturate(180%); backdrop-filter: blur(76px) saturate(180%);
   box-shadow: var(--glass-hi), var(--glass-shadow);
   padding: 8px 10px;
+  transition: border-radius 0.18s var(--ease), transform 0.28s var(--ease), opacity 0.22s var(--ease);
+}
+/* a tall dock (suggestions/recent showing above the search row) would otherwise
+   stretch the 999px pill radius into a stadium/circle that swallows the list */
+.dock:has(#suggest:not([hidden])), .dock:has(#recent:not([hidden])) {
+  border-radius: 24px;
+}
+/* tucked away while scrolling down a word card; slides back on scroll up */
+.dock.dock-hide {
+  transform: translateY(150%);
+  opacity: 0;
+  pointer-events: none;
 }
 .recent { display: flex; align-items: center; gap: 7px; overflow-x: auto; margin-bottom: 9px; scrollbar-width: none; }
 .recent::-webkit-scrollbar { display: none; }
@@ -411,10 +444,7 @@ body {
 }
 .history-chip:active { transform: scale(0.94); }
 .search {
-  display: flex; align-items: center; gap: 6px; padding: 4px; border-radius: 999px;
-  background: var(--glass-sheen), var(--field); border: 1px solid var(--bd);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-hi), var(--glass-shadow);
+  display: flex; align-items: center; gap: 6px; padding: 4px;
 }
 .search-input {
   flex: 1; min-width: 0; background: transparent; border: none; color: var(--ink);
@@ -656,22 +686,14 @@ body {
 .tree.tree-in { animation: treeIn .3s var(--ease) both; }
 @keyframes treeIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: none; } }
 
-/* ---------- quiz button (topbar) ---------- */
-.quiz-btn {
-  width: 32px; height: 32px; border-radius: 9px;
-  border: 1px solid var(--bd); background: var(--field);
-  color: var(--muted); font-size: 15px; cursor: pointer;
-  display: grid; place-items: center; position: relative;
-  margin-right: 6px; -webkit-tap-highlight-color: transparent;
-}
-.quiz-btn.has-saved { color: var(--suffix); border-color: var(--suffix); }
-.quiz-btn:active { transform: scale(0.92); }
+/* ---------- saved-word count badge (on the saved-words topbar icon) ---------- */
 .quiz-count {
-  position: absolute; top: -5px; right: -5px;
+  position: absolute; top: -4px; right: -4px;
   background: var(--suffix); color: var(--bg);
   font-size: 9px; font-weight: 700; border-radius: 99px;
   min-width: 15px; height: 15px; line-height: 15px;
   padding: 0 3px; text-align: center; pointer-events: none;
+  box-shadow: 0 0 0 2px var(--bg);
 }
 
 /* star/save button on word cards */
@@ -758,21 +780,46 @@ body {
    quiz instead of replacing it; the quiz screen underneath stays untouched
    and shows through blurred, like the rest of the app's liquid-glass chrome */
 .app.quiz-peek .content {
-  position: fixed; inset: 0; z-index: 7;
+  position: fixed; z-index: 7;
+  top: calc(env(safe-area-inset-top) + 64px); right: 16px;
+  bottom: calc(env(safe-area-inset-bottom) + 20px); left: 16px;
   background: var(--glass-sheen), var(--dock);
+  border: 1px solid var(--bd);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  border-radius: 22px 22px 0 0;
-  box-shadow: var(--glass-hi), 0 -14px 40px rgba(0,0,0,0.45);
-  padding-top: calc(env(safe-area-inset-top) + 54px);
+  border-radius: 26px;
+  /* a theme-independent dark shadow on top of the themed one — in light mode
+     the card's own tint is close to the page behind it, so the shadow (not
+     just color contrast) has to carry the sense that this is a raised, separate
+     object floating above the quiz rather than the quiz's own background. */
+  box-shadow: var(--glass-hi), var(--glass-shadow), 0 10px 30px rgba(0, 0, 0, 0.22);
   animation: quiz-peek-up 0.24s var(--ease);
+  scrollbar-width: thin; scrollbar-color: var(--muted) transparent;
+}
+/* the default OS scrollbar is a flat rectangular bar that clips across the
+   sheet's rounded corner — thin it down and round it off so it reads as part
+   of the card rather than a stray system widget. */
+.app.quiz-peek .content::-webkit-scrollbar { width: 7px; }
+.app.quiz-peek .content::-webkit-scrollbar-track { background: transparent; margin-block: 14px; }
+.app.quiz-peek .content::-webkit-scrollbar-thumb {
+  background: var(--muted); opacity: 0.3; border-radius: 999px;
+  border: 2px solid transparent; background-clip: padding-box;
+}
+/* the peek sheet itself already carries the "raised above the quiz" shadow —
+   cards inside it shouldn't each repeat that elevation, or they read as
+   separate panels floating over the sheet instead of content within it. */
+.app.quiz-peek .card {
+  box-shadow: none;
 }
 @keyframes quiz-peek-up {
   from { transform: translateY(28px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+/* the compact pinned-on-scroll bar is its own separate element — a duplicate
+   header when the real headword can just glue itself in place instead. */
+.app.quiz-peek .minihead { display: none !important; }
 .quiz-peek-back {
   display: none;
-  position: fixed; top: calc(env(safe-area-inset-top) + 12px); left: var(--pad); z-index: 8;
+  position: fixed; top: calc(env(safe-area-inset-top) + 14px); left: var(--pad); z-index: 8;
   align-items: center; gap: 4px;
   background: var(--glass-sheen), var(--field); border: 1px solid var(--bd);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
