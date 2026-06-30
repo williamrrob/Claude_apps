@@ -110,6 +110,21 @@ process.on("exit", function (code) {
   if (r) process.stderr.write("DATA_V (app.js): " + r.from + " -> " + r.to + "\n");
 });
 
+// Word-overlap similarity between two gloss texts, used by `append` to flag
+// likely-redundant senses. Jaccard over normalized, stopword-stripped word
+// sets — cheap and good enough to flag for human review, not a hard rule.
+const STOPWORDS = new Set(["a", "an", "the", "of", "in", "to", "and", "or", "is", "are", "that", "this", "as", "with", "for", "on", "by", "be", "its", "from", "into", "or", "than", "especially"]);
+function wordSet(s) {
+  return new Set(String(s).toLowerCase().replace(/[^a-z\s]/g, " ").split(/\s+/).filter(function (w) { return w.length > 2 && !STOPWORDS.has(w); }));
+}
+function jaccardSim(a, b) {
+  const A = wordSet(a), B = wordSet(b);
+  if (!A.size || !B.size) return 0;
+  let inter = 0;
+  A.forEach(function (w) { if (B.has(w)) inter++; });
+  return inter / (A.size + B.size - inter);
+}
+
 function readStdin() {
   const data = fs.readFileSync(0, "utf8").trim();
   if (!data) fail("expected JSON on stdin");
@@ -327,7 +342,30 @@ switch (cmd) {
     if (!exists) shard[word] = {};
     const cur = shard[word][fieldKey];
     if (cur !== undefined && !Array.isArray(cur)) fail("append: ." + fieldKey + " on " + word + " isn't an array");
-    shard[word][fieldKey] = (cur || []).concat([value]);
+    const arr = cur || [];
+    if (typeof value !== "object" || value === null) {
+      // Plain string arrays (s/r/cl/vars/forms): an exact duplicate is never
+      // useful — skip instead of silently doubling it up.
+      if (arr.includes(value)) { process.stderr.write("word.js: ." + fieldKey + " on " + word + " already contains " + JSON.stringify(value) + " — not duplicating\n"); break; }
+    } else if (fieldKey === "d" && typeof value.g === "string") {
+      // Senses: an exact-text duplicate is blocked outright. A near-duplicate
+      // (high word overlap) is flagged but still appended — sometimes a
+      // narrower technical sense legitimately reuses most of a general
+      // sense's wording, and that's a judgment call, not a hard rule.
+      for (let i = 0; i < arr.length; i++) {
+        const s = arr[i];
+        if (!s || typeof s.g !== "string") continue;
+        if (s.g.trim().toLowerCase() === value.g.trim().toLowerCase()) {
+          fail("append: " + word + " already has this exact sense (index " + i + "): \"" + s.g.slice(0, 80) + "\"");
+        }
+        const sim = jaccardSim(value.g, s.g);
+        if (sim >= 0.3) {
+          process.stderr.write("word.js: ⚠ possible redundant sense on " + word + " — " + Math.round(sim * 100) +
+            "% word overlap with existing sense " + i + ": \"" + s.g.slice(0, 70) + "\". Appended anyway; review with `node scripts/word.js get " + word + "`.\n");
+        }
+      }
+    }
+    shard[word][fieldKey] = arr.concat([value]);
     shard[word]._at = new Date().toISOString();
     writeShard(p, shard);
     process.stderr.write("appended to ." + fieldKey + " on " + word + " (" + shard[word][fieldKey].length + " item(s) now)\n");
