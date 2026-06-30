@@ -2404,5 +2404,6 @@
 "trigeminal nerve":{"d":[{"p":"","g":"Variant of trigeminus."}],"rel":{"t":"variant of","l":"trigeminus","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "trip hammer":{"d":[{"p":"","g":"Variant of triphammer."}],"rel":{"t":"variant of","l":"triphammer","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "triskeles":{"d":[{"p":"n.","g":"A symbol consisting of three spirals, or three bent human legs."}],"vars":["triskele"]},
-"trolley bus":{"d":[{"p":"","g":"Variant of trolleybus."}],"rel":{"t":"variant of","l":"trolleybus","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
+"trolley bus":{"d":[{"p":"","g":"Variant of trolleybus."}],"rel":{"t":"variant of","l":"trolleybus","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"transcendent function":{"d":[{"p":"n.","g":"In Jungian psychology, the psychic function that arises from the tension between conscious and unconscious contents and reconciles them into a new attitude or symbol, driving the process of individuation.","dom":"psychology","cl":["jungian"]}],"e":"Coined by Carl Jung (Die transzendente Funktion, written 1916); from transcendent + function — \"transcendent\" here meaning that which mediates between, rather than anything supernatural.","r":["individuation","active imagination","enantiodromia"],"i":"/trænˈsɛn.dənt ˈfʌŋk.ʃən/","_at":"2026-06-30T20:24:47.285Z","cl":["jungian"]}
 }

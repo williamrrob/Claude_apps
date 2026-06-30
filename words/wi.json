@@ -1227,5 +1227,6 @@
 "willusionist":{"d":[{"p":"n.","g":"A proponent of willusionism.","dom":"philosophy"}]},
 "willusionism":{"d":[{"p":"n.","g":"The neuroscientific view that free will is an illusion.","dom":"philosophy"}],"e":"Blend of will + illusionism, coined by philosopher Eddy Nahmias."},
 "wind-up":{"d":[{"p":"","g":"Variant of windup."}],"rel":{"t":"variant of","l":"windup","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
-"wine glass":{"d":[{"p":"","g":"Variant of wineglass."}],"rel":{"t":"variant of","l":"wineglass","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
+"wine glass":{"d":[{"p":"","g":"Variant of wineglass."}],"rel":{"t":"variant of","l":"wineglass","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"wise old man":{"d":[{"p":"n.","g":"A Jungian archetype of wisdom, guidance, and insight, typically personified in dreams and myth as an old man (sage, magician, guru, or mentor figure) who offers counsel at moments of crisis.","dom":"psychology","cl":["jungian"]}],"e":"From wise + old + man; a Jungian archetypal designation, paired with its feminine counterpart, the Great Mother.","r":["archetype","great mother","senex"],"i":"/waɪz oʊld mæn/","_at":"2026-06-30T20:24:47.285Z","cl":["jungian"]}
 }

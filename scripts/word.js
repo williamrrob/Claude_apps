@@ -18,10 +18,17 @@
  *   node scripts/word.js has <word>                 # exit 0 if present, 1 if not
  *   node scripts/word.js set <word>      < entry.json   # create/replace whole entry (JSON on stdin)
  *   node scripts/word.js field <word> <k> < value.json  # set ONE field (JSON value on stdin)
+ *   node scripts/word.js append <word> <k> < item.json  # push one item onto an array field (e.g. add a sense to `d` without clobbering the rest)
  *   node scripts/word.js rmfield <word> <k>         # delete one field
  *   node scripts/word.js rm <word>                  # delete the entry
  *   node scripts/word.js list <xx>                  # list words in a shard (keys only)
  *   node scripts/word.js missing <w1> <w2> ...      # check a whole candidate batch in one process
+ *   node scripts/word.js bulk-set < entries.json    # write MANY new entries in one call: {"word1":{...},"word2":{...}}
+ *
+ * Every write (set/field/append/rmfield/bulk-set/cluster) self-validates the
+ * shard it touched, auto-runs the decomp false-positive check, and auto-bumps
+ * DATA_V in app.js once on clean exit — no separate validate/check/bump steps
+ * needed for the common case.
  *
  * Clusters: a lightweight tag connecting words that share a conceptual space
  * but NOT a root/morpheme (that's what family/<root>.json is for). Stored as
@@ -81,7 +88,27 @@ function readShard(p) {
 // preserved, so edits produce minimal diffs (only the touched word's line
 // changes; new words are appended).
 const { stringifyShard } = require("./shard-format.js");
-function writeShard(p, obj) { fs.writeFileSync(p, stringifyShard(obj)); }
+const { bumpDataV } = require("./version-lib.js");
+let didWriteWords = false;
+function writeShard(p, obj) {
+  fs.writeFileSync(p, stringifyShard(obj));
+  // Self-validate: re-read what was just written so a corrupt shard never sits
+  // silently on disk. Replaces having to remember a separate
+  // `normalize-shards.js --check` call after every word.js-driven edit.
+  try { JSON.parse(fs.readFileSync(p, "utf8")); }
+  catch (e) { fail("wrote " + p + " but it failed to re-parse — this should never happen: " + e.message); }
+  didWriteWords = true;
+}
+// DATA_V gates every words/*.json fetch (see app.js). Bumping it once per
+// process, on clean exit, means any command that ends up writing a shard
+// auto-invalidates the client cache — no separate bump-version.js call to
+// remember. Multiple writes in one invocation (cluster, bulk-set) still only
+// bump once; failed runs (fail() exits 1) never bump at all.
+process.on("exit", function (code) {
+  if (!didWriteWords || code !== 0) return;
+  const r = bumpDataV();
+  if (r) process.stderr.write("DATA_V (app.js): " + r.from + " -> " + r.to + "\n");
+});
 
 function readStdin() {
   const data = fs.readFileSync(0, "utf8").trim();
@@ -156,6 +183,32 @@ if (cmd === "missing") {
   process.exit(0);
 }
 
+if (cmd === "bulk-set") {
+  // Write N entries in ONE process instead of N separate `set` calls — the
+  // whole point being a round of new words costs one tool call, not one per
+  // word. Stdin is a single JSON object: {"word1": {...entry...}, "word2": {...}}.
+  const entries = readStdin();
+  if (typeof entries !== "object" || Array.isArray(entries) || entries === null) fail("bulk-set expects a JSON object of {word: entry, ...} on stdin");
+  const words = Object.keys(entries);
+  if (!words.length) fail("bulk-set: empty object, nothing to write");
+  for (const w of words) {
+    const e = entries[w];
+    if (typeof e !== "object" || Array.isArray(e) || e === null) fail("bulk-set: entry for " + JSON.stringify(w) + " must be a JSON object");
+  }
+  const touched = {}; // shardPath -> shard obj, so words in the same shard share one read/write
+  const now = new Date().toISOString();
+  for (const w of words) {
+    const sp = shardPath(w);
+    if (!touched[sp]) touched[sp] = readShard(sp);
+    entries[w]._at = now;
+    touched[sp][w] = entries[w];
+  }
+  for (const sp of Object.keys(touched)) writeShard(sp, touched[sp]);
+  process.stderr.write("wrote " + words.length + " word(s) across " + Object.keys(touched).length + " shard(s): " + words.join(", ") + "\n");
+  for (const w of words) checkWritten(w, entries[w]);
+  process.exit(0);
+}
+
 if (cmd === "cluster") {
   const clusterId = word;
   const members = process.argv.slice(4);
@@ -175,6 +228,41 @@ if (cmd === "cluster") {
   if (missing.length) fail("not found, nothing written: " + missing.join(", "));
   for (const sp of Object.keys(touched)) writeShard(sp, touched[sp]);
   process.stderr.write("tagged " + members.length + " word(s) with cluster \"" + clusterId + "\": " + members.join(", ") + "\n");
+  process.exit(0);
+}
+
+// `cluster` tags a whole entry — too coarse for a common multi-sense word
+// where only ONE definition belongs to the cluster (e.g. "shadow" has 6
+// senses; only the Jungian one is). sense-cluster tags individual d[] items.
+if (cmd === "sense-cluster") {
+  const clusterId = word;
+  const pairs = process.argv.slice(4); // each "word:senseIndex", e.g. "shadow:5"
+  if (!clusterId) fail("sense-cluster needs a <clusterId>");
+  if (!pairs.length) fail("sense-cluster needs at least one word:index pair after the clusterId");
+  const touched = {};
+  const bad = [];
+  const parsed = [];
+  for (const pair of pairs) {
+    const m = /^(.+):(\d+)$/.exec(pair);
+    if (!m) { bad.push(pair + " (expected word:index, e.g. shadow:5)"); continue; }
+    const w = m[1], idx = Number(m[2]);
+    const sp = shardPath(w);
+    if (!touched[sp]) touched[sp] = readShard(sp);
+    const e = touched[sp][w];
+    if (!e) { bad.push(w + " (not found)"); continue; }
+    if (!e.d || !e.d[idx]) { bad.push(w + ":" + idx + " (no sense at that index — entry has " + ((e.d && e.d.length) || 0) + ")"); continue; }
+    parsed.push({ w: w, idx: idx, sense: e.d[idx] });
+  }
+  if (bad.length) fail("problems, nothing written: " + bad.join("; "));
+  for (const p of parsed) {
+    const tags = new Set(p.sense.cl || []);
+    tags.add(clusterId);
+    p.sense.cl = [...tags];
+  }
+  const touchedWords = new Set(parsed.map(function (p) { return p.w; }));
+  touchedWords.forEach(function (w) { touched[shardPath(w)][w]._at = new Date().toISOString(); });
+  for (const sp of Object.keys(touched)) if (Object.keys(touched[sp]).some(function (w) { return touchedWords.has(w); })) writeShard(sp, touched[sp]);
+  process.stderr.write("sense-tagged " + parsed.length + " sense(s) with cluster \"" + clusterId + "\": " + pairs.join(", ") + "\n");
   process.exit(0);
 }
 
@@ -225,6 +313,24 @@ switch (cmd) {
     shard[word]._at = new Date().toISOString();
     writeShard(p, shard);
     process.stderr.write("set ." + fieldKey + " on " + word + "\n");
+    checkWritten(word, shard[word]);
+    break;
+  }
+
+  // Push one item onto an array field without a read-modify-write round trip
+  // (e.g. adding a new sense to an existing word's `d` without clobbering its
+  // other senses, or appending a related word to `r`). `field` REPLACES the
+  // whole value; this is the cheap way to extend it instead.
+  case "append": {
+    if (!fieldKey || !FIELDS.has(fieldKey)) fail("append needs one of: " + [...FIELDS].join(" "));
+    const value = readStdin();
+    if (!exists) shard[word] = {};
+    const cur = shard[word][fieldKey];
+    if (cur !== undefined && !Array.isArray(cur)) fail("append: ." + fieldKey + " on " + word + " isn't an array");
+    shard[word][fieldKey] = (cur || []).concat([value]);
+    shard[word]._at = new Date().toISOString();
+    writeShard(p, shard);
+    process.stderr.write("appended to ." + fieldKey + " on " + word + " (" + shard[word][fieldKey].length + " item(s) now)\n");
     checkWritten(word, shard[word]);
     break;
   }

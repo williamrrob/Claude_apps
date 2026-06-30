@@ -2096,5 +2096,6 @@
 "gris-gris":{"d":[{"p":"","g":"Variant of greegree."}],"rel":{"t":"variant of","l":"greegree","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "greenkeeper":{"d":[{"p":"n.","g":"An employee responsible for the maintenance of a golf course."}],"vars":["greenskeeper"]},
 "ground cover":{"d":[{"p":"","g":"Variant of groundcover."}],"rel":{"t":"variant of","l":"groundcover","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
-"gruyère":{"d":[{"p":"","g":"Variant of gruyere."}],"rel":{"t":"variant of","l":"gruyere","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
+"gruyère":{"d":[{"p":"","g":"Variant of gruyere."}],"rel":{"t":"variant of","l":"gruyere","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"great mother":{"d":[{"p":"n.","g":"A Jungian archetype representing the nurturing, devouring, and life-giving aspects of the maternal principle, encompassing both the protective and the destructive faces of motherhood as they appear in myth and dream.","dom":"psychology","cl":["jungian"]}],"e":"From great + mother; a Jungian archetypal designation, paired with its masculine counterpart, the Wise Old Man.","r":["archetype","wise old man","mother"],"i":"/ɡreɪt ˈmʌðər/","_at":"2026-06-30T20:24:47.285Z","cl":["jungian"]}
 }

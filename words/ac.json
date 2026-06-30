@@ -1007,5 +1007,6 @@
 "accidental property":{"d":[{"p":"n.","g":"A characteristic of something that is unnecessary to its essence, and in which a deviation of that characteristic has no effect on its essence.","dom":"philosophy"}]},
 "acneform":{"d":[{"p":"adj.","g":"Resembling acne"}],"vars":["acneiform"]},
 "acidaemia":{"d":[{"p":"n.","g":"a medical condition marked by an abnormally high concentration of hydrogen ions in a person's blood"}],"vars":["acidemia"]},
-"aciclovir":{"d":[{"p":"n.","g":"A cyclic synthetic nucleoside C₈H₁₁N₅O₃ used as an antiviral drug (trademarks Avirax, Zovirax) chiefly in the treatment of chicken pox, shingles, the genital form of herpes simplex, and AIDS."}],"vars":["acyclovir"]}
+"aciclovir":{"d":[{"p":"n.","g":"A cyclic synthetic nucleoside C₈H₁₁N₅O₃ used as an antiviral drug (trademarks Avirax, Zovirax) chiefly in the treatment of chicken pox, shingles, the genital form of herpes simplex, and AIDS."}],"vars":["acyclovir"]},
+"active imagination":{"d":[{"p":"n.","g":"A Jungian technique of consciously engaging with unconscious contents — images, fantasies, inner figures — through deliberate, waking engagement rather than passive dream interpretation.","dom":"psychology","cl":["jungian"]}],"e":"Coined by Carl Jung; from active + imagination, distinguishing the method from the passivity of ordinary dreaming or daydreaming.","r":["individuation","transcendent function","archetype"],"i":"/ˈæk.tɪv ɪˌmædʒ.əˈneɪ.ʃən/","_at":"2026-06-30T20:24:47.284Z","cl":["jungian"]}
 }

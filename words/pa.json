@@ -3178,5 +3178,6 @@
 "passade":{"d":[{"p":"n.","g":"A pass or thrust."}],"vars":["passado"]},
 "passer-by":{"d":[{"p":"","g":"Variant of passerby."}],"rel":{"t":"variant of","l":"passerby","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "paviage":{"d":[{"p":"n.","g":"A contribution or a tax for paving streets or highways."}],"vars":["pavage"]},
-"paediatrist":{"d":[{"p":"n.","g":"A pediatrician."}],"vars":["pediatrist"]}
+"paediatrist":{"d":[{"p":"n.","g":"A pediatrician."}],"vars":["pediatrist"]},
+"participation mystique":{"d":[{"p":"n.","g":"A state of unconscious identity or fusion between subject and object, self and world, in which the boundary between one's own psyche and an external person, object, or group dissolves.","dom":"psychology","cl":["jungian"]}],"e":"Borrowed from French participation mystique, a term coined by anthropologist Lucien Lévy-Bruhl and adopted by Carl Jung to describe a primitive or unconscious mode of relating in which subject and object are not yet differentiated.","r":["collective unconscious","archetype","individuation"],"i":"/pɑʁ.ti.si.pa.sjɔ̃ mis.tik/","_at":"2026-06-30T20:24:47.285Z","cl":["jungian"]}
 }
