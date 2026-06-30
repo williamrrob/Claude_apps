@@ -33,6 +33,26 @@
  *   node scripts/word.js field concord s <<'JSON'
  *   ["accord","agreement","harmony"]
  *   JSON
+ *
+ * The "add a thematic cluster" pipeline (as of 2026-06-30), and what's scripted:
+ *   1. curate candidate words                                    — manual/editorial, stays manual
+ *   2. `missing <words...>`                                       [done]
+ *   3. draft + write each entry via `set`                         [done] (drafting content stays manual)
+ *   4. `node scripts/check-decomp.js <word...>` or `--all` flags engine
+ *      false-positive splits (today's congee/exegete bug class) for review
+ *                                                                  [done — see check-decomp.js]
+ *   5. add a curated `b` override when step 4 flags a real bad parse
+ *                                                                  [mechanism done, judgment manual]
+ *   6. `cluster <id> <words...>` to tag the group                 [done]
+ *   7. `node scripts/bump-version.js [styles|app|engine|data|datav|all]`
+ *                                                                  [done — see bump-version.js]
+ *   8. `node scripts/normalize-shards.js --check [files...]` validates JSON
+ *                                                                  [done]
+ *   9. verify live via preview_eval, then commit + push           [manual — needs judgment]
+ *
+ * Adding a new prefix/root/suffix to data.js (not just a word) is also
+ * scripted end to end, including a scoped collision scan of the existing
+ * dictionary: see `node scripts/add-root.js`.
  */
 "use strict";
 const fs = require("fs");
@@ -153,6 +173,7 @@ switch (cmd) {
   case "set": {
     const entry = readStdin();
     if (typeof entry !== "object" || Array.isArray(entry) || entry === null) fail("set expects a JSON object");
+    entry._at = new Date().toISOString(); // last touched via this CLI — feeds the app's "recently added/enriched" list
     shard[word] = entry;
     writeShard(p, shard);
     process.stderr.write((exists ? "updated " : "added ") + word + " in " + path.basename(p) + "\n");
@@ -164,6 +185,7 @@ switch (cmd) {
     const value = readStdin();
     if (!exists) shard[word] = {};
     shard[word][fieldKey] = value;
+    shard[word]._at = new Date().toISOString();
     writeShard(p, shard);
     process.stderr.write("set ." + fieldKey + " on " + word + "\n");
     break;
@@ -173,6 +195,7 @@ switch (cmd) {
     if (!exists) fail("not found: " + word);
     if (!fieldKey) fail("rmfield needs a <field>");
     delete shard[word][fieldKey];
+    shard[word]._at = new Date().toISOString();
     writeShard(p, shard);
     process.stderr.write("removed ." + fieldKey + " from " + word + "\n");
     break;

@@ -278,7 +278,8 @@ const MORPHEMES = {
 
     // Other Romance (Spanish, Italian, Portuguese)
     { id: "toro", forms: ["toro", "tor"], origin: "Spanish", source: "toro", meaning: "bull, torus" },
-    { id: "passo", forms: ["paso", "pass"], origin: "Spanish", source: "paso", meaning: "step, pass" }
+    { id: "passo", forms: ["paso", "pass"], origin: "Spanish", source: "paso", meaning: "step, pass" },
+    { id: "eget", forms: ["eget"], origin: "Greek", source: "hēgeisthai", meaning: "to lead, interpret, expound" }
   ],
 
   suffixes: [

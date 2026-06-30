@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "54";
+  const DATA_V = "55";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -471,6 +471,17 @@
         if (online) { pushHistory(result.word); pushNav(result.word); renderSource(online, token); return; }
         showStatus("“" + escapeHtml(result.word) + "” isn’t in the dictionary.", true);
         return;
+      }
+      // A pure spelling/form pointer ("Alternative spelling of X") is a whole
+      // card that says nothing but "go look at X" — redirect straight to the
+      // canonical word instead of rendering a near-empty card for it. (Done
+      // here, before pushHistory/pushNav, so only the canonical word lands on
+      // the nav stack — redirecting from inside reveal(), as the abbreviation
+      // case below does, would double-push and trap the back button.) Multi-
+      // sense entries are excluded: those carry real content of their own
+      // even when also tagged with a `rel` pointer (e.g. "above-board").
+      if (rec0.rel && rec0.rel.l && rec0.d.length === 1 && VARIANT_RE.test(rec0.d[0].g || "")) {
+        return run(rec0.rel.l, sourcePart);
       }
       currentWord = result.word;
       pushHistory(result.word);
