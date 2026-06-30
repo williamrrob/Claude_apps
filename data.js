@@ -142,6 +142,7 @@ const MORPHEMES = {
     { id: "leg", forms: ["legis", "leg"], origin: "Latin", source: "lex", meaning: "law" },
     { id: "lect", forms: ["lect", "leg", "lig"], origin: "Latin", source: "legere", meaning: "to read, choose, gather" },
     { id: "liber", forms: ["liber", "liver"], origin: "Latin", source: "liber", meaning: "free" },
+    { id: "limen", forms: ["limin", "limen"], origin: "Latin", source: "limen", meaning: "threshold" },
     { id: "lingu", forms: ["lingu"], origin: "Latin", source: "lingua", meaning: "tongue, language" },
     { id: "loc", forms: ["loc"], origin: "Latin", source: "locus", meaning: "place" },
     { id: "log", forms: ["logue", "logy", "log"], origin: "Greek", source: "logos", meaning: "word, study, reason" },
