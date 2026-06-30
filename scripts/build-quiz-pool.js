@@ -89,7 +89,7 @@ const ROMAN = /^m{0,4}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$/i;
 // ---- load words ----
 const QUIZ_BANNED_DOMAINS = /^(chemistry|biochemistry|alchemy)$/i;
 const ACRONYM_ETYM_RE = /^(an? )?(acronym|initialism|abbreviation)( for| of)\b/i;
-const gloss = {};
+const gloss = {}, dom0 = {};
 for (const f of fs.readdirSync(WORDS)) {
   if (!f.endsWith(".json")) continue;
   const sh = JSON.parse(fs.readFileSync(path.join(WORDS, f), "utf8"));
@@ -99,8 +99,25 @@ for (const f of fs.readdirSync(WORDS)) {
     if (r.e && ACRONYM_ETYM_RE.test(r.e)) continue;
     if (r.d[0].dom && QUIZ_BANNED_DOMAINS.test(r.d[0].dom)) continue;
     gloss[w] = r.d[0].g;
+    dom0[w] = r.d[0].dom;
   }
 }
+
+// the discovery pool over-represents obscure technical/concrete nouns (fish
+// species, anatomical terms, region-specific cultural objects) because they
+// tend to be short, rare, and old — exactly what the score() below rewards.
+// Don't exclude them outright (they're legitimate vocabulary), just cap how
+// many of each category can occupy a slot in the capped pool.
+const FISH_RE = /\bfish(es)?\b/i;
+const ANATOMY_RE = /\b(bone|muscle|vein|artery|ligament|tendon|nerve|gland|organ|cartilage|vertebra|skull|rib|sinew)\b/i;
+const CULTURAL_OBJECT_RE = /\b(African|Asian|Indian|Hindu|Chinese|Japanese|Korean|Vietnamese|Thai|Indonesian|Malay|Filipino|Arab|Arabic|Persian|Turkish|Mexican|Aztec|Maya|Mayan|Inca|Incan|Andean|Peruvian|Brazilian|Caribbean|Polynesian|Hawaiian|Native American|Zulu|Swahili|Maori|Nigerian|Ethiopian|Egyptian|Moroccan|Algerian)\b/;
+function concreteCategory(w, g) {
+  if (FISH_RE.test(g) || dom0[w] === "fishing") return "fish";
+  if (ANATOMY_RE.test(g) || dom0[w] === "anatomy") return "anatomy";
+  if (CULTURAL_OBJECT_RE.test(g)) return "cultural";
+  return null;
+}
+const CATEGORY_CAP = { fish: 8, anatomy: 10, cultural: 15 };
 
 // ---- scan usage, build pool ----
 const ERA_LO = 9, ERA_HI = 17;   // ~1725–1949: old-ish but reliable corpus data
@@ -139,7 +156,18 @@ function score(e) {
   return (17 - centroid) * 2 + (14 - w.length) * 1.6 + (18 - nz) * 1.2;
 }
 pool.sort((a, b) => score(b) - score(a));
-const top = pool.slice(0, CAP).map(e => [e[0], e[1]]);
+const catCount = { fish: 0, anatomy: 0, cultural: 0 };
+const top = [];
+for (const e of pool) {
+  if (top.length >= CAP) break;
+  const [w, era] = e;
+  const cat = concreteCategory(w, gloss[w]);
+  if (cat) {
+    if (catCount[cat] >= CATEGORY_CAP[cat]) continue; // over quota — leave the slot for the next word
+    catCount[cat]++;
+  }
+  top.push([w, era]);
+}
 
 // curated multi-word idiom headwords: capitalized + spaced, so the lowercase single-token
 // regex above never sees them, and they have no usage data to derive an era from —
