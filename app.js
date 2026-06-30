@@ -2545,11 +2545,13 @@
 
   async function getDistractors(word, rec, count, correctGloss) {
     const ok = function (g) { return !glossMentions(g, word) && !glossOverlaps(g, correctGloss); };
-    // Only rec.r (morphological/embedding neighbors), never rec.s (synonyms) —
-    // a synonym's own definition will, by definition, usually also describe the
-    // target word correctly ("masturbate" for wank, "brackish" for briny,
-    // "sunfish" for mola), which made for distractors that were secretly right.
-    const neighborWords = qShuffle(((rec && rec.r) || []).filter(function (w) { return w !== word; }));
+    // Never a registered synonym of the target — a synonym's own definition will,
+    // by definition, usually also describe the target word correctly ("masturbate"
+    // for wank, "brackish" for briny, "sunfish" for mola), which made for
+    // distractors that were secretly right (and, worse, got shown as a second
+    // "correct" choice alongside the target on the reveal screen).
+    const synonymSet = new Set([word].concat((rec && rec.s) || []));
+    const neighborWords = qShuffle(((rec && rec.r) || []).filter(function (w) { return !synonymSet.has(w); }));
     const candidates = [];
     for (const nw of neighborWords.slice(0, count * 6)) {
       if (candidates.length >= count) break;
@@ -2564,7 +2566,8 @@
     // fully random word, prefer orthographic near-misses: words that look like
     // they could be confused with this one, even though they aren't related.
     if (candidates.length < count) {
-      const used = new Set([word].concat(candidates.map(function (c) { return c.w; })));
+      const used = new Set(candidates.map(function (c) { return c.w; }));
+      synonymSet.forEach(function (w) { used.add(w); });
       const look = await getLookalikes(word, used, count - candidates.length);
       for (const l of look) {
         const si = pickSenseToShow(l.rec, l.w);
@@ -2573,7 +2576,7 @@
       }
     }
     if (candidates.length >= count) return candidates.slice(0, count);
-    const extra = qShuffle(distractorPool.filter(function (d) { return d.w !== word && ok(d.g); }));
+    const extra = qShuffle(distractorPool.filter(function (d) { return !synonymSet.has(d.w) && ok(d.g); }));
     return candidates.concat(extra).slice(0, count);
   }
 
