@@ -38,9 +38,11 @@
  *   1. curate candidate words                                    — manual/editorial, stays manual
  *   2. `missing <words...>`                                       [done]
  *   3. draft + write each entry via `set`                         [done] (drafting content stays manual)
- *   4. `node scripts/check-decomp.js <word...>` or `--all` flags engine
- *      false-positive splits (today's congee/exegete bug class) for review
- *                                                                  [done — see check-decomp.js]
+ *   4. flags engine false-positive splits (today's congee/exegete bug class)
+ *      for review — runs AUTOMATICALLY after every `set`/`field`/`rmfield`
+ *      (see checkWritten() below); `node scripts/check-decomp.js <word...>`
+ *      or `--all` is still there for ad hoc/bulk checks
+ *                                                                  [done, automatic]
  *   5. add a curated `b` override when step 4 flags a real bad parse
  *                                                                  [mechanism done, judgment manual]
  *   6. `cluster <id> <words...>` to tag the group                 [done]
@@ -86,6 +88,40 @@ function readStdin() {
   if (!data) fail("expected JSON on stdin");
   try { return JSON.parse(data); }
   catch (e) { fail("invalid JSON on stdin: " + e.message); }
+}
+
+// Auto-run after every set/field/rmfield: catches the congee/exegete class of
+// bug (a confident-but-wrong engine parse) at write time instead of relying on
+// someone remembering to run check-decomp.js separately afterward. Lazy-loaded
+// since most word.js calls don't touch the dictionary content at all.
+let _decompCheck = null;
+function checkWritten(w, entry) {
+  if (!entry || entry.b) return; // curated override already shields the UI from the engine
+  if (/[\s-]/.test(w)) return; // phrasal headwords skip decomposition entirely
+  if (!_decompCheck) {
+    try {
+      const ROOT = path.join(__dirname, "..");
+      delete require.cache[require.resolve(path.join(ROOT, "data.js"))];
+      global.MORPHEMES = require(path.join(ROOT, "data.js")).MORPHEMES;
+      delete require.cache[require.resolve(path.join(ROOT, "engine.js"))];
+      const engine = require(path.join(ROOT, "engine.js"));
+      const { classify } = require("./decomp-lib.js");
+      _decompCheck = function (word, e) { return classify(word, e, engine.decompose); };
+    } catch (err) {
+      process.stderr.write("word.js: (skipped decomp check — " + err.message + ")\n");
+      _decompCheck = function () { return null; };
+    }
+  }
+  const r = _decompCheck(w, entry);
+  if (r && r.verdict === "SUSPECT") {
+    process.stderr.write("word.js: ⚠ SUSPECT parse for \"" + w + "\": " + r.parts +
+      " — engine split doesn't corroborate against this word's own etymology text. " +
+      "Review with `node scripts/check-decomp.js " + w + "`; if it's really wrong, add a curated override:\n" +
+      "  node scripts/word.js field " + w + " b <<JSON\n  [{\"s\":\"" + w + "\",\"k\":\"word\"}]\n  JSON\n");
+  } else if (r && r.verdict === "UNVERIFIED") {
+    process.stderr.write("word.js: note: \"" + w + "\" parses as " + r.parts +
+      " but has no etymology text to corroborate it against — can't confirm either way.\n");
+  }
 }
 
 const [cmd, word, fieldKey] = process.argv.slice(2);
@@ -177,6 +213,7 @@ switch (cmd) {
     shard[word] = entry;
     writeShard(p, shard);
     process.stderr.write((exists ? "updated " : "added ") + word + " in " + path.basename(p) + "\n");
+    checkWritten(word, shard[word]);
     break;
   }
 
@@ -188,6 +225,7 @@ switch (cmd) {
     shard[word]._at = new Date().toISOString();
     writeShard(p, shard);
     process.stderr.write("set ." + fieldKey + " on " + word + "\n");
+    checkWritten(word, shard[word]);
     break;
   }
 
@@ -198,6 +236,7 @@ switch (cmd) {
     shard[word]._at = new Date().toISOString();
     writeShard(p, shard);
     process.stderr.write("removed ." + fieldKey + " from " + word + "\n");
+    checkWritten(word, shard[word]);
     break;
   }
 
