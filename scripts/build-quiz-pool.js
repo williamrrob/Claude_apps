@@ -78,19 +78,24 @@ const POINTER = /^(form|plural|past|variant|alternative|synonym|misspelling|arch
 const VARIANT = /^(a |an |the )?(alternative|alt\.?|variant|obsolete|archaic|dated|nonstandard|non-standard|standard|common|eye|rare|informal|formal|colloquial|chiefly [a-z]+|british|american|canadian|australian|scottish|irish|dialectal) ([a-z-]+ )?(spelling|spellings|form|pronunciation) of\b/i;
 const INFL = /^(\([^)]*\)\s*)?(simple past|past tense|past participle|present participle|present tense|gerund|third[- ]person singular|plural form|comparative|superlative)\b/i;
 function quizzableGloss(g) {
-  return g && g.length >= 8 && !POINTER.test(g) && !VARIANT.test(g) && !INFL.test(g);
+  return g && g.length >= 8 && !POINTER.test(g) && !VARIANT.test(g) && !INFL.test(g) && !/wikipedia/i.test(g);
 }
 // strict, well-formed Roman numerals (lxvi, mcmxliv) — but not real words like "mid"
 const ROMAN = /^m{0,4}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$/i;
 
 // ---- load words ----
+const QUIZ_BANNED_DOMAINS = /^(chemistry|biochemistry|alchemy)$/i;
+const ACRONYM_ETYM_RE = /^(an? )?(acronym|initialism|abbreviation)( for| of)\b/i;
 const gloss = {};
 for (const f of fs.readdirSync(WORDS)) {
   if (!f.endsWith(".json")) continue;
   const sh = JSON.parse(fs.readFileSync(path.join(WORDS, f), "utf8"));
   for (const w of Object.keys(sh)) {
     const r = sh[w];
-    if (r && r.d && r.d[0] && r.d[0].g) gloss[w] = r.d[0].g;
+    if (!r || !r.d || !r.d[0] || !r.d[0].g) continue;
+    if (r.e && ACRONYM_ETYM_RE.test(r.e)) continue;
+    if (r.d[0].dom && QUIZ_BANNED_DOMAINS.test(r.d[0].dom)) continue;
+    gloss[w] = r.d[0].g;
   }
 }
 

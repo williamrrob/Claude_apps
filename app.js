@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "45";
+  const DATA_V = "47";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -2188,13 +2188,16 @@
   function quizGloss(g) { return String(g).split(/;| — /)[0].trim(); }
   // A sense whose own gloss contains the headword ("Clipping of rheumatologist"
   // for rheum, "...in a phial" for phial) hands the answer away — skip it.
+  const QUIZ_BANNED_DOMAINS = /^(chemistry|biochemistry|alchemy)$/i;
   function senseOk(s, word) {
     const g = s && s.g;
     if (!g) return false;
+    if (s.dom && QUIZ_BANNED_DOMAINS.test(s.dom)) return false;
     const qg = quizGloss(g);
     if (qg.length < 8 || qg.length > 140) return false;
     if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic|abbreviation|initialism|acronym|contraction) of\b/i.test(qg)) return false;
     if (VARIANT_RE.test(qg)) return false;
+    if (/wikipedia/i.test(qg)) return false;
     if (word && glossMentions(qg, word)) return false;
     return true;
   }
@@ -2205,7 +2208,14 @@
     rec.d.forEach(function (s, i) { if (senseOk(s, word)) out.push(i); });
     return out;
   }
-  function isQuizzable(rec, word) { return validSenseIdx(rec, word).length > 0; }
+  // Etymology like "Acronym of not in my back yard." marks the headword itself
+  // as an acronym/initialism (nimby) rather than an organically grown word —
+  // not the kind of vocabulary the quiz should be testing.
+  const ACRONYM_ETYM_RE = /^(an? )?(acronym|initialism|abbreviation)( for| of)\b/i;
+  function isQuizzable(rec, word) {
+    if (rec && rec.e && ACRONYM_ETYM_RE.test(rec.e)) return false;
+    return validSenseIdx(rec, word).length > 0;
+  }
 
   // Proper-noun / gazetteer / onomastic glosses (places, surnames, given names,
   // taxonomic genera). The eras pool stores these lowercased, so we detect them
@@ -2320,6 +2330,23 @@
     return false;
   }
 
+  // Two glosses sharing a content word ("A basket." / "An osier basket that
+  // anglers use to hold fish.") read as the same concept at a glance, even when
+  // technically distinct — confusing rather than genuinely wrong. Reject those.
+  const GLOSS_STOPWORDS = new Set(["that", "this", "with", "from", "into", "onto", "upon", "also",
+    "such", "than", "then", "they", "them", "have", "has", "had", "for", "are", "was", "were",
+    "being", "been", "not", "but", "its", "his", "her", "their", "our", "your", "you", "one",
+    "especially", "particular", "particularly", "used", "use", "uses", "usually", "often"]);
+  function significantWords(g) {
+    return (String(g).toLowerCase().match(/[a-z]+/g) || []).filter(function (w) {
+      return w.length >= 4 && !GLOSS_STOPWORDS.has(w);
+    });
+  }
+  function glossOverlaps(g1, g2) {
+    const s2 = new Set(significantWords(g2));
+    return significantWords(g1).some(function (w) { return s2.has(w); });
+  }
+
   // Bigram (letter-pair) overlap — a cheap, offline stand-in for "looks/sounds
   // similar". Used to find orthographic near-misses (importune / impertinent)
   // as distractors: genuinely confusable, but — unlike synonyms — not at risk
@@ -2357,8 +2384,8 @@
     return scored.slice(0, count);
   }
 
-  async function getDistractors(word, rec, count) {
-    const ok = function (g) { return !glossMentions(g, word); };
+  async function getDistractors(word, rec, count, correctGloss) {
+    const ok = function (g) { return !glossMentions(g, word) && !glossOverlaps(g, correctGloss); };
     // Only rec.r (morphological/embedding neighbors), never rec.s (synonyms) —
     // a synonym's own definition will, by definition, usually also describe the
     // target word correctly ("masturbate" for wank, "brackish" for briny,
@@ -2456,7 +2483,7 @@
     const correctGloss = quizGloss(sense.g);
     const pos = sense.p || "";
     const isNew = !savedSet.has(word);
-    const distractors = await getDistractors(word, rec, 3);
+    const distractors = await getDistractors(word, rec, 3, correctGloss);
     if (tok !== quizToken) return;
     // A choice is correct if it's drawn from the target word itself OR one of its
     // registered synonyms — a synonym's own gloss genuinely does describe the
@@ -2474,9 +2501,11 @@
     head.appendChild(el("div", "quiz-title", isNew ? "Discovery" : "Quiz"));
     head.appendChild(el("div", "quiz-prog", (idx + 1) + " / " + queue.length));
     quizEl.appendChild(head);
-    quizEl.appendChild(el("div", "quiz-word", word));
+    const wordRow = el("div", "quiz-word-row");
+    wordRow.appendChild(el("span", "quiz-word", word));
     const pronTxt = rec.i || rec.rs;
-    if (pronTxt) quizEl.appendChild(el("div", "quiz-pron", pronTxt));
+    if (pronTxt) wordRow.appendChild(el("span", "quiz-pron", pronTxt));
+    quizEl.appendChild(wordRow);
     const sub = el("div", "quiz-pos");
     if (pos) sub.appendChild(el("span", null, pos));
     if (isNew) {
