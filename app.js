@@ -2176,30 +2176,46 @@
   }
 
   // -- word classification --
-  function isQuizzable(rec) {
-    if (!rec || !rec.d || !rec.d.length) return false;
-    const g = rec.d[0].g;
+  // pointer entries ("Alternative spelling of X", "Plural of Y") make useless
+  // questions — the answer is just another form of the headword.
+  const VARIANT_RE = /^(a |an |the )?(alternative|alt\.?|variant|obsolete|archaic|dated|nonstandard|non-standard|standard|common|eye|rare|informal|formal|colloquial|chiefly [a-z]+|british|american|canadian|australian|scottish|irish|dialectal) (spelling|spellings|form|pronunciation) of\b/i;
+  function senseOk(s) {
+    const g = s && s.g;
     if (!g || g.length < 8) return false;
-    if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic) of\b/i.test(g)) return false;
+    if (/^(form|plural|past|variant|alternative|synonym|misspelling|archaic|abbreviation|initialism|acronym|contraction) of\b/i.test(g)) return false;
+    if (VARIANT_RE.test(g)) return false;
     return true;
   }
+  // indices of senses good enough to ask a question about
+  function validSenseIdx(rec) {
+    if (!rec || !rec.d) return [];
+    const out = [];
+    rec.d.forEach(function (s, i) { if (senseOk(s)) out.push(i); });
+    return out;
+  }
+  function isQuizzable(rec) { return validSenseIdx(rec).length > 0; }
 
-  // Pop culture / proper noun domains in Wiktionary — not useful vocabulary.
-  const POP_DOM = /\b(television|film|cinema|video.?game|gaming|internet|web|computing|comic|anime|manga|brand|trademark|sport|baseball|football|basketball|soccer|cricket|chess|poker)\b/i;
+  // Proper-noun / gazetteer / onomastic glosses (places, surnames, given names,
+  // taxonomic genera). The eras pool stores these lowercased, so we detect them
+  // by gloss shape rather than capitalization. Tuned to avoid false positives on
+  // real words ("the state of being cruel", "the capital of a column").
+  const GEO_RE = /^(a |an |the )(city|town|township|village|hamlet|borough|suburb|port|seaport|commune|municipality|canton|oblast|krai|province|prefecture|governorate|county|island|isle|archipelago|peninsula|river|lake|mountain|volcano|gulf|bay|strait|cape)\b[^.]*\b(in|of|on|near|located|situated)\b/i;
+  const NAME_RE = /^(a |an )?((male |female |unisex )?given name|surname|patronymic|nickname)\b/i;
+  const CAP_RE = /^(the )?((state |provincial )?capital (city )?of|largest city|chief town)\b/i;
+  const GENUS_RE = /^(a |an )?genus of\b/i;
+  const PEOPLE_RE = /\bmember of (a |an |the )?[^.]*\b(people|peoples|tribe|nation|clan|dynasty)\b|\b(ethnic group|indigenous (people|peoples|group))\b/i;
+  const LANG_RE = /^(a |an |the )?([a-z]+ )?(language|dialect|languages|dialects)\b[^.]*\b(of|spoken|used)\b|\bdialects? of\b/i;
+  function looksProper(rec) {
+    const g = (rec && rec.d && rec.d[0] && rec.d[0].g) || "";
+    return GEO_RE.test(g) || NAME_RE.test(g) || CAP_RE.test(g) || GENUS_RE.test(g) || PEOPLE_RE.test(g) || LANG_RE.test(g);
+  }
 
-  // Discovery: rare/specialized/loanword/archaic words worth learning.
-  // Domain tag qualifies only for academic/professional fields, not pop culture.
-  function isDiscoveryWord(w, rec) {
-    if (!isQuizzable(rec)) return false;
-    if (rec.rel && /\bof$/.test(rec.rel.t || "")) return false;  // skip inflections
-    if (/^[A-Z]/.test(w)) return false;                          // skip proper nouns
-    if (w.includes(" ") || w.includes("-")) return false;        // single words only
-    const s = rec.d[0];
-    if (s.dom && !POP_DOM.test(s.dom)) return true;              // academic/professional domain
-    if (w.length >= 11) return true;                              // long = uncommon
-    if (rec.e && typeof rec.e === "string" && rec.e.length > 15) return true; // has etymology
-    if (/^(archaic|dated|rare|obsolete|poetic)\b/i.test(s.p || "")) return true;
-    return false;
+  // Show a random valid sense (not always sense 0) so repeat review of a word
+  // rotates through its meanings. Targeting *forgotten* senses needs per-sense
+  // register data the corpus doesn't carry — deferred (see notes).
+  function pickSenseToShow(rec) {
+    const idxs = validSenseIdx(rec);
+    return idxs[Math.floor(Math.random() * idxs.length)];
   }
 
   function qShuffle(arr) {
@@ -2208,23 +2224,49 @@
     return a;
   }
 
-  // -- discovery engine: sample random shards for interesting words --
+  // -- discovery engine --
+  // Pool = quiz-pool.json: ~4000 vetted [word, era] pairs built offline by
+  // scripts/build-quiz-pool.js — rare, older/forgotten, short, real words with
+  // proper nouns / taxa / inflections filtered out. era is the word's usage
+  // centroid (9–17 ≈ 1725–1949). We weight the draw toward EARLIER eras (more
+  // forgotten) and SHORTER words, then sample globally from one flat list — so
+  // there's no per-shard prefix clustering.
+  let eraPoolPromise = null;
+  function getEraPool() {
+    if (eraPoolPromise) return eraPoolPromise;
+    if (typeof fetch !== "function") return (eraPoolPromise = Promise.resolve([]));
+    eraPoolPromise = fetch("quiz-pool.json?v=" + DATA_V)
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .catch(function () { return []; })
+      .then(function (arr) {
+        return (arr || []).map(function (e) { return { w: e[0], era: e[1] }; });
+      });
+    return eraPoolPromise;
+  }
+  // earlier era favored: era 0 -> 21, era 20 -> 1
+  function eraWeight(era) { return 21 - era; }
+  // shorter favored: len 3 -> 9, len 8 -> 4, len 14 -> 1
+  function lenWeight(w) { return Math.max(1, 12 - w.length); }
+
   async function pickDiscoveryWords(n, excludeSet, seenSet) {
+    const pool = await getEraPool();
+    // Efraimidis–Spirakis weighted sampling without replacement: key = U^(1/weight),
+    // take the largest keys. Higher weight (early era + short) -> picked more often,
+    // but every word keeps a chance, so the deck varies session to session.
+    const scored = [];
+    for (const p of pool) {
+      if (excludeSet.has(p.w) || seenSet.has(p.w)) continue;
+      const wgt = eraWeight(p.era) * lenWeight(p.w);
+      scored.push({ w: p.w, k: Math.pow(Math.random(), 1 / wgt) });
+    }
+    scored.sort(function (a, b) { return b.k - a.k; });
+
     const results = [];
-    const L = "abcdefghijklmnopqrstuvwxyz";
-    const tried = new Set();
-    while (results.length < n && tried.size < 26) {
-      const k = L[Math.floor(Math.random() * 26)] + L[Math.floor(Math.random() * 26)];
-      if (tried.has(k)) continue;
-      tried.add(k);
-      const sh = await fetchShard(k);
-      if (!sh) continue;
-      const candidates = qShuffle(Object.keys(sh).filter(function (w) {
-        return !excludeSet.has(w) && !seenSet.has(w) && isDiscoveryWord(w, sh[w]);
-      }));
-      for (const w of candidates.slice(0, 3)) {
-        if (results.length >= n) break;
-        results.push({ w: w, rec: sh[w] });
+    for (const c of scored) {
+      if (results.length >= n) break;
+      const rec = await getWord(c.w);
+      if (rec && isQuizzable(rec) && !looksProper(rec) && !(rec.rel && /\bof$/.test(rec.rel.t || ""))) {
+        results.push({ w: c.w, rec: rec, senseIdx: pickSenseToShow(rec) });
       }
     }
     return results;
@@ -2307,8 +2349,9 @@
     }).slice(0, SAVED_CAP);
 
     const recs = {};
+    const senseIdx = {};
     await Promise.all(sorted.map(function (w) {
-      return getWord(w).then(function (r) { if (r) recs[w] = r; });
+      return getWord(w).then(function (r) { if (r) { recs[w] = r; senseIdx[w] = pickSenseToShow(r); } });
     }));
     if (tok !== quizToken) return;
     const savedQueue = sorted.filter(function (w) { return isQuizzable(recs[w]); });
@@ -2319,7 +2362,7 @@
     const discovered = await pickDiscoveryWords(DISCOVER_COUNT, excludeSet, seenSet);
     if (tok !== quizToken) return;
     const discoveryWords = [];
-    discovered.forEach(function (d) { recs[d.w] = d.rec; discoveryWords.push(d.w); });
+    discovered.forEach(function (d) { recs[d.w] = d.rec; senseIdx[d.w] = d.senseIdx; discoveryWords.push(d.w); });
     addSeen(discoveryWords);
 
     await warmPool();
@@ -2330,18 +2373,19 @@
     const queue = savedQueue.concat(discoveryWords.filter(function (w) { return isQuizzable(recs[w]); }));
     if (!queue.length) { renderQuizEmpty(); return; }
 
-    quizState = { queue: queue, idx: 0, recs: recs, savedSet: savedSet, score: { correct: 0, total: 0 }, missed: [], tok: tok };
+    quizState = { queue: queue, idx: 0, recs: recs, senseIdx: senseIdx, savedSet: savedSet, score: { correct: 0, total: 0 }, missed: [], tok: tok };
     renderQuestion();
   }
 
   async function renderQuestion() {
     if (!quizState || quizEl.hidden) return;
-    const { queue, idx, recs, savedSet, tok } = quizState;
+    const { queue, idx, recs, senseIdx, savedSet, tok } = quizState;
     if (idx >= queue.length) { renderResult(); return; }
     const word = queue[idx];
     const rec = recs[word];
-    const correctGloss = shortGloss(rec.d[0].g);
-    const pos = (rec.d[0] && rec.d[0].p) || "";
+    const sense = rec.d[senseIdx[word]] || rec.d[0];
+    const correctGloss = shortGloss(sense.g);
+    const pos = sense.p || "";
     const isNew = !savedSet.has(word);
     const distractors = await getDistractors(word, rec, 3);
     if (tok !== quizToken) return;
