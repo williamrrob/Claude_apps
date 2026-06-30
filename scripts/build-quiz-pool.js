@@ -117,13 +117,15 @@ for (const f of fs.readdirSync(WORDS)) {
 const FISH_RE = /\bfish(es)?\b/i;
 const ANATOMY_RE = /\b(bone|muscle|vein|artery|ligament|tendon|nerve|gland|organ|cartilage|vertebra|skull|rib|sinew)\b/i;
 const CULTURAL_OBJECT_RE = /\b(African|Asian|Indian|Hindu|Chinese|Japanese|Korean|Vietnamese|Thai|Indonesian|Malay|Filipino|Arab|Arabic|Persian|Turkish|Mexican|Aztec|Maya|Mayan|Inca|Incan|Andean|Peruvian|Brazilian|Caribbean|Polynesian|Hawaiian|Native American|Zulu|Swahili|Maori|Nigerian|Ethiopian|Egyptian|Moroccan|Algerian)\b/;
+const FLOWER_RE = /\bflower(s|ing)?\b|\bblossom/i;
 function concreteCategory(w, g) {
   if (FISH_RE.test(g) || dom0[w] === "fishing") return "fish";
   if (ANATOMY_RE.test(g) || dom0[w] === "anatomy") return "anatomy";
   if (CULTURAL_OBJECT_RE.test(g)) return "cultural";
+  if (FLOWER_RE.test(g)) return "flower";
   return null;
 }
-const CATEGORY_CAP = { fish: 8, anatomy: 10, cultural: 15 };
+const CATEGORY_CAP = { fish: 8, anatomy: 10, cultural: 15, flower: 3 };
 
 // ---- scan usage, build pool ----
 const ERA_LO = 9, ERA_HI = 17;   // ~1725–1949: old-ish but reliable corpus data
@@ -162,7 +164,7 @@ function score(e) {
   return (17 - centroid) * 2 + (14 - w.length) * 1.6 + (18 - nz) * 1.2;
 }
 pool.sort((a, b) => score(b) - score(a));
-const catCount = { fish: 0, anatomy: 0, cultural: 0 };
+const catCount = { fish: 0, anatomy: 0, cultural: 0, flower: 0 };
 const top = [];
 for (const e of pool) {
   if (top.length >= CAP) break;
