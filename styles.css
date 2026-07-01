@@ -108,6 +108,15 @@ body {
   -webkit-mask-image: none;
   mask-image: none;
 }
+/* A short word page (few senses, no extra cards) can fit entirely within the
+   viewport with nothing to scroll to — but the fade above still eats the
+   bottom ~96px of the last card, making it look truncated/cut off even
+   though that IS the end. Drop the mask whenever there's no real overflow
+   (see the MutationObserver in app.js that toggles this). */
+.content.no-overflow {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
 /* children must not shrink, or a flex column will collapse them when the
    content overflows (this is what was crushing the pronunciation row to 0). */
 .content > * { flex-shrink: 0; }

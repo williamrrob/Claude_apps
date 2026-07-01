@@ -2210,6 +2210,43 @@
     window.requestIdleCallback(function () { loadRoots(); }, { timeout: 5000 });
   }
 
+  // A short word page (one sense, no extra cards) can fit entirely within the
+  // viewport — nothing to scroll to. The bottom fade mask on .content (see
+  // styles.css) doesn't know that, and fades the last 96px of whatever IS
+  // there regardless, making a fully-visible last card look cut off. Cards
+  // load in asynchronously over time, so recompute on every mutation. Uses
+  // setTimeout rather than requestAnimationFrame — rAF is suspended entirely
+  // while the page/tab isn't visible (e.g. backgrounded mid-load), which
+  // would leave this never resolving; a plain timeout still fires.
+  if (contentEl && typeof MutationObserver === "function") {
+    let fitSyncScheduled = false;
+    const syncContentFit = function () {
+      // A few stray px (font metrics settling, sub-pixel flex rounding) isn't
+      // meaningful overflow — the 96px-tall fade would still make a near-fit
+      // page look like it's hiding far more below than the sliver that's
+      // actually there, so give it real headroom before treating it as "has more".
+      const overflows = contentEl.scrollHeight > contentEl.clientHeight + 24;
+      contentEl.classList.toggle("no-overflow", !overflows);
+    };
+    const scheduleFitSync = function () {
+      if (fitSyncScheduled) return;
+      fitSyncScheduled = true;
+      setTimeout(function () {
+        fitSyncScheduled = false;
+        syncContentFit();
+        // DOM mutations (cards being appended) settle almost immediately, but
+        // card entrance transitions and web-font swaps can still shift layout
+        // a beat later without firing another mutation — recheck a couple more
+        // times to catch that instead of getting stuck on a transient reading.
+        setTimeout(syncContentFit, 300);
+        setTimeout(syncContentFit, 1000);
+      }, 0);
+    };
+    new MutationObserver(scheduleFitSync).observe(contentEl, { childList: true, subtree: true });
+    window.addEventListener("resize", scheduleFitSync);
+    scheduleFitSync();
+  }
+
   // Pin the word to the top: the compact header is a non-layout overlay toggled
   // purely from scroll position (with hysteresis), so it can't feed back into
   // the layout and flicker the way an IntersectionObserver did.
