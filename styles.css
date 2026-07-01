@@ -424,7 +424,12 @@ body {
   -webkit-backdrop-filter: blur(60px) saturate(170%); backdrop-filter: blur(60px) saturate(170%);
   box-shadow: var(--glass-hi), var(--glass-shadow);
   padding: 6px 8px;
-  transition: border-radius 0.18s var(--ease), transform 0.42s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.34s cubic-bezier(0.4, 0, 0.2, 1);
+  /* border-radius is deliberately NOT transitioned: the height change that
+     comes with it (suggestions/recent appearing) is instant, not animated —
+     an animated radius racing to catch up with an already-tall box produces
+     a big circular bulge for the transition's duration. Keep it snapping
+     in lockstep with the height instead. */
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.34s cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* a tall dock (suggestions/recent showing above the search row) would otherwise
    stretch the 999px pill radius into a stadium/circle that swallows the list */
