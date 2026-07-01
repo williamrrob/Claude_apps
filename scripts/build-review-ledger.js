@@ -39,16 +39,29 @@ if (fs.existsSync(decLog)) {
   }
 }
 
-// frequency ranks: prefer a prior ledger's baked ranks, else an external list
+// Frequency ranks. review/ranks.tsv is the ONE tracked rank store (the .jsonl
+// ledgers are derived from shards + decisions.log + ranks.tsv, so they stay
+// untracked). Sources, in order: ranks.tsv, then any prior ledger's baked
+// ranks (legacy), then an external frequency list. Whatever we end up with is
+// written back to ranks.tsv at the bottom so new sources persist.
 const rank = {};
 const freqPath = process.argv[2] || "/tmp/count_1w.txt";
+const ranksPath = path.join(REVIEW, "ranks.tsv");
+if (fs.existsSync(ranksPath)) {
+  for (const line of fs.readFileSync(ranksPath, "utf8").split("\n").slice(1)) {
+    if (!line.trim()) continue;
+    const i = line.lastIndexOf("\t");
+    const w = line.slice(0, i), r = Number(line.slice(i + 1));
+    if (w && Number.isFinite(r)) rank[w] = r;
+  }
+}
 if (fs.existsSync(REVIEW)) {
   for (const f of fs.readdirSync(REVIEW)) {
     if (!f.endsWith(".jsonl")) continue;
     for (const line of fs.readFileSync(path.join(REVIEW, f), "utf8").split("\n")) {
       if (!line.trim()) continue;
       const r = JSON.parse(line);
-      if (typeof r.r === "number" && r.r < 9e6) rank[r.w] = r.r;
+      if (typeof r.r === "number" && r.r < 9e6 && !(r.w in rank)) rank[r.w] = r.r;
     }
   }
 }
@@ -132,4 +145,9 @@ Total words: **${counts.total}**
 Next batch: see \`review/QUEUE.tsv\` (highest priority first).
 `;
 fs.writeFileSync(path.join(REVIEW, "STATUS.md"), status);
+
+// persist ranks so the untracked .jsonl ledgers stay fully regenerable
+const ranked = Object.keys(rank).filter((w) => rank[w] < 9e6).sort((a, b) => rank[a] - rank[b]);
+fs.writeFileSync(ranksPath, "word\trank\n" + ranked.map((w) => w + "\t" + rank[w]).join("\n") + "\n");
+
 console.log(status);

@@ -11,3 +11,8 @@ dictionary.json
 thesaurus.json
 pronunciation.json
 scripts/MorphoLEX_en.xlsx
+
+# derived review ledgers (regenerable: shards + review/decisions.log + review/ranks.tsv)
+review/*.jsonl
+# editor-session safety copies
+family/backups/
