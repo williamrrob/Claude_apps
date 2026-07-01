@@ -14,8 +14,10 @@
  *   b=curated breakdown override (see app.js chooseBreakdown), cl=cluster tags (see below).
  *
  * Usage:
- *   node scripts/word.js get <word>                 # print one entry (cheap read)
+ *   node scripts/word.js get <word> [field]         # print one entry, or just one field (cheap read)
  *   node scripts/word.js has <word>                 # exit 0 if present, 1 if not
+ *   node scripts/word.js draft <word> [--apply]     # build an entry from Wiktionary (kaikki.org per-word
+ *                                                   #   fetch) — review the draft instead of authoring; --apply writes it
  *   node scripts/word.js set <word>      < entry.json   # create/replace whole entry (JSON on stdin)
  *   node scripts/word.js field <word> <k> < value.json  # set ONE field (JSON value on stdin)
  *   node scripts/word.js append <word> <k> < item.json  # push one item onto an array field (e.g. add a sense to `d` without clobbering the rest)
@@ -311,6 +313,122 @@ if (cmd === "sense-cluster") {
   process.exit(0);
 }
 
+if (cmd === "draft") {
+  // draft <word> [--apply] [--max-senses N] — build an entry MECHANICALLY from
+  // Wiktionary via kaikki.org's per-word export, so adding a word means
+  // reviewing a draft, not authoring definitions/etymology from scratch (which
+  // is slow and, for etymology, hallucination-prone). Prints the entry JSON to
+  // stdout for review; --apply also writes it (refuses to clobber an existing
+  // entry — use `set` for deliberate replacement). Respelling comes from the
+  // CMU dictionary when the dev deps are installed.
+  //
+  // Note: needs the network. Behind a corporate/agent proxy, run with
+  // NODE_USE_ENV_PROXY=1 (Node 22+) so fetch honors HTTPS_PROXY.
+  const w = word;
+  if (!w) fail("draft needs a <word>");
+  const dargs = process.argv.slice(4);
+  const APPLY = dargs.includes("--apply");
+  const msIdx = dargs.indexOf("--max-senses");
+  const MAX_SENSES = msIdx >= 0 ? Math.max(1, Number(dargs[msIdx + 1]) || 6) : 6;
+  const MAX_SYN = 8, MAX_REL = 12;
+  const POS = { noun: "n.", verb: "v.", adj: "adj.", adv: "adv.", prep: "prep.", conj: "conj.",
+    pron: "pron.", intj: "interj.", num: "num.", article: "art.", particle: "part.", det: "det.",
+    phrase: "phrase", prep_phrase: "phrase", proverb: "phrase", name: "n." };
+  const lc = (s) => String(s == null ? "" : s).toLowerCase();
+  const isFormOf = (s) => (s.tags || []).some((t) => /^(alt-of|form-of|abbreviation|initialism|misspelling)$/.test(lc(t)));
+  const NONSENSE_RE = /^used other than (figuratively|idiomatically)/i;
+  // most-specific Wiktionary topic -> the dictionary's `dom` convention
+  const UMBRELLA = new Set(["sciences", "natural-sciences", "physical-sciences", "human-sciences",
+    "applied-sciences", "social-sciences", "lifestyle", "hobbies"]);
+  const pickDom = (topics) => {
+    if (!Array.isArray(topics) || !topics.length) return null;
+    const t = topics.filter((x) => !UMBRELLA.has(lc(x)))[0] || topics[0];
+    return t ? lc(t) : null;
+  };
+
+  // kaikki.org serves one JSONL file per headword, mirroring the full dump's
+  // records: /dictionary/English/meaning/<c1>/<c2c2>/<word>.jsonl
+  const uw = w.replace(/ /g, "_"); // phrasal headwords use underscores in the path
+  const url = "https://kaikki.org/dictionary/English/meaning/" +
+    encodeURIComponent(uw[0]) + "/" + encodeURIComponent(uw.slice(0, 2)) + "/" +
+    encodeURIComponent(uw) + ".jsonl";
+
+  (async () => {
+    let res;
+    try { res = await fetch(url); }
+    catch (e) { fail("fetch failed (" + e.message + ") — offline? behind a proxy, try NODE_USE_ENV_PROXY=1"); }
+    if (res.status === 404) fail("kaikki.org has no entry for " + JSON.stringify(w) + " (" + url + ")");
+    if (!res.ok) fail("kaikki.org returned HTTP " + res.status + " for " + url);
+    const lines = (await res.text()).split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
+
+    let ety = "", ipa = "";
+    const syn = [], ant = [], rel = [], senses = [];
+    for (const o of lines) {
+      if (lc(o.word) !== lc(w)) continue;
+      if (!ety && o.etymology_text) ety = o.etymology_text.replace(/\s+/g, " ").trim().slice(0, 400);
+      if (!ipa) {
+        const ga = (o.sounds || []).find((s) => s.ipa && (s.tags || []).some((t) => /General.American|GenAm|\bUS\b/.test(t)))
+          || (o.sounds || []).find((s) => s.ipa);
+        if (ga) ipa = ga.ipa;
+      }
+      for (const s of (o.synonyms || [])) if (s.word) syn.push(s.word);
+      for (const s of (o.antonyms || [])) if (s.word) ant.push(s.word);
+      for (const key of ["related", "derived", "coordinate_terms"]) for (const s of (o[key] || [])) if (s.word) rel.push(s.word);
+      const posLabel = POS[o.pos] || (o.pos ? o.pos + "." : "");
+      for (const s of (o.senses || [])) {
+        // glosses can be hierarchical (topic header -> specific sense); keep the last
+        const gl = ((s.glosses || []).slice(-1)[0] || "").trim();
+        if (!gl || isFormOf(s) || NONSENSE_RE.test(gl)) continue;
+        const sense = { p: posLabel, g: gl };
+        const ex = (s.examples || []).find((e) => e.text);
+        if (ex) sense.x = ex.text.replace(/\s+/g, " ").trim().slice(0, 300);
+        const dom = pickDom(s.topics);
+        if (dom) sense.dom = dom;
+        senses.push(sense);
+      }
+    }
+    if (!senses.length) fail("kaikki record for " + JSON.stringify(w) + " yielded no usable senses (all form-of/empty)");
+
+    const entry = { d: senses.slice(0, MAX_SENSES) };
+    if (ety) entry.e = ety;
+    const dedup = (a, cap) => [...new Set(a.map(String))].filter((x) => lc(x) !== lc(w)).slice(0, cap);
+    const S = dedup(syn, MAX_SYN), A = dedup(ant, MAX_SYN), R = dedup(rel, MAX_REL);
+    if (S.length) entry.s = S;
+    if (A.length) entry.a = A;
+    if (R.length) entry.r = R;
+    if (ipa) { // kaikki IPA occasionally arrives with unbalanced slashes
+      if (!/^[/[]/.test(ipa)) ipa = "/" + ipa;
+      if (ipa.startsWith("/") && !ipa.endsWith("/")) ipa += "/";
+      entry.i = ipa;
+    }
+    try { // dev deps may not be installed; drafts just omit rs/i then
+      const cmudict = require("cmu-pronouncing-dictionary").dictionary;
+      const arp = cmudict[lc(w)];
+      if (arp) {
+        const c = require("./arpabet.js").convert(arp);
+        if (!entry.i && c.ipa) entry.i = c.ipa;
+        if (c.resp) entry.rs = c.resp;
+      }
+    } catch (e) { /* optional enrichment only */ }
+
+    process.stdout.write(JSON.stringify(entry, null, 2) + "\n");
+    if (senses.length > MAX_SENSES) process.stderr.write("word.js: kept " + MAX_SENSES + " of " + senses.length + " senses (raise with --max-senses)\n");
+    if (!APPLY) {
+      process.stderr.write("draft only — review, then write with --apply or pipe (edited) to `word.js set " + w + "`\n");
+      return;
+    }
+    const sp = shardPath(w);
+    const sh = readShard(sp);
+    if (Object.prototype.hasOwnProperty.call(sh, w)) fail(w + " already exists — draft won't overwrite; use `set` deliberately");
+    entry._at = new Date().toISOString();
+    sh[w] = entry;
+    writeShard(sp, sh);
+    process.stderr.write("added " + w + " to " + path.basename(sp) + "\n");
+    checkWritten(w, entry);
+  })();
+  return;
+}
+
 if (cmd === "cluster-list") {
   const clusterId = word;
   if (!clusterId) fail("cluster-list needs a <clusterId>");
@@ -332,6 +450,14 @@ const exists = Object.prototype.hasOwnProperty.call(shard, word);
 switch (cmd) {
   case "get":
     if (!exists) fail("not found: " + word);
+    // `get <word> <field>` prints just that field — big entries (prescription's
+    // is ~2.5KB) shouldn't cost a full dump when only one field is needed.
+    if (fieldKey) {
+      if (!FIELDS.has(fieldKey) && fieldKey !== "_at") fail("get: unknown field ." + fieldKey + " (one of: " + [...FIELDS].join(" ") + ")");
+      if (!(fieldKey in shard[word])) fail(word + " has no ." + fieldKey);
+      process.stdout.write(JSON.stringify(shard[word][fieldKey], null, 2) + "\n");
+      break;
+    }
     process.stdout.write(JSON.stringify(shard[word], null, 2) + "\n");
     break;
 
