@@ -2207,21 +2207,29 @@
   document.querySelectorAll(".example").forEach(function (btn) {
     btn.addEventListener("click", function () { run(btn.dataset.word); });
   });
-  // Replace the static example chips with a random sample of six words drawn
-  // from quiz-pool.json — already vetted for "decent data" (real headwords,
-  // proper nouns/taxa/inflections excluded, usage breadth in a healthy band)
-  // by scripts/build-quiz-pool.js, so every chip opens to a fleshed-out entry.
+  // Home chips: three SHOWCASE classics that decompose beautifully (the
+  // first-tap demo) plus three random discovery words from quiz-pool.json —
+  // already vetted for "decent data" (real headwords, proper nouns/taxa/
+  // inflections excluded, usage breadth in a healthy band) by
+  // scripts/build-quiz-pool.js. All-random chips made a weak first
+  // impression: the pool is full of rare words ("gallinula") that don't
+  // show off the breakdown animation at all.
+  const SHOWCASE = ["biography", "incredible", "democracy", "prescription",
+    "philosophy", "microscope", "circumnavigate", "photosynthesis", "manuscript"];
   function renderHomeChips() {
     const chipsEl = document.querySelector(".chips");
     if (!chipsEl) return;
     getEraPool().then(function (pool) {
       if (!pool.length) return;
-      const picks = qShuffle(pool).slice(0, 6);
+      const words = qShuffle(SHOWCASE).slice(0, 3)
+        .concat(qShuffle(pool).map(function (p) { return p.w; }))
+        .filter(function (w, i, a) { return a.indexOf(w) === i; })
+        .slice(0, 6);
       chipsEl.innerHTML = "";
-      picks.forEach(function (p) {
-        const b = el("button", "example", p.w);
-        b.type = "button"; b.dataset.word = p.w;
-        b.addEventListener("click", function () { run(p.w); });
+      words.forEach(function (w) {
+        const b = el("button", "example", w);
+        b.type = "button"; b.dataset.word = w;
+        b.addEventListener("click", function () { run(w); });
         chipsEl.appendChild(b);
       });
     });

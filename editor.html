@@ -5,10 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Rootwork — Family Curator</title>
 <style>
-  :root { --bg:#1a1714; --panel:#241f1b; --panel2:#2c2621; --ink:#f5ebd7; --muted:#a89a86;
-    --accent:#b5651d; --user:#6db86b; --assist:#7a6f60; --line:#3a332c; }
+  /* same vintage-dictionary palette as the app (styles.css :root) — espresso
+     dark / parchment light, following the system setting like the app does.
+     Panels stay opaque (unlike the app's glass) for the sticky header/sheet. */
+  :root { color-scheme: dark light;
+    --bg:#1b1712; --panel:#221d16; --panel2:#2c261e; --ink:#ece0cc; --muted:#a99a83;
+    --accent:#a8542a; --user:#7fae7a; --assist:#a99a83; --line:rgba(245,235,215,0.15);
+    --font:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f1e7cf; --panel:#f6ecd8; --panel2:#efe3c6; --ink:#2c2418; --muted:#7a6e58;
+      --accent:#9c4a22; --user:#3f7050; --assist:#7a6e58; --line:rgba(70,52,24,0.19); }
+  }
   * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  body { margin:0; font:15px/1.4 -apple-system,system-ui,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--ink); }
+  body { margin:0; font:15px/1.4 var(--font); background:var(--bg); color:var(--ink);
+    /* the app's paper-grain texture */
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.16'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23p)'/%3E%3C/svg%3E"); }
   header { position:sticky; top:0; z-index:5; background:var(--panel); border-bottom:1px solid var(--line);
     padding:10px 12px; display:flex; align-items:center; gap:10px; padding-top:max(10px,env(safe-area-inset-top)); }
   header h1 { font-size:15px; margin:0; font-weight:700; flex:1; }
@@ -31,7 +42,7 @@
     background:var(--accent); color:var(--bg); }
   .by { width:7px; height:7px; border-radius:50%; flex:none; }
   .by.user { background:var(--user); } .by.assistant { background:var(--assist); }
-  .pool .chip { background:#211c18; }
+  .pool .chip { background:var(--bg); }
   .word-head { background:var(--panel2); }
   .word-head .w { font-weight:700; }
   .caret { color:var(--muted); flex:none; font-size:12px; }
@@ -53,7 +64,7 @@
   .setup { max-width:520px; margin:30px auto; padding:0 16px; }
   .setup p { color:var(--muted); }
   .danger { color:#e0716a; border-color:#5a302c; }
-  code { background:#000; padding:1px 5px; border-radius:5px; font-size:12px; }
+  code { background:var(--panel2); border:1px solid var(--line); padding:1px 5px; border-radius:5px; font-size:12px; }
   .legend { display:flex; gap:14px; align-items:center; font-size:12px; color:var(--muted); margin:0 4px 10px; }
 </style>
 </head>
