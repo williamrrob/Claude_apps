@@ -1,9 +1,9 @@
 {
 "sjaelland":{"d":[{"p":"n.","g":"the largest island of Denmark and the site of Copenhagen"}]},
 "Sjögren's syndrome":{"d":[{"p":"n.","g":"An autoimmune disorder in which immune cells attack and destroy the exocrine glands that produce tears and saliva."}],"e":"After the Swedish ophthalmologist Henrik Sjögren (1899-1986), who first described it."},
-"Sjoberg":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjöberg."},
-"Sjogren":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjögren."},
-"Sjostrom":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjöström, from sjö (“sea”) + ström (“sea, current”)."},
-"Sjoblom":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjöblom, an ornamental surname composed of the elements sjö (“sea”) + an archaic form of blomma (“flower”)."},
+"Sjoberg":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjöberg.","i":"/ˈʃoʊbɚg/","rs":"SHOH-burg"},
+"Sjogren":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjögren.","i":"/ˈʃoʊgrən/","rs":"SHOH-gruhn"},
+"Sjostrom":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjöström, from sjö (“sea”) + ström (“sea, current”).","i":"/ˈʃoʊstrəm/","rs":"SHOH-struhm"},
+"Sjoblom":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjöblom, an ornamental surname composed of the elements sjö (“sea”) + an archaic form of blomma (“flower”).","i":"/ˈʃoʊblɑm/","rs":"SHOH-blahm"},
 "SJWism":{"d":[{"p":"n.","g":"The ideology espoused by SJWs.","x":"For quotations using this term, see Citations:SJWism."}],"e":"From SJW + -ism."}
 }

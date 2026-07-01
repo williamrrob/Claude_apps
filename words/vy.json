@@ -1,8 +1,8 @@
 {
 "vyomanaut":{"d":[{"p":"n.","g":"A person who travels in space for the Indian space program; an Indian astronaut."}],"e":"From Sanskrit व्योमन् (vyoman, “sky, space”) + -naut. Coined by ISRO.","r":["astronaut"],"_at":"2026-07-01T01:35:47.312Z"},
 "Vyasa":{"d":[{"p":"n.","g":"Name of a Hindu sage. One who classified the Vedas into four parts. He is the author of the Mahabharata."}],"e":"Borrowed from Sanskrit व्यास (vyāsa)."},
-"Vy":{"d":[{"p":"n.","g":"The indicated airspeed at which an aircraft's climb rate is at a maximum.","dom":"aeronautics"},{"p":"n.","g":"A surname from Vietnamese."}],"e":"Borrowed from Vietnamese Vy or Vỹ.","r":["Vx"],"_at":"2026-07-01T01:35:47.312Z"},
-"Vyas":{"d":[{"p":"n.","g":"A surname from Hindi."}],"e":"Borrowed from Hindi व्यास (vyās)."},
+"Vy":{"d":[{"p":"n.","g":"The indicated airspeed at which an aircraft's climb rate is at a maximum.","dom":"aeronautics"},{"p":"n.","g":"A surname from Vietnamese."}],"e":"Borrowed from Vietnamese Vy or Vỹ.","r":["Vx"],"_at":"2026-07-01T01:35:47.312Z","i":"/vaɪ/","rs":"vy"},
+"Vyas":{"d":[{"p":"n.","g":"A surname from Hindi."}],"e":"Borrowed from Hindi व्यास (vyās).","i":"/vjɑs/","rs":"vyahs"},
 "vyaz":{"d":[{"p":"n.","g":"A traditional lettering style for Cyrillic and Slavosphere Latin, slender, ornate and interweaving.","dom":"arts"}],"e":"Borrowed from Russian вязь (vjazʹ)."},
 "Vyatka":{"d":[{"p":"n.","g":"Former name of Kirov (“Russian city”)."},{"p":"n.","g":"A river in Russia."}],"e":"Borrowed from Russian Вя́тка (Vjátka).","r":["Vyatka Land"]},
 "Vyom":{"d":[{"p":"n.","g":"A male given name from Sanskrit used in India."}],"e":"Borrowed from Sanskrit व्योम (vyoma)."},

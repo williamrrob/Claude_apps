@@ -1,11 +1,11 @@
 {
 "uey":{"d":[{"p":"n.","g":"A turn in a vehicle carried out by driving in a semicircle in order to travel in the opposite direction."}],"e":"From U(-turn) + -ey.","i":"/ˈjuː.i/","rel":{"t":"synonym of","l":"u-turn","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
-"Uecker":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Etymology tree German Ueckerbor. English Uecker Borrowed from German Uecker."},
-"Uehara":{"d":[{"p":"n.","g":"A surname from Japanese."}],"e":"Borrowed from Japanese 上原 (Uehara)."},
-"Ueda":{"d":[{"p":"n.","g":"A surname from Japanese."}],"e":"Borrowed from Japanese 上田 (Ueda)."},
+"Uecker":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Etymology tree German Ueckerbor. English Uecker Borrowed from German Uecker.","i":"/ˈʊkɚ/","rs":"UU-kur"},
+"Uehara":{"d":[{"p":"n.","g":"A surname from Japanese."}],"e":"Borrowed from Japanese 上原 (Uehara).","i":"/ueɪˈhɑrə/","rs":"oo-ay-HAH-ruh"},
+"Ueda":{"d":[{"p":"n.","g":"A surname from Japanese."}],"e":"Borrowed from Japanese 上田 (Ueda).","i":"/ˈwɛdə/","rs":"WEH-duh"},
 "UEFAlona":{"d":[{"p":"n.","g":"The football club F.C. Barcelona (viewed as being unrightfully favored by UEFA in terms of refereeing or other aspects).","x":"UEFAlona win again, having been awarded two penalties in the last 20 minutes. Yeah, I don't smell corruption at all...","dom":"ball-games"}],"e":"Blend of UEFA + F.C. Barcelona."},
 "Ueta":{"d":[{"p":"n.","g":"A surname from Japanese."}],"e":"Borrowed from Japanese 上江田 (Ueta), 上田 (Ueta) or 植田 (Ueta)."},
-"Ueno":{"d":[{"p":"n.","g":"A surname from Japanese."},{"p":"n.","g":"A district of Taitō, Tokyo, Japan."}],"e":"Borrowed from Japanese 上野 (Ueno) or 植野 (Ueno)."},
+"Ueno":{"d":[{"p":"n.","g":"A surname from Japanese."},{"p":"n.","g":"A district of Taitō, Tokyo, Japan."}],"e":"Borrowed from Japanese 上野 (Ueno) or 植野 (Ueno).","i":"/ˈwɛnoʊ/","rs":"WEH-noh"},
 "Uechi":{"d":[{"p":"n.","g":"A surname from Japanese."}],"e":"Borrowed from Japanese 上地 (Uechi)."},
 "Uele":{"d":[{"p":"n.","g":"A river in the Democratic Republic of the Congo."},{"p":"n.","g":"A river in the Sakha Republic, Russia."}],"e":"Borrowed from French Uele or Uélé, from Lingala Wɛlɛ."}
 }

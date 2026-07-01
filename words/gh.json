@@ -144,7 +144,7 @@
 "ghostbox":{"d":[{"p":"n.","g":"An abandoned mall or big-box store.","x":"Someday in the not-too-distant future, it will become another of the country's numerous \"ghostboxes\" that are too expensive to tear down but not lucrative enough to actually use."}],"e":"Compound of ghost + box."},
 "ghostban":{"d":[{"p":"v.","g":"To ban a user from a community without their knowledge, allowing them to continue reading and commenting, but rendering their contributions invisible or less visible to other users."}],"e":"From ghost + ban.","rel":{"t":"synonym of","l":"shadowban","by":"assistant","at":"2026-06-29T16:23:04.459Z"},"s":["shadowban"],"_at":"2026-07-01T01:35:47.312Z"},
 "ghost street":{"d":[{"p":"n.","g":"A former street that has been demolished or built over but remains at least partly visible.","x":"He began to pick out empty spaces, the shapes of battered half-demolished structures, and sometimes there were neighbourhoods of ghost streets with pavements."}]},
-"Gherman":{"d":[{"p":"n.","g":"A surname from Romanian."}],"e":"Borrowed from Romanian Gherman."},
+"Gherman":{"d":[{"p":"n.","g":"A surname from Romanian."}],"e":"Borrowed from Romanian Gherman.","i":"/ˈgɝmən/","rs":"GUR-muhn"},
 "Ghiliceni":{"d":[{"p":"n.","g":"A commune and village in Telenești Raion, Moldova."}],"e":"Unadapted borrowing from Romanian Ghiliceni."},
 "ghubar numerals":{"d":[{"p":"n.","g":"Arabic numerals."}],"e":"From an Arabic word for \"dust\", because calculations were once performed by drawing in a heap of dust with a stick."},
 "ghetto butt":{"d":[{"p":"n.","g":"Large buttocks of a woman."}],"rel":{"t":"synonym of","l":"ghetto booty","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},

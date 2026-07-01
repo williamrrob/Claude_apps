@@ -1,6 +1,6 @@
 {
 "wnw":{"d":[{"p":"n.","g":"the compass point midway between west and northwest"}]},
 "wnt":{"d":[{"p":"v.","g":"want"}]},
-"Wnek":{"d":[{"p":"n.","g":"A surname from Polish."}],"e":"Borrowed from Polish Wnęk."},
-"Wnuk":{"d":[{"p":"n.","g":"A surname from Polish."}],"e":"Borrowed from Polish Wnuk."}
+"Wnek":{"d":[{"p":"n.","g":"A surname from Polish."}],"e":"Borrowed from Polish Wnęk.","i":"/wnɛk/","rs":"wnehk"},
+"Wnuk":{"d":[{"p":"n.","g":"A surname from Polish."}],"e":"Borrowed from Polish Wnuk.","i":"/wnʌk/","rs":"wnuhk"}
 }

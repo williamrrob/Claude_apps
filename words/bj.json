@@ -3,8 +3,8 @@
 "bjs":{"d":[{"p":"n.","g":"plural of bj"}]},
 "Björk":{"d":[{"p":"n.","g":"A female given name"}],"e":"Etymology tree Icelandic Björkbor. English Björk Borrowed from Icelandic Björk.","i":"/ˈbjɜːk/"},
 "Bjerrum length":{"d":[{"p":"n.","g":"The separation at which the electrostatic interaction between two elementary charges is comparable in magnitude to the thermal energy scale.","dom":"physics"}],"e":"Named after Danish chemist Niels Bjerrum (1879–1958)."},
-"Bjorklund":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Björklund, from björk (“birch tree”) + lund (“grove”)."},
-"Bjorkman":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Björkman, an ornamental surname composed of the elements björk (“birch”) and man (“man”)."},
-"Bjorge":{"d":[{"p":"n.","g":"A surname from Norwegian."}],"e":"Borrowed from Norwegian Bjørge. Further from Proto-Germanic *bergō, from *berganą. Ultimately from Proto-Indo-European *bʰergʰ- (whence also borrow, bury)."},
+"Bjorklund":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Björklund, from björk (“birch tree”) + lund (“grove”).","i":"/ˈbjɔrklənd/","rs":"BYAWR-kluhnd"},
+"Bjorkman":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Björkman, an ornamental surname composed of the elements björk (“birch”) and man (“man”).","i":"/ˈbjɔrkmən/","rs":"BYAWRK-muhn"},
+"Bjorge":{"d":[{"p":"n.","g":"A surname from Norwegian."}],"e":"Borrowed from Norwegian Bjørge. Further from Proto-Germanic *bergō, from *berganą. Ultimately from Proto-Indo-European *bʰergʰ- (whence also borrow, bury).","i":"/bjɔrg/","rs":"byawrg"},
 "Björnstad syndrome":{"d":[{"p":"n.","g":"An autosomal-recessive congenital condition involving pili torti, sensorineural deafness, and hair abnormalities."}],"e":"First characterized in 1965 by Roar Theodor Bjørnstad."}
 }
