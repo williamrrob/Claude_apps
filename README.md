@@ -11,7 +11,7 @@ installs to the Home Screen on iPhone & iPad and to the Dock on Mac.
 
 ## How it works
 
-A curated dictionary of ~250 Latin and Greek roots, prefixes, and suffixes
+A curated dictionary of ~300 roots, prefixes, and suffixes
 (`data.js`) plus a scored segmentation search (`engine.js`) break the word down
 instantly. It's strongest on classical/academic vocabulary — *biography,
 incredible, democracy, photosynthesis, circumnavigate, manuscript*. Words of
@@ -105,7 +105,13 @@ git config core.hooksPath .githooks
 | `.github/workflows/deploy-pages.yml` | GitHub Pages auto-deploy |
 
 Each `words/<xx>.json` maps a word to
-`{ d:[{p,g,x?}], e:etymology, s:[syn], a:[ant], r:[related], i:ipa, rs:respelling }`.
+`{ d:[{p,g,x?,dom?}], e:etymology, s:[syn], a:[ant], r:[related], i:ipa, rs:respelling, b:curated breakdown, cl:clusters }`
+(full field docs in the header of `scripts/word.js`). The shards now hold
+**~222,600 entries** (the original rich build plus Kaikki imports and folded
+inflections).
+
+There's also `CLAUDE.md` — the assistant playbook: current counts, iron rules
+(never open a shard by hand), and the cheap/heavy workflow index.
 
 ## Regenerating the data
 
@@ -134,7 +140,8 @@ WordNet ([`wordnet`](https://www.npmjs.com/package/wordnet)) is the fallback.
 
 ## Extending the dictionary
 
-Add entries to the arrays in `data.js`:
+Engine morphemes live in `data.js` under `MORPHEMES = {prefixes, roots,
+suffixes}` (~300 entries):
 
 ```js
 { id: "aqua", forms: ["aqua", "aque", "aqui"], origin: "Latin",
@@ -143,6 +150,8 @@ Add entries to the arrays in `data.js`:
 
 `forms` lists every spelling the element can take in a real word (including
 assimilated variants like `com/con/col`). Longer forms are matched first.
+Use `node scripts/add-root.js` to add one — it scans the whole dictionary for
+collisions (words a new short form would suddenly mis-split) before writing.
 
 ## Editing word entries (`scripts/word.js`)
 
@@ -153,6 +162,9 @@ only the one entry:
 
 ```bash
 node scripts/word.js get concord          # print one entry
+node scripts/word.js get concord e        # print ONE field (cheap read)
+node scripts/word.js draft petrichor      # build an entry from Wiktionary (kaikki.org)
+node scripts/word.js draft petrichor --apply   # …and write it (new words only)
 node scripts/word.js set concord  < entry.json    # create/replace whole entry (JSON on stdin)
 node scripts/word.js field concord s <<'JSON'     # set ONE field (here, synonyms)
 ["accord","agreement","harmony"]
@@ -170,7 +182,7 @@ is a one-line diff.
 
 ## Querying the dictionary (`scripts/build-sqlite.js` + `find.js`)
 
-To answer questions across all 77k words — *which words share a root, mention a
+To answer questions across all ~222k words — *which words share a root, mention a
 meaning, or are missing a field* — compile the shards into a single SQLite file
 and query it. The DB is a derived artifact (gitignored); rebuild it any time:
 
