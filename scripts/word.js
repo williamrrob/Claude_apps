@@ -24,6 +24,7 @@
  *   node scripts/word.js list <xx>                  # list words in a shard (keys only)
  *   node scripts/word.js missing <w1> <w2> ...      # check a whole candidate batch in one process
  *   node scripts/word.js bulk-set < entries.json    # write MANY new entries in one call: {"word1":{...},"word2":{...}}
+ *   node scripts/word.js bulk-field <k> < values.json   # set the SAME field on MANY existing words: {"word1":<v1>,"word2":<v2>}
  *
  * Every write (set/field/append/rmfield/bulk-set/cluster) self-validates the
  * shard it touched, auto-runs the decomp false-positive check, and auto-bumps
@@ -68,7 +69,7 @@ const fs = require("fs");
 const path = require("path");
 
 const WORDS_DIR = path.join(__dirname, "..", "words");
-const FIELDS = new Set(["d", "e", "s", "a", "r", "i", "rs", "b", "cl", "vars", "forms", "rel"]);
+const FIELDS = new Set(["d", "e", "s", "a", "r", "i", "rs", "b", "bWhole", "cl", "vars", "forms", "rel"]);
 
 function fail(msg) { process.stderr.write("word.js: " + msg + "\n"); process.exit(1); }
 
@@ -221,6 +222,35 @@ if (cmd === "bulk-set") {
   for (const sp of Object.keys(touched)) writeShard(sp, touched[sp]);
   process.stderr.write("wrote " + words.length + " word(s) across " + Object.keys(touched).length + " shard(s): " + words.join(", ") + "\n");
   for (const w of words) checkWritten(w, entries[w]);
+  process.exit(0);
+}
+
+if (cmd === "bulk-field") {
+  // Set the SAME field on N existing words in one call — the field-update
+  // counterpart to bulk-set. Stdin: {"word1": <value1>, "word2": <value2>, ...}.
+  const fieldKeyArg = word; // reuse the 3rd argv slot (cmd, fieldKey, ...)
+  if (!fieldKeyArg || !FIELDS.has(fieldKeyArg)) fail("bulk-field needs one of: " + [...FIELDS].join(" ") + " as its argument");
+  const values = readStdin();
+  if (typeof values !== "object" || Array.isArray(values) || values === null) fail("bulk-field expects a JSON object of {word: value, ...} on stdin");
+  const words = Object.keys(values);
+  if (!words.length) fail("bulk-field: empty object, nothing to write");
+  const missing = [];
+  const touched = {};
+  for (const w of words) {
+    const sp = shardPath(w);
+    if (!touched[sp]) touched[sp] = readShard(sp);
+    if (!Object.prototype.hasOwnProperty.call(touched[sp], w)) { missing.push(w); continue; }
+  }
+  if (missing.length) fail("not found, nothing written: " + missing.join(", "));
+  const now = new Date().toISOString();
+  for (const w of words) {
+    const sp = shardPath(w);
+    touched[sp][w][fieldKeyArg] = values[w];
+    touched[sp][w]._at = now;
+  }
+  for (const sp of Object.keys(touched)) writeShard(sp, touched[sp]);
+  process.stderr.write("set ." + fieldKeyArg + " on " + words.length + " word(s) across " + Object.keys(touched).length + " shard(s): " + words.join(", ") + "\n");
+  for (const w of words) checkWritten(w, touched[shardPath(w)][w]);
   process.exit(0);
 }
 
