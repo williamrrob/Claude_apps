@@ -93,7 +93,15 @@ body {
 /* ---------- scrolling content ---------- */
 .content {
   flex: 1; overflow-y: auto; overflow-x: clip; -webkit-overflow-scrolling: touch;
-  padding: 6px var(--pad) calc(92px + env(safe-area-inset-bottom)) var(--pad);
+  /* Reserve enough room for the floating dock (≈54px tall + 14px margin = 68px)
+     PLUS real breathing room above it — 92px only left ~2px of actual
+     clearance in practice (card/divider margins eat most of the nominal
+     buffer), so the last card could sit right at the dock's edge and, with
+     the bottom fade mask now correctly OFF for non-overflowing pages (see
+     the no-overflow class below), that tightness became a hard, visible
+     cut instead of a soft fade — hiding whatever was last (e.g. a thesaurus
+     chip) behind the dock with no way to scroll it into view. */
+  padding: 6px var(--pad) calc(132px + env(safe-area-inset-bottom)) var(--pad);
   display: flex; flex-direction: column; align-items: stretch;
   /* the dock now floats as a glass overlay (see .dock) rather than a flex
      sibling, so content scrolls underneath it — fade it out over a longer

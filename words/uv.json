@@ -1,7 +1,7 @@
 {
 "uveal":{"d":[{"p":"adj.","g":"Of or pertaining to the uvea"}],"e":"From uvea + -al.","s":["uveous"]},
 "uveous":{"d":[{"p":"adj.","g":"of or relating to the uvea of the eye"}],"e":"From uva + -eous.","s":["uveal"]},
-"uvular":{"d":[{"p":"adj.","g":"Of or relating to the uvula."},{"p":"adj.","g":"Of a sound, articulated with the uvula (the fleshy appendage that hangs from the back of the soft palate)."},{"p":"n.","g":"A sound articulated with the uvula."}],"e":"From Latin ūvulāris. By surface analysis, uvula + -ar.","r":["labiouvular"],"i":"/ˈjuvjələɹ/","b":[{"s":"uvula","k":"root"},{"s":"r","k":"suffix"}]},
+"uvular":{"d":[{"p":"adj.","g":"Of or relating to the uvula."},{"p":"adj.","g":"Of a sound, articulated with the uvula (the fleshy appendage that hangs from the back of the soft palate)."},{"p":"n.","g":"A sound articulated with the uvula."}],"e":"From Latin ūvulāris. By surface analysis, uvula + -ar.","r":["labiouvular","uvula"],"i":"/ˈjuvjələɹ/","b":[{"s":"uvula","k":"root"},{"s":"r","k":"suffix"}],"_at":"2026-07-01T01:35:47.312Z"},
 "uv":{"d":[{"p":"prep.","g":"Eye dialect spelling of of."}],"s":["ultraviolet"],"i":"/ˈjuˈvi/","rs":"YOO-VEE","rel":{"t":"variant of","l":"of","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "uvea":{"d":[{"p":"n.","g":"The middle of the three concentric layers that make up the eye; it is pigmented and vascular, and comprises the choroid, the ciliary body, and the iris."}],"e":"From Medieval Latin uvea, from Latin uva (“grape”) + -ea, partial calque of Ancient Greek ῥαγοειδής χιτών (rhagoeidḗs khitṓn, “[covering] like a grape”), from ῥάξ (rháx, “grape”).","i":"/ˈjuvɪə/"},
 "uveitis":{"d":[{"p":"n.","g":"Inflammation of the uvea."}],"e":"English uvea Proto-Indo-European *-tósder. Ancient Greek -της (-tēs)der. Ancient Greek -ῖτις (-îtis)lbor. New Latin -itisder. English -itis English uveitis From uvea + -itis."},
@@ -9,7 +9,7 @@
 "uvularia":{"d":[{"p":"n.","g":"Any plant of the genus Uvularia."}],"i":"/ˌju.vjəˈlɛɹi.ə/"},
 "uvulariaceae":{"d":[{"p":"n.","g":"one of many subfamilies into which some classification systems subdivide the Liliaceae"}]},
 "uvulitis":{"d":[{"p":"n.","g":"inflammation of the uvula"}],"e":"From uvul- (“uvula”) + -itis (“inflammatory disease”)."},
-"uvulopalatopharyngoplasty":{"d":[{"p":"n.","g":"A surgical procedure used to remove tissue in the throat in order to widen the airway of the patient, typically carried out as treatment for sleep apnea."}],"e":"From uvulo- + palato- + pharyngo- + -plasty","s":["palatopharyngoplasty"]},
+"uvulopalatopharyngoplasty":{"d":[{"p":"n.","g":"A surgical procedure used to remove tissue in the throat in order to widen the airway of the patient, typically carried out as treatment for sleep apnea."}],"e":"From uvulo- + palato- + pharyngo- + -plasty","s":["palatopharyngoplasty","ppp","uppp"],"_at":"2026-07-01T01:35:47.312Z"},
 "uva":{"d":[{"p":"n.","g":"Grape, raisin, grape-like fruit."}],"e":"Borrowed from Latin ūva (“grape”)."},
 "uva ursi":{"d":[{"p":"n.","g":"The bearberry."}],"e":"Latin uva (“grape”) + ursus (“bear”)."},
 "Uvs Lake":{"d":[{"p":"n.","g":"a highly saline lake in Mongolia with a small part in Tuva (or Tyva), Russia"}],"e":"From Mongolian Увс нуур (Uvs nuur)."},

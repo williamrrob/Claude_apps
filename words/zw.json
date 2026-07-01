@@ -13,7 +13,7 @@
 "Zwartewaterland":{"d":[{"p":"n.","g":"A municipality of Overijssel, Netherlands."}],"e":"Borrowed from Dutch Zwartewaterland."},
 "Zweifach":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Zweifach, a Jewish Ashkenazi surname."},
 "Zwijndrecht":{"d":[{"p":"n.","g":"A municipality of South Holland, Netherlands."}],"e":"Borrowed from Dutch Zwijndrecht."},
-"zwastika":{"d":[{"p":"n.","g":"A Z letter used by Russian nationalists, usually to support Vladimir Putin or the Russian invasion of Ukraine."}],"e":"From Russian Z + swastika, comparing the Russian nationalist usage of the Z letter to the Nazi German swastika as a symbol of war against Ukraine. See the Russian section on Z for more information."},
+"zwastika":{"d":[{"p":"n.","g":"A Z letter used by Russian nationalists, usually to support Vladimir Putin or the Russian invasion of Ukraine."}],"e":"From Russian Z + swastika, comparing the Russian nationalist usage of the Z letter to the Nazi German swastika as a symbol of war against Ukraine. See the Russian section on Z for more information.","r":["swastika"],"_at":"2026-07-01T01:35:47.312Z"},
 "zweikanter":{"d":[{"p":"n.","g":"A type of pebble that has two curved faces formed by wind-blown sand.","dom":"geography"}],"e":"Borrowed from German Zweikanter."},
 "zweckrational":{"d":[{"p":"adj.","g":"Pursued after evaluating its consequences and consideration of the various means to achieve it.","dom":"philosophy"}],"e":"From German. Used by Max Weber."},
 "zweckrationality":{"d":[{"p":"n.","g":"Quality of being zweckrational.","dom":"philosophy"}],"e":"From zweckrational + -ity."}

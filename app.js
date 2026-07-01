@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "81";
+  const DATA_V = "82";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -2221,11 +2221,18 @@
   if (contentEl && typeof MutationObserver === "function") {
     let fitSyncScheduled = false;
     const syncContentFit = function () {
-      // A few stray px (font metrics settling, sub-pixel flex rounding) isn't
-      // meaningful overflow — the 96px-tall fade would still make a near-fit
-      // page look like it's hiding far more below than the sliver that's
-      // actually there, so give it real headroom before treating it as "has more".
-      const overflows = contentEl.scrollHeight > contentEl.clientHeight + 24;
+      // Comparing scrollHeight to clientHeight can't answer the real question
+      // here: the dock floats as an absolutely-positioned overlay, so
+      // .content's own box already extends "underneath" it, and padding-
+      // bottom only ever affects the SCROLLABLE range (relevant once you
+      // scroll), never where content initially renders at rest. A short page
+      // can therefore have its last card's bottom edge sitting geometrically
+      // behind the dock's fixed on-screen position even though scrollHeight
+      // barely exceeds clientHeight — measure the actual overlap instead.
+      const dock = document.querySelector(".dock");
+      const lastEl = (cardsEl && cardsEl.lastElementChild) || entryEl;
+      if (!dock || !lastEl) { contentEl.classList.remove("no-overflow"); return; }
+      const overflows = lastEl.getBoundingClientRect().bottom > dock.getBoundingClientRect().top - 12;
       contentEl.classList.toggle("no-overflow", !overflows);
     };
     const scheduleFitSync = function () {

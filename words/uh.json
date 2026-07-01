@@ -1,7 +1,7 @@
 {
 "uhf":{"d":[{"p":"n.","g":"300 to 3000 megahertz"}]},
 "uhland":{"d":[{"p":"n.","g":"German romantic poet (1787-1862)"}],"i":"/ˈulənd/","rs":"OO-luhnd"},
-"uh-oh":{"d":[{"p":"interj.","g":"An exclamation of error, concern, or awareness of a problem.","x":"Uh-oh! I made a mistake."}],"i":"/ˌʌˈəʊ/"},
+"uh-oh":{"d":[{"p":"interj.","g":"An exclamation of error, concern, or awareness of a problem.","x":"Uh-oh! I made a mistake."}],"i":"/ˌʌˈəʊ/","r":["yikes"],"_at":"2026-07-01T01:35:47.312Z"},
 "uh-uh":{"d":[{"p":"interj.","g":"no","x":"\"Have you eaten yet?\" \"Uh-uh...\" \"No way!\""}],"e":"Likely imitative of non-verbal sounds used to indicate disagreement or discomfort. Compare nope, wherein the -p may represent closure often uttered at the end of the word no. Compare also um used to indicate hesitation. Attested from 1888.","a":["uh-huh"],"i":"[ˈ(ʔ)ʌ̃˧.ʔʌ̃˩]"},
 "uh-oh, Spaghetti-O":{"d":[{"p":"interj.","g":"Uh-oh.","x":"\"Uh-oh, spaghetti-o!\" She retreated a couple of steps. \"Guess I'm in for it now.\""}],"e":"Advertising campaign for SpaghettiOs, an American brand of canned spaghetti rings."},
 "uhuru":{"d":[{"p":"n.","g":"freedom","x":"The mood was jubilant — but tense — as the crowd broke into echoing cries of “uhuru,” a Swahili word for “freedom” that the Proud Boys have appropriated as their battle cry, and they continually approached strangers who looked as though they did not belong."}],"e":"Etymology tree Swahili uhurubor. English uhuru Borrowed from Swahili uhuru."},

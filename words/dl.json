@@ -1,5 +1,5 @@
 {
-"dl":{"d":[{"p":"n.","g":"Download; Alternative form of DL."},{"p":"v.","g":"Download; Alternative form of DL."}],"s":["deciliter","decilitre"],"a":["ul"]},
+"dl":{"d":[{"p":"n.","g":"Download; Alternative form of DL."},{"p":"v.","g":"Download; Alternative form of DL."}],"s":["deciliter","decilitre"],"a":["ul"],"r":["tl;dr"],"_at":"2026-07-01T01:35:47.312Z"},
 "dle":{"d":[{"p":"n.","g":"A short, daily web-based guessing game or puzzle, especially one of many played one after another."}],"e":"Back-formation from Wordle (“web-based word game”), imitating the apparent suffix (taken from the surname of developer Josh Wardle)."},
 "DLL hell":{"d":[{"p":"n.","g":"Problems caused by incompatible versions of a DLL (dynamic-link library).","x":"A more succinct way to say this is that the versioning the CLR enforces for strong-named assemblies means the end of DLL hell.","dom":"computing"}]},
 "DLVO theory":{"d":[{"p":"n.","g":"A theory that explains the aggregation of aqueous dispersions quantitatively and describes the force between charged surfaces interacting through a liquid medium."}],"e":"From the initials of Derjaguin and Landau, Verwey and Overbeek."},
