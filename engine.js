@@ -261,8 +261,20 @@
     });
     const hasRoot = parts.some(function (p) { return p.kind === "root"; });
 
+    // Always return the caller's original casing/hyphenation here too, not
+    // just in the two early-return branches above — a proper noun or
+    // initialism goes through this normal analysis path too (it just
+    // usually gets a low-confidence whole-word fallback in chooseBreakdown),
+    // and returning the lowercased `word` as the lookup key silently
+    // re-lowercases it on every call. That's not just wrong for direct
+    // lookups (getWord's case-insensitive fallback papers over that one) —
+    // it's actively broken for a same-word-different-case redirect ("jacobin"
+    // → rel.l "Jacobin"): run("Jacobin") decomposes right back down to
+    // "jacobin", finds the SAME pointer entry, and redirects to "Jacobin"
+    // again, forever. Preserving case here means the redirect actually lands
+    // on a different lookup the second time.
     return {
-      word: word,
+      word: original,
       parts: parts,
       hasRoot: hasRoot,
       confidence: word.length ? known / word.length : 0,
