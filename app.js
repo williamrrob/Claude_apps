@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "99";
+  const DATA_V = "110";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -788,9 +788,16 @@
     // 1) assemble — pieces pop in tight so they read as the whole word
     for (let i = 0; i < bpEls.length; i++) { if (token !== runToken) return; bpEls[i].classList.add("in"); await delay(navigating ? 0 : 55); }
 
-    // Skip the animation for single-unit words ("ism"), reduced-motion users, and
-    // when revisiting via the back/forward buttons (it's not a fresh discovery).
-    if (reduceMotion || navigating || treeReturn || bpEls.length <= 1) {
+    // Skip the animation for single-unit words ("ism"), reduced-motion users,
+    // when revisiting via the back/forward buttons (it's not a fresh
+    // discovery), and for bWhole entries (congee/conge) — the elaborate
+    // "pieces chase together to form the headword" sequence doesn't make
+    // sense when the headword title isn't assembling from those pieces to
+    // begin with, and skipping it also avoids the card taking noticeably
+    // longer to settle than an async lead image, which could otherwise pop
+    // in while the (thematically irrelevant, for bWhole) animation is
+    // still mid-flight.
+    if (reduceMotion || navigating || treeReturn || bpEls.length <= 1 || (rec && rec.bWhole)) {
       bd.classList.add("split"); bd.classList.add("stacked");
       bpEls.forEach(function (bp) { swapToSource(bp); bp.classList.add("open"); });
     } else {
