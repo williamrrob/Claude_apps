@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "83";
+  const DATA_V = "99";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -95,7 +95,25 @@
       if (ov[word]) return Promise.resolve(ov[word]);
     } catch (e) {}
     const key = String(word || "").slice(0, 2).toLowerCase();
-    return fetchShard(key).then(function (sh) { return sh ? (sh[word] || null) : null; });
+    return fetchShard(key).then(function (sh) {
+      if (!sh) return null;
+      if (Object.prototype.hasOwnProperty.call(sh, word)) return sh[word];
+      // Exact-case match failed — fall back to a case-insensitive scan of
+      // this one shard (a few hundred to a few thousand keys, cheap). Proper
+      // nouns and initialisms ("AC/DC", "Adélie Land") are stored with their
+      // real casing; a user typing "ac/dc" should still find them.
+      const target = String(word || "").toLowerCase();
+      for (const k in sh) {
+        if (k.toLowerCase() === target) {
+          // Stash the real stored key so callers can correct a mistyped-case
+          // lookup ("ac/dc") back to the dictionary's actual casing ("AC/DC")
+          // for display/history/nav, instead of showing what was typed.
+          if (sh[k] && typeof sh[k] === "object") sh[k]._resolvedKey = k;
+          return sh[k];
+        }
+      }
+      return null;
+    });
   }
 
   // ---------- usage history (built-in quarter-century buckets, 1500–2025) ----------
@@ -447,6 +465,11 @@
       // there's nothing trustworthy to show — don't invent a breakdown.
       const rec0 = await getWord(result.word);
       if (token !== runToken) return;
+      // A case-insensitive fallback match (getWord) resolves to the record but
+      // typed/clicked casing may not match how it's actually stored ("ac/dc"
+      // found "AC/DC") — correct result.word so the rest of this function
+      // (display, history, nav, family/collection lookups) all use the real key.
+      if (rec0 && rec0._resolvedKey && rec0._resolvedKey !== result.word) result.word = rec0._resolvedKey;
       if (!rec0 || (!(rec0.d && rec0.d.length) && !rec0.e)) {
         // Not an English headword — maybe it's a source word (a Latin/Greek/PIE
         // root). Try the built-in lexicon first, then a quick live lookup.
@@ -626,9 +649,13 @@
     const headWrap = el("div", "entry-head");
     headWrap.appendChild(ruleRow);
 
-    // headword with subtle dots between its parts
+    // headword with subtle dots between its parts. `rec.bWhole` means the
+    // curated roots are real but the modern spelling doesn't cleanly tile
+    // them (congee's "gee" bears no visual resemblance to its source meō) —
+    // show the headword undivided even though the Breakdown card below still
+    // lists the genuine roots.
     const wordEl = el("div", "entry-word");
-    const surfaces = (parts && parts.length > 1 && !parts[0].whole) ? parts.map(function (p) { return p.disp || p.surface; }) : [word];
+    const surfaces = (parts && parts.length > 1 && !parts[0].whole && !(rec && rec.bWhole)) ? parts.map(function (p) { return p.disp || p.surface; }) : [word];
     surfaces.forEach(function (s, i) {
       if (i) wordEl.appendChild(el("span", "entry-dot", "·"));
       wordEl.appendChild(el("span", "ew-part", s));

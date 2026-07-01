@@ -206,7 +206,12 @@
   }
 
   function decompose(rawWord) {
-    const trimmed = String(rawWord || "").trim().toLowerCase();
+    // `original` keeps whatever case/accents/punctuation the caller passed in
+    // (a click on a cross-reference chip already has the dictionary's exact
+    // stored casing baked in); `trimmed` is the lowercase copy the algorithm
+    // itself needs, since every morpheme form in data.js is lowercase.
+    const original = String(rawWord || "").trim();
+    const trimmed = original.toLowerCase();
     // Phrasal/compound headwords ("gun off", "well-known") aren't a single
     // morphological unit — splicing out the space/hyphen and running
     // compound-word analysis across the join produces nonsense splits, and
@@ -214,8 +219,31 @@
     // which keeps the space/hyphen. Keep the word as-is and skip decomposition.
     if (/[\s-]/.test(trimmed) && !/^-|-$/.test(trimmed)) {
       return {
-        word: trimmed,
-        parts: [{ kind: "word", surface: trimmed, origin: null, source: null, meaning: null, id: null, forms: null }],
+        word: original,
+        parts: [{ kind: "word", surface: original, origin: null, source: null, meaning: null, id: null, forms: null }],
+        hasRoot: false,
+        confidence: 1,
+        reading: null
+      };
+    }
+    // Same problem, different cause: a word carrying an accent, digit, or other
+    // punctuation ("congé", "AC/DC", "ad loc.") has those characters silently
+    // stripped by the a-z-only match below. Letting that stripped substring
+    // stand in for the word is worse than useless twice over — the morpheme
+    // matcher can score a confident, coincidental, wrong parse against it
+    // (the same false-positive class as congee/solipsism, e.g. "congé" →
+    // "cong" → co- + -ng), AND the stripped form no longer matches the
+    // dictionary's lookup key (which keeps the accent AND its original case —
+    // see getWord()'s case-insensitive fallback in app.js for typed-in-the-
+    // wrong-case input), making the entry unreachable by search or by its own
+    // cross-reference links. A single leading/trailing hyphen is still let
+    // through — that's a legitimate affix citation form ("-ism", "un-"), not
+    // stray punctuation.
+    const bareOfHyphens = trimmed.replace(/^-+|-+$/g, "");
+    if (bareOfHyphens && bareOfHyphens.replace(/[^a-z]/g, "") !== bareOfHyphens) {
+      return {
+        word: original,
+        parts: [{ kind: "word", surface: original, origin: null, source: null, meaning: null, id: null, forms: null }],
         hasRoot: false,
         confidence: 1,
         reading: null
