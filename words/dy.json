@@ -124,7 +124,7 @@
 "dyke out":{"d":[{"p":"v.","g":"To engage in homoerotic activity with another woman.","x":"“[…]So I guess it's either the Upper East Side or I dyke out.” She looked at me deadpan. “Don't get your hopes up, I'm not a lesbian. I haven't even thought about being a lesbian. Not seriously anyway. What about you?”"}]},
 "dykephobia":{"d":[{"p":"n.","g":"Dislike or hatred of lesbians."}],"e":"From dyke + -phobia.","r":["dyke"],"_at":"2026-07-01T01:35:47.312Z"},
 "dyno torch":{"d":[{"p":"n.","g":"A mechanical flashlight that is powered by squeezing a handle.","x":"I try to imitate the sound of a dyno torch."}],"r":["dyno"],"_at":"2026-07-01T01:35:47.312Z"},
-"dynamis":{"d":[{"p":"n.","g":"Potentiality.","x":"I have tried to explain the sense of dynamis fundamental to Aristotle's philosophy.","dom":"philosophy"}],"e":"Borrowed from Ancient Greek δύναμις (dúnamis)."},
+"dynamis":{"d":[{"p":"n.","g":"Potentiality.","x":"I have tried to explain the sense of dynamis fundamental to Aristotle's philosophy.","dom":"philosophy"}],"e":"Borrowed from Ancient Greek δύναμις (dúnamis).","b":[{"s":"dynamis","k":"word"}],"_at":"2026-07-02T12:38:55.444Z"},
 "dynasticity":{"d":[{"p":"n.","g":"The quality or condition of being dynastic.","x":"Such instances of chosen heteronomy thus allow for notions of queer citizenship, queer biography, queer dynasticity in ways that love does not."}],"e":"From dynastic + -ity."},
 "dystopical":{"d":[{"p":"adj.","g":"Of or pertaining to a dystopia."}],"rel":{"t":"synonym of","l":"dystopian","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "Dyme":{"d":[{"p":"n.","g":"The most westerly town of Achaia, situated on the coast near the river Larissus"}],"e":"Borrowed from Latin Dȳmē, from Ancient Greek Δῡ́μη (Dū́mē)."},

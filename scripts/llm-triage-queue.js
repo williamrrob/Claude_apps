@@ -192,7 +192,17 @@ function pileOf(r) {
   if (r.verdict === "COINCIDENTAL" && r.rank < RANK_GUARD) return "needs-human";
   if (r.verdict === "COINCIDENTAL" && etymdbFor(r.word)) return "needs-human";
   if (r.verdict === "COINCIDENTAL") return "confident-wrong";
-  if (r.verdict === "REAL") return "confident-ok";
+  if (r.verdict === "REAL") {
+    // The model tends to approve a split when its FIRST piece is real,
+    // ignoring a fragment-junk tail (bio·haz·ar·d, a·ge·la·s·t). Mechanical
+    // gate: single-letter pieces are only credible in final position (plural
+    // -s, silent -e, -ed's d) and only one of them.
+    const pieces = (r.parts || "").split("·");
+    const singles = pieces.filter((p) => p.length === 1);
+    if (singles.length > 1) return "needs-human";
+    if (singles.length === 1 && pieces[pieces.length - 1].length !== 1) return "needs-human";
+    return "confident-ok";
+  }
   return "needs-human";
 }
 

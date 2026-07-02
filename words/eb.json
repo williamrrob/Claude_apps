@@ -40,7 +40,7 @@
 "Ebenezer Scrooge":{"d":[{"p":"n.","g":"A scrooge; a miser."}],"e":"After the character in Charles Dickens' A Christmas Carol."},
 "ebriose":{"d":[{"p":"adj.","g":"inebriated; drunk"}]},
 "Ebben":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from north German Ebben, from a short form of Ebbert.","i":"/ˈɛbən/","rs":"EH-buhn"},
-"Ebisu":{"d":[{"p":"n.","g":"The Japanese god of fishing and commerce. One of the seven gods of luck.","dom":"shinto"},{"p":"n.","g":"Synonym of Emishi (“ancient ethnic group of Japan”)."}],"e":"Borrowed from Japanese 恵比須, 恵比寿, 夷, 戎 (Ebisu)."},
+"Ebisu":{"d":[{"p":"n.","g":"The Japanese god of fishing and commerce. One of the seven gods of luck.","dom":"shinto"},{"p":"n.","g":"Synonym of Emishi (“ancient ethnic group of Japan”)."}],"e":"Borrowed from Japanese 恵比須, 恵比寿, 夷, 戎 (Ebisu).","b":[{"s":"Ebisu","k":"word"}],"_at":"2026-07-02T12:38:55.444Z"},
 "Ebola Zaire":{"d":[{"p":"n.","g":"a strain of Ebolavirus which causes Ebola hemorrhagic fever in humans and other primates and usually presents at over a 50% mortality rate"}],"e":"From the initial discovery of Ebolavirus, near the Ebola River in the country of Zaire (the country is now called Congo)."},
 "Ebola Reston":{"d":[{"p":"n.","g":"A strain of Ebolavirus that causes disease in primates other than humans, and which can infect humans.","dom":"biology"}],"e":"From the outbreak and discovery of a new strain of Ebolavirus at a facility in Reston, Virginia, USA."},
 "Eberth's bacillus":{"d":[{"p":"n.","g":"The bacillus Salmonella enterica subsp. enterica, the cause of typhoid."}],"e":"It was described in 1880 by Karl Joseph Eberth. The pathogen of typhoid fever, it has since been renamed Salmonella typhi."},
