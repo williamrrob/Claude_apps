@@ -204,7 +204,7 @@
 "Zauner":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from Austrian German Zauner.","i":"/ˈzɔnɚ/","rs":"ZAW-nur"},
 "Zarr":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Zarr.","i":"/zær/","rs":"zar"},
 "Zaldua":{"d":[{"p":"n.","g":"A surname."}],"e":"Borrowed from Spanish Zaldúa, a surname of Basque origin."},
-"zanytwt":{"d":[{"p":"n.","g":"The community of fans of the Animaniacs franchise on Twitter.","x":"as an apology for not being active on zanytwt i offer these wakko pictures","dom":"lifestyle"}],"e":"From zany + -twt. The choice of the word \"zany\" likely stems from the use of the phrase \"zany to the max\" in the Animaniacs theme song."},
+"zanytwt":{"d":[{"p":"n.","g":"The community of fans of the Animaniacs franchise on Twitter.","x":"as an apology for not being active on zanytwt i offer these wakko pictures","dom":"lifestyle"}],"e":"From zany + -twt. The choice of the word \"zany\" likely stems from the use of the phrase \"zany to the max\" in the Animaniacs theme song.","b":[{"s":"zany","k":"root"},{"s":"twt","k":"suffix"}]},
 "Zardaryan":{"d":[{"p":"n.","g":"A surname from Armenian."}],"e":"Borrowed from Armenian Զարդարյան (Zardaryan)."},
 "Zandstra":{"d":[{"p":"n.","g":"A surname from West Frisian."}],"e":"Borrowed from West Frisian Zandstra.","i":"/ˈzændstrə/","rs":"ZAND-struh"},
 "Zaldana":{"d":[{"p":"n.","g":"A surname from Spanish."}],"e":"Borrowed from Spanish Zaldaña, a variant of Saldaña."},

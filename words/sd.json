@@ -2,7 +2,7 @@
 "sd":{"d":[{"p":"n.","g":"Alternative letter-case form of SD (“standard deviation”)."}]},
 "sdrucciola":{"d":[{"p":"adj.","g":"Formed of words stressed on their antepenults and rhyming on all three final syllables.","x":"Note that ending that couplet’s lines with the words ‘reparate’ and ‘separate’ would create a rhyme sdrucciola, if that helps.","dom":"linguistics"}],"e":"Borrowed from Italian sdrucciola (feminine form of sdrucciolo (“slippery; stressed on the antepenult”)).","i":"/ˈzdɹuːtʃələ/"},
 "SD card":{"d":[{"p":"n.","g":"A type of nonvolatile memory card.","x":"I had responsibility for safely extracting SD cards and manually uploading footage onto the server."}],"e":"From SD (“Secure Digital”) + card. The format was introduced in August 1999."},
-"SDAer":{"d":[{"p":"n.","g":"A Seventh-day Adventist.","dom":"christianity"}],"e":"From SDA + -er."},
+"SDAer":{"d":[{"p":"n.","g":"A Seventh-day Adventist.","dom":"christianity"}],"e":"From SDA + -er.","b":[{"s":"SDA","k":"root"},{"s":"er","k":"suffix"}]},
 "sdown squark":{"d":[{"p":"n.","g":"A squark which is the hypothetical supersymmetric partner of a down quark.","dom":"physics"},{"p":"n.","g":"Symbol: ̃d","dom":"physics"}],"e":"s- prefix on both words of down quark."},
 "Sderot":{"d":[{"p":"n.","g":"A city in southern Israel."}],"e":"Borrowed from Hebrew שדרות."},
 "Sdrol":{"d":[{"p":"n.","g":"The anabolic steroid Methyldrostanolone, also known as Superdrol","dom":"bodybuilding"}],"e":"Clipping of Superdrol.","i":"/ˈɛsdɹɔːl/"},

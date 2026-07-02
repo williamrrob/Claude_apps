@@ -5,5 +5,5 @@
 "UFO religionist":{"d":[{"p":"n.","g":"An adherent of a UFO religion.","x":"2003, Christopher Partridge, UFO Religions, Routledge, link\n[…] , von Däniken is not a UFO religionist […]"}],"e":"From UFO religion + -ist."},
 "uff da":{"d":[{"p":"interj.","g":"Expressing surprise, dismay, relief, exhaustion, or a sudden shock to the senses."}],"e":"From Norwegian, brought to the US by Scandinavian settlers.","i":"/ˈʊfdə/","au":"3/3c/En-us-uff_da.ogg/En-us-uff_da.ogg.mp3"},
 "UFO nest":{"d":[{"p":"n.","g":"A crop circle, regarded as a landing site for UFOs.","dom":"mysticism"}]},
-"ufonaut":{"d":[{"p":"n.","g":"A pilot or passenger of a UFO.","dom":"mysticism"}],"e":"From UFO + -naut."}
+"ufonaut":{"d":[{"p":"n.","g":"A pilot or passenger of a UFO.","dom":"mysticism"}],"e":"From UFO + -naut.","b":[{"s":"ufo","k":"root"},{"s":"naut","k":"root"}]}
 }

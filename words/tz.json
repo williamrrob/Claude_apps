@@ -1,5 +1,5 @@
 {
-"tzarist":{"d":[{"p":"n.","g":"Alternative spelling of tsarist."}],"e":"From tzar + -ist.","s":["czarist","czaristic","tsarist","tsaristic"],"rel":{"t":"variant of","l":"tsarist","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"tzarist":{"d":[{"p":"n.","g":"Alternative spelling of tsarist."}],"e":"From tzar + -ist.","s":["czarist","czaristic","tsarist","tsaristic"],"rel":{"t":"variant of","l":"tsarist","by":"assistant","at":"2026-06-29T16:23:04.459Z"},"b":[{"s":"tzar","k":"root"},{"s":"ist","k":"suffix"}]},
 "tzar":{"d":[{"p":"n.","g":"Alternative spelling of tsar."}],"s":["czar","tsar"],"rel":{"t":"variant of","l":"tsar","by":"assistant","at":"2026-06-29T16:23:04.459Z"},"r":["tsar"],"_at":"2026-07-01T01:35:47.312Z"},
 "tzara":{"d":[{"p":"n.","g":"French poet (born in Romania) who was one of the cofounders of the dada movement (1896-1963)"}]},
 "tzarina":{"d":[{"p":"n.","g":"Alternative spelling of tsarina."}],"s":["czarina","tsarina","czaritza","tsaritsa"],"rel":{"t":"variant of","l":"tsarina","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
