@@ -43,19 +43,10 @@ if (!SRC || SRC.startsWith("--") || !fs.existsSync(SRC)) {
 
 const normGloss = (g) => String(g == null ? "" : g).toLowerCase().replace(/[^a-z ]/g, " ").replace(/\s+/g, " ").trim();
 
-// Some Wiktionary etymologies arrive as an ancestor "tree" dump ("Etymology
-// tree English absent-minded Middle English -ly …") with the actual prose
-// sentence, if any, appended after it. Keep only the prose ("From …"); if the
-// tree has no prose tail, skip the word rather than ship the dump.
-function cleanEty(t) {
-  let s = String(t).replace(/\s+/g, " ").trim();
-  if (/^Etymology tree\b/.test(s)) {
-    const m = s.match(/\b(From |Borrowed from |Coined |Named after |Blend of |Compound of |Short(?:ening)? (?:of|for) |Clipping of |Abbreviation of |Variant of |Alteration of |Univerbation of |Back-formation )/);
-    if (!m) return "";
-    s = s.slice(m.index);
-  }
-  return s.slice(0, 400);
-}
+// Tree-dump stripping + sentence-boundary capping live in ety-clean.js
+// (shared with repair-etymology-truncation.js).
+const { cleanEtymology } = require("./ety-clean.js");
+const cleanEty = (t) => cleanEtymology(t, 400);
 
 // Example-sentence quality gate: no citation headers, no editorial elisions,
 // no pre-modern typography or non-Latin scripts, not uselessly short/long.
