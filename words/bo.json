@@ -1763,7 +1763,7 @@
 "bozo filter":{"d":[{"p":"n.","g":"A user's file listing the users of a newsgroup whose postings are to be ignored, or other criteria for ignoring posts."}],"rel":{"t":"synonym of","l":"kill file","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "booty down":{"d":[{"p":"v.","g":"To grind (on someone)"}]},
 "bordarius":{"d":[{"p":"n.","g":"A person ranking below villeins and above serfs in the social hierarchy of a manor, holding just enough land to feed a family (about five acres) and required to provide labour on the demesne on specified days of the week."}],"e":"Borrowed from Medieval Latin bordarius, from Old French borde (“hut, cabin, small farm”) + -arius.","i":"/bɔːˈdɛəɹi.əs/","rel":{"t":"synonym of","l":"bordar","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
-"bourgeoisitic":{"d":[{"p":"adj.","g":"bourgeois"}],"e":"From bourgeoisie + -ic.","r":["bourgeoisie"],"_at":"2026-07-01T01:35:47.312Z"},
+"bourgeoisitic":{"d":[{"p":"adj.","g":"bourgeois"}],"e":"From bourgeoisie + -ic.","r":["bourgeoisie"],"_at":"2026-07-01T01:35:47.312Z","rel":{"t":"variant of","l":"bourgeois"}},
 "Bores":{"d":[{"p":"n.","g":"A surname from Czech."}],"e":"Borrowed from Czech Boreš.","rel":{"t":"plural of","l":"bore","by":"assistant","at":"2026-06-29T16:22:51.470Z"},"i":"/bɔrz/","rs":"bawrz"},
 "Boeke":{"d":[{"p":"n.","g":"A surname from Dutch."}],"e":"Borrowed from Dutch Boeke.","i":"/boʊk/","rs":"bohk"},
 "boio":{"d":[{"p":"n.","g":"boy, boyo."}],"e":"From boi + -o."},

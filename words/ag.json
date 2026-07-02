@@ -57,7 +57,7 @@
 "agrologic":{"d":[{"p":"adj.","g":"Relating to agrology."}],"e":"From agrology + -ic.","s":["agrological"],"r":["agrology"],"_at":"2026-07-01T01:35:47.312Z"},
 "agrological":{"d":[{"p":"adj.","g":"Relating to agrology."}],"s":["agrologic"],"r":["agrology"],"_at":"2026-07-01T01:35:47.312Z"},
 "agronomic":{"d":[{"p":"adj.","g":"Of or pertaining to agronomy."}],"e":"English agronomy Proto-Indo-European *-ikos Proto-Italic *-ikos Latin -icuslbor. Old French -iquebor. Middle English -ik English -ic English agronomic From agronomy + -ic.","s":["agronomical"]},
-"agronomical":{"d":[{"p":"adj.","g":"agronomic"}],"s":["agronomic"]},
+"agronomical":{"d":[{"p":"adj.","g":"agronomic"}],"s":["agronomic"],"rel":{"t":"variant of","l":"agronomic"}},
 "aground":{"d":[{"p":"adj.","g":"Resting on the bottom.","x":"The boat was stuck aground until the tide rose."},{"p":"adj.","g":"at a loss, ruined, with no way out"},{"p":"adv.","g":"Resting on the bottom.","x":"The boat was stuck aground until the tide rose."}],"e":"From Middle English agrounde, on grounde (“on ground”), equivalent to a- + ground.","i":"/əˈɡɹaʊnd/","rs":"uh-GROWND","b":[{"s":"a","k":"prefix"},{"s":"ground","k":"root"}],"r":["ground"],"_at":"2026-07-01T01:35:47.312Z"},
 "agrypnotic":{"d":[{"p":"adj.","g":"Preventing sleep; causing wakefulness; insomniac."},{"p":"n.","g":"A medication that prevents sleep."}],"e":"From the Greek word άγρυπνος (ágrypnos) meaning sleepless."},
 "aguish":{"d":[{"p":"adj.","g":"Characteristic of ague."}],"e":"English ague Proto-Indo-European *-iskos Proto-Germanic *-iskaz Proto-West Germanic *-isk Old English -isċ Middle English -ish English -ish English aguish From ague + -ish.","r":["ague"],"_at":"2026-07-01T01:35:47.312Z"},

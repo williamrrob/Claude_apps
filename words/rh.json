@@ -189,7 +189,7 @@
 "rhabdo":{"d":[{"p":"n.","g":"rhabdomyolysis"}],"e":"Shortening."},
 "Rhenian":{"d":[{"p":"adj.","g":"Rhenish.","x":"Rhenian area"}],"e":"From Rhine + -ian (with the first element taking a Latinate form; see Rhēnus)."},
 "Rhenane":{"d":[{"p":"adj.","g":"Rhenish","x":"the Rhenane provinces of Prussia"}]},
-"Rhenic":{"d":[{"p":"adj.","g":"Rhenish."}],"e":"From rhenium + -ic."},
+"Rhenic":{"d":[{"p":"adj.","g":"Rhenish."}],"e":"From rhenium + -ic.","rel":{"t":"variant of","l":"rhenish"}},
 "rhyme royal":{"d":[{"p":"n.","g":"A form of English verse consisting of seven-line stanzas of iambic pentameter having a rhyme scheme of ababbcc, first represented in English in works by Geoffrey Chaucer (c.1343-1400).","x":"Perhaps the most engaging of the Rowley poems are \"An Excelente Balade of Charitie,\" written in the rhyme royal; and \"The Bristowe Tragedie,\" in the common ballad stanza.","dom":"communications"},{"p":"n.","g":"A single stanza of this form.","x":"Chaucer for years before the Prologue to LGW had been writing heroic couplets at the close of each of his rhymes royal.","dom":"communications"}],"e":"This term was reportedly first used in the mid-1800s."},
 "Rhodope":{"d":[{"p":"n.","g":"A woman in Greek mythology."},{"p":"n.","g":"Rhodopes"}],"e":"Borrowed from Ancient Greek Ῥοδόπη (Rhodópē)."},
 "rhymeprose":{"d":[{"p":"n.","g":"An early form of poetry, not strictly distinguished from prose writing, but having certain poetical features.","x":"At that time he expressed feelings in song and wrote metaphorical verse. His rhymeprose and verse began to accumulate, but in a grown man such childish efforts could only inspire shame."}],"e":"Calque of German Reimprosa, equivalent to rhyme + prose.","i":"/ˈɹaɪmproʊz/"},

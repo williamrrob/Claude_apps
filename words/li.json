@@ -1195,7 +1195,7 @@
 "livor mortis":{"d":[{"p":"n.","g":"A settling of the blood in the lower portion of the body, causing a purplish red discoloration of the skin, typically occurring after death.","dom":"medicine"}],"e":"From Latin līvor (“bluish colour”) + Latin mortis (“of death”).","r":["livor"],"_at":"2026-07-01T01:35:47.312Z"},
 "life-affirming":{"d":[{"p":"adj.","g":"Having a positive and uplifting effect.","x":"The film was an utterly life-affirming experience."},{"p":"adj.","g":"Appearing to have an optimistic quality.","x":"She doesn't strike me as a particularly life-affirming person."}],"e":"Calque of French affirmation de la vie.","i":"/ˈlaɪfəˌfɝmɪŋ/","rs":"LY-fuh-fur-ming"},
 "lirnyk":{"d":[{"p":"n.","g":"An itinerant Ukrainian musician who performed religious, historical and epic songs to the accompaniment of a lira, the Ukrainian version of the hurdy-gurdy."}],"e":"Borrowed from Ukrainian лірник (lirnyk)."},
-"litiginous":{"d":[{"p":"adj.","g":"litigious"}]},
+"litiginous":{"d":[{"p":"adj.","g":"litigious"}],"rel":{"t":"variant of","l":"litigious"}},
 "litigatious":{"d":[{"p":"adj.","g":"litigious"}]},
 "like fuck":{"d":[{"p":"phrase","g":"In a manner that uses all of the strength, speed, or effort that a person can summon."}],"rel":{"t":"synonym of","l":"like hell","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "like one owns the place":{"d":[{"p":"phrase","g":"With a sense of arrogant superiority.","x":"He strutted in here like he owned the place."}]},

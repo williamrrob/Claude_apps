@@ -999,7 +999,7 @@
 "Dalfsen":{"d":[{"p":"n.","g":"A municipality of Overijssel, Netherlands."}],"e":"Borrowed from Dutch Dalfsen."},
 "daloyet":{"d":[{"p":"n.","g":"An armed attendant and messenger."}],"e":"Borrowed from Hindi ढलैत (ḍhalait), from Hindi ढल (ḍhal, “a shield”)."},
 "David and Goliath mate":{"d":[{"p":"n.","g":"A checkmate delivered by a pawn.","dom":"board-games"}],"e":"From the biblical account of David and Goliath."},
-"damagement":{"d":[{"p":"n.","g":"damage"}],"e":"From damage + -ment."},
+"damagement":{"d":[{"p":"n.","g":"damage"}],"e":"From damage + -ment.","rel":{"t":"variant of","l":"damage"}},
 "dance band":{"d":[{"p":"n.","g":"A genre of music, combining jazz and dance music, popular in the 1920s and 1930s"},{"p":"n.","g":"A band playing this style of music"}]},
 "data processing machine":{"d":[{"p":"n.","g":"A computer."},{"p":"n.","g":"An accounting machine or tabulating machine.","dom":"accounting"}]},
 "data leak":{"d":[{"p":"n.","g":"Accidental exposure of sensitive data.","x":"The parallel was not lost on Google, and the company chose not to disclose the data leak, the Wall Street Journal revealed Monday, in order to avoid the public relations headache and potential regulatory enforcement."}]},

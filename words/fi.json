@@ -1248,7 +1248,7 @@
 "field mint":{"d":[{"p":"n.","g":"Synonym of wild mint, Mentha arvensis."}],"e":"From Middle English *feld-minte, from Old English feldminte, equivalent to field + mint."},
 "financial agreement":{"d":[{"p":"n.","g":"A contractual agreement relating to finance.","dom":"business"}],"e":"From financial + agreement."},
 "five and nine":{"d":[{"p":"n.","g":"Basic facial greasepaint makeup.","x":"Not much \"beautiful dignity\" about her now! she thought, looking at her smudged eyes and the tracks her tears had made in carefully applied five and nine. Her black tin box of makeup — her most treasured possession — sat before her, […]","dom":"entertainment"}],"e":"From the product numbering used by the Leichner cosmetics company."},
-"ficklety":{"d":[{"p":"n.","g":"fickleness"}],"e":"From fickle + -ty.","r":["fickle"],"_at":"2026-07-01T01:35:47.312Z"},
+"ficklety":{"d":[{"p":"n.","g":"fickleness"}],"e":"From fickle + -ty.","r":["fickle"],"_at":"2026-07-01T01:35:47.312Z","rel":{"t":"variant of","l":"fickleness"}},
 "fictionmonger":{"d":[{"p":"n.","g":"A writer of fiction."},{"p":"n.","g":"A teller of lies."}],"e":"From fiction + monger."},
 "Fish Hoek":{"d":[{"p":"n.","g":"A coastal town near Cape Town, Western Cape, South Africa."}],"e":"A combination of English fish + Afrikaans hoek."},
 "fixed idea":{"d":[{"p":"n.","g":"An idée fixe, an obsession, a fixation.","x":"[I]t was systemic, directed by Washington and signaling a rapprochement between the Americans and Havana, the imminence of which was a fixed idea among Miami Cubans."}],"e":"Calque of French idée fixe."},

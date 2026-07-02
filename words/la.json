@@ -1786,7 +1786,7 @@
 "Lake Geneva":{"d":[{"p":"n.","g":"A large lake in Europe, mainly in Switzerland, but with most of its southern shore in France; the city of Geneva is situated at its south-west end."},{"p":"n.","g":"A locality in the County of Minburn, Alberta, Canada."},{"p":"n.","g":"An unincorporated community in Clay County, Florida, United States."},{"p":"n.","g":"A lake in Douglas County, Minnesota, United States."}]},
 "Lavater":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Lavater."},
 "lakawood":{"d":[{"p":"n.","g":"A reddish aromatic heartwood obtained from various plants and used as incense in China, India and South East Asia. It was also historically used as a dye and in medicine."}],"e":"Calque of Malay kayu laka."},
-"lackadaisic":{"d":[{"p":"adj.","g":"Lackadaisical."}]},
+"lackadaisic":{"d":[{"p":"adj.","g":"Lackadaisical."}],"rel":{"t":"variant of","l":"lackadaisical"}},
 "lavender lad":{"d":[{"p":"n.","g":"A homosexual male.","dom":"government"}],"e":"Coined by U.S. federal senator Everett Dirksen in the 1950s. From the association with femininity of the color lavender. An alliterative construct, pairing lad (“boy”) and lavender."},
 "Lausch":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Lausch.","i":"/laʊʃ/","rs":"lowsh"},
 "Lafargue":{"d":[{"p":"n.","g":"A surname from French."}],"e":"Borrowed from French Lafargue."},

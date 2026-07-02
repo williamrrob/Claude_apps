@@ -364,7 +364,7 @@
 "Vodicka":{"d":[{"p":"n.","g":"A surname from Czech."}],"e":"Borrowed from Czech Vodička.","i":"/ˈvɑdɪkə/","rs":"VAH-di-kuh"},
 "Von Seggern":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Von Seggern."},
 "Vorndran":{"d":[{"p":"n.","g":"A surname from German."}],"e":"Borrowed from German Vorndran.","i":"/ˈvɔrndrən/","rs":"VAWRN-druhn"},
-"volcanical":{"d":[{"p":"adj.","g":"Volcanic.","x":"The volcanical deposits of big thickness formed at that time were mostly solidified lava streams, and tuff and ignimbrite covers."}],"e":"From volcanic + -al.","forms":["volcanically"]},
+"volcanical":{"d":[{"p":"adj.","g":"Volcanic.","x":"The volcanical deposits of big thickness formed at that time were mostly solidified lava streams, and tuff and ignimbrite covers."}],"e":"From volcanic + -al.","forms":["volcanically"],"rel":{"t":"variant of","l":"volcanic"}},
 "Vokkaliga":{"d":[{"p":"n.","g":"A community, or a group of closely related castes, from the Indian state of Karnataka, also present in Tamil Nadu."}],"e":"Borrowed from Kannada ಒಕ್ಕಲಿಗ (okkaliga).","i":"/wɔːkəlɪɡə/","rel":{"t":"plural of","l":"closely","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
 "Voskanyan":{"d":[{"p":"n.","g":"A surname from Armenian."}],"e":"Borrowed from Armenian Ոսկանյան (Oskanyan)."},
 "vote with one's wallet":{"d":[{"p":"v.","g":"To choose or vote based on one's financial situation."},{"p":"v.","g":"To elect to either support or boycott a company, store, or other product in order to demonstrate one's views, values, or principles."}]},
