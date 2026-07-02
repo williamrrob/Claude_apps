@@ -511,7 +511,7 @@
 "mendeleyev":{"d":[{"p":"n.","g":"Russian chemist who developed a periodic table of the chemical elements and predicted the discovery of several new elements (1834-1907)"}]},
 "mendelianism":{"d":[{"p":"n.","g":"the theory of inheritance based on Mendel's laws"}],"e":"From Mendelian + -ism."},
 "mendelism":{"d":[{"p":"n.","g":"the theory of inheritance based on Mendel's laws"}],"e":"From Mendel + -ism."},
-"mendelsohn":{"d":[{"p":"n.","g":"German architect who migrated to Palestine in 1937 (1887-1953)"}],"i":"/ˈmɛndəlsən/","rs":"MEHN-duhl-suhn"},
+"mendelsohn":{"d":[{"p":"n.","g":"German architect who migrated to Palestine in 1937 (1887-1953)"}],"i":"/ˈmɛndəlsən/","rs":"MEHN-duhl-suhn","e":"From Yiddish מענדעלסאָן, from Hebrew מְנַחֵם."},
 "mendelssohn":{"d":[{"p":"n.","g":"German musician and romantic composer of orchestral and choral works (1809-1847)"}],"i":"/ˈmɛndəlsən/","rs":"MEHN-duhl-suhn","b":[{"s":"mendelssohn","k":"word"}],"e":"Borrowed from German Mendelssohn."},
 "mender":{"d":[{"p":"n.","g":"A person who mends."}],"e":"From mend + -er.","s":["repairer","fixer"],"b":[{"s":"mend","k":"root"},{"s":"er","k":"suffix"}],"r":["mend"],"_at":"2026-07-01T01:35:47.312Z"},
 "mendicancy":{"d":[{"p":"n.","g":"The act or state of being a mendicant"}],"e":"From mendicant + -cy.","s":["beggary","mendicity","begging","poverty"],"_at":"2026-07-01T01:35:47.312Z","r":["mendicant"]},

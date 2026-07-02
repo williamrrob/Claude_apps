@@ -1071,5 +1071,5 @@
 "Cupidinian":{"d":[{"p":"adj.","g":"Of or relating to Cupid.","x":"The Cupidinian fires burn in my breast.","dom":"mysticism"},{"p":"adj.","g":"Of or relating to the Uranian moon named for Cupid.","dom":"astronomy"}],"e":"From Latin Cupīdō, gen. Cupīdinis","i":"/kjuːpɪˈdɪniən/"},
 "Curitis":{"d":[{"p":"n.","g":"An epithet of the goddess Juno.","dom":"mysticism"}]},
 "custom house":{"d":[{"p":"","g":"Variant of customhouse."}],"rel":{"t":"variant of","l":"customhouse","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
-"cut-out":{"d":[{"p":"","g":"Variant of cutout."}],"rel":{"t":"variant of","l":"cutout","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}
+"cut-out":{"d":[{"p":"","g":"Variant of cutout."}],"rel":{"t":"variant of","l":"cutout","by":"assistant","at":"2026-06-29T16:23:04.459Z"},"e":"By surface analysis, cut + out."}
 }
