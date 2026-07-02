@@ -59,6 +59,13 @@ Fine on a dev Mac; avoid re-deriving in token-metered sessions:
 - Full Wiktionary dump import: `curl -s https://kaikki.org/dictionary/English/kaikki.org-dictionary-English.jsonl`
   → `scripts/import-kaikki.js` / `build-rich.js` / `build-inflections.js` /
   `resolve-pointers.js` (all dry-run by default).
+- `vendor-data/` (gitignored, keep between sessions) — downloaded etymology
+  source dumps: etymology-db `etymology.csv` (4.2M typed relations parsed from
+  Wiktionary; github.com/droher/etymology-db), its extracted English
+  morphological-structure TSV, EtymDB 2.1 (github.com/clefourrier/EtymDB), and
+  per-language Kaikki dumps (`kaikki-<Lang>.jsonl.gz`: Latin, Ancient Greek,
+  Middle/Old English, Old French, Proto-Indo-European, Proto-Germanic) for
+  ancestor lemmas. Re-download URLs are in each build script's header.
 - Semantic dedup/search: `npm run embed build` (local Ollama,
   nomic-embed-text) then `npm run find similar <word>`.
 - Cloud-session note: Node fetch behind the agent proxy needs

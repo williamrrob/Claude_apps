@@ -57,6 +57,21 @@ const OUT = path.join(REVIEW, arg("out", "llm-triage.jsonl"));
 // a wrong whole-forcing on a common word is the costliest mistake available here.
 const RANK_GUARD = Number(arg("exclude-rank-below", 60000));
 
+// Optional second opinion: a TSV of etymology-db English structure rows
+// (word \t reltype \t related_term — has_prefix/has_suffix/compound_of/…).
+// If Wiktionary's parsed etymology graph says a word IS morphologically
+// complex, a COINCIDENTAL vote is not trusted enough to force it whole; the
+// word is bumped to needs-human instead.
+const ETYMDB = arg("etymdb", null);
+let etymdbStructured = null;
+if (ETYMDB) {
+  etymdbStructured = new Set();
+  for (const line of fs.readFileSync(ETYMDB, "utf8").split("\n")) {
+    const w = line.slice(0, line.indexOf("\t"));
+    if (w) { etymdbStructured.add(w); etymdbStructured.add(w.toLowerCase()); }
+  }
+}
+
 // ---- queue ----
 function loadQueue() {
   const p = path.join(REVIEW, "QUEUE.tsv");
@@ -159,6 +174,8 @@ function loadResults() {
 // stay consistent with each other)
 function pileOf(r) {
   if (r.verdict === "COINCIDENTAL" && r.rank < RANK_GUARD) return "needs-human";
+  if (r.verdict === "COINCIDENTAL" && etymdbStructured &&
+      (etymdbStructured.has(r.word) || etymdbStructured.has(r.word.toLowerCase()))) return "needs-human";
   if (r.verdict === "COINCIDENTAL") return "confident-wrong";
   if (r.verdict === "REAL") return "confident-ok";
   return "needs-human";
