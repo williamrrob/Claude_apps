@@ -1,9 +1,9 @@
 {
-"djiboutian":{"d":[{"p":"adj.","g":"of or relating to Djibouti or its people or culture"},{"p":"n.","g":"a native or inhabitant of Djibouti"}]},
+"djiboutian":{"d":[{"p":"adj.","g":"of or relating to Djibouti or its people or culture"},{"p":"n.","g":"a native or inhabitant of Djibouti"}],"e":"From Djibouti + -an."},
 "dj":{"d":[{"p":"n.","g":"a person who announces and plays popular recorded music"},{"p":"v.","g":"comment on music to be played"}],"i":"/ˈdiˈdʒeɪ/","rs":"DEE-JAY","forms":["djs"]},
 "djakarta":{"d":[{"p":"n.","g":"capital and largest city of Indonesia;  located on the island of Java;  founded by the Dutch in 17th century"}],"i":"/dʒəˈkɑrtə/","rs":"juh-KAHR-tuh","b":[{"s":"djakarta","k":"word"}]},
 "djanet":{"d":[{"p":"n.","g":"a desert town in southeastern Algeria"}]},
-"djibouti":{"d":[{"p":"n.","g":"port city on the Gulf of Aden;  the capital and largest city of Djibouti"}],"i":"/dʒɪˈbuˌti/","rs":"ji-BOO-tee"},
+"djibouti":{"d":[{"p":"n.","g":"port city on the Gulf of Aden;  the capital and largest city of Djibouti"}],"i":"/dʒɪˈbuˌti/","rs":"ji-BOO-tee","e":"Unknown; the country of Djibouti was named after its capital city. Multiple theories exist as to the origin of the lemma, including derivation from Afar gabouti (“plate”) or gabood (“plateau”)."},
 "djinn":{"d":[{"p":"n.","g":"Alternative spelling of jinn.","x":"I would have liked to know whether he thought this was due to the climate, the diet, or simply malefic djinns."}],"s":["genie","jinni","jinnee","djinni","djinny"],"i":"/d͡ʒɪn/","vars":["djinni"],"rel":{"t":"variant of","l":"jinn","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "djinni":{"d":[{"p":"n.","g":"Alternative spelling of djinn."}],"s":["genie","jinni","jinnee","djinny","djinn"],"rel":{"t":"variant of","l":"jinn","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "djinny":{"d":[{"p":"n.","g":"(Islam) an invisible spirit mentioned in the Koran and believed by Muslims to inhabit the earth and influence mankind by appearing in the form of humans or animals"}],"s":["genie","jinni","jinnee","djinni","djinn"]},
@@ -17,5 +17,5 @@
 "Djerejian":{"d":[{"p":"n.","g":"A surname from Armenian."}],"e":"Borrowed from Armenian Ճերեճյան (Čerečyan)."},
 "Django":{"d":[{"p":"n.","g":"A male given name","x":"Django Wexler is an American fantasy author."}],"e":"Reported to be the first person singular of a Romani verb meaning \"to awake\". Could also be a Wallonian version or diminutive of French Jean."},
 "Djibril":{"d":[{"p":"n.","g":"A male given name from Arabic.","x":"Senegalese star Djibril Soumaré has inked a season-long loan after United agreed to secure his services from Portuguese Primeira Liga side Braga. The deal includes an obligation to buy upon certain criteria being met."},{"p":"n.","g":"A surname from Arabic."}],"e":"Borrowed from Arabic جِبْرِيل (jibrīl)."},
-"djellaba":{"d":[{"p":"n.","g":"A loose-fitting, ankle-length hooded robe worn by men in North Africa."}],"vars":["jellaba"]}
+"djellaba":{"d":[{"p":"n.","g":"A loose-fitting, ankle-length hooded robe worn by men in North Africa.","x":"Dignified gentlemen in sober djellabas, of excellent cut and material, their wives in equally sober djellabas, sat in the tea shops with their children and servants, sipping mint tea."}],"vars":["jellaba"],"e":"From French djellaba, from Algerian Arabic جلابة (jallāba)."}
 }

@@ -9,7 +9,7 @@
 "xxvi":{"d":[{"p":"adjective satellite","g":"being six more than twenty"},{"p":"n.","g":"the cardinal number that is the sum of twenty-five and one"}]},
 "xxvii":{"d":[{"p":"adjective satellite","g":"being seven more than twenty"},{"p":"n.","g":"the cardinal number that is the sum of twenty-six and one"}]},
 "xxviii":{"d":[{"p":"adjective satellite","g":"being eight more than twenty"},{"p":"n.","g":"the cardinal number that is the sum of twenty-seven and one"}]},
-"xxx":{"d":[{"p":"n.","g":"An abbreviation for kisses, usually placed at the end of a letter or text message, often alongside ooo (hugs).","x":"[written on a letter]\nDear Chip —\nSee you tonight.\nLove\nxxxx\nClarice"}],"s":["thirty"]},
+"xxx":{"d":[{"p":"n.","g":"An abbreviation for kisses, usually placed at the end of a letter or text message, often alongside ooo (hugs).","x":"[written on a letter]\nDear Chip —\nSee you tonight.\nLove\nxxxx\nClarice"}],"s":["thirty"],"e":"1969 (see quotations). Reduplication of X (“an age rating denoting content suitable for adults”), in reference to the X rating introduced by the Motion Picture Association of America on 1 November 1968 for films containing extreme violence, heavily implied (originally softcore) sex and obscene language. Film posters began to include multiple exes (but skipping two) in order to imply even more extr"},
 "xxxi":{"d":[{"p":"adjective satellite","g":"being one more than thirty"}]},
 "xxxii":{"d":[{"p":"adjective satellite","g":"being two more than thirty"}]},
 "xxxiii":{"d":[{"p":"adjective satellite","g":"being three more than thirty"}]},
@@ -18,6 +18,6 @@
 "xxxvi":{"d":[{"p":"adjective satellite","g":"being six more than thirty"}]},
 "xxxvii":{"d":[{"p":"adjective satellite","g":"being seven more than thirty"}]},
 "xxxviii":{"d":[{"p":"adjective satellite","g":"being eight more than thirty"}]},
-"xxy":{"d":[{"p":"n.","g":"(genetics) abnormal complement of sex hormones in a male resulting in Klinefelter's syndrome"}]},
+"xxy":{"d":[{"p":"n.","g":"(genetics) abnormal complement of sex hormones in a male resulting in Klinefelter's syndrome"}],"e":"From two X chromosomes + Y chromosome."},
 "xX- -Xx":{"d":[{"p":"circumfix.","g":"Added to a username for decorative purposes.","x":"xXcr4zyRu55i4nH4ck3rXx","dom":"video-games"}]}
 }

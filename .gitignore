@@ -17,3 +17,4 @@ review/*.jsonl
 # editor-session safety copies
 family/backups/
 llm-decomp-verify*.jsonl
+.DS_Store

@@ -1,7 +1,7 @@
 {
-"gwydion":{"d":[{"p":"n.","g":"Celtic sky god;  a magician;  giver of arts and civilization"}]},
-"gwyn":{"d":[{"p":"n.","g":"Celtic underworld god"}],"i":"/gwɪn/","rs":"gwin"},
-"gwynn":{"d":[{"p":"n.","g":"English comedienne and mistress of Charles II (1650-1687)"}],"i":"/gwɪn/","rs":"gwin"},
+"gwydion":{"d":[{"p":"n.","g":"Celtic sky god;  a magician;  giver of arts and civilization"}],"e":"From Welsh."},
+"gwyn":{"d":[{"p":"n.","g":"Celtic underworld god"}],"i":"/gwɪn/","rs":"gwin","e":"From Welsh gwyn."},
+"gwynn":{"d":[{"p":"n.","g":"English comedienne and mistress of Charles II (1650-1687)"}],"i":"/gwɪn/","rs":"gwin","e":"A spelling variant of Gwyn."},
 "gweilo":{"d":[{"p":"n.","g":"A white person in China, (particularly) a man; a ‘foreign devil’.","x":"She had ruffled the bed and laid a frilly nightdress on the floor because so far as the block was concerned Phoebe was the half-kwailo bastard who whored with the fat foreign devil."}],"e":"From Cantonese 鬼佬 (gwai² lou²), from 鬼 (gwai², “ghost”) + 佬 (lou², “guy, man”)."},
 "gwaai":{"d":[{"p":"n.","g":"A cigarette.","x":"Husband's under water so she hassles with her laaities, starts lagging with her buddies and lights herself a gwaai."}],"e":"Borrowed from Afrikaans."},
 "Gwyneth":{"d":[{"p":"n.","g":"A female given name from Welsh."}],"e":"Etymology tree Welsh Gwynethbor. English Gwyneth Borrowed from Welsh Gwyneth.","i":"/ˈɡwɪnəθ/","rs":"GWI-nuhth"},

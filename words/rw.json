@@ -1,4 +1,4 @@
 {
-"rwandan":{"d":[{"p":"adj.","g":"of or pertaining to Rwanda"},{"p":"n.","g":"a native or inhabitant of Rwanda"}],"i":"/rəˈwɑndən/","rs":"ruh-WAHN-duhn","b":[{"s":"rwanda","k":"root"},{"s":"n","k":"suffix"}]},
-"rwanda":{"d":[{"p":"n.","g":"a landlocked republic in central Africa;  formerly a German colony"}],"i":"/rəˈwɑndə/","rs":"ruh-WAHN-duh","b":[{"s":"rwanda","k":"word"}]}
+"rwandan":{"d":[{"p":"adj.","g":"of or pertaining to Rwanda"},{"p":"n.","g":"a native or inhabitant of Rwanda"}],"i":"/rəˈwɑndən/","rs":"ruh-WAHN-duhn","b":[{"s":"rwanda","k":"root"},{"s":"n","k":"suffix"}],"e":"From Rwanda + -an."},
+"rwanda":{"d":[{"p":"n.","g":"a landlocked republic in central Africa;  formerly a German colony"}],"i":"/rəˈwɑndə/","rs":"ruh-WAHN-duh","b":[{"s":"rwanda","k":"word"}],"e":"From Rwanda-Rundi u Rwanda from the archaic verb -anda (“to expand”). Compare Zulu anda (“to multiply”)."}
 }

@@ -1,7 +1,7 @@
 {
 "ozaena":{"d":[{"p":"n.","g":"An atrophic type of chronic non-specific rhinitis characterized by a foul odor from the nose, now considered rare."},{"p":"n.","g":"Any of the beetles in genus Ozaena, with one species, Ozaena dentipes."}],"e":"From Ancient Greek ὄζαινα (ózaina).","s":["ozena"]},
 "ozarks":{"d":[{"p":"n.","g":"an area of low mountains in northwestern Arkansas and southeastern Missouri and northeastern Oklahoma"}],"i":"/ˈoʊˌzɑrks/","rs":"OH-zahrks"},
-"ozawa":{"d":[{"p":"n.","g":"United States conductor (born in Japan in 1935)"}],"i":"/oʊˈzɑwə/","rs":"oh-ZAH-wuh"},
+"ozawa":{"d":[{"p":"n.","g":"United States conductor (born in Japan in 1935)"}],"i":"/oʊˈzɑwə/","rs":"oh-ZAH-wuh","e":"Borrowed from Japanese 小沢 (Ozawa)."},
 "ozena":{"d":[{"p":"n.","g":"a chronic disease of the nose characterized by a foul-smelling nasal discharge and atrophy of nasal structures"}],"s":["ozaena"]},
 "ozocerite":{"d":[{"p":"n.","g":"A dark waxy mineral, found associated with petroleum in some sandstones, used to make polishes."}],"s":["ozokerite"],"vars":["ozokerite"]},
 "ozokerite":{"d":[{"p":"n.","g":"Alternative form of ozocerite."}],"s":["ozocerite"],"rel":{"t":"variant of","l":"ozocerite","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},

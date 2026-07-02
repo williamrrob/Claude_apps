@@ -1,9 +1,9 @@
 {
-"mr":{"d":[{"p":"n.","g":"One thousandth of a rem"}],"i":"/ˈmɪstɚ/","rs":"MI-stur","forms":["mrs"],"rel":{"t":"abbrev of","l":"millirem","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"mr":{"d":[{"p":"n.","g":"One thousandth of a rem"}],"i":"/ˈmɪstɚ/","rs":"MI-stur","forms":["mrs"],"rel":{"t":"abbrev of","l":"millirem","by":"assistant","at":"2026-06-29T16:23:04.459Z"},"e":"Abbreviation of Mister."},
 "mrd":{"d":[{"p":"n.","g":"a machine-readable version of a standard dictionary;  organized alphabetically"}]},
 "mri":{"d":[{"p":"n.","g":"the use of nuclear magnetic resonance of protons to produce proton density images"}],"i":"/ˌɛˌmɑˈraɪ/","rs":"eh-mah-RY"},
 "mrna":{"d":[{"p":"n.","g":"Alternative form of mRNA."}]},
-"mrs":{"d":[{"p":"n.","g":"a form of address for a married woman"}],"i":"/ˈmɪsɪz/","rs":"MI-siz","rel":{"t":"plural of","l":"mr","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
+"mrs":{"d":[{"p":"n.","g":"a form of address for a married woman"}],"i":"/ˈmɪsɪz/","rs":"MI-siz","rel":{"t":"plural of","l":"mr","by":"assistant","at":"2026-06-29T16:22:51.470Z"},"e":"From mistress."},
 "mrta":{"d":[{"p":"n.","g":"a Marxist-Leninist terrorist organization in Peru;  was formed in 1983 to overthrow the Peruvian government and replace it with a Marxist regime;  has connections with the ELN in Bolivia"}]},
 "Mrs. Claus":{"d":[{"p":"n.","g":"The wife of Santa Claus.","x":"A relatively new gala, the Celebrate Santa Convention boasts a sea of Santas, Mrs. Clauses, elves, and reindeers, […]","dom":"arts"}],"r":["Santa Claus"],"_at":"2026-07-01T01:35:47.312Z"},
 "Mr. Big":{"d":[{"p":"n.","g":"The head of a crime syndicate, a high-ranking criminal.","x":"'With the help of the FBI we've traced the ownership of this boat and of the island to a man called Mr. Big, a negro gangster. Lives in Harlem. Ever heard of him?'"}]},

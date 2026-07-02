@@ -1,5 +1,5 @@
 {
-"bc":{"d":[{"p":"adv.","g":"Initialism of Before Christ."},{"p":"conj.","g":"Abbreviation of because."},{"p":"n.","g":"Abbreviation of basso continuo."},{"p":"n.","g":"Initialism of bodycam."}],"i":"/biːˈsiː/","rs":"bee-SEE"},
+"bc":{"d":[{"p":"adv.","g":"Initialism of Before Christ.","x":"The Han Dynasty ruled China from 206 BC to AD 220."},{"p":"conj.","g":"Abbreviation of because."},{"p":"n.","g":"Abbreviation of basso continuo."},{"p":"n.","g":"Initialism of bodycam."}],"i":"/biːˈsiː/","rs":"bee-SEE","e":"Calque of Latin ante Christum, popularized with the 1627 publication of De doctrina temporum by French theologian Denis Pétau."},
 "bce":{"d":[{"p":"adv.","g":"of the period before the Common Era;  preferred by some writers who are not Christians"}]},
 "BCS theory":{"d":[{"p":"n.","g":"A theory for explaining superconductivity."}],"e":"After John Bardeen, Leon Cooper, and John Robert Schrieffer, who developed the theory."}
 }
