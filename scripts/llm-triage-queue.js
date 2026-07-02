@@ -58,19 +58,31 @@ const OUT = path.join(REVIEW, arg("out", "llm-triage.jsonl"));
 const RANK_GUARD = Number(arg("exclude-rank-below", 60000));
 
 // Optional second opinion: a TSV of etymology-db English structure rows
-// (word \t reltype \t related_term — has_prefix/has_suffix/compound_of/…).
-// If Wiktionary's parsed etymology graph says a word IS morphologically
-// complex, a COINCIDENTAL vote is not trusted enough to force it whole; the
-// word is bumped to needs-human instead.
+// (word \t reltype \t rel_lang \t rel_term \t position). Used two ways:
+//   run    — the word's Wiktionary-parsed derivation is quoted in the prompt
+//            as evidence, so the model compares the engine's split against
+//            what Wiktionary actually asserts.
+//   report/emit — if the graph says a word IS morphologically complex, a
+//            COINCIDENTAL vote is not trusted enough to force it whole; the
+//            word is bumped to needs-human instead.
 const ETYMDB = arg("etymdb", null);
-let etymdbStructured = null;
+let etymdbStructured = null; // Map word -> ["compound_of Latin sōlus", …]
 if (ETYMDB) {
-  etymdbStructured = new Set();
+  etymdbStructured = new Map();
   for (const line of fs.readFileSync(ETYMDB, "utf8").split("\n")) {
-    const w = line.slice(0, line.indexOf("\t"));
-    if (w) { etymdbStructured.add(w); etymdbStructured.add(w.toLowerCase()); }
+    if (!line.trim()) continue;
+    const [w, reltype, relLang, relTerm] = line.split("\t");
+    if (!w || !relTerm) continue;
+    const desc = reltype + " " + (relLang && relLang !== "English" ? relLang + " " : "") + relTerm;
+    for (const key of new Set([w, w.toLowerCase()])) {
+      if (!etymdbStructured.has(key)) etymdbStructured.set(key, []);
+      const list = etymdbStructured.get(key);
+      if (list.length < 6 && !list.includes(desc)) list.push(desc);
+    }
   }
 }
+const etymdbFor = (word) => etymdbStructured &&
+  (etymdbStructured.get(word) || etymdbStructured.get(word.toLowerCase())) || null;
 
 // ---- queue ----
 function loadQueue() {
@@ -128,6 +140,10 @@ function buildPrompt(item) {
   const others = item.groupmates && item.groupmates.length
     ? "\nOther words the algorithm split the same way (same pattern, judged separately): " + item.groupmates.slice(0, 6).join(", ")
     : "";
+  const struct = etymdbFor(item.word);
+  const structLine = struct
+    ? "\nWiktionary's parsed derivation of this word (independent evidence): " + struct.join("; ")
+    : "";
   return (
     "You are an etymology fact-checker. A pattern-matching algorithm split an English " +
     "dictionary headword into morpheme pieces. Letter patterns often match by pure " +
@@ -143,7 +159,7 @@ function buildPrompt(item) {
     "-ist\") whose deeper classical roots the split correctly names.\n\n" +
     "Word: " + item.word + "\n" +
     "Algorithm's split: " + item.partsDesc + "\n" +
-    "Dictionary etymology on file: " + (item.ety ? '"' + item.ety + '"' : "(none)") + others + "\n\n" +
+    "Dictionary etymology on file: " + (item.ety ? '"' + item.ety + '"' : "(none)") + structLine + others + "\n\n" +
     "Judge only whether the matched pieces are etymologically real for THIS word. " +
     "If you do not recognize the word and there is no etymology to check against, say UNSURE. " +
     "Reply with ONLY one JSON object:\n" +
@@ -174,8 +190,7 @@ function loadResults() {
 // stay consistent with each other)
 function pileOf(r) {
   if (r.verdict === "COINCIDENTAL" && r.rank < RANK_GUARD) return "needs-human";
-  if (r.verdict === "COINCIDENTAL" && etymdbStructured &&
-      (etymdbStructured.has(r.word) || etymdbStructured.has(r.word.toLowerCase()))) return "needs-human";
+  if (r.verdict === "COINCIDENTAL" && etymdbFor(r.word)) return "needs-human";
   if (r.verdict === "COINCIDENTAL") return "confident-wrong";
   if (r.verdict === "REAL") return "confident-ok";
   return "needs-human";
