@@ -1050,7 +1050,8 @@
     if (p.meaning && /[,;]/.test(p.meaning)) {
       box.appendChild(el("div", "bpw-mean", "“" + p.meaning + "”"));
     }
-    // where it comes from — the source language and a one-line note about it
+    // where it comes from — language + era only; the full language blurb
+    // lives in the Word-history timeline (tap a stage), not on every tile
     const olang = p.origin === "Greek" ? "Ancient Greek" : p.origin;
     if (olang && LANGS[olang]) {
       const o = el("div", "bpw-origin");
@@ -1058,7 +1059,6 @@
       h.appendChild(el("span", "bpw-origin-lang", olang));
       h.appendChild(el("span", "bpw-origin-era", LANGS[olang].era));
       o.appendChild(h);
-      if (LANGS[olang].desc) o.appendChild(el("div", "bpw-origin-desc", LANGS[olang].desc));
       box.appendChild(o);
     }
     // deep-link to the full source-word entry (its derivatives + Wiktionary)
