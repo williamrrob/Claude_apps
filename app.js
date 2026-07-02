@@ -1563,12 +1563,13 @@
     }
   }
 
-  function ancRowEl(r, token) {
+  function ancRowEl(r, token, refocus) {
     const row = el("div", "anc-row" + (r.alt ? " anc-alt" : ""));
     row.style.paddingLeft = Math.min(r.depth, 7) * 14 + "px";
     const n = r.node;
 
     const line = el("div", "anc-line");
+    if (r.depth > 0) line.appendChild(el("span", "anc-tick", "└"));
     if (n.k) line.appendChild(el("span", "anc-kind", ANC_KIND[n.k] || n.k));
     const term = el("span", "anc-term", n.t);
     if (n.s) term.title = ancSrcTitle(n.s);
@@ -1582,7 +1583,13 @@
     }
     if (n.hw) {
       term.classList.add("anc-link");
-      term.addEventListener("click", function () { runFromLink(n.hw); });
+      term.addEventListener("click", function (e) { e.stopPropagation(); runFromLink(n.hw); });
+    }
+    // tapping the row itself refocuses the tree on this ancestor (its
+    // subtree is already in the loaded data)
+    if (refocus && (n.c || []).length) {
+      row.classList.add("anc-focusable");
+      line.addEventListener("click", function () { refocus(n); });
     }
     row.appendChild(line);
 
@@ -1591,7 +1598,8 @@
       const pivot = el("button", "anc-pivot", "+" + n.d + " words from this root");
       pivot.type = "button";
       const panel = el("div", "anc-desc"); panel.hidden = true;
-      pivot.addEventListener("click", function () {
+      pivot.addEventListener("click", function (e) {
+        e.stopPropagation();
         if (!panel.hidden) { panel.hidden = true; return; }
         fetchDescShard(key).then(function (idx) {
           if (token !== runToken) return;
@@ -1600,10 +1608,12 @@
           words.forEach(function (w) {
             const chip = el("button", "anc-desc-word", w);
             chip.type = "button";
-            chip.addEventListener("click", function () { runFromLink(w); });
+            chip.addEventListener("click", function (ev) { ev.stopPropagation(); runFromLink(w); });
             panel.appendChild(chip);
           });
-          panel.hidden = !words.length;
+          if (!words.length) panel.appendChild(el("span", "anc-desc-empty", "No list for this root yet."));
+          panel.hidden = false;
+          panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
         });
       });
       row.appendChild(pivot);
@@ -1622,24 +1632,37 @@
       if (!tree || !tree.c || token !== runToken) return null;
       const card = el("div", "card anc-card");
       card.appendChild(el("div", "cap", "Ancestry"));
-      const rows = [];
-      const budget = { n: 0, max: 14, overflow: false };
-      buildAncestryRows(tree, 0, rows, budget);
+      const crumb = el("div", "anc-crumb"); crumb.hidden = true;
+      card.appendChild(crumb);
       const holder = el("div", "anc-holder");
-      rows.forEach(function (r) { holder.appendChild(ancRowEl(r, token)); });
       card.appendChild(holder);
-      if (budget.overflow) {
-        const more = el("button", "anc-more", "Show the full tree");
-        more.type = "button";
-        more.addEventListener("click", function () {
-          holder.innerHTML = "";
-          const all = [];
-          buildAncestryRows(tree, 0, all, { n: 0, max: 200 });
-          all.forEach(function (r) { holder.appendChild(ancRowEl(r, token)); });
-          more.remove();
-        });
-        card.appendChild(more);
+      const more = el("button", "anc-more", "Show the full tree");
+      more.type = "button";
+      card.appendChild(more);
+
+      // render(focusNode): the card can refocus on any ancestor — its
+      // subtree is already in this tree object. A crumb walks back out.
+      const stack = [];
+      function render(node, full) {
+        holder.innerHTML = "";
+        const rows = [];
+        const budget = { n: 0, max: full ? 200 : 14, overflow: false };
+        buildAncestryRows(node, 0, rows, budget);
+        const refocus = function (child) { stack.push(node); render(child, false); };
+        rows.forEach(function (r) { holder.appendChild(ancRowEl(r, token, refocus)); });
+        crumb.hidden = !stack.length;
+        if (stack.length) {
+          crumb.innerHTML = "";
+          const back = el("button", "anc-back", "← back");
+          back.type = "button";
+          back.addEventListener("click", function () { render(stack.pop(), false); });
+          crumb.appendChild(back);
+          crumb.appendChild(el("span", "anc-crumb-word", node.l + " " + node.t));
+        }
+        more.hidden = !budget.overflow;
+        more.onclick = function () { render(node, true); };
       }
+      render(tree, false);
       return card;
     });
   }

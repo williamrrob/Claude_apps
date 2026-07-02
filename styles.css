@@ -1155,3 +1155,14 @@ body {
   border-radius: 8px; cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
 .anc-more:active { transform: scale(0.98); }
+.anc-tick { color: var(--muted); opacity: 0.55; margin-right: 5px; font-size: 12px; }
+.anc-row.anc-focusable .anc-line { cursor: pointer; }
+.anc-row.anc-focusable .anc-line:active { opacity: 0.7; }
+.anc-crumb { margin: 6px 0 2px 0; display: flex; align-items: center; gap: 9px; }
+.anc-back {
+  padding: 3px 11px; font: 12.5px/1.5 var(--font); color: var(--muted);
+  background: var(--field); border: 1px solid var(--bd); border-radius: 999px;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.anc-crumb-word { font-size: 13.5px; color: var(--prefix-ink); font-style: italic; }
+.anc-desc-empty { font-size: 12.5px; color: var(--muted); font-style: italic; }
