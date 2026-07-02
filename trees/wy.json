@@ -1,12 +1,6 @@
 {
-"Wyckoff":{"c":[["Dutch","Wyckoff","bor"]]},
-"Wysocki":{"c":[["Polish","Wysocki","bor"]]},
-"wych elm":{"c":[["Old English","wiche","inh"]]},
-"wye":{"c":[["Old English","wiga","inh"]]},
-"wykeham":{"c":[["Old English","hām","der"],["Old English","wic","der"]]},
-"wyoming":{"c":[["Munsee","xwé:wamənk","der"]],"t":[["Munsee","xwé:wamənk",""]]},
-"wyrd":{"c":[["Old English","wyrd","bor"]]},
-"wyrm":{"c":[["Old English","wyrm","bor"]]},
-"wyszynski":{"c":[["Polish","Wyszyński","bor"]]},
-"wyvern":{"c":[["Middle English","wyver","inh"],["Old Northern French","wivre","der"],["Latin","vīpera","der"]]}
+"wye":{"l":"English","t":"wye","d":14,"c":[{"l":"Old English","t":"wiga","k":"inh","g":"warrior","d":11,"c":[{"l":"Proto-West Germanic","t":"*wigō","k":"inh","d":9},{"l":"Old English","t":"wīgan","k":"der","g":"to fight","d":9,"c":[{"l":"Proto-West Germanic","t":"*wīgan","k":"inh","c":[{"l":"Proto-Germanic","t":"*wiganą","k":"inh","g":"to fight","c":[{"l":"Proto-Indo-European","t":"*weyḱ-","k":"der","g":"to sift","d":355}]}]}]},{"l":"Old English","t":"-a","k":"aff","g":"nominative masculine n-stem ending","d":138,"c":[{"l":"Proto-Germanic","t":"*-ô","k":"inh","s":"ey","g":"-ly. Creates adverbs of manner from adjectives.","x":1,"d":323,"c":[{"l":"Proto-Indo-European","t":"*-éh₂","k":"inh","s":"k","g":"Creates collective nouns and mass nouns","d":3677},{"l":"Proto-Indo-European","t":"*-ō","k":"inh","s":"k","g":"Adverbial suffix indicating direction","d":3145}]},{"l":"Proto-West Germanic","t":"*-ō","k":"inh","d":121,"c":[{"l":"Proto-Germanic","t":"*-ô","k":"inh","s":"ek","g":"-ly. Creates adverbs of manner from adjectives.","x":1,"d":323}]}]}]},{"l":"English","t":"Wy","k":"bor","g":"The name of the letter Y.","hw":"wy","d":11},{"l":"Proto-Indo-European","t":"*weyḱ-","k":"root","g":"to sift","d":355}]},
+"wyoming":{"l":"English","t":"Wyoming","c":[{"l":"Munsee","t":"xwé:wamənk","k":"der","d":3}]},
+"wyrd":{"l":"English","t":"wyrd","c":[{"l":"Old English","t":"wyrd","k":"bor","s":"ey","g":"fate","d":14,"c":[{"l":"Proto-Germanic","t":"*wurdiz","k":"inh","s":"ey","g":"fate","d":15,"c":[{"l":"Proto-Indo-European","t":"*wr̥ti-","k":"inh","s":"ey","d":15},{"l":"Proto-Indo-European","t":"*wert-","k":"inh","g":"to turn","d":2944}]},{"l":"Proto-West Germanic","t":"*wurdi","k":"inh","d":14,"c":[{"l":"Proto-Germanic","t":"*wurdiz","k":"inh","g":"fate","d":15}]}]}]},
+"wyvern":{"l":"English","t":"wyvern","x":1,"c":[{"l":"Middle English","t":"wyver","k":"inh","g":"viper","c":[{"l":"Anglo-Norman","t":"wivre","k":"bor","c":[{"l":"Old French","t":"guivre","k":"bor"},{"l":"Latin","t":"vīpera","k":"der","g":"adder"}]},{"l":"Old French","t":"wivre","k":"der","g":"any of various types of snake","c":[{"l":"Latin","t":"vīpera","k":"inh","g":"adder"}]}]},{"l":"Middle English","t":"wyvere","k":"inh","s":"y","c":[{"l":"Old Northern French","t":"wivre","k":"der","c":[{"l":"Latin","t":"vīpera","k":"der","g":"adder"}]}]},{"l":"Old Northern French","t":"wivre","k":"der"}]}
 }

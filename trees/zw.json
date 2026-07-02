@@ -1,10 +1,3 @@
 {
-"Zwarte Piet":{"c":[["Dutch","Zwarte Piet","bor"]]},
-"Zweifach":{"c":[["German","Zweifach","bor"]]},
-"Zweihänder":{"c":[["German","Zweihänder","bor"]]},
-"Zwilling":{"c":[["German","Zwilling","bor"]]},
-"Zwolinski":{"c":[["Polish","Zwoliński","bor"]]},
-"zwastika":{"c":[["Russian","Z","der"]]},
-"zwischenschach":{"c":[["German","Zwischenschach","bor"]]},
-"zwitterion":{"c":[["German","Zwitterion","bor"]]}
+"zwingli":{"l":"English","t":"Zwingli","c":[{"l":"German","t":"Zwingli","k":"inh","s":"y","c":[{"l":"Middle High German","t":"twingen","k":"inh","s":"y","x":1,"c":[{"l":"Old High German","t":"dwingan","k":"inh","s":"ey","c":[{"l":"Proto-Germanic","t":"*þwinganą","k":"inh","s":"ey","d":3}]},{"l":"Old High German","t":"thwingan","k":"inh","s":"ey"}]}]}]}
 }

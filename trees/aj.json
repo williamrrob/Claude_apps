@@ -1,10 +1,4 @@
 {
-"Ajam":{"c":[["Arabic","عَجَم","bor"],["Persian","عجم","der"]]},
-"Ajmer":{"c":[["Rajasthani","अजमेर","bor"]]},
-"ajaeng":{"c":[["Korean","아쟁","bor"]]},
-"ajapsandali":{"c":[["Georgian","აჯაფსანდალი","bor"]]},
-"ajar":{"c":[["Middle English","ajar","inh"],["Old English","cierr","der"]]},
-"aji":{"c":[["Japanese","鯵","bor"],["Japanese","味","bor"]]},
-"ajutage":{"c":[["French","ajutage","bor"]]},
-"ajwain":{"c":[["Hindi","अजवाइन","bor"]]}
+"ajar":{"l":"English","t":"ajar","c":[{"l":"Middle English","t":"ajar","k":"inh"},{"l":"Middle English","t":"ajar ~ on char","k":"inh","s":"y"},{"l":"Old English","t":"cierr","k":"der","g":"a turn","d":4,"c":[{"l":"Proto-Germanic","t":"*karzijaną","k":"inh","d":47,"c":[{"l":"Proto-Indo-European","t":"*gers-","k":"inh","s":"y","d":45},{"l":"Proto-Indo-European","t":"*gers-","k":"der","d":45}]},{"l":"Old English","t":"cierran","k":"der","s":"y","g":"to turn","d":4,"c":[{"l":"Proto-Germanic","t":"*karzijaną","k":"inh","s":"ey","d":47}]}]}]},
+"ajax":{"l":"English","t":"Ajax","c":[{"l":"Latin","t":"Aiāx","k":"inh","s":"y","g":"Ajax","c":[{"l":"Ancient Greek","t":"Αἴας","k":"inh","s":"y","g":"a male given name"},{"l":"Ancient Greek","t":"Αἴας","k":"der","g":"a male given name"}]},{"l":"Latin","t":"Aiāx","k":"der","g":"Ajax"}]}
 }

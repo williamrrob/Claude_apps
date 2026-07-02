@@ -1,7 +1,5 @@
 {
-"xylography":{"c":[["French","xylographie","bor"]]},
-"xylose":{"t":[["English","glucose","",[["French","glucose","",[["Ancient Greek","γλεῦκος","der"]]]]]]},
-"xylotheque":{"c":[["French","xylothèque","bor"]]},
-"xynomyzithra":{"c":[["Greek","ξινομυζήθρα","bor"]]},
-"xyston":{"c":[["Ancient Greek","ξυστόν","bor"]]}
+"xylem":{"l":"English","t":"xylem","c":[{"l":"German","t":"Xylem","k":"inh","s":"y","c":[{"l":"Ancient Greek","t":"ξύλον","k":"inh","s":"y","g":"cut wood","d":9,"c":[{"l":"Proto-Indo-European","t":"*ḱes-","k":"der","g":"to scrape","d":1447}]},{"l":"Ancient Greek","t":"ξύλον","k":"der","g":"cut wood","d":9}]},{"l":"German","t":"Xylem","k":"der"}]},
+"xylene":{"l":"English","t":"xylene","c":[{"l":"English","t":"xyl","k":"aff","d":4},{"l":"English","t":"ene","k":"aff","g":"the compass point midway between northeast and eas","hw":"ene","d":31}]},
+"xylophone":{"l":"English","t":"xylophone","d":3,"c":[{"l":"Ancient Greek","t":"ξύλον","k":"der","g":"cut wood","d":9,"c":[{"l":"Proto-Indo-European","t":"*ḱes-","k":"der","g":"to scrape","d":1447}]},{"l":"Dutch","t":"xylofoon","k":"der","d":4,"c":[{"l":"German","t":"Xylophon","k":"bor","s":"ey","d":4,"c":[{"l":"French","t":"xylophone","k":"inh","s":"y","d":4,"c":[{"l":"French","t":"xylo-","k":"aff","d":4},{"l":"French","t":"-phone","k":"aff","d":70,"c":[{"l":"Ancient Greek","t":"φωνή","k":"inh","s":"y","g":"sound","d":582,"c":[{"l":"Proto-Hellenic","t":"*pʰōnā́","k":"inh","d":554,"c":[{"l":"Proto-Indo-European","t":"*bʰoh₂-néh₂","k":"inh","d":429}]},{"l":"Proto-Indo-European","t":"*bʰoh₂neh₂","k":"inh","s":"y","d":554},{"l":"Proto-Indo-European","t":"*bʰoh₂neh₂","k":"der","d":554}]},{"l":"Ancient Greek","t":"φωνή","k":"der","s":"k","g":"sound","d":582}]}]},{"l":"French","t":"xylophone","k":"der","d":4}]},{"l":"Dutch","t":"xylo","k":"aff","d":4},{"l":"Dutch","t":"foon","k":"aff","d":51,"c":[{"l":"Ancient Greek","t":"φωνή","k":"der","g":"sound","d":582}]}]},{"l":"English","t":"xylo","k":"aff","g":"Xylophone.","hw":"xylo","d":8}]}
 }

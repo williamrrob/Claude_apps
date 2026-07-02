@@ -1,18 +1,4 @@
 {
-"QAnonsense":{"t":[["English","sense","",[["Middle English","sense","inh",[["Old French","sens","",[["Latin","sēnsus","",[["Latin","sentiō","",[["Proto-Italic","*sentjō","inh",[["Proto-Indo-European","*sent-","der"]]]]],["Latin","-tus","",[["Proto-Italic","*-tus","inh",[["Proto-Indo-European","*-tus","inh"]]]]]]],["Vulgar Latin","*sennus","inh",[["Frankish","*sinn","",[["Proto-Germanic","*sinnaz","inh"]]]]]]]]]]],["Proto-Germanic","*ainaz","",[["Proto-Indo-European","*h₁óynos","inh",[["Proto-Indo-European","*ís",""]]]]]]},
-"Qadiani":{"c":[["Urdu","قادیانی","der"]]},
-"Qadri":{"c":[["Arabic","قدري","bor"]]},
-"Qaka":{"c":[["Uyghur","چاقا","bor"]]},
-"Qamar":{"c":[["Arabic","قَمَر","bor"]]},
-"Qapla'":{"c":[["Klingon","Qapla'","bor"]]},
-"Qarqan":{"c":[["Uyghur","چەرچەن","bor"]]},
-"Qasim":{"c":[["Arabic","قَاسِم","bor"]]},
-"qadi":{"c":[["Arabic","قَاضٍ","bor"]]},
-"qalam":{"c":[["Arabic","قَلَم","bor"],["Ancient Greek","κάλαμος","der"]]},
-"qama":{"c":[["Persian","قمه","bor"]]},
-"qamutik":{"c":[["Inuktitut","ᖃᒧᑏᒃ","bor"]]},
-"qari":{"c":[["Arabic","قَارِئ","bor"]]},
-"qatari":{"c":[["Arabic","قَطَر","der"]]},
-"qawwal":{"c":[["Arabic","قَوَّال","bor"]]},
-"qazf":{"c":[["Arabic","قَذْف","bor"]]}
+"qatar":{"l":"English","t":"Qatar","d":27,"c":[{"l":"French","t":"Qatar","k":"bor","s":"ey","d":26},{"l":"German","t":"Katal","k":"bor","d":26},{"l":"Arabic","t":"ق ط ر","k":"root","d":26}]},
+"qatari":{"l":"English","t":"Qatari","c":[{"l":"Arabic","t":"قَطَر","k":"der","d":27,"c":[{"l":"English","t":"Qatar","k":"bor","s":"ey","g":"an Arab country on the peninsula of Qatar","hw":"qatar","d":27,"c":[{"l":"French","t":"Qatar","k":"bor","s":"ey","d":26},{"l":"German","t":"Katal","k":"bor","d":26},{"l":"Arabic","t":"ق ط ر","k":"root","d":26}]},{"l":"Yiddish","t":"קאָטער","k":"bor","d":27,"c":[{"l":"Middle High German","t":"katere","k":"inh","d":25,"c":[{"l":"Old High German","t":"kataro","k":"inh","s":"ey","d":20,"c":[{"l":"Proto-West Germanic","t":"*kataʀō","k":"inh"},{"l":"Proto-Germanic","t":"katazô","k":"inh","s":"y"}]}]}]}]},{"l":"English","t":"Qatar","k":"aff","g":"an Arab country on the peninsula of Qatar","hw":"qatar","d":27},{"l":"English","t":"-i","k":"aff","d":27,"c":[{"l":"Arabic","t":"قَطَر","k":"inh","s":"y","d":27},{"l":"Latin","t":"-ī","k":"der","g":"Used for the first person present perfect singular","x":1,"d":31,"c":[{"l":"Proto-Italic","t":"*-ai","k":"inh","d":29},{"l":"Proto-Slavic","t":"*-ę","k":"inh","s":"y","d":31,"c":[{"l":"Proto-Indo-European","t":"*-e","k":"inh","s":"y","d":29},{"l":"Proto-Indo-European","t":"*-e","k":"der","d":29}]},{"l":"Proto-Italic","t":"*duō","k":"inh","s":"y","d":121,"c":[{"l":"Proto-Indo-European","t":"*dwóh₁","k":"inh","s":"ey","g":"two","d":840}]}]}]}]}
 }

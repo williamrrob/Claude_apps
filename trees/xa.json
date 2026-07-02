@@ -1,8 +1,4 @@
 {
-"Xaidulla":{"c":[["Uyghur","شەيدۇللا","bor"]]},
-"Xanthe":{"c":[["Ancient Greek","Ξανθή","bor"]]},
-"Xanthippe":{"c":[["Latin","Xanthippē","bor"],["Ancient Greek","Ξανθίππη","bor"],["Proto-Indo-European","*ḱas-","der"],["Proto-Indo-European","*h₁eḱ-","der"]]},
-"xanthein":{"c":[["French","xantheine","bor"]]},
-"xanthelasma":{"c":[["New Latin","xanthelasma","bor"],["Ancient Greek","ξανθός","der"]]},
-"xavier":{"c":[["Basque","Xabier","der"]]}
+"xanthine":{"l":"English","t":"xanthine","c":[{"l":"French","t":"xanthine","k":"inh","s":"y","c":[{"l":"Ancient Greek","t":"ξανθός","k":"inh","s":"y","g":"yellow","d":6},{"l":"Ancient Greek","t":"ξανθός","k":"der","g":"yellow","d":6},{"l":"French","t":"ξανθός","k":"aff"}]}]},
+"xavier":{"l":"English","t":"Xavier","c":[{"l":"Basque","t":"Xabier","k":"der"},{"l":"English","t":"wFrancis Xavier","k":"der","s":"y"}]}
 }

@@ -1,7 +1,3 @@
 {
-"Cwik":{"c":[["Polish","Ćwik","bor"]]},
-"Cwm Silicon":{"c":[["Welsh","Cwm Silicon","bor"],["English","Silicon Valley","der"]]},
-"Cwrt Sart":{"c":[["Welsh","cwrt","der"]]},
-"cwierc":{"c":[["Polish","ćwierć","bor"]]},
-"cwm":{"c":[["Welsh","cwm","bor"]]}
+"cwm":{"l":"English","t":"cwm","c":[{"l":"Welsh","t":"cwm","k":"bor","s":"ey","c":[{"l":"Proto-Celtic","t":"*kumbā","k":"inh","s":"ey","c":[{"l":"Proto-Indo-European","t":"*ḱumbʰ-","k":"inh","d":13}]}]}]}
 }

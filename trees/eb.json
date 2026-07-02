@@ -1,17 +1,7 @@
 {
-"Ebben":{"c":[["German","Ebben","bor"]]},
-"Eber":{"c":[["Hebrew","עֵבֶר","bor"]]},
-"Eberling":{"c":[["German","Eberling","bor"]]},
-"Ebinger":{"c":[["German","Ebinger","bor"]]},
-"Ebisu":{"c":[["Japanese","恵比須","bor"]]},
-"Eblen":{"c":[["German","Eblen","bor"]]},
-"ebb":{"c":[["Middle English","ebbe","inh"],["Old English","ebba","inh"],["Proto-West Germanic","*abbjā","inh"],["Proto-Germanic","*abjô","inh"],["Proto-Germanic","*ab","der"],["Proto-Indo-European","*apó","der"]]},
-"ebionite":{"c":[["Ancient Greek","Ἐβιωναῖοι","der"],["Hebrew","אביונים","der"],["Hebrew","אֶבְיוֹן","der"],["Coptic","ⲉⲃⲓⲏⲛ","der"]]},
-"ebony":{"c":[["Middle English","ebenif","inh"],["Latin","ebenius","der"],["Latin","hebenus","der"],["Ancient Greek","ἔβενος","der"],["Egyptian","hbnj","der"]]},
-"eboshi":{"c":[["Japanese","烏帽子","bor"]]},
-"ebracteate":{"c":[["New Latin","ebracteatus","bor"]]},
-"ebracteolate":{"c":[["New Latin","ebracteolatus","bor"]]},
-"ebro":{"c":[["Spanish","Ebro","bor"],["Latin","Hibērus","der"]]},
-"ebullience":{"c":[["Latin","ēbullientem","bor"],["Proto-Indo-European","*bʰew-","der"]]},
-"eburnation":{"c":[["Latin","ebur","der"]]}
+"ebb":{"l":"English","t":"ebb","c":[{"l":"Middle English","t":"ebbe","k":"inh","s":"ey","g":"ebb","c":[{"l":"Old English","t":"ebba","k":"inh","s":"ey","g":"a male given name","c":[{"l":"Proto-West Germanic","t":"*abbjā","k":"inh","c":[{"l":"Proto-Germanic","t":"*abjô","k":"inh","g":"ebb","c":[{"l":"Proto-Indo-European","t":"*h₂epo","k":"inh","s":"y","g":"off","x":1,"d":856},{"l":"Proto-Indo-European","t":"*h₂epo","k":"der","g":"off","x":1,"d":856}]}]},{"l":"Proto-Germanic","t":"*abjô","k":"inh","s":"y","g":"ebb"}]},{"l":"Proto-West Germanic","t":"*abbjā","k":"inh"},{"l":"Proto-Germanic","t":"*abjô","k":"inh","g":"ebb"}]},{"l":"Proto-Germanic","t":"*abjô","k":"inh","g":"ebb"},{"l":"Proto-Germanic","t":"*ab","k":"der","g":"away from","x":1,"d":418,"c":[{"l":"Proto-Indo-European","t":"*h₂epo","k":"inh","s":"ky","g":"off","x":1,"d":856},{"l":"Proto-Indo-European","t":"*apó","k":"inh","s":"y","d":320},{"l":"Proto-Indo-European","t":"*h₂epo","k":"der","g":"off","x":1,"d":856}]}]},
+"ebon":{"l":"English","t":"ebon","c":[{"l":"Old French","t":"eban","k":"inh","s":"y"}]},
+"ebonics":{"l":"English","t":"Ebonics","c":[{"l":"English","t":"ebony","k":"cmp","g":"A hard","hw":"ebony","d":4,"c":[{"l":"Middle English","t":"ebenif","k":"inh","d":5},{"l":"Latin","t":"ebenius","k":"der","d":5,"c":[{"l":"Latin","t":"hebenus","k":"der","s":"ey","g":"ebony","d":5,"c":[{"l":"Ancient Greek","t":"ἔβενος","k":"inh","s":"y","g":"ebony tree","d":5},{"l":"Ancient Greek","t":"ἔβενος","k":"der","g":"ebony tree","d":5}]}]}]},{"l":"English","t":"phonics","k":"cmp","g":"The study of how the sounds of words are represent","hw":"phonics","d":4,"c":[{"l":"English","t":"phon","k":"aff","g":"A unit of apparent loudness","hw":"phon","d":5},{"l":"English","t":"ics","k":"aff","d":70}]}]},
+"ebony":{"l":"English","t":"ebony","d":4,"c":[{"l":"Middle English","t":"ebenif","k":"inh","d":5},{"l":"Latin","t":"ebenius","k":"der","d":5,"c":[{"l":"Latin","t":"hebenus","k":"der","s":"ey","g":"ebony","d":5,"c":[{"l":"Ancient Greek","t":"ἔβενος","k":"inh","s":"y","g":"ebony tree","d":5},{"l":"Ancient Greek","t":"ἔβενος","k":"der","g":"ebony tree","d":5}]}]}]},
+"ebro":{"l":"English","t":"Ebro","c":[{"l":"Spanish","t":"Ebro","k":"bor","c":[{"l":"Latin","t":"Hibērus","k":"der","g":"the River Iberus","c":[{"l":"Ancient Greek","t":"Ἴβηρος","k":"inh","s":"y"},{"l":"Ancient Greek","t":"Ἴβηρος","k":"der"},{"l":"Latin","t":"Hibēr","k":"der","g":"an Iberian","c":[{"l":"Ancient Greek","t":"Ἴβηρ","k":"inh","s":"y","g":"Iberian","d":3},{"l":"Ancient Greek","t":"Ἴβηρ","k":"der","g":"Iberian","d":3}]}]}]}]}
 }

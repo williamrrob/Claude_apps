@@ -1,16 +1,5 @@
 {
-"Ohashi":{"c":[["Japanese","大橋","bor"]]},
-"Ohio County":{"c":[["Seneca","ohiːyo'","der"]]},
-"Ohio River":{"c":[["Seneca","ohiːyoʼ","bor"]]},
-"Ohira":{"c":[["Japanese","大平","bor"]]},
-"Ohl":{"c":[["German","Ohl","bor"]]},
-"Ohler":{"c":[["German","Ohler","bor"]]},
-"Ohlinger":{"c":[["German","Ohlinger","bor"]]},
-"Ohman":{"c":[["Swedish","Öhman","bor"]]},
-"Ohrid":{"c":[["Macedonian","Охрид","bor"]]},
-"Ohtani":{"c":[["Japanese","大谷","bor"]]},
-"oh":{"c":[["Middle English","o","inh"],["Old English","ō","inh"],["Latin","ō","der"]]},
-"ohana":{"c":[["Hawaiian","ʻohana","bor"]]},
-"ohelo":{"c":[["Hawaiian","ʻōhelo","bor"]]},
-"ohio":{"c":[["Seneca","Ohi:yoʼ","bor"]],"t":[["Seneca","Ohi꞉yoʼ","",[["Seneca","ohi꞉yo꞉h",""]]]]}
+"oh":{"l":"English","t":"oh","c":[{"l":"Middle English","t":"o","k":"inh","s":"ey","g":"preconsonantal form of on","d":310,"c":[{"l":"Old English","t":"ā-","k":"inh","s":"y","g":"from","d":1391,"c":[{"l":"Proto-West Germanic","t":"*uʀ-","k":"inh","d":794,"c":[{"l":"Proto-Germanic","t":"*uz-","k":"inh","g":"up","x":1,"d":506,"c":[{"l":"Proto-Indo-European","t":"*uds-","k":"inh","s":"ey","d":96},{"l":"Proto-Germanic","t":"*rīsaną","k":"der","g":"to scale","d":145,"c":[{"l":"Proto-Indo-European","t":"*h₁rey-","k":"inh","s":"y","g":"to rise","d":93},{"l":"Proto-Indo-European","t":"rei-","k":"inh","s":"y","d":169},{"l":"Proto-Indo-European","t":"*h₁rey-","k":"der","g":"to rise","d":93}]},{"l":"Proto-Germanic","t":"*dwaiskijaną","k":"der","g":"","d":95,"c":[{"l":"Proto-Indo-European","t":"*dʰew-","k":"inh","s":"y","g":"to die","d":172}]}]}]}]}]},{"l":"Old English","t":"ō","k":"inh","d":281,"c":[{"l":"Latin","t":"ō","k":"inh","s":"y","g":"A letter of the Latin alphabet","d":609,"c":[{"l":"Latin","t":"aut","k":"inh","g":"or","d":1702,"c":[{"l":"Latin","t":"ubi","k":"inh","g":"where? in what place?","d":1447,"c":[{"l":"Latin","t":",","k":"inh","x":1,"d":1451,"c":[{"l":"Proto-Indo-European","t":"*pṓds","k":"inh","g":"foot","d":718},{"l":"Proto-Indo-European","t":"*wréh₂ds","k":"inh","g":"root","d":647},{"l":"Ancient Greek","t":"πλανήτης","k":"bor","g":"wanderer","d":446,"c":[{"l":"Ancient Greek","t":"πλανάω","k":"der","s":"ky","g":"to make to wander","d":151,"c":[{"l":"Proto-Indo-European","t":"*pleh₂-","k":"der","g":"flat","d":561},{"l":"Ancient Greek","t":"πλάνη","k":"der","s":"y","g":"wandering","d":34}]},{"l":"Proto-Indo-European","t":"*pel-","k":"der","g":"to cover","d":2998}]}]}]}]}]}]}]},
+"ohio":{"l":"English","t":"Ohio","x":1,"c":[{"l":"Seneca","t":"Ohi:yoʼ","k":"bor"},{"l":"Seneca","t":"ohiːyoʼ","k":"der","d":3},{"l":"Seneca","t":"ohiːyoːh","k":"der"}]},
+"ohmic":{"l":"English","t":"ohmic","c":[{"l":"English","t":"ohm","k":"der","g":"In the International System of Units","hw":"ohm","d":5},{"l":"English","t":"ic","k":"aff","g":"being nine more than ninety","hw":"ic","d":1168}]}
 }

@@ -1,19 +1,6 @@
 {
-"Ogas":{"c":[["Spanish","Ogas","bor"]]},
-"Ogata":{"c":[["Japanese","緒方","bor"],["Japanese","尾形","bor"]]},
-"Ogawa":{"c":[["Japanese","小川","bor"]]},
-"Ogham":{"c":[["Irish","og-úaim","der"]]},
-"Ogren":{"c":[["Swedish","Ögren","bor"]]},
-"Ogun":{"c":[["Yoruba","Ògún","bor"]]},
-"Ogygia":{"c":[["Ancient Greek","Ὠγυγία","bor"]]},
-"oga":{"c":[["Yoruba","ọ̀gá","bor"]]},
-"ogden":{"c":[["Old English","āc","inh"]]},
-"ogdoad":{"c":[["Ancient Greek","ὀγδοάς","der"]]},
-"ogee":{"c":[["Middle English","*ogeve","inh"],["Old French","œgive","der"],["Late Latin","augiva","der"]]},
-"ogive":{"c":[["Middle English","ogif","inh"],["Old French","ogive","der"]]},
-"ogle":{"c":[["Middle Dutch","*ooghelen","der"],["Low German","oegeln","der"]]},
-"ogonek":{"c":[["Polish","ogonek","bor"]]},
-"ogonori":{"c":[["Japanese","於胡海苔","bor"]]},
-"ogre":{"c":[["French","ogre","bor"],["Latin","Orcus","der"],["Ancient Greek","Ὄρκος","der"]]},
-"ogress":{"c":[["Old French","ogoesse","der"]]}
+"ogden":{"l":"English","t":"Ogden","c":[{"l":"Old English","t":"ac","k":"inh","g":"oak","x":1,"d":27,"c":[{"l":"Proto-Germanic","t":"*aiks","k":"inh","s":"ey","g":"oak tree","d":30,"c":[{"l":"Proto-Indo-European","t":"*h₂éyǵs","k":"inh","d":16},{"l":"Proto-Indo-European","t":"*h₂eyǵ-","k":"inh","s":"y","g":"goat","d":34},{"l":"Proto-Indo-European","t":"*h₂eyǵ-","k":"der","g":"goat","d":34}]},{"l":"Proto-Germanic","t":"*ak","k":"inh","s":"ey","g":"but","d":26},{"l":"Proto-West Germanic","t":"*ak","k":"inh","d":26,"c":[{"l":"Proto-Germanic","t":"*ak","k":"inh","g":"but","d":26}]}]}]},
+"ogee":{"l":"English","t":"ogee","c":[{"l":"Middle English","t":"*ogeve","k":"inh"},{"l":"French","t":"ogive","k":"inh","s":"y","c":[{"l":"Latin","t":"augēre","k":"inh","s":"y","d":5},{"l":"Old French","t":"augive","k":"inh","s":"y"},{"l":"Latin","t":"augēre","k":"der","d":5}]},{"l":"Old French","t":"œgive","k":"der"}]},
+"ogle":{"l":"English","t":"ogle","x":1,"c":[{"l":"Middle Dutch","t":"ooghelen ~ oeghelen","k":"inh","s":"y","d":3},{"l":"Middle Dutch","t":"*ooghelen","k":"der","d":3},{"l":"Low German","t":"oegeln","k":"der","d":3}]},
+"ogre":{"l":"English","t":"ogre","c":[{"l":"French","t":"ogre","k":"bor","c":[{"l":"Old French","t":"ogre","k":"inh"},{"l":"Latin","t":"Orcus","k":"inh","s":"y","g":"the underworld","c":[{"l":"Proto-Italic","t":"*orkos","k":"inh","c":[{"l":"Proto-Indo-European","t":"*h₂erk-","k":"der","g":"to protect","d":83}]},{"l":"Ancient Greek","t":"Ὄρκος","k":"inh","s":"y","g":"the object by which one swears","c":[{"l":"Proto-Indo-European","t":"*serḱ-","k":"der","g":"to emend","d":128}]},{"l":"Ancient Greek","t":"Ὄρκος","k":"der","g":"the object by which one swears"}]},{"l":"Latin","t":"Orcus","k":"der","g":"the underworld"}]},{"l":"Latvian","t":"Ogre","k":"bor","c":[{"l":"Russian","t":"угри","k":"der"},{"l":"Proto-Finnic","t":"*vöö","k":"der","c":[{"l":"Proto-Finno-Ugric","t":"*wiŋä","k":"inh"},{"l":"Proto-Uralic","t":"*uwa","k":"inh"},{"l":"Proto-Uralic","t":"*uwa-","k":"der"}]}]},{"l":"Proto-Indo-European","t":"*h₂erk-","k":"root","g":"to protect","d":83}]}
 }

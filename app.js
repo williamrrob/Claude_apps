@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "132";
+  const DATA_V = "133";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -870,6 +870,16 @@
     cardsEl.appendChild(histCard);
     requestAnimationFrame(function () { divider.classList.add("in"); histCard.classList.add("in"); });
 
+    // 4.5) Ancestry — the word's position on the etymology graph (trees/),
+    // ancestors tappable: entries open, shared roots pivot to descendants.
+    buildAncestryCard(result.word, token).then(function (ancCard) {
+      if (ancCard && token === runToken) {
+        if (histCard.nextSibling) cardsEl.insertBefore(ancCard, histCard.nextSibling);
+        else cardsEl.appendChild(ancCard);
+        requestAnimationFrame(function () { ancCard.classList.add("in"); });
+      }
+    });
+
     // 5) Usage over time
     const useCard = buildUsageCard(result.word, token);
     cardsEl.appendChild(useCard);
@@ -1502,6 +1512,136 @@
     d.appendChild(el("span", "orn", "❧"));
     d.appendChild(el("span", "dln"));
     return d;
+  }
+
+  // ---------- Ancestry card (trees/<xx>.json from the canonical graph) ----------
+  // Node: { l:lang, t:term, k:edge kind, s:sources, g:gloss, hw:headword,
+  //         x:contested, d:descendant count, n:pivot key, c:[parents…] }
+  const treeShardCache = {};
+  function fetchTreeShard(key) {
+    if (!treeShardCache[key]) {
+      treeShardCache[key] = fetch("trees/" + key + ".json?v=" + DATA_V)
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .catch(function () { return {}; });
+    }
+    return treeShardCache[key];
+  }
+  // canonical node key, mirroring build-etymgraph.js foldTerm:
+  // NFD, strip combining marks, lowercase, drop asterisks
+  function ancNodeKey(lang, term) {
+    const t = String(term || "").normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/\*/g, "").trim();
+    return lang + "|" + t;
+  }
+  // pivot index is sharded by first character of the folded term
+  const descShardCache = {};
+  function fetchDescShard(key) {
+    const term = key.slice(key.indexOf("|") + 1);
+    let c = (term[0] || "_").toLowerCase();
+    if (!/^[a-z]$/.test(c)) c = "_";
+    if (!descShardCache[c]) {
+      descShardCache[c] = fetch("trees/_desc-" + c + ".json?v=" + DATA_V)
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .catch(function () { return {}; });
+    }
+    return descShardCache[c];
+  }
+
+  const ANC_KIND = { inh: "inherited from", bor: "borrowed from", der: "from", aff: "affix", cmp: "compound of", root: "root" };
+  const ANC_SRC = { e: "Wiktionary etymology parse", k: "Wiktionary etymon tree", y: "EtymDB" };
+
+  function ancSrcTitle(s) {
+    return (s || "").split("").map(function (c) { return ANC_SRC[c] || c; }).join(" + ");
+  }
+
+  function buildAncestryRows(node, depth, rows, budget) {
+    const kids = node.c || [];
+    for (let i = 0; i < kids.length; i++) {
+      if (budget.n >= budget.max) { budget.overflow = true; return; }
+      budget.n++;
+      rows.push({ node: kids[i], depth: depth, alt: kids.length > 1 && i > 0 });
+      buildAncestryRows(kids[i], depth + 1, rows, budget);
+    }
+  }
+
+  function ancRowEl(r, token) {
+    const row = el("div", "anc-row" + (r.alt ? " anc-alt" : ""));
+    row.style.paddingLeft = Math.min(r.depth, 7) * 14 + "px";
+    const n = r.node;
+
+    const line = el("div", "anc-line");
+    if (n.k) line.appendChild(el("span", "anc-kind", ANC_KIND[n.k] || n.k));
+    const term = el("span", "anc-term", n.t);
+    if (n.s) term.title = ancSrcTitle(n.s);
+    line.appendChild(el("span", "anc-lang", n.l));
+    line.appendChild(term);
+    if (n.g) line.appendChild(el("span", "anc-gloss", "“" + firstSense(n.g) + "”"));
+    if (n.x) {
+      const b = el("span", "anc-badge", "contested");
+      b.title = "Sources disagree on this word's route — all recorded routes are shown.";
+      line.appendChild(b);
+    }
+    if (n.hw) {
+      term.classList.add("anc-link");
+      term.addEventListener("click", function () { runFromLink(n.hw); });
+    }
+    row.appendChild(line);
+
+    if (n.d) {
+      const key = ancNodeKey(n.l, n.t);
+      const pivot = el("button", "anc-pivot", "+" + n.d + " words from this root");
+      pivot.type = "button";
+      const panel = el("div", "anc-desc"); panel.hidden = true;
+      pivot.addEventListener("click", function () {
+        if (!panel.hidden) { panel.hidden = true; return; }
+        fetchDescShard(key).then(function (idx) {
+          if (token !== runToken) return;
+          panel.innerHTML = "";
+          const words = idx[key] || [];
+          words.forEach(function (w) {
+            const chip = el("button", "anc-desc-word", w);
+            chip.type = "button";
+            chip.addEventListener("click", function () { runFromLink(w); });
+            panel.appendChild(chip);
+          });
+          panel.hidden = !words.length;
+        });
+      });
+      row.appendChild(pivot);
+      row.appendChild(panel);
+    }
+    return row;
+  }
+
+  function runFromLink(w) { run(w); }
+
+  function buildAncestryCard(word, token) {
+    const key = word.slice(0, 2).toLowerCase();
+    if (!/^[a-z]{2}$/.test(key)) return Promise.resolve(null);
+    return fetchTreeShard(key).then(function (sh) {
+      const tree = sh[word] || sh[word.toLowerCase()];
+      if (!tree || !tree.c || token !== runToken) return null;
+      const card = el("div", "card anc-card");
+      card.appendChild(el("div", "cap", "Ancestry"));
+      const rows = [];
+      const budget = { n: 0, max: 14, overflow: false };
+      buildAncestryRows(tree, 0, rows, budget);
+      const holder = el("div", "anc-holder");
+      rows.forEach(function (r) { holder.appendChild(ancRowEl(r, token)); });
+      card.appendChild(holder);
+      if (budget.overflow) {
+        const more = el("button", "anc-more", "Show the full tree");
+        more.type = "button";
+        more.addEventListener("click", function () {
+          holder.innerHTML = "";
+          const all = [];
+          buildAncestryRows(tree, 0, all, { n: 0, max: 200 });
+          all.forEach(function (r) { holder.appendChild(ancRowEl(r, token)); });
+          more.remove();
+        });
+        card.appendChild(more);
+      }
+      return card;
+    });
   }
 
   // ---------- browse-by-letter (A–Z strip on the home screen) ----------

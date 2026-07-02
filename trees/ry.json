@@ -1,15 +1,5 @@
 {
-"Rybacki":{"c":[["Polish","Rybacki","bor"]]},
-"Rybar":{"c":[["Slovak","rybár","der"],["Czech","rybář","der"]]},
-"Rybarczyk":{"c":[["Polish","Rybarczyk","bor"]]},
-"Rybicki":{"c":[["Polish","Rybicki","bor"]]},
-"Rybka":{"c":[["Czech","Rybka","bor"],["Russian","Рыбка","bor"]]},
-"Rychlik":{"c":[["Czech","Rychlík","bor"],["Polish","Rychlik","bor"]]},
-"Ryczek":{"c":[["Polish","Ryczek","bor"]]},
-"Rydzewski":{"c":[["Polish","Rydzewski","bor"]]},
-"Rylski":{"c":[["Polish","Rylski","bor"]]},
-"Rymaszewski":{"c":[["Polish","Rymaszewski","bor"]]},
-"rya":{"c":[["Swedish","rya","bor"]]},
-"rye":{"c":[["Middle English","rie","inh"],["Old English","ryġe","inh"],["Proto-West Germanic","*rugi","inh"],["Proto-Germanic","*rugiz","inh"],["Proto-Indo-European","*Hrugʰís","der"]]},
-"ryūteki":{"c":[["Japanese","龍笛","bor"]]}
+"rya":{"l":"English","t":"rya","c":[{"l":"Swedish","t":"rya","k":"bor","s":"ey"}]},
+"rye":{"l":"English","t":"rye","x":1,"c":[{"l":"Middle English","t":"rie","k":"inh","d":3},{"l":"Old English","t":"ryġe","k":"inh","g":"rye","d":11,"c":[{"l":"Proto-West Germanic","t":"*rugi","k":"inh","d":11,"c":[{"l":"Proto-Germanic","t":"*rugiz","k":"inh","g":"rye","x":1,"d":11,"c":[{"l":"Proto-Indo-European","t":"rúgʰis","k":"inh","s":"y","d":11},{"l":"Proto-Indo-European","t":"*wrugʰyo-","k":"inh","s":"y","d":11},{"l":"Proto-Indo-European","t":"*Hrugʰís","k":"der","g":"rye","d":11}]}]},{"l":"Proto-Indo-European","t":"*wrugʰyo-","k":"inh","d":11},{"l":"Proto-Germanic","t":"*rugiz","k":"inh","s":"y","g":"rye","x":1,"d":11}]},{"l":"Old English","t":"rīþ","k":"der","g":"a stream or rivulet","d":3,"c":[{"l":"Proto-West Germanic","t":"*rīþ","k":"inh","d":3,"c":[{"l":"Proto-Germanic","t":"*rīþiz","k":"inh","d":3,"c":[{"l":"Proto-Indo-European","t":"*h₃reyH-","k":"inh","s":"ey","g":"to move","d":128}]}]},{"l":"Proto-Germanic","t":"*rīþiz","k":"inh","s":"y","d":3}]}]},
+"ryegrass":{"l":"English","t":"ryegrass","c":[{"l":"English","t":"rye","k":"cmp","g":"A grain used extensively in Europe for making brea","hw":"rye","x":1,"c":[{"l":"Middle English","t":"rie","k":"inh","d":3},{"l":"Old English","t":"ryġe","k":"inh","g":"rye","d":11,"c":[{"l":"Proto-West Germanic","t":"*rugi","k":"inh","d":11,"c":[{"l":"Proto-Germanic","t":"*rugiz","k":"inh","g":"rye","x":1,"d":11,"c":[{"l":"Proto-Indo-European","t":"rúgʰis","k":"inh","s":"y","d":11},{"l":"Proto-Indo-European","t":"*wrugʰyo-","k":"inh","s":"y","d":11},{"l":"Proto-Indo-European","t":"*Hrugʰís","k":"der","g":"rye","d":11}]}]},{"l":"Proto-Indo-European","t":"*wrugʰyo-","k":"inh","d":11},{"l":"Proto-Germanic","t":"*rugiz","k":"inh","s":"y","g":"rye","x":1,"d":11}]},{"l":"Old English","t":"rīþ","k":"der","g":"a stream or rivulet","d":3,"c":[{"l":"Proto-West Germanic","t":"*rīþ","k":"inh","d":3,"c":[{"l":"Proto-Germanic","t":"*rīþiz","k":"inh","d":3,"c":[{"l":"Proto-Indo-European","t":"*h₃reyH-","k":"inh","s":"ey","g":"to move","d":128}]}]},{"l":"Proto-Germanic","t":"*rīþiz","k":"inh","s":"y","d":3}]}]},{"l":"English","t":"grass","k":"cmp","g":"Any plant of the family Poaceae","hw":"grass","d":51,"c":[{"l":"Middle English","t":"gras","k":"inh","s":"ey","g":"A grass","d":52,"c":[{"l":"Old English","t":"græs","k":"inh","s":"ey","g":"grass","d":91,"c":[{"l":"Proto-Germanic","t":"*grasą","k":"inh","s":"ey","g":"grass","d":90,"c":[{"l":"Proto-Indo-European","t":"*gʰreh₁-","k":"inh","s":"ey","g":"to grow","d":289}]},{"l":"Proto-West Germanic","t":"*gras","k":"inh","d":87,"c":[{"l":"Proto-Germanic","t":"*grasą","k":"inh","g":"grass","d":90}]},{"l":"Old English","t":"grasian","k":"inh","g":"to graze","d":86}]}]}]}]}
 }

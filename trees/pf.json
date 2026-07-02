@@ -1,17 +1,4 @@
 {
-"Pfaff":{"c":[["German","Pfaff","bor"],["Middle High German","pfaffe","der"]]},
-"Pfahler":{"c":[["German","Pfahler","bor"]]},
-"Pfefferkorn":{"c":[["German","Pfefferkorn","bor"]]},
-"Pfeil":{"c":[["German","Pfeil","bor"]]},
-"Pfenning":{"c":[["German","Pfenning","bor"]]},
-"Pfingsten":{"c":[["German","Pfingsten","bor"]]},
-"Pfizer":{"c":[["German","Pfizer","bor"]]},
-"Pflaum":{"c":[["German","Pflaum","bor"]]},
-"Pflieger":{"c":[["German","Pflieger","bor"]]},
-"Pflug":{"c":[["German","Pflug","bor"]]},
-"pfalz":{"c":[["German","Pfalz","bor"],["Old High German","pfalinza","der"],["Latin","palātium","der"]]},
-"pfalzgraf":{"c":[["German","Pfalzgraf","bor"]]},
-"pfeffernusse":{"c":[["German","Pfeffernüsse","bor"]]},
-"pfennig":{"t":[["Proto-Germanic","*-ingaz","",[["Proto-Indo-European","*-n̥kʷo-","der"],["Proto-Germanic","*-īnaz","",[["Proto-Indo-European","*-iHnos","inh",[["Proto-Indo-European","*-nós",""]]]]],["Proto-Germanic","*-gaz","",[["Proto-Indo-European","*-kos","inh"]]]]],["Ancient Greek","πατάνη","",[["Pre-Greek","","der"]]],["Latin","pannus",""]]},
-"pfropfschizophrenie":{"c":[["German","Pfropfschizophrenie","bor"]]}
+"pfalz":{"l":"English","t":"Pfalz","c":[{"l":"German","t":"Pfalz","k":"inh","s":"y","c":[{"l":"Old High German","t":"pfalinza","k":"inh","s":"y","c":[{"l":"Latin","t":"palātium","k":"der","g":"a palace","d":11,"c":[{"l":"Latin","t":"palātum","k":"der","s":"ey","g":"palate","d":24,"c":[{"l":"Proto-Indo-European","t":"*pleh₂-","k":"der","s":"k","g":"flat","d":561}]},{"l":"Proto-Slavic","t":"vašĭ","k":"inh","s":"y","x":1,"d":10,"c":[{"l":"Proto-Indo-European","t":"wōsyo-","k":"inh","s":"y","d":9},{"l":"Proto-Indo-European","t":"*wos","k":"inh","s":"y","d":109},{"l":"Proto-Indo-European","t":"*túh₂","k":"inh","s":"y","g":"you","d":95}]},{"l":"Old Norse","t":"pallaz","k":"der","d":10}]}]},{"l":"Latin","t":"palātium","k":"inh","s":"y","g":"a palace","d":11},{"l":"Old High German","t":"pfalinza","k":"der"}]},{"l":"German","t":"Pfalz","k":"bor"}]},
+"pfennig":{"l":"English","t":"pfennig","c":[{"l":"German","t":"Pfennig","k":"inh","s":"y","c":[{"l":"Proto-Germanic","t":"*panningaz","k":"inh","g":"a coin","d":31,"c":[{"l":"Proto-Germanic","t":"*-ingaz","k":"der","s":"k","g":"forms derivatives of nouns with sense of \"belongin","x":1,"d":1310,"c":[{"l":"Proto-Indo-European","t":"*-n̥kʷo-","k":"der","s":"k","d":638},{"l":"Proto-Germanic","t":"*-īnaz","k":"der","s":"k","g":"-en. Originally forming adjectives of material fro","d":3938,"c":[{"l":"Proto-Indo-European","t":"*-iHnos","k":"inh","s":"eky","g":"Creates adjectives of materials.","x":1,"d":3138},{"l":"Proto-Germanic","t":"*-īniz","k":"inh","g":"Forms abstract nouns from weak class 1 verbs.","d":2649,"c":[{"l":"Proto-Germanic","t":"-ij(i)-","k":"der","s":"y","d":349}]}]},{"l":"Proto-Germanic","t":"*-gaz","k":"der","s":"k","g":"-y","d":1202,"c":[{"l":"Proto-Indo-European","t":"*-kos","k":"inh","s":"eky","g":"Creates deadjectival and desubstantival adjectives","d":2223}]}]}]}]}]}
 }

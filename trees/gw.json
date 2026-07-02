@@ -1,9 +1,3 @@
 {
-"Gwadar":{"c":[["Baluchi","گوادر","der"]]},
-"Gwiazdon":{"c":[["Polish","Gwiazdoń","bor"]]},
-"Gwyneth":{"c":[["Welsh","Gwyneth","bor"]]},
-"gweilo":{"c":[["Cantonese","鬼佬","bor"]]},
-"gwerz":{"c":[["Breton","gwerz","bor"]]},
-"gwop":{"c":[["Spanish","guapo","bor"]]},
-"gwyn":{"c":[["Welsh","gwyn","bor"]]}
+"gwyn":{"l":"English","t":"Gwyn","c":[{"l":"Welsh","t":"gwyn","k":"inh","s":"y","c":[{"l":"Middle Welsh","t":"gwynn","k":"inh","c":[{"l":"Proto-Brythonic","t":"*gwɨnn","k":"inh","c":[{"l":"Proto-Celtic","t":"*windos","k":"inh","s":"ek","d":5,"c":[{"l":"Proto-Celtic","t":"*okelos","k":"der","d":5},{"l":"Proto-Indo-European","t":"*weyd-","k":"der","s":"k","g":"to see","d":1669}]}]}]},{"l":"Proto-Brythonic","t":"*gwɨnn","k":"inh","s":"k"},{"l":"Proto-Indo-European","t":"*wenh₁-","k":"der","g":"to love","d":287}]},{"l":"Welsh","t":"gwyn","k":"bor"}]}
 }

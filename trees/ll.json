@@ -1,16 +1,6 @@
 {
-"Llandudno":{"c":[["Welsh","Llandudno","bor"]]},
-"Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch":{"c":[["Welsh","Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch","bor"]]},
-"Llangollen":{"c":[["Welsh","Llangollen","bor"]]},
-"Llansantffraid Glyn Ceiriog":{"c":[["Welsh","+","der"]]},
-"Llantwit Major":{"c":[["Welsh","llan","der"]]},
-"Llanyblodwel":{"c":[["Welsh","+","der"]]},
-"Llorens":{"c":[["Catalan","Llorenç","bor"]]},
-"Llorente":{"c":[["Spanish","Llorente","bor"],["Latin","Laurentius","der"]]},
-"Llyn Gwynant":{"c":[["Welsh","llyn","der"]]},
-"llama":{"c":[["Spanish","llama","bor"],["Quechua","llama","der"]]},
-"llanero":{"c":[["Spanish","llanero","bor"]]},
-"llano":{"c":[["Spanish","llano","bor"]]},
-"lloyd":{"c":[["Welsh","llwyd","der"]]},
-"llyn":{"c":[["Welsh","llyn","bor"]]}
+"llama":{"l":"English","t":"llama","c":[{"l":"Spanish","t":"llama","k":"inh","s":"y","d":5,"c":[{"l":"Latin","t":"flamma","k":"inh","s":"y","g":"flame","x":1,"d":75,"c":[{"l":"Proto-Italic","t":"*flagmā","k":"inh","s":"eky","d":42,"c":[{"l":"Proto-Indo-European","t":"*bʰel-","k":"der","s":"ek","g":"to sound","d":1231},{"l":"Proto-Indo-European","t":"*bʰel-","k":"inh","s":"y","g":"to sound","d":1231}]},{"l":"Proto-Indo-European","t":"*bʰlē-","k":"inh","s":"y","d":41},{"l":"Latin","t":"flammula","k":"der","g":"a little flame","d":42,"c":[{"l":"Proto-Italic","t":"*flagmā","k":"der","d":42},{"l":"Latin","t":"-ulus","k":"aff","g":"Used to form a diminutive of a noun","x":1,"d":507,"c":[{"l":"Proto-Italic","t":"*-elos","k":"inh","s":"ek","d":892,"c":[{"l":"Proto-Indo-European","t":"*-elós","k":"inh","d":409}]},{"l":"Proto-Indo-European","t":"*-elós","k":"inh","d":409},{"l":"Proto-Indo-European","t":"*-lós","k":"inh","g":"Forms agent nouns from verbal roots.","d":494}]}]}]},{"l":"Quechua","t":"llama","k":"der","d":5,"c":[{"l":"Tibetan","t":"བླ་མ","k":"der","d":25,"c":[{"l":"French","t":"lame","k":"der","d":25,"c":[{"l":"Latin","t":"lāmina","k":"inh","s":"y","g":"a thin piece or sheet of metal","d":32,"c":[{"l":"Proto-Indo-European","t":"*stelh₃-","k":"der","d":30}]},{"l":"Latin","t":"lāmina","k":"der","g":"a thin piece or sheet of metal","d":32}]},{"l":"Sumerian","t":"𒀭𒆗","k":"der","d":25,"c":[{"l":"Sumerian","t":"𒀭","k":"cmp","d":25},{"l":"Sumerian","t":"𒆗","k":"cmp","d":24}]},{"l":"Tibetan","t":"བླ","k":"cmp","d":26}]}]}]}]},
+"llano":{"l":"English","t":"llano","c":[{"l":"Spanish","t":"llano","k":"bor","s":"ey","c":[{"l":"Proto-Indo-European","t":"*pleh₂-","k":"inh","g":"flat","d":561},{"l":"Latin","t":"plānus","k":"inh","s":"y","g":"level","d":93,"c":[{"l":"Proto-Indo-European","t":"*pleh₂-","k":"inh","s":"ey","g":"flat","d":561},{"l":"Proto-Italic","t":"*plānos","k":"inh","s":"ky","d":81,"c":[{"l":"Proto-Indo-European","t":"*pleh₂-","k":"inh","s":"k","g":"flat","d":561},{"l":"Proto-Indo-European","t":"pleh₂-no-s","k":"inh","s":"y","d":66}]},{"l":"Proto-Indo-European","t":"pelh","k":"inh","s":"y","d":81}]},{"l":"Latin","t":"plānus","k":"der","g":"level","d":93}]}]},
+"llb":{"l":"English","t":"LLB","c":[{"l":"Latin","t":"legum","k":"inh","s":"y"}]},
+"lloyd":{"l":"English","t":"Lloyd","c":[{"l":"Welsh","t":"llwyd","k":"inh","s":"y","c":[{"l":"Proto-Brythonic","t":"*lluɨd","k":"inh","c":[{"l":"Proto-Celtic","t":"*ɸlētos","k":"inh","c":[{"l":"Proto-Indo-European","t":"*pelH-","k":"inh","s":"y","g":"pale","d":54},{"l":"Proto-Indo-European","t":"*pléth₂os","k":"inh","s":"y","g":"breadth","d":42},{"l":"Proto-Indo-European","t":"*pelH-","k":"der","g":"pale","d":54}]}]}]},{"l":"Welsh","t":"llwyd","k":"der"}]}
 }

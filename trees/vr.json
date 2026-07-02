@@ -1,7 +1,3 @@
 {
-"Vrba":{"c":[["Czech","Vrba","bor"]]},
-"vraisemblance":{"c":[["French","vraisemblance","bor"]]},
-"vrot":{"c":[["Afrikaans","vrot","bor"]]},
-"vrouw":{"c":[["Dutch","vrouw","bor"]]},
-"vrykolakas":{"c":[["Greek","βρυκόλακας","bor"]]}
+"vroom":{"l":"English","t":"vroom","c":[{"l":"Dutch","t":"vroom","k":"bor","c":[{"l":"Middle Dutch","t":"vrōme","k":"inh","s":"ey","c":[{"l":"Old Dutch","t":"frumo","k":"inh","s":"y","c":[{"l":"Proto-Germanic","t":"*frumô","k":"inh","s":"y","g":"first","d":46}]}]},{"l":"Old Dutch","t":"*fruma","k":"inh","c":[{"l":"Proto-Germanic","t":"*frumô","k":"inh","g":"first","d":46}]}]}]}
 }

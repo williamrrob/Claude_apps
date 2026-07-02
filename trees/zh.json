@@ -1,9 +1,4 @@
 {
-"Zhdanov":{"c":[["Ukrainian","Жданов","bor"],["Russian","Жданов","der"]]},
-"Zhytomyr":{"c":[["Ukrainian","Жито́мир","bor"]]},
-"zhe":{"c":[["Russian","же","bor"]]},
-"zhng":{"c":[["Min Nan","裝","bor"]]},
-"zhoosh":{"c":[["Angloromani","yuser","bor"],["Angloromani","yuse","der"],["Romani","užo","der"]]},
-"zhukov":{"c":[["Russian","Жу́ков","bor"]]},
-"zhuz":{"c":[["Kazakh","жүз","bor"]]}
+"zhou":{"l":"English","t":"zhou","c":[{"l":"Chinese","t":"周","k":"der"}]},
+"zhukov":{"l":"English","t":"Zhukov","x":1,"c":[{"l":"Russian","t":"Жúkov","k":"inh","s":"y"},{"l":"Russian","t":"Жу́ков","k":"bor"}]}
 }

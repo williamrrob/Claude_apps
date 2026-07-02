@@ -1,5 +1,10 @@
 {
-"Mc-":{"c":[["Irish","mac","der"]]},
-"mccarthy":{"t":[["Irish","Mac Carthaigh",""]]},
-"mccarthyism":{"t":[["English","-ism","",[["Ancient Greek","-ισμός","der",[["Ancient Greek","-ῐ́ζω","",[["Proto-Hellenic","*-íďďō","inh",[["Proto-Indo-European","*-idyéti","inh",[["Proto-Indo-European","*-id-",""],["Proto-Indo-European","*-yéti",""]]]]]]],["Ancient Greek","-μός","",[["Proto-Indo-European","*-mos","inh"],["Proto-Indo-European","*-mós","inh"]]]]]]],["Irish","Mac Carthaigh",""]]}
+"mccauley":{"l":"English","t":"McCauley","c":[{"l":"Scottish Gaelic","t":"Mac Amhalghaidh","k":"der","c":[{"l":"Scottish Gaelic","t":"Mac Amhlaoibh","k":"der","c":[{"l":"Old Norse","t":"Óláfr","k":"der","x":1,"c":[{"l":"Proto-Norse","t":"*ᚨᚾᚢᛚᚨᛁᛒᚨᛉ","k":"inh","s":"k","c":[{"l":"Proto-Germanic","t":"*Anulaibaz","k":"inh","s":"ek","g":"a male given name","x":1,"c":[{"l":"Proto-Germanic","t":"*anô","k":"der","s":"k","g":"ancestor","d":13,"c":[{"l":"Proto-Germanic","t":"*ēnu","k":"inh","g":"without","d":82,"c":[{"l":"Proto-Indo-European","t":"*anew","k":"inh","s":"y","d":77}]},{"l":"Proto-Indo-European","t":"*h₂en-","k":"inh","s":"y","g":"on","d":3567},{"l":"Proto-Indo-European","t":"*h₂en-","k":"der","g":"on","d":3567}]},{"l":"Proto-Germanic","t":"*laibō","k":"der","s":"k","g":"what is left","d":925,"c":[{"l":"Proto-Indo-European","t":"*leyp-","k":"inh","s":"y","g":"to stick","d":954},{"l":"Proto-Indo-European","t":"*leyp-","k":"der","g":"to stick","d":954}]}]}]},{"l":"Proto-Norse","t":"*Anulaibaʀ","k":"der"},{"l":"Proto-Norse","t":"*ᚨᚾᚢᛚᚨᛁᛒᚨᛉ","k":"der"}]}]}]}]},
+"mccormick":{"l":"English","t":"McCormick","c":[{"l":"Old Irish","t":"Cormac","k":"der","d":3}]},
+"mcguffey":{"l":"English","t":"McGuffey","c":[{"l":"Scottish Gaelic","t":"Mac Dhabhoig","k":"der"}]},
+"mcintosh":{"l":"English","t":"McIntosh","c":[{"l":"Scottish Gaelic","t":"Mac an Tòisiche","k":"bor","s":"ey"}]},
+"mckim":{"l":"English","t":"McKim","c":[{"l":"Scottish Gaelic","t":"Mac Shim","k":"der"}]},
+"mckinley":{"l":"English","t":"Mckinley","c":[{"l":"Scottish Gaelic","t":"mac","k":"bor","d":3,"c":[{"l":"Middle Irish","t":"mac","k":"inh","s":"ek","x":1,"d":15,"c":[{"l":"Old Irish","t":"macc","k":"inh","s":"ek","d":16,"c":[{"l":"Proto-Indo-European","t":"*meh₂ḱ-","k":"inh","g":"to raise","d":68}]},{"l":"Middle Irish","t":"Deilge","k":"bor","d":15},{"l":"Middle Irish","t":"Mumhan","k":"bor","d":15}]}]}]},
+"mcmaster":{"l":"English","t":"McMaster","c":[{"l":"Scottish Gaelic","t":"Mac Maighstir","k":"der"}]},
+"mcpherson":{"l":"English","t":"McPherson","c":[{"l":"Scottish Gaelic","t":"Mac an Phearsain","k":"der"}]}
 }

@@ -1,12 +1,4 @@
 {
-"Xiao":{"c":[["Mandarin","簫","bor"]]},
-"Xiaomi":{"c":[["Mandarin","小米","bor"]]},
-"Xibalba":{"c":[["Spanish","Xibalbá","bor"]]},
-"Xiongnu":{"c":[["Mandarin","匈奴","bor"]]},
-"Xishuangbanna":{"c":[["Lü","᧑᧒ᦗᧃᦓᦱ","bor"]]},
-"Xitsonga":{"c":[["Tsonga","Xitsonga","bor"]]},
-"xian":{"c":[["Chinese","西安","der"],["Chinese","咸","bor"],["Ancient Greek","Χ","der"]]},
-"xinesi":{"c":[["Caddo","xinesi","bor"]]},
-"xiphias":{"c":[["Latin","xiphiās","bor"]]},
-"xiphos":{"c":[["Ancient Greek","ξίφος","bor"]]}
+"xi":{"l":"English","t":"xi","x":1,"c":[{"l":"Ancient Greek","t":"ξῖ","k":"inh","s":"y"},{"l":"Ancient Greek","t":"ξεῖ ~ ξῖ","k":"inh","s":"y"},{"l":"Ancient Greek","t":"ξῖ","k":"der"}]},
+"xian":{"l":"English","t":"Xian","c":[{"l":"Chinese","t":"西安","k":"der","c":[{"l":"Chinese","t":"咸","k":"bor","c":[{"l":"Ancient Greek","t":"Χ","k":"der","g":"Lower-case chi","d":10,"c":[{"l":"Ancient Greek","t":"Χρῑστός","k":"der","s":"y","g":"Messiah or Christ","d":63,"c":[{"l":"Aramaic","t":"ܡܫܺܝܚܳܐ","k":"der","s":"ek","x":1,"d":62,"c":[{"l":"Biblical Hebrew","t":"מָשִׁיחַ","k":"der","d":62,"c":[{"l":"Hebrew","t":"משח","k":"der","s":"k","d":42}]},{"l":"Biblical Hebrew","t":"מְשַׁח","k":"der","d":42},{"l":"Aramaic","t":"ܡ ܫ ܚ","k":"der","s":"k","d":42}]},{"l":"Ancient Greek","t":"χρῑ́ω","k":"der","s":"ek","g":"to rub or smear","d":80,"c":[{"l":"Proto-Indo-European","t":"*gʰrey-","k":"der","s":"ek","g":"to smear","d":84},{"l":"Proto-Indo-European","t":"*gʰrey-","k":"inh","s":"y","g":"to smear","d":84}]},{"l":"Hebrew","t":"מָשִׁיחַ","k":"der","d":62,"c":[{"l":"Aramaic","t":"ܡܫܺܝܚܳܐ","k":"der","x":1,"d":62},{"l":"Hebrew","t":"משח","k":"der","s":"y","d":42}]}]}]}]}]}]}
 }

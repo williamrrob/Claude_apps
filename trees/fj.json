@@ -1,4 +1,3 @@
 {
-"fjeld":{"c":[["Danish","fjeld","bor"]]},
-"fjord":{"c":[["Norwegian","fjord","bor"],["Old Norse","fjǫrðr","der"],["Proto-Germanic","*ferþu","der"],["Proto-Indo-European","*pértus","der"]]}
+"fjord":{"l":"English","t":"fjord","c":[{"l":"Norwegian","t":"fjord","k":"bor","c":[{"l":"Old Norse","t":"fjǫrðr","k":"inh","s":"y","x":1,"d":6,"c":[{"l":"Proto-Norse","t":"*ᚠᛖᚱᚦᚢᛉ","k":"inh","d":5,"c":[{"l":"Proto-Germanic","t":"*ferþuz","k":"inh","g":"inlet","d":5,"c":[{"l":"Proto-Indo-European","t":"*pértus","k":"inh","s":"y","g":"crossing","d":48},{"l":"Proto-Indo-European","t":"*pértus","k":"der","g":"crossing","d":48}]}]},{"l":"Proto-Germanic","t":"*ferþuz","k":"inh","s":"y","g":"inlet","d":5},{"l":"Proto-Germanic","t":"*ferþu","k":"inh","s":"y","d":5}]},{"l":"Old Norse","t":"fjǫrðr","k":"der","x":1,"d":6}]},{"l":"Proto-Germanic","t":"*ferþu","k":"der","d":5},{"l":"Proto-Indo-European","t":"*pértus","k":"der","g":"crossing","d":48}]}
 }

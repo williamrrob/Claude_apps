@@ -1,7 +1,3 @@
 {
-"Kvamme":{"c":[["Norwegian","Kvamme","bor"]]},
-"kvass":{"c":[["Russian","квас","bor"]]},
-"kvetch":{"c":[["Yiddish","קוועטשן","bor"]]},
-"kvevri":{"c":[["Georgian","ქვევრი","bor"]]},
-"kvitl":{"c":[["Yiddish","קוויטל","bor"]]}
+"kvetch":{"l":"English","t":"kvetch","c":[{"l":"Yiddish","t":"קוועטשן","k":"bor"}]}
 }

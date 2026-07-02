@@ -1,21 +1,5 @@
 {
-"Iacchus":{"c":[["Ancient Greek","Ἴακχος","bor"]]},
-"Iacobescu":{"c":[["Romanian","Iacobescu","bor"]]},
-"Iacobucci":{"c":[["Italian","Iacobucci","bor"]]},
-"Iacono":{"c":[["Italian","Iacono","bor"]]},
-"Iacovelli":{"c":[["Italian","Iacovelli","bor"]]},
-"Iafrate":{"c":[["Italian","Iafrate","bor"]]},
-"Iambe":{"c":[["Ancient Greek","Ἰάμβη","bor"]]},
-"Iannacone":{"c":[["Italian","Iannacone","bor"]]},
-"Iannelli":{"c":[["Italian","Iannelli","bor"]]},
-"Ianniello":{"c":[["Italian","Ianniello","bor"]]},
-"Iannotti":{"c":[["Italian","Iannotti","bor"]]},
-"Iannucci":{"c":[["Italian","Iannucci","bor"]]},
-"Iannuzzi":{"c":[["Italian","Iannuzzi","bor"]]},
-"Ianthe":{"c":[["Ancient Greek","Ἰάνθη","der"]]},
-"iaido":{"c":[["Japanese","居合道","bor"]]},
-"iamb":{"c":[["French","iambe","bor"],["Latin","iambus","der"],["Ancient Greek","ἴαμβος","der"]]},
-"iambic":{"c":[["Middle French","ïambique","bor"],["Late Latin","iambicus","der"],["Ancient Greek","ἰαμβικός","der"]]},
-"iambus":{"c":[["Latin","iambus","bor"],["Ancient Greek","ἴαμβος","der"]]},
-"iapetus":{"c":[["Ancient Greek","Ἰαπετός","der"]]}
+"iambic":{"l":"English","t":"iambic","c":[{"l":"Middle French","t":"ïambique","k":"bor","c":[{"l":"Late Latin","t":"iambicus","k":"der","c":[{"l":"Ancient Greek","t":"ἰαμβικός","k":"der","c":[{"l":"Ancient Greek","t":"ἴαμβος","k":"der","s":"y","g":"iamb","d":3}]}]}]},{"l":"Ancient Greek","t":"λίπος","k":"bor","s":"y","g":"animal fat","d":7,"c":[{"l":"Proto-Hellenic","t":"*lípos","k":"inh","s":"k","d":7,"c":[{"l":"Proto-Indo-European","t":"*leyp-","k":"inh","s":"k","g":"to stick","d":954}]},{"l":"Proto-Indo-European","t":"*leyp-","k":"inh","s":"y","g":"to stick","d":954},{"l":"Latin","t":"līmus","k":"der","g":"sidelong","x":1,"d":33,"c":[{"l":"Proto-Italic","t":"*līmos","k":"inh","d":18,"c":[{"l":"Proto-Indo-European","t":"*Heh₃l-","k":"der","g":"to bow","d":22}]},{"l":"Proto-Indo-European","t":"*(s)ley-","k":"inh","s":"y","d":20},{"l":"Proto-Italic","t":"limo","k":"inh","s":"y","d":18}]}]},{"l":"French","t":"iambique","k":"bor","s":"y","c":[{"l":"Latin","t":"iambicus","k":"inh","s":"y","g":"writer of iambic verse","c":[{"l":"Ancient Greek","t":"ἰαμβικός","k":"inh","s":"y"},{"l":"Ancient Greek","t":"ἰαμβικός","k":"der"}]},{"l":"Latin","t":"iambicus","k":"der","g":"writer of iambic verse"},{"l":"Late Latin","t":"iambicus","k":"der"}]}]},
+"iapetus":{"l":"English","t":"Iapetus","c":[{"l":"Ancient Greek","t":"Ἰαπετός","k":"der","g":"Iapetus"}]},
+"iatrogenic":{"l":"English","t":"iatrogenic","c":[{"l":"English","t":"iatro","k":"aff"},{"l":"English","t":"genic","k":"aff","g":"of","hw":"genic","d":37,"c":[{"l":"English","t":"gene","k":"der","g":"A theoretical unit of heredity of living organisms","hw":"gene","d":83,"c":[{"l":"German","t":"Gen","k":"bor","s":"ey","d":78,"c":[{"l":"Middle High German","t":"gēn","k":"inh","s":"ey","d":75,"c":[{"l":"Old High German","t":"gēn","k":"inh","s":"ey","d":66,"c":[{"l":"Proto-West Germanic","t":"*gān","k":"inh","d":92,"c":[{"l":"Proto-Germanic","t":"*gāną","k":"inh","s":"ek","g":"to go","d":124,"c":[{"l":"Proto-Indo-European","t":"*ǵʰeh₁-","k":"der","s":"ek","g":"to leave","d":150},{"l":"Proto-Indo-European","t":"*h₁ey-","k":"inh","g":"to go","d":5482},{"l":"Proto-Indo-European","t":"*ǵʰeh₁-","k":"inh","s":"y","g":"to leave","d":150}]}]},{"l":"Proto-Germanic","t":"*gāną","k":"inh","s":"y","g":"to go","d":124}]},{"l":"Old High German","t":"gān","k":"inh","s":"y","d":67,"c":[{"l":"Proto-Germanic","t":"*gāną","k":"inh","s":"ey","g":"to go","d":124},{"l":"Proto-West Germanic","t":"*gān","k":"inh","d":92}]}]},{"l":"Ancient Greek","t":"γενεά","k":"der","g":"birth","d":79,"c":[{"l":"Proto-Hellenic","t":"*genehā́","k":"inh","d":74,"c":[{"l":"Proto-Indo-European","t":"*ǵenh₁eseh₂","k":"inh","d":65}]},{"l":"Ancient Greek","t":"γεννάω","k":"der","s":"y","g":"to beget","d":178,"c":[{"l":"Latin","t":"gēns","k":"der","g":"Roman clan","d":149,"c":[{"l":"Proto-Indo-European","t":"*ǵénh₁tis","k":"inh","s":"ey","g":"birth","d":446},{"l":"Proto-Indo-European","t":"*ǵenh₁-","k":"inh","s":"y","g":"to produce","d":2048},{"l":"Proto-Italic","t":"*gentis","k":"der","d":37}]}]}]}]}]}]}]}
 }

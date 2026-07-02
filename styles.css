@@ -1119,3 +1119,39 @@ body {
 .verify-btn.loading { color: var(--muted); }
 .verify-btn.success { color: var(--root); }
 .verify-btn.error { color: var(--prefix-ink); }
+
+/* ---------- ancestry card (trees/ from the canonical etymology graph) ---------- */
+.anc-holder { margin-top: 8px; }
+.anc-row { padding: 4px 0 4px 0; border-left: 1px solid transparent; }
+.anc-row.anc-alt { opacity: 0.92; }
+.anc-line { font-size: 14.5px; line-height: 1.45; }
+.anc-kind { color: var(--muted); font-size: 12.5px; margin-right: 7px; font-style: italic; }
+.anc-lang { color: var(--prefix-ink); font-weight: 600; font-size: 13px; margin-right: 6px; letter-spacing: 0.02em; }
+.anc-term { color: var(--ink); font-style: italic; }
+.anc-term.anc-link { color: var(--root); cursor: pointer; text-decoration: underline; text-decoration-color: var(--bd); text-underline-offset: 3px; }
+.anc-gloss { color: var(--muted); margin-left: 7px; font-size: 13.5px; }
+.anc-badge {
+  display: inline-block; margin-left: 8px; padding: 1px 7px; font-size: 11px;
+  color: var(--suffix); border: 1px solid var(--bd); border-radius: 999px;
+  vertical-align: 1px; letter-spacing: 0.03em;
+}
+.anc-pivot {
+  display: inline-block; margin: 3px 0 0 0; padding: 2px 9px;
+  font: 12px/1.6 var(--font); color: var(--root); background: var(--field);
+  border: 1px solid var(--bd); border-radius: 999px; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.anc-pivot:active { transform: scale(0.97); }
+.anc-desc { margin: 6px 0 2px 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.anc-desc-word {
+  padding: 3px 10px; font: 13px/1.5 var(--font); color: var(--ink);
+  background: var(--field); border: 1px solid var(--bd); border-radius: 999px;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.anc-desc-word:active { transform: scale(0.97); }
+.anc-more {
+  margin-top: 10px; padding: 6px 13px; font: 13.5px/1.5 var(--font);
+  color: var(--muted); background: var(--field); border: 1px solid var(--bd);
+  border-radius: 8px; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.anc-more:active { transform: scale(0.98); }

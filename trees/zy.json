@@ -1,16 +1,5 @@
 {
-"Zych":{"c":[["Polish","Zych","bor"]]},
-"Zygmunt":{"c":[["Polish","Zygmunt","bor"]]},
-"Zyla":{"c":[["Polish","Żyła","bor"]]},
-"Zysk":{"c":[["Polish","Zysk","bor"]]},
-"Zyskowski":{"c":[["Polish","Zyskowski","bor"]]},
-"Zywicki":{"c":[["Polish","Żywicki","bor"]]},
-"zydeco":{"c":[["Louisiana Creole French","zydeco","der"],["French","les","der"]]},
-"zygaenid":{"c":[["Translingual","Zygaenidae","der"]]},
-"zygomaticus":{"c":[["New Latin","zygomaticus","bor"]]},
-"zygote":{"c":[["Ancient Greek","ζυγωτός","bor"],["Proto-Indo-European","*yugóm","der"]]},
-"zygotene":{"c":[["Ancient Greek","ζυγόν","der"]]},
-"zyme":{"c":[["Ancient Greek","ζύμη","bor"]]},
-"zyrian":{"c":[["Russian","зыряне","bor"]]},
-"zythophile":{"c":[["Ancient Greek","ζῦθος","der"]]}
+"zydeco":{"l":"English","t":"zydeco","c":[{"l":"Louisiana Creole French","t":"zydeco","k":"der","c":[{"l":"French","t":"les","k":"der","c":[{"l":"Middle French","t":"les","k":"inh","c":[{"l":"Old French","t":"les","k":"inh","g":"the","c":[{"l":"Latin","t":"illos","k":"inh","d":8,"c":[{"l":"Latin","t":"ille","k":"der","s":"y","g":"that","x":1,"d":1162,"c":[{"l":"Latin","t":"illī","k":"inh","g":"that way","x":1,"d":694,"c":[{"l":"Latin","t":"hīc","k":"inh","g":"this","d":64},{"l":"Latin","t":"illis","k":"inh","d":75}]},{"l":"Latin","t":"āla","k":"inh","g":"a wing","d":672,"c":[{"l":"Proto-Indo-European","t":"*h₂eḱs-","k":"der","g":"axle","d":84},{"l":"Latin","t":"*axla","k":"der","s":"k","d":53}]},{"l":"Latin","t":"illae","k":"inh","d":1346}]}]},{"l":"Latin","t":"illās","k":"inh","d":807,"c":[{"l":"Latin","t":"ille","k":"der","s":"y","g":"that","x":1,"d":1162}]}]}]}]}]}]},
+"zygote":{"l":"English","t":"zygote","d":5,"c":[{"l":"Ancient Greek","t":"ζυγωτός","k":"inh","s":"y","g":"yoked","d":6,"c":[{"l":"Ancient Greek","t":"ζυγός","k":"der","s":"y","d":6,"c":[{"l":"Proto-Indo-European","t":"*yewg-","k":"inh","s":"y","g":"to join","d":766},{"l":"Proto-Indo-European","t":"*yugóm","k":"inh","s":"y","g":"yoke","d":157}]}]},{"l":"Ancient Greek","t":"ζυγωτός","k":"bor","g":"yoked","d":6},{"l":"Proto-Indo-European","t":"*yugóm","k":"der","g":"yoke","d":157}]},
+"zygotic":{"l":"English","t":"zygotic","c":[{"l":"English","t":"zygote","k":"der","g":"A eukaryotic cell formed from the fusion of two ga","hw":"zygote","d":5,"c":[{"l":"Ancient Greek","t":"ζυγωτός","k":"inh","s":"y","g":"yoked","d":6,"c":[{"l":"Ancient Greek","t":"ζυγός","k":"der","s":"y","d":6,"c":[{"l":"Proto-Indo-European","t":"*yewg-","k":"inh","s":"y","g":"to join","d":766},{"l":"Proto-Indo-European","t":"*yugóm","k":"inh","s":"y","g":"yoke","d":157}]}]},{"l":"Ancient Greek","t":"ζυγωτός","k":"bor","g":"yoked","d":6},{"l":"Proto-Indo-European","t":"*yugóm","k":"der","g":"yoke","d":157}]},{"l":"English","t":"ic","k":"aff","g":"being nine more than ninety","hw":"ic","d":1168}]}
 }

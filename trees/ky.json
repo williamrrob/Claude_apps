@@ -1,17 +1,8 @@
 {
-"Kyaingtong":{"c":[["Burmese","ကျိုင်းတုံ","bor"],["Shan","ၵဵင်းတုင်","bor"]]},
-"Kyllo":{"c":[["Finnish","Kyllö","bor"]]},
-"Kyllonen":{"c":[["Finnish","Kyllönen","bor"]]},
-"Kyoko":{"c":[["Japanese","きょうこ","bor"]]},
-"Kyser":{"c":[["German","Kyser","bor"]]},
-"Kythira":{"c":[["Greek","Κύθηρα","bor"]]},
-"ky":{"c":[["Middle English","ky","inh"],["Old English","cȳ","inh"]]},
-"kyat":{"c":[["Burmese","ကျပ်","bor"]]},
-"kye":{"c":[["Middle English","ky","inh"],["Old English","cȳ","inh"],["Korean","계(契)","bor"]]},
-"kylix":{"c":[["Ancient Greek","κύλιξ","bor"]]},
-"kynurenic acid":{"c":[["Ancient Greek","κῠ́ων","der"]]},
-"kyogen":{"c":[["Japanese","狂言","bor"]]},
-"kyoto":{"c":[["Japanese","京都","bor"],["Middle Chinese","京都","der"]]},
-"kyphosis":{"c":[["Ancient Greek","κυφός","der"]]},
-"kyrielle":{"c":[["French","kyrielle","der"]]}
+"ky":{"l":"English","t":"ky","c":[{"l":"Middle English","t":"ky","k":"inh","s":"ey","d":48,"c":[{"l":"Old English","t":"cȳ","k":"inh","s":"ey","d":48}]}]},
+"kyanite":{"l":"English","t":"kyanite","c":[{"l":"English","t":"ite","k":"aff","d":204}]},
+"kyat":{"l":"English","t":"kyat","c":[{"l":"Burmese","t":"ကျပ်","k":"bor","c":[{"l":"Proto-Tibeto-Burman","t":"*gyap","k":"inh"},{"l":"English","t":"copy","k":"bor","g":"The result of copying","hw":"copy","x":1,"d":24,"c":[{"l":"Middle English","t":"copy","k":"inh","d":59},{"l":"Middle English","t":"copien","k":"inh","s":"k","g":"to copy","d":25,"c":[{"l":"Old French","t":"copier","k":"der","s":"k","d":25,"c":[{"l":"Latin","t":"copiō","k":"der","s":"k","g":"to copy","d":23}]}]},{"l":"Middle English","t":"copy ~ copie","k":"inh","s":"y","d":25,"c":[{"l":"Old French","t":"copie","k":"inh","s":"y","d":25,"c":[{"l":"Medieval Latin","t":"copia","k":"der","d":25,"c":[{"l":"Latin","t":"cōpia","k":"der","g":"supply","d":29,"c":[{"l":"Latin","t":"coopia","k":"der","s":"y","d":27},{"l":"Latin","t":"con-","k":"aff","g":"Used in compounds to indicate a being or bringing ","d":2254,"c":[{"l":"Proto-Italic","t":"*kom-","k":"inh","s":"k","d":1159},{"l":"Latin","t":"cum","k":"der","s":"y","g":"with","x":1,"d":1242}]},{"l":"Latin","t":"ops","k":"aff","g":"strength","d":31,"c":[{"l":"Proto-Indo-European","t":"*h₃ep-","k":"inh","s":"y","g":"to work","d":789},{"l":"Proto-Indo-European","t":"*h₃ep-(i)-","k":"inh","s":"y","d":25},{"l":"Proto-Indo-European","t":"*h₃ep-(i)-","k":"der","d":25}]}]}]},{"l":"Latin","t":"cōpia","k":"der","g":"supply","d":29}]}]}]},{"l":"Pali","t":"kappa","k":"bor"}]}]},
+"kylix":{"l":"English","t":"kylix","c":[{"l":"Ancient Greek","t":"κύλιξ","k":"inh","s":"y","g":"a cup","d":479},{"l":"Ancient Greek","t":"κύλιξ","k":"bor","g":"a cup","d":479}]},
+"kyoto":{"l":"English","t":"Kyoto","c":[{"l":"Japanese","t":"京都","k":"inh","s":"y","c":[{"l":"Middle Chinese","t":"京都","k":"der"}]},{"l":"Japanese","t":"京都","k":"bor"}]},
+"kyphosis":{"l":"English","t":"kyphosis","c":[{"l":"Ancient Greek","t":"κυφός","k":"der","g":"bent forward"},{"l":"English","t":"osis","k":"aff","d":102}]}
 }

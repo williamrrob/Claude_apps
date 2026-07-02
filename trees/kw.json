@@ -1,17 +1,4 @@
 {
-"KwaZulu":{"t":[["Zulu","KwaZulu","",[["Zulu","kwa-",""],["Zulu","úZulu","",[["Zulu","ú-","",[["Proto-Bantu","*ʊ́-","inh"]]],["Zulu","ī́zulu","",[["Proto-Bantu","*ìgʊ̀dʊ̀","inh"]]]]]]]]},
-"Kwasnik":{"c":[["Polish","Kwaśnik","bor"]]},
-"Kwasny":{"c":[["Polish","Kwaśny","bor"]]},
-"Kwiatek":{"c":[["Polish","Kwiatek","bor"]]},
-"Kwiatkowski":{"c":[["Polish","Kwiatkowski","bor"]]},
-"Kwiecinski":{"c":[["Polish","Kwieciński","bor"]]},
-"kwaai":{"c":[["Afrikaans","kwaai","bor"],["Dutch","kwaad","der"]]},
-"kwacha":{"c":[["Chichewa","kwacha","bor"]],"t":[["Chichewa","kwacha","",[["Chichewa","cha","",[["Proto-Bantu","*-kéa","inh"]]]]]]},
-"kwajalein":{"c":[["German","Kwajalein","bor"],["Marshallese","Kuwajleen","der"]]},
-"kwanzaa":{"t":[["Swahili","kwanza","",[["Proto-Sabaki","*kwanzya","inh",[["Proto-Sabaki","*ku-","",[["Proto-Bantu","*kʊ̀-","inh"]]],["Proto-Sabaki","*anzya","",[["Common Bantu","*-jànda","inh"]]]]]]]]},
-"kwashiorkor":{"c":[["Ga","kwašiɔkɔ","bor"]]},
-"kwassa kwassa":{"c":[["French","?","der"]]},
-"kway chap":{"c":[["Teochew","粿汁","bor"]]},
-"kway teow":{"c":[["Teochew","粿條","bor"]]},
-"kwukyel":{"c":[["Korean","구결(口訣)","bor"]]}
+"kwacha":{"l":"English","t":"kwacha","c":[{"l":"Chichewa","t":"kwacha","k":"bor","c":[{"l":"Chichewa","t":"cha","k":"der","s":"k","c":[{"l":"Proto-Bantu","t":"*-kéa","k":"inh","s":"k"}]}]}]},
+"kwajalein":{"l":"English","t":"Kwajalein","c":[{"l":"German","t":"Kwajalein","k":"bor","s":"ey","c":[{"l":"Marshallese","t":"Kuwajleen","k":"der"}]}]}
 }

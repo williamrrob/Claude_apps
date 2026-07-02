@@ -1,3 +1,3 @@
 {
-"zloty":{"c":[["Polish","złoty","der"]]}
+"zloty":{"l":"English","t":"zloty","c":[{"l":"Polish","t":"złoty","k":"inh","s":"y","c":[{"l":"Proto-Slavic","t":"*zolto","k":"der","x":1,"c":[{"l":"Proto-Indo-European","t":"*ǵʰolh₃tom","k":"inh","s":"ey"},{"l":"Proto-Indo-European","t":"*ǵʰl̥tóm","k":"inh","s":"ey","d":39},{"l":"Proto-Indo-European","t":"*ǵʰelh₃-","k":"inh","s":"y","g":"green","d":401}]},{"l":"Polish","t":"złoto","k":"aff","c":[{"l":"Proto-Slavic","t":"*zolto","k":"inh","s":"ey","x":1}]},{"l":"Polish","t":"-y","k":"aff","c":[{"l":"Proto-Slavic","t":"*zolto","k":"inh","s":"y","x":1}]}]},{"l":"Polish","t":"złoty","k":"der"},{"l":"Proto-Indo-European","t":"*ǵʰelh₃-","k":"root","g":"green","d":401}]}
 }
