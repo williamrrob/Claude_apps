@@ -1,6 +1,6 @@
 {
 "lm":{"d":[{"p":"n.","g":"a unit of luminous flux equal to the amount of light given out through a solid angle of 1 steradian by a point source of 1 candela intensity radiating uniformly in all directions"}],"s":["lumen"]},
-"LMAO":{"d":[{"p":"v.","g":"To laugh one's ass off.","x":"Reading this website will have you ROFLing, LMAOing, and LOLing every time you read it."}],"i":"/ɛlˌɛmˌeɪˈoʊ/"},
+"LMAO":{"d":[{"p":"v.","g":"To laugh one's ass off.","x":"Reading this website will have you ROFLing, LMAOing, and LOLing every time you read it."}],"i":"/ɛlˌɛmˌeɪˈoʊ/","au":"5/5a/LL-Q1860_%28eng%29-Flame%2C_not_lame-LMAO.wav/LL-Q1860_%28eng%29-Flame%2C_not_lame-LMAO.wav.mp3"},
 "lmao":{"d":[{"p":"part.","g":"Neutralises the tone of a message; denotes that a message is light-hearted or casual."}]},
 "LMDO":{"d":[{"p":"phrase","g":"Laughing my dick off."}],"e":"Variant of LMAO (“Laughing My Ass Off”)"},
 "LM lifeboat":{"d":[{"p":"n.","g":"In the US Apollo moon program, a lunar module repurposed as a makeshift shelter for an astronaut crew returning to earth after a mishap necessitating cancellation of a moon landing; the emergency procedure of using the lunar module in this manner."}],"e":"LM stands for lunar module.","rel":{"t":"synonym of","l":"lunar lifeboat","by":"assistant","at":"2026-06-29T16:23:04.459Z"}}

@@ -1,5 +1,5 @@
 {
-"pm":{"d":[{"p":"adv.","g":"Alternative form of p.m.."},{"p":"v.","g":"To project manage."},{"p":"v.","g":"To send a private message to (someone).","x":"PM me if you want more information."}],"s":["autopsy","necropsy","postmortem"],"i":"/ˈpiˈɛm/","rs":"PEE-EHM","forms":["pms"]},
+"pm":{"d":[{"p":"adv.","g":"Alternative form of p.m.."},{"p":"v.","g":"To project manage."},{"p":"v.","g":"To send a private message to (someone).","x":"PM me if you want more information."}],"s":["autopsy","necropsy","postmortem"],"i":"/ˈpiˈɛm/","rs":"PEE-EHM","forms":["pms"],"au":"d/d7/LL-Q1860_%28eng%29-Persent101-PM.wav/LL-Q1860_%28eng%29-Persent101-PM.wav.mp3"},
 "pms":{"d":[{"p":"n.","g":"a syndrome that occurs in many women from 2 to 14 days before the onset of menstruation"},{"p":"v.","g":"To experience premenstrual syndrome or premenstrual stress."}],"rel":{"t":"plural of","l":"pm","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
 "PMEE":{"d":[{"p":"n.","g":"The people who operate this equipment, such as the crewmembers aboard the Advanced Range Instrumentation Aircraft.","dom":"government"}],"i":"/ˈpiːmiː/"},
 "PMAer":{"d":[{"p":"n.","g":"A graduate of the Philippine Military Academy."}],"e":"From PMA + -er."},

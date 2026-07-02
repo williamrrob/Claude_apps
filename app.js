@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "135";
+  const DATA_V = "136";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -1099,6 +1099,19 @@
     } catch (e) {}
   }
 
+  // real Wiktionary recordings (entry field `au`, a path under the commons
+  // transcode host — see scripts/backfill-audio.js); TTS is the fallback
+  const AUDIO_BASE = "https://upload.wikimedia.org/wikipedia/commons/transcoded/";
+  let audioEl = null;
+  function playAudio(path, fallbackWord) {
+    try {
+      if (!audioEl) audioEl = new Audio();
+      audioEl.src = AUDIO_BASE + path;
+      const p = audioEl.play();
+      if (p && p.catch) p.catch(function () { if (canSpeak) speak(fallbackWord); });
+    } catch (e) { if (canSpeak) speak(fallbackWord); }
+  }
+
   // ---------- IPA pronunciation key ----------
   const IPA_KEY = {
     "ˈ": "primary stress — say this syllable loudest",
@@ -1234,12 +1247,14 @@
         ib.addEventListener("click", function () { toggleIpaKey(ipa); });
         pe.appendChild(ib);
       }
-      if (canSpeak) {
+      const au = rec && rec.au;
+      if (canSpeak || au) {
         if (ipa) pe.appendChild(el("span", "pdot", "•"));
         const rb = el("button", "resp speakable", resp || word);
         rb.type = "button";
         rb.setAttribute("aria-label", "Pronounce " + word);
-        rb.addEventListener("click", function () { speak(word); });
+        // real Wiktionary recording when we have one; TTS as fallback
+        rb.addEventListener("click", function () { au ? playAudio(au, word) : speak(word); });
         pe.appendChild(rb);
       } else if (resp) {
         if (ipa) pe.appendChild(el("span", "pdot", "•"));
