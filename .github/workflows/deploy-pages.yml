@@ -38,6 +38,7 @@ jobs:
           cp -r words _site/
           cp -r usage _site/
           cp -r family _site/
+          cp -r trees _site/
 
       - name: Configure Pages (auto-enable)
         uses: actions/configure-pages@v5
