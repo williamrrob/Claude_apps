@@ -1,0 +1,16 @@
+{
+"gnash":{"c":[["Middle English","gnasten","inh"]]},
+"gnat":{"c":[["Middle English","gnat","inh"],["Old English","gnætt","inh"],["Proto-West Germanic","*gnatt","inh"],["Proto-Germanic","*gnattaz","inh"],["Proto-Indo-European","*gʰneHdʰn-","der"],["Proto-Indo-European","*gʰen-","der"]]},
+"gnatho-":{"c":[["Ancient Greek","γνάθος","bor"]]},
+"gnaw":{"c":[["Middle English","gnawen","inh"],["Old English","gnagan","inh"],["Proto-Germanic","*gnaganą","inh"],["Proto-Indo-European","*gʰnēgʰ-","der"]]},
+"gneiss":{"c":[["German","Gneis","bor"],["Middle High German","gneist","der"],["Old High German","gneisto","der"]]},
+"gnocchi":{"c":[["Italian","gnocchi","bor"],["Lombardic","knohha","der"],["Proto-Germanic","*knukô","der"],["Proto-Indo-European","*gnew-","der"]]},
+"gnome":{"c":[["Ancient Greek","γνώμη","der"],["French","gnome","bor"],["New Latin","gnomus","der"]]},
+"gnomic":{"c":[["French","gnomique","bor"],["Ancient Greek","γνωμικός","der"]]},
+"gnomon":{"c":[["French","gnomon","bor"],["Latin","gnōmōn","bor"],["Ancient Greek","γνώμων","der"],["Proto-Indo-European","*ǵneh₃-","der"]]},
+"gnosis":{"c":[["Ancient Greek","γνῶσις","der"]],"t":[["Ancient Greek","γνῶσῐς","",[["Proto-Indo-European","*ǵneh₃tis","der",[["Proto-Indo-European","*ǵneh₃-",""],["Proto-Indo-European","*-tis",""]]],["Ancient Greek","γῐγνώσκω","",[["Proto-Hellenic","*gignṓskō","inh",[["Proto-Indo-European","*ǵn̥h₃sḱéti","der",[["Proto-Indo-European","*ǵneh₃-",""],["Proto-Indo-European","*-sḱéti",""]]]]]]],["Ancient Greek","-σῐς","",[["Ancient Greek","-τις","",[["Proto-Indo-European","*-tis","inh"]]]]]]]]},
+"gnossienne":{"c":[["French","gnossienne","bor"]]},
+"gnostic":{"t":[["Ancient Greek","-τῐκός","",[["Ancient Greek","-σῐς",""],["Ancient Greek","-κός","",[["Proto-Indo-European","*-kos","inh"]]],["Ancient Greek","-τος","",[["Proto-Hellenic","*-tós","inh",[["Proto-Indo-European","*-tós","inh"]]]]],["Ancient Greek","-κός",""]]],["Proto-Indo-European","*ǵneh₃tis","",[["Proto-Indo-European","*ǵneh₃-",""],["Proto-Indo-European","*-tis",""]]]]},
+"gnosticism":{"t":[["English","-ism","",[["Ancient Greek","-ισμός","der",[["Ancient Greek","-ῐ́ζω","",[["Proto-Hellenic","*-íďďō","inh",[["Proto-Indo-European","*-idyéti","inh",[["Proto-Indo-European","*-id-",""],["Proto-Indo-European","*-yéti",""]]]]]]],["Ancient Greek","-μός","",[["Proto-Indo-European","*-mos","inh"],["Proto-Indo-European","*-mós","inh"]]]]]]],["Ancient Greek","-τῐκός","",[["Ancient Greek","-σῐς",""],["Ancient Greek","-κός","",[["Proto-Indo-European","*-kos","inh"]]],["Ancient Greek","-τος","",[["Proto-Hellenic","*-tós","inh",[["Proto-Indo-European","*-tós","inh"]]]]],["Ancient Greek","-κός",""]]],["Proto-Indo-European","*ǵneh₃tis","",[["Proto-Indo-European","*ǵneh₃-",""],["Proto-Indo-European","*-tis",""]]]]},
+"gnu":{"c":[["Khoekhoe","!nu:","der"]]}
+}

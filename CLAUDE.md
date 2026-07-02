@@ -13,6 +13,10 @@ per-session branches merged into main.
 - `data.js` — 308 engine morphemes (`MORPHEMES = {prefixes, roots, suffixes}`).
 - `roots.json` (~1MB), `morpheme-index.json`, `eras.json`, `quiz-pool.json`,
   `usage/`, `family/*.json` — generated/curated side data fetched by app.js.
+- `trees/<xx>.json` — per-word etymology ancestry trees (45.7k words):
+  `{c: [[lang,term,kind],…] chain, t: [branching subtrees to PIE]}`. Built by
+  `scripts/build-trees.js` from vendor-data sources. NOT yet rendered by the
+  app — the ancestry-tree card is designed but unbuilt.
 - `review/` — breakdown-audit ledger. `decisions.log` (append-only) and
   `ranks.tsv` are the authoritative/tracked parts; `*.jsonl` are derived
   (regenerate: `node scripts/build-review-ledger.js`).

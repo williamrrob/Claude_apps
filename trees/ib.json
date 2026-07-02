@@ -1,0 +1,16 @@
+{
+"Ibada":{"c":[["Arabic","عِبَادَة","bor"]]},
+"Ibadi":{"c":[["Arabic","إِبَاضِيّ","bor"]]},
+"Ibara":{"c":[["Japanese","井原","bor"]]},
+"Ibarlucea":{"c":[["Spanish","Ibarlucea","bor"],["Basque","ibar","der"]]},
+"Ibarra":{"c":[["Spanish","Ibarra","bor"]]},
+"Ibiza":{"c":[["Spanish","Ibiza","bor"],["Catalan","Eivissa","der"],["Arabic","يَابِسَة","der"],["Latin","Ebusus","der"],["Phoenician","𐤀𐤉𐤁𐤔𐤌","der"]]},
+"iBhayi":{"t":[["Xhosa","iBhayi","",[["Afrikaans","Baai","der",[["Afrikaans","baai","",[["Dutch","baai","inh",[["Middle French","baie","der"]]]]],["English","bay","der",[["French","baie","der",[["Late Latin","baia","der",[["Iberian","","der"]]]]]]]]]]]]},
+"iberia":{"c":[["Latin","Iberia","bor"],["Ancient Greek","Ἰβηρία","der"]]},
+"ibex":{"c":[["Latin","ībex","bor"]]},
+"ibis":{"c":[["Latin","ībis","der"],["Ancient Greek","ἶβις","der"],["Egyptian","hbj","der"]]},
+"ibn":{"c":[["Arabic","اِبْن","bor"]]},
+"ibrahim":{"c":[["Classical Syriac","ܐܲܒܪܵܗܵܡ","der"],["Biblical Hebrew","אַבְרָהָם","der"]],"t":[["Arabic","إِبْرَاهِيم","",[["Aramaic","אַבְרָהָם","",[["Biblical Hebrew","אַבְרָהָם",""]]]]]]},
+"ibrik":{"c":[["Ottoman Turkish","ابریق","bor"],["Arabic","إِبْرِيق","der"]],"t":[["Ottoman Turkish","ابریق","",[["Arabic","إِبْرِيق","",[["Classical Syriac","ܐܒܪܝܩܐ","",[["Middle Persian","*ābrēk",""],["Parthian","*ābrēk",""]]]]]]]]},
+"ibsen":{"c":[["Norwegian","Ibsen","bor"]]}
+}

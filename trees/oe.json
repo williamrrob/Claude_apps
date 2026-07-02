@@ -1,0 +1,22 @@
+{
+"OE":{"c":[["Swedish","ö","bor"],["Danish","ø","bor"],["Scottish Gaelic","ogha","bor"]]},
+"Oelkers":{"c":[["German","Ölkers","bor"]]},
+"Oelschlager":{"c":[["German","Ölschläger","bor"]]},
+"Oenone":{"c":[["Latin","Oenone","bor"],["Ancient Greek","Οἰνώνη","der"]]},
+"Oesch":{"c":[["German","Ösch","bor"]]},
+"Oesterling":{"c":[["Swedish","Österling","bor"]]},
+"Oestreich":{"c":[["German","Östreich","bor"]]},
+"Oetaea":{"c":[["Ancient Greek","Οἰταία","bor"]]},
+"Oetken":{"c":[["German","Oetken","bor"]]},
+"Oetting":{"c":[["German","Oetting","bor"]]},
+"oecus":{"c":[["Latin","oecus","bor"],["Ancient Greek","οἶκος","der"]]},
+"oedipus":{"c":[["Latin","Oedipus","der"],["Ancient Greek","Οἰδίπους","der"]]},
+"oeillade":{"c":[["French","œillade","bor"]]},
+"oenoculture":{"c":[["Latin","cultūra","der"]]},
+"oenomel":{"c":[["Latin","mel","der"]]},
+"oesophagus":{"c":[["Ancient Greek","οἰσοφάγος","der"]]},
+"oestrus":{"c":[["Latin","oestrus","bor"],["Ancient Greek","οἶστρος","der"],["Proto-Indo-European","*h₁eys-","der"]],"t":[["Latin","oestrus","",[["Ancient Greek","οἶστρος","der",[["Proto-Indo-European","*h₁eysh₂-","der"]]]]]]},
+"oeuf":{"c":[["French","œuf","bor"]],"t":[["French","œuf","",[["Middle French","œuf","inh",[["Old French","oef","inh",[["Vulgar Latin","*ŏvum","inh",[["Classical Latin","ōvum","",[["Proto-Italic","*ōwom","inh",[["Proto-Italic","*ōwjom","",[["Proto-Indo-European","*h₂ōwyóm","inh",[["Proto-Indo-European","*h₂éwis","",[["Proto-Indo-European","*h₂ew-","der"]]]]]]]]]]]]]]]]]]]]},
+"oeuf en cocotte":{"c":[["French","œuf en cocotte","bor"]]},
+"oeuvre":{"c":[["French","œuvre","bor"],["Latin","opera","der"],["Latin","opus","der"]]}
+}

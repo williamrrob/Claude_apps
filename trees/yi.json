@@ -1,0 +1,14 @@
+{
+"YIVO":{"c":[["Yiddish","ייִוואָ","bor"]]},
+"Yiannopoulos":{"c":[["Greek","Γιαννόπουλος","bor"]]},
+"Yildirim":{"c":[["Turkish","Yıldırım","bor"]]},
+"Yildiz":{"c":[["Turkish","Yıldız","bor"]]},
+"yi":{"c":[["Ukrainian","ї","bor"],["Armenian","յի","bor"]]},
+"yi mein":{"c":[["Chinese","伊麵","bor"]]},
+"yichud":{"c":[["Hebrew","ייחוד","bor"]]},
+"yiddish":{"t":[["Yiddish","ייִדיש","",[["Middle High German","jüdesch","inh",[["Old High German","judeisc","inh",[["Old High German","judeo","",[["Latin","iūdaeus","der",[["Ancient Greek","Ἰουδαῖος","",[["Ancient Greek","Ἰουδά","",[["Hebrew","יהודה","der",[["Hebrew","יָדָה","",[["Proto-Semitic","*yad-","inh"]]]]]]],["Ancient Greek","-ιος","",[["Proto-Indo-European","*-yós","der"]]]]]]]]],["Old High German","-isc","",[["Proto-West Germanic","*-isk","inh",[["Proto-Germanic","*-iskaz","inh",[["Proto-Indo-European","*-iskos","inh"]]]]]]]]]]],["Yiddish","ייִד",""],["Yiddish","־יש","",[["Middle High German","-isch","inh",[["Old High German","-isc","inh"]]]]]]]]},
+"yield":{"c":[["Middle English","yielden","inh"],["Old English","ġieldan","inh"],["Proto-West Germanic","*geldan","inh"],["Proto-Germanic","*geldaną","inh"],["Proto-Indo-European","*gʰeldʰ-","der"],["Middle English","ȝeld","inh"],["Old English","ġild","inh"],["Proto-West Germanic","*geld","inh"]]},
+"yielder":{"c":[["Middle English","yeldere","inh"]]},
+"yielding":{"c":[["Middle English","ȝeldinge","inh"],["Old English","ġyldende","inh"],["Middle English","yelding","inh"]]},
+"yip":{"c":[["Middle English","ȝyppe","inh"]]}
+}
