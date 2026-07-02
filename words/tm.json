@@ -1,5 +1,5 @@
 {
-"tm":{"d":[{"p":"adv.","g":"On the day after the present day."}],"s":["thulium"],"rel":{"t":"abbrev of","l":"tomorrow","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"tm":{"d":[{"p":"adv.","g":"On the day after the present day."},{"p":"symbol.","g":"trademark","x":"SuperAcme™ is a trademark of Acme Incorporated."}],"s":["thulium"],"rel":{"t":"abbrev of","l":"tomorrow","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "tmv":{"d":[{"p":"n.","g":"the widely studied plant virus that causes tobacco mosaic;  it was the first virus discovered (1892)"}]},
 "tmg":{"d":[{"p":"phrase","g":"too much government"},{"p":"n.","g":"Trimethylgallium, the most preferred metalorganic source of Gallium used in MOCVD of compound semiconductors for opto-electronics applications."},{"p":"n.","g":"trimethylglycine","dom":"chemistry"}]},
 "TMJ":{"d":[{"p":"n.","g":"Temporomandibular pain, temporomandibular joint disorder.","x":"She was an only child, a gym rat, had a blotchy red birthmark on her neck in the shape of Florida, a gum-chewing habit that gave her TMJ and breath that reeked of cinnamon and green apple candy."}]},

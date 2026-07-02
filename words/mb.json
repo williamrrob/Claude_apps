@@ -1,6 +1,6 @@
 {
-"mb":{"d":[{"p":"interj.","g":"My fault; mea culpa."}],"s":["megabit"],"rel":{"t":"abbrev of","l":"my bad","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
-"mba":{"d":[{"p":"n.","g":"a master's degree in business"}],"i":"/ˈɛmˈbiˈeɪ/","rs":"EHM-BEE-AY"},
+"mb":{"d":[{"p":"interj.","g":"My fault; mea culpa."},{"p":"n.","g":"Bachelor of Medicine degree (Latin: Medicinae Baccalaureus)."}],"s":["megabit"],"rel":{"t":"abbrev of","l":"my bad","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"mba":{"d":[{"p":"n.","g":"a master's degree in business"},{"p":"n.","g":"An Ubangian language of the Democratic Republic of the Congo."}],"i":"/ˈɛmˈbiˈeɪ/","rs":"EHM-BEE-AY"},
 "mbabane":{"d":[{"p":"n.","g":"capital of Swaziland;  located in northwestern Swaziland"}]},
 "mbd":{"d":[{"p":"n.","g":"Initialism of million barrels per day."}],"rel":{"t":"plural of","l":"million","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
 "mbeya":{"d":[{"p":"n.","g":"a city in southwestern Tanzania"}]},

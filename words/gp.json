@@ -1,8 +1,8 @@
 {
 "gp":{"d":[{"p":"n.","g":"A number of things or persons being in some relation to one another."}],"forms":["gps"],"rel":{"t":"abbrev of","l":"group","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
-"gpa":{"d":[{"p":"n.","g":"a measure of a student's academic achievement at a college or university;  calculated by dividing the total number of grade points received by the total number attempted"}]},
+"gpa":{"d":[{"p":"n.","g":"a measure of a student's academic achievement at a college or university;  calculated by dividing the total number of grade points received by the total number attempted"},{"p":"n.","g":"GMP payment age"}]},
 "gpo":{"d":[{"p":"n.","g":"an agency of the legislative branch that provides printing and binding services for Congress and the departments and establishments of the federal government"}]},
-"gps":{"d":[{"p":"n.","g":"plural of gp"}],"i":"/ˈgipiˈɛs/","rs":"GEE-pee-EHS","rel":{"t":"plural of","l":"gp","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
+"gps":{"d":[{"p":"n.","g":"plural of gp"},{"p":"v.","g":"To locate something using a GPS system."}],"i":"/ˈgipiˈɛs/","rs":"GEE-pee-EHS","rel":{"t":"plural of","l":"gp","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
 "GPL":{"d":[{"p":"v.","g":"To release under the General Public License.","dom":"copyright"}]},
 "GPS receiver":{"d":[{"p":"n.","g":"An audiovisual device, fitted to a civilian road vehicle, that uses the military Global Positioning System (U.S. Navstar system) as an aid to navigation."},{"p":"n.","g":"A device that uses any global positioning system satellite network."}]},
 "GP-land":{"d":[{"p":"n.","g":"The world of general practice.","x":"In GP-land people understand that you're a woman, you're going to want to have babies, it's more accepted.","dom":"medicine"}]},
