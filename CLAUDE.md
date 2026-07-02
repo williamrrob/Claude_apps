@@ -69,7 +69,10 @@ Fine on a dev Mac; avoid re-deriving in token-metered sessions:
   morphological-structure TSV, EtymDB 2.1 (github.com/clefourrier/EtymDB), and
   per-language Kaikki dumps (`kaikki-<Lang>.jsonl.gz`: Latin, Ancient Greek,
   Middle/Old English, Old French, Proto-Indo-European, Proto-Germanic) for
-  ancestor lemmas. Re-download URLs are in each build script's header.
+  ancestor lemmas, and the full English dump (`kaikki-en.jsonl.gz`, ~3GB raw —
+  `gunzip -k` before running the backfill scripts against it). Re-download
+  URLs are in each build script's header. `etym.sqlite` is derived — rebuild
+  with `node scripts/build-etymdb.js`.
 - Semantic dedup/search: `npm run embed build` (local Ollama,
   nomic-embed-text) then `npm run find similar <word>`.
 - Cloud-session note: Node fetch behind the agent proxy needs
