@@ -34,3 +34,29 @@ MESSAGE user Classify this headword into one of: established, phrase, inflection
 MESSAGE assistant {"type":"inflection"}
 MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: front matter\nDefinition: Within a book, all preliminary content preceding the main text.
 MESSAGE assistant {"type":"phrase"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: Delena\nDefinition: The romantic pairing of the characters Damon Salvatore and Elena Gilbert.
+MESSAGE assistant {"type":"coinage"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: tinhat\nDefinition: One who promotes a conspiracy theory within a fandom space, especially about a celebrity relationship.
+MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: Blogistan\nDefinition: Blogs of Iran (where the suffix -stan originated) and nearby regions.
+MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: Espanglish\nDefinition: A language blend of English and Spanish.
+MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: susurrus\nDefinition: A whispering or rustling sound; a murmur.
+MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: quisling\nDefinition: A traitor who collaborates with an occupying enemy force.
+MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: gafiate\nDefinition: A science fiction fan who has become inactive in the fandom community.
+MESSAGE assistant {"type":"coinage"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: accursed\nDefinition: Hateful; detestable, loathsome.
+MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: myxomycetes\nDefinition: plural of myxomycete
+MESSAGE assistant {"type":"inflection"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: New York\nDefinition: The most populous city in the United States, in the state of New York.
+MESSAGE assistant {"type":"name"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: kick the bucket\nDefinition: To die.
+MESSAGE assistant {"type":"phrase"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: standom\nDefinition: Obsessive or excessive fandom; the fandom of stans.
+MESSAGE assistant {"type":"coinage"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: petrichor\nDefinition: The pleasant smell of rain falling on dry ground.
+MESSAGE assistant {"type":"established"}
