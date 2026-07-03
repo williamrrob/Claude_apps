@@ -65,7 +65,7 @@
   });
 
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "139";
+  const DATA_V = "140";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
