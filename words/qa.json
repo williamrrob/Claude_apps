@@ -1,9 +1,9 @@
 {
 "qabalistic":{"d":[{"p":"adj.","g":"Alternative spelling of cabalistic."}],"s":["cabalistic","kabbalistic","cryptic","cryptical","sibylline"],"rel":{"t":"variant of","l":"cabalistic","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "qatari":{"d":[{"p":"adj.","g":"of or concerning Qatar or its inhabitants"},{"p":"n.","g":"a native or inhabitant of Qatar"}],"b":[{"s":"qatar","k":"root"},{"s":"i","k":"suffix"}],"e":"From Qatar + -i, from Arabic قَطَر (qaṭar).","au":"5/54/LL-Q1860_%28eng%29-Vealhurl-Qatari.wav/LL-Q1860_%28eng%29-Vealhurl-Qatari.wav.mp3"},
-"qabala":{"d":[{"p":"name.","g":"Alternative spelling of Kabbalah."}],"s":["cabala","cabbala","cabbalah","kabala","kabbala","kabbalah","qabalah"],"rel":{"t":"variant of","l":"kabala","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
-"qabalah":{"d":[{"p":"name.","g":"Alternative spelling of Kabbalah.","x":"The study of qabalah is reputed to offer a multitude of spiritual benefits."}],"s":["cabala","cabbala","cabbalah","kabala","kabbala","kabbalah","qabala"],"rel":{"t":"variant of","l":"kabala","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
-"qabbala":{"d":[{"p":"name.","g":"Alternative form of Kabbalah."}],"rel":{"t":"variant of","l":"kabala","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"qabala":{"d":[{"p":"name.","g":"Alternative spelling of Kabbalah."}],"s":["cabala","cabbala","cabbalah","kabala","kabbala","kabbalah","qabalah"],"rel":{"t":"variant of","l":"kabbalah","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"qabalah":{"d":[{"p":"name.","g":"Alternative spelling of Kabbalah.","x":"The study of qabalah is reputed to offer a multitude of spiritual benefits."}],"s":["cabala","cabbala","cabbalah","kabala","kabbala","kabbalah","qabala"],"rel":{"t":"variant of","l":"kabbalah","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
+"qabbala":{"d":[{"p":"name.","g":"Alternative form of Kabbalah."}],"rel":{"t":"variant of","l":"kabbalah","by":"assistant","at":"2026-06-29T16:23:04.459Z"}},
 "qabbalah":{"d":[{"p":"n.","g":"an esoteric theosophy of rabbinical origin based on the Hebrew scriptures and developed between the 7th and 18th centuries"}]},
 "qaddafi":{"d":[{"p":"n.","g":"Libyan leader who seized power in a military coup d'etat in 1969;  deposed the Libyan monarchy and imposed socialism and Islamic orthodoxy on the country (born in 1942)"}]},
 "qadhafi":{"d":[{"p":"n.","g":"Libyan leader who seized power in a military coup d'etat in 1969;  deposed the Libyan monarchy and imposed socialism and Islamic orthodoxy on the country (born in 1942)"}]},

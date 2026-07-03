@@ -59,7 +59,7 @@
 "ignorantia juris non excusat":{"d":[{"p":"phrase","g":"Ignorance of the law is not a valid excuse.","x":"[…] it is an offence against the duty of his place, and a forfeiture of his office; though I do believe Dr. Bury did not intend upon this to affront the bishop, but ignorantia juris non excusat; if the law be so, we cannot alter it."}],"e":"Borrowed from Latin ignōrantia factī excūsat, ignōrantia jūris nōn excūsat (“ignorance of fact excuses, ignorance of law does not excuse”)."},
 "igpay atinlay":{"d":[{"p":"n.","g":"Pig Latin."}],"e":"Pig Latin spelling of pig Latin."},
 "Ignaty":{"d":[{"p":"n.","g":"A transliteration of the Russian male given name Игна́тий (Ignátij)."}],"e":"Borrowed from Russian Игна́тий (Ignátij), from Latin Ignātius."},
-"ignesious":{"d":[{"p":"adj.","g":"igneous","dom":"geography"}],"rel":{"t":"variant of","l":"igneous"}},
+"ignesious":{"d":[{"p":"adj.","g":"igneous","dom":"geography"}]},
 "igunaq":{"d":[{"p":"n.","g":"An Inuit delicacy made by burying meat and fat which decompose for consumption the following year."}],"e":"Borrowed from Inuktitut ᐃᒍᓇᖅ (iconaq)."},
 "ignoratio elenchi":{"d":[{"p":"n.","g":"The fallacy of presenting an argument that may or may not be logically valid, but fails to address the issue in question."}],"e":"From Latin ignōrātiō elenchī (“ignorance of the refutation”).","i":"/ˌɪɡ.nəˈɹeɪ.ʃiˌoʊ ɪˈlɛŋ.kaɪ/"},
 "Igorot":{"d":[{"p":"n.","g":"A member of any of several Austronesian ethnic groups in the Philippines, inhabiting the mountains of Luzon."}],"e":"Borrowed from Tagalog Igorot."},

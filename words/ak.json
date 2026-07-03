@@ -7,7 +7,7 @@
 "akaryocyte":{"d":[{"p":"n.","g":"A cell that has no nucleus."}],"e":"From a- + karyocyte.","s":["akaryote","acaryote"],"b":[{"s":"a","k":"prefix"},{"s":"karyocyte","k":"root"}]},
 "akaryote":{"d":[{"p":"n.","g":"akaryocyte"}],"s":["akaryocyte","acaryote"]},
 "akee":{"d":[{"p":"n.","g":"Alternative spelling of ackee."}],"rel":{"t":"variant of","l":"ackee","by":"assistant","at":"2026-06-29T16:23:04.459Z"},"s":["ackee"],"_at":"2026-07-01T01:35:47.312Z"},
-"aken":{"d":[{"p":"n.","g":"a city in western Germany near the Dutch and Belgian borders;  formerly it was Charlemagne's northern capital"}],"e":"From Old English ācennan or gecennan, equivalent to a- + cennan (“to give birth to”).","i":"/əˈkɛn/","rs":"AY-kuhn","rel":{"t":"past participle of","l":"ache","by":"assistant","at":"2026-06-29T16:22:51.470Z"}},
+"aken":{"d":[{"p":"n.","g":"a city in western Germany near the Dutch and Belgian borders;  formerly it was Charlemagne's northern capital"}],"e":"From Old English ācennan or gecennan, equivalent to a- + cennan (“to give birth to”).","i":"/əˈkɛn/","rs":"AY-kuhn"},
 "akeridae":{"d":[{"p":"n.","g":"bubble shells"}]},
 "akha":{"d":[{"p":"n.","g":"a Loloish language"}]},
 "akhbari":{"d":[{"p":"n.","g":"a religious movement by Arab Shiite Muslims in 17th century Iraq that is opposed to the Usuli"}]},
