@@ -30,6 +30,7 @@
   --r-sm: 9px;       /* small controls, list items */
   --r-xs: 5px;       /* badges, tiny chips */
   --gap: 12px;       /* default gap between related controls */
+  --press: scale(0.96); /* shared active-press feedback for buttons */
 
   /* Merriam-Webster royal blue (#004990) — a sparing ACCENT only, never a
      tint (the palette stays warm vintage). --accent-ink is legible on dark. */
@@ -103,7 +104,7 @@ body {
   display: grid; place-items: center;
   -webkit-tap-highlight-color: transparent;
 }
-.theme-toggle:active, .icon-toggle:active { transform: scale(0.92); }
+.theme-toggle:active, .icon-toggle:active { transform: var(--press); }
 .icon-toggle.has-saved { border-color: var(--suffix); color: var(--suffix); }
 
 /* ---------- scrolling content ---------- */
@@ -143,6 +144,26 @@ body {
    content overflows (this is what was crushing the pronunciation row to 0). */
 .content > * { flex-shrink: 0; }
 
+/* ---- button system: one base treatment + opt-in role modifiers ----
+   New buttons should use `.btn` (+ a modifier) so every control shares the
+   same glass, border, radius, and press feedback. Existing named button
+   classes (.nav-btn, .example, .history-chip, …) already follow this shape;
+   they inherit the shared press feel from the grouped :active rule below. */
+.btn {
+  font: inherit; color: var(--ink); cursor: pointer;
+  border: 1px solid var(--bd); border-radius: var(--r-sm);
+  background: var(--glass-sheen), var(--field);
+  box-shadow: var(--glass-hi);
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.15s var(--ease), background 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn:active { transform: var(--press); }
+.btn-pill { border-radius: var(--r-pill); }
+.btn-icon { border-radius: var(--r-round); display: grid; place-items: center; }
+.btn-primary { background: var(--accent); color: #f3e7d2; border: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); }
+.btn-ghost { background: none; border: none; box-shadow: none; color: var(--muted); }
+
 .hint { text-align: center; margin: auto 0; max-width: 460px; align-self: center; animation: fade 0.5s var(--ease); position: relative; z-index: 0; }
 /* the gold book, demoted to a faint watermark behind the home screen */
 .hint::before {
@@ -164,7 +185,7 @@ body {
   transition: transform 0.15s var(--ease);
   -webkit-tap-highlight-color: transparent;
 }
-.hint-quiz-btn:active { transform: scale(0.96); }
+.hint-quiz-btn:active { transform: var(--press); }
 .hint-sub + .hint-quiz-btn { margin-top: 4px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 4px; }
 .example {
@@ -175,7 +196,7 @@ body {
   transition: transform 0.15s var(--ease);
   -webkit-tap-highlight-color: transparent;
 }
-.example:active { transform: scale(0.94); }
+.example:active { transform: var(--press); }
 
 /* ---------- word line (morphemes with dots) ---------- */
 /* The reveal is a two-beat move: pieces pop in tight so they read as the whole
@@ -248,7 +269,7 @@ body {
   font-size: 9px; color: var(--root); border: 1px solid var(--bd); background: var(--field);
   width: 19px; height: 19px; border-radius: var(--r-round); display: inline-grid; place-items: center; padding-left: 1px;
 }
-.pron .resp:active { transform: scale(0.96); }
+.pron .resp:active { transform: var(--press); }
 /* abbreviation "read as" — sits in the pron slot, styled like pronunciation */
 .abbr-read-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .abbr-read-val { font-size: 16px; font-weight: 600; color: var(--ink); font-style: italic; }
@@ -306,7 +327,7 @@ body {
 .tile[data-kind="unknown"]{ --c: var(--stem); }
 .tile.tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .tile.tappable:hover { border-color: color-mix(in srgb, var(--c) 55%, var(--bd)); }
-.tile.tappable:active { transform: scale(0.98); }
+.tile.tappable:active { transform: var(--press); }
 .tile.active { border-color: color-mix(in srgb, var(--c) 70%, transparent); background: color-mix(in srgb, var(--c) 8%, transparent); }
 .tile .rk { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
 .tile .surf { font-size: 18px; font-weight: 700; margin-top: 2px; display: block; color: var(--c); }
@@ -332,7 +353,7 @@ body {
   display: grid; place-items: center; font-size: 9px; padding-left: 1px;
   -webkit-tap-highlight-color: transparent;
 }
-.card-say .spk:active { transform: scale(0.88); }
+.card-say .spk:active { transform: var(--press); }
 .card-say-word { font-weight: 600; font-style: italic; }
 .card-related { margin-top: 7px; }
 .card-related .lab { margin-bottom: 5px; }
@@ -372,7 +393,7 @@ body {
 .thes-group { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
 .thes-group + .thes-group { margin-top: 9px; }
 .thes-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
-.related-chip:active { transform: scale(0.93); }
+.related-chip:active { transform: var(--press); }
 @keyframes chipIn { to { opacity: 1; transform: none; } }
 
 /* ---------- panels (meaning, history) ---------- */
@@ -406,7 +427,7 @@ body {
   box-shadow: inset 0 1px 0 rgba(255,250,240,0.20), 0 2px 8px rgba(0,0,0,0.22);
   -webkit-tap-highlight-color: transparent; transition: transform .15s var(--ease);
 }
-.fam-open:active { transform: scale(0.95); }
+.fam-open:active { transform: var(--press); }
 /* domain / "location in meaning space" tag for a sense (computing, law, biology…) */
 .sense-dom {
   display: inline-block; margin-right: 6px; padding: 0 7px;
@@ -430,7 +451,7 @@ body {
 .tl .dot { width: 14px; height: 14px; border-radius: var(--r-round); margin: 0 auto 7px; position: relative; z-index: 1;
   border: 2px solid var(--panel); box-shadow: 0 0 0 1px var(--bd); }
 .tl .node { cursor: pointer; -webkit-tap-highlight-color: transparent; }
-.tl .node:active { transform: scale(0.96); }
+.tl .node:active { transform: var(--press); }
 .tl .lang { font-size: 11.5px; font-weight: 600; line-height: 1.2; }
 .tl .era { font-size: 10px; color: var(--muted); margin-top: 2px; }
 .tl .node.sel .lang { color: var(--prefix-ink); }
@@ -493,7 +514,7 @@ body {
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-hi); cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
-.history-chip:active { transform: scale(0.94); }
+.history-chip:active { transform: var(--press); }
 .search {
   display: flex; align-items: center; gap: 6px; padding: 3px 3px 3px 10px;
   border: 1px solid var(--bd); border-radius: var(--r-pill); background: var(--field);
@@ -510,7 +531,7 @@ body {
   transition: transform 0.15s var(--ease), filter 0.15s;
   -webkit-tap-highlight-color: transparent;
 }
-.search-btn:active { transform: scale(0.9); filter: brightness(1.08); }
+.search-btn:active { transform: var(--press); filter: brightness(1.08); }
 
 /* ---------- status ---------- */
 .status { margin: auto 0; text-align: center; color: var(--muted); font-size: 15px; }
@@ -622,7 +643,7 @@ body {
   transition: background-color 0.2s, color 0.2s;
 }
 .etymology-request-btn:hover { background: var(--glass-sheen), var(--panel); }
-.etymology-request-btn:active { transform: scale(0.98); }
+.etymology-request-btn:active { transform: var(--press); }
 .etymology-request-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
 /* tree button — collapse the word card into the family tree */
@@ -635,7 +656,7 @@ body {
   cursor: pointer; -webkit-tap-highlight-color: transparent;
   transition: transform 0.15s var(--ease);
 }
-.tree-btn:active { transform: scale(0.92); color: var(--prefix-ink); }
+.tree-btn:active { transform: var(--press); color: var(--prefix-ink); }
 
 /* ---------- word-family tree overlay ---------- */
 .tree {
@@ -654,7 +675,7 @@ body {
   color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer;
   display: grid; place-items: center; -webkit-tap-highlight-color: transparent;
 }
-.tree-close:active { transform: scale(0.92); }
+.tree-close:active { transform: var(--press); }
 .tree-title { font-size: 12.5px; letter-spacing: 0.04em; color: var(--muted); flex: 1; }
 .tree-all {
   flex: 0 0 auto; font-size: 12.5px; color: var(--ink); cursor: pointer;
@@ -663,7 +684,7 @@ body {
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-hi); -webkit-tap-highlight-color: transparent;
 }
-.tree-all:active { transform: scale(0.94); }
+.tree-all:active { transform: var(--press); }
 
 /* horizontally + vertically scrollable canvas that grows as branches expand */
 .tree-body { position: relative; flex: 1; overflow: auto; -webkit-overflow-scrolling: touch; }
@@ -691,7 +712,7 @@ body {
   border: 1px solid var(--bd); box-shadow: var(--glass-hi);
   cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
-.tnode:active { transform: scale(0.97); }
+.tnode:active { transform: var(--press); }
 .tnode-w { display: block; font-size: 12.5px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tnode.step .tnode-w { color: var(--prefix-ink); font-weight: 700; }
 .tnode-sub { display: block; font-size: 9.5px; font-style: italic; color: var(--muted); margin-top: 1px;
@@ -755,7 +776,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 .save-btn.saved { color: var(--suffix); }
-.save-btn:active { transform: scale(0.85); }
+.save-btn:active { transform: var(--press); }
 
 /* ---------- quiz overlay ---------- */
 .quiz {
@@ -771,7 +792,7 @@ body {
   color: var(--muted); cursor: pointer; font-size: 12px;
   display: grid; place-items: center; -webkit-tap-highlight-color: transparent;
 }
-.quiz-close:active { transform: scale(0.92); }
+.quiz-close:active { transform: var(--press); }
 .quiz-title { font-size: 12.5px; letter-spacing: 0.04em; color: var(--muted); flex: 1; }
 .quiz-prog { font-size: 12px; color: var(--muted); }
 .quiz-word-row { display: flex; align-items: baseline; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
@@ -800,7 +821,7 @@ body {
   cursor: pointer; -webkit-tap-highlight-color: transparent;
   transition: background 0.14s, border-color 0.14s, color 0.14s;
 }
-.mc-btn:not(:disabled):active { transform: scale(0.99); background: var(--panel); }
+.mc-btn:not(:disabled):active { transform: var(--press); background: var(--panel); }
 .mc-btn.correct { background: rgba(127,174,122,0.25); border-color: var(--root); color: var(--ink); }
 .mc-btn.wrong { background: rgba(180,50,50,0.18); border-color: rgba(180,50,50,0.5); color: var(--muted); text-decoration: line-through; }
 .quiz-next {
@@ -810,7 +831,7 @@ body {
   color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.quiz-next:active { transform: scale(0.98); }
+.quiz-next:active { transform: var(--press); }
 .quiz-result { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-top: 16px; }
 .quiz-result-score { font-size: 52px; font-weight: 700; color: var(--ink); }
 .quiz-result-label { font-size: 13px; color: var(--muted); }
@@ -882,7 +903,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 .app.quiz-peek .quiz-peek-back { display: flex; }
-.quiz-peek-back:active { transform: scale(0.95); }
+.quiz-peek-back:active { transform: var(--press); }
 .quiz-empty { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 60px; text-align: center; }
 .quiz-empty-icon { font-size: 42px; color: var(--muted); }
 .quiz-empty-text { font-size: 15px; color: var(--ink); }
@@ -909,7 +930,7 @@ body {
 .img-bubble-t { display: block; font-size: 14px; font-weight: 700; color: #f6ecd8; }
 .img-bubble-d { display: block; font-size: 11px; font-style: italic; color: rgba(246,236,216,0.82); margin-top: 1px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.img-bubble:active { transform: scale(0.97); }
+.img-bubble:active { transform: var(--press); }
 .card { border: 1px solid var(--bd); border-radius: var(--r-card); padding: 14px 16px;
   background: var(--glass-sheen), var(--panel);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
@@ -1080,12 +1101,12 @@ body {
 /* ---------- settings gear button ---------- */
 .settings-btn {
   width: 32px; height: 32px; border-radius: var(--r-sm); margin-left: 6px;
-  border: 1px solid var(--bd); background: var(--field);
+  border: 1px solid var(--bd); background: var(--glass-sheen), var(--field);
   color: var(--muted); font-size: 15px; cursor: pointer;
   display: grid; place-items: center;
   -webkit-tap-highlight-color: transparent;
 }
-.settings-btn:active { transform: scale(0.92); }
+.settings-btn:active { transform: var(--press); }
 
 /* ---------- settings overlay ---------- */
 .settings-overlay {
@@ -1110,7 +1131,7 @@ body {
   display: grid; place-items: center;
   -webkit-tap-highlight-color: transparent;
 }
-.settings-close:active { transform: scale(0.92); }
+.settings-close:active { transform: var(--press); }
 .settings-title { font-size: 19px; font-weight: 700; margin-bottom: 22px; }
 .settings-section { margin-bottom: 22px; }
 .settings-section:last-child { margin-bottom: 0; }
@@ -1130,7 +1151,7 @@ body {
   cursor: pointer; -webkit-tap-highlight-color: transparent;
   box-shadow: var(--glass-hi);
 }
-.save-key-btn:active { transform: scale(0.95); }
+.save-key-btn:active { transform: var(--press); }
 .key-status { font-size: 12px; color: var(--muted); margin-top: 5px; min-height: 16px; }
 .key-status.ok { color: var(--root); }
 
@@ -1145,7 +1166,7 @@ body {
   transition: color 0.2s, opacity 0.2s;
 }
 .verify-btn:hover { color: var(--ink); }
-.verify-btn:active { transform: scale(0.98); }
+.verify-btn:active { transform: var(--press); }
 .verify-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 .verify-btn.loading { color: var(--muted); }
 .verify-btn.success { color: var(--root); }
@@ -1172,20 +1193,20 @@ body {
   border: 1px solid var(--bd); border-radius: var(--r-pill); cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.anc-pivot:active { transform: scale(0.97); }
+.anc-pivot:active { transform: var(--press); }
 .anc-desc { margin: 6px 0 2px 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .anc-desc-word {
   padding: 3px 10px; font: 13px/1.5 var(--font); color: var(--ink);
   background: var(--field); border: 1px solid var(--bd); border-radius: var(--r-pill);
   cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
-.anc-desc-word:active { transform: scale(0.97); }
+.anc-desc-word:active { transform: var(--press); }
 .anc-more {
   margin-top: 10px; padding: 6px 13px; font: 13.5px/1.5 var(--font);
   color: var(--muted); background: var(--field); border: 1px solid var(--bd);
   border-radius: var(--r-sm); cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
-.anc-more:active { transform: scale(0.98); }
+.anc-more:active { transform: var(--press); }
 .anc-tick { color: var(--muted); opacity: 0.55; margin-right: 5px; font-size: 12px; }
 .anc-row.anc-focusable .anc-line { cursor: pointer; }
 .anc-row.anc-focusable .anc-line:active { opacity: 0.7; }
