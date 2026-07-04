@@ -1196,17 +1196,16 @@
       list.appendChild(row);
     });
     ipaKeyEl.appendChild(list);
-    // lift it OUT of #content: that scroll container has a mask-image (bottom
-    // fade), and a mask on an ancestor silently disables backdrop-filter on
-    // its descendants. Re-parented to body, the frosted blur actually samples
-    // the page. position:fixed, anchored under the pronunciation in viewport
-    // coords — everything else stays static.
-    if (ipaKeyEl.parentNode !== document.body) document.body.appendChild(ipaKeyEl);
+    // Live INSIDE #content, absolute-positioned, so the peek scrolls glued to
+    // the pronunciation it opened under. (#content's mask that used to kill
+    // backdrop-filter is gone, so the frost works here now.)
+    const content = document.getElementById("content");
+    if (ipaKeyEl.parentNode !== content) content.appendChild(ipaKeyEl);
     ipaKeyEl.hidden = false;
     if (ib) {
-      const ibr = ib.getBoundingClientRect();
-      ipaKeyEl.style.top = (ibr.bottom + 6) + "px";
-      ipaKeyEl.style.left = ibr.left + "px";
+      const ibr = ib.getBoundingClientRect(), cr = content.getBoundingClientRect();
+      ipaKeyEl.style.top = (ibr.bottom - cr.top + content.scrollTop + 6) + "px";
+      ipaKeyEl.style.left = Math.max(0, ibr.left - cr.left) + "px";
     }
     // arm tap-anywhere-to-close after this opening click settles
     setTimeout(function () { document.addEventListener("click", onDocTapCloseIpa, true); }, 0);

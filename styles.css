@@ -281,14 +281,13 @@ body {
 
 /* IPA pronunciation key */
 .ipa-key {
-  position: fixed; z-index: 60;
+  position: absolute; z-index: 40;
   width: 66%; min-width: 260px; max-width: 380px;
   border: 1px solid var(--bd); border-radius: var(--r-md); padding: 13px 16px 14px;
-  /* identical glass to .card (light sheen + faint panel) — its real backdrop
-     blur works here (not trapped under #content's mask), so the light tint
-     stays readable while matching every other surface */
+  /* like .card but a lighter frost — it floats over content, so a gentler
+     blur reads as a peek rather than a heavy dark slab */
   background: var(--glass-sheen), var(--panel);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: blur(22px) saturate(150%); backdrop-filter: blur(22px) saturate(150%);
   box-shadow: var(--glass-hi), var(--glass-shadow);
   transform-origin: top left;
   animation: ipa-peek-up 0.2s var(--ease);
