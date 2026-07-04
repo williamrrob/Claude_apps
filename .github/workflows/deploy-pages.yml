@@ -34,7 +34,7 @@ jobs:
           mkdir _site
           cp index.html editor.html styles.css data.js engine.js app.js \
              manifest.webmanifest icon.svg morpheme-index.json roots.json eras.json \
-             quiz-pool.json _site/
+             quiz-pool.json sw.js _site/
           cp -r words _site/
           cp -r usage _site/
           cp -r family _site/
