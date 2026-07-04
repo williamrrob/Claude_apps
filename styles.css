@@ -241,10 +241,20 @@ body {
 
 /* IPA pronunciation key */
 .ipa-key {
-  width: 100%; max-width: 520px; margin: -6px auto 12px;
-  border: 1px solid var(--bd); border-radius: 14px; padding: 13px 15px; background: var(--panel);
+  width: 66%; min-width: 260px; max-width: 380px; margin: -2px auto 14px;
+  border: 1px solid var(--bd); border-radius: 16px; padding: 13px 16px 14px;
+  background: var(--panel);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-hi), 0 10px 30px rgba(0, 0, 0, 0.32);
+  transform-origin: top center;
+  animation: ipa-peek-up 0.22s var(--ease);
 }
+@keyframes ipa-peek-up {
+  from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+.ipa-key .lab { display: flex; justify-content: space-between; align-items: baseline; }
+.ipa-key .lab::after { content: "tap to close"; font-size: 11px; color: var(--muted); font-weight: 400; letter-spacing: 0.02em; }
 .ipa-key-list { display: flex; flex-direction: column; gap: 7px; margin-top: 9px; }
 .ipa-key-row { display: flex; align-items: baseline; gap: 8px; font-size: 13.5px; line-height: 1.35; }
 .ipa-key-row .ipa-sym { color: var(--root); font-weight: 700; min-width: 24px; }

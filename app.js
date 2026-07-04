@@ -1129,6 +1129,19 @@
     "b": "“b”, as in bat", "d": "“d”, as in dog", "f": "“f”, as in fan", "h": "“h”, as in hat", "k": "“k”, as in cat",
     "l": "“l”, as in let", "m": "“m”, as in man", "n": "“n”, as in net", "p": "“p”, as in pen", "s": "“s”, as in sun",
     "t": "“t”, as in top", "v": "“v”, as in van", "w": "“w”, as in win", "z": "“z”, as in zoo",
+    // long-vowel units (length mark folded in) — matched before the bare vowel
+    "iː": "long “ee”, as in fleece", "uː": "long “oo”, as in goose", "ɑː": "broad “ah”, as in father",
+    "ɔː": "open “aw”, as in thought", "ɜː": "“ur” (British), as in nurse", "ɛː": "long “e”, as in square",
+    // vowels the key was missing
+    "ɒ": "rounded “o”, as in British lot", "ɜ": "“ur”, as in nurse", "ɐ": "a short “uh”, as in about",
+    "ʉ": "“oo” with the lips forward, as in Scottish goose", "ɨ": "a tight “i”, between “ee” and “uh”",
+    "ᵻ": "a reduced “i”, between “ih” and “uh”", "ɵ": "a rounded “uh”",
+    // consonants the key was missing
+    "ɾ": "a quick tapped “r” (the “tt” in American butter)", "ɫ": "a dark “l”, as in full",
+    "ʔ": "glottal stop — the catch in “uh-oh”", "ʍ": "a breathy “wh”, as in which",
+    "x": "“ch”, as in Scottish loch", "ç": "a soft “h”, as in hue", "ʁ": "a throaty French “r”",
+    // the length mark on its own, as a fallback
+    "ː": "makes the vowel before it long",
   };
   const IPA_NAME = {
     "ə": "schwa", "ɚ": "r-colored schwa", "ɝ": "r-colored vowel",
@@ -1139,7 +1152,11 @@
     "ˈ": "stress mark", "ˌ": "stress mark",
   };
   function tokenizeIPA(ipa) {
-    const s = ipa.replace(/[\/\[\].]/g, "");
+    // strip delimiters, stress/tone marks, and combining diacritics that have
+    // no key row of their own (tie bar, syllabic/non-syllabic, nasal, dental,
+    // aspiration…) so t͡ʃ folds to tʃ and stray marks don't break tokenizing
+    const s = ipa.replace(/[\/\[\].‿]/g, "")
+      .replace(/[̀-ͯʰʲˠˤ˥-˩ˑ]/g, "");
     const out = [], seen = {};
     for (let i = 0; i < s.length;) {
       let sym = null;
@@ -1163,6 +1180,7 @@
     });
     ipaKeyEl.appendChild(list);
     ipaKeyEl.hidden = false;
+    ipaKeyEl.onclick = function () { ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = ""; ipaKeyEl.onclick = null; };
   }
 
   // Rough IPA → plain-English respelling, used when we have no CMU respelling.
