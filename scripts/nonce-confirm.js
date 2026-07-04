@@ -30,10 +30,20 @@ function gloss(w) {
   return (r && r.d && r.d[0] && r.d[0].g) || "";
 }
 
-async function classify(w, g) {
+// turn the confluence signal flags into a plain-English currency line, so the
+// model weighs actual currency (the spamference fix) not surface plausibility
+const SIG = { "no-usage": "no recorded usage", "no-rank": "not in the frequency list",
+  "no-wiki/attest": "no dictionary attestation or Wikipedia entry", "isolated": "no synonyms or related words",
+  register: "tagged slang/humorous/neologism", "no-pron": "no pronunciation on record" };
+function currencyLine(flags) {
+  const parts = String(flags || "").split(",").map((f) => SIG[f]).filter(Boolean);
+  return parts.length ? "\nCurrency signals: " + parts.join("; ") + "." : "";
+}
+
+async function classify(w, g, flags) {
   const res = await fetch(OLLAMA + "/api/generate", {
     method: "POST", headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ model: MODEL, prompt: "Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: " + w + "\nDefinition: " + g, stream: false, format: "json", keep_alive: "30m", options: { temperature: 0, num_predict: 30 } }),
+    body: JSON.stringify({ model: MODEL, prompt: "Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: " + w + "\nDefinition: " + g + currencyLine(flags), stream: false, format: "json", keep_alive: "30m", options: { temperature: 0, num_predict: 30 } }),
   });
   if (!res.ok) throw new Error("ollama " + res.status);
   const t = JSON.parse((await res.json()).response).type;
@@ -43,7 +53,7 @@ async function classify(w, g) {
 async function main() {
   const suspects = [];
   for (const l of fs.readFileSync(path.join(ROOT, "review", "junk-scores.tsv"), "utf8").split("\n").slice(1)) {
-    const f = l.split("\t"); if (f[0] && Number(f[1]) >= MIN) suspects.push({ w: f[0], score: Number(f[1]) });
+    const f = l.split("\t"); if (f[0] && Number(f[1]) >= MIN) suspects.push({ w: f[0], score: Number(f[1]), flags: f[2] });
   }
   suspects.sort((a, b) => b.score - a.score); // highest-junk first, so the best finds land early
   const done = new Set();
@@ -55,7 +65,7 @@ async function main() {
   let n = 0, nonce = 0; const started = Date.now();
   for (const s of todo) {
     n++;
-    let t; try { t = await classify(s.w, gloss(s.w)); } catch (e) { t = "ERR"; }
+    let t; try { t = await classify(s.w, gloss(s.w), s.flags); } catch (e) { t = "ERR"; }
     if (t === "nonce") nonce++;
     out.write(JSON.stringify({ w: s.w, score: s.score, verdict: t }) + "\n");
     if (n % 25 === 0 || n === todo.length) {
