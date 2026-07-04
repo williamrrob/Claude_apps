@@ -441,8 +441,11 @@ body {
 .dock {
   position: absolute; z-index: 5; left: 0; right: 0; bottom: 0;
   margin: 0 var(--pad) calc(14px + env(safe-area-inset-bottom));
-  border: 1px solid var(--bd); border-radius: 999px; background: var(--dock);
-  -webkit-backdrop-filter: blur(60px) saturate(170%); backdrop-filter: blur(60px) saturate(170%);
+  border: 1px solid var(--bd); border-radius: 999px;
+  /* frosted glass, matching the IPA peek: a visible translucent tint so the
+     backdrop blur reads as a real panel (the old --dock was only 2% opaque) */
+  background: color-mix(in srgb, var(--bg2) 56%, transparent);
+  -webkit-backdrop-filter: blur(30px) saturate(160%); backdrop-filter: blur(30px) saturate(160%);
   box-shadow: var(--glass-hi), var(--glass-shadow);
   padding: 6px 8px;
   /* border-radius is deliberately NOT transitioned: the height change that
