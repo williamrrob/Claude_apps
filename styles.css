@@ -244,11 +244,12 @@ body {
   position: fixed; z-index: 60;
   width: 66%; min-width: 260px; max-width: 380px;
   border: 1px solid var(--bd); border-radius: 16px; padding: 13px 16px 14px;
-  /* frosted glass: semi-opaque tint so the heavy backdrop-blur reads as depth
-     while the text stays legible over the cards beneath */
-  background: color-mix(in srgb, var(--bg2) 82%, transparent);
-  -webkit-backdrop-filter: blur(90px) saturate(180%); backdrop-filter: blur(90px) saturate(180%);
-  box-shadow: var(--glass-hi), 0 12px 34px rgba(0, 0, 0, 0.4);
+  /* genuine frosted glass: clearly translucent tint + a moderate blur, so you
+     see blurred hints of what's directly behind the box — and ONLY behind the
+     box; everything outside it is untouched */
+  background: color-mix(in srgb, var(--bg2) 58%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: var(--glass-hi), 0 8px 22px rgba(0, 0, 0, 0.28);
   transform-origin: top left;
   animation: ipa-peek-up 0.2s var(--ease);
 }
