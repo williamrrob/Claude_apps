@@ -80,6 +80,11 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow: hidden;
+  /* pin the paper texture to the viewport so it fills the whole screen —
+     including the bottom safe-area (home indicator) — with no seam/band in
+     standalone PWA mode */
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .app {
