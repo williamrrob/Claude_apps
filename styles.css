@@ -80,11 +80,11 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow: hidden;
-  /* pin the paper texture to the viewport so it fills the whole screen —
-     including the bottom safe-area (home indicator) — with no seam/band in
-     standalone PWA mode */
+  /* pin the paper texture to the viewport so it also covers the bottom
+     safe-area (home indicator) — but keep it TILING at its natural 220px size,
+     not stretched (background-size:cover blew the grain up huge). */
   background-attachment: fixed;
-  background-size: cover;
+  background-repeat: repeat;
 }
 
 .app {
@@ -484,7 +484,14 @@ body {
    genuine glass, instead of a flat-tinted box sitting on matching bg. */
 .dock {
   position: absolute; z-index: 5; left: 0; right: 0; bottom: 0;
-  margin: 0 var(--pad) calc(14px + env(safe-area-inset-bottom));
+  margin: 0 var(--pad) calc(7px + env(safe-area-inset-bottom));
+}
+/* subtle fade where content scrolls behind the dock (Apple-Music style) — a
+   gradient overlay, NOT a mask, so it doesn't disable the cards' backdrop blur */
+.dock-fade {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
+  height: calc(96px + env(safe-area-inset-bottom)); pointer-events: none;
+  background: linear-gradient(to top, var(--bg) 34%, transparent);
   border: 1px solid var(--bd); border-radius: var(--r-pill);
   /* same glass as .card and the IPA peek */
   background: var(--glass-sheen), var(--panel);
@@ -1085,9 +1092,10 @@ body {
    flex-basis:0 so the collapsed nav-pair contributes no width to the row. */
 .dock-row.typing { gap: 0; }
 .dock-row.typing .nav-pair { max-width: 0; flex-basis: 0; opacity: 0; pointer-events: none; }
-.nav-btn { width: 32px; height: 32px; border-radius: var(--r-pill); border: 1px solid var(--bd);
-  background: var(--glass-sheen), var(--field); box-shadow: var(--glass-hi);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+/* dock nav buttons: bare icons inside the one dock — no individual outline/fill
+   (the dock is the container), so they don't read as separate pills */
+.nav-btn { width: 32px; height: 32px; border-radius: var(--r-pill); border: none;
+  background: none; box-shadow: none;
   color: var(--ink); font-size: 19px; line-height: 1; cursor: pointer;
   display: grid; place-items: center; -webkit-tap-highlight-color: transparent; }
 .nav-btn:disabled { opacity: .35; cursor: default; }

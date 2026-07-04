@@ -1,10 +1,12 @@
-/* Rootwork service worker — network-first so the home-screen (PWA) app
- * self-updates: every launch tries the network (picking up new index.html,
- * CSS, JS, and versioned data), and falls back to the cache only when
- * offline. This is what lets the installed app update without deleting and
- * re-adding it. Bump CACHE when the caching strategy itself changes. */
+/* Rootwork service worker — stale-while-revalidate so the home-screen (PWA)
+ * app renders INSTANTLY from cache (no black launch flash / network wait) yet
+ * still self-updates: each request is served from cache immediately while a
+ * fresh copy is fetched in the background and stored for next launch. Since
+ * CSS/JS/data are ?v=-versioned, their new URLs miss the cache and fetch fresh
+ * right away; only the unversioned shell (index.html) lags one launch, the
+ * standard PWA cadence. Bump CACHE to force a clean re-fetch. */
 "use strict";
-const CACHE = "rootwork-v1";
+const CACHE = "rootwork-v2";
 
 self.addEventListener("install", function () {
   self.skipWaiting(); // activate this SW immediately, don't wait for old tabs
@@ -26,14 +28,14 @@ self.addEventListener("fetch", function (e) {
   if (url.origin !== self.location.origin) return;
 
   e.respondWith(
-    fetch(req)
-      .then(function (res) {
-        if (res && res.ok) {
-          const copy = res.clone();
-          caches.open(CACHE).then(function (c) { c.put(req, copy); }).catch(function () {});
-        }
-        return res;
-      })
-      .catch(function () { return caches.match(req); })
+    caches.open(CACHE).then(function (cache) {
+      return cache.match(req).then(function (cached) {
+        const network = fetch(req)
+          .then(function (res) { if (res && res.ok) cache.put(req, res.clone()); return res; })
+          .catch(function () { return cached; });
+        // serve cache instantly if we have it; otherwise wait for the network
+        return cached || network;
+      });
+    })
   );
 });
