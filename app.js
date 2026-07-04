@@ -1166,21 +1166,48 @@
     }
     return out;
   }
-  function toggleIpaKey(ipa) {
-    if (!ipaKeyEl.hidden) { ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = ""; return; }
+  let ipaBtnRef = null;
+  function closeIpaKey() {
+    if (ipaKeyEl.hidden) return;
+    ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = ""; ipaBtnRef = null;
+    document.removeEventListener("click", onDocTapCloseIpa, true);
+  }
+  function onDocTapCloseIpa(e) {
+    // tap anywhere closes; suppress a tap on the IPA button so it can't reopen
+    if (ipaBtnRef && ipaBtnRef.contains(e.target)) e.stopPropagation();
+    closeIpaKey();
+  }
+  function toggleIpaKey(ipa, ib) {
+    if (!ipaKeyEl.hidden) { closeIpaKey(); return; }
+    ipaBtnRef = ib || null;
     ipaKeyEl.innerHTML = "";
     ipaKeyEl.appendChild(el("div", "lab", "Pronunciation key"));
     const list = el("div", "ipa-key-list");
     tokenizeIPA(ipa).forEach(function (sym) {
       const row = el("div", "ipa-key-row");
       row.appendChild(el("span", "ipa-sym", sym));
-      if (IPA_NAME[sym]) row.appendChild(el("span", "ipa-name", IPA_NAME[sym]));
-      row.appendChild(el("span", "ipa-desc", IPA_KEY[sym]));
+      // name (italic) + explanation share one flush-left column, no hang
+      const def = el("span", "ipa-def");
+      if (IPA_NAME[sym]) def.appendChild(el("span", "ipa-name", IPA_NAME[sym] + " "));
+      def.appendChild(document.createTextNode(IPA_KEY[sym]));
+      row.appendChild(def);
       list.appendChild(row);
     });
     ipaKeyEl.appendChild(list);
+    // lift it OUT of #content: that scroll container has a mask-image (bottom
+    // fade), and a mask on an ancestor silently disables backdrop-filter on
+    // its descendants. Re-parented to body, the frosted blur actually samples
+    // the page. position:fixed, anchored under the pronunciation in viewport
+    // coords — everything else stays static.
+    if (ipaKeyEl.parentNode !== document.body) document.body.appendChild(ipaKeyEl);
     ipaKeyEl.hidden = false;
-    ipaKeyEl.onclick = function () { ipaKeyEl.hidden = true; ipaKeyEl.innerHTML = ""; ipaKeyEl.onclick = null; };
+    if (ib) {
+      const ibr = ib.getBoundingClientRect();
+      ipaKeyEl.style.top = (ibr.bottom + 6) + "px";
+      ipaKeyEl.style.left = ibr.left + "px";
+    }
+    // arm tap-anywhere-to-close after this opening click settles
+    setTimeout(function () { document.addEventListener("click", onDocTapCloseIpa, true); }, 0);
   }
 
   // Rough IPA → plain-English respelling, used when we have no CMU respelling.
@@ -1262,7 +1289,7 @@
         const ib = el("button", "ipa", ipa);
         ib.type = "button";
         ib.setAttribute("aria-label", "Show pronunciation key");
-        ib.addEventListener("click", function () { toggleIpaKey(ipa); });
+        ib.addEventListener("click", function () { toggleIpaKey(ipa, ib); });
         pe.appendChild(ib);
       }
       const au = rec && rec.au;

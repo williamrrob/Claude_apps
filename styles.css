@@ -92,7 +92,7 @@ body {
 
 /* ---------- scrolling content ---------- */
 .content {
-  flex: 1; overflow-y: auto; overflow-x: clip; -webkit-overflow-scrolling: touch;
+  flex: 1; position: relative; overflow-y: auto; overflow-x: clip; -webkit-overflow-scrolling: touch;
   /* Reserve enough room for the floating dock (≈54px tall + 14px margin = 68px)
      PLUS real breathing room above it — 92px only left ~2px of actual
      clearance in practice (card/divider margins eat most of the nominal
@@ -241,25 +241,27 @@ body {
 
 /* IPA pronunciation key */
 .ipa-key {
-  width: 66%; min-width: 260px; max-width: 380px; margin: -2px auto 14px;
+  position: fixed; z-index: 60;
+  width: 66%; min-width: 260px; max-width: 380px;
   border: 1px solid var(--bd); border-radius: 16px; padding: 13px 16px 14px;
-  background: var(--panel);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-hi), 0 10px 30px rgba(0, 0, 0, 0.32);
-  transform-origin: top center;
-  animation: ipa-peek-up 0.22s var(--ease);
+  /* frosted glass: semi-opaque tint so the heavy backdrop-blur reads as depth
+     while the text stays legible over the cards beneath */
+  background: color-mix(in srgb, var(--bg2) 82%, transparent);
+  -webkit-backdrop-filter: blur(90px) saturate(180%); backdrop-filter: blur(90px) saturate(180%);
+  box-shadow: var(--glass-hi), 0 12px 34px rgba(0, 0, 0, 0.4);
+  transform-origin: top left;
+  animation: ipa-peek-up 0.2s var(--ease);
 }
 @keyframes ipa-peek-up {
-  from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+  from { opacity: 0; transform: translateY(-10px) scale(0.96); }
   to { opacity: 1; transform: none; }
 }
-.ipa-key .lab { display: flex; justify-content: space-between; align-items: baseline; }
-.ipa-key .lab::after { content: "tap to close"; font-size: 11px; color: var(--muted); font-weight: 400; letter-spacing: 0.02em; }
 .ipa-key-list { display: flex; flex-direction: column; gap: 7px; margin-top: 9px; }
-.ipa-key-row { display: flex; align-items: baseline; gap: 8px; font-size: 13.5px; line-height: 1.35; }
-.ipa-key-row .ipa-sym { color: var(--root); font-weight: 700; min-width: 24px; }
-.ipa-key-row .ipa-name { color: var(--suffix); font-style: italic; flex: 0 0 auto; }
-.ipa-key-row .ipa-desc { color: var(--muted); }
+/* fixed symbol column, explanation flush-left with no hanging indent */
+.ipa-key-row { display: grid; grid-template-columns: 22px 1fr; column-gap: 10px; font-size: 13.5px; line-height: 1.38; }
+.ipa-key-row .ipa-sym { color: var(--root); font-weight: 700; }
+.ipa-key-row .ipa-def { color: var(--muted); }
+.ipa-key-row .ipa-def .ipa-name { color: var(--suffix); font-style: italic; }
 .pron .pdot { color: var(--muted); opacity: 0.5; }
 
 /* ---------- not-a-word notice ---------- */
@@ -1011,7 +1013,8 @@ body {
 .suggest { list-style: none; margin: 0 0 9px; padding: 6px; display: flex; flex-direction: column; gap: 2px;
   max-height: 240px; overflow-y: auto; border: 1px solid var(--bd); border-radius: 12px; background: var(--dock);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); }
-.suggest-item { text-align: left; background: none; border: none; color: var(--ink); font: inherit;
+.suggest-item { display: block; width: 100%; box-sizing: border-box; align-self: stretch;
+  text-align: left; background: none; border: none; color: var(--ink); font: inherit;
   font-size: 15px; padding: 9px 11px; border-radius: 8px; cursor: pointer; }
 .suggest-item .hl { color: var(--prefix-ink); font-weight: 700; }
 .suggest-item .sug-lang { float: right; font-size: 11px; font-style: italic; color: var(--muted); }
