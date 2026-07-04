@@ -19,3 +19,5 @@ family/backups/
 llm-decomp-verify*.jsonl
 .DS_Store
 vendor-data/
+
+review/nonce-verdicts.jsonl
