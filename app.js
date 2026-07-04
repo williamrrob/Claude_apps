@@ -1173,8 +1173,10 @@
     document.removeEventListener("click", onDocTapCloseIpa, true);
   }
   function onDocTapCloseIpa(e) {
-    // tap anywhere closes; suppress a tap on the IPA button so it can't reopen
-    if (ipaBtnRef && ipaBtnRef.contains(e.target)) e.stopPropagation();
+    // the dismissing tap ONLY closes the key — swallow it so it never
+    // activates whatever is underneath (a word chip, a button, the IPA itself)
+    e.stopPropagation();
+    if (e.cancelable) e.preventDefault();
     closeIpaKey();
   }
   function toggleIpaKey(ipa, ib) {

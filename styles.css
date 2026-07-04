@@ -103,12 +103,10 @@ body {
      chip) behind the dock with no way to scroll it into view. */
   padding: 6px var(--pad) calc(132px + env(safe-area-inset-bottom)) var(--pad);
   display: flex; flex-direction: column; align-items: stretch;
-  /* the dock now floats as a glass overlay (see .dock) rather than a flex
-     sibling, so content scrolls underneath it — fade it out over a longer
-     stretch as it nears the dock instead of an abrupt cut, echoing how the
-     dock's own backdrop-filter blurs whatever passes behind it. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 96px), transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 calc(100% - 96px), transparent 100%);
+  /* The bottom fade used to be a mask-image here — but a mask on a scroll
+     container silently disables backdrop-filter on ALL its descendants, so no
+     card frosted the paper texture behind it. Removed entirely (no fade), which
+     frees every card's blur; cards now scroll cleanly under the frosted dock. */
 }
 /* with the dock tucked away there's nothing at the bottom to fade into —
    drop the mask so content doesn't appear to fade into empty space. */
@@ -244,12 +242,12 @@ body {
   position: fixed; z-index: 60;
   width: 66%; min-width: 260px; max-width: 380px;
   border: 1px solid var(--bd); border-radius: 16px; padding: 13px 16px 14px;
-  /* genuine frosted glass: clearly translucent tint + a moderate blur, so you
-     see blurred hints of what's directly behind the box — and ONLY behind the
-     box; everything outside it is untouched */
-  background: color-mix(in srgb, var(--bg2) 58%, transparent);
-  -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%);
-  box-shadow: var(--glass-hi), 0 8px 22px rgba(0, 0, 0, 0.28);
+  /* identical glass to .card (light sheen + faint panel) — its real backdrop
+     blur works here (not trapped under #content's mask), so the light tint
+     stays readable while matching every other surface */
+  background: var(--glass-sheen), var(--panel);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-hi), var(--glass-shadow);
   transform-origin: top left;
   animation: ipa-peek-up 0.2s var(--ease);
 }
@@ -442,10 +440,9 @@ body {
   position: absolute; z-index: 5; left: 0; right: 0; bottom: 0;
   margin: 0 var(--pad) calc(14px + env(safe-area-inset-bottom));
   border: 1px solid var(--bd); border-radius: 999px;
-  /* frosted glass, matching the IPA peek: a visible translucent tint so the
-     backdrop blur reads as a real panel (the old --dock was only 2% opaque) */
-  background: color-mix(in srgb, var(--bg2) 56%, transparent);
-  -webkit-backdrop-filter: blur(30px) saturate(160%); backdrop-filter: blur(30px) saturate(160%);
+  /* same glass as .card and the IPA peek */
+  background: var(--glass-sheen), var(--panel);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   box-shadow: var(--glass-hi), var(--glass-shadow);
   padding: 6px 8px;
   /* border-radius is deliberately NOT transitioned: the height change that
@@ -822,7 +819,8 @@ body {
   position: fixed; z-index: 7;
   top: calc(env(safe-area-inset-top) + 64px); right: 16px;
   bottom: calc(env(safe-area-inset-bottom) + 20px); left: 16px;
-  background: var(--glass-sheen), var(--dock);
+  /* same glass as .card, the IPA peek, and the dock */
+  background: var(--glass-sheen), var(--panel);
   border: 1px solid var(--bd);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
   border-radius: 26px;
