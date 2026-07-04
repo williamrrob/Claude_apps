@@ -12,51 +12,61 @@ CORE PRINCIPLES you never violate:
 
 2. COINCIDENTAL MORPHEME SPLITS. A pattern-matching algorithm may split a word into pieces that merely share letters with real morphemes but have no etymological link. Classic errors: "congee" is not con- + ge (earth) — it is from Latin commeatus; "bigos" is a Polish stew, not Greek bios (life) + plural -s. A split is REAL only when every matched piece genuinely plays that morphological role in the word's actual history. Left-over unmatched stems are fine; coincidental root-meanings are not.
 
-3. COINAGE IS NARROW. "coinage" means a fandom or pop-culture artifact ONLY: ship names (romantic pairings of characters/celebrities like Delena, Frerard), the fursona/fanfic/stan families, franchise-fandom jargon. It is NOT general internet slang, NOT rare/archaic/technical/dialectal vocabulary, NOT ethnographic or linguistic terms (a Spanglish-style language blend is linguistics, not fandom). CRUCIAL: judge the WORD, not one sense. A real word (zoophile, one-shot, fix-it) that happens to carry a fandom sense is still an established word — never coinage.
+3. COINAGE vs ESTABLISHED — the test is CURRENCY, not word-formation. "coinage" means a word that never truly entered the language, in two flavors: (a) fandom/pop-culture artifacts — ship names (Delena, Frerard), the fursona/fanfic/stan families, franchise-fandom jargon; (b) transparent nonce or joke formations built for a single quip, with no real usage — a jokey -aholic, -ist, or -er ("adragonist" = one who doesn't believe in dragons; "coronaholic"). CRUCIAL CONTRAST: an established coinage that people actually ADOPTED is a real word, "established", never coinage — brunch, smog, workaholic, chocoholic, podcast, blog, and every ordinary technical/rare/archaic/dialectal word. Ask: did this gain genuine currency beyond the joke or the fan community? And judge the WORD, not one sense — a real word (zoophile, one-shot) that merely carries a fandom sense stays established.
 
 4. CONTESTED IS CONTENT. When sources genuinely disagree on a word's origin, that disagreement is real information. Do not fabricate false certainty; report uncertainty honestly when the evidence is genuinely split.
 
 5. KINSHIP FOR VARIANTS. A word is a variant/inflection of another only when they are morphological kin (shared stem: egotistic/egotistical, abeyancy/abeyance) — never merely because one word's definition happens to mention the other."""
 
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: Bieberism\nDefinition: The fandom of Justin Bieber.
-MESSAGE assistant {"type":"coinage"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: foxsona\nDefinition: A fursona that is a fox.
-MESSAGE assistant {"type":"coinage"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: zoophile\nDefinition: A furry (member of the furry fandom).
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: Bieberism\nDefinition: The fandom of Justin Bieber.
+MESSAGE assistant {"type":"nonce"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: foxsona\nDefinition: A fursona that is a fox.
+MESSAGE assistant {"type":"nonce"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: zoophile\nDefinition: A furry (member of the furry fandom).
 MESSAGE assistant {"type":"established"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: rabiz\nDefinition: A member of an Armenian hillbilly subculture embracing rabiz music.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: rabiz\nDefinition: A member of an Armenian hillbilly subculture embracing rabiz music.
 MESSAGE assistant {"type":"established"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: one-shot\nDefinition: A fanfic of only one chapter.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: one-shot\nDefinition: A fanfic of only one chapter.
 MESSAGE assistant {"type":"established"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: Meade County\nDefinition: One of 105 counties in Kansas, United States.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: Meade County\nDefinition: One of 105 counties in Kansas, United States.
 MESSAGE assistant {"type":"name"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: weighing\nDefinition: present participle and gerund of weigh
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: weighing\nDefinition: present participle and gerund of weigh
 MESSAGE assistant {"type":"inflection"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: front matter\nDefinition: Within a book, all preliminary content preceding the main text.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: front matter\nDefinition: Within a book, all preliminary content preceding the main text.
 MESSAGE assistant {"type":"phrase"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: Delena\nDefinition: The romantic pairing of the characters Damon Salvatore and Elena Gilbert.
-MESSAGE assistant {"type":"coinage"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: tinhat\nDefinition: One who promotes a conspiracy theory within a fandom space, especially about a celebrity relationship.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: Delena\nDefinition: The romantic pairing of the characters Damon Salvatore and Elena Gilbert.
+MESSAGE assistant {"type":"nonce"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: tinhat\nDefinition: One who promotes a conspiracy theory within a fandom space, especially about a celebrity relationship.
 MESSAGE assistant {"type":"established"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: Blogistan\nDefinition: Blogs of Iran (where the suffix -stan originated) and nearby regions.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: Blogistan\nDefinition: Blogs of Iran (where the suffix -stan originated) and nearby regions.
 MESSAGE assistant {"type":"established"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: Espanglish\nDefinition: A language blend of English and Spanish.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: Espanglish\nDefinition: A language blend of English and Spanish.
 MESSAGE assistant {"type":"established"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: susurrus\nDefinition: A whispering or rustling sound; a murmur.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: susurrus\nDefinition: A whispering or rustling sound; a murmur.
 MESSAGE assistant {"type":"established"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: quisling\nDefinition: A traitor who collaborates with an occupying enemy force.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: quisling\nDefinition: A traitor who collaborates with an occupying enemy force.
 MESSAGE assistant {"type":"established"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: gafiate\nDefinition: A science fiction fan who has become inactive in the fandom community.
-MESSAGE assistant {"type":"coinage"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: accursed\nDefinition: Hateful; detestable, loathsome.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: gafiate\nDefinition: A science fiction fan who has become inactive in the fandom community.
+MESSAGE assistant {"type":"nonce"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: accursed\nDefinition: Hateful; detestable, loathsome.
 MESSAGE assistant {"type":"established"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: myxomycetes\nDefinition: plural of myxomycete
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: myxomycetes\nDefinition: plural of myxomycete
 MESSAGE assistant {"type":"inflection"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: New York\nDefinition: The most populous city in the United States, in the state of New York.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: New York\nDefinition: The most populous city in the United States, in the state of New York.
 MESSAGE assistant {"type":"name"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: kick the bucket\nDefinition: To die.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: kick the bucket\nDefinition: To die.
 MESSAGE assistant {"type":"phrase"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: standom\nDefinition: Obsessive or excessive fandom; the fandom of stans.
-MESSAGE assistant {"type":"coinage"}
-MESSAGE user Classify this headword into one of: established, phrase, inflection, name, coinage.\nHeadword: petrichor\nDefinition: The pleasant smell of rain falling on dry ground.
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: standom\nDefinition: Obsessive or excessive fandom; the fandom of stans.
+MESSAGE assistant {"type":"nonce"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: petrichor\nDefinition: The pleasant smell of rain falling on dry ground.
 MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: quark\nDefinition: In physics, any of a group of subatomic particles carrying a fractional electric charge.
+MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: meme\nDefinition: A unit of cultural information that is transmitted from one mind to another.
+MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: workaholic\nDefinition: A person who works excessively or is addicted to work.
+MESSAGE assistant {"type":"established"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: craftaholic\nDefinition: A person who is very fond of crafting.
+MESSAGE assistant {"type":"nonce"}
+MESSAGE user Classify this headword into one of: established, phrase, inflection, name, nonce.\nHeadword: Olicity\nDefinition: The ship of characters Oliver Queen and Felicity Smoak from the television series Arrow.
+MESSAGE assistant {"type":"nonce"}
