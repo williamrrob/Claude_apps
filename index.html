@@ -3,6 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <script>
+    /* iOS Safari's 100dvh can freeze at whatever chrome (address-bar) state
+       was live at the moment of load/reload, instead of tracking it — most
+       visible right after a hard reload, which shows full chrome and can
+       leave dvh stuck short even once the chrome later collapses. Drive the
+       app's height from visualViewport instead, which stays live, and fall
+       back to 100dvh (see .app in styles.css) if visualViewport is absent. */
+    (function () {
+      function setAppHeight() {
+        var h = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+        document.documentElement.style.setProperty("--app-height", h + "px");
+      }
+      setAppHeight();
+      window.addEventListener("resize", setAppHeight);
+      window.addEventListener("orientationchange", setAppHeight);
+      window.addEventListener("pageshow", setAppHeight);
+      if (window.visualViewport) window.visualViewport.addEventListener("resize", setAppHeight);
+    })();
+  </script>
   <meta name="theme-color" content="#1b1712" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f1e7cf" media="(prefers-color-scheme: light)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -12,7 +31,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=132" />
+  <link rel="stylesheet" href="styles.css?v=133" />
 </head>
 <body>
   <div class="app">

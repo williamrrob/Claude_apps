@@ -4,9 +4,9 @@
 
   <!-- R·W in the app serif face: letters = app gold, dot = app ink.
        The interpunct is the app's signature breakdown separator. -->
-  <text x="256" y="344" text-anchor="middle"
+  <text x="256" y="330" text-anchor="middle"
         font-family="'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif"
-        font-weight="600" font-size="220" letter-spacing="6">
+        font-weight="600" font-size="168" letter-spacing="-4">
     <tspan fill="#d2b15c">R</tspan><tspan fill="#ece0cc">·</tspan><tspan fill="#d2b15c">W</tspan>
   </text>
 </svg>
