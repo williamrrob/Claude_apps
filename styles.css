@@ -108,7 +108,7 @@ body {
 .brand-name { font-weight: 700; letter-spacing: 0.01em; font-size: 16px; color: var(--muted); }
 .theme-toggle, .icon-toggle {
   position: relative;
-  width: 32px; height: 32px; border-radius: var(--r-round);
+  width: 40px; height: 40px; border-radius: var(--r-round);
   border: 1px solid var(--bd); background: var(--field);
   color: var(--muted); font-size: 14px; cursor: pointer;
   display: grid; place-items: center;
@@ -168,6 +168,15 @@ body {
   transition: transform 0.15s var(--ease), background 0.15s, border-color 0.15s, color 0.15s;
 }
 .btn:active { transform: var(--press); }
+
+/* suppress iOS's long-press selection box / callout on every tappable control
+   (also the prerequisite for a custom hold-to-preview interaction) */
+button, .btn, .bp.tappable, .example, .history-chip, .related-chip, .suggest-item,
+.anc-term, .anc-pivot, .anc-desc-word, .anc-back, .usage-col, .alpha-tab, .browse-word,
+.icon-toggle, .theme-toggle, .nav-btn, .search-btn, .settings-btn {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; user-select: none;
+}
 .btn-pill { border-radius: var(--r-pill); }
 .btn-icon { border-radius: var(--r-round); display: grid; place-items: center; }
 .btn-primary { background: var(--blue); color: var(--on-accent); border: none;
@@ -501,7 +510,7 @@ body {
 .dock-fade {
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
   height: calc(96px + env(safe-area-inset-bottom)); pointer-events: none;
-  background: linear-gradient(to top, var(--bg) 34%, transparent);
+  background: linear-gradient(to top, var(--bg) 6%, transparent);
 }
 /* a tall dock (suggestions/recent showing above the search row) would otherwise
    stretch the 999px pill radius into a stadium/circle that swallows the list */
@@ -1092,7 +1101,7 @@ body {
 .dock-row.typing .nav-pair { max-width: 0; flex-basis: 0; opacity: 0; pointer-events: none; }
 /* dock nav buttons: bare icons inside the one dock — no individual outline/fill
    (the dock is the container), so they don't read as separate pills */
-.nav-btn { width: 32px; height: 32px; border-radius: var(--r-pill); border: none;
+.nav-btn { width: 40px; height: 40px; border-radius: var(--r-pill); border: none;
   background: none; box-shadow: none;
   color: var(--ink); font-size: 19px; line-height: 1; cursor: pointer;
   display: grid; place-items: center; -webkit-tap-highlight-color: transparent; }
@@ -1233,3 +1242,7 @@ body {
 }
 .anc-crumb-word { font-size: 13.5px; color: var(--prefix-ink); font-style: italic; }
 .anc-desc-empty { font-size: 12.5px; color: var(--muted); font-style: italic; }
+
+/* refresh button spins while it clears caches + reloads */
+.icon-toggle.spinning svg { animation: spin 0.7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

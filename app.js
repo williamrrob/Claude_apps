@@ -2431,31 +2431,29 @@
   document.querySelectorAll(".example").forEach(function (btn) {
     btn.addEventListener("click", function () { run(btn.dataset.word); });
   });
-  // Home chips: three SHOWCASE classics that decompose beautifully (the
-  // first-tap demo) plus three random discovery words from quiz-pool.json —
-  // already vetted for "decent data" (real headwords, proper nouns/taxa/
-  // inflections excluded, usage breadth in a healthy band) by
-  // scripts/build-quiz-pool.js. All-random chips made a weak first
-  // impression: the pool is full of rare words ("gallinula") that don't
-  // show off the breakdown animation at all.
-  const SHOWCASE = ["biography", "incredible", "democracy", "prescription",
-    "philosophy", "microscope", "circumnavigate", "photosynthesis", "manuscript"];
+  // Home chips: a curated pool of words that decompose beautifully — the
+  // first-tap demo. Rendered SYNCHRONOUSLY (no quiz-pool fetch) so there's no
+  // async swap/flash on load, and every word is hand-picked, so no taxonomic
+  // or nonce discovery words ("bombus", "gallinula", "verbify") slip in. Six
+  // are drawn at random each home visit for variety.
+  const SHOWCASE = [
+    "biography", "incredible", "democracy", "prescription", "philosophy",
+    "microscope", "circumnavigate", "photosynthesis", "manuscript", "telephone",
+    "geography", "autograph", "chronology", "benevolent", "transcribe",
+    "hypothesis", "metamorphosis", "symbiosis", "chlorophyll", "thermometer",
+    "astronaut", "bibliography", "contradict", "malevolent", "omnivore",
+    "subterranean", "telegram", "verdict", "peninsula", "constellation",
+    "dinosaur", "encyclopedia", "hippopotamus", "paragraph", "sympathy"];
   function renderHomeChips() {
     const chipsEl = document.querySelector(".chips");
     if (!chipsEl) return;
-    getEraPool().then(function (pool) {
-      if (!pool.length) return;
-      const words = qShuffle(SHOWCASE).slice(0, 3)
-        .concat(qShuffle(pool).map(function (p) { return p.w; }))
-        .filter(function (w, i, a) { return a.indexOf(w) === i; })
-        .slice(0, 6);
-      chipsEl.innerHTML = "";
-      words.forEach(function (w) {
-        const b = el("button", "example", w);
-        b.type = "button"; b.dataset.word = w;
-        b.addEventListener("click", function () { run(w); });
-        chipsEl.appendChild(b);
-      });
+    const words = qShuffle(SHOWCASE).slice(0, 6);
+    chipsEl.innerHTML = "";
+    words.forEach(function (w) {
+      const b = el("button", "example", w);
+      b.type = "button"; b.dataset.word = w;
+      b.addEventListener("click", function () { run(w); });
+      chipsEl.appendChild(b);
     });
   }
   // deferred to a microtask: getEraPool() below closes over `eraPoolPromise`,

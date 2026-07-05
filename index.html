@@ -12,7 +12,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=130" />
+  <link rel="stylesheet" href="styles.css?v=132" />
 </head>
 <body>
   <div class="app">
@@ -23,6 +23,12 @@
                 fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
         </svg>
         <span id="quizCount" class="quiz-count" hidden></span>
+      </button>
+      <button id="refreshBtn" class="icon-toggle" type="button" aria-label="Check for updates">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+          <path d="M20 11.5A8 8 0 1 0 18.4 16.6M20 4.5V10h-5.5"
+                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </button>
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark">
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
@@ -116,9 +122,22 @@
         navigator.serviceWorker.register("sw.js").catch(function () {});
       });
     }
+    /* manual refresh: clear caches + SW and hard-reload to pull the latest */
+    window.addEventListener("load", function () {
+      var rb = document.getElementById("refreshBtn");
+      if (!rb) return;
+      rb.addEventListener("click", function () {
+        rb.classList.add("spinning");
+        Promise.resolve()
+          .then(function () { return window.caches ? caches.keys().then(function (ks) { return Promise.all(ks.map(function (k) { return caches.delete(k); })); }) : null; })
+          .then(function () { return navigator.serviceWorker ? navigator.serviceWorker.getRegistrations().then(function (rs) { return Promise.all(rs.map(function (r) { return r.unregister(); })); }) : null; })
+          .catch(function () {})
+          .then(function () { location.reload(); });
+      });
+    });
   </script>
   <script defer src="data.js?v=62"></script>
   <script defer src="engine.js?v=61"></script>
-  <script defer src="app.js?v=147"></script>
+  <script defer src="app.js?v=148"></script>
 </body>
 </html>
