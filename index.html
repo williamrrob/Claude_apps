@@ -12,22 +12,44 @@
        back to 100dvh (see .app in styles.css) if visualViewport is absent. */
     (function () {
       var vv = window.visualViewport;
-      function setAppMetrics() {
-        var h = (vv && vv.height) || window.innerHeight;
-        document.documentElement.style.setProperty("--app-height", h + "px");
-        /* When iOS opens the software keyboard it can scroll the VISUAL viewport
-           down inside the (unchanged) layout viewport, leaving offsetTop > 0. An
-           app pinned to the layout top then floats up off-screen — content slides
-           behind the status bar and the bottom dock lands mid-screen with a dead
-           gap below it down to the keyboard. Pin the app to the visual viewport by
-           matching that offset (see .app { top: var(--app-top) } in styles.css). */
-        document.documentElement.style.setProperty("--app-top", (vv ? vv.offsetTop : 0) + "px");
+      var root = document.documentElement;
+      /* Only OVERRIDE the app height while the software keyboard is open. At rest
+         we clear the override so CSS `height: 100dvh` owns it — that's the
+         browser-maintained full-viewport height, immune to the two failure modes
+         of a JS-driven height: (1) iOS often doesn't fire a visualViewport resize
+         when the keyboard CLOSES, so a persistent override gets stuck at the
+         shrunken height and the whole app (with its bottom dock) rides up, and
+         (2) a stale value latched during a transition never self-corrects.
+         Keyboard-open is detected as a big gap between the layout viewport
+         (window.innerHeight) and the visual viewport (vv.height). */
+      function update() {
+        var kbOpen = vv && (window.innerHeight - vv.height) > 120;
+        if (kbOpen) {
+          root.style.setProperty("--app-height", vv.height + "px");
+          /* iOS can also scroll the VISUAL viewport down inside the (unchanged)
+             layout viewport on focus, leaving offsetTop > 0; matching it as
+             --app-top (see .app { top }) keeps the app pinned to what's visible
+             instead of floating up behind the status bar. */
+          root.style.setProperty("--app-top", vv.offsetTop + "px");
+        } else {
+          /* At rest use the layout-viewport height (window.innerHeight): unlike
+             visualViewport.height it never shrinks for the keyboard, so it can't
+             get stuck small when iOS skips the keyboard-close resize; unlike
+             100dvh it can't freeze at a stale chrome state. This is the height
+             the app should fill whenever the keyboard is down. */
+          root.style.setProperty("--app-height", window.innerHeight + "px");
+          root.style.setProperty("--app-top", "0px");
+        }
       }
-      setAppMetrics();
-      window.addEventListener("resize", setAppMetrics);
-      window.addEventListener("orientationchange", setAppMetrics);
-      window.addEventListener("pageshow", setAppMetrics);
-      if (vv) { vv.addEventListener("resize", setAppMetrics); vv.addEventListener("scroll", setAppMetrics); }
+      update();
+      window.addEventListener("resize", update);
+      window.addEventListener("orientationchange", update);
+      window.addEventListener("pageshow", update);
+      if (vv) { vv.addEventListener("resize", update); vv.addEventListener("scroll", update); }
+      /* the keyboard closing doesn't reliably fire a visualViewport resize on
+         iOS — reset explicitly when focus enters/leaves the search field. */
+      document.addEventListener("focusin", function () { setTimeout(update, 60); });
+      document.addEventListener("focusout", function () { setTimeout(update, 60); });
     })();
   </script>
   <meta name="theme-color" content="#1b1712" media="(prefers-color-scheme: dark)" />
