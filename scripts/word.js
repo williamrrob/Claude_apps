@@ -71,7 +71,7 @@ const fs = require("fs");
 const path = require("path");
 
 const WORDS_DIR = path.join(__dirname, "..", "words");
-const FIELDS = new Set(["d", "e", "s", "a", "r", "i", "rs", "au", "b", "bWhole", "cl", "vars", "forms", "rel"]);
+const FIELDS = new Set(["d", "e", "s", "a", "r", "i", "rs", "au", "b", "bWhole", "cl", "vars", "forms", "rel", "_mw"]);
 
 function fail(msg) { process.stderr.write("word.js: " + msg + "\n"); process.exit(1); }
 

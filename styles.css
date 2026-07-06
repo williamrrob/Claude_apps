@@ -963,6 +963,34 @@ button, .btn, .bp.tappable, .example, .history-chip, .related-chip, .suggest-ite
 .card.in { opacity: 1; transform: none; }
 .cap { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
 
+/* Merriam-Webster per-homograph card: part of speech as the header, then
+   definitions + etymology + thesaurus for that one sense-group. */
+.mw-pos { font-family: var(--serif, Georgia, serif); font-style: italic; font-weight: 600;
+  font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--suffix); margin-bottom: 11px; }
+.mw-card .def-meaning { margin-top: 2px; }
+.mw-phrases { margin-top: 13px; padding-top: 11px; border-top: 1px solid var(--bd);
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; }
+.mw-phrase-list { font-size: 14px; color: var(--ink); font-style: italic; }
+
+/* settings dialog — MW API keys */
+.settings-dialog { border: none; padding: 0; background: transparent; color: var(--ink); max-width: 92vw; width: 420px; }
+.settings-dialog::backdrop { background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(3px); }
+.settings-form { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--r-card);
+  padding: 22px; box-shadow: var(--glass-shadow); display: flex; flex-direction: column; gap: 13px; }
+.settings-form h2 { margin: 0; font-size: 17px; font-weight: 700; }
+.settings-note { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+.settings-form label { display: flex; flex-direction: column; gap: 5px; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.settings-form input { font: inherit; font-size: 14px; letter-spacing: 0; text-transform: none;
+  color: var(--ink); background: var(--field); border: 1px solid var(--bd); border-radius: var(--r-md);
+  padding: 10px 12px; }
+.settings-form input:focus { outline: none; border-color: var(--blue-ink); }
+.settings-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 4px; }
+.settings-actions button { font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+  padding: 9px 18px; border-radius: var(--r-pill); border: 1px solid var(--bd); }
+.settings-cancel { background: transparent; color: var(--muted); }
+.settings-save { background: var(--blue); color: var(--on-accent); border-color: var(--blue); }
+
 /* breakdown — row that stacks into a left-justified acrostic */
 /* .bd clips to its own (content) box, so pieces vanish at the card's inner
    margin, not the screen edge */

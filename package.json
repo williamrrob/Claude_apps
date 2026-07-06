@@ -4,7 +4,7 @@
   "description": "Rootwork — a visual etymology app that breaks words into their roots and affixes.",
   "private": true,
   "scripts": {
-    "test": "node test/integration.test.js",
+    "test": "node test/integration.test.js && node test/mw.test.js",
     "build:data": "node scripts/build-data.js",
     "build:rich": "node scripts/build-rich.js",
     "build:sqlite": "node --no-warnings scripts/build-sqlite.js",

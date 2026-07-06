@@ -31,7 +31,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=133" />
+  <link rel="stylesheet" href="styles.css?v=135" />
 </head>
 <body>
   <div class="app">
@@ -55,7 +55,33 @@
           <path d="M12 3.5a8.5 8.5 0 0 0 0 17z" fill="currentColor"/>
         </svg>
       </button>
+      <button id="settingsBtn" class="icon-toggle" type="button" aria-label="Settings">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"
+                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
     </header>
+
+    <dialog id="settingsDialog" class="settings-dialog">
+      <form method="dialog" class="settings-form">
+        <h2>Merriam-Webster API keys</h2>
+        <p class="settings-note">Stored only in this browser (localStorage) — never uploaded. Register free keys for the
+          <em>Collegiate Dictionary</em> and <em>Collegiate Thesaurus</em> at dictionaryapi.com. With keys set, searching
+          a word pulls MW definitions, etymology and thesaurus data automatically.</p>
+        <label>Dictionary key
+          <input id="mwDictKey" type="text" autocomplete="off" spellcheck="false" placeholder="xxxxxxxx-xxxx-…" />
+        </label>
+        <label>Thesaurus key
+          <input id="mwThesKey" type="text" autocomplete="off" spellcheck="false" placeholder="xxxxxxxx-xxxx-…" />
+        </label>
+        <div class="settings-actions">
+          <button value="cancel" type="submit" class="settings-cancel">Cancel</button>
+          <button id="mwKeysSave" value="save" type="submit" class="settings-save">Save</button>
+        </div>
+      </form>
+    </dialog>
 
     <div class="minihead" id="miniHead"></div>
     <button id="quizPeekBack" class="quiz-peek-back" type="button">
@@ -157,6 +183,7 @@
   </script>
   <script defer src="data.js?v=62"></script>
   <script defer src="engine.js?v=61"></script>
-  <script defer src="app.js?v=148"></script>
+  <script defer src="mw-map.js?v=1"></script>
+  <script defer src="app.js?v=151"></script>
 </body>
 </html>

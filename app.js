@@ -64,8 +64,27 @@
     try { localStorage.setItem("rootwork.theme", next); } catch (e) {}
   });
 
+  // ---------- settings dialog: Merriam-Webster API keys ----------
+  const settingsBtn = $("settingsBtn"), settingsDialog = $("settingsDialog");
+  if (settingsBtn && settingsDialog) {
+    const dictInput = $("mwDictKey"), thesInput = $("mwThesKey"), saveBtn = $("mwKeysSave");
+    settingsBtn.addEventListener("click", function () {
+      try { dictInput.value = localStorage.getItem("rootwork.mwDictKey") || ""; thesInput.value = localStorage.getItem("rootwork.mwThesKey") || ""; } catch (e) {}
+      if (typeof settingsDialog.showModal === "function") settingsDialog.showModal();
+    });
+    // Persist only when Save (not Cancel) closes the dialog.
+    settingsDialog.addEventListener("close", function () {
+      if (settingsDialog.returnValue !== "save") return;
+      try {
+        localStorage.setItem("rootwork.mwDictKey", dictInput.value.trim());
+        localStorage.setItem("rootwork.mwThesKey", thesInput.value.trim());
+      } catch (e) {}
+    });
+    if (saveBtn) saveBtn.addEventListener("click", function () { settingsDialog.returnValue = "save"; });
+  }
+
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "140";
+  const DATA_V = "143";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -149,6 +168,81 @@
   function foldKey(s) {
     return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
   }
+  // ---------- Merriam-Webster: live enrichment on search ----------
+  // MW is the highest-quality source we have for definitions, thesaurus and
+  // first-use dates. Its API is CORS-enabled (Access-Control-Allow-Origin: *)
+  // but requires per-product keys — kept ONLY in this browser's localStorage
+  // (bring-your-own-key), never committed to the public site. When keys are set,
+  // searching a word with no baked-in `_mw` fetches dictionary + thesaurus,
+  // maps them via mw-map.js (the same mapper the CLI uses), caches the result in
+  // localStorage so it's fetched once per word, and renders per-homograph cards.
+  const MW_KEY_DICT = "rootwork.mwDictKey", MW_KEY_THES = "rootwork.mwThesKey", MW_CACHE = "rootwork.mwCache";
+  function mwKeys() {
+    try { return { dict: localStorage.getItem(MW_KEY_DICT) || "", thes: localStorage.getItem(MW_KEY_THES) || "" }; }
+    catch (e) { return { dict: "", thes: "" }; }
+  }
+  function mwCacheGet(word) {
+    try { const c = JSON.parse(localStorage.getItem(MW_CACHE) || "{}"); return c[word] || null; } catch (e) { return null; }
+  }
+  function mwCacheSet(word, mw) {
+    try {
+      const c = JSON.parse(localStorage.getItem(MW_CACHE) || "{}");
+      c[word] = mw; // [] is a valid cached value: "checked MW, nothing there — don't re-fetch"
+      localStorage.setItem(MW_CACHE, JSON.stringify(c));
+    } catch (e) {}
+  }
+  const mwMem = {}; // per-session in-flight/result cache, keyed by word
+  // Returns a Promise of the `_mw` array (possibly []), or null if MW is
+  // unavailable (no keys, mapper missing, or the fetch failed).
+  function fetchMw(word) {
+    const w = String(word || "").trim();
+    if (typeof fetch !== "function" || typeof MWMap === "undefined" || !/^[a-z][a-z .'-]{0,40}$/i.test(w)) return Promise.resolve(null);
+    if (w in mwMem) return mwMem[w];
+    const cached = mwCacheGet(w);
+    if (cached) return (mwMem[w] = Promise.resolve(cached));
+    const keys = mwKeys();
+    if (!keys.dict) return Promise.resolve(null); // not configured — stay silent
+    const base = "https://dictionaryapi.com/api/v3/references/";
+    const enc = encodeURIComponent(w);
+    const getJson = function (u) { return fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
+    const p = Promise.all([
+      getJson(base + "collegiate/json/" + enc + "?key=" + encodeURIComponent(keys.dict)),
+      keys.thes ? getJson(base + "thesaurus/json/" + enc + "?key=" + encodeURIComponent(keys.thes)) : Promise.resolve([]),
+    ]).then(function (pair) {
+      const dict = pair[0];
+      if (!dict) return null; // network/key error — don't cache, allow a later retry
+      const mw = MWMap.mapMwResponse(dict, pair[1] || [], w);
+      mwCacheSet(w, mw); // cache even [] so a known-miss isn't re-fetched every search
+      return mw;
+    }).catch(function () { return null; });
+    return (mwMem[w] = p);
+  }
+
+  // Synthesize an entry from MW homographs so a word we don't have in the
+  // corpus can still render like any other — MW as a fallback dictionary. The
+  // per-homograph `_mw` drives the cards; the flat `d`/`e`/`i` are filled from it
+  // so the usual guards, breakdown, pronunciation and quiz logic treat it as a
+  // real entry.
+  const MW_POS_ABBR = { noun: "n.", verb: "v.", adjective: "adj.", adverb: "adv.",
+    preposition: "prep.", conjunction: "conj.", pronoun: "pron.", interjection: "interj.",
+    "definite article": "art.", "indefinite article": "art.", abbreviation: "abbr.",
+    "auxiliary verb": "v.", "geographical name": "n.", "biographical name": "n." };
+  function mwFallbackRec(mw) {
+    const rec = { _mw: mw, _mwOnly: true };
+    const d = [], seen = {};
+    let firstEt = null, firstIpa = null;
+    mw.forEach(function (h) {
+      const p = MW_POS_ABBR[(h.fl || "").toLowerCase()] || (h.fl ? h.fl.slice(0, 4) + "." : "");
+      (h.shortdef || []).forEach(function (g) { const k = p + "|" + g; if (!seen[k]) { seen[k] = 1; d.push({ p: p, g: g }); } });
+      if (!firstEt && h.et) firstEt = h.et;
+      if (!firstIpa && h.hwi && h.hwi.prs && h.hwi.prs[0] && h.hwi.prs[0].ipa) firstIpa = h.hwi.prs[0].ipa;
+    });
+    if (d.length) rec.d = d;
+    if (firstEt) rec.e = firstEt;
+    if (firstIpa) rec.i = "/" + String(firstIpa).replace(/^\/|\/$/g, "") + "/";
+    return rec;
+  }
+
   // Obscure roots we didn't build in are looked up live — Wiktionary's REST
   // endpoint is CORS-enabled and groups definitions by language.
   const ONLINE_LANGS = { la: "Latin", grc: "Ancient Greek", "ine-pro": "Proto-Indo-European",
@@ -489,6 +583,16 @@
           return;
         }
         showStatus("Looking up “" + escapeHtml(result.word) + "” …", false);
+        // Fallback dictionary: not in our corpus, but Merriam-Webster may have
+        // it. Synthesize an entry from MW and render it like any other word.
+        const mwFb = await fetchMw(result.word);
+        if (token !== runToken) return;
+        if (mwFb && mwFb.length) {
+          currentWord = result.word;
+          pushHistory(result.word); pushNav(result.word);
+          await reveal(result, token, mwFallbackRec(mwFb));
+          return;
+        }
         const online = await lookupOnline(result.word);
         if (token !== runToken) return;
         if (online) { pushHistory(result.word); pushNav(result.word); renderSource(online, token); return; }
@@ -689,11 +793,18 @@
     if (pos) miniHead.appendChild(el("span", "minihead-pos", pos));
   }
 
-  async function reveal(result, token) {
+  async function reveal(result, token, preRec) {
     clearStage();
-    const recP = getWord(result.word);
+    // `preRec` is a synthesized MW-fallback entry (word not in our corpus); use
+    // it directly rather than re-reading the dictionary, which would miss.
+    const recP = preRec ? Promise.resolve(preRec) : getWord(result.word);
     const rec = await recP;
     if (token !== runToken) return;
+    // Kick off Merriam-Webster enrichment now (if not already baked into the
+    // entry) so the network call overlaps the headword + breakdown animation;
+    // we only await it when we reach the definition section below.
+    const mwEarly = (rec && Array.isArray(rec._mw) && rec._mw.length)
+      ? Promise.resolve(rec._mw) : fetchMw(result.word);
     const isAbbr = rec && rec.d && rec.d[0] && rec.d[0].p === "abbr.";
     // If this word is a member of a collection that names a parent English word,
     // redirect to that parent — abbreviations live on the parent's card, not alone.
@@ -710,7 +821,7 @@
     const parts = isAbbr ? wholePart(result.word) : chooseBreakdown(result, rec);
     const isWhole = parts.length === 1 && parts[0].whole;
 
-    if (!rec || !rec.d || !rec.d.length) {
+    if ((!rec || !rec.d || !rec.d.length) && !(rec && rec._mw && rec._mw.length)) {
       noteEl.textContent = isWhole
         ? "“" + result.word + "” isn’t in the dictionary."
         : "“" + result.word + "” isn’t in the dictionary — here’s how its parts would break down.";
@@ -832,17 +943,31 @@
     }
     } // end !isAbbr breakdown block
 
-    // 3) Definition
+    // 3) Definition (+ etymology + thesaurus, grouped per homograph when we have
+    // Merriam-Webster data — either baked into the entry or fetched live above).
+    // `useMw` swaps the section-grouped Definition/Word-history/Thesaurus cards
+    // for one card per homograph.
     await delay(30); if (token !== runToken) return;
-    const defCard = buildDefinitionCard(recP, token);
-    cardsEl.appendChild(defCard);
-    requestAnimationFrame(function () { defCard.classList.add("in"); });
+    const mwData = await mwEarly; // resolved during the breakdown animation in the common case
+    if (token !== runToken) return;
+    if (mwData && mwData.length && rec) rec._mw = mwData;
+    const useMw = rec && Array.isArray(rec._mw) && rec._mw.length;
+    let anchorCard;
+    if (useMw) {
+      const mwCards = buildMwCards(rec._mw, token);
+      mwCards.forEach(function (c) { cardsEl.appendChild(c); requestAnimationFrame(function () { c.classList.add("in"); }); });
+      anchorCard = mwCards[mwCards.length - 1];
+    } else {
+      anchorCard = buildDefinitionCard(recP, token);
+      cardsEl.appendChild(anchorCard);
+      requestAnimationFrame(function () { anchorCard.classList.add("in"); });
+    }
 
     // 3.5) Word family — if this word belongs to a curated family, tie its page
     // to the family tree (shows the region it sits in + opens the tree).
     buildFamilyCard(parts, result.word, token).then(function (famCard) {
       if (famCard && token === runToken) {
-        if (defCard.nextSibling) cardsEl.insertBefore(famCard, defCard.nextSibling);
+        if (anchorCard && anchorCard.nextSibling) cardsEl.insertBefore(famCard, anchorCard.nextSibling);
         else cardsEl.appendChild(famCard);
         requestAnimationFrame(function () { famCard.classList.add("in"); });
       }
@@ -863,18 +988,23 @@
       }
     });
 
-    // 4) divider + Word history
-    const divider = fleuron();
-    const histCard = buildHistoryCard(recP, parts, token, divider);
-    cardsEl.appendChild(divider);
-    cardsEl.appendChild(histCard);
-    requestAnimationFrame(function () { divider.classList.add("in"); histCard.classList.add("in"); });
+    // 4) divider + Word history — skipped under MW (etymology already lives
+    // inside each homograph card above).
+    let histAnchor = anchorCard;
+    if (!useMw) {
+      const divider = fleuron();
+      const histCard = buildHistoryCard(recP, parts, token, divider);
+      cardsEl.appendChild(divider);
+      cardsEl.appendChild(histCard);
+      requestAnimationFrame(function () { divider.classList.add("in"); histCard.classList.add("in"); });
+      histAnchor = histCard;
+    }
 
     // 4.5) Ancestry — the word's position on the etymology graph (trees/),
     // ancestors tappable: entries open, shared roots pivot to descendants.
     buildAncestryCard(result.word, token).then(function (ancCard) {
       if (ancCard && token === runToken) {
-        if (histCard.nextSibling) cardsEl.insertBefore(ancCard, histCard.nextSibling);
+        if (histAnchor && histAnchor.nextSibling) cardsEl.insertBefore(ancCard, histAnchor.nextSibling);
         else cardsEl.appendChild(ancCard);
         requestAnimationFrame(function () { ancCard.classList.add("in"); });
       }
@@ -885,10 +1015,13 @@
     cardsEl.appendChild(useCard);
     requestAnimationFrame(function () { useCard.classList.add("in"); });
 
-    // 6) Thesaurus
-    const thesCard = buildThesaurusCard(recP, token);
-    cardsEl.appendChild(thesCard);
-    requestAnimationFrame(function () { thesCard.classList.add("in"); });
+    // 6) Thesaurus — skipped under MW (synonyms already live inside each
+    // homograph card above).
+    if (!useMw) {
+      const thesCard = buildThesaurusCard(recP, token);
+      cardsEl.appendChild(thesCard);
+      requestAnimationFrame(function () { thesCard.classList.add("in"); });
+    }
   }
 
   // Usage-over-time histogram: 21 quarter-century buckets (1500–2025), each 0–100
@@ -1373,6 +1506,88 @@
       group("Related", r, "rel");
     });
     return card;
+  }
+
+  // ---------- Merriam-Webster per-homograph cards ----------
+  // When an entry carries staged MW data (rec._mw), each homograph renders as its
+  // own card with definitions, etymology and thesaurus grouped TOGETHER under the
+  // word's part of speech — "desert" the arid noun, the adjective, the verb and
+  // the "just deserts" noun become four separate cards — instead of the app's
+  // default section-grouped Definition / Word-history / Thesaurus cards.
+  const MW_POS = { noun: "noun", verb: "verb", adjective: "adjective", adverb: "adverb",
+    preposition: "preposition", conjunction: "conjunction", pronoun: "pronoun",
+    interjection: "interjection", "definite article": "article", "indefinite article": "article",
+    abbreviation: "abbreviation", "auxiliary verb": "verb", "geographical name": "name",
+    "biographical name": "name", "trademark": "trademark" };
+  const SUPERS = { "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹" };
+  function toSuper(n) { return String(n).replace(/\d/g, function (d) { return SUPERS[d]; }); }
+  // MW etymology prose can end in a bare cross-ref to another homograph
+  // ("… uninhabited" desert:2) — drop that dangling pointer.
+  function cleanMwEt(et) { return String(et || "").replace(/\s+[a-zà-ÿ]+:\d+\s*$/i, "").replace(/\s+/g, " ").trim(); }
+  // MW thesaurus words carry usage notes in parens ("defect (from)"); the bare
+  // word is what we can actually look up.
+  function mwSynClean(w) { return String(w || "").replace(/\s*\([^)]*\)\s*/g, " ").trim(); }
+  function buildMwCards(mw, token) {
+    // repeated parts of speech (two nouns) get disambiguating superscripts
+    const flCount = {}, flSeen = {};
+    mw.forEach(function (h) { const f = (h.fl || "").toLowerCase(); flCount[f] = (flCount[f] || 0) + 1; });
+    return mw.map(function (h) {
+      const card = el("div", "card mw-card");
+      const fl = (h.fl || "").toLowerCase();
+      let label = MW_POS[fl] || h.fl || "—";
+      if (flCount[fl] > 1) { flSeen[fl] = (flSeen[fl] || 0) + 1; label += " " + toSuper(flSeen[fl]); }
+      card.appendChild(el("div", "cap mw-pos", label));
+      if (h.shortdef && h.shortdef.length) {
+        const slot = el("div", "def-meaning");
+        h.shortdef.forEach(function (g, i) {
+          const row = el("div", "sense");
+          row.appendChild(el("span", "num", String(i + 1)));
+          const body = el("span"); body.innerHTML = escapeHtml(g);
+          row.appendChild(body); slot.appendChild(row);
+        });
+        card.appendChild(slot);
+      }
+      const et = cleanMwEt(h.et);
+      if (et) {
+        card.appendChild(el("div", "sub", "Etymology"));
+        card.appendChild(el("div", "hist", et));
+      }
+      if (h.date) {
+        const fr = el("div", "first-rec");
+        fr.innerHTML = '<span class="sub">First recorded</span> ' + escapeHtml(h.date);
+        card.appendChild(fr);
+      }
+      // thesaurus — validated against the dictionary so every chip opens
+      (async function () {
+        const clean = function (arr) { return (arr || []).map(mwSynClean).filter(Boolean); };
+        const s = await validateWords(clean(h.s), 12);
+        const a = await validateWords(clean(h.a), 8);
+        const r = await validateWords(clean(h.r), 12);
+        if (token !== runToken) return;
+        function group(lbl, words, cls) {
+          if (!words.length) return;
+          const row = el("div", "thes-group");
+          row.appendChild(el("span", "thes-label", lbl));
+          words.forEach(function (w, i) {
+            const c = el("button", "related-chip thes-" + cls, w);
+            c.style.setProperty("--i", i);
+            c.addEventListener("click", function () { run(w); });
+            row.appendChild(c);
+          });
+          card.appendChild(row);
+        }
+        group("Synonyms", s, "syn");
+        group("Antonyms", a, "ant");
+        group("Related", r, "rel");
+      })();
+      if (h.phrases && h.phrases.length) {
+        const pr = el("div", "mw-phrases");
+        pr.appendChild(el("span", "thes-label", "Phrases such as"));
+        pr.appendChild(el("span", "mw-phrase-list", h.phrases.join("  ·  ")));
+        card.appendChild(pr);
+      }
+      return card;
+    });
   }
 
   // ---------- etymology / word history ----------
