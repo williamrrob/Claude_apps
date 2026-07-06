@@ -88,7 +88,15 @@ body {
 }
 
 .app {
-  position: relative;
+  /* Fixed + top:var(--app-top) pins the app to the VISUAL viewport, not the
+     layout viewport — so when iOS scrolls the visual viewport on keyboard focus
+     (offsetTop > 0), the app follows instead of floating off-screen (index.html
+     sets --app-top / --app-height from visualViewport). Still a positioned
+     ancestor, so the absolutely-positioned dock and overlays anchor to it. */
+  position: fixed;
+  top: var(--app-top, 0px);
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   height: var(--app-height, 100dvh);

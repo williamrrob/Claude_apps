@@ -11,15 +11,23 @@
        app's height from visualViewport instead, which stays live, and fall
        back to 100dvh (see .app in styles.css) if visualViewport is absent. */
     (function () {
-      function setAppHeight() {
-        var h = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+      var vv = window.visualViewport;
+      function setAppMetrics() {
+        var h = (vv && vv.height) || window.innerHeight;
         document.documentElement.style.setProperty("--app-height", h + "px");
+        /* When iOS opens the software keyboard it can scroll the VISUAL viewport
+           down inside the (unchanged) layout viewport, leaving offsetTop > 0. An
+           app pinned to the layout top then floats up off-screen — content slides
+           behind the status bar and the bottom dock lands mid-screen with a dead
+           gap below it down to the keyboard. Pin the app to the visual viewport by
+           matching that offset (see .app { top: var(--app-top) } in styles.css). */
+        document.documentElement.style.setProperty("--app-top", (vv ? vv.offsetTop : 0) + "px");
       }
-      setAppHeight();
-      window.addEventListener("resize", setAppHeight);
-      window.addEventListener("orientationchange", setAppHeight);
-      window.addEventListener("pageshow", setAppHeight);
-      if (window.visualViewport) window.visualViewport.addEventListener("resize", setAppHeight);
+      setAppMetrics();
+      window.addEventListener("resize", setAppMetrics);
+      window.addEventListener("orientationchange", setAppMetrics);
+      window.addEventListener("pageshow", setAppMetrics);
+      if (vv) { vv.addEventListener("resize", setAppMetrics); vv.addEventListener("scroll", setAppMetrics); }
     })();
   </script>
   <meta name="theme-color" content="#1b1712" media="(prefers-color-scheme: dark)" />
@@ -31,7 +39,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=135" />
+  <link rel="stylesheet" href="styles.css?v=136" />
 </head>
 <body>
   <div class="app">
