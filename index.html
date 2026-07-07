@@ -4,52 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
   <script>
-    /* iOS Safari's 100dvh can freeze at whatever chrome (address-bar) state
-       was live at the moment of load/reload, instead of tracking it — most
-       visible right after a hard reload, which shows full chrome and can
-       leave dvh stuck short even once the chrome later collapses. Drive the
-       app's height from visualViewport instead, which stays live, and fall
-       back to 100dvh (see .app in styles.css) if visualViewport is absent. */
+    /* Keyboard handling. Rather than resize/reposition the app to the visual
+       viewport (fragile on iOS: stale/absent resize events, offset-scroll, and
+       body-texture bleed when the app doesn't cover the screen), the app stays
+       fixed at full size and only a --kb custom property — the software
+       keyboard's height — lifts the bottom dock above the keyboard. See the
+       matching CSS in styles.css (.app, .dock, .dock-fade, .content). */
     (function () {
       var vv = window.visualViewport;
       var root = document.documentElement;
-      /* Only OVERRIDE the app height while the software keyboard is open. At rest
-         we clear the override so CSS `height: 100dvh` owns it — that's the
-         browser-maintained full-viewport height, immune to the two failure modes
-         of a JS-driven height: (1) iOS often doesn't fire a visualViewport resize
-         when the keyboard CLOSES, so a persistent override gets stuck at the
-         shrunken height and the whole app (with its bottom dock) rides up, and
-         (2) a stale value latched during a transition never self-corrects.
-         Keyboard-open is detected as a big gap between the layout viewport
-         (window.innerHeight) and the visual viewport (vv.height). */
+      /* The app stays full-screen at all times (.app is position:fixed; inset:0),
+         so it always covers the paper-texture body background — nothing floats and
+         no grain ever shows past the UI. The ONLY thing the keyboard changes is
+         --kb, the keyboard's height (how much shorter the VISUAL viewport is than
+         the layout viewport). The bottom dock (and the content's bottom padding)
+         lift by --kb so the search bar rides just above the keyboard. Because the
+         app itself never moves or resizes, none of the visualViewport timing/stale
+         quirks can misposition it — worst case the dock lift is briefly off. */
       function update() {
-        var kbOpen = vv && (window.innerHeight - vv.height) > 120;
-        if (kbOpen) {
-          root.style.setProperty("--app-height", vv.height + "px");
-          /* iOS can also scroll the VISUAL viewport down inside the (unchanged)
-             layout viewport on focus, leaving offsetTop > 0; matching it as
-             --app-top (see .app { top }) keeps the app pinned to what's visible
-             instead of floating up behind the status bar. */
-          root.style.setProperty("--app-top", vv.offsetTop + "px");
-        } else {
-          /* At rest use the layout-viewport height (window.innerHeight): unlike
-             visualViewport.height it never shrinks for the keyboard, so it can't
-             get stuck small when iOS skips the keyboard-close resize; unlike
-             100dvh it can't freeze at a stale chrome state. This is the height
-             the app should fill whenever the keyboard is down. */
-          root.style.setProperty("--app-height", window.innerHeight + "px");
-          root.style.setProperty("--app-top", "0px");
-        }
+        var kb = vv ? Math.max(0, window.innerHeight - vv.height) : 0;
+        root.style.setProperty("--kb", kb + "px");
       }
       update();
       window.addEventListener("resize", update);
       window.addEventListener("orientationchange", update);
       window.addEventListener("pageshow", update);
       if (vv) { vv.addEventListener("resize", update); vv.addEventListener("scroll", update); }
-      /* the keyboard closing doesn't reliably fire a visualViewport resize on
-         iOS — reset explicitly when focus enters/leaves the search field. */
-      document.addEventListener("focusin", function () { setTimeout(update, 60); });
-      document.addEventListener("focusout", function () { setTimeout(update, 60); });
+      /* iOS doesn't always fire a viewport resize when the keyboard closes —
+         recompute across the focus transition to catch it. */
+      function recheck() { update(); setTimeout(update, 100); setTimeout(update, 350); setTimeout(update, 600); }
+      document.addEventListener("focusin", recheck);
+      document.addEventListener("focusout", recheck);
     })();
   </script>
   <meta name="theme-color" content="#1b1712" media="(prefers-color-scheme: dark)" />
@@ -61,7 +46,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=136" />
+  <link rel="stylesheet" href="styles.css?v=137" />
 </head>
 <body>
   <div class="app">

@@ -88,18 +88,16 @@ body {
 }
 
 .app {
-  /* Fixed + top:var(--app-top) pins the app to the VISUAL viewport, not the
-     layout viewport — so when iOS scrolls the visual viewport on keyboard focus
-     (offsetTop > 0), the app follows instead of floating off-screen (index.html
-     sets --app-top / --app-height from visualViewport). Still a positioned
-     ancestor, so the absolutely-positioned dock and overlays anchor to it. */
+  /* Pinned to fill the whole screen (fixed + inset:0 = the full layout viewport,
+     which does NOT shrink for the keyboard). The app therefore always covers the
+     paper-texture body background — no grain ever shows past the UI, and nothing
+     floats. The keyboard is handled purely by lifting the dock via --kb (set from
+     visualViewport in index.html); the app itself never moves or resizes. Still a
+     positioned ancestor, so the absolutely-positioned dock/overlays anchor to it. */
   position: fixed;
-  top: var(--app-top, 0px);
-  left: 0;
-  right: 0;
+  inset: 0;
   display: flex;
   flex-direction: column;
-  height: var(--app-height, 100dvh);
   max-width: 720px;
   margin: 0 auto;
 }
@@ -136,7 +134,7 @@ body {
      the no-overflow class below), that tightness became a hard, visible
      cut instead of a soft fade — hiding whatever was last (e.g. a thesaurus
      chip) behind the dock with no way to scroll it into view. */
-  padding: 6px var(--pad) calc(132px + env(safe-area-inset-bottom)) var(--pad);
+  padding: 6px var(--pad) calc(132px + var(--kb, 0px) + env(safe-area-inset-bottom)) var(--pad);
   display: flex; flex-direction: column; align-items: stretch;
   /* The bottom fade used to be a mask-image here — but a mask on a scroll
      container silently disables backdrop-filter on ALL its descendants, so no
@@ -500,8 +498,10 @@ button, .btn, .bp.tappable, .example, .history-chip, .related-chip, .suggest-ite
    row) so the backdrop-filter blurs the live scrolling text behind it —
    genuine glass, instead of a flat-tinted box sitting on matching bg. */
 .dock {
+  /* bottom margin lifts the dock by --kb (the keyboard height) so it rides just
+     above the software keyboard; --kb is 0 with no keyboard. */
   position: absolute; z-index: 5; left: 0; right: 0; bottom: 0;
-  margin: 0 var(--pad) calc(7px + env(safe-area-inset-bottom));
+  margin: 0 var(--pad) calc(var(--kb, 0px) + 7px + env(safe-area-inset-bottom));
   border: 1px solid var(--bd); border-radius: var(--r-pill);
   background: var(--glass-sheen), var(--panel);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
@@ -516,7 +516,7 @@ button, .btn, .bp.tappable, .example, .history-chip, .related-chip, .suggest-ite
 /* subtle fade where content scrolls behind the dock (Apple-Music style) — a
    gradient overlay, NOT a mask, so it doesn't disable the cards' backdrop blur */
 .dock-fade {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
+  position: absolute; left: 0; right: 0; bottom: var(--kb, 0px); z-index: 4;
   height: calc(96px + env(safe-area-inset-bottom)); pointer-events: none;
   background: linear-gradient(to top, var(--bg) 6%, transparent);
 }
