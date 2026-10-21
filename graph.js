@@ -79,6 +79,14 @@
     const kids = new Int32Array(cnt[N]); const fill = cnt.slice(0, N);
     for (let i = 0; i < N; i++) if (G.parent[i] >= 0) kids[fill[G.parent[i]]++] = i;
     G.kidStart = cnt; G.kids = kids;
+    G.tree = new Int32Array(N).fill(-1); // root of each node's tree
+    for (let i = 0; i < N; i++) {
+      if (G.tree[i] >= 0) continue;
+      const path = []; let x = i;
+      while (x >= 0 && G.tree[x] < 0 && G.parent[x] >= 0) { path.push(x); x = G.parent[x]; }
+      const r = G.tree[x] >= 0 ? G.tree[x] : x;
+      G.tree[x] = r; for (const p of path) G.tree[p] = r;
+    }
     G.crossUp = new Map(); G.crossDown = new Map();
     for (let k = 0; k < G.links.length; k += 2) {
       const c = G.links[k], p = G.links[k + 1];
@@ -100,6 +108,7 @@
     for (let i = 0; i < N; i++) items[f2[cellOf(i)]++] = i;
     G.cellStart = cc; G.cellItems = items;
     G.trees = info.trees.map((t) => ({ root: t[0], x: t[1], y: t[2], scale: t[3], R: t[4] }));
+    G.treeOf = new Map(G.trees.map((t) => [t.root, t]));
     G.treeOfRoot = new Map(G.trees.map((t) => [t.root, t]));
     G.chunks = new Map();
     return G;
@@ -207,7 +216,8 @@
     gl.useProgram(P_PT.p);
     gl.uniform2f(P_PT.u.ctr, ctr[0], ctr[1]); gl.uniform1f(P_PT.u.s, cam.s); gl.uniform2f(P_PT.u.res, W, H);
     gl.uniform1f(P_PT.u.k, Math.max(0.9, Math.min(7, cam.s * 0.3))); gl.uniform1f(P_PT.u.dpr, DPR);
-    gl.uniform1f(P_PT.u.a, focus ? 0.6 : 1);
+    // at reading distance unlabeled dots recede; the label pass redraws named dots at full strength
+    gl.uniform1f(P_PT.u.a, (focus ? 0.6 : 1) * (cam.s >= READ_ZOOM ? 0.32 : 1));
     gl.bindBuffer(gl.ARRAY_BUFFER, B.pos); gl.enableVertexAttribArray(P_PT.a.p); gl.vertexAttribPointer(P_PT.a.p, 2, gl.FLOAT, false, 0, 0);
     gl.bindBuffer(gl.ARRAY_BUFFER, B.col); gl.enableVertexAttribArray(P_PT.a.c); gl.vertexAttribPointer(P_PT.a.c, 3, gl.FLOAT, false, 0, 0);
     gl.bindBuffer(gl.ARRAY_BUFFER, B.sz); gl.enableVertexAttribArray(P_PT.a.sz); gl.vertexAttribPointer(P_PT.a.sz, 1, gl.FLOAT, false, 0, 0);
@@ -233,7 +243,7 @@
       }
       gl.useProgram(P_PT.p);
       gl.uniform2f(P_PT.u.ctr, ctr[0], ctr[1]);
-      gl.uniform1f(P_PT.u.a, 1);
+      gl.uniform1f(P_PT.u.a, cam.s >= READ_ZOOM ? 0.35 : 1);
       gl.uniform1f(P_PT.u.k, Math.max(2.4, Math.min(8, cam.s * 0.34)));
       gl.bindBuffer(gl.ARRAY_BUFFER, focus.geo.pp); gl.vertexAttribPointer(P_PT.a.p, 2, gl.FLOAT, false, 0, 0);
       gl.bindBuffer(gl.ARRAY_BUFFER, focus.geo.pc); gl.vertexAttribPointer(P_PT.a.c, 3, gl.FLOAT, false, 0, 0);
@@ -271,6 +281,7 @@
     };
     // block UI-covered strips so labels never hide under the sheet / bar
     take(-1000, -1000, W + 1000, insets.top); take(-1000, H - insets.bottom, W + 1000, H + 1000);
+    if (focus) { const fx = sx(G.xy[focus.idx * 2]), fy = sy(G.xy[focus.idx * 2 + 1]); take(fx - 12, fy - 12, fx + 12, fy + 12); }
     // your walk this session: faint dashes between the points you've stood on
     if (trail && trail.length > 1) {
       ctx.save();
@@ -284,24 +295,72 @@
       trail.forEach((i) => { const x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]); ctx.beginPath(); ctx.arc(x, y, 2.2, 0, Math.PI * 2); ctx.fill(); });
       ctx.restore();
     }
+    // "you are here" in time: the ring through the node you're on, in its colour, named with
+    // its language and era. During a trace it rides outward with the tracer.
+    let hereR = -1;
+    if (focus && OPT.hereRing) {
+      const t = G.treeOf ? G.treeOf.get(focus.root) : null;
+      if (t) {
+        const i = focus.idx, cx = sx(t.x), cy = sy(t.y), x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
+        const r = Math.hypot(x - cx, y - cy);
+        if (r > 10) {
+          hereR = r;
+          const c = G.pal[G.meta[i * 2]], rgb = Math.round(c[0] * 255) + "," + Math.round(c[1] * 255) + "," + Math.round(c[2] * 255);
+          ctx.strokeStyle = `rgba(${rgb},0.6)`; ctx.lineWidth = 1.5;
+          ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+          const lang = G.info.langs[G.lang[i]], yr = G.info.eras[G.lang[i]];
+          const L = lang + " · " + (yr >= 1990 ? "today" : "c. " + eraLabel(yr));
+          ctx.font = "600 11px " + FONT; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+          const tw = ctx.measureText(L).width;
+          // on the ring, on the side away from the node, so it never fights the node's own label
+          // somewhere on the ring, on screen, as far round from the node as fits
+          const a0 = Math.atan2(y - cy, x - cx), spots = [];
+          for (let k = 0; k <= 12; k++) for (const sg of k ? [1, -1] : [1]) {
+            const ang = a0 + Math.PI + sg * k * Math.PI / 12, px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
+            spots.push([px - tw / 2, py + (Math.sin(ang) > 0 ? 13 : -3)]);
+          }
+          for (const [tx, ty] of spots) {
+            if (tx < 6 || tx + tw > W - 6 || !free(tx - 3, ty - 12, tx + tw + 3, ty + 1)) continue;
+            take(tx - 3, ty - 12, tx + tw + 3, ty + 1);
+            ctx.lineWidth = 3; ctx.strokeStyle = dark ? "rgba(17,15,12,0.85)" : "rgba(241,231,207,0.9)"; ctx.lineJoin = "round";
+            ctx.strokeText(L, tx, ty); ctx.fillStyle = `rgba(${rgb},0.95)`; ctx.fillText(L, tx, ty); break;
+          }
+        }
+      }
+    }
     // era rings of families big enough on screen (the axis of successions)
     if (cam.s > 1.2) {
       ctx.lineWidth = 1; ctx.font = "10px " + FONT; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
       const ERAS = [-2000, -1000, 0, 1000, 1500, 2000];
+      // one rule: the family you're in (or, with nothing focused, the one nearest the
+      // middle of the screen) always carries its years; every other family's rings stay bare
+      const vis = [];
       for (const t of G.trees) {
         const R = t.R * cam.s; if (R < 70) continue;
         const cx = sx(t.x), cy = sy(t.y);
         if (cx + R < 0 || cx - R > W || cy + R < 0 || cy - R > H) continue;
+        vis.push([t, R, cx, cy]);
+      }
+      let home = focus ? focus.root : -1;
+      if (home < 0 || !vis.some((v) => v[0].root === home)) {
+        let best = Infinity; const mx = W / 2, my = insets.top + (H - insets.top - insets.bottom) / 2;
+        for (const [t, R, cx, cy] of vis) { const d = Math.hypot(cx - mx, cy - my) / R; if (d < best) { best = d; home = t.root; } }
+      }
+      for (const [t, R, cx, cy] of vis) {
         const ry = G.info.eras[G.lang[t.root]];
-        const strong = focus && focus.root === t.root;
+        const strong = t.root === home;
         for (const y of ERAS) {
           if (y <= ry + 50) continue;
           const r = t.scale * (T(y) - T(ry)) * cam.s; if (r < 18) continue;
           ctx.strokeStyle = `rgba(${ink},${strong ? 0.16 : 0.07})`;
           ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
-          if (strong || R > 240) {
-            const tx = cx + 3, ty = cy - r - 1, tw = ctx.measureText(eraLabel(y)).width;
-            if (free(tx, ty - 11, tx + tw, ty)) { take(tx, ty - 11, tx + tw, ty); ctx.fillStyle = `rgba(${ink},${strong ? 0.55 : 0.3})`; ctx.fillText(eraLabel(y), tx, ty); }
+          if (strong && !(hereR > 0 && Math.abs(r - hereR) < 16)) { // above the centre, else below, else beside: the year is never silently dropped
+            const L = eraLabel(y), tw = ctx.measureText(L).width;
+            const spots = [[cx + 3, cy - r - 1], [cx + 3, cy + r + 12], [cx + r + 3, cy - 2], [cx - r - tw - 3, cy - 2]];
+            for (const [tx, ty] of spots) {
+              if (!free(tx, ty - 11, tx + tw, ty)) continue;
+              take(tx, ty - 11, tx + tw, ty); ctx.fillStyle = `rgba(${ink},0.5)`; ctx.fillText(L, tx, ty); break;
+            }
           }
         }
       }
@@ -347,6 +406,7 @@
     let placed = 0;
     labelHits = [];
     const seen = new Set();
+    const texts = []; // names are drawn after every dot, so a dot never sits on top of a name
     ctx.textBaseline = "middle"; ctx.textAlign = "left";
     for (const i of cand) {
       if (placed >= max) break;
@@ -354,16 +414,20 @@
       const x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
       if (x < -40 || x > W + 40 || y < -20 || y > H + 20) continue;
       const isLit = focus && focus.lit.has(i);
+      if (focus && !OPT.otherFamilies && !isLit && G.tree && G.tree[i] !== G.tree[focus.idx]) continue;
       const isWord = G.lang[i] === 0;
       const big = isLit && i === focus.idx;
       const fs = big ? 15 : isLit ? 12.5 : Math.min(13, 10.5 + G.meta[i * 2 + 1] / 70);
       ctx.font = (big ? "700 " : isWord ? "500 " : "italic 500 ") + fs + "px " + FONT;
       const txt = G.labels[i];
       const w = ctx.measureText(txt).width;
-      const pr = Math.max(2, Math.min(17, (1 + G.meta[i * 2 + 1] / 40) * Math.max(0.9, Math.min(7, cam.s * 0.3)))) / 2 + 3;
+      const dot = Math.max(1, Math.min(34, (1 + G.meta[i * 2 + 1] / 40) * (isLit ? Math.max(2.4, Math.min(8, cam.s * 0.34)) : Math.max(0.9, Math.min(7, cam.s * 0.3)))));
+      const pr = big ? Math.max(13, Math.min(17, dot) / 2 + 3) : Math.min(17, Math.max(2, dot)) / 2 + 3;
       // try right, then left, then above
       const spots = [[x + pr, y - fs / 2 - 1, x + pr + w, y + fs / 2 + 1], [x - pr - w, y - fs / 2 - 1, x - pr, y + fs / 2 + 1], [x - w / 2, y - pr - fs - 1, x + w / 2, y - pr]];
       let ok = null;
+      const dr = Math.max(1.5, dot * 0.43); // a name never sits under another node's dot, and vice versa
+      if (cam.s >= READ_ZOOM && !isLit && !free(x - dr, y - dr, x + dr, y + dr)) continue;
       for (const s of spots) if (free(s[0], s[1], s[2], s[3])) { ok = s; break; }
       if (!ok) continue;
       take(ok[0] - 2, ok[1], ok[2] + 2, ok[3]);
@@ -371,14 +435,14 @@
       labelHits.push([ok[0] - 4, ok[1] - 4, ok[2] + 4, ok[3] + 4, i]);
       const c = G.pal[G.meta[i * 2]];
       const a = focus && !isLit ? 0.55 : 1;
-      // a soft halo keeps text legible over dots and lines
-      ctx.lineWidth = 3; ctx.strokeStyle = dark ? "rgba(17,15,12,0.85)" : "rgba(241,231,207,0.9)"; ctx.lineJoin = "round";
-      ctx.strokeText(txt, ok[0], (ok[1] + ok[3]) / 2);
-      ctx.fillStyle = isWord ? `rgba(${ink},${a})` : `rgba(${Math.round(c[0] * 255)},${Math.round(c[1] * 255)},${Math.round(c[2] * 255)},${a})`;
-      ctx.fillText(txt, ok[0], (ok[1] + ok[3]) / 2);
+      if (cam.s >= READ_ZOOM) { // a named dot at full strength (the GL layers dim the rest)
+        ctx.fillStyle = `rgba(${Math.round(c[0] * 255)},${Math.round(c[1] * 255)},${Math.round(c[2] * 255)},${isLit ? 1 : a})`;
+        ctx.beginPath(); ctx.arc(x, y, dr, 0, Math.PI * 2); ctx.fill();
+      }
+      texts.push([ctx.font, txt, ok[0], (ok[1] + ok[3]) / 2, isWord ? `rgba(${ink},${a})` : `rgba(${Math.round(c[0] * 255)},${Math.round(c[1] * 255)},${Math.round(c[2] * 255)},${a})`]);
       placed++;
       // up close the map reads like the dictionary: a one-line meaning under the label
-      if (cam.s > GLOSS_ZOOM && placed < 60) {
+      if ((!focus || OPT.glossFocused) && cam.s > GLOSS_ZOOM && placed < 60) {
         const g = glossOf(i);
         if (g) {
           ctx.font = "italic 11px " + FONT;
@@ -386,13 +450,14 @@
           const gw = ctx.measureText(gt).width, gx = ok[0], gy = ok[3] + 2;
           if (free(gx, gy, gx + gw, gy + 13)) {
             take(gx, gy, gx + gw, gy + 13);
-            ctx.lineWidth = 3; ctx.strokeText(gt, gx, gy + 6.5);
-            ctx.fillStyle = `rgba(${ink},${0.62 * a})`;
-            ctx.fillText(gt, gx, gy + 6.5);
+            texts.push([ctx.font, gt, gx, gy + 6.5, `rgba(${ink},${0.62 * a})`]);
           }
         }
       }
     }
+    // a soft halo keeps text legible over dots and lines
+    ctx.lineWidth = 3; ctx.strokeStyle = dark ? "rgba(17,15,12,0.85)" : "rgba(241,231,207,0.9)"; ctx.lineJoin = "round";
+    for (const [f, t, x, y, col] of texts) { ctx.font = f; ctx.strokeText(t, x, y); ctx.fillStyle = col; ctx.fillText(t, x, y); }
     if (ping >= 0) { // where a search suggestion lives (no camera move while typing)
       const x = sx(G.xy[ping * 2]), y = sy(G.xy[ping * 2 + 1]);
       const t = (performance.now() % 1400) / 1400;
@@ -413,18 +478,6 @@
       }
       dirty = true; // keep pulsing
     }
-    if (focus && focus.tracing) { // teach the geometry in motion: language + era at the tracer's head
-      const i = focus.idx, x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
-      const lang = G.info.langs[G.lang[i]], yr = G.info.eras[G.lang[i]];
-      const tag = lang + " · " + (yr >= 1990 ? "today" : yr <= 0 ? "c. " + (yr === 0 ? "AD 1" : -yr + " BC") : "c. " + yr);
-      ctx.font = "600 11px " + FONT;
-      const tw = ctx.measureText(tag).width;
-      const tx = Math.min(W - tw - 10, x + 12), ty = y + 22;
-      ctx.fillStyle = dark ? "rgba(17,15,12,0.82)" : "rgba(241,231,207,0.92)";
-      ctx.beginPath(); ctx.roundRect ? ctx.roundRect(tx - 6, ty - 9, tw + 12, 18, 9) : ctx.rect(tx - 6, ty - 9, tw + 12, 18); ctx.fill();
-      ctx.fillStyle = `rgba(${ink},0.95)`; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-      ctx.fillText(tag, tx, ty);
-    }
     if (focus) { // ring around the node you are standing on
       const i = focus.idx, x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
       ctx.strokeStyle = `rgba(${ink},0.9)`; ctx.lineWidth = 1.6;
@@ -434,6 +487,9 @@
 
   // glosses come from the per-node detail chunks; fetched on demand, drawn when they land
   const GLOSS_ZOOM = 9;
+  // presentation options (kept switchable while the look is being settled)
+  const OPT = { glossFocused: false, hereRing: true, otherFamilies: true };
+  const READ_ZOOM = 2; // from here every node is a label candidate
   function glossOf(i) {
     const c = Math.floor(i / G.info.chunk);
     const m = G.chunkData && G.chunkData.get(c);
@@ -649,6 +705,7 @@
     return RM.focus(idx, { fly: true, dur: 700, fromTrace: true });
   };
   RM.cancelTrace = function () { traceToken++; };
+  RM.setOptions = function (o) { Object.assign(OPT, o || {}); dirty = true; };
 
   // ---- public ------------------------------------------------------------------------------
   RM.init = function (el, opts) {

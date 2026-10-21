@@ -1468,7 +1468,7 @@ body { background-image: none; }
 /* chart, not book: a coordinates line instead of rules and ornaments */
 .divider { display: none !important; }
 .entry-coords { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
-.ec-bit { display: inline-flex; align-items: center; gap: 6px; }
+.ec-bit { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
 .ec-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
 .ec-sep { opacity: .6; }
 .ec-gap { flex: 1; }
@@ -1484,7 +1484,11 @@ body { background-image: none; }
   background: var(--bg); box-shadow: 0 -14px 34px rgba(0,0,0,0.28);
 }
 .callout-tip, .co-hint { display: none !important; }
-.co-coords { display: flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+/* coordinates read as one line of text (never two ragged columns); long ones end in … */
+.co-coords { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 11px; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.co-coords .ec-bit { display: inline; }
+.co-coords .ec-sep { margin: 0 .45em; }
+.co-coords .ec-dot { vertical-align: 1px; margin-right: 7px; }
 .co-head { flex-wrap: nowrap; }
 .co-word { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .leader { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; overflow: visible; }
