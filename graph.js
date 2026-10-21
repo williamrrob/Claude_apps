@@ -24,7 +24,7 @@
  */
 (function () {
   "use strict";
-  const V = "2";
+  const V = "3";
   const DPR = Math.min(2, window.devicePixelRatio || 1);
 
   // ---- palettes (index = family in info.families) -----------------------------
@@ -52,6 +52,7 @@
   let dirty = true, anim = null;
   let globalGeo = null, globalPairs = null;
   let ping = -1;
+  let labelHits = []; // [x0,y0,x1,y1,idx] of labels drawn this frame
   let trail = null;
   let onTap = null, onDraw = null;
   const glossWant = new Set(); // chunks requested for close-range glosses
@@ -193,7 +194,7 @@
     gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
     gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     const ctr = [cam.x - (0) / cam.s, cam.y + (insets.bottom - insets.top) / 2 / cam.s];
-    const dim = focus ? 0.28 : 1;
+    const dim = focus ? 0.55 : 1;
     // edges
     gl.useProgram(P_LN.p);
     gl.uniform2f(P_LN.u.ctr, ctr[0], ctr[1]); gl.uniform1f(P_LN.u.s, cam.s); gl.uniform2f(P_LN.u.res, W, H);
@@ -206,7 +207,7 @@
     gl.useProgram(P_PT.p);
     gl.uniform2f(P_PT.u.ctr, ctr[0], ctr[1]); gl.uniform1f(P_PT.u.s, cam.s); gl.uniform2f(P_PT.u.res, W, H);
     gl.uniform1f(P_PT.u.k, Math.max(0.9, Math.min(7, cam.s * 0.3))); gl.uniform1f(P_PT.u.dpr, DPR);
-    gl.uniform1f(P_PT.u.a, focus ? 0.35 : 1);
+    gl.uniform1f(P_PT.u.a, focus ? 0.6 : 1);
     gl.bindBuffer(gl.ARRAY_BUFFER, B.pos); gl.enableVertexAttribArray(P_PT.a.p); gl.vertexAttribPointer(P_PT.a.p, 2, gl.FLOAT, false, 0, 0);
     gl.bindBuffer(gl.ARRAY_BUFFER, B.col); gl.enableVertexAttribArray(P_PT.a.c); gl.vertexAttribPointer(P_PT.a.c, 3, gl.FLOAT, false, 0, 0);
     gl.bindBuffer(gl.ARRAY_BUFFER, B.sz); gl.enableVertexAttribArray(P_PT.a.sz); gl.vertexAttribPointer(P_PT.a.sz, 1, gl.FLOAT, false, 0, 0);
@@ -344,6 +345,7 @@
     }
     const max = W < 500 ? 90 : 170;
     let placed = 0;
+    labelHits = [];
     const seen = new Set();
     ctx.textBaseline = "middle"; ctx.textAlign = "left";
     for (const i of cand) {
@@ -352,7 +354,6 @@
       const x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
       if (x < -40 || x > W + 40 || y < -20 || y > H + 20) continue;
       const isLit = focus && focus.lit.has(i);
-      if (focus && !isLit && cam.s < 0.7) continue;
       const isWord = G.lang[i] === 0;
       const big = isLit && i === focus.idx;
       const fs = big ? 15 : isLit ? 12.5 : Math.min(13, 10.5 + G.meta[i * 2 + 1] / 70);
@@ -367,8 +368,9 @@
       if (!ok) continue;
       take(ok[0] - 2, ok[1], ok[2] + 2, ok[3]);
       take(x - pr, y - pr, x + pr, y + pr);
+      labelHits.push([ok[0] - 4, ok[1] - 4, ok[2] + 4, ok[3] + 4, i]);
       const c = G.pal[G.meta[i * 2]];
-      const a = focus && !isLit ? 0.4 : 1;
+      const a = focus && !isLit ? 0.55 : 1;
       // a soft halo keeps text legible over dots and lines
       ctx.lineWidth = 3; ctx.strokeStyle = dark ? "rgba(17,15,12,0.85)" : "rgba(241,231,207,0.9)"; ctx.lineJoin = "round";
       ctx.strokeText(txt, ok[0], (ok[1] + ok[3]) / 2);
@@ -410,6 +412,18 @@
         ctx.restore();
       }
       dirty = true; // keep pulsing
+    }
+    if (focus && focus.tracing) { // teach the geometry in motion: language + era at the tracer's head
+      const i = focus.idx, x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
+      const lang = G.info.langs[G.lang[i]], yr = G.info.eras[G.lang[i]];
+      const tag = lang + " · " + (yr >= 1990 ? "today" : yr <= 0 ? "c. " + (yr === 0 ? "AD 1" : -yr + " BC") : "c. " + yr);
+      ctx.font = "600 11px " + FONT;
+      const tw = ctx.measureText(tag).width;
+      const tx = Math.min(W - tw - 10, x + 12), ty = y + 22;
+      ctx.fillStyle = dark ? "rgba(17,15,12,0.82)" : "rgba(241,231,207,0.92)";
+      ctx.beginPath(); ctx.roundRect ? ctx.roundRect(tx - 6, ty - 9, tw + 12, 18, 9) : ctx.rect(tx - 6, ty - 9, tw + 12, 18); ctx.fill();
+      ctx.fillStyle = `rgba(${ink},0.95)`; ctx.textAlign = "left"; ctx.textBaseline = "middle";
+      ctx.fillText(tag, tx, ty);
     }
     if (focus) { // ring around the node you are standing on
       const i = focus.idx, x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
@@ -465,6 +479,11 @@
     return [(px - W / 2) / cam.s + ctr[0], (py - H / 2) / cam.s + ctr[1]];
   }
   function pick(px, py) {
+    // a word's label is as tappable as its dot (labels are the big targets on a phone)
+    for (let k = labelHits.length - 1; k >= 0; k--) {
+      const h = labelHits[k];
+      if (px >= h[0] && px <= h[2] && py >= h[1] && py <= h[3]) return h[4];
+    }
     const [wx, wy] = toWorld(px, py);
     const rad = 22 / cam.s;
     let best = -1, bd = Infinity;

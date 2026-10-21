@@ -46,7 +46,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=143" />
+  <link rel="stylesheet" href="styles.css?v=145" />
 </head>
 <body>
   <div class="map" id="map" aria-label="Map of English etymology"></div>
@@ -58,7 +58,7 @@
         <button class="lens-btn" data-lens="doublets" role="tab" aria-selected="false">Doublets</button>
       </div>
       <span class="topbar-gap"></span>
-      <button id="savedWordsBtn" class="icon-toggle" type="button" aria-label="Saved words">
+      <button id="savedWordsBtn" class="icon-toggle" type="button" aria-label="Saved words" hidden>
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
           <path d="M6.5 3.5a1.5 1.5 0 0 0-1.5 1.5v15.2l7-4.5 7 4.5V5a1.5 1.5 0 0 0-1.5-1.5z"
                 fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
@@ -71,13 +71,15 @@
                 fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light / dark" hidden>
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
           <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
           <path d="M12 3.5a8.5 8.5 0 0 0 0 17z" fill="currentColor"/>
         </svg>
       </button>
-      <button class="icon-toggle map-key-btn" id="mapKeyBtn" type="button" aria-label="How to read the map">?</button>
+      <button class="icon-toggle map-key-btn" id="mapKeyBtn" type="button" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
       <div class="map-key" id="mapKey" hidden></div>
     </header>
 
@@ -89,6 +91,7 @@
       Back to quiz
     </button>
 
+    <svg class="leader" id="leader" aria-hidden="true"><line id="leaderLine" x1="0" y1="0" x2="0" y2="0"/><circle id="leaderDot" r="3"/></svg>
     <div class="callout" id="callout" hidden></div>
     <main class="content" id="content">
       <div class="hint" id="hint">
@@ -145,8 +148,9 @@
             placeholder="Type a word…"
             aria-label="Word to analyze"
           />
-          <button type="submit" class="search-btn" aria-label="Analyze">
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <button type="submit" class="search-btn" aria-label="Search">
+            <svg class="sb-find" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+            <svg class="sb-go" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
               <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor"
                     stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -180,7 +184,7 @@
   <script defer src="data.js?v=62"></script>
   <script defer src="engine.js?v=61"></script>
   <script defer src="etym-parse.js?v=4"></script>
-  <script defer src="graph.js?v=5"></script>
-  <script defer src="app.js?v=158"></script>
+  <script defer src="graph.js?v=7"></script>
+  <script defer src="app.js?v=160"></script>
 </body>
 </html>

@@ -682,74 +682,75 @@
     return s;
   }
 
+  // shrink a headword until it fits on one line (unless it's absurdly long)
+  function fitLine(elx, max, min) {
+    if (!elx || typeof requestAnimationFrame !== "function") return;
+    elx.style.fontSize = max + "px";
+    requestAnimationFrame(function () {
+      let s = max;
+      while (s > min && elx.scrollWidth > elx.clientWidth + 1) { s -= 2; elx.style.fontSize = s + "px"; }
+    });
+  }
+  // a chart's coordinates for a word: its family (deepest ancestor's group),
+  // the language it reached English from, and when it is first recorded
+  function wordCoords(word, rec) {
+    const bits = [];
+    if (window.RootMap && RootMap.loaded()) {
+      const i = RootMap.find(word);
+      if (i >= 0) {
+        const lin = RootMap.lineage(i);
+        if (lin.length) {
+          const root = RootMap.info(lin[lin.length - 1]);
+          bits.push({ t: root.family, fam: root.fam });
+          const from = lin.map(function (x) { return RootMap.info(x).lang; }).find(function (l) { return !/English$/.test(l); });
+          if (from) bits.push({ t: "via " + from });
+        }
+      }
+    }
+    const yr = rec && rec.e ? extractYear(rec.e) : null;
+    if (yr) bits.push({ t: yr });
+    return bits;
+  }
+
   function buildEntry(word, rec, parts) {
     entryEl.className = "entry"; entryEl.innerHTML = "";
-    const ruleRow = el("div", "entry-rule-row");
-    // when this word was reached from a tree, offer a way to shrink back into it
-    if (treeReturn && treeRoot) {
-      const bk = el("button", "tree-btn", "✕"); bk.type = "button";
-      bk.setAttribute("aria-label", "Back to the word-family tree");
-      bk.addEventListener("click", returnToTree);
-      ruleRow.appendChild(bk);
-    }
-    ruleRow.appendChild(el("span", "entry-rule"));
+    const coordRow = el("div", "entry-coords");
+    wordCoords(word, rec).forEach(function (b, k) {
+      if (k) coordRow.appendChild(el("span", "ec-sep", "·"));
+      const sp = el("span", "ec-bit", b.t);
+      if (b.fam != null) { const dot = el("i", "ec-dot"); dot.style.background = RootMap.colorOf(b.fam); sp.insertBefore(dot, sp.firstChild); }
+      coordRow.appendChild(sp);
+    });
+    coordRow.appendChild(el("span", "ec-gap"));
     const pos = rec && rec.d && rec.d[0] && rec.d[0].p;
-    if (pos) ruleRow.appendChild(el("span", "entry-pos", pos));
+    if (pos) coordRow.appendChild(el("span", "entry-pos", pos));
     const savedNow = isSaved(word);
     const starBtn = el("button", "save-btn" + (savedNow ? " saved" : ""), savedNow ? "★" : "☆");
     starBtn.type = "button";
-    starBtn.setAttribute("aria-label", savedNow ? "Remove from quiz" : "Save for quiz");
+    starBtn.setAttribute("aria-label", savedNow ? "Remove from saved" : "Save");
     starBtn.addEventListener("click", function () {
       const on = toggleSaved(word);
       starBtn.textContent = on ? "★" : "☆";
       starBtn.className = "save-btn" + (on ? " saved" : "");
-      starBtn.setAttribute("aria-label", on ? "Remove from quiz" : "Save for quiz");
+      starBtn.setAttribute("aria-label", on ? "Remove from saved" : "Save");
     });
-    ruleRow.appendChild(starBtn);
-
-    // ruleRow + the headword live together in one wrapper so the pair can be
-    // pinned as a single fused unit in quiz-peek mode (see .entry-head in CSS) —
-    // no separate duplicate header bar, the real headword itself glues in place.
+    coordRow.appendChild(starBtn);
     const headWrap = el("div", "entry-head");
-    headWrap.appendChild(ruleRow);
-
-    // headword with subtle dots between its parts. `rec.bWhole` means the
-    // curated roots are real but the modern spelling doesn't cleanly tile
-    // them (congee's "gee" bears no visual resemblance to its source meō) —
-    // show the headword undivided even though the Breakdown card below still
-    // lists the genuine roots.
+    headWrap.appendChild(coordRow);
+    // the headword plain, on one line; the split lives in the Breakdown card
     const wordEl = el("div", "entry-word");
-    const surfaces = (parts && parts.length > 1 && !parts[0].whole && !(rec && rec.bWhole)) ? parts.map(function (p) { return p.disp || p.surface; }) : [word];
-    surfaces.forEach(function (s, i) {
-      if (i) wordEl.appendChild(el("span", "entry-dot", "·"));
-      wordEl.appendChild(el("span", "ew-part", s));
-    });
+    wordEl.appendChild(el("span", "ew-part", word));
     headWrap.appendChild(wordEl);
     entryEl.appendChild(headWrap);
-
-    // half-circle letter badge by the word — tap to browse that letter
-    const L = String(word).charAt(0).toUpperCase();
-    if (/[A-Z]/.test(L)) {
-      const badge = el("button", "entry-letter", L); badge.type = "button";
-      badge.setAttribute("aria-label", "Browse words starting with " + L);
-      badge.addEventListener("click", function () { browseLetter(L); });
-      entryEl.appendChild(badge);
-    }
+    fitLine(wordEl, 52, 30);
 
     pronEl = el("div", "pron");
     entryEl.appendChild(pronEl);
     const isAbbr = rec && rec.d && rec.d[0] && rec.d[0].p === "abbr.";
     const gloss = rec && rec.d && rec.d[0] && rec.d[0].g;
-    // Abbreviations show "read as" in the pron slot instead of an entry gloss.
     if (gloss && !isAbbr) entryEl.appendChild(el("div", "entry-gloss", shortGloss(gloss)));
-    // compact pinned header (revealed on scroll) — same subtle dots between parts
     miniHead.innerHTML = "";
-    const mw = el("span", "minihead-word");
-    surfaces.forEach(function (s, i) {
-      if (i) mw.appendChild(el("span", "entry-dot", "·"));
-      mw.appendChild(el("span", "mh-part", s));
-    });
-    miniHead.appendChild(mw);
+    miniHead.appendChild(el("span", "minihead-word", word));
     if (pos) miniHead.appendChild(el("span", "minihead-pos", pos));
   }
 
@@ -1905,16 +1906,25 @@
   }
 
   // ---------- events ----------
-  function submit() { input.blur(); hideSuggest(); run(input.value); }
+  function submit() { input.blur(); hideSuggest(); if (appShell && appShell.dataset) appShell.dataset.dock = "compact"; run(input.value); }
   form.addEventListener("submit", function (e) { e.preventDefault(); submit(); });
-  form.querySelector(".search-btn").addEventListener("click", function (e) { e.preventDefault(); submit(); });
+  form.querySelector(".search-btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    // over a card the search is a circle: the first tap opens the bar
+    if (appShell && appShell.dataset && appShell.dataset.dock === "compact") { appShell.dataset.dock = "open"; input.value = ""; input.focus(); return; }
+    submit();
+  });
   // While focused (typing), fold the ⌂ ‹ › nav buttons away so the search bar
   // expands to the full dock width; restore them on blur.
   const dockRow = document.querySelector(".dock-row");
   function setTyping(on) { if (dockRow && dockRow.classList) dockRow.classList[on ? "add" : "remove"]("typing"); }
   input.addEventListener("input", onType);
   input.addEventListener("focus", function () { setTyping(true); if (!input.value.trim()) showRecent(); });
-  input.addEventListener("blur", function () { setTimeout(function () { setTyping(false); hideSuggest(); hideRecent(); }, 150); });
+  input.addEventListener("blur", function () { setTimeout(function () {
+    setTyping(false); hideSuggest(); hideRecent();
+    // fold back into a circle if a card is up
+    if (appShell && appShell.dataset && appShell.dataset.dock === "open") appShell.dataset.dock = sheetState === "home" ? "full" : "compact";
+  }, 150); });
   if (navHome) navHome.addEventListener("click", function () { stepOut(); });
   if (navBack) navBack.addEventListener("click", goBack);
   if (navFwd) navFwd.addEventListener("click", goFwd);
@@ -2051,7 +2061,7 @@
   // ---------- the map (graph.js): the app is the map; an entry is one point on it ----------
   var holdSheetUntil = 0;
   var sheetState = "home"; // var: run() may fire (from a #word= link) before this section executes
-  const appShell = document.querySelector(".app");
+  var appShell = document.querySelector(".app");
   const mapEl = $("map");
   const sheetGrip = $("sheetGrip");
   const MAP_TOP = 72; // the top bar, kept clear when framing a node
@@ -2072,13 +2082,19 @@
     if (appShell && appShell.dataset) appShell.dataset.sheet = st;
     const h = sheetHeight(st);
     if (contentEl && contentEl.style && contentEl.style.setProperty) contentEl.style.setProperty("--sheet-h", h + "px");
-    // in the callout state the card hangs below the dot, so frame the dot in the upper part
-    const bottomInset = st === "full" ? 0 : st === "callout" ? Math.round((window.innerHeight || 800) * 0.36) : h;
+    // the card sits at the bottom: frame the dot in the space above it
+    const cardH = calloutEl && !calloutEl.hidden ? calloutEl.offsetHeight : 260;
+    const bottomInset = st === "full" ? 0 : st === "callout" ? cardH + 24 : h;
+    // the dock is a full search bar only on the open map; over any card it folds into circles
+    if (appShell && appShell.dataset && appShell.dataset.dock !== "open") appShell.dataset.dock = st === "home" ? "full" : "compact";
     if (window.RootMap && RootMap.setInsets) RootMap.setInsets({ top: MAP_TOP, bottom: bottomInset });
     if (calloutEl) {
       const show = st === "callout" && calloutFor >= 0;
       calloutEl.hidden = !show;
-      if (show) placeCallout();
+      if (show) {
+        placeCallout();
+        if (window.RootMap && RootMap.setInsets) RootMap.setInsets({ top: MAP_TOP, bottom: calloutEl.offsetHeight + 24 });
+      }
     }
   }
   setSheet(currentWord ? "peek" : "home");
@@ -2177,23 +2193,19 @@
   var calloutEl = $("callout");
   var calloutFor = -1;
   var arrivalScale = 0;
+  const leaderLine = $("leaderLine"), leaderDot = $("leaderDot");
   function placeCallout() {
-    if (!calloutEl || calloutEl.hidden || calloutFor < 0 || !window.RootMap) return;
+    if (!calloutEl || calloutEl.hidden || calloutFor < 0 || !window.RootMap || !leaderLine) return;
     const p = RootMap.screenOf(calloutFor);
     if (!p) return;
-    const W = window.innerWidth, H = window.innerHeight;
-    const w = calloutEl.offsetWidth, h = calloutEl.offsetHeight;
-    const dockTop = H - 84;
-    let below = p[1] + 22 + h < dockTop;
-    let y = below ? p[1] + 22 : p[1] - 22 - h;
-    if (!below && y < MAP_TOP) { below = true; y = p[1] + 22; }
-    const x = Math.max(12, Math.min(W - w - 12, p[0] - w / 2));
-    calloutEl.style.transform = "translate(" + Math.round(x) + "px," + Math.round(y) + "px)";
-    calloutEl.classList.toggle("below", below); calloutEl.classList.toggle("above", !below);
-    const tip = calloutEl.querySelector(".callout-tip");
-    if (tip) tip.style.left = Math.max(18, Math.min(w - 18, p[0] - x)) + "px";
-    const off = p[0] < -20 || p[0] > W + 20 || p[1] < MAP_TOP - 10 || p[1] > H;
-    calloutEl.classList.toggle("off", off);
+    const top = (window.innerHeight || 800) - calloutEl.offsetHeight;
+    const r = calloutEl.getBoundingClientRect();
+    const x2 = Math.max(r.left + 24, Math.min(r.right - 24, p[0]));
+    const vis = p[1] < top - 14 && p[1] > MAP_TOP - 10 && p[0] > -10 && p[0] < (window.innerWidth || 400) + 10;
+    leaderLine.setAttribute("x1", p[0]); leaderLine.setAttribute("y1", p[1] + 10);
+    leaderLine.setAttribute("x2", x2); leaderLine.setAttribute("y2", top);
+    leaderDot.setAttribute("cx", x2); leaderDot.setAttribute("cy", top);
+    leaderLine.style.display = leaderDot.style.display = vis ? "" : "none";
   }
   function calloutChain(i) {
     let chain = [i].concat(RootMap.lineage(i)).slice(0, 7).reverse();
@@ -2218,7 +2230,7 @@
   }
   function calloutActs(i, d, lensable) {
     const acts = el("div", "co-acts");
-    const read = el("button", "co-act primary", "Read"); read.type = "button";
+    const read = el("button", "co-act primary", "Open"); read.type = "button";
     read.addEventListener("click", function (e) { e.stopPropagation(); setSheet("peek"); });
     acts.appendChild(read);
     if (lensable && d && d.dbl && d.dbl.length) {
@@ -2233,7 +2245,7 @@
     calloutEl.innerHTML = "";
     calloutEl.appendChild(el("span", "callout-tip"));
     nodes.forEach(function (n) { if (n) calloutEl.appendChild(n); });
-    calloutEl.appendChild(el("div", "co-hint", "pinch in or tap to read"));
+
     arrivalScale = window.RootMap ? RootMap.scale() : 0;
   }
   async function showWordCallout(word, rec) {
@@ -2241,15 +2253,21 @@
     const i = RootMap.find(word);
     if (i < 0) { calloutFor = -1; return; }
     const d = await RootMap.details(i);
+    const coords = el("div", "co-coords");
+    wordCoords(word, rec).forEach(function (b, k) {
+      if (k) coords.appendChild(el("span", "ec-sep", "·"));
+      const sp = el("span", "ec-bit", b.t);
+      if (b.fam != null) { const dot = el("i", "ec-dot"); dot.style.background = RootMap.colorOf(b.fam); sp.insertBefore(dot, sp.firstChild); }
+      coords.appendChild(sp);
+    });
     const head = el("div", "co-head");
     const cw = el("span", "co-word", word);
-    if (word.length > 11) cw.style.fontSize = Math.max(18, 26 - (word.length - 11) * 1.2) + "px";
     head.appendChild(cw);
-    if (rec && rec.rs) head.appendChild(el("span", "co-rs", rec.rs));
     const p0 = rec && rec.d && rec.d[0];
     if (p0 && p0.p) head.appendChild(el("span", "co-pos", p0.p));
     const def = p0 ? el("div", "co-def", p0.g) : null;
-    openCallout(i, [head, def, calloutChain(i), calloutActs(i, d, true)]);
+    openCallout(i, [coords, head, def, calloutChain(i), calloutActs(i, d, true)]);
+    fitLine(cw, 30, 20);
     if (sheetState === "callout") { calloutEl.hidden = false; placeCallout(); }
   }
   function showNodeCallout(i, d) {
@@ -2569,24 +2587,46 @@
       if (!keyEl.hidden) { keyEl.hidden = true; return; }
       keyEl.innerHTML = "";
       const h = function (t) { keyEl.appendChild(el("h3", null, t)); };
-      const p = function (t) { keyEl.appendChild(el("p", null, t)); };
-      h("Reading the map");
-      p("Every dot is a word or an older form of one. Each family is drawn around its deepest known ancestor.");
-      p("Distance from a family's centre is time: the ancestor sits in the middle, then Latin, Old French, Middle English and today's English on the rim. Zoom in on a family to see its era rings.");
-      p("Families that share compounds or other cross-links are placed next to each other. The faint band around the outside holds entries with no recorded ancestry.");
-      h("Dots");
-      p("Size is how many English words descend from that point. Colour is the language family:");
+      const p = function (t, parent) { (parent || keyEl).appendChild(el("p", null, t)); };
+      const act = function (label, fn) { const b = el("button", "menu-act", label); b.type = "button"; b.addEventListener("click", function () { keyEl.hidden = true; fn(); }); return b; };
+      // go somewhere
+      const go = el("div", "menu-acts");
+      go.appendChild(act("⤨ Somewhere else", randomStart));
+      go.appendChild(act("⑂ Doublet hunt", openHunt));
+      go.appendChild(act("✦ Quiz", function () { if (typeof openQuiz === "function") openQuiz(); }));
+      const n = typeof getSaved === "function" ? getSaved().length : 0;
+      go.appendChild(act("★ Saved" + (n ? " (" + n + ")" : ""), function () { if (typeof openSavedWords === "function") openSavedWords(); }));
+      keyEl.appendChild(go);
+      // theme
+      h("Theme");
+      const seg = el("div", "menu-seg");
+      const cur = storedTheme() || "auto";
+      [["auto", "Auto"], ["light", "Light"], ["dark", "Dark"]].forEach(function (o) {
+        const b = el("button", "menu-seg-b" + (cur === o[0] ? " on" : ""), o[1]); b.type = "button";
+        b.addEventListener("click", function () {
+          try { if (o[0] === "auto") localStorage.removeItem("rootwork.theme"); else localStorage.setItem("rootwork.theme", o[0]); } catch (e) {}
+          applyTheme(o[0] === "auto" ? null : o[0]);
+          seg.querySelectorAll(".menu-seg-b").forEach(function (x) { x.classList.toggle("on", x === b); });
+        });
+        seg.appendChild(b);
+      });
+      keyEl.appendChild(seg);
+      // how to read it
+      const det = el("details", "menu-key");
+      det.appendChild(el("summary", null, "How to read the map"));
+      p("Every dot is a word or an older form of one. Each family is drawn around its deepest known ancestor.", det);
+      p("Distance from a family's centre is time: the ancestor in the middle, then Latin, Old French, Middle English and today's English on the rim. Zoom into a family to see its era rings.", det);
+      p("Families that share compounds or cross-links sit next to each other. The faint outer band holds entries with no recorded ancestry.", det);
+      p("Dot size is how many English words descend from that point. Colour is the language family:", det);
       const fams = el("div", "fams");
       (window.RootMap ? RootMap.families() : []).forEach(function (f, k) {
         const row = el("div", "fam"); const dot = el("i"); dot.style.background = RootMap.colorOf(k);
         row.appendChild(dot); row.appendChild(txtNode(f)); fams.appendChild(row);
       });
-      keyEl.appendChild(fams);
-      h("Views");
-      p("Descent: where the word you're on came from, and what came from it.");
-      p("Sense: its synonyms, wherever their own histories put them. Same meaning, different lineages.");
-      p("Doublets: pairs like hospital and hostel, one source that reached English twice.");
-      keyEl.appendChild(el("p", "lin-note", "Built only from the Wiktionary etymology on each entry, so the map and the text never disagree."));
+      det.appendChild(fams);
+      p("Descent: where a word came from and what came from it. Sense: its synonyms, wherever their histories put them. Doublets: one source that reached English twice.", det);
+      keyEl.appendChild(det);
+      keyEl.appendChild(el("p", "lin-note", "Built only from Wiktionary, so the map and the text never disagree."));
       const acts = el("div", "key-actions");
       const upd = el("button", "lin-part", "Check for updates"); upd.type = "button";
       upd.addEventListener("click", function () { const rb = $("refreshBtn"); if (rb) rb.click(); });
