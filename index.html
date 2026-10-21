@@ -46,11 +46,18 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=137" />
+  <link rel="stylesheet" href="styles.css?v=143" />
 </head>
 <body>
+  <div class="map" id="map" aria-label="Map of English etymology"></div>
   <div class="app">
     <header class="topbar">
+      <div class="lens" role="tablist" aria-label="View">
+        <button class="lens-btn on" data-lens="descent" role="tab" aria-selected="true">Descent</button>
+        <button class="lens-btn" data-lens="sense" role="tab" aria-selected="false">Sense</button>
+        <button class="lens-btn" data-lens="doublets" role="tab" aria-selected="false">Doublets</button>
+      </div>
+      <span class="topbar-gap"></span>
       <button id="savedWordsBtn" class="icon-toggle" type="button" aria-label="Saved words">
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
           <path d="M6.5 3.5a1.5 1.5 0 0 0-1.5 1.5v15.2l7-4.5 7 4.5V5a1.5 1.5 0 0 0-1.5-1.5z"
@@ -58,7 +65,7 @@
         </svg>
         <span id="quizCount" class="quiz-count" hidden></span>
       </button>
-      <button id="refreshBtn" class="icon-toggle" type="button" aria-label="Check for updates">
+      <button id="refreshBtn" class="icon-toggle" type="button" aria-label="Check for updates" hidden>
         <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
           <path d="M20 11.5A8 8 0 1 0 18.4 16.6M20 4.5V10h-5.5"
                 fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -70,33 +77,9 @@
           <path d="M12 3.5a8.5 8.5 0 0 0 0 17z" fill="currentColor"/>
         </svg>
       </button>
-      <button id="settingsBtn" class="icon-toggle" type="button" aria-label="Settings">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-          <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
-          <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"
-                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-      </button>
+      <button class="icon-toggle map-key-btn" id="mapKeyBtn" type="button" aria-label="How to read the map">?</button>
+      <div class="map-key" id="mapKey" hidden></div>
     </header>
-
-    <dialog id="settingsDialog" class="settings-dialog">
-      <form method="dialog" class="settings-form">
-        <h2>Merriam-Webster API keys</h2>
-        <p class="settings-note">Stored only in this browser (localStorage) — never uploaded. Register free keys for the
-          <em>Collegiate Dictionary</em> and <em>Collegiate Thesaurus</em> at dictionaryapi.com. With keys set, searching
-          a word pulls MW definitions, etymology and thesaurus data automatically.</p>
-        <label>Dictionary key
-          <input id="mwDictKey" type="text" autocomplete="off" spellcheck="false" placeholder="xxxxxxxx-xxxx-…" />
-        </label>
-        <label>Thesaurus key
-          <input id="mwThesKey" type="text" autocomplete="off" spellcheck="false" placeholder="xxxxxxxx-xxxx-…" />
-        </label>
-        <div class="settings-actions">
-          <button value="cancel" type="submit" class="settings-cancel">Cancel</button>
-          <button id="mwKeysSave" value="save" type="submit" class="settings-save">Save</button>
-        </div>
-      </form>
-    </dialog>
 
     <div class="minihead" id="miniHead"></div>
     <button id="quizPeekBack" class="quiz-peek-back" type="button">
@@ -106,20 +89,16 @@
       Back to quiz
     </button>
 
+    <div class="callout" id="callout" hidden></div>
     <main class="content" id="content">
       <div class="hint" id="hint">
-        <button id="homeQuizBtn" class="hint-quiz-btn" type="button">✦ Start a quiz</button>
-        <div class="chips">
-          <button class="example" data-word="biography">biography</button>
-          <button class="example" data-word="incredible">incredible</button>
-          <button class="example" data-word="democracy">democracy</button>
-          <button class="example" data-word="prescription">prescription</button>
-          <button class="example" data-word="philosophy">philosophy</button>
-          <button class="example" data-word="microscope">microscope</button>
-        </div>
-        <div class="alpha" id="alpha" aria-label="Browse by letter"></div>
+        <button id="randomBtn" class="home-act" type="button">⤨ Somewhere else</button>
+        <button id="huntBtn" class="home-act" type="button">⑂ Doublet hunt</button>
+        <button id="homeQuizBtn" class="home-act" type="button">✦ Quiz</button>
+        <div class="alpha" id="alpha" hidden aria-hidden="true"></div>
       </div>
 
+      <button class="sheet-grip" id="sheetGrip" type="button" aria-label="Expand or collapse"><span></span></button>
       <section class="entry" id="entry" aria-live="polite"></section>
       <div class="note" id="note" hidden></div>
       <div class="ipa-key" id="ipaKey" hidden></div>
@@ -136,9 +115,11 @@
       <ul class="suggest" id="suggest" hidden aria-label="Suggestions"></ul>
       <div class="dock-row">
         <div class="nav-pair">
-          <button id="navHome" class="nav-btn" type="button" aria-label="Home">
-            <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+          <button id="navHome" class="nav-btn" type="button" aria-label="Step out">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <circle cx="12" cy="12" r="2.4" fill="currentColor"/>
+              <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
+              <circle cx="12" cy="12" r="9.6" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
             </svg>
           </button>
           <button id="navBack" class="nav-btn" type="button" aria-label="Back" disabled>
@@ -198,7 +179,8 @@
   </script>
   <script defer src="data.js?v=62"></script>
   <script defer src="engine.js?v=61"></script>
-  <script defer src="mw-map.js?v=1"></script>
-  <script defer src="app.js?v=151"></script>
+  <script defer src="etym-parse.js?v=4"></script>
+  <script defer src="graph.js?v=5"></script>
+  <script defer src="app.js?v=158"></script>
 </body>
 </html>

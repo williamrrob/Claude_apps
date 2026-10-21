@@ -6,7 +6,7 @@
  * right away; only the unversioned shell (index.html) lags one launch, the
  * standard PWA cadence. Bump CACHE to force a clean re-fetch. */
 "use strict";
-const CACHE = "rootwork-v2";
+const CACHE = "rootwork-v3";
 
 self.addEventListener("install", function () {
   self.skipWaiting(); // activate this SW immediately, don't wait for old tabs

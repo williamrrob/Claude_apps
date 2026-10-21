@@ -39,6 +39,8 @@
     if (text != null) e.textContent = text;
     return e;
   }
+  // a text node (falls back to a span where the DOM is a test shim)
+  function txtNode(t) { return typeof document.createTextNode === "function" ? document.createTextNode(t) : el("span", null, t); }
   function escapeHtml(s) {
     return String(s).replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -64,27 +66,8 @@
     try { localStorage.setItem("rootwork.theme", next); } catch (e) {}
   });
 
-  // ---------- settings dialog: Merriam-Webster API keys ----------
-  const settingsBtn = $("settingsBtn"), settingsDialog = $("settingsDialog");
-  if (settingsBtn && settingsDialog) {
-    const dictInput = $("mwDictKey"), thesInput = $("mwThesKey"), saveBtn = $("mwKeysSave");
-    settingsBtn.addEventListener("click", function () {
-      try { dictInput.value = localStorage.getItem("rootwork.mwDictKey") || ""; thesInput.value = localStorage.getItem("rootwork.mwThesKey") || ""; } catch (e) {}
-      if (typeof settingsDialog.showModal === "function") settingsDialog.showModal();
-    });
-    // Persist only when Save (not Cancel) closes the dialog.
-    settingsDialog.addEventListener("close", function () {
-      if (settingsDialog.returnValue !== "save") return;
-      try {
-        localStorage.setItem("rootwork.mwDictKey", dictInput.value.trim());
-        localStorage.setItem("rootwork.mwThesKey", thesInput.value.trim());
-      } catch (e) {}
-    });
-    if (saveBtn) saveBtn.addEventListener("click", function () { settingsDialog.returnValue = "save"; });
-  }
-
   // ---------- vendored data (loaded lazily, sharded by first two letters) ----------
-  const DATA_V = "143";
+  const DATA_V = "151";
   let MORPH = null, dataPromise = null;
   function loadData() {
     if (dataPromise) return dataPromise;
@@ -168,106 +151,8 @@
   function foldKey(s) {
     return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
   }
-  // ---------- Merriam-Webster: live enrichment on search ----------
-  // MW is the highest-quality source we have for definitions, thesaurus and
-  // first-use dates. Its API is CORS-enabled (Access-Control-Allow-Origin: *)
-  // but requires per-product keys — kept ONLY in this browser's localStorage
-  // (bring-your-own-key), never committed to the public site. When keys are set,
-  // searching a word with no baked-in `_mw` fetches dictionary + thesaurus,
-  // maps them via mw-map.js (the same mapper the CLI uses), caches the result in
-  // localStorage so it's fetched once per word, and renders per-homograph cards.
-  const MW_KEY_DICT = "rootwork.mwDictKey", MW_KEY_THES = "rootwork.mwThesKey", MW_CACHE = "rootwork.mwCache";
-  function mwKeys() {
-    try { return { dict: localStorage.getItem(MW_KEY_DICT) || "", thes: localStorage.getItem(MW_KEY_THES) || "" }; }
-    catch (e) { return { dict: "", thes: "" }; }
-  }
-  function mwCacheGet(word) {
-    try { const c = JSON.parse(localStorage.getItem(MW_CACHE) || "{}"); return c[word] || null; } catch (e) { return null; }
-  }
-  function mwCacheSet(word, mw) {
-    try {
-      const c = JSON.parse(localStorage.getItem(MW_CACHE) || "{}");
-      c[word] = mw; // [] is a valid cached value: "checked MW, nothing there — don't re-fetch"
-      localStorage.setItem(MW_CACHE, JSON.stringify(c));
-    } catch (e) {}
-  }
-  const mwMem = {}; // per-session in-flight/result cache, keyed by word
-  // Returns a Promise of the `_mw` array (possibly []), or null if MW is
-  // unavailable (no keys, mapper missing, or the fetch failed).
-  function fetchMw(word) {
-    const w = String(word || "").trim();
-    if (typeof fetch !== "function" || typeof MWMap === "undefined" || !/^[a-z][a-z .'-]{0,40}$/i.test(w)) return Promise.resolve(null);
-    if (w in mwMem) return mwMem[w];
-    const cached = mwCacheGet(w);
-    if (cached) return (mwMem[w] = Promise.resolve(cached));
-    const keys = mwKeys();
-    if (!keys.dict) return Promise.resolve(null); // not configured — stay silent
-    const base = "https://dictionaryapi.com/api/v3/references/";
-    const enc = encodeURIComponent(w);
-    const getJson = function (u) { return fetch(u).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
-    const p = Promise.all([
-      getJson(base + "collegiate/json/" + enc + "?key=" + encodeURIComponent(keys.dict)),
-      keys.thes ? getJson(base + "thesaurus/json/" + enc + "?key=" + encodeURIComponent(keys.thes)) : Promise.resolve([]),
-    ]).then(function (pair) {
-      const dict = pair[0];
-      if (!dict) return null; // network/key error — don't cache, allow a later retry
-      const mw = MWMap.mapMwResponse(dict, pair[1] || [], w);
-      mwCacheSet(w, mw); // cache even [] so a known-miss isn't re-fetched every search
-      return mw;
-    }).catch(function () { return null; });
-    return (mwMem[w] = p);
-  }
-
-  // Synthesize an entry from MW homographs so a word we don't have in the
-  // corpus can still render like any other — MW as a fallback dictionary. The
-  // per-homograph `_mw` drives the cards; the flat `d`/`e`/`i` are filled from it
-  // so the usual guards, breakdown, pronunciation and quiz logic treat it as a
-  // real entry.
-  const MW_POS_ABBR = { noun: "n.", verb: "v.", adjective: "adj.", adverb: "adv.",
-    preposition: "prep.", conjunction: "conj.", pronoun: "pron.", interjection: "interj.",
-    "definite article": "art.", "indefinite article": "art.", abbreviation: "abbr.",
-    "auxiliary verb": "v.", "geographical name": "n.", "biographical name": "n." };
-  function mwFallbackRec(mw) {
-    const rec = { _mw: mw, _mwOnly: true };
-    const d = [], seen = {};
-    let firstEt = null, firstIpa = null;
-    mw.forEach(function (h) {
-      const p = MW_POS_ABBR[(h.fl || "").toLowerCase()] || (h.fl ? h.fl.slice(0, 4) + "." : "");
-      (h.shortdef || []).forEach(function (g) { const k = p + "|" + g; if (!seen[k]) { seen[k] = 1; d.push({ p: p, g: g }); } });
-      if (!firstEt && h.et) firstEt = h.et;
-      if (!firstIpa && h.hwi && h.hwi.prs && h.hwi.prs[0] && h.hwi.prs[0].ipa) firstIpa = h.hwi.prs[0].ipa;
-    });
-    if (d.length) rec.d = d;
-    if (firstEt) rec.e = firstEt;
-    if (firstIpa) rec.i = "/" + String(firstIpa).replace(/^\/|\/$/g, "") + "/";
-    return rec;
-  }
-
-  // Obscure roots we didn't build in are looked up live — Wiktionary's REST
-  // endpoint is CORS-enabled and groups definitions by language.
-  const ONLINE_LANGS = { la: "Latin", grc: "Ancient Greek", "ine-pro": "Proto-Indo-European",
-    "gem-pro": "Proto-Germanic", "itc-pro": "Proto-Italic", el: "Greek" };
-  const onlineCache = {};
-  function lookupOnline(word) {
-    const w = String(word || "").trim();
-    if (typeof fetch !== "function" || !/^[a-zÀ-ɏ-]{2,40}$/i.test(w)) return Promise.resolve(null);
-    if (w in onlineCache) return Promise.resolve(onlineCache[w]);
-    const url = "https://en.wiktionary.org/api/rest_v1/page/definition/" + encodeURIComponent(w);
-    const timeout = new Promise(function (r) { setTimeout(function () { r(null); }, 4500); });
-    const req = fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
-      if (!j) return null;
-      const order = ["la", "grc", "ine-pro", "gem-pro", "itc-pro", "el"];
-      let code = null;
-      for (let i = 0; i < order.length; i++) if (j[order[i]]) { code = order[i]; break; }
-      if (!code) return null;
-      const sec = j[code][0];
-      if (!sec || !sec.definitions || !sec.definitions.length) return null;
-      const def = sec.definitions[0].definition.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
-      if (!def) return null;
-      return { l: w, lang: ONLINE_LANGS[code] || sec.language || "", g: def.split(/[;]/)[0].slice(0, 90).trim(), en: [], online: true };
-    }).catch(function () { return null; });
-    return Promise.race([req, timeout]).then(function (res) { onlineCache[w] = res; return res; });
-  }
+  // (Merriam-Webster enrichment removed: Wiktionary is the single source.)
+  function fetchMw() { return Promise.resolve(null); }
 
   // ---------- Wikipedia: a lead image, and proper-noun detection ----------
   // The Wikidata short description tells common nouns ("Genus of flowering
@@ -336,7 +221,7 @@
     fetchWiki(word).then(function (wp) {
       if (token !== runToken || !wp) return;
       if (wp.proper) capitalizeHeadword(word);
-      if (wp.type !== "standard" || !wp.thumb) return;
+      return; // the map is the picture: no lead photos (proper-noun capitalization above stays)
       if (isMediaWorkDesc(wp.desc) || !isPhysicalDesc(wp.desc)) return;
       getUsage(word).then(function (series) {
         if (token !== runToken || isUbiquitousWord(series)) return;
@@ -413,7 +298,68 @@
   function wholePart(word) {
     return [{ kind: "word", surface: word, origin: null, source: null, meaning: null, id: null, forms: null, whole: true }];
   }
+  // Wiktionary's own surface analysis ("From un- + heard", "equivalent to
+  // in- + credible"), read by etym-parse.js from the etymology this page
+  // prints. Used only when the parts spell the word: exact concatenation, or
+  // the ordinary English joins (silent-e drop, y→i, consonant doubling,
+  // assimilated Latin prefixes).
+  const ASSIM = { in: ["il", "im", "ir", "i"], con: ["col", "com", "cor", "co"], com: ["con", "col", "cor", "co"], ad: ["ac", "af", "ag", "al", "an", "ap", "ar", "as", "at", "a"],
+    ob: ["oc", "of", "op", "o"], sub: ["suc", "suf", "sug", "sup", "sus"], ex: ["ef", "e"], dis: ["dif", "di"], syn: ["sym", "syl", "sy"], en: ["em"] };
+  function alignParts(word, parts) {
+    const W = word.toLowerCase();
+    const bare = parts.map(function (p) { return p.t.replace(/^-|-$/g, "").toLowerCase(); });
+    const variants = function (k) {
+      const b = bare[k], last = k === bare.length - 1, v = [b];
+      if (/-$/.test(parts[k].t) && ASSIM[b]) v.push.apply(v, ASSIM[b]);
+      if (!last) {
+        if (/e$/.test(b)) v.push(b.slice(0, -1));
+        if (/y$/.test(b)) { v.push(b.slice(0, -1) + "i"); v.push(b.slice(0, -1)); }
+        if (/[bcdfgklmnprstvz]$/.test(b)) v.push(b + b.slice(-1));
+        if (/le$/.test(b)) v.push(b.slice(0, -2) + "il");
+      }
+      if (k > 0 && /^-/.test(parts[k].t) && /^[aeiou]/.test(b) === false && b.length > 2) v.push(b.slice(1)); // -ation after a stem ending in the same vowel
+      return v;
+    };
+    const out = [];
+    const go = function (k, pos) {
+      if (k === bare.length) return pos === W.length;
+      const vs = variants(k);
+      for (let i = 0; i < vs.length; i++) {
+        const v = vs[i];
+        if (v && W.substr(pos, v.length) === v) { out[k] = word.substr(pos, v.length); if (go(k + 1, pos + v.length)) return true; }
+        // a space or hyphen between parts in the headword ("personal attacker")
+        if (v && pos < W.length && /[ -]/.test(W[pos]) && W.substr(pos + 1, v.length) === v) {
+          out[k] = word.substr(pos + 1, v.length);
+          if (go(k + 1, pos + 1 + v.length)) return true;
+        }
+      }
+      return false;
+    };
+    return go(0, 0) ? out.slice() : null;
+  }
+  function wiktParts(word, rec) {
+    if (!rec) return null;
+    // structured parts from Wiktionary's own templates (rec.wp), else the prose
+    let parts = Array.isArray(rec.wp) && rec.wp.length >= 2 ? rec.wp : null;
+    if (!parts && rec.e && window.EtymParse) parts = window.EtymParse.parse(word, rec.e).parts;
+    if (!parts || parts.length < 2) return null;
+    const o = { parts: parts };
+    const surf = alignParts(word, o.parts);
+    if (!surf) return null;
+    return o.parts.map(function (p, i) {
+      const pre = /-$/.test(p.t) && !/^-/.test(p.t), suf = /^-/.test(p.t);
+      const kind = pre ? "prefix" : suf ? "suffix" : "root";
+      const m = (pre || suf) ? morphFind(p.t.replace(/^-|-$/g, ""), kind) : null;
+      return { kind: kind, surface: surf[i], disp: null, origin: m ? m.origin : null, source: p.t,
+        meaning: p.g || (m && m.meaning) || null, id: null, forms: m ? m.forms : null,
+        wikt: true, partWord: p.t, kindText: pre || suf ? null : "word" };
+    });
+  }
   function chooseBreakdown(result, rec) {
+    // Wiktionary's own split wins: it is the analysis the etymology under the
+    // breakdown states, so the tiles can't contradict the text.
+    const wk = wiktParts(result.word, rec);
+    if (wk) return wk;
     // A curated breakdown (MorphoLex / Wiktionary, in rec.b) is authoritative — it
     // beats the heuristic engine even when the engine is confident, because the
     // engine confidently mis-splits opaque stems (demister → demos·ist·er). A
@@ -506,6 +452,10 @@
     if (themeToggle) themeToggle.hidden = false; // toggle returns on the home screen
     if (savedWordsBtn) savedWordsBtn.hidden = false; // saved-words icon lives on the home screen only
     renderHomeChips(); // re-randomize the example words every time home is revisited
+    mapWord = null;
+    calloutFor = -1;
+    setSheet("home");
+    if (window.RootMap && RootMap.loaded()) { RootMap.setGlobal(null); RootMap.overview(); if (lensName === "doublets") applyLens(); }
     if (contentEl) contentEl.scrollTop = 0;
     if (dockEl) dockEl.classList.remove("dock-hide");
     if (contentEl) contentEl.classList.remove("dock-hidden");
@@ -522,6 +472,7 @@
   }
   function showStatus(html, isError) {
     clearStage(); hint.hidden = true;
+    if (sheetState === "hidden") setSheet("peek");
     const d = el("div", "status" + (isError ? " error" : "")); d.innerHTML = html;
     entryEl.appendChild(d);
   }
@@ -529,17 +480,23 @@
   async function run(rawWord, sourcePart) {
     const word = String(rawWord || "").trim();
     if (!word) return;
+    arrivedFrom = currentWord && currentWord.toLowerCase() !== word.toLowerCase() && !navigating ? currentWord : null;
+    stepLevel = 0;
+    if (/^@\d+$/.test(word)) return openNode(Number(word.slice(1)));
+    if (/^-|-$/.test(word) && window.RootMap && RootMap.loaded() && RootMap.find(word) >= 0) return openNode(RootMap.find(word), true);
     treeReturn = openingFromTree; openingFromTree = false; // came from a tree?
     const token = ++runToken;
     input.value = word;
     input.blur(); // dismiss the keyboard so the dock returns to the bottom
     hideSuggest();
     hideRecent();
-    if (themeToggle) themeToggle.hidden = true; // toggle lives on the home screen only
-    if (savedWordsBtn) savedWordsBtn.hidden = true; // saved-words icon lives on the home screen only
     if (!browseEl.hidden) closeBrowse();
     if (treeEl && !treeEl.hidden) closeTree();
     hint.hidden = true;
+    // the map flies to the word first; the sheet rises once it lands
+    const quizPeeking = !!(document.querySelector && document.querySelector(".app.quiz-peek"));
+    const flying = !quizPeeking && mapCanFly(word);
+    if (flying) lowerForFlight(); else if (!quizPeeking && sheetState !== "full") setSheet("peek");
     loadData();
     if (contentEl) contentEl.scrollTop = 0;
     if (dockEl) dockEl.classList.remove("dock-hide");
@@ -565,6 +522,9 @@
       // (display, history, nav, family/collection lookups) all use the real key.
       if (rec0 && rec0._resolvedKey && rec0._resolvedKey !== result.word) result.word = rec0._resolvedKey;
       if (!rec0 || (!(rec0.d && rec0.d.length) && !rec0.e)) {
+        // Not a dictionary entry but a point on the map (e.g. a part named in
+        // another word's etymology): stand on it.
+        if (window.RootMap && RootMap.loaded() && RootMap.find(result.word) >= 0) { openNode(RootMap.find(result.word), true); return; }
         // Not an English headword — maybe it's a source word (a Latin/Greek/PIE
         // root). Try the built-in lexicon first, then a quick live lookup.
         await loadRoots();
@@ -583,16 +543,6 @@
           return;
         }
         showStatus("Looking up “" + escapeHtml(result.word) + "” …", false);
-        // Fallback dictionary: not in our corpus, but Merriam-Webster may have
-        // it. Synthesize an entry from MW and render it like any other word.
-        const mwFb = await fetchMw(result.word);
-        if (token !== runToken) return;
-        if (mwFb && mwFb.length) {
-          currentWord = result.word;
-          pushHistory(result.word); pushNav(result.word);
-          await reveal(result, token, mwFallbackRec(mwFb));
-          return;
-        }
         const online = await lookupOnline(result.word);
         if (token !== runToken) return;
         if (online) { pushHistory(result.word); pushNav(result.word); renderSource(online, token); return; }
@@ -613,9 +563,19 @@
       currentWord = result.word;
       pushHistory(result.word);
       pushNav(result.word);
+      if (flying) {
+        await mapShow(result.word, navigating);
+        if (token !== runToken) return;
+        const st = takeNextSheet();
+        if (st === "callout") showWordCallout(result.word, rec0);
+        setSheet(st);
+      }
+      else mapShow(result.word);
       await reveal(result, token);
     } catch (err) {
       showStatus("Something went wrong: " + escapeHtml(String(err && err.message || err)), true);
+    } finally {
+      if (sheetState === "hidden" && token === runToken) setSheet("peek");
     }
   }
 
@@ -803,8 +763,6 @@
     // Kick off Merriam-Webster enrichment now (if not already baked into the
     // entry) so the network call overlaps the headword + breakdown animation;
     // we only await it when we reach the definition section below.
-    const mwEarly = (rec && Array.isArray(rec._mw) && rec._mw.length)
-      ? Promise.resolve(rec._mw) : fetchMw(result.word);
     const isAbbr = rec && rec.d && rec.d[0] && rec.d[0].p === "abbr.";
     // If this word is a member of a collection that names a parent English word,
     // redirect to that parent — abbreviations live on the parent's card, not alone.
@@ -835,7 +793,7 @@
     // point at that base, rather than as a standalone word.
     if (rec && rec.rel && rec.rel.l) {
       const rel = el("div", "entry-rel");
-      rel.appendChild(document.createTextNode((rec.rel.t || "from") + " "));
+      rel.appendChild(txtNode((rec.rel.t || "from") + " "));
       const lk = el("button", "rel-link", rec.rel.l);
       lk.type = "button";
       lk.addEventListener("click", function () { run(rec.rel.l); });
@@ -846,9 +804,9 @@
     // caplin, capelan". Each is tappable and lands back on this same card.
     if (rec && rec.vars && rec.vars.length) {
       const av = el("div", "entry-vars");
-      av.appendChild(document.createTextNode("also spelled "));
+      av.appendChild(txtNode("also spelled "));
       rec.vars.forEach(function (v, i) {
-        if (i) av.appendChild(document.createTextNode(", "));
+        if (i) av.appendChild(txtNode(", "));
         const lk = el("button", "rel-link", v);
         lk.type = "button";
         lk.addEventListener("click", function () { run(v); });
@@ -860,9 +818,9 @@
     // "plural of", ...). Each is tappable and lands on its own card.
     if (rec && rec.forms && rec.forms.length) {
       const fr = el("div", "entry-forms");
-      fr.appendChild(document.createTextNode("forms: "));
+      fr.appendChild(txtNode("forms: "));
       rec.forms.forEach(function (v, i) {
-        if (i) fr.appendChild(document.createTextNode(", "));
+        if (i) fr.appendChild(txtNode(", "));
         const lk = el("button", "rel-link", v);
         lk.type = "button";
         lk.addEventListener("click", function () { run(v); });
@@ -874,7 +832,6 @@
     await delay(28); if (token !== runToken) return;
     fillPron(recP, result.word, token, isAbbr ? rec : null);
     addWikiInfo(result.word, token); // lead image + proper-noun capitalization
-    prefetchTree(result.word, parts); // build the family tree in the background
 
     // 2) Breakdown — skipped for abbreviations (cf, e.g., i.e.) since the letters
     // are initials, not morphemes. The "read as" line in the pron slot carries the meaning.
@@ -948,13 +905,10 @@
     // `useMw` swaps the section-grouped Definition/Word-history/Thesaurus cards
     // for one card per homograph.
     await delay(30); if (token !== runToken) return;
-    const mwData = await mwEarly; // resolved during the breakdown animation in the common case
-    if (token !== runToken) return;
-    if (mwData && mwData.length && rec) rec._mw = mwData;
-    const useMw = rec && Array.isArray(rec._mw) && rec._mw.length;
+    const useMw = false;
     let anchorCard;
     if (useMw) {
-      const mwCards = buildMwCards(rec._mw, token);
+      const mwCards = [];
       mwCards.forEach(function (c) { cardsEl.appendChild(c); requestAnimationFrame(function () { c.classList.add("in"); }); });
       anchorCard = mwCards[mwCards.length - 1];
     } else {
@@ -963,15 +917,6 @@
       requestAnimationFrame(function () { anchorCard.classList.add("in"); });
     }
 
-    // 3.5) Word family — if this word belongs to a curated family, tie its page
-    // to the family tree (shows the region it sits in + opens the tree).
-    buildFamilyCard(parts, result.word, token).then(function (famCard) {
-      if (famCard && token === runToken) {
-        if (anchorCard && anchorCard.nextSibling) cardsEl.insertBefore(famCard, anchorCard.nextSibling);
-        else cardsEl.appendChild(famCard);
-        requestAnimationFrame(function () { famCard.classList.add("in"); });
-      }
-    });
     // 3.6) Collection tag (e.g. Latin abbreviations) — tappable to see the set.
     buildCollectionCard(result.word, token).then(function (colCard) {
       if (colCard && token === runToken) {
@@ -993,7 +938,7 @@
     let histAnchor = anchorCard;
     if (!useMw) {
       const divider = fleuron();
-      const histCard = buildHistoryCard(recP, parts, token, divider);
+      const histCard = buildHistoryCard(recP, parts, token, divider, result.word);
       cardsEl.appendChild(divider);
       cardsEl.appendChild(histCard);
       requestAnimationFrame(function () { divider.classList.add("in"); histCard.classList.add("in"); });
@@ -1002,12 +947,14 @@
 
     // 4.5) Ancestry — the word's position on the etymology graph (trees/),
     // ancestors tappable: entries open, shared roots pivot to descendants.
-    buildAncestryCard(result.word, token).then(function (ancCard) {
-      if (ancCard && token === runToken) {
-        if (histAnchor && histAnchor.nextSibling) cardsEl.insertBefore(ancCard, histAnchor.nextSibling);
-        else cardsEl.appendChild(ancCard);
-        requestAnimationFrame(function () { ancCard.classList.add("in"); });
-      }
+    buildLineageCards(result.word, token).then(function (cards) {
+      if (!cards || token !== runToken) return;
+      let after = histAnchor;
+      cards.forEach(function (c) {
+        if (after && after.nextSibling) cardsEl.insertBefore(c, after.nextSibling); else cardsEl.appendChild(c);
+        after = c;
+        requestAnimationFrame(function () { c.classList.add("in"); });
+      });
     });
 
     // 5) Usage over time
@@ -1132,7 +1079,7 @@
     col.appendChild(r1);
 
     const info = el("span", "bp-info");
-    const kind = p.whole ? null : kindLabel(p.kind);
+    const kind = p.whole ? null : (p.kindText || kindLabel(p.kind));
     const sub = [origin, kind].filter(Boolean).join(" · "); // e.g. "Latin · root"
     if (sub) info.appendChild(el("span", "bp-origin", sub));
     if (source) {
@@ -1145,8 +1092,16 @@
     inner.appendChild(main);
     bp.appendChild(inner);
 
+    // a Wiktionary part is a point on the map: tap to go stand on it
+    if (p.wikt && p.partWord) {
+      bp.classList.add("tappable");
+      bp.setAttribute("role", "button");
+      bp.setAttribute("tabindex", "0");
+      const go = function () { run(p.partWord); };
+      bp.addEventListener("click", go);
+      bp.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    } else if (p.id) {
     // tap a morpheme to hear the root and see other words built on it
-    if (p.id) {
       bp.classList.add("tappable");
       bp.setAttribute("role", "button");
       bp.setAttribute("tabindex", "0");
@@ -1324,7 +1279,7 @@
       // name (italic) + explanation share one flush-left column, no hang
       const def = el("span", "ipa-def");
       if (IPA_NAME[sym]) def.appendChild(el("span", "ipa-name", IPA_NAME[sym] + " "));
-      def.appendChild(document.createTextNode(IPA_KEY[sym]));
+      def.appendChild(txtNode(IPA_KEY[sym]));
       row.appendChild(def);
       list.appendChild(row);
     });
@@ -1455,8 +1410,15 @@
       const senses = rec && rec.d;
       if (senses && senses.length) {
         slot.innerHTML = "";
+        const fromRe = arrivedFrom ? wordRe(arrivedFrom) : null;
+        // the sense that links this word to the one you came from: Wiktionary's
+        // own sense-level synonym record (rec.ss) when it has one, else a
+        // definition that literally names that word
+        const exact = arrivedFrom && rec.ss && rec.ss[arrivedFrom] ? rec.ss[arrivedFrom] : null;
+        const isLink = function (s) { return exact ? (s.g || "") === exact : !!(fromRe && fromRe.test(s.g || "")); };
         senses.forEach(function (s, i) {
-          const row = el("div", "sense");
+          const row = el("div", "sense" + (isLink(s) ? " sense-linked" : ""));
+          if (isLink(s)) row.title = "This is the sense that connects it to “" + arrivedFrom + "”";
           row.appendChild(el("span", "num", String(i + 1)));
           const body = el("span");
           let html = '<span class="pos">' + escapeHtml(s.p) + "</span>";
@@ -1475,20 +1437,61 @@
     return card;
   }
 
-  // ---------- thesaurus ----------
+  // ---------- sense (was: thesaurus) ----------
+  // Saussure's associative series by sense: synonyms grouped by the lineage
+  // family the map puts them in, each with the gloss that links it back to
+  // this word when one of its definitions actually names it (otherwise no
+  // claim is made). Opposites and related forms follow.
+  function wordRe(w) {
+    const b = String(w).toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/e$/, "");
+    return new RegExp("\\b" + b + "(?:e|s|es|ed|d|ing|er|ers|ly)?\\b", "i");
+  }
   function buildThesaurusCard(recP, token) {
-    const card = el("div", "card thes-card");
-    card.appendChild(el("div", "cap", "Thesaurus"));
+    const card = el("div", "card thes-card sense-card");
+    card.appendChild(el("div", "cap", "Sense"));
     recP.then(async function (rec) {
       if (token !== runToken) return;
-      // Only offer words we can actually open — Wiktionary's related/synonym
-      // lists include forms we have no entry for (e.g. "prescriptionless"), and
-      // tapping those dead-ends. Keep just the ones with a real entry.
-      const s = await validateWords(rec && rec.s || [], 12);
+      const word = currentWord;
+      const s = await validateWords(rec && rec.s || [], 14);
       const a = await validateWords(rec && rec.a || [], 8);
       const r = await validateWords(rec && rec.r || [], 12);
       if (token !== runToken) return;
       if (!s.length && !a.length && !r.length) { card.remove(); return; }
+      if (s.length) {
+        card.appendChild(el("div", "lin-note", "Near-synonyms, grouped by the family their own histories put them in:"));
+        const re = wordRe(word);
+        const groups = {}, order = [];
+        const recs = await Promise.all(s.map(function (w) { return getWord(w); }));
+        if (token !== runToken) return;
+        s.forEach(function (w, k) {
+          let fam = "Unplaced", famIdx = -1;
+          if (window.RootMap && RootMap.loaded()) {
+            const i = RootMap.find(w);
+            if (i >= 0) { let x = i, n = 0; while (RootMap.info(x).parent >= 0 && n++ < 40) x = RootMap.info(x).parent; fam = RootMap.info(x).family; famIdx = RootMap.info(x).fam; }
+          }
+          if (!groups[fam]) { groups[fam] = { famIdx: famIdx, items: [] }; order.push(fam); }
+          // which of THIS word's senses the synonym belongs to (Wiktionary's
+          // sense-level record), else the synonym's own definition naming this word
+          const mine = rec && rec.ss && rec.ss[w] ? rec.ss[w] : null;
+          const sense = mine ? null : ((recs[k] && recs[k].d) || []).find(function (d) { return re.test(d.g || ""); });
+          groups[fam].items.push({ w: w, link: mine ? "in the sense “" + mine + "”" : sense ? sense.g : null });
+        });
+        order.forEach(function (f) {
+          const g = groups[f];
+          const head = el("div", "sense-fam");
+          if (g.famIdx >= 0) { const dot = el("span", "fam-dot"); dot.style.background = RootMap.colorOf(g.famIdx); head.appendChild(dot); }
+          head.appendChild(txtNode(f));
+          card.appendChild(head);
+          g.items.forEach(function (it) {
+            const row = el("div", "sense-item");
+            const b = el("button", "dbl-word", it.w); b.type = "button";
+            b.addEventListener("click", function () { run(it.w); });
+            row.appendChild(b);
+            if (it.link) row.appendChild(el("span", "sense-link", it.link.length > 90 ? it.link.slice(0, 88) + "…" : it.link));
+            card.appendChild(row);
+          });
+        });
+      }
       function group(label, words, cls) {
         if (!words || !words.length) return;
         const row = el("div", "thes-group");
@@ -1501,93 +1504,10 @@
         });
         card.appendChild(row);
       }
-      group("Synonyms", s, "syn");
-      group("Antonyms", a, "ant");
+      group("Opposites", a, "ant");
       group("Related", r, "rel");
     });
     return card;
-  }
-
-  // ---------- Merriam-Webster per-homograph cards ----------
-  // When an entry carries staged MW data (rec._mw), each homograph renders as its
-  // own card with definitions, etymology and thesaurus grouped TOGETHER under the
-  // word's part of speech — "desert" the arid noun, the adjective, the verb and
-  // the "just deserts" noun become four separate cards — instead of the app's
-  // default section-grouped Definition / Word-history / Thesaurus cards.
-  const MW_POS = { noun: "noun", verb: "verb", adjective: "adjective", adverb: "adverb",
-    preposition: "preposition", conjunction: "conjunction", pronoun: "pronoun",
-    interjection: "interjection", "definite article": "article", "indefinite article": "article",
-    abbreviation: "abbreviation", "auxiliary verb": "verb", "geographical name": "name",
-    "biographical name": "name", "trademark": "trademark" };
-  const SUPERS = { "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹" };
-  function toSuper(n) { return String(n).replace(/\d/g, function (d) { return SUPERS[d]; }); }
-  // MW etymology prose can end in a bare cross-ref to another homograph
-  // ("… uninhabited" desert:2) — drop that dangling pointer.
-  function cleanMwEt(et) { return String(et || "").replace(/\s+[a-zà-ÿ]+:\d+\s*$/i, "").replace(/\s+/g, " ").trim(); }
-  // MW thesaurus words carry usage notes in parens ("defect (from)"); the bare
-  // word is what we can actually look up.
-  function mwSynClean(w) { return String(w || "").replace(/\s*\([^)]*\)\s*/g, " ").trim(); }
-  function buildMwCards(mw, token) {
-    // repeated parts of speech (two nouns) get disambiguating superscripts
-    const flCount = {}, flSeen = {};
-    mw.forEach(function (h) { const f = (h.fl || "").toLowerCase(); flCount[f] = (flCount[f] || 0) + 1; });
-    return mw.map(function (h) {
-      const card = el("div", "card mw-card");
-      const fl = (h.fl || "").toLowerCase();
-      let label = MW_POS[fl] || h.fl || "—";
-      if (flCount[fl] > 1) { flSeen[fl] = (flSeen[fl] || 0) + 1; label += " " + toSuper(flSeen[fl]); }
-      card.appendChild(el("div", "cap mw-pos", label));
-      if (h.shortdef && h.shortdef.length) {
-        const slot = el("div", "def-meaning");
-        h.shortdef.forEach(function (g, i) {
-          const row = el("div", "sense");
-          row.appendChild(el("span", "num", String(i + 1)));
-          const body = el("span"); body.innerHTML = escapeHtml(g);
-          row.appendChild(body); slot.appendChild(row);
-        });
-        card.appendChild(slot);
-      }
-      const et = cleanMwEt(h.et);
-      if (et) {
-        card.appendChild(el("div", "sub", "Etymology"));
-        card.appendChild(el("div", "hist", et));
-      }
-      if (h.date) {
-        const fr = el("div", "first-rec");
-        fr.innerHTML = '<span class="sub">First recorded</span> ' + escapeHtml(h.date);
-        card.appendChild(fr);
-      }
-      // thesaurus — validated against the dictionary so every chip opens
-      (async function () {
-        const clean = function (arr) { return (arr || []).map(mwSynClean).filter(Boolean); };
-        const s = await validateWords(clean(h.s), 12);
-        const a = await validateWords(clean(h.a), 8);
-        const r = await validateWords(clean(h.r), 12);
-        if (token !== runToken) return;
-        function group(lbl, words, cls) {
-          if (!words.length) return;
-          const row = el("div", "thes-group");
-          row.appendChild(el("span", "thes-label", lbl));
-          words.forEach(function (w, i) {
-            const c = el("button", "related-chip thes-" + cls, w);
-            c.style.setProperty("--i", i);
-            c.addEventListener("click", function () { run(w); });
-            row.appendChild(c);
-          });
-          card.appendChild(row);
-        }
-        group("Synonyms", s, "syn");
-        group("Antonyms", a, "ant");
-        group("Related", r, "rel");
-      })();
-      if (h.phrases && h.phrases.length) {
-        const pr = el("div", "mw-phrases");
-        pr.appendChild(el("span", "thes-label", "Phrases such as"));
-        pr.appendChild(el("span", "mw-phrase-list", h.phrases.join("  ·  ")));
-        card.appendChild(pr);
-      }
-      return card;
-    });
   }
 
   // ---------- etymology / word history ----------
@@ -1635,22 +1555,6 @@
     "English": { rank: 1500, era: "from c. 1500", desc: "Modern English." },
   };
 
-  function parseChain(e) {
-    const names = Object.keys(LANGS).sort(function (a, b) { return b.length - a.length; });
-    let work = " " + e + " ";
-    const found = {};
-    names.forEach(function (name) {
-      let idx;
-      while ((idx = work.indexOf(name)) >= 0) {
-        if (found[name] === undefined) found[name] = idx;
-        work = work.slice(0, idx) + new Array(name.length + 1).join(" ") + work.slice(idx + name.length);
-      }
-    });
-    let chain = Object.keys(found).sort(function (a, b) { return LANGS[a].rank - LANGS[b].rank; });
-    if (chain.length > 5) chain = chain.slice(0, 4).concat(chain.slice(-1));
-    return chain;
-  }
-
   function cleanProse(e) {
     const m = e.match(/(Borrowed from|Inherited from|Calque of|Univerbation of|Back-formation of|Clipping of|Abbreviation of|Blend of|Derived from|From)\b/);
     let s = (m && m.index > 0) ? e.slice(m.index) : e;
@@ -1695,83 +1599,31 @@
     return m ? m[0] : null;
   }
 
-  function buildTimeline(e) {
-    const chain = parseChain(e);
-    if (chain.length < 2) return null;
-    const colors = ["var(--root)", "var(--suffix)", "var(--prefix-ink)", "var(--stem)", "var(--ink)"];
-    const wrap = el("div", "tl-wrap");
-    const tl = el("div", "tl");
-    const detail = el("div", "tl-detail");
-    detail.appendChild(el("div", "tl-hint", "Tap a stage to learn about each language."));
-    let open = null;
-
-    function select(name, color) {
-      const nodes = tl.children;
-      for (let i = 0; i < nodes.length; i++) nodes[i].classList.toggle("sel", nodes[i].dataset.name === name);
-      const L = LANGS[name];
-      detail.innerHTML = "";
-      const head = el("div", "tl-d-head");
-      const sw = el("span", "tl-d-dot"); sw.style.background = color; head.appendChild(sw);
-      head.appendChild(el("span", "tl-d-name", name));
-      head.appendChild(el("span", "tl-d-era", L.era));
-      detail.appendChild(head);
-      if (L.desc) detail.appendChild(el("div", "tl-d-desc", L.desc));
-    }
-    function toggle(name, color) {
-      if (open === name) { // tapping the open one collapses back to the hint
-        open = null;
-        const nodes = tl.children;
-        for (let i = 0; i < nodes.length; i++) nodes[i].classList.remove("sel");
-        detail.innerHTML = ""; detail.appendChild(el("div", "tl-hint", "Tap a stage to learn about each language."));
-        return;
-      }
-      open = name; select(name, color);
-    }
-
-    chain.forEach(function (name, i) {
-      const color = colors[i % colors.length];
-      const node = el("div", "node"); node.dataset.name = name;
-      node.setAttribute("role", "button"); node.setAttribute("tabindex", "0");
-      const dot = el("div", "dot"); dot.style.background = color;
-      node.appendChild(dot);
-      node.appendChild(el("div", "lang", LANGS[name].short || name));
-      node.appendChild(el("div", "era", LANGS[name].era));
-      node.addEventListener("click", function () { toggle(name, color); });
-      node.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); toggle(name, color); } });
-      tl.appendChild(node);
-    });
-    wrap.appendChild(tl);
-    wrap.appendChild(detail);
-    return wrap;
-  }
-
-  function buildHistoryCard(recP, parts, token, divider) {
-    const card = el("div", "card");
-    card.appendChild(el("div", "cap", "Word history"));
-    recP.then(function (rec) {
+  // History: the line of descent read off the map (lineage rail), then the
+  // Wiktionary etymology it was read from, then the first-recorded date. One
+  // card, one source, so the rail and the text can't disagree.
+  function buildHistoryCard(recP, parts, token, divider, word) {
+    const card = el("div", "card hist-card");
+    card.appendChild(el("div", "cap", "History"));
+    const rail = el("div", "lin-holder");
+    card.appendChild(rail);
+    recP.then(async function (rec) {
       if (token !== runToken) return;
       const e = rec && rec.e;
-      const tl = e ? buildTimeline(e) : null;
-      const prose = (e && !looksLikeTree(e)) ? e : null;
-      const known = parts.filter(function (p) { return p.origin && p.source; });
-      if (!tl && !prose && !known.length) { card.remove(); if (divider) divider.remove(); return; }
-
-      if (tl) card.appendChild(tl);
+      const prose = e && window.EtymParse ? window.EtymParse.display(word || currentWord, e) : (e && !looksLikeTree(e) ? cleanProse(e) : null);
+      let rows = null;
+      if (window.RootMap) {
+        await RootMap.ready;
+        const i = RootMap.find(word || currentWord);
+        if (i >= 0) rows = await lineageRows(i, token);
+      }
+      if (token !== runToken) return;
+      if (!rows && !prose) { card.remove(); if (divider) divider.remove(); return; }
+      if (rows) rows.forEach(function (r) { rail.appendChild(r); });
       if (prose) {
-        card.appendChild(el("div", "sub", "Etymology"));
-        card.appendChild(el("div", "hist", cleanProse(prose)));
-      } else if (known.length) {
-        card.appendChild(el("div", "sub", "Etymology"));
-        const origins = [];
-        known.forEach(function (p) { if (origins.indexOf(p.origin) === -1) origins.push(p.origin); });
-        const chain = known.map(function (p) {
-          return "<i>" + escapeHtml(p.source) + '</i> (“' + escapeHtml(firstSense(p.meaning)) + "”)";
-        }).join(" + ");
-        const h = el("div", "hist");
-        h.innerHTML = "From <span class=\"origin\">" + escapeHtml(origins.join(" and ")) + "</span> — " + chain + ".";
+        const h = el("div", "hist" + (rows ? " hist-src" : ""), prose);
         card.appendChild(h);
       }
-
       const yr = e ? extractYear(e) : null;
       if (yr) {
         const fr = el("div", "first-rec");
@@ -1788,159 +1640,6 @@
     d.appendChild(el("span", "orn", "❧"));
     d.appendChild(el("span", "dln"));
     return d;
-  }
-
-  // ---------- Ancestry card (trees/<xx>.json from the canonical graph) ----------
-  // Node: { l:lang, t:term, k:edge kind, s:sources, g:gloss, hw:headword,
-  //         x:contested, d:descendant count, n:pivot key, c:[parents…] }
-  const treeShardCache = {};
-  function fetchTreeShard(key) {
-    if (!treeShardCache[key]) {
-      treeShardCache[key] = fetch("trees/" + key + ".json?v=" + DATA_V)
-        .then(function (r) { return r.ok ? r.json() : {}; })
-        .catch(function () { return {}; });
-    }
-    return treeShardCache[key];
-  }
-  // canonical node key, mirroring build-etymgraph.js foldTerm:
-  // NFD, strip combining marks, lowercase, drop asterisks
-  function ancNodeKey(lang, term) {
-    const t = String(term || "").normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/\*/g, "").trim();
-    return lang + "|" + t;
-  }
-  // pivot index is sharded by first character of the folded term
-  const descShardCache = {};
-  function fetchDescShard(key) {
-    const term = key.slice(key.indexOf("|") + 1);
-    let c = (term[0] || "_").toLowerCase();
-    if (!/^[a-z]$/.test(c)) c = "_";
-    if (!descShardCache[c]) {
-      descShardCache[c] = fetch("trees/_desc-" + c + ".json?v=" + DATA_V)
-        .then(function (r) { return r.ok ? r.json() : {}; })
-        .catch(function () { return {}; });
-    }
-    return descShardCache[c];
-  }
-
-  const ANC_KIND = { inh: "inherited from", bor: "borrowed from", der: "from", aff: "affix", cmp: "compound of", root: "root" };
-  const ANC_SRC = { e: "Wiktionary etymology parse", k: "Wiktionary etymon tree", y: "EtymDB" };
-
-  function ancSrcTitle(s) {
-    return (s || "").split("").map(function (c) { return ANC_SRC[c] || c; }).join(" + ");
-  }
-
-  function buildAncestryRows(node, depth, rows, budget) {
-    const kids = node.c || [];
-    for (let i = 0; i < kids.length; i++) {
-      if (budget.n >= budget.max) { budget.overflow = true; return; }
-      budget.n++;
-      rows.push({ node: kids[i], depth: depth, alt: kids.length > 1 && i > 0 });
-      buildAncestryRows(kids[i], depth + 1, rows, budget);
-    }
-  }
-
-  function ancRowEl(r, token, refocus) {
-    const row = el("div", "anc-row" + (r.alt ? " anc-alt" : ""));
-    row.style.paddingLeft = Math.min(r.depth, 7) * 14 + "px";
-    const n = r.node;
-
-    const line = el("div", "anc-line");
-    if (r.depth > 0) line.appendChild(el("span", "anc-tick", "└"));
-    if (n.k) line.appendChild(el("span", "anc-kind", ANC_KIND[n.k] || n.k));
-    const term = el("span", "anc-term", n.t);
-    if (n.s) term.title = ancSrcTitle(n.s);
-    line.appendChild(el("span", "anc-lang", n.l));
-    line.appendChild(term);
-    if (n.g) line.appendChild(el("span", "anc-gloss", "“" + firstSense(n.g) + "”"));
-    if (n.x) {
-      const b = el("span", "anc-badge", "contested");
-      b.title = "Sources disagree on this word's route — all recorded routes are shown.";
-      line.appendChild(b);
-    }
-    if (n.hw) {
-      term.classList.add("anc-link");
-      term.addEventListener("click", function (e) { e.stopPropagation(); runFromLink(n.hw); });
-    }
-    // tapping the row itself refocuses the tree on this ancestor (its
-    // subtree is already in the loaded data)
-    if (refocus && (n.c || []).length) {
-      row.classList.add("anc-focusable");
-      line.addEventListener("click", function () { refocus(n); });
-    }
-    row.appendChild(line);
-
-    if (n.d) {
-      const key = ancNodeKey(n.l, n.t);
-      const pivot = el("button", "anc-pivot", "+" + n.d + " words from this root");
-      pivot.type = "button";
-      const panel = el("div", "anc-desc"); panel.hidden = true;
-      pivot.addEventListener("click", function (e) {
-        e.stopPropagation();
-        if (!panel.hidden) { panel.hidden = true; return; }
-        fetchDescShard(key).then(function (idx) {
-          if (token !== runToken) return;
-          panel.innerHTML = "";
-          const words = idx[key] || [];
-          words.forEach(function (w) {
-            const chip = el("button", "anc-desc-word", w);
-            chip.type = "button";
-            chip.addEventListener("click", function (ev) { ev.stopPropagation(); runFromLink(w); });
-            panel.appendChild(chip);
-          });
-          if (!words.length) panel.appendChild(el("span", "anc-desc-empty", "No list for this root yet."));
-          panel.hidden = false;
-          panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
-        });
-      });
-      row.appendChild(pivot);
-      row.appendChild(panel);
-    }
-    return row;
-  }
-
-  function runFromLink(w) { run(w); }
-
-  function buildAncestryCard(word, token) {
-    const key = word.slice(0, 2).toLowerCase();
-    if (!/^[a-z]{2}$/.test(key)) return Promise.resolve(null);
-    return fetchTreeShard(key).then(function (sh) {
-      const tree = sh[word] || sh[word.toLowerCase()];
-      if (!tree || !tree.c || token !== runToken) return null;
-      const card = el("div", "card anc-card");
-      card.appendChild(el("div", "cap", "Ancestry"));
-      const crumb = el("div", "anc-crumb"); crumb.hidden = true;
-      card.appendChild(crumb);
-      const holder = el("div", "anc-holder");
-      card.appendChild(holder);
-      const more = el("button", "anc-more", "Show the full tree");
-      more.type = "button";
-      card.appendChild(more);
-
-      // render(focusNode): the card can refocus on any ancestor — its
-      // subtree is already in this tree object. A crumb walks back out.
-      const stack = [];
-      function render(node, full) {
-        holder.innerHTML = "";
-        const rows = [];
-        const budget = { n: 0, max: full ? 200 : 14, overflow: false };
-        buildAncestryRows(node, 0, rows, budget);
-        const refocus = function (child) { stack.push(node); render(child, false); };
-        rows.forEach(function (r) { holder.appendChild(ancRowEl(r, token, refocus)); });
-        crumb.hidden = !stack.length;
-        if (stack.length) {
-          crumb.innerHTML = "";
-          const back = el("button", "anc-back", "← back");
-          back.type = "button";
-          back.addEventListener("click", function () { render(stack.pop(), false); });
-          crumb.appendChild(back);
-          crumb.appendChild(el("span", "anc-crumb-word", node.l + " " + node.t));
-        }
-        more.hidden = !budget.overflow;
-        more.onclick = function () { render(node, true); };
-      }
-      render(tree, false);
-      return card;
-    });
   }
 
   // ---------- browse-by-letter (A–Z strip on the home screen) ----------
@@ -2021,46 +1720,12 @@
     if (words.length > cap) list.appendChild(el("div", "browse-note", "Showing the first " + cap + " of " + words.length + " words."));
   }
 
-  // ---------- word-family tree ----------
-  // Prefixes are bundled by sense so the top of a family isn't a long flat list.
-  // A group only actually forms when ≥2 of its prefixes appear (see buildFamilyTree),
-  // so a lone prefix still shows directly — no weird one-item groups.
-  const CLUSTER = {
-    "Place / direction": ["ad", "ab", "de", "e", "in-loc", "ex", "sub", "super", "trans", "cis", "circum", "inter", "intra",
-      "extra", "intro", "retro", "peri", "para", "dia", "epi", "per", "pro", "ecto", "endo", "exo"],
-    "Time / order": ["pre", "post", "ante", "fore", "neo", "paleo", "proto"],
-    "Negation": ["a-priv", "in-neg", "un", "non", "dis"],
-    "Against": ["anti", "contra", "ob"],
-    "Together": ["co", "syn"],
-    "Number": ["bi", "tri", "uni", "mono", "multi", "poly", "semi", "hemi", "deca", "cent", "quadr", "penta", "oct", "milli", "kilo"],
-    "Degree": ["hyper", "hypo", "iso", "ultra", "infra", "supra", "mega", "macro", "micro"],
-    "Self / other": ["auto", "homo", "hetero", "allo"],
-    "Again / back": ["re"],
-  };
-  const PRE_CLUSTER = {};
-  Object.keys(CLUSTER).forEach(function (c) { CLUSTER[c].forEach(function (id) { PRE_CLUSTER[id] = c; }); });
-
-  function dotted(w) { // word split by morpheme, joined with subtle dots
-    try {
-      const ps = window.EtymologyEngine.decompose(w).parts;
-      if (ps.length > 1) return ps.map(function (p) { return p.surface; }).join("·");
-    } catch (e) {}
-    return w;
-  }
-
-  let treeRoot = null;     // the family tree (grows in place as you expand)
-  let treeToken = 0;
-  let openingFromTree = false; // set when a word is opened by tapping a tree chip
-  let treeReturn = false;      // current word came from a tree → offer a way back
-  const treeCache = {};    // root id -> promise of its family root node
-  function closeTree() { treeEl.hidden = true; treeEl.classList.remove("tree-in"); treeEl.innerHTML = ""; treeToken++; }
-
-  // Hand-curated family (from the curator editor) for a root id, if one exists.
-  // Fetched fresh each open (no-store) so it follows editor saves after deploy.
-  function loadFamily(id) {
-    return fetch("family/" + id + ".json?t=" + Date.now(), { cache: "no-store" })
-      .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
-  }
+  // ---------- (retired) word-family tree ----------
+  // The separate family-tree screen was retired: the map is the family tree.
+  // Morpheme tiles now fly to their node instead. Stubs keep old call sites safe.
+  let treeReturn = false, openingFromTree = false, treeRoot = null;
+  function closeTree() { if (treeEl) { treeEl.hidden = true; treeEl.innerHTML = ""; } }
+  function returnToTree() {}
 
   // Curated collections (family/collections.json) — sets of words that belong
   // together by convention rather than morphology, e.g. Latin abbreviations
@@ -2168,416 +1833,13 @@
     card.appendChild(tag); card.appendChild(sub); card.appendChild(list);
     return card;
   }
-  // A "Word family" card for the word page: if any root has a curated family that
-  // contains this word, show which region it lives in and a button to open the tree.
-  async function buildFamilyCard(parts, word, token) {
-    const rootParts = (parts || []).filter(function (p) { return p.kind === "root" && p.id; });
-    for (const rp of rootParts) {
-      const fam = await loadFamily(rp.id);
-      if (token !== runToken) return null;
-      if (!fam || !fam.placements) continue;
-      const pl = fam.placements.find(function (p) { return p.w === word; });
-      const col = fam.collapse && fam.collapse[word];
-      if (!pl && !col) continue;
-      const card = el("div", "card fam-card");
-      card.appendChild(el("div", "cap", "Word family"));
-      const row = el("div", "fam-row");
-      const region = pl && (fam.regions || []).find(function (r) { return r.id === pl.region; });
-      const where = el("div", "fam-where");
-      where.innerHTML = '<span class="fam-root">' + escapeHtml(fam.rootLabel || (rp.surface + "-")) + "</span>" +
-        (region ? ' · <span class="fam-region">' + escapeHtml(region.label) + "</span>" : "");
-      row.appendChild(where);
-      const btn = el("button", "fam-open", "Open tree →"); btn.type = "button";
-      btn.addEventListener("click", function () { openTreeRoot(rp, word); });
-      row.appendChild(btn);
-      card.appendChild(row);
-      const sub = region ? region.gloss : (col ? (col.t + " " + col.l) : "");
-      if (sub) card.appendChild(el("div", "fam-gloss", sub));
-      return card;
-    }
-    return null;
-  }
-
-  // Convert the curator's placement format into the tree's node shape: regions are
-  // groups (by meaning), placements nest by parent (descent). A word placed more
-  // than once in a region (different senses) is shown once — its senses associate.
-  function curatedFamilyTree(doc, rootPart) {
-    const byRegion = {};
-    (doc.placements || []).forEach(function (p) { (byRegion[p.region] = byRegion[p.region] || []).push(p); });
-    const regionNodes = (doc.regions || []).map(function (rg) {
-      const here = byRegion[rg.id] || [];
-      const parentOf = {}, order = [], meta = {};
-      here.forEach(function (p) { if (!(p.w in parentOf)) { parentOf[p.w] = p.parent || null; order.push(p.w); meta[p.w] = p; } });
-      const present = {}; order.forEach(function (w) { present[w] = 1; });
-      const isTop = function (w) { const par = parentOf[w]; return !par || !present[par]; };
-      function build(par) {
-        return order.filter(function (w) { return par === null ? isTop(w) : parentOf[w] === par; })
-          .sort(function (a, b) { return a.localeCompare(b); })
-          .map(function (w) {
-            const m = meta[w] || {};
-            // A "source" placement (e.g. Latin conferre) is a label node, not a
-            // dictionary entry: it carries its own gloss/lang and doesn't navigate.
-            return { type: "word", word: w, current: false, kind: m.kind || null,
-              lang: m.lang || null, glossText: m.gloss || null, tag: m.tag || null, children: build(w) };
-          });
-      }
-      const kids = build(null);
-      if (!kids.length) return null;
-      // Count is the entries immediately connected to this category, not the
-      // whole subtree.
-      return { type: "group", label: rg.label, gloss: rg.gloss || "", count: kids.length, children: kids };
-    }).filter(Boolean);
-    return { type: "root", label: doc.rootLabel || rootPart.surface, infinitive: !!doc.rootLabel, source: rootPart.source,
-      gloss: doc.rootGloss || ((rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : "")),
-      children: regionNodes, _open: true };
-  }
-
-  // Build each root's family in the background as the word card opens, so a tree
-  // animates in instantly when its button is tapped.
-  function prefetchTree(word, parts) {
-    (parts || []).forEach(function (rp) {
-      if (rp.kind !== "root" || !rp.id || treeCache[rp.id]) return;
-      treeCache[rp.id] = loadData().then(async function () {
-        const fam = (MORPH[rp.id] || []).filter(function (w) { return w !== word && /^[a-z]{2,}$/.test(w) && w.length <= 16; });
-        const valid = await validateWords(fam, 200);
-        return buildFamilyTree(rp, word, valid);
-      }).catch(function () { return null; });
-    });
-  }
-
-  async function openTreeRoot(rootPart, word) {
-    if (!rootPart || !rootPart.id) return;
-    const token = ++treeToken;
-    contentEl.classList.add("to-tree"); // the card contracts away
-    // Prefer a hand-curated family (family/<id>.json, edited in the curator) and
-    // fall back to the heuristic prefix-grouped tree when there isn't one.
-    const curated = await loadFamily(rootPart.id);
-    let root;
-    if (curated && curated.placements && curated.placements.length) {
-      root = curatedFamilyTree(curated, rootPart);
-    } else {
-      if (!treeCache[rootPart.id]) prefetchTree(word, [rootPart]);
-      root = await treeCache[rootPart.id];
-    }
-    await delay(170);
-    if (token !== treeToken) { contentEl.classList.remove("to-tree"); return; }
-    contentEl.classList.remove("to-tree");
-    if (!root) { closeTree(); return; }
-    treeEl.hidden = false; treeEl.classList.add("tree-in");
-    treeRoot = root;
-    resetTreeState(treeRoot); treeRoot._open = true; // clear flags from a prior open
-    const cur = expandToCurrent(treeRoot, word); // open the path down to the word we came from
-    renderTree(cur);
-  }
-  // Shrink the current word page back into the tree it came from (X / back).
-  function returnToTree() {
-    if (!treeRoot) return;
-    const token = ++treeToken;
-    contentEl.classList.add("to-tree");
-    setTimeout(function () {
-      if (token !== treeToken) return;
-      contentEl.classList.remove("to-tree");
-      treeEl.hidden = false; treeEl.classList.add("tree-in");
-      renderTree(null);
-    }, 190);
-  }
-
-  function countWords(nodes) {
-    return nodes.reduce(function (n, c) { return n + (c.type === "word" ? 1 : 0) + countWords(c.children || []); }, 0);
-  }
-
-  // ---- decomposition helpers (cached per tree build) ----
-  function decompParts(w, cache) {
-    if (cache[w]) return cache[w];
-    let ps = [];
-    try { ps = window.EtymologyEngine.decompose(w).parts; } catch (e) {}
-    cache[w] = ps; return ps;
-  }
-  function firstPrefixOf(w, cache) {
-    const ps = decompParts(w, cache);
-    for (let i = 0; i < ps.length; i++) { if (ps[i].kind === "prefix") return ps[i]; if (ps[i].kind === "root") break; }
-    return null;
-  }
-  // A "complex" word is more than a bare root (+ silent e): it carries a prefix,
-  // a real suffix, or a second root — so other words can derive *from* it.
-  function isComplexWord(w, cache) {
-    const ps = decompParts(w, cache);
-    let roots = 0, pre = false, suf = false;
-    ps.forEach(function (p) {
-      if (p.kind === "prefix") pre = true;
-      else if (p.kind === "root") roots++;
-      else if (p.kind === "suffix" && !p.silentE) suf = true;
-    });
-    return pre || suf || roots >= 2;
-  }
-
-  // Build one derivation forest over the whole family, then group its roots by
-  // their leading prefix. A word descends from another when it merely adds a
-  // suffix (transcribe → transcribed) or when stripping its prefix leaves a
-  // complete, already-complex family word (nontelescopic → telescopic). A bare
-  // prefix+root form (transcribe, transcript) has no such parent, so it sits
-  // directly in its prefix group — making transcribe and transcript siblings
-  // under "trans-".
-  function buildFamilyTree(rootPart, headword, words) {
-    const dcache = {};
-    const list = []; const have = {};
-    words.concat([headword]).forEach(function (w) { if (!have[w]) { have[w] = 1; list.push(w); } });
-    const byWord = {};
-    list.forEach(function (w) { byWord[w] = { type: "word", word: w, current: w === headword, children: [] }; });
-
-    function parentOf(w) {
-      // (a) suffix derivation — the longest shorter family word w extends. A
-      // derived word shares its parent's *stem*, not always its exact spelling:
-      // geology → geolog·ical / geolog·ist, so strip a final e/y before matching.
-      let best = null, bestLen = 0;
-      list.forEach(function (p) {
-        if (p === w || p.length >= w.length) return;
-        const stem = (p.length >= 5 && /[ey]$/.test(p)) ? p.slice(0, -1) : p;
-        if (stem.length >= 4 && w.indexOf(stem) === 0 && p.length > bestLen) { best = p; bestLen = p.length; }
-      });
-      if (best) return best;
-      // (b) prefix derivation — strip the leading prefix; if a complete, complex
-      // family word remains, w descends from it
-      const pre = firstPrefixOf(w, dcache);
-      if (pre) {
-        const stem = w.slice(pre.surface.length);
-        if (stem !== w && byWord[stem] && isComplexWord(stem, dcache)) return stem;
-      }
-      return null;
-    }
-
-    const roots = [];
-    list.forEach(function (w) {
-      const par = parentOf(w);
-      if (par && byWord[par]) byWord[par].children.push(byWord[w]); else roots.push(byWord[w]);
-    });
-    (function sortKids(nodes) {
-      nodes.sort(function (a, b) { return a.word.length - b.word.length || a.word.localeCompare(b.word); });
-      nodes.forEach(function (n) { sortKids(n.children); });
-    })(roots);
-
-    // group the forest roots by leading prefix (or a "base" group of bare roots)
-    const groups = {};
-    roots.forEach(function (n) {
-      const pre = firstPrefixOf(n.word, dcache);
-      if (pre) {
-        const lab = (pre.source || pre.surface).replace(/[-\s]+$/, "") + "-"; // canonical: trans-, not tran-
-        const g = groups[pre.id] || (groups[pre.id] = { id: pre.id, label: lab,
-          gloss: (pre.source || pre.surface) + (pre.meaning ? " · " + firstSense(pre.meaning) : ""), nodes: [] });
-        g.nodes.push(n);
-      } else {
-        const g = groups["(base)"] || (groups["(base)"] = { id: "(base)", base: true,
-          label: rootPart.surface, gloss: "the root as a word", nodes: [] });
-        g.nodes.push(n);
-      }
-    });
-
-    let baseNode = null; const direct = []; const clusters = {};
-    Object.keys(groups).forEach(function (k) {
-      const g = groups[k];
-      g.nodes.sort(function (a, b) { return a.word.length - b.word.length || a.word.localeCompare(b.word); });
-      const words = countWords(g.nodes);
-      const node = { type: "group", label: g.label, gloss: g.gloss, count: words, _weight: words, children: g.nodes, _root: rootPart.surface };
-      if (g.base) { node._base = true; node._root = null; node.label = rootPart.surface; baseNode = node; return; }
-      const cl = PRE_CLUSTER[g.id];
-      if (cl) { (clusters[cl] = clusters[cl] || []).push(node); } else { direct.push(node); }
-    });
-
-    // a sense cluster forms only when ≥2 of its prefixes appear (else it didn't
-    // group well — show those prefixes directly). Its number is the count of
-    // affixes it bundles, not the number of words.
-    const clusterNodes = [];
-    Object.keys(clusters).forEach(function (cl) {
-      const arr = clusters[cl].sort(function (a, b) { return b.count - a.count; });
-      if (arr.length >= 2) clusterNodes.push({ type: "group", label: cl, gloss: "", count: arr.length,
-        _weight: arr.reduce(function (n, p) { return n + p._weight; }, 0), _affixGroup: true, children: arr });
-      else arr.forEach(function (n) { direct.push(n); });
-    });
-
-    let children = direct.concat(clusterNodes).sort(function (a, b) { return (b._weight || b.count) - (a._weight || a.count); });
-    if (baseNode) children.unshift(baseNode); // base always first
-    return { type: "root", label: rootPart.surface, source: rootPart.source,
-      gloss: (rootPart.source || rootPart.surface) + (rootPart.meaning ? " · " + firstSense(rootPart.meaning) : ""),
-      children: children, _open: true };
-  }
-
-  // A family tree is cached per root and shared by every word in the family, so
-  // before (re)opening it we clear stale expansion/current flags — otherwise it
-  // stays focused on whichever word first built it.
-  function resetTreeState(node) {
-    node._open = false;
-    if (node.type === "word") node.current = false;
-    (node.children || []).forEach(resetTreeState);
-  }
-  // Open every node on the path from the tree root down to `word` (and mark it
-  // current), so the tree lands already expanded to it. Returns its node.
-  function expandToCurrent(node, word) {
-    let found = (node.type === "word" && node.word === word) ? node : null;
-    if (found) node.current = true;
-    (node.children || []).forEach(function (k) { const f = expandToCurrent(k, word); if (f) found = found || f; });
-    if (found && found !== node) node._open = true;
-    return found;
-  }
-
-  // Open (or close) every branch in the tree.
-  function setAllOpen(node, on) {
-    if (node.children && node.children.length) node._open = on;
-    (node.children || []).forEach(function (k) { setAllOpen(k, on); });
-  }
-  // Re-open just the path down to whichever word is currently marked.
-  function openPathToCurrent(node) {
-    if (node.type === "word" && node.current) return true;
-    let found = false;
-    (node.children || []).forEach(function (k) { if (openPathToCurrent(k)) found = true; });
-    if (found) node._open = true;
-    return found;
-  }
-
-  // The whole tree renders from treeRoot based on each node's _open flag, so it
-  // accumulates: expanding a branch keeps everything else in place.
-  function renderTree(opened) {
-    treeEl.innerHTML = "";
-    const head = el("div", "tree-head");
-    const x = el("button", "tree-close", "✕"); x.type = "button";
-    x.setAttribute("aria-label", "Close tree");
-    x.addEventListener("click", closeTree);
-    head.appendChild(x);
-    head.appendChild(el("div", "tree-title", "Word family · " + treeRoot.label + (treeRoot.infinitive ? "" : "-")));
-    // Show-all / collapse toggle — expand every branch at once, or fold back to
-    // just the path to the current word.
-    const allBtn = el("button", "tree-all", treeRoot._allOpen ? "Collapse" : "Show all");
-    allBtn.type = "button";
-    allBtn.addEventListener("click", function () {
-      treeRoot._allOpen = !treeRoot._allOpen;
-      if (treeRoot._allOpen) { setAllOpen(treeRoot, true); }
-      else { setAllOpen(treeRoot, false); treeRoot._open = true; openPathToCurrent(treeRoot); }
-      renderTree(null);
-    });
-    head.appendChild(allBtn);
-    treeEl.appendChild(head);
-
-    const body = el("div", "tree-body");
-    const canvas = el("div", "tree-canvas");
-    const links = el("div", "tree-links"); canvas.appendChild(links);
-    canvas.appendChild(renderNode(treeRoot));
-    body.appendChild(canvas);
-    treeEl.appendChild(body);
-
-    requestAnimationFrame(function () {
-      drawAllLinks(canvas, links);
-      if (opened && opened._el && opened._el.scrollIntoView) {
-        opened._el.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      }
-    });
-  }
-
-  function toggle(node, opened) {
-    node._open = !node._open;
-    node._justOpen = node._open;
-    renderTree(node._open ? node : null);
-  }
-
-  function renderNode(node) {
-    const row = el("div", "tnode-row");
-    const chip = node.type === "root" ? rootChip(node) : nodeChip(node);
-    node._el = chip;
-    row.appendChild(chip);
-    if (node.children && node.children.length && node._open) {
-      const kids = el("div", "tnode-kids" + (node._justOpen ? " just-open" : ""));
-      node._justOpen = false;
-      node.children.forEach(function (c) { kids.appendChild(renderNode(c)); });
-      row.appendChild(kids);
-    }
-    return row;
-  }
-
-  function rootChip(node) {
-    const c = el("div", "tree-root");
-    c.appendChild(el("div", "tree-root-w", node.label + (node.infinitive ? "" : "-")));
-    if (node.gloss) c.appendChild(el("div", "tree-root-g", node.gloss));
-    return c;
-  }
-
-  function nodeChip(node) {
-    const expandable = node.children && node.children.length;
-    if (node.type === "word") {
-      const isSource = node.kind === "source"; // Latin label node, not an entry
-      const c = el("div", "tnode word" + (node.current ? " current" : "") + (isSource ? " source" : ""));
-      const wrap = el("span", "tnode-w");
-      // Source labels (Latin lemmas) are shown whole; entries get morpheme dots.
-      wrap.appendChild(document.createTextNode(isSource ? node.word : dotted(node.word)));
-      if (node.lang) wrap.appendChild(el("span", "tnode-lang", node.lang));
-      c.appendChild(wrap);
-      const g = el("span", "tnode-sub", node.glossText ? shortGloss(node.glossText) : ""); c.appendChild(g);
-      if (!expandable) c.appendChild(el("span", "tnode-mark dot", ""));
-      if (!node.glossText) getWord(node.word).then(function (rec) {
-        const def = rec && rec.d && rec.d[0] && rec.d[0].g;
-        if (def) g.textContent = shortGloss(def);
-      });
-      c.setAttribute("role", "button"); c.setAttribute("tabindex", "0");
-      if (!isSource) {
-        const open = function () { openingFromTree = true; closeTree(); run(node.word); };
-        c.addEventListener("click", open);
-        c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
-      } else if (expandable) {
-        // A source label (Latin conferre) doesn't open a page — the whole chip
-        // just expands/collapses its descendants.
-        c.addEventListener("click", function () { toggle(node); });
-        c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(node); } });
-      }
-      if (expandable) { // also a branch — a toggle reveals the words derived from it
-        // Big hit target: the right third of the chip toggles, so the +/− is easy
-        // to hit without opening the word. (Source chips already toggle wholesale.)
-        if (!isSource) {
-          const hit = el("button", "tnode-hit", ""); hit.type = "button";
-          hit.setAttribute("aria-label", (node._open ? "Hide" : "Show") + " words from " + node.word);
-          hit.addEventListener("click", function (e) { e.stopPropagation(); toggle(node); });
-          c.appendChild(hit);
-        }
-        c.appendChild(el("span", "tnode-mark plus", node._open ? "−" : "+"));
-      }
-      return c;
-    }
-    // group (sense category / prefix step) — tapping expands/collapses it
-    const c = el("div", "tnode step" + (node._open ? " open" : ""));
-    const w = el("span", "tnode-w");
-    if (node._root) { // affix chip: show the root with it, e.g. "trans- + scrīb"
-      w.innerHTML = '<span class="t-aff">' + escapeHtml(node.label) + '</span><span class="t-plus"> + </span><span class="t-root">' + escapeHtml(node._root) + "</span>";
-    } else { w.textContent = node.label; }
-    c.appendChild(w);
-    if (node.gloss) c.appendChild(el("span", "tnode-sub", node.gloss));
-    c.appendChild(el("span", "tnode-count", String(node.count)));
-    c.appendChild(el("span", "tnode-mark plus", node._open ? "−" : "+"));
-    c.setAttribute("role", "button"); c.setAttribute("tabindex", "0");
-    const t = function () { toggle(node); };
-    c.addEventListener("click", t);
-    c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t(); } });
-    return c;
-  }
-
-  // one SVG of curved connectors over the whole canvas, redrawn on every change
-  function drawAllLinks(canvas, links) {
-    if (!canvas.querySelectorAll || typeof canvas.offsetWidth !== "number") return;
-    const rows = canvas.querySelectorAll(".tnode-row");
-    let p = "";
-    Array.prototype.forEach.call(rows, function (row) {
-      if (row.children.length < 2) return;
-      const chip = row.children[0], kids = row.children[1];
-      const sx = chip.offsetLeft + chip.offsetWidth, sy = chip.offsetTop + chip.offsetHeight / 2;
-      Array.prototype.forEach.call(kids.children, function (kr) {
-        const cc = kr.children[0];
-        const ex = cc.offsetLeft, ey = cc.offsetTop + cc.offsetHeight / 2, mx = (sx + ex) / 2;
-        p += '<path d="M' + sx + ' ' + sy + ' C' + mx + ' ' + sy + ' ' + mx + ' ' + ey + ' ' + ex + ' ' + ey +
-          '" fill="none" stroke="rgba(245,235,215,0.32)" stroke-width="1.6"/>';
-      });
-    });
-    const w = canvas.scrollWidth || canvas.offsetWidth, h = canvas.scrollHeight || canvas.offsetHeight;
-    links.innerHTML = '<svg width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none" style="position:absolute;inset:0;overflow:visible">' + p + "</svg>";
-  }
-
   // ---------- typeahead ----------
   let suggestToken = 0;
-  function hideSuggest() { suggestEl.hidden = true; suggestEl.innerHTML = ""; }
+  function hideSuggest() {
+    suggestToken++; // a fetch still in flight must not reopen the list after a search
+    suggestEl.hidden = true; suggestEl.innerHTML = "";
+    if (window.RootMap && RootMap.ping) RootMap.ping(-1);
+  }
   function onType() {
     const v = input.value.trim().toLowerCase();
     if (!v) { hideSuggest(); showRecent(); return; } // empty bar → recent words
@@ -2620,6 +1882,19 @@
       let html = '<span class="hl">' + escapeHtml(w.slice(0, q.length)) + "</span>" + escapeHtml(w.slice(q.length));
       if (it.lang) html += '<span class="sug-lang">' + escapeHtml(it.lang) + "</span>";
       b.innerHTML = html;
+      // where it lives on the map: its family's colour (and a pulse for the top one)
+      const mi = window.RootMap && RootMap.loaded() ? RootMap.find(w) : -1;
+      if (mi >= 0) {
+        const inf = RootMap.info(mi);
+        let r = mi, n = 0; while (RootMap.info(r).parent >= 0 && n++ < 40) r = RootMap.info(r).parent;
+        const root = RootMap.info(r);
+        const dot = el("span", "sug-dot"); dot.style.background = RootMap.colorOf(root.fam);
+        dot.title = root.family;
+        b.insertBefore(dot, b.firstChild);
+        if (!suggestEl.children.length) RootMap.ping(mi);
+        b.addEventListener("pointerenter", function () { RootMap.ping(mi); });
+        b.addEventListener("focus", function () { RootMap.ping(mi); });
+      }
       // pointerdown fires before the input's blur-hide, so the tap always lands
       b.addEventListener("pointerdown", function (e) { e.preventDefault(); hideSuggest(); run(w); });
       b.addEventListener("click", function () { hideSuggest(); run(w); });
@@ -2640,7 +1915,7 @@
   input.addEventListener("input", onType);
   input.addEventListener("focus", function () { setTyping(true); if (!input.value.trim()) showRecent(); });
   input.addEventListener("blur", function () { setTimeout(function () { setTyping(false); hideSuggest(); hideRecent(); }, 150); });
-  if (navHome) navHome.addEventListener("click", goHome);
+  if (navHome) navHome.addEventListener("click", function () { stepOut(); });
   if (navBack) navBack.addEventListener("click", goBack);
   if (navFwd) navFwd.addEventListener("click", goFwd);
   document.querySelectorAll(".example").forEach(function (btn) {
@@ -2661,7 +1936,7 @@
     "dinosaur", "encyclopedia", "hippopotamus", "paragraph", "sympathy"];
   function renderHomeChips() {
     const chipsEl = document.querySelector(".chips");
-    if (!chipsEl) return;
+    if (!chipsEl) return; // (home no longer shows starter words: it opens somewhere on the map)
     const words = qShuffle(SHOWCASE).slice(0, 6);
     chipsEl.innerHTML = "";
     words.forEach(function (w) {
@@ -2769,8 +2044,756 @@
     });
   }
 
-  const m = location.hash.match(/word=([a-zA-Z]+)/);
-  if (m) run(m[1]);
+  // deferred so the whole controller (incl. the map section below) is set up first
+  const m = location.hash.match(/word=([^&]+)/);
+  if (m) setTimeout(function () { run(decodeURIComponent(m[1])); }, 0);
+
+  // ---------- the map (graph.js): the app is the map; an entry is one point on it ----------
+  var holdSheetUntil = 0;
+  var sheetState = "home"; // var: run() may fire (from a #word= link) before this section executes
+  const appShell = document.querySelector(".app");
+  const mapEl = $("map");
+  const sheetGrip = $("sheetGrip");
+  const MAP_TOP = 72; // the top bar, kept clear when framing a node
+  let lensName = "descent";
+  let mapWord = null;
+
+  function sheetHeight(st) {
+    const H = window.innerHeight || 800;
+    if (st === "hidden") return 0;
+    if (st === "home") return 132;
+    if (st === "mini") return 236;
+    if (st === "callout") return 0;
+    if (st === "peek") return Math.round(H * 0.5);
+    return Math.round(H * 0.93);
+  }
+  function setSheet(st) {
+    sheetState = st;
+    if (appShell && appShell.dataset) appShell.dataset.sheet = st;
+    const h = sheetHeight(st);
+    if (contentEl && contentEl.style && contentEl.style.setProperty) contentEl.style.setProperty("--sheet-h", h + "px");
+    // in the callout state the card hangs below the dot, so frame the dot in the upper part
+    const bottomInset = st === "full" ? 0 : st === "callout" ? Math.round((window.innerHeight || 800) * 0.36) : h;
+    if (window.RootMap && RootMap.setInsets) RootMap.setInsets({ top: MAP_TOP, bottom: bottomInset });
+    if (calloutEl) {
+      const show = st === "callout" && calloutFor >= 0;
+      calloutEl.hidden = !show;
+      if (show) placeCallout();
+    }
+  }
+  setSheet(currentWord ? "peek" : "home");
+  if (typeof window.addEventListener === "function") window.addEventListener("resize", function () { setSheet(sheetState); });
+
+  // grip: tap toggles half ↔ full; drag snaps to the nearest of small / half / full
+  if (sheetGrip && typeof sheetGrip.addEventListener === "function") {
+    let y0 = null, h0 = 0, moved = false;
+    sheetGrip.addEventListener("pointerdown", function (e) {
+      y0 = e.clientY; h0 = contentEl.getBoundingClientRect().height; moved = false;
+      try { sheetGrip.setPointerCapture(e.pointerId); } catch (err) {}
+      contentEl.style.transition = "none";
+    });
+    sheetGrip.addEventListener("pointermove", function (e) {
+      if (y0 == null) return;
+      const dy = e.clientY - y0;
+      if (Math.abs(dy) > 4) moved = true;
+      contentEl.style.setProperty("--sheet-h", Math.max(90, Math.min(window.innerHeight * 0.95, h0 - dy)) + "px");
+    });
+    const end = function () {
+      if (y0 == null) return;
+      contentEl.style.transition = "";
+      const h = contentEl.getBoundingClientRect().height;
+      y0 = null;
+      if (!moved) { setSheet(sheetState === "full" ? "peek" : "full"); return; }
+      if (h < sheetHeight("mini") * 0.8 && calloutFor >= 0) { setSheet("callout"); return; }
+      let best = "mini", bd = Infinity;
+      ["mini", "peek", "full"].forEach(function (st) { const d = Math.abs(sheetHeight(st) - h); if (d < bd) { bd = d; best = st; } });
+      setSheet(best);
+    };
+    sheetGrip.addEventListener("pointerup", end);
+    sheetGrip.addEventListener("pointercancel", end);
+  }
+  // reading on: scrolling the half sheet opens it fully; a small sheet opens on tap
+  if (contentEl && typeof contentEl.addEventListener === "function") {
+    contentEl.addEventListener("scroll", function () {
+      if (sheetState === "peek" && contentEl.scrollTop > 40 && Date.now() > holdSheetUntil && !document.querySelector(".app.quiz-peek")) setSheet("full");
+    });
+    contentEl.addEventListener("click", function (e) {
+      if (sheetState === "mini" && !e.target.closest("button")) setSheet("peek");
+    });
+  }
+
+  function hexRgb(h) { return [parseInt(h.slice(1, 3), 16) / 255, parseInt(h.slice(3, 5), 16) / 255, parseInt(h.slice(5, 7), 16) / 255]; }
+  function inkRgb() {
+    const dark = document.documentElement.getAttribute("data-theme") === "dark" ||
+      (document.documentElement.getAttribute("data-theme") !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    return dark ? [0.96, 0.9, 0.78] : [0.25, 0.18, 0.08];
+  }
+  function langEra(l) { return (LANGS[l] && LANGS[l].era) || ""; }
+
+  function onMapTap(i) {
+    const inf = RootMap.info(i);
+    if (!inf) return;
+    if (inf.isWord) run(inf.label); else run("@" + i);
+  }
+  if (mapEl && window.RootMap && typeof mapEl.appendChild === "function") {
+    RootMap.init(mapEl, { onTap: onMapTap, onDraw: function () { onMapDraw(); } });
+    RootMap.ready.then(function () { setSheet(sheetState); applyLens(); });
+  }
+
+  // Before an entry opens, the sheet drops out of the way and the map flies
+  // from wherever it was to the word; the entry rises once the camera lands.
+  function mapCanFly(word) { return !!(window.RootMap && RootMap.loaded() && RootMap.find(word) >= 0); }
+  function lowerForFlight() {
+    sheetState = "hidden";
+    if (appShell && appShell.dataset) appShell.dataset.sheet = "hidden";
+    if (window.RootMap) RootMap.setInsets({ top: MAP_TOP, bottom: sheetHeight("peek") }); // frame for where the sheet will be
+  }
+  // this session's walk across the map, drawn as a faint trail
+  const walk = [];
+  function noteWalk(i) {
+    if (i < 0 || walk[walk.length - 1] === i) return;
+    walk.push(i);
+    if (walk.length > 60) walk.shift();
+    if (RootMap.setTrail) RootMap.setTrail(walk);
+  }
+  function mapShow(word, retrace) {
+    mapWord = word;
+    if (!window.RootMap) return Promise.resolve();
+    const flight = RootMap.ready.then(function () {
+      if (mapWord !== word) return;
+      const i = RootMap.find(word);
+      if (i < 0) { RootMap.clearFocus(); return; }
+      noteWalk(i);
+      // back/forward fly straight back along your walk; new searches trace the lineage
+      const f = (retrace ? RootMap.focus(i, { fly: true, dur: 900 }) : RootMap.trace(i)).then(function () { if (mapWord === word) applyLens(); });
+      return f;
+    });
+    // never hold an entry hostage to a slow first load or a long flight
+    return Promise.race([flight, new Promise(function (r) { setTimeout(r, 4200); })]);
+  }
+
+  // ---- the callout: arriving at a point shows its card pinned to the dot;
+  // tapping it, or pinching in on the dot, opens the full entry ----
+  var calloutEl = $("callout");
+  var calloutFor = -1;
+  var arrivalScale = 0;
+  function placeCallout() {
+    if (!calloutEl || calloutEl.hidden || calloutFor < 0 || !window.RootMap) return;
+    const p = RootMap.screenOf(calloutFor);
+    if (!p) return;
+    const W = window.innerWidth, H = window.innerHeight;
+    const w = calloutEl.offsetWidth, h = calloutEl.offsetHeight;
+    const dockTop = H - 84;
+    let below = p[1] + 22 + h < dockTop;
+    let y = below ? p[1] + 22 : p[1] - 22 - h;
+    if (!below && y < MAP_TOP) { below = true; y = p[1] + 22; }
+    const x = Math.max(12, Math.min(W - w - 12, p[0] - w / 2));
+    calloutEl.style.transform = "translate(" + Math.round(x) + "px," + Math.round(y) + "px)";
+    calloutEl.classList.toggle("below", below); calloutEl.classList.toggle("above", !below);
+    const tip = calloutEl.querySelector(".callout-tip");
+    if (tip) tip.style.left = Math.max(18, Math.min(w - 18, p[0] - x)) + "px";
+    const off = p[0] < -20 || p[0] > W + 20 || p[1] < MAP_TOP - 10 || p[1] > H;
+    calloutEl.classList.toggle("off", off);
+  }
+  function calloutChain(i) {
+    let chain = [i].concat(RootMap.lineage(i)).slice(0, 7).reverse();
+    // the same spelling at successive stages (Old French hostel → Middle English
+    // hostel → hostel) reads as a stutter; keep the oldest of a run, plus the word itself
+    chain = chain.filter(function (c, k) {
+      if (k === chain.length - 1 || k === 0) return true;
+      return RootMap.info(c).label.toLowerCase() !== RootMap.info(chain[k - 1]).label.toLowerCase();
+    });
+    if (chain.length > 1 && RootMap.info(chain[chain.length - 2]).label.toLowerCase() === RootMap.info(i).label.toLowerCase()) chain.splice(chain.length - 2, 1);
+    if (chain.length < 2) return null;
+    const box = el("div", "co-chain");
+    chain.forEach(function (c, k) {
+      if (k) box.appendChild(el("span", "arr", "→"));
+      const inf = RootMap.info(c);
+      const t = el(inf.isWord && k === chain.length - 1 ? "b" : "i", null, inf.label);
+      t.style.color = inf.isWord && k === chain.length - 1 ? "" : RootMap.colorOf(inf.fam);
+      t.title = inf.lang;
+      box.appendChild(t);
+    });
+    return box;
+  }
+  function calloutActs(i, d, lensable) {
+    const acts = el("div", "co-acts");
+    const read = el("button", "co-act primary", "Read"); read.type = "button";
+    read.addEventListener("click", function (e) { e.stopPropagation(); setSheet("peek"); });
+    acts.appendChild(read);
+    if (lensable && d && d.dbl && d.dbl.length) {
+      const b = el("button", "co-act", d.dbl.length + (d.dbl.length > 1 ? " doublets" : " doublet")); b.type = "button";
+      b.addEventListener("click", function (e) { e.stopPropagation(); const lb = document.querySelector('.lens-btn[data-lens="doublets"]'); if (lb) lb.click(); });
+      acts.appendChild(b);
+    }
+    return acts;
+  }
+  function openCallout(i, nodes) {
+    calloutFor = i;
+    calloutEl.innerHTML = "";
+    calloutEl.appendChild(el("span", "callout-tip"));
+    nodes.forEach(function (n) { if (n) calloutEl.appendChild(n); });
+    calloutEl.appendChild(el("div", "co-hint", "pinch in or tap to read"));
+    arrivalScale = window.RootMap ? RootMap.scale() : 0;
+  }
+  async function showWordCallout(word, rec) {
+    if (!calloutEl || !window.RootMap) return;
+    const i = RootMap.find(word);
+    if (i < 0) { calloutFor = -1; return; }
+    const d = await RootMap.details(i);
+    const head = el("div", "co-head");
+    const cw = el("span", "co-word", word);
+    if (word.length > 11) cw.style.fontSize = Math.max(18, 26 - (word.length - 11) * 1.2) + "px";
+    head.appendChild(cw);
+    if (rec && rec.rs) head.appendChild(el("span", "co-rs", rec.rs));
+    const p0 = rec && rec.d && rec.d[0];
+    if (p0 && p0.p) head.appendChild(el("span", "co-pos", p0.p));
+    const def = p0 ? el("div", "co-def", p0.g) : null;
+    openCallout(i, [head, def, calloutChain(i), calloutActs(i, d, true)]);
+    if (sheetState === "callout") { calloutEl.hidden = false; placeCallout(); }
+  }
+  function showNodeCallout(i, d) {
+    if (!calloutEl) return;
+    const inf = RootMap.info(i);
+    const lang = el("div", "co-lang", inf.lang);
+    const head = el("div", "co-head");
+    head.appendChild(el("span", "co-word anc", inf.label));
+    const def = d.g ? el("div", "co-def", "“" + d.g + "”") : null;
+    const en = d.ne ? el("div", "co-rs", d.ne + " English word" + (d.ne === 1 ? "" : "s") + " come from this form") : null;
+    openCallout(i, [lang, head, def, en, calloutChain(i), calloutActs(i, d, false)]);
+  }
+  if (calloutEl && typeof calloutEl.addEventListener === "function") {
+    calloutEl.addEventListener("click", function () { setSheet("peek"); });
+  }
+  // zooming is reading: pinch in on the dot you're standing on and the entry opens;
+  // pinch back out and it folds back into the callout
+  function onMapDraw() {
+    placeCallout();
+    if (!window.RootMap || RootMap.moving() || calloutFor < 0 || !arrivalScale) return;
+    const s = RootMap.scale();
+    if (sheetState === "callout" && s > arrivalScale * 1.9) { setSheet("peek"); arrivalScale = s; }
+    else if (sheetState === "peek" && s < arrivalScale * 0.55) { setSheet("callout"); arrivalScale = s * 1.2; }
+  }
+
+  // ---- arriving somewhere: launch and "Somewhere else" open a random common
+  // word with a real lineage, in a small sheet so the map stays the scene ----
+  var nextSheet = null;
+  var arrivedFrom = null;
+  function takeNextSheet() { const s = nextSheet || "callout"; nextSheet = null; return s; }
+  let lastStart = -1;
+  function randomStart() {
+    if (!window.RootMap) return;
+    RootMap.ready.then(function () {
+      const pool = RootMap.starts();
+      if (!pool.length) return;
+      let i = pool[Math.floor(Math.random() * pool.length)];
+      if (i === lastStart && pool.length > 1) i = pool[(pool.indexOf(i) + 1) % pool.length];
+      lastStart = i;
+      nextSheet = "callout";
+      run(RootMap.info(i).label);
+    });
+  }
+  const randomBtn = $("randomBtn");
+  if (randomBtn && typeof randomBtn.addEventListener === "function") randomBtn.addEventListener("click", randomStart);
+  if (window.RootMap && !/word=/.test(location.hash || "") && typeof mapEl.appendChild === "function") {
+    // first open: a beat on the whole map, then fly somewhere real
+    RootMap.ready.then(function () { setTimeout(function () { if (!currentWord && !mapWord) randomStart(); }, 900); });
+  }
+
+  // ---- the doublet hunt: one source reached English twice; find the other road ----
+  // Played in the sheet with the map above it: answering flies the fork.
+  let huntPoolP = null;
+  const hunt = { streak: 0, best: 0, recent: [] };
+  try { hunt.best = Number(localStorage.getItem("rootwork.huntBest")) || 0; } catch (e) {}
+  function loadHunt() {
+    if (!huntPoolP) huntPoolP = fetch("doublets.json?v=1").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
+    return huntPoolP;
+  }
+  async function openHunt() {
+    if (!window.RootMap) return;
+    const token = ++runToken;
+    await RootMap.ready;
+    const pool = (await loadHunt()).filter(function (p) { return RootMap.find(p[0]) >= 0 && RootMap.find(p[1]) >= 0; });
+    const pairs = await loadDblPairs();
+    if (token !== runToken || pool.length < 4) return;
+    let pick = null;
+    for (let tries = 0; tries < 30 && !pick; tries++) {
+      const p = pool[Math.floor(Math.random() * Math.min(pool.length, 260))];
+      if (hunt.recent.indexOf(p[0] + p[1]) < 0) pick = p;
+    }
+    pick = pick || pool[0];
+    hunt.recent.push(pick[0] + pick[1]); if (hunt.recent.length > 40) hunt.recent.shift();
+    const flip = Math.random() < 0.5;
+    const prompt = flip ? pick[1] : pick[0], answer = flip ? pick[0] : pick[1];
+    const pi = RootMap.find(prompt), ai = RootMap.find(answer);
+    const pr = pairs.find(function (q) { return (q[0] === pi && q[1] === ai) || (q[0] === ai && q[1] === pi); });
+    const via = pr && pr[2] >= 0 ? pr[2] : -1;
+    // distractors: other hunt words, never the prompt's own doublets
+    const own = new Set([prompt, answer]);
+    pairs.forEach(function (q) { if (q[0] === pi) own.add(RootMap.info(q[1]).label); if (q[1] === pi) own.add(RootMap.info(q[0]).label); });
+    // near-miss wrong answers: a cousin (same root, different word), a
+    // sense-alike (a synonym), a look-alike (similar spelling)
+    const opts = [answer];
+    const why = {};
+    const ok = function (w) { return w && !own.has(w) && opts.indexOf(w) < 0 && /^[a-z]{3,}$/.test(w) && RootMap.find(w) >= 0; };
+    const anc = RootMap.lineage(pi).slice(0, 5);
+    for (const a of anc) {
+      const d = await RootMap.details(a);
+      const c = (d.en || []).filter(ok);
+      if (c.length) { const w = c[Math.floor(Math.random() * Math.min(c.length, 8))]; opts.push(w); why[w] = { kind: "cousin", via: a }; break; }
+    }
+    const prec = await getWord(prompt);
+    const syn = ((prec && prec.s) || []).filter(ok);
+    if (syn.length && opts.length < 4) { const w = syn[0]; opts.push(w); why[w] = { kind: "sense" }; }
+    const sh = await fetchShard(prompt.slice(0, 2).toLowerCase());
+    if (sh && opts.length < 4) {
+      const stem = prompt.slice(0, 3).toLowerCase();
+      const look = Object.keys(sh).filter(function (w) { return w.indexOf(stem) === 0 && Math.abs(w.length - prompt.length) <= 3 && sh[w].d && sh[w].d.length && ok(w); });
+      if (look.length) { const w = look[Math.floor(Math.random() * Math.min(look.length, 12))]; opts.push(w); why[w] = { kind: "look" }; }
+    }
+    if (token !== runToken) return;
+    // never claim "unrelated" for a word that shares an ancestor with the prompt
+    const ancSet = new Set(RootMap.lineage(pi));
+    Object.keys(why).forEach(function (w) {
+      if (why[w].kind === "cousin") return;
+      const hit = RootMap.lineage(RootMap.find(w)).find(function (x) { return ancSet.has(x); });
+      if (hit != null) why[w] = { kind: "cousin", via: hit };
+    });
+    while (opts.length < 4) {
+      const q = pool[Math.floor(Math.random() * pool.length)];
+      const w = q[Math.random() < 0.5 ? 0 : 1];
+      if (!own.has(w) && opts.indexOf(w) < 0) opts.push(w);
+    }
+    opts.sort(function () { return Math.random() - 0.5; });
+
+    currentWord = ""; mapWord = null; input.value = ""; input.blur();
+    hideSuggest(); hideRecent();
+    if (!browseEl.hidden) closeBrowse();
+    clearStage(); hint.hidden = true;
+    lowerForFlight();
+    await Promise.race([RootMap.focus(pi, { fly: true, dur: 1000 }), delay(1600)]);
+    if (token !== runToken) return;
+    setSheet("peek");
+    const head = el("div", "node-head hunt-head");
+    head.appendChild(el("div", "node-lang", "Doublet hunt" + (hunt.streak ? " · streak " + hunt.streak : "") + (hunt.best ? " · best " + hunt.best : "")));
+    head.appendChild(el("div", "node-term hunt-word", prompt));
+    head.appendChild(el("div", "node-gloss", "Which of these came from the same source, by a different road?"));
+    entryEl.appendChild(head);
+    requestAnimationFrame(function () { entryEl.classList.add("in"); });
+    const card = el("div", "card in hunt-card");
+    const grid = el("div", "hunt-opts");
+    const out = el("div", "hunt-out");
+    opts.forEach(function (w) {
+      const b = el("button", "hunt-opt", w); b.type = "button";
+      b.addEventListener("click", function () {
+        if (grid.classList.contains("done")) return;
+        grid.classList.add("done");
+        const right = w === answer;
+        grid.querySelectorAll(".hunt-opt").forEach(function (x) { if (x.textContent === answer) x.classList.add("right"); else if (x === b) x.classList.add("wrong"); });
+        hunt.streak = right ? hunt.streak + 1 : 0;
+        if (hunt.streak > hunt.best) { hunt.best = hunt.streak; try { localStorage.setItem("rootwork.huntBest", String(hunt.best)); } catch (e) {} }
+        out.innerHTML = "";
+        const line = el("div", "hunt-verdict");
+        line.appendChild(el("b", null, right ? "Yes. " : "Not quite. "));
+        line.appendChild(el("i", null, prompt)); line.appendChild(txtNode(" and "));
+        line.appendChild(el("i", null, answer));
+        if (via >= 0) {
+          const vi = RootMap.info(via);
+          line.appendChild(txtNode(" both come from " + vi.lang + " "));
+          line.appendChild(el("i", null, vi.label));
+          line.appendChild(txtNode(", by different routes."));
+        } else line.appendChild(txtNode(" are doublets: one source, two arrivals."));
+        out.appendChild(line);
+        // what the trap was
+        const trap = !right && why[w];
+        if (trap) {
+          const t = el("div", "lin-note");
+          if (trap.kind === "cousin") {
+            const vi = RootMap.info(trap.via);
+            t.appendChild(el("i", null, w));
+            t.appendChild(txtNode(" shares the root " + vi.lang + " "));
+            t.appendChild(el("i", null, vi.label));
+            t.appendChild(txtNode(", but it's a different word built on it: a cousin, not a doublet."));
+          } else if (trap.kind === "sense") {
+            t.appendChild(el("i", null, w));
+            t.appendChild(txtNode(" means something close, but its history is its own: same sense, different lineage."));
+          } else {
+            t.appendChild(el("i", null, w));
+            t.appendChild(txtNode(" only looks related: similar spelling, unrelated source."));
+          }
+          out.appendChild(t);
+        }
+        const acts = el("div", "key-actions");
+        const next = el("button", "home-act", "Next →"); next.type = "button"; next.addEventListener("click", openHunt);
+        const o1 = el("button", "lin-part", "Open " + prompt); o1.type = "button"; o1.addEventListener("click", function () { run(prompt); });
+        const o2 = el("button", "lin-part", "Open " + answer); o2.type = "button"; o2.addEventListener("click", function () { run(answer); });
+        acts.appendChild(next); acts.appendChild(o1); acts.appendChild(o2);
+        out.appendChild(acts);
+        showFork(pi, [[answer, via >= 0 ? via : null]]);
+        holdSheetUntil = Date.now() + 1500; // keep the half sheet so the fork stays visible
+        requestAnimationFrame(function () { contentEl.scrollTo({ top: contentEl.scrollHeight, behavior: "smooth" }); });
+      });
+      grid.appendChild(b);
+    });
+    card.appendChild(grid); card.appendChild(out);
+    cardsEl.appendChild(card);
+  }
+  const huntBtn = $("huntBtn");
+  if (huntBtn && typeof huntBtn.addEventListener === "function") huntBtn.addEventListener("click", openHunt);
+
+  // ---- step out: word → its family → its language group → the whole map ----
+  var stepLevel = 0;
+  function stepOut() {
+    if (!window.RootMap || !RootMap.loaded()) { goHome(); return; }
+    const i = mapWord ? (mapWord[0] === "@" ? Number(mapWord.slice(1)) : RootMap.find(mapWord)) : -1;
+    if (i < 0 || stepLevel >= 2) { stepLevel = 0; goHome(); return; }
+    stepLevel++;
+    if (sheetState === "full" || sheetState === "peek" || sheetState === "mini") setSheet(calloutFor >= 0 ? "callout" : "mini");
+    if (stepLevel === 1) RootMap.frameFamily(i); else RootMap.frameRegion(i);
+  }
+
+  // ---- lenses ----
+  let dblPairsP = null;
+  function loadDblPairs() {
+    if (!dblPairsP) dblPairsP = fetch("graph/doublets.json?v=1").then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
+    return dblPairsP;
+  }
+  const GOLD = [0.94, 0.75, 0.3];
+  async function applyLens() {
+    if (!window.RootMap) return;
+    await RootMap.ready;
+    if (lensName === "doublets") {
+      const pairs = await loadDblPairs();
+      RootMap.setGlobal(pairs.map(function (p) { return [p[0], p[1], GOLD]; }));
+    } else RootMap.setGlobal(null);
+    if (!mapWord) return;
+    const i = mapWord[0] === "@" ? Number(mapWord.slice(1)) : RootMap.find(mapWord);
+    if (i < 0) return;
+    if (lensName === "sense" && mapWord[0] !== "@") {
+      const token = runToken;
+      const rec = await getWord(mapWord);
+      if (token !== runToken) return;
+      const syn = [];
+      ((rec && rec.s) || []).slice(0, 18).forEach(function (w) { const j = RootMap.find(w); if (j >= 0 && j !== i && syn.indexOf(j) < 0) syn.push(j); });
+      RootMap.setExtra(syn.map(function (j) { return [i, j, hexRgb(RootMap.colorOf(RootMap.info(j).fam))]; }));
+      if (syn.length && !lensQuiet) RootMap.fit([i].concat(syn));
+    } else if (lensName === "doublets") {
+      const d = await RootMap.details(i);
+      if (d.dbl && d.dbl.length) showFork(i, d.dbl, lensQuiet); else RootMap.setExtra(null);
+    } else {
+      RootMap.setExtra(null);
+    }
+  }
+  // a word's family on the map is the family of its deepest ancestor
+  function familyOf(inf) {
+    let r = inf.idx, n = 0;
+    while (RootMap.info(r).parent >= 0 && n++ < 40) r = RootMap.info(r).parent;
+    return RootMap.info(r).family;
+  }
+  // The lens switch and the sheet's cards are one thing seen two ways: tapping
+  // a lens scrolls to its card; reading down to a card switches the lens
+  // (overlay only — the camera moves only when you ask it to).
+  let lensQuiet = false, lensTapAt = 0;
+  const LENS_CARD = { descent: ".hist-card", sense: ".sense-card", doublets: ".dbl-card" };
+  function markLens(name) {
+    lensName = name;
+    document.querySelectorAll(".lens-btn").forEach(function (x) { const on = x.dataset.lens === name; x.classList.toggle("on", on); x.setAttribute("aria-selected", on ? "true" : "false"); });
+  }
+  (typeof document.querySelectorAll === "function" ? document.querySelectorAll(".lens-btn") : []).forEach(function (b) {
+    b.addEventListener("click", function () {
+      markLens(b.dataset.lens);
+      lensTapAt = Date.now(); lensQuiet = false;
+      if (lensName !== "sense" && mapWord && window.RootMap) {
+        const i = mapWord[0] === "@" ? Number(mapWord.slice(1)) : RootMap.find(mapWord);
+        if (i >= 0) RootMap.focus(i, { fly: true });
+      }
+      applyLens();
+      const card = cardsEl.querySelector(LENS_CARD[lensName]);
+      if (card && sheetState !== "hidden" && sheetState !== "home") {
+        if (sheetState === "mini") setSheet("peek");
+        holdSheetUntil = Date.now() + 1500;
+        contentEl.scrollTo({ top: card.offsetTop - 30, behavior: "smooth" });
+      }
+    });
+  });
+  if (typeof IntersectionObserver === "function" && contentEl) {
+    const seen = new Map();
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { seen.set(e.target, e.isIntersecting ? e.intersectionRatio : 0); });
+      if (Date.now() - lensTapAt < 1500 || !currentWord) return;
+      let best = null, br = 0.35;
+      seen.forEach(function (r, t) { if (r > br && document.contains(t)) { br = r; best = t; } });
+      if (!best) return;
+      const name = Object.keys(LENS_CARD).find(function (k) { return best.matches(LENS_CARD[k]); });
+      if (name && name !== lensName) { markLens(name); lensQuiet = true; applyLens().then(function () { lensQuiet = false; }); }
+    }, { root: contentEl, threshold: [0, 0.35, 0.6, 0.9] });
+    new MutationObserver(function () {
+      cardsEl.querySelectorAll(".hist-card, .sense-card, .dbl-card").forEach(function (c) { if (!c._io) { c._io = 1; io.observe(c); } });
+    }).observe(cardsEl, { childList: true });
+  }
+
+  // One gesture everywhere: a word inside a definition or etymology is a
+  // point on the map too — tap it to go there.
+  function wordAtPoint(x, y) {
+    let node = null, off = 0;
+    if (document.caretRangeFromPoint) { const r = document.caretRangeFromPoint(x, y); if (r) { node = r.startContainer; off = r.startOffset; } }
+    else if (document.caretPositionFromPoint) { const p = document.caretPositionFromPoint(x, y); if (p) { node = p.offsetNode; off = p.offset; } }
+    if (!node || node.nodeType !== 3) return null;
+    const t = node.textContent;
+    let a = off, b = off;
+    while (a > 0 && /[\p{L}'’-]/u.test(t[a - 1])) a--;
+    while (b < t.length && /[\p{L}'’-]/u.test(t[b])) b++;
+    const w = t.slice(a, b).replace(/^['’-]+|['’-]+$/g, "");
+    return w.length > 1 ? w : null;
+  }
+  if (cardsEl && typeof cardsEl.addEventListener === "function") {
+    cardsEl.addEventListener("click", function (e) {
+      if (e.target.closest("button, a, .bp, .lin-body")) return;
+      if (!e.target.closest(".def-card .sense, .hist")) return;
+      if (window.getSelection && String(window.getSelection())) return;
+      const w = wordAtPoint(e.clientX, e.clientY);
+      if (!w || !window.RootMap || !RootMap.loaded()) return;
+      const cand = [w, w.toLowerCase()];
+      const i = cand.map(function (x) { return RootMap.find(x); }).find(function (j) { return j >= 0; });
+      if (i == null || i < 0) return;
+      const label = RootMap.info(i).label;
+      if (label.toLowerCase() === String(currentWord).toLowerCase()) return;
+      run(label);
+    });
+  }
+
+  // ---- the key ----
+  const keyBtn = $("mapKeyBtn"), keyEl = $("mapKey");
+  if (keyBtn && keyEl && typeof keyBtn.addEventListener === "function") {
+    keyBtn.addEventListener("click", function () {
+      if (!keyEl.hidden) { keyEl.hidden = true; return; }
+      keyEl.innerHTML = "";
+      const h = function (t) { keyEl.appendChild(el("h3", null, t)); };
+      const p = function (t) { keyEl.appendChild(el("p", null, t)); };
+      h("Reading the map");
+      p("Every dot is a word or an older form of one. Each family is drawn around its deepest known ancestor.");
+      p("Distance from a family's centre is time: the ancestor sits in the middle, then Latin, Old French, Middle English and today's English on the rim. Zoom in on a family to see its era rings.");
+      p("Families that share compounds or other cross-links are placed next to each other. The faint band around the outside holds entries with no recorded ancestry.");
+      h("Dots");
+      p("Size is how many English words descend from that point. Colour is the language family:");
+      const fams = el("div", "fams");
+      (window.RootMap ? RootMap.families() : []).forEach(function (f, k) {
+        const row = el("div", "fam"); const dot = el("i"); dot.style.background = RootMap.colorOf(k);
+        row.appendChild(dot); row.appendChild(txtNode(f)); fams.appendChild(row);
+      });
+      keyEl.appendChild(fams);
+      h("Views");
+      p("Descent: where the word you're on came from, and what came from it.");
+      p("Sense: its synonyms, wherever their own histories put them. Same meaning, different lineages.");
+      p("Doublets: pairs like hospital and hostel, one source that reached English twice.");
+      keyEl.appendChild(el("p", "lin-note", "Built only from the Wiktionary etymology on each entry, so the map and the text never disagree."));
+      const acts = el("div", "key-actions");
+      const upd = el("button", "lin-part", "Check for updates"); upd.type = "button";
+      upd.addEventListener("click", function () { const rb = $("refreshBtn"); if (rb) rb.click(); });
+      acts.appendChild(upd);
+      keyEl.appendChild(acts);
+      keyEl.hidden = false;
+    });
+    document.addEventListener("pointerdown", function (e) { if (!keyEl.hidden && !e.target.closest(".map-key, #mapKeyBtn")) keyEl.hidden = true; });
+  }
+
+  // ---- lineage (one card for words and ancestors alike) ----
+  const KIND_TXT = { inh: "inherited as", bor: "borrowed as", lbor: "borrowed (learned) as", der: "became", via: "passed on as",
+    cal: "calqued as", cmp: "built into", aff: "built into" };
+  async function lineageCard(i, token, title) {
+    const rows = await lineageRows(i, token);
+    if (!rows) return null;
+    const card = el("div", "card lin-card");
+    card.appendChild(el("div", "cap", title));
+    rows.forEach(function (r) { card.appendChild(r); });
+    return card;
+  }
+  async function lineageRows(i, token) {
+    const chain = [i].concat(RootMap.lineage(i));
+    if (chain.length < 2) return null;
+    const ds = await Promise.all(chain.map(function (c) { return RootMap.details(c); }));
+    if (token !== runToken) return null;
+    const out = [];
+    const card = { appendChild: function (x) { out.push(x); } };
+    for (let k = chain.length - 1; k >= 0; k--) {
+      const c = chain[k], inf = RootMap.info(c), d = ds[k];
+      const row = el("div", "lin-row" + (k === 0 ? " lin-here" : ""));
+      const rail = el("div", "lin-rail"); const dot = el("span", "lin-dot"); dot.style.background = RootMap.colorOf(inf.fam);
+      rail.appendChild(dot);
+      const body = el("div", "lin-body");
+      if (k < chain.length - 1) {
+        const up = (d.up || []).find(function (u) { return u[0] === chain[k + 1]; });
+        body.appendChild(el("span", "lin-kind", KIND_TXT[up ? up[1] : "der"] || "became"));
+      }
+      const era = langEra(inf.lang); if (era) body.appendChild(el("span", "lin-era", era));
+      body.appendChild(el("span", "lin-lang", inf.lang));
+      body.appendChild(el("span", "lin-term", inf.label));
+      if (d.g) body.appendChild(el("span", "lin-gloss", "“" + firstSense(d.g) + "”"));
+      if (k > 0) body.addEventListener("click", function () { run(inf.isWord ? inf.label : "@" + c); });
+      row.appendChild(rail); row.appendChild(body);
+      card.appendChild(row);
+      const others = (d.up || []).filter(function (u) { return u[0] !== chain[k + 1]; });
+      if (others.length) {
+        const pr = el("div", "lin-parts");
+        others.forEach(function (u) {
+          const oi = RootMap.info(u[0]);
+          const b = el("button", "lin-part", "+ " + oi.label); b.type = "button"; b.title = oi.lang;
+          b.addEventListener("click", function () { run(oi.isWord ? oi.label : "@" + u[0]); });
+          pr.appendChild(b);
+        });
+        card.appendChild(pr);
+      }
+    }
+    return out;
+  }
+  function showFork(i, list, keepCamera) {
+    const segs = [], ink = inkRgb(), pts = [i];
+    const walk = function (j, stop) {
+      let x = j, n = 0;
+      while (x >= 0 && x !== stop && n++ < 14) { const p = RootMap.info(x).parent; if (p < 0) break; segs.push([x, p, ink]); pts.push(p); x = p; }
+    };
+    list.forEach(function (pair) {
+      const j = RootMap.find(pair[0]); if (j < 0) return;
+      pts.push(j);
+      const via = pair[1] != null ? pair[1] : -1;
+      walk(j, via); walk(i, via);
+    });
+    RootMap.setExtra(segs);
+    if (!keepCamera) RootMap.fit(pts);
+  }
+  function doubletCard(i, d) {
+    if (!d.dbl || !d.dbl.length) return null;
+    const card = el("div", "card dbl-card");
+    card.appendChild(el("div", "cap", "Doublets"));
+    card.appendChild(el("div", "lin-note", "One source that reached English more than once, by different routes:"));
+    d.dbl.forEach(function (pair) {
+      const row = el("div", "dbl-row");
+      const b = el("button", "dbl-word", pair[0]); b.type = "button";
+      b.addEventListener("click", function () { run(pair[0]); });
+      row.appendChild(b);
+      if (pair[1] != null) {
+        const vi = RootMap.info(pair[1]);
+        const v = el("span", "dbl-via");
+        v.appendChild(txtNode("split from " + vi.lang + " "));
+        v.appendChild(el("i", null, vi.label));
+        row.appendChild(v);
+      }
+      card.appendChild(row);
+    });
+    const show = el("button", "lin-part", "Show the fork on the map"); show.type = "button";
+    show.style.marginTop = "10px";
+    show.addEventListener("click", function () { showFork(i, d.dbl); if (sheetState === "full") setSheet("peek"); });
+    card.appendChild(show);
+    return card;
+  }
+  // word pages: Lineage + Doublets cards, both read off the map
+  async function buildLineageCards(word, token) {
+    if (!window.RootMap) return null;
+    await RootMap.ready;
+    const i = RootMap.find(word);
+    if (i < 0 || token !== runToken) return null;
+    const d = await RootMap.details(i);
+    const out = [];
+    const dbl = doubletCard(i, d);
+    if (dbl) out.push(dbl);
+    return token === runToken ? out : null;
+  }
+
+  // ---- ancestor pages: standing on a form that isn't an English headword ----
+  async function openNode(i, force) {
+    if (!window.RootMap) return;
+    stepLevel = 0;
+    const token = ++runToken;
+    await RootMap.ready;
+    if (token !== runToken) return;
+    const inf = RootMap.info(i);
+    if (!inf) return;
+    if (inf.isWord && !force) { runToken++; return run(inf.label); }
+    currentWord = "";
+    input.value = ""; input.blur();
+    hideSuggest(); hideRecent();
+    if (!browseEl.hidden) closeBrowse();
+    if (treeEl && !treeEl.hidden) closeTree();
+    clearStage(); hint.hidden = true;
+    if (contentEl) contentEl.scrollTop = 0;
+    pushNav("@" + i);
+    mapWord = "@" + i;
+    lowerForFlight();
+    noteWalk(i);
+    const flight = navigating ? RootMap.focus(i, { fly: true, dur: 900 }) : RootMap.trace(i);
+    const dP = RootMap.details(i);
+    await Promise.race([flight, delay(4200)]);
+    applyLens();
+    if (token !== runToken) return;
+    const d = await dP;
+    if (token !== runToken) return;
+    showNodeCallout(i, d);
+    setSheet(navigating ? "peek" : "callout");
+    const head = el("div", "node-head");
+    head.appendChild(el("div", "node-lang", inf.lang));
+    head.appendChild(el("div", "node-term", inf.label));
+    if (d.tr) head.appendChild(el("div", "node-tr", d.tr));
+    if (d.g) head.appendChild(el("div", "node-gloss", "“" + d.g + "”"));
+    const era = langEra(inf.lang);
+    if (era) head.appendChild(el("div", "node-era", inf.lang + ", " + era));
+    entryEl.appendChild(head);
+    requestAnimationFrame(function () { entryEl.classList.add("in"); });
+    const add = function (c) { if (!c) return; cardsEl.appendChild(c); requestAnimationFrame(function () { c.classList.add("in"); }); };
+    // what it became in English
+    if (d.en && d.en.length) {
+      const card = el("div", "card");
+      card.appendChild(el("div", "cap", "In English"));
+      const list = el("div", "desc-list");
+      d.en.forEach(function (w) {
+        const b = el("button", "desc-chip", w); b.type = "button";
+        b.addEventListener("click", function () { run(w); });
+        list.appendChild(b);
+      });
+      card.appendChild(list);
+      if (d.ne > d.en.length) card.appendChild(el("div", "desc-more", "…and " + (d.ne - d.en.length) + " more, most common first."));
+      add(card);
+    }
+    // doublets that split here
+    const pairs = (await loadDblPairs()).filter(function (p) { return p[2] === i; });
+    if (token !== runToken) return;
+    if (pairs.length) {
+      const card = el("div", "card dbl-card");
+      card.appendChild(el("div", "cap", "Splits here"));
+      card.appendChild(el("div", "lin-note", "These reached English from this one form by different routes:"));
+      pairs.forEach(function (p) {
+        const row = el("div", "dbl-row");
+        [p[0], p[1]].forEach(function (j, k) {
+          if (k) row.appendChild(el("span", "dbl-via", "and"));
+          const w = RootMap.info(j).label;
+          const b = el("button", "dbl-word", w); b.type = "button";
+          b.addEventListener("click", function () { run(w); });
+          row.appendChild(b);
+        });
+        card.appendChild(row);
+      });
+      add(card);
+    }
+    // the next stages (forms in other languages that came from it)
+    const kids = RootMap.children(i).filter(function (k) { return !RootMap.info(k).isWord; });
+    if (kids.length) {
+      const card = el("div", "card");
+      card.appendChild(el("div", "cap", "Became"));
+      kids.slice(0, 40).forEach(function (k) {
+        const ki = RootMap.info(k);
+        const row = el("div", "lin-row");
+        const rail = el("div", "lin-rail"); const dot = el("span", "lin-dot"); dot.style.background = RootMap.colorOf(ki.fam); rail.appendChild(dot);
+        const body = el("div", "lin-body");
+        body.appendChild(el("span", "lin-lang", ki.lang));
+        body.appendChild(el("span", "lin-term", ki.label));
+        body.addEventListener("click", function () { run("@" + k); });
+        row.appendChild(rail); row.appendChild(body);
+        card.appendChild(row);
+      });
+      add(card);
+    }
+    add(await lineageCard(i, token, "Where it came from"));
+  }
+
 
   // ---------- vocab quiz: save + SM-2 spaced repetition + MC + discovery ----------
 

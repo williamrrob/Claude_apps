@@ -1,4 +1,0 @@
-{
-"wurlitzer":{"l":"English","t":"Wurlitzer","c":[{"l":"German","t":"Wurlitzer","k":"bor"}]},
-"wuss":{"l":"English","t":"wuss","d":3,"c":[{"l":"English","t":"wimp","k":"cmp","g":"Someone who lacks confidence or courage","hw":"wimp","d":8},{"l":"English","t":"puss","k":"cmp","g":"A cat.","hw":"puss","d":42,"c":[{"l":"Middle Low German","t":"pūs","k":"der","d":43},{"l":"Dutch","t":"poes","k":"der","d":44},{"l":"Irish","t":"pus","k":"der","d":43,"c":[{"l":"Middle Irish","t":"bus","k":"inh","d":43,"c":[{"l":"Proto-Celtic","t":"*bussus","k":"inh","d":42,"c":[{"l":"Proto-Indo-European","t":"*bʰew-","k":"inh","s":"y","d":1017},{"l":"Proto-Indo-European","t":"*bʰew-","k":"der","d":1017}]}]}]}]}]}
-}

@@ -1,9 +1,9 @@
 {
 "sjaelland":{"d":[{"p":"n.","g":"the largest island of Denmark and the site of Copenhagen"}]},
-"Sjögren's syndrome":{"d":[{"p":"n.","g":"An autoimmune disorder in which immune cells attack and destroy the exocrine glands that produce tears and saliva."}],"e":"After the Swedish ophthalmologist Henrik Sjögren (1899-1986), who first described it."},
+"Sjögren's syndrome":{"d":[{"p":"n.","g":"An autoimmune disorder in which immune cells attack and destroy the exocrine glands that produce tears and saliva."}],"e":"After the Swedish ophthalmologist Henrik Sjögren (1899-1986), who first described it.","ss":{"sicca syndrome":"An autoimmune disorder in which immune cells attack and destroy the exocrine glands that produce tears and saliva."},"_at":"2026-10-21T15:41:47.898Z"},
 "Sjoberg":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjöberg.","i":"/ˈʃoʊbɚg/","rs":"SHOH-burg"},
 "Sjogren":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjögren.","i":"/ˈʃoʊgrən/","rs":"SHOH-gruhn"},
 "Sjostrom":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjöström, from sjö (“sea”) + ström (“sea, current”).","i":"/ˈʃoʊstrəm/","rs":"SHOH-struhm"},
 "Sjoblom":{"d":[{"p":"n.","g":"A surname from Swedish."}],"e":"Borrowed from Swedish Sjöblom, an ornamental surname composed of the elements sjö (“sea”) + an archaic form of blomma (“flower”).","i":"/ˈʃoʊblɑm/","rs":"SHOH-blahm"},
-"SJWism":{"d":[{"p":"n.","g":"The ideology espoused by SJWs.","x":"For quotations using this term, see Citations:SJWism."}],"e":"From SJW + -ism.","b":[{"s":"SJW","k":"root"},{"s":"ism","k":"suffix"}]}
+"SJWism":{"d":[{"p":"n.","g":"The ideology espoused by SJWs.","x":"For quotations using this term, see Citations:SJWism."}],"e":"From SJW + -ism.","b":[{"s":"SJW","k":"root"},{"s":"ism","k":"suffix"}],"wp":[{"t":"SJW"},{"t":"-ism"}],"_at":"2026-10-21T15:41:29.381Z"}
 }

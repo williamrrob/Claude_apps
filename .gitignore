@@ -21,3 +21,6 @@ llm-decomp-verify*.jsonl
 vendor-data/
 
 review/nonce-verdicts.jsonl
+
+# graph build intermediates (regenerable: scripts/build-etym-graph.js)
+g/

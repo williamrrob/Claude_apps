@@ -1,7 +1,0 @@
-{
-"svalbard":{"l":"English","t":"Svalbard","c":[{"l":"Old Norse","t":"Svalbarði","k":"der"}]},
-"svelte":{"l":"English","t":"svelte","c":[{"l":"French","t":"svelte","k":"bor","s":"ey","c":[{"l":"Italian","t":"svelto","k":"bor","s":"y","c":[{"l":"Vulgar Latin","t":"*exvellere","k":"der","c":[{"l":"Latin","t":"vellere","k":"der"}]},{"l":"Spanish","t":"suelto","k":"der","c":[{"l":"Latin","t":"solutus","k":"inh","s":"ey","g":"unbound","d":3}]}]},{"l":"Italian","t":"svelto","k":"der"}]},{"l":"Vulgar Latin","t":"*exvellere","k":"der"}]},
-"sverdrup":{"l":"English","t":"sverdrup","c":[{"l":"Norwegian","t":"Sverdrup","k":"der"}]},
-"svoboda":{"l":"English","t":"Svoboda","c":[{"l":"Czech","t":"svoboda","k":"bor","c":[{"l":"Old Czech","t":"svoboda","k":"inh","c":[{"l":"Proto-Slavic","t":"*svoboda","k":"inh"}]},{"l":"Slovene","t":"svobóda","k":"der","c":[{"l":"Polish","t":"swoboda","k":"der","c":[{"l":"Proto-Slavic","t":"*svoboda","k":"inh","s":"y"}]}]}]}]},
-"svr":{"l":"English","t":"SVR","c":[{"l":"Russian","t":"СВР","k":"bor"}]}
-}

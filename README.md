@@ -1,44 +1,25 @@
 # Rootwork — visual etymology
 
-Type a word and watch it break apart on a canvas: the whole word appears, then
-splits into its **prefixes, root(s), and suffixes**, which spread out in space.
-Each piece reveals where it comes from (its source language and original form)
-and what it means — and then those pieces **fuse into the word's real, modern
-meaning** from a dictionary.
+A map of where English words come from. Every dictionary entry, and every
+older form its etymology names (Latin *hospitālis*, Old French *hostel*, PIE
+*\*gʰóstis*), is a point; lines are lines of descent. Search for a word and
+the map traces its lineage from the oldest ancestor down to it, then pins a
+card to the dot; pinch in (or tap) and the card opens into the full entry:
+definitions, pronunciation, history, doublets, sense neighbours, usage.
 
-It's a static web app — runs entirely in your browser, no server or accounts. It
-installs to the Home Screen on iPhone & iPad and to the Dock on Mac.
+**Reading the map.** Each family is drawn around its deepest known ancestor;
+distance from that centre is time (PIE at the core, today's English on the
+rim), so long branches are long histories. Families that share compounds sit
+next to each other. Dot size is how many English words descend from a point.
 
-## How it works
+**Views.** *Descent* (where a word came from and what came from it), *Sense*
+(its synonyms, wherever their own histories put them), *Doublets* (one source
+that reached English twice: hospital / hostel / hotel). The step-out button
+pulls back from a word to its family, its language group, then the whole map.
+**Doublet hunt** is a game played on the map.
 
-A curated dictionary of ~300 roots, prefixes, and suffixes
-(`data.js`) plus a scored segmentation search (`engine.js`) break the word down
-instantly. It's strongest on classical/academic vocabulary — *biography,
-incredible, democracy, photosynthesis, circumnavigate, manuscript*. Words of
-Old-English/Germanic or very modern origin may only partly resolve; those pieces
-are shown as a neutral "stem".
-
-Because words rarely mean *exactly* the sum of their roots, the breakdown is
-joined by **real definitions with example sentences, pronunciation (IPA + plain
-respelling), etymology, and synonyms/antonyms/related terms**. This rich data is
-vendored from **Wiktionary** (via Wiktextract) and the **CMU** pronouncing
-dictionary, and is **loaded lazily, one shard at a time** — only a tiny index
-loads up front, then the data for the searched word's shard is fetched on demand.
-
-### Features
-
-- **Animated reveal** — pieces pop in tight (reading as the whole word), then
-  *split*: gaps open, dots and labels appear, and tiles rise for each morpheme.
-- **Pronunciation** — IPA and a Merriam-Webster-style respelling.
-- **Definitions with examples**, **etymology**, and **synonyms / antonyms /
-  related** words, each in its own card.
-- **Tap a morpheme tile** — it expands in place to list other words built on that
-  piece (for common affixes, a sample of the most *and* least common); tap any to
-  analyse it next.
-- **Silent final “e”** is shown as its own morpheme (microscope = micro·scop·e).
-- **Light & dark** following your system setting, with a corner toggle to override.
-- **Search history** — recent words (in `localStorage`) sit above the bottom
-  search bar.
+All of it comes from one source, Wiktionary (via the Kaikki/wiktextract
+dumps), so the map, the lineage and the etymology text never disagree.
 
 ## Getting it on your iPhone / iPad / Mac
 

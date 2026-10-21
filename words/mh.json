@@ -1,4 +1,4 @@
 {
-"mho":{"d":[{"p":"n.","g":"A former unit of electric conductance, equivalent to and superseded by the siemens but still sometimes used in some contexts.","x":"Near-synonyms: siemens, S"}],"e":"ohm spelled backwards.","s":["siemens"]},
+"mho":{"d":[{"p":"n.","g":"A former unit of electric conductance, equivalent to and superseded by the siemens but still sometimes used in some contexts.","x":"Near-synonyms: siemens, S"}],"e":"ohm spelled backwards.","s":["siemens"],"ss":{"siemens":"A former unit of electric conductance, equivalent to and superseded by the siemens but still sometimes used in some contexts.","mul:S":"A former unit of electric conductance, equivalent to and superseded by the siemens but still sometimes used in some contexts."},"_at":"2026-10-21T15:41:40.283Z"},
 "mhz":{"d":[{"p":"n.","g":"one million periods per second"}],"s":["megahertz","megacycle"]}
 }

@@ -7,21 +7,40 @@ per-session branches merged into main.
 
 ## Current shape (update when it drifts)
 
-- `words/<xx>.json` — 581 shards, **~222,600 entries**, one word per line
-  (canonical format: `scripts/shard-format.js`). ~36k have curated `b`
-  breakdowns. This is the app's dictionary AND the source of truth.
-- `data.js` — 308 engine morphemes (`MORPHEMES = {prefixes, roots, suffixes}`).
-- `roots.json` (~1MB), `morpheme-index.json`, `eras.json`, `quiz-pool.json`,
-  `usage/`, `family/*.json` — generated/curated side data fetched by app.js.
-- `trees/<xx>.json` — per-word etymology ancestry trees (45.7k words):
-  `{c: [[lang,term,kind],…] chain, t: [branching subtrees to PIE]}`. Built by
-  `scripts/build-trees.js` from vendor-data sources. NOT yet rendered by the
-  app — the ancestry-tree card is designed but unbuilt.
-- `review/` — breakdown-audit ledger. `decisions.log` (append-only) and
-  `ranks.tsv` are the authoritative/tracked parts; `*.jsonl` are derived
-  (regenerate: `node scripts/build-review-ledger.js`).
-- Entry shape: `{ d:[{p,g,x?,dom?,cl?}], e, s, a, r, i, rs, b, cl, vars, forms, rel, _at }`
-  — full docs in the header of `scripts/word.js`.
+**The app is a map.** `graph.js` draws every entry and every ancestor form
+named in its Wiktionary etymology as one point (WebGL + a collision-checked
+label canvas). An entry is one point: arriving shows a callout pinned to the
+dot; tapping it or pinching in opens the entry sheet. Geometry: radius from a
+family's centre = time (log years-before-present), adjacency = relation,
+dot size = number of English descendants.
+
+**One source: Wiktionary.** Everything etymological comes from it:
+- `vendor-data/` (gitignored, regenerable): `kaikki-en.jsonl.gz` (English dump),
+  `raw-wiktextract-data.jsonl.gz` (all languages), and the extracts below.
+- `scripts/import-kaikki-etym.js` → `vendor-data/kaikki-etym.jsonl`: per English
+  headword, the template chain (inh/bor/der… with connectors `+` component,
+  `&` parallel source), surface parts, doublets, cognates, sense-linked synonyms.
+- `scripts/import-kaikki-ancestors.js` → `vendor-data/kaikki-ancestors.jsonl`:
+  the ancestor forms' own entries (gloss + their own chain), so lines of
+  descent continue past where the English entry stops.
+- `scripts/apply-kaikki-etym.js --apply` writes onto the shards: `e` (only where
+  the stored text was clipped/blob), `wp` (Wiktionary surface parts), `ss`
+  (synonym → the gloss of this word's sense it belongs to).
+- `etym-parse.js` (browser + Node) parses etymology prose: the fallback for words
+  the dumps don't cover, and the display cleaner for `e`.
+- `scripts/build-etym-graph.js` → `g/` (gitignored intermediate) → 
+  `scripts/build-graph-layout.js` → `graph/` (served: labels, xy/meta/lang/tree/links
+  binaries, `n/<chunk>.json` node details, `doublets.json`, `info.json`).
+  Rebuild: `npm run build:sqlite && node scripts/build-etym-graph.js && node scripts/build-graph-layout.js`,
+  then bump `V` in graph.js.
+
+Also: `words/<xx>.json` — 581 shards, ~222,600 entries (definitions, IPA,
+etymology text, synonyms; fields documented in `scripts/word.js`).
+Breakdown tiles: Wiktionary parts (`wp`, else parsed prose) → MorphoLex `b` →
+heuristic engine (`engine.js` + `data.js`) as last resort.
+`doublets.json` (repo root) = the doublet-hunt pool. Merriam-Webster, the
+multi-source `trees/`, hand-authored `family/<root>.json` files and the curator
+editor were retired (Oct 2026) — don't reintroduce parallel sources.
 
 ## Iron rules
 

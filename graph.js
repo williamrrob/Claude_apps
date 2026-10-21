@@ -1,0 +1,757 @@
+/*
+ * graph.js — the map. Every entry in the dictionary and every ancestor form
+ * named in its Wiktionary etymology is one point; the app is this map, and an
+ * entry is what you see when you stand on one point of it.
+ *
+ * Geometry (scripts/build-graph-layout.js):
+ *   radius from a family's center = time (log years-before-present)
+ *   around the circle / between families = relation (branch, cross-links)
+ *   dot size = how many English words descend from the point
+ *
+ * window.RootMap API (used by app.js):
+ *   init(el, {onTap(idx), onReady()})     build canvases inside el
+ *   ready                                 promise, resolves when data is loaded
+ *   find(word) → idx | -1                 English headword lookup
+ *   focus(idx, {fly})                     light the node's lineage, dim the rest
+ *   clearFocus(); overview()
+ *   setInsets({top, bottom})              keep the focused node clear of UI
+ *   setLens(name) "descent" | "sense" | "parts" | "doublets"
+ *   setSense(idx, [idx…])                 sense links to draw for the sense lens
+ *   info(idx) → {label, lang, family, color, year, parent, isWord}
+ *   lineage(idx) → [idx…]                 primary line of descent, nearest first
+ *   details(idx) → Promise<{g,tr,up,en,ne,dbl,cog}>
+ *   families, colorOf(fam)
+ */
+(function () {
+  "use strict";
+  const V = "2";
+  const DPR = Math.min(2, window.devicePixelRatio || 1);
+
+  // ---- palettes (index = family in info.families) -----------------------------
+  const DARK = ["#ece0cc", "#bfae8e", "#6fa9d6", "#e0795f", "#a08ad8", "#f0c75e", "#5fbf8f", "#d98bb5", "#e6a15a",
+    "#8fb8a6", "#cdb85c", "#5ec4c9", "#a9c46a", "#d4836e", "#7fa3e0", "#c78f5a", "#9ad0a8", "#8c8478"];
+  const LIGHT = ["#3a2f20", "#7a6648", "#2f6ea8", "#b0482c", "#6a4fb0", "#a5780e", "#2e8a5c", "#a6457a", "#b0631d",
+    "#4f7f6c", "#8a7a1c", "#1f8a90", "#5f7f22", "#9a4a36", "#3c62b0", "#8a5a2a", "#4f8f62", "#6b645a"];
+  const hex = (h) => [parseInt(h.slice(1, 3), 16) / 255, parseInt(h.slice(3, 5), 16) / 255, parseInt(h.slice(5, 7), 16) / 255];
+  function isDark() {
+    const t = document.documentElement.getAttribute("data-theme");
+    if (t === "dark") return true;
+    if (t === "light") return false;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  const RM = {};
+  let G = null;           // data
+  let gl, glc, lab, ctx;  // canvases
+  let W = 0, H = 0;
+  const cam = { x: 0, y: 0, s: 0.1 };
+  const insets = { top: 0, bottom: 0 };
+  let focus = null;       // { idx, lit:Set, path:[…], kids:[…], extra:[…] }
+  let lens = "descent";
+  let senseLinks = null;  // { from, to:[…] }
+  let dirty = true, anim = null;
+  let globalGeo = null, globalPairs = null;
+  let ping = -1;
+  let trail = null;
+  let onTap = null, onDraw = null;
+  const glossWant = new Set(); // chunks requested for close-range glosses
+  let readyResolve; RM.ready = new Promise((r) => (readyResolve = r));
+
+  // ---- data -------------------------------------------------------------------------
+  async function load() {
+    const get = (p) => fetch("graph/" + p + "?v=" + V);
+    const [info, labels, xy, meta, lang, tree, links] = await Promise.all([
+      get("info.json").then((r) => r.json()), get("labels.json").then((r) => r.json()),
+      get("xy.bin").then((r) => r.arrayBuffer()), get("meta.bin").then((r) => r.arrayBuffer()),
+      get("lang.bin").then((r) => r.arrayBuffer()), get("tree.bin").then((r) => r.arrayBuffer()),
+      get("links.bin").then((r) => r.arrayBuffer()),
+    ]);
+    const N = info.n;
+    G = { info, N, labels, xy: new Float32Array(xy), meta: new Uint8Array(meta), lang: new Uint16Array(lang), parent: new Int32Array(tree), links: new Int32Array(links) };
+    // English headword index (exact, then lowercase)
+    G.word = new Map(); G.wordLC = new Map();
+    for (let i = 0; i < N; i++) if (G.lang[i] === 0) { G.word.set(labels[i], i); const lc = labels[i].toLowerCase(); if (!G.wordLC.has(lc)) G.wordLC.set(lc, i); }
+    // children (primary) and cross adjacency, CSR
+    const cnt = new Int32Array(N + 1);
+    for (let i = 0; i < N; i++) if (G.parent[i] >= 0) cnt[G.parent[i] + 1]++;
+    for (let i = 0; i < N; i++) cnt[i + 1] += cnt[i];
+    const kids = new Int32Array(cnt[N]); const fill = cnt.slice(0, N);
+    for (let i = 0; i < N; i++) if (G.parent[i] >= 0) kids[fill[G.parent[i]]++] = i;
+    G.kidStart = cnt; G.kids = kids;
+    G.crossUp = new Map(); G.crossDown = new Map();
+    for (let k = 0; k < G.links.length; k += 2) {
+      const c = G.links[k], p = G.links[k + 1];
+      (G.crossUp.get(c) || G.crossUp.set(c, []).get(c)).push(p);
+      (G.crossDown.get(p) || G.crossDown.set(p, []).get(p)).push(c);
+    }
+    // size order (labels when zoomed out)
+    const order = new Int32Array(N); for (let i = 0; i < N; i++) order[i] = i;
+    G.bySize = Array.from(order).sort((a, b) => G.meta[b * 2 + 1] - G.meta[a * 2 + 1]);
+    // spatial grid
+    const [x0, y0, x1, y1] = info.bounds;
+    const C = 4; G.cell = C; G.gx0 = x0; G.gy0 = y0;
+    G.gw = Math.ceil((x1 - x0) / C) + 1; G.gh = Math.ceil((y1 - y0) / C) + 1;
+    const cc = new Int32Array(G.gw * G.gh + 1);
+    const cellOf = (i) => Math.floor((G.xy[i * 2] - x0) / C) + Math.floor((G.xy[i * 2 + 1] - y0) / C) * G.gw;
+    for (let i = 0; i < N; i++) cc[cellOf(i) + 1]++;
+    for (let i = 0; i < G.gw * G.gh; i++) cc[i + 1] += cc[i];
+    const items = new Int32Array(N); const f2 = cc.slice(0, G.gw * G.gh);
+    for (let i = 0; i < N; i++) items[f2[cellOf(i)]++] = i;
+    G.cellStart = cc; G.cellItems = items;
+    G.trees = info.trees.map((t) => ({ root: t[0], x: t[1], y: t[2], scale: t[3], R: t[4] }));
+    G.treeOfRoot = new Map(G.trees.map((t) => [t.root, t]));
+    G.chunks = new Map();
+    return G;
+  }
+
+  // ---- GL ---------------------------------------------------------------------------
+  const VS_PT = `
+    attribute vec2 p; attribute float sz; attribute vec3 c;
+    uniform vec2 ctr; uniform float s; uniform vec2 res; uniform float k; uniform float dpr;
+    varying vec3 vc;
+    void main(){
+      vec2 q = (p - ctr) * s;
+      gl_Position = vec4(q.x / (res.x*0.5), -q.y / (res.y*0.5), 0.0, 1.0);
+      gl_PointSize = clamp((1.0 + sz / 40.0) * k, 1.0, 34.0) * dpr;
+      vc = c;
+    }`;
+  const FS_PT = `
+    precision mediump float; varying vec3 vc; uniform float a;
+    void main(){
+      vec2 d = gl_PointCoord - 0.5; float r = length(d);
+      float e = smoothstep(0.5, 0.36, r);
+      if (e <= 0.0) discard;
+      gl_FragColor = vec4(vc * e * a, e * a);
+    }`;
+  const VS_LN = `
+    attribute vec2 p; attribute vec3 c;
+    uniform vec2 ctr; uniform float s; uniform vec2 res;
+    varying vec3 vc;
+    void main(){
+      vec2 q = (p - ctr) * s;
+      gl_Position = vec4(q.x / (res.x*0.5), -q.y / (res.y*0.5), 0.0, 1.0);
+      vc = c;
+    }`;
+  const FS_LN = `precision mediump float; varying vec3 vc; uniform float a; void main(){ gl_FragColor = vec4(vc * a, a); }`;
+
+  function prog(vs, fs) {
+    const mk = (t, src) => { const sh = gl.createShader(t); gl.shaderSource(sh, src); gl.compileShader(sh); return sh; };
+    const p = gl.createProgram();
+    gl.attachShader(p, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(p, mk(gl.FRAGMENT_SHADER, fs));
+    gl.linkProgram(p);
+    const u = {}; const n = gl.getProgramParameter(p, gl.ACTIVE_UNIFORMS);
+    for (let i = 0; i < n; i++) { const nm = gl.getActiveUniform(p, i).name; u[nm] = gl.getUniformLocation(p, nm); }
+    const a = {}; const m = gl.getProgramParameter(p, gl.ACTIVE_ATTRIBUTES);
+    for (let i = 0; i < m; i++) { const nm = gl.getActiveAttrib(p, i).name; a[nm] = gl.getAttribLocation(p, nm); }
+    return { p, u, a };
+  }
+  let P_PT, P_LN, B = {};
+  function buf(data) { const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW); return b; }
+
+  function buildBuffers() {
+    const N = G.N, pal = (isDark() ? DARK : LIGHT).map(hex);
+    G.pal = pal;
+    const col = new Float32Array(N * 3), sz = new Float32Array(N);
+    const dustStart = G.info.dust ? G.info.dust.inner : Infinity;
+    for (let i = 0; i < N; i++) {
+      const c = pal[G.meta[i * 2]];
+      // headwords with no recorded ancestry ("dust") sit quietly in the outer band
+      const r = Math.hypot(G.xy[i * 2], G.xy[i * 2 + 1]);
+      const dim = r >= dustStart - 1 ? 0.45 : 1;
+      col[i * 3] = c[0] * dim; col[i * 3 + 1] = c[1] * dim; col[i * 3 + 2] = c[2] * dim;
+      sz[i] = G.meta[i * 2 + 1];
+    }
+    G.col = col;
+    B.pos = buf(G.xy); B.col = buf(col); B.sz = buf(sz);
+    // tree edges
+    let m = 0; for (let i = 0; i < N; i++) if (G.parent[i] >= 0) m++;
+    const lp = new Float32Array(m * 4), lc = new Float32Array(m * 6);
+    let j = 0;
+    for (let i = 0; i < N; i++) {
+      const p = G.parent[i]; if (p < 0) continue;
+      lp[j * 4] = G.xy[i * 2]; lp[j * 4 + 1] = G.xy[i * 2 + 1]; lp[j * 4 + 2] = G.xy[p * 2]; lp[j * 4 + 3] = G.xy[p * 2 + 1];
+      for (let t = 0; t < 2; t++) { lc[j * 6 + t * 3] = col[i * 3]; lc[j * 6 + t * 3 + 1] = col[i * 3 + 1]; lc[j * 6 + t * 3 + 2] = col[i * 3 + 2]; }
+      j++;
+    }
+    B.lpos = buf(lp); B.lcol = buf(lc); B.lcount = m * 2;
+    dirty = true;
+  }
+
+  // dynamic overlay geometry (focus lineage / lens) rebuilt on change
+  function dynLines(segs) { // segs: [[a,b,r,g,b]...] by node index
+    const p = new Float32Array(segs.length * 4), c = new Float32Array(segs.length * 6);
+    segs.forEach((s, i) => {
+      p[i * 4] = G.xy[s[0] * 2]; p[i * 4 + 1] = G.xy[s[0] * 2 + 1]; p[i * 4 + 2] = G.xy[s[1] * 2]; p[i * 4 + 3] = G.xy[s[1] * 2 + 1];
+      for (let t = 0; t < 2; t++) { c[i * 6 + t * 3] = s[2]; c[i * 6 + t * 3 + 1] = s[3]; c[i * 6 + t * 3 + 2] = s[4]; }
+    });
+    return { p, c, n: segs.length * 2 };
+  }
+
+  function draw() {
+    if (!G || !gl) return;
+    gl.viewport(0, 0, glc.width, glc.height);
+    gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+    const ctr = [cam.x - (0) / cam.s, cam.y + (insets.bottom - insets.top) / 2 / cam.s];
+    const dim = focus ? 0.28 : 1;
+    // edges
+    gl.useProgram(P_LN.p);
+    gl.uniform2f(P_LN.u.ctr, ctr[0], ctr[1]); gl.uniform1f(P_LN.u.s, cam.s); gl.uniform2f(P_LN.u.res, W, H);
+    const ea = Math.min(0.42, Math.max(0.05, 0.03 + cam.s * 0.05)) * dim;
+    gl.uniform1f(P_LN.u.a, ea);
+    gl.bindBuffer(gl.ARRAY_BUFFER, B.lpos); gl.enableVertexAttribArray(P_LN.a.p); gl.vertexAttribPointer(P_LN.a.p, 2, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, B.lcol); gl.enableVertexAttribArray(P_LN.a.c); gl.vertexAttribPointer(P_LN.a.c, 3, gl.FLOAT, false, 0, 0);
+    gl.drawArrays(gl.LINES, 0, B.lcount);
+    // points
+    gl.useProgram(P_PT.p);
+    gl.uniform2f(P_PT.u.ctr, ctr[0], ctr[1]); gl.uniform1f(P_PT.u.s, cam.s); gl.uniform2f(P_PT.u.res, W, H);
+    gl.uniform1f(P_PT.u.k, Math.max(0.9, Math.min(7, cam.s * 0.3))); gl.uniform1f(P_PT.u.dpr, DPR);
+    gl.uniform1f(P_PT.u.a, focus ? 0.35 : 1);
+    gl.bindBuffer(gl.ARRAY_BUFFER, B.pos); gl.enableVertexAttribArray(P_PT.a.p); gl.vertexAttribPointer(P_PT.a.p, 2, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, B.col); gl.enableVertexAttribArray(P_PT.a.c); gl.vertexAttribPointer(P_PT.a.c, 3, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, B.sz); gl.enableVertexAttribArray(P_PT.a.sz); gl.vertexAttribPointer(P_PT.a.sz, 1, gl.FLOAT, false, 0, 0);
+    gl.drawArrays(gl.POINTS, 0, G.N);
+    // lens overlay across the whole map (e.g. every doublet pair)
+    if (globalGeo) {
+      gl.useProgram(P_LN.p);
+      gl.uniform2f(P_LN.u.ctr, ctr[0], ctr[1]);
+      gl.uniform1f(P_LN.u.a, focus ? 0.35 : 0.8);
+      gl.bindBuffer(gl.ARRAY_BUFFER, globalGeo.bp); gl.vertexAttribPointer(P_LN.a.p, 2, gl.FLOAT, false, 0, 0);
+      gl.bindBuffer(gl.ARRAY_BUFFER, globalGeo.bc); gl.vertexAttribPointer(P_LN.a.c, 3, gl.FLOAT, false, 0, 0);
+      gl.drawArrays(gl.LINES, 0, globalGeo.n);
+    }
+    // focus overlay: bright lines (drawn 3× slightly offset for weight) + lit points
+    if (focus && focus.geo) {
+      gl.useProgram(P_LN.p);
+      gl.uniform1f(P_LN.u.a, 0.95);
+      gl.bindBuffer(gl.ARRAY_BUFFER, focus.geo.bp); gl.vertexAttribPointer(P_LN.a.p, 2, gl.FLOAT, false, 0, 0);
+      gl.bindBuffer(gl.ARRAY_BUFFER, focus.geo.bc); gl.vertexAttribPointer(P_LN.a.c, 3, gl.FLOAT, false, 0, 0);
+      for (const off of [[0, 0], [0.7, 0], [0, 0.7]]) {
+        gl.uniform2f(P_LN.u.ctr, ctr[0] + off[0] / cam.s, ctr[1] + off[1] / cam.s);
+        gl.drawArrays(gl.LINES, 0, focus.geo.n);
+      }
+      gl.useProgram(P_PT.p);
+      gl.uniform2f(P_PT.u.ctr, ctr[0], ctr[1]);
+      gl.uniform1f(P_PT.u.a, 1);
+      gl.uniform1f(P_PT.u.k, Math.max(2.4, Math.min(8, cam.s * 0.34)));
+      gl.bindBuffer(gl.ARRAY_BUFFER, focus.geo.pp); gl.vertexAttribPointer(P_PT.a.p, 2, gl.FLOAT, false, 0, 0);
+      gl.bindBuffer(gl.ARRAY_BUFFER, focus.geo.pc); gl.vertexAttribPointer(P_PT.a.c, 3, gl.FLOAT, false, 0, 0);
+      gl.bindBuffer(gl.ARRAY_BUFFER, focus.geo.ps); gl.vertexAttribPointer(P_PT.a.sz, 1, gl.FLOAT, false, 0, 0);
+      gl.drawArrays(gl.POINTS, 0, focus.geo.np);
+    }
+    drawLabels(ctr);
+  }
+
+  // ---- labels (no overlaps: a screen-space occupancy grid) -----------------------
+  const FONT = '"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif';
+  function eraLabel(y) { return y <= 0 ? (y === 0 ? "AD 1" : -y + " BC") : y >= 2000 ? "today" : String(y); }
+  const T = (y) => -Math.log(2400 - Math.min(y, 2000));
+  function drawLabels(ctr) {
+    const dark = isDark();
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    const sx = (x) => (x - ctr[0]) * cam.s + W / 2, sy = (y) => (y - ctr[1]) * cam.s + H / 2;
+    const ink = dark ? "236,224,204" : "44,36,24";
+    const occ = new Map(); const CELL = 16;
+    const free = (x0, y0, x1, y1) => {
+      for (let gx = Math.floor(x0 / CELL); gx <= Math.floor(x1 / CELL); gx++)
+        for (let gy = Math.floor(y0 / CELL); gy <= Math.floor(y1 / CELL); gy++) {
+          const L = occ.get(gx * 4096 + gy); if (!L) continue;
+          for (const r of L) if (r[0] < x1 && r[2] > x0 && r[1] < y1 && r[3] > y0) return false;
+        }
+      return true;
+    };
+    const take = (x0, y0, x1, y1) => {
+      const r = [x0, y0, x1, y1];
+      for (let gx = Math.floor(x0 / CELL); gx <= Math.floor(x1 / CELL); gx++)
+        for (let gy = Math.floor(y0 / CELL); gy <= Math.floor(y1 / CELL); gy++) {
+          const k = gx * 4096 + gy; let L = occ.get(k); if (!L) occ.set(k, (L = [])); L.push(r);
+        }
+    };
+    // block UI-covered strips so labels never hide under the sheet / bar
+    take(-1000, -1000, W + 1000, insets.top); take(-1000, H - insets.bottom, W + 1000, H + 1000);
+    // your walk this session: faint dashes between the points you've stood on
+    if (trail && trail.length > 1) {
+      ctx.save();
+      ctx.setLineDash([3, 5]); ctx.lineWidth = 1.2;
+      ctx.strokeStyle = `rgba(${ink},0.32)`;
+      ctx.beginPath();
+      trail.forEach((i, k) => { const x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]); if (k) ctx.lineTo(x, y); else ctx.moveTo(x, y); });
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = `rgba(${ink},0.45)`;
+      trail.forEach((i) => { const x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]); ctx.beginPath(); ctx.arc(x, y, 2.2, 0, Math.PI * 2); ctx.fill(); });
+      ctx.restore();
+    }
+    // era rings of families big enough on screen (the axis of successions)
+    if (cam.s > 1.2) {
+      ctx.lineWidth = 1; ctx.font = "10px " + FONT; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+      const ERAS = [-2000, -1000, 0, 1000, 1500, 2000];
+      for (const t of G.trees) {
+        const R = t.R * cam.s; if (R < 70) continue;
+        const cx = sx(t.x), cy = sy(t.y);
+        if (cx + R < 0 || cx - R > W || cy + R < 0 || cy - R > H) continue;
+        const ry = G.info.eras[G.lang[t.root]];
+        const strong = focus && focus.root === t.root;
+        for (const y of ERAS) {
+          if (y <= ry + 50) continue;
+          const r = t.scale * (T(y) - T(ry)) * cam.s; if (r < 18) continue;
+          ctx.strokeStyle = `rgba(${ink},${strong ? 0.16 : 0.07})`;
+          ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+          if (strong || R > 240) {
+            const tx = cx + 3, ty = cy - r - 1, tw = ctx.measureText(eraLabel(y)).width;
+            if (free(tx, ty - 11, tx + tw, ty)) { take(tx, ty - 11, tx + tw, ty); ctx.fillStyle = `rgba(${ink},${strong ? 0.55 : 0.3})`; ctx.fillText(eraLabel(y), tx, ty); }
+          }
+        }
+      }
+    }
+    // region names when zoomed out
+    if (cam.s < 0.9) {
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      for (const R of G.info.regions) {
+        const fs = Math.max(11, Math.min(18, R.r * cam.s * 0.12));
+        ctx.font = "600 " + fs + "px " + FONT;
+        const x = sx(R.x), y = sy(R.y - R.r) - 4, w = ctx.measureText(R.name).width;
+        if (!free(x - w / 2, y - fs / 2, x + w / 2, y + fs / 2)) continue;
+        take(x - w / 2 - 4, y - fs / 2, x + w / 2 + 4, y + fs / 2);
+        ctx.fillStyle = `rgba(${ink},${0.75 - Math.max(0, cam.s - 0.5)})`;
+        ctx.fillText(R.name, x, y);
+      }
+    }
+    // node labels
+    const minS = cam.s < 0.25 ? 190 : cam.s < 0.7 ? 100 : cam.s < 2 ? 40 : 0;
+    const cand = [];
+    const lit = focus ? focus.order : [];
+    for (const i of lit) cand.push(i);
+    const wx0 = ctr[0] - W / 2 / cam.s, wx1 = ctr[0] + W / 2 / cam.s, wy0 = ctr[1] - H / 2 / cam.s, wy1 = ctr[1] + H / 2 / cam.s;
+    const cells = ((wx1 - wx0) / G.cell) * ((wy1 - wy0) / G.cell);
+    if (cells < 30000) {
+      const pool = [];
+      const cx0 = Math.max(0, Math.floor((wx0 - G.gx0) / G.cell)), cx1 = Math.min(G.gw - 1, Math.floor((wx1 - G.gx0) / G.cell));
+      const cy0 = Math.max(0, Math.floor((wy0 - G.gy0) / G.cell)), cy1 = Math.min(G.gh - 1, Math.floor((wy1 - G.gy0) / G.cell));
+      for (let gy = cy0; gy <= cy1; gy++) for (let gx = cx0; gx <= cx1; gx++) {
+        const c = gx + gy * G.gw;
+        for (let k = G.cellStart[c]; k < G.cellStart[c + 1]; k++) { const i = G.cellItems[k]; if (G.meta[i * 2 + 1] >= minS) pool.push(i); }
+      }
+      pool.sort((a, b) => G.meta[b * 2 + 1] - G.meta[a * 2 + 1]);
+      for (const i of pool) cand.push(i);
+    } else {
+      for (let k = 0, got = 0; k < G.bySize.length && got < 1500; k++) {
+        const i = G.bySize[k]; if (G.meta[i * 2 + 1] < minS) break;
+        const x = G.xy[i * 2], y = G.xy[i * 2 + 1];
+        if (x > wx0 && x < wx1 && y > wy0 && y < wy1) { cand.push(i); got++; }
+      }
+    }
+    const max = W < 500 ? 90 : 170;
+    let placed = 0;
+    const seen = new Set();
+    ctx.textBaseline = "middle"; ctx.textAlign = "left";
+    for (const i of cand) {
+      if (placed >= max) break;
+      if (seen.has(i)) continue; seen.add(i);
+      const x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
+      if (x < -40 || x > W + 40 || y < -20 || y > H + 20) continue;
+      const isLit = focus && focus.lit.has(i);
+      if (focus && !isLit && cam.s < 0.7) continue;
+      const isWord = G.lang[i] === 0;
+      const big = isLit && i === focus.idx;
+      const fs = big ? 15 : isLit ? 12.5 : Math.min(13, 10.5 + G.meta[i * 2 + 1] / 70);
+      ctx.font = (big ? "700 " : isWord ? "500 " : "italic 500 ") + fs + "px " + FONT;
+      const txt = G.labels[i];
+      const w = ctx.measureText(txt).width;
+      const pr = Math.max(2, Math.min(17, (1 + G.meta[i * 2 + 1] / 40) * Math.max(0.9, Math.min(7, cam.s * 0.3)))) / 2 + 3;
+      // try right, then left, then above
+      const spots = [[x + pr, y - fs / 2 - 1, x + pr + w, y + fs / 2 + 1], [x - pr - w, y - fs / 2 - 1, x - pr, y + fs / 2 + 1], [x - w / 2, y - pr - fs - 1, x + w / 2, y - pr]];
+      let ok = null;
+      for (const s of spots) if (free(s[0], s[1], s[2], s[3])) { ok = s; break; }
+      if (!ok) continue;
+      take(ok[0] - 2, ok[1], ok[2] + 2, ok[3]);
+      take(x - pr, y - pr, x + pr, y + pr);
+      const c = G.pal[G.meta[i * 2]];
+      const a = focus && !isLit ? 0.4 : 1;
+      // a soft halo keeps text legible over dots and lines
+      ctx.lineWidth = 3; ctx.strokeStyle = dark ? "rgba(17,15,12,0.85)" : "rgba(241,231,207,0.9)"; ctx.lineJoin = "round";
+      ctx.strokeText(txt, ok[0], (ok[1] + ok[3]) / 2);
+      ctx.fillStyle = isWord ? `rgba(${ink},${a})` : `rgba(${Math.round(c[0] * 255)},${Math.round(c[1] * 255)},${Math.round(c[2] * 255)},${a})`;
+      ctx.fillText(txt, ok[0], (ok[1] + ok[3]) / 2);
+      placed++;
+      // up close the map reads like the dictionary: a one-line meaning under the label
+      if (cam.s > GLOSS_ZOOM && placed < 60) {
+        const g = glossOf(i);
+        if (g) {
+          ctx.font = "italic 11px " + FONT;
+          let gt = g.length > 54 ? g.slice(0, 52) + "…" : g;
+          const gw = ctx.measureText(gt).width, gx = ok[0], gy = ok[3] + 2;
+          if (free(gx, gy, gx + gw, gy + 13)) {
+            take(gx, gy, gx + gw, gy + 13);
+            ctx.lineWidth = 3; ctx.strokeText(gt, gx, gy + 6.5);
+            ctx.fillStyle = `rgba(${ink},${0.62 * a})`;
+            ctx.fillText(gt, gx, gy + 6.5);
+          }
+        }
+      }
+    }
+    if (ping >= 0) { // where a search suggestion lives (no camera move while typing)
+      const x = sx(G.xy[ping * 2]), y = sy(G.xy[ping * 2 + 1]);
+      const t = (performance.now() % 1400) / 1400;
+      const c = G.pal[G.meta[ping * 2]], rgb = Math.round(c[0] * 255) + "," + Math.round(c[1] * 255) + "," + Math.round(c[2] * 255);
+      const top = insets.top + 10, bot = H - insets.bottom - 10;
+      if (x > 8 && x < W - 8 && y > top && y < bot) {
+        ctx.strokeStyle = `rgba(${rgb},${1 - t})`; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(x, y, 6 + 22 * t, 0, Math.PI * 2); ctx.stroke();
+      } else {
+        // off-screen: a small arrow on the edge of the visible map, pointing at it
+        const cx = W / 2, cy = (top + bot) / 2, dx = x - cx, dy = y - cy;
+        const k = Math.min((W / 2 - 18) / Math.abs(dx || 1e-6), ((bot - top) / 2 - 18) / Math.abs(dy || 1e-6));
+        const ax = cx + dx * k, ay = cy + dy * k, ang = Math.atan2(dy, dx);
+        ctx.save(); ctx.translate(ax, ay); ctx.rotate(ang);
+        ctx.fillStyle = `rgba(${rgb},0.95)`;
+        ctx.beginPath(); ctx.moveTo(9, 0); ctx.lineTo(-6, -6); ctx.lineTo(-3, 0); ctx.lineTo(-6, 6); ctx.closePath(); ctx.fill();
+        ctx.restore();
+      }
+      dirty = true; // keep pulsing
+    }
+    if (focus) { // ring around the node you are standing on
+      const i = focus.idx, x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
+      ctx.strokeStyle = `rgba(${ink},0.9)`; ctx.lineWidth = 1.6;
+      ctx.beginPath(); ctx.arc(x, y, 9, 0, Math.PI * 2); ctx.stroke();
+    }
+  }
+
+  // glosses come from the per-node detail chunks; fetched on demand, drawn when they land
+  const GLOSS_ZOOM = 9;
+  function glossOf(i) {
+    const c = Math.floor(i / G.info.chunk);
+    const m = G.chunkData && G.chunkData.get(c);
+    if (!m) {
+      if (!glossWant.has(c) && glossWant.size < 400) { glossWant.add(c); RM.details(i).then(() => { dirty = true; }); }
+      return null;
+    }
+    const d = m[i];
+    return d ? d.sd || d.g || null : null;
+  }
+
+  // ---- camera ------------------------------------------------------------------------
+  function frame() {
+    if (anim) {
+      const t = Math.min(1, (performance.now() - anim.t0) / anim.dur);
+      const e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      cam.x = anim.x0 + (anim.x1 - anim.x0) * e; cam.y = anim.y0 + (anim.y1 - anim.y0) * e;
+      // zoom along log space, dipping out when travelling far (keeps context)
+      const ls = Math.log(anim.s0) + (Math.log(anim.s1) - Math.log(anim.s0)) * e - anim.dip * Math.sin(Math.PI * e);
+      cam.s = Math.exp(ls);
+      dirty = true;
+      if (t >= 1) { const d = anim.done; anim = null; if (d) d(); }
+    }
+    if (dirty) { dirty = false; draw(); if (onDraw) onDraw(); }
+    requestAnimationFrame(frame);
+  }
+  function flyTo(x, y, s, dur) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) dur = 0;
+    const dist = Math.hypot(x - cam.x, y - cam.y) * Math.min(cam.s, s);
+    const dip = dist > Math.max(W, H) * 1.5 ? Math.min(3, Math.log(dist / Math.max(W, H))) : 0;
+    if (anim && anim.done) anim.done(); // a newer flight supersedes the old one
+    let done; const p = new Promise((r) => (done = r));
+    anim = { t0: performance.now(), dur: dur == null ? 1100 : dur, x0: cam.x, y0: cam.y, s0: cam.s, x1: x, y1: y, s1: s, dip, done };
+    if (!anim.dur) { cam.x = x; cam.y = y; cam.s = s; anim = null; done(); }
+    dirty = true;
+    return p;
+  }
+  function fitScale() { const b = G.info.bounds; return Math.min(W, H - insets.top - insets.bottom) / (b[2] - b[0]) * 0.98; }
+
+  // ---- interaction ------------------------------------------------------------------------
+  function toWorld(px, py) {
+    const ctr = [cam.x, cam.y + (insets.bottom - insets.top) / 2 / cam.s];
+    return [(px - W / 2) / cam.s + ctr[0], (py - H / 2) / cam.s + ctr[1]];
+  }
+  function pick(px, py) {
+    const [wx, wy] = toWorld(px, py);
+    const rad = 22 / cam.s;
+    let best = -1, bd = Infinity;
+    const cx0 = Math.max(0, Math.floor((wx - rad - G.gx0) / G.cell)), cx1 = Math.min(G.gw - 1, Math.floor((wx + rad - G.gx0) / G.cell));
+    const cy0 = Math.max(0, Math.floor((wy - rad - G.gy0) / G.cell)), cy1 = Math.min(G.gh - 1, Math.floor((wy + rad - G.gy0) / G.cell));
+    if ((cx1 - cx0) * (cy1 - cy0) > 40000) return -1;
+    for (let gy = cy0; gy <= cy1; gy++) for (let gx = cx0; gx <= cx1; gx++) {
+      const c = gx + gy * G.gw;
+      for (let k = G.cellStart[c]; k < G.cellStart[c + 1]; k++) {
+        const i = G.cellItems[k];
+        // bigger dots are easier to hit
+        const d = Math.hypot(G.xy[i * 2] - wx, G.xy[i * 2 + 1] - wy) - (G.meta[i * 2 + 1] / 400) * rad;
+        if (d < bd) { bd = d; best = i; }
+      }
+    }
+    return bd < rad ? best : -1;
+  }
+  function bindInput() {
+    const pts = new Map();
+    let start = null, pinch = null, moved = false;
+    lab.addEventListener("pointerdown", (e) => {
+      lab.setPointerCapture(e.pointerId);
+      pts.set(e.pointerId, [e.clientX, e.clientY]);
+      if (anim && anim.done) anim.done();
+      anim = null;
+      if (focus && focus.tracing) { traceToken++; const i = focus.idx; RM.focus(chainEnd(i), { fly: false }); }
+      if (pts.size === 1) { start = { x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y, t: performance.now() }; moved = false; }
+      if (pts.size === 2) {
+        const [a, b] = [...pts.values()];
+        pinch = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), s: cam.s, mid: [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], w: toWorld((a[0] + b[0]) / 2, (a[1] + b[1]) / 2) };
+        moved = true;
+      }
+    });
+    lab.addEventListener("pointermove", (e) => {
+      if (!pts.has(e.pointerId)) return;
+      pts.set(e.pointerId, [e.clientX, e.clientY]);
+      if (pts.size >= 2 && pinch) {
+        const [a, b] = [...pts.values()];
+        const d = Math.hypot(a[0] - b[0], a[1] - b[1]);
+        cam.s = Math.max(0.05, Math.min(80, pinch.s * d / pinch.d));
+        const mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+        const w = toWorld(mid[0], mid[1]);
+        cam.x += pinch.w[0] - w[0]; cam.y += pinch.w[1] - w[1];
+        dirty = true;
+      } else if (start) {
+        const dx = e.clientX - start.x, dy = e.clientY - start.y;
+        if (Math.abs(dx) + Math.abs(dy) > 6) moved = true;
+        cam.x = start.cx - dx / cam.s; cam.y = start.cy - dy / cam.s;
+        dirty = true;
+      }
+    });
+    const up = (e) => {
+      const was = pts.has(e.pointerId);
+      pts.delete(e.pointerId);
+      if (pts.size < 2) pinch = null;
+      if (pts.size === 1) { const [p] = [...pts.values()]; start = { x: p[0], y: p[1], cx: cam.x, cy: cam.y, t: performance.now() }; return; }
+      if (was && start && !moved && performance.now() - start.t < 450 && e.type === "pointerup") {
+        const r = lab.getBoundingClientRect();
+        const i = pick(e.clientX - r.left, e.clientY - r.top);
+        if (i >= 0 && onTap) onTap(i);
+      }
+      start = null;
+    };
+    lab.addEventListener("pointerup", up); lab.addEventListener("pointercancel", up);
+    lab.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      const r = lab.getBoundingClientRect();
+      const px = e.clientX - r.left, py = e.clientY - r.top;
+      const before = toWorld(px, py);
+      cam.s = Math.max(0.05, Math.min(80, cam.s * Math.exp(-e.deltaY * 0.0016)));
+      const after = toWorld(px, py);
+      cam.x += before[0] - after[0]; cam.y += before[1] - after[1];
+      anim = null; dirty = true;
+    }, { passive: false });
+    lab.addEventListener("dblclick", (e) => {
+      const r = lab.getBoundingClientRect();
+      const [wx, wy] = toWorld(e.clientX - r.left, e.clientY - r.top);
+      flyTo(wx, wy, Math.min(80, cam.s * 2.2), 450);
+    });
+  }
+
+  function resize() {
+    const r = glc.parentElement.getBoundingClientRect();
+    W = r.width; H = r.height;
+    for (const c of [glc, lab]) { c.width = Math.round(W * DPR); c.height = Math.round(H * DPR); c.style.width = W + "px"; c.style.height = H + "px"; }
+    dirty = true;
+  }
+
+  // ---- focus ------------------------------------------------------------------------------
+  function upAll(i) { const out = []; if (G.parent[i] >= 0) out.push(G.parent[i]); const c = G.crossUp.get(i); if (c) for (const p of c) out.push(p); return out; }
+  function downAll(i) { const out = []; for (let k = G.kidStart[i]; k < G.kidStart[i + 1]; k++) out.push(G.kids[k]); const c = G.crossDown.get(i); if (c) for (const x of c) out.push(x); return out; }
+  RM.lineage = function (i) { const out = []; let x = G.parent[i]; while (x >= 0 && out.length < 40) { out.push(x); x = G.parent[x]; } return out; };
+
+  function buildFocus(idx, extra) {
+    const lit = new Set([idx]); const order = [idx];
+    const segs = [];
+    const ink = isDark() ? [0.96, 0.92, 0.84] : [0.2, 0.16, 0.1];
+    const add = (i) => { if (!lit.has(i)) { lit.add(i); order.push(i); } };
+    // ancestors (every route), nearest first
+    const q = [idx]; const seenA = new Set([idx]);
+    while (q.length && seenA.size < 200) {
+      const x = q.shift();
+      for (const p of upAll(x)) {
+        segs.push([x, p, ...(G.parent[x] === p ? ink : G.pal[G.meta[p * 2]])]);
+        if (!seenA.has(p)) { seenA.add(p); add(p); q.push(p); }
+      }
+    }
+    // what grew out of it (one generation; more for ancestors)
+    const kids = downAll(idx);
+    const isWord = G.lang[idx] === 0;
+    for (const k of kids.slice(0, isWord ? 60 : 120)) { segs.push([k, idx, ...G.pal[G.meta[k * 2]]]); add(k); }
+    if (!isWord) for (const k of kids.slice(0, 40)) for (const g of downAll(k).slice(0, 20)) { segs.push([g, k, ...G.pal[G.meta[g * 2]]]); add(g); }
+    if (extra) for (const e of extra) { segs.push([e[0], e[1], ...e[2]]); add(e[0]); add(e[1]); }
+    let root = idx; while (G.parent[root] >= 0) root = G.parent[root];
+    const L = dynLines(segs);
+    const pts = order.map((i) => i);
+    const pp = new Float32Array(pts.length * 2), pc = new Float32Array(pts.length * 3), ps = new Float32Array(pts.length);
+    pts.forEach((i, k) => { pp[k * 2] = G.xy[i * 2]; pp[k * 2 + 1] = G.xy[i * 2 + 1]; const c = G.pal[G.meta[i * 2]]; pc[k * 3] = c[0]; pc[k * 3 + 1] = c[1]; pc[k * 3 + 2] = c[2]; ps[k] = G.meta[i * 2 + 1] + (i === idx ? 60 : 0); });
+    const geo = { bp: buf(L.p), bc: buf(L.c), n: L.n, pp: buf(pp), pc: buf(pc), ps: buf(ps), np: pts.length };
+    return { idx, lit, order, geo, root };
+  }
+
+  // ---- tracing a line of descent (the search flight) -----------------------------
+  // Frame the whole lineage, light it one generation at a time from the oldest
+  // ancestor down to the word, then settle on the word. Any touch skips ahead.
+  let traceToken = 0;
+  function pathFocus(list) {
+    const ink = isDark() ? [0.96, 0.92, 0.84] : [0.2, 0.16, 0.1];
+    const segs = [];
+    for (let k = 1; k < list.length; k++) segs.push([list[k], list[k - 1], ...ink]);
+    const head = list[list.length - 1];
+    const L = dynLines(segs);
+    const pp = new Float32Array(list.length * 2), pc = new Float32Array(list.length * 3), ps = new Float32Array(list.length);
+    list.forEach((i, k) => { pp[k * 2] = G.xy[i * 2]; pp[k * 2 + 1] = G.xy[i * 2 + 1]; const c = G.pal[G.meta[i * 2]]; pc[k * 3] = c[0]; pc[k * 3 + 1] = c[1]; pc[k * 3 + 2] = c[2]; ps[k] = G.meta[i * 2 + 1] + (i === head ? 60 : 20); });
+    const order = list.slice().reverse();
+    return { idx: head, lit: new Set(list), order, root: list[0], geo: { bp: buf(L.p), bc: buf(L.c), n: L.n, pp: buf(pp), pc: buf(pc), ps: buf(ps), np: list.length }, tracing: true };
+  }
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  RM.trace = async function (idx) {
+    if (!G || idx < 0) return;
+    const my = ++traceToken;
+    traceTarget = idx;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const chain = [idx].concat(RM.lineage(idx)).slice(0, 9).reverse(); // oldest … word
+    if (reduce || chain.length < 3) return RM.focus(idx, { fly: true, fromTrace: true });
+    // 1) frame the lineage
+    focus = pathFocus(chain.slice(0, 1));
+    RM.fit(chain, 950);
+    await new Promise((r) => { const f = () => (!anim || my !== traceToken ? r() : setTimeout(f, 30)); f(); });
+    // 2) light it generation by generation
+    const step = Math.max(160, Math.min(320, 1500 / chain.length));
+    for (let k = 2; k <= chain.length; k++) {
+      if (my !== traceToken) return;
+      focus = pathFocus(chain.slice(0, k));
+      dirty = true;
+      await sleep(step);
+    }
+    if (my !== traceToken) return;
+    // 3) settle on the word with its full neighbourhood lit
+    await sleep(120);
+    if (my !== traceToken) return;
+    traceTarget = -1;
+    return RM.focus(idx, { fly: true, dur: 700, fromTrace: true });
+  };
+  RM.cancelTrace = function () { traceToken++; };
+
+  // ---- public ------------------------------------------------------------------------------
+  RM.init = function (el, opts) {
+    onTap = opts && opts.onTap;
+    onDraw = opts && opts.onDraw;
+    glc = document.createElement("canvas"); glc.className = "map-gl";
+    lab = document.createElement("canvas"); lab.className = "map-labels";
+    el.appendChild(glc); el.appendChild(lab);
+    gl = glc.getContext("webgl", { antialias: true, premultipliedAlpha: true, alpha: true });
+    ctx = lab.getContext("2d");
+    if (!gl) { el.classList.add("map-nogl"); return; }
+    P_PT = prog(VS_PT, FS_PT); P_LN = prog(VS_LN, FS_LN);
+    resize();
+    window.addEventListener("resize", resize);
+    bindInput();
+    load().then(() => {
+      buildBuffers();
+      cam.s = fitScale(); cam.x = 0; cam.y = 0;
+      requestAnimationFrame(frame);
+      const rebuild = () => { buildBuffers(); if (focus) focus = buildFocus(focus.idx, focus.extra); dirty = true; };
+      new MutationObserver(rebuild).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", rebuild);
+      readyResolve(RM);
+      if (opts && opts.onReady) opts.onReady();
+    }).catch((err) => { el.classList.add("map-failed"); console.error(err); });
+  };
+  RM.find = function (w) { if (!G) return -1; const i = G.word.get(w); if (i != null) return i; const j = G.wordLC.get(String(w).toLowerCase()); return j == null ? -1 : j; };
+  RM.setInsets = function (o) { Object.assign(insets, o); dirty = true; };
+  RM.focus = function (idx, o) {
+    if (!G || idx < 0) return Promise.resolve();
+    if (!(o && o.fromTrace)) { traceToken++; traceTarget = -1; } // a plain focus supersedes a running trace
+    focus = buildFocus(idx, null);
+    focus.extra = null;
+    if (!o || o.fly !== false) {
+      // frame the node with its lineage: zoom so the nearest ancestors fit
+      const anc = RM.lineage(idx).slice(0, 4);
+      let span = 6;
+      for (const a of anc) span = Math.max(span, Math.hypot(G.xy[a * 2] - G.xy[idx * 2], G.xy[a * 2 + 1] - G.xy[idx * 2 + 1]));
+      const avail = Math.min(W, H - insets.top - insets.bottom);
+      const s = Math.max(1.2, Math.min(28, (avail * 0.42) / span));
+      dirty = true;
+      return flyTo(G.xy[idx * 2], G.xy[idx * 2 + 1], s, o && o.dur);
+    }
+    dirty = true;
+    return Promise.resolve();
+  };
+  let traceTarget = -1;
+  function chainEnd(i) { return traceTarget >= 0 ? traceTarget : i; }
+  RM.loaded = function () { return !!(G && B.pos); };
+  RM.setExtra = function (pairs) { // [[a, b, [r,g,b]]…] drawn with the focus (lens overlays)
+    if (!focus) return;
+    focus = buildFocus(focus.idx, pairs);
+    focus.extra = pairs;
+    dirty = true;
+  };
+  RM.fit = function (idxs, dur) { // frame a set of nodes
+    if (!G || !idxs.length) return;
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const i of idxs) { const x = G.xy[i * 2], y = G.xy[i * 2 + 1]; x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+    const availH = H - insets.top - insets.bottom;
+    const s = Math.max(0.08, Math.min(28, Math.min(W / Math.max(8, x1 - x0), availH / Math.max(8, y1 - y0)) * 0.78));
+    flyTo((x0 + x1) / 2, (y0 + y1) / 2, s, dur);
+  };
+  // step-out framing: a node's family (radial tree around its deepest
+  // ancestor), then its region (language group)
+  RM.frameFamily = function (i) {
+    if (!G || i < 0) return Promise.resolve();
+    let r = i; while (G.parent[r] >= 0) r = G.parent[r];
+    const t = G.treeOfRoot.get(r);
+    const availH = H - insets.top - insets.bottom;
+    if (t) return flyTo(t.x, t.y, Math.max(0.08, Math.min(40, Math.min(W, availH) / (2 * t.R) * 0.92)), 800);
+    const pts = [r]; const q = [r];
+    while (q.length && pts.length < 400) { const x = q.shift(); for (let k = G.kidStart[x]; k < G.kidStart[x + 1]; k++) { pts.push(G.kids[k]); q.push(G.kids[k]); } }
+    RM.fit(pts, 800); return new Promise((res) => setTimeout(res, 820));
+  };
+  RM.frameRegion = function (i) {
+    if (!G || i < 0) return Promise.resolve();
+    const x = G.xy[i * 2], y = G.xy[i * 2 + 1];
+    let best = null, bd = Infinity;
+    for (const R of G.info.regions) { const d = Math.hypot(R.x - x, R.y - y) / R.r; if (d < bd) { bd = d; best = R; } }
+    if (!best || bd > 1.2) return RM.overview();
+    const availH = H - insets.top - insets.bottom;
+    return flyTo(best.x, best.y, Math.min(W, availH) / (2 * best.r) * 0.95, 850);
+  };
+  RM.setGlobal = function (pairs) { // [[a, b, [r,g,b]]…] or null
+    globalPairs = pairs;
+    if (!G || !pairs || !pairs.length) { globalGeo = null; dirty = true; return; }
+    const L = dynLines(pairs.map((p) => [p[0], p[1], ...p[2]]));
+    globalGeo = { bp: buf(L.p), bc: buf(L.c), n: L.n };
+    dirty = true;
+  };
+  RM.xy = function (i) { return [G.xy[i * 2], G.xy[i * 2 + 1]]; };
+  RM.clearFocus = function () { focus = null; dirty = true; };
+  RM.overview = function () { if (!G) return Promise.resolve(); focus = null; return flyTo(0, 0, fitScale(), 900); };
+  RM.info = function (i) {
+    if (!G || i < 0) return null;
+    return { idx: i, label: G.labels[i], lang: G.info.langs[G.lang[i]], family: G.info.families[G.meta[i * 2]], fam: G.meta[i * 2],
+      year: G.info.eras[G.lang[i]], parent: G.parent[i], isWord: G.lang[i] === 0, size: G.meta[i * 2 + 1] };
+  };
+  RM.colorOf = function (fam) { const c = (isDark() ? DARK : LIGHT)[fam]; return c; };
+  RM.setTrail = function (list) { trail = list && list.slice(); dirty = true; };
+  RM.ping = function (i) { ping = i == null ? -1 : i; dirty = true; };
+  RM.starts = function () { return G ? G.info.starts || [] : []; };
+  RM.families = function () { return G ? G.info.families : []; };
+  RM.details = function (i) {
+    const c = Math.floor(i / G.info.chunk);
+    if (!G.chunks.has(c)) {
+      G.chunkData = G.chunkData || new Map();
+      G.chunks.set(c, fetch("graph/n/" + c + ".json?v=" + V).then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((m) => { G.chunkData.set(c, m); return m; }));
+    }
+    return G.chunks.get(c).then((m) => m[i] || {});
+  };
+  // where a node sits on screen right now (CSS px inside the map), for the callout
+  RM.screenOf = function (i) {
+    if (!G || i < 0) return null;
+    const ctr = [cam.x, cam.y + (insets.bottom - insets.top) / 2 / cam.s];
+    return [(G.xy[i * 2] - ctr[0]) * cam.s + W / 2, (G.xy[i * 2 + 1] - ctr[1]) * cam.s + H / 2];
+  };
+  RM.scale = function () { return cam.s; };
+  RM.focusIdx = function () { return focus ? focus.idx : -1; };
+  RM.moving = function () { return !!anim; };
+  RM.children = function (i) { return downAll(i); };
+  RM.parents = function (i) { return upAll(i); };
+  window.RootMap = RM;
+})();
