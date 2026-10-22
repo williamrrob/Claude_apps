@@ -24,7 +24,7 @@
  */
 (function () {
   "use strict";
-  const V = "4";
+  const V = "5";
   const DPR = Math.min(2, window.devicePixelRatio || 1);
 
   // ---- palettes (index = family in info.families) -----------------------------
@@ -96,6 +96,7 @@
   let globalGeo = null, globalPairs = null;
   let ping = -1;
   let marks = null; // search matches lit where they live
+  let glide = null; // momentum after a flick: { vx, vy (screen px/ms), t }
   let onInteract = null;
   let labelHits = []; // [x0,y0,x1,y1,idx] of labels drawn this frame
   let trail = null;
@@ -747,6 +748,13 @@
       dirty = true;
       if (t >= 1) { const d = anim.done; anim = null; if (d) d(); }
     }
+    if (glide) {
+      const now = performance.now(), dt = Math.min(40, now - glide.t); glide.t = now;
+      cam.x -= (glide.vx * dt) / cam.s; cam.y -= (glide.vy * dt) / cam.s;
+      const k = Math.exp(-dt / 330); glide.vx *= k; glide.vy *= k; // the same friction a phone list uses
+      dirty = true;
+      if (Math.hypot(glide.vx, glide.vy) < 0.015) { glide = null; if (onInteract) onInteract(false); }
+    }
     if (dirty) { dirty = false; draw(); if (onDraw) onDraw(); }
     requestAnimationFrame(frame);
   }
@@ -793,12 +801,14 @@
   }
   function bindInput() {
     const pts = new Map();
-    let start = null, pinch = null, moved = false;
+    let start = null, pinch = null, moved = false, pinched = false, samples = [];
     lab.addEventListener("pointerdown", (e) => {
-      lab.setPointerCapture(e.pointerId);
+      try { lab.setPointerCapture(e.pointerId); } catch (err) {}
       pts.set(e.pointerId, [e.clientX, e.clientY]);
       if (anim && anim.done) anim.done();
       anim = null;
+      if (glide) { glide = null; if (onInteract) onInteract(false); } // a touch catches the sliding map
+      if (pts.size === 1) { samples = []; pinched = false; }
       if (focus && focus.tracing) { traceToken++; const i = focus.idx; RM.focus(chainEnd(i), { fly: false }); }
       if (pts.size === 1) { start = { x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y, t: performance.now() }; moved = false; }
       if (pts.size === 2) {
@@ -814,6 +824,7 @@
       if (pts.size >= 2 && pinch) {
         const [a, b] = [...pts.values()];
         const d = Math.hypot(a[0] - b[0], a[1] - b[1]);
+        pinched = true;
         cam.s = Math.max(0.05, Math.min(80, pinch.s * d / pinch.d));
         const mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
         const w = toWorld(mid[0], mid[1]);
@@ -823,6 +834,8 @@
         const dx = e.clientX - start.x, dy = e.clientY - start.y;
         if (Math.abs(dx) + Math.abs(dy) > 6) { if (!moved && onInteract) onInteract(true); moved = true; }
         cam.x = start.cx - dx / cam.s; cam.y = start.cy - dy / cam.s;
+        const now = performance.now(); samples.push([now, e.clientX, e.clientY]);
+        while (samples.length > 2 && now - samples[0][0] > 100) samples.shift();
         dirty = true;
       }
     });
@@ -830,7 +843,19 @@
       const was = pts.has(e.pointerId);
       pts.delete(e.pointerId);
       if (pts.size < 2) pinch = null;
-      if (pts.size === 0 && moved && onInteract) onInteract(false);
+      if (pts.size === 0 && moved) {
+        // a flick: carry on in that direction at the release speed, then ease to a stop
+        const now = performance.now(), last = samples[samples.length - 1], first = samples[0];
+        let v = null;
+        if (!pinched && last && first && last !== first && now - last[0] < 60) {
+          const dt = Math.max(16, last[0] - first[0]);
+          v = [(last[1] - first[1]) / dt, (last[2] - first[2]) / dt];
+        }
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (v && Math.hypot(v[0], v[1]) > 0.3 && !reduce) { const cap = 4.5, sp = Math.hypot(v[0], v[1]), f = sp > cap ? cap / sp : 1; glide = { vx: v[0] * f, vy: v[1] * f, t: now }; dirty = true; }
+        else if (onInteract) onInteract(false);
+        samples = [];
+      }
       if (pts.size === 1) { const [p] = [...pts.values()]; start = { x: p[0], y: p[1], cx: cam.x, cy: cam.y, t: performance.now() }; return; }
       if (was && start && !moved && performance.now() - start.t < 450 && e.type === "pointerup") {
         const r = lab.getBoundingClientRect();
@@ -916,8 +941,9 @@
     return { idx: head, lit: new Set(list), order, root: list[0], geo: { bp: buf(L.p), bc: buf(L.c), n: L.n, pp: buf(pp), pc: buf(pc), ps: buf(ps), np: list.length }, tracing: true };
   }
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  RM.trace = async function (idx) {
+  RM.trace = async function (idx, opts) {
     if (!G || idx < 0) return;
+    const onStep = opts && opts.onStep;
     const my = ++traceToken;
     traceTarget = idx;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -927,22 +953,25 @@
     focus = pathFocus(chain.slice(0, 1));
     RM.fit(chain, 950);
     await new Promise((r) => { const f = () => (!anim || my !== traceToken ? r() : setTimeout(f, 30)); f(); });
-    // 2) light it generation by generation
-    const step = Math.max(160, Math.min(320, 1500 / chain.length));
-    for (let k = 2; k <= chain.length; k++) {
+    // 2) light it generation by generation, slowly enough to read what happened at each step
+    const step = (opts && opts.step) || 1300;
+    for (let k = 1; k <= chain.length; k++) {
       if (my !== traceToken) return;
       focus = pathFocus(chain.slice(0, k));
       dirty = true;
-      await sleep(step);
+      if (onStep) onStep({ i: chain[k - 1], parent: k > 1 ? chain[k - 2] : -1, k, n: chain.length });
+      await sleep(k === 1 ? step * 0.8 : step);
     }
     if (my !== traceToken) return;
     // 3) settle on the word with its full neighbourhood lit
     await sleep(120);
     if (my !== traceToken) return;
     traceTarget = -1;
-    return RM.focus(idx, { fly: true, dur: 700, fromTrace: true });
+    if (onStep) onStep(null);
+    return RM.focus(idx, { fly: true, dur: 900, fromTrace: true });
   };
   RM.cancelTrace = function () { traceToken++; };
+  RM.traceLength = function (idx) { return G && idx >= 0 ? Math.min(9, 1 + RM.lineage(idx).length) : 0; };
   RM.setOptions = function (o) { Object.assign(OPT, o || {}); dirty = true; };
 
   // ---- public ------------------------------------------------------------------------------
@@ -1088,7 +1117,7 @@
   };
   RM.scale = function () { return cam.s; };
   RM.focusIdx = function () { return focus ? focus.idx : -1; };
-  RM.moving = function () { return !!anim; };
+  RM.moving = function () { return !!anim || !!glide; };
   RM.children = function (i) { return downAll(i); };
   RM.parents = function (i) { return upAll(i); };
   window.RootMap = RM;

@@ -2192,11 +2192,49 @@
       if (i < 0) { RootMap.clearFocus(); return; }
       noteWalk(i);
       // back/forward fly straight back along your walk; new searches trace the lineage
-      const f = (retrace ? RootMap.focus(i, { fly: true, dur: 900 }) : RootMap.trace(i)).then(function () { if (mapWord === word) applyLens(); });
+      const f = (retrace ? RootMap.focus(i, { fly: true, dur: 900 }) : RootMap.trace(i, { onStep: traceCaption })).then(function () { if (mapWord === word) applyLens(); });
       return f;
     });
-    // never hold an entry hostage to a slow first load or a long flight
-    return Promise.race([flight, new Promise(function (r) { setTimeout(r, 4200); })]);
+    // never hold an entry hostage to a slow first load or a long flight (but let the trace be read)
+    const n = window.RootMap && RootMap.loaded() && !retrace ? RootMap.traceLength(RootMap.find(word)) : 0;
+    return Promise.race([flight, new Promise(function (r) { setTimeout(r, Math.max(4200, 2400 + n * 1300 + 1200)); })]);
+  }
+
+  // ---- the trace, narrated: one line per generation saying what happened ----
+  const traceCap = $("traceCap");
+  const KIND_VERB = { inh: "inherited into", bor: "borrowed into", lbor: "borrowed by scholars into", der: "became, in", via: "passed into",
+    cal: "translated part by part into", cmp: "built into", aff: "built into" };
+  let traceCapT = 0, traceCapN = 0;
+  function traceCaption(st) {
+    clearTimeout(traceCapT);
+    const my = ++traceCapN;
+    if (!st) { traceCapT = setTimeout(function () { showTraceCap(""); }, 2600); return; }
+    const inf = RootMap.info(st.i);
+    Promise.all([RootMap.details(st.i), st.parent >= 0 ? RootMap.details(st.i) : null]).then(function (r) {
+      if (my !== traceCapN) return;
+      const d = r[0] || {};
+      const gloss = d.g ? " “" + firstSense(d.g) + "”" : "";
+      const era = inf.lang === "English" ? "" : langEra(inf.lang);
+      let line;
+      if (st.parent < 0) line = inf.lang + " " + inf.label + gloss + " — the oldest form on record";
+      else {
+        const up = (d.up || []).find(function (u) { return u[0] === st.parent; });
+        const verb = KIND_VERB[up ? up[1] : "der"] || "became, in";
+        line = (verb === "became, in" ? "became, in " + inf.lang + ", " : verb + " " + inf.lang + " as ") + inf.label + gloss;
+        line = line.charAt(0).toUpperCase() + line.slice(1);
+      }
+      showTraceCap(line, era, st.k + " of " + st.n);
+    });
+    traceCapT = setTimeout(function () { showTraceCap(""); }, 7000); // a cancelled trace clears itself
+  }
+  function showTraceCap(line, era, count) {
+    if (lookName === "netscape") { if (nsMsg) nsMsg.textContent = line ? (era ? era + " · " : "") + line : "Document: Done"; return; }
+    if (!traceCap) return;
+    if (!line) { traceCap.classList.remove("on"); return; }
+    traceCap.innerHTML = "";
+    if (era || count) traceCap.appendChild(el("span", "tc-era", [era, count].filter(Boolean).join(" · ")));
+    traceCap.appendChild(el("span", "tc-line", line));
+    traceCap.classList.add("on");
   }
 
   // ---- the callout: arriving at a point shows its card pinned to the dot;

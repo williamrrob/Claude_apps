@@ -579,3 +579,23 @@
 :root[data-look="netscape"] .lin-dot { border-radius: 0; background: #000 !important; width: 6px; height: 6px; left: 4px; top: calc(50% - 3px); }
 :root[data-look="netscape"] .lin-term { color: #0000ee; text-decoration: underline; }
 :root[data-look="netscape"] .lin-here .lin-term { color: #000; text-decoration: none; font-weight: 700; }
+
+/* the trace, narrated: a caption under the top bar, one line per generation */
+.trace-cap { position: fixed; z-index: 7; left: 14px; right: 14px; top: calc(env(safe-area-inset-top) + 62px); pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; padding: 8px 12px;
+  opacity: 0; transform: translateY(-4px); transition: opacity .35s var(--ease), transform .35s var(--ease); }
+.trace-cap.on { opacity: 1; transform: none; }
+.trace-cap .tc-era { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; }
+.trace-cap .tc-line { font-size: 15.5px; line-height: 1.3; }
+:root[data-look="priestley"] .trace-cap { background: var(--laid), #f1e8d3; color: var(--ink); border: 2px solid var(--ink); outline: .6px solid var(--ink); outline-offset: -5px; }
+:root[data-look="priestley"] .trace-cap .tc-era { letter-spacing: .22em; font-size: 10px; }
+:root[data-look="ortelius"] .trace-cap { background: #ecdfbf; color: var(--ink); border: 1px solid var(--ink); clip-path: var(--notch); box-shadow: inset 0 0 0 5px rgba(192,112,95,.3); }
+:root[data-look="ortelius"] .trace-cap .tc-era { font-family: "IM Fell English SC", var(--font); text-transform: none; letter-spacing: .1em; font-size: 13px; }
+:root[data-look="ortelius"] .trace-cap .tc-line { font-style: italic; font-size: 16.5px; }
+:root[data-look="blueprint"] .trace-cap { background: var(--weave), #eceee6; color: var(--ink); border: 1.6px solid var(--ink); align-items: flex-start; text-align: left; }
+:root[data-look="blueprint"] .trace-cap .tc-era { font: 600 9px "Overpass Mono", monospace; color: #c8352a; }
+:root[data-look="blueprint"] .trace-cap .tc-line { text-transform: uppercase; font-weight: 600; font-size: 13px; letter-spacing: .02em; }
+:root[data-look="planisphere"] .trace-cap { background: var(--grain), #1c2541; color: #d1ad5b; border: 1px solid #d1ad5b; box-shadow: inset 0 0 0 3px #1c2541, inset 0 0 0 4px rgba(209,173,91,.5); }
+:root[data-look="planisphere"] .trace-cap .tc-era { font-family: "Playfair Display SC", var(--font); text-transform: none; letter-spacing: .12em; }
+:root[data-look="planisphere"] .trace-cap .tc-line { font-style: italic; }
+:root[data-look="netscape"] .trace-cap { display: none; }

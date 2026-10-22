@@ -118,8 +118,17 @@ process.stderr.write(`${N} nodes\n`);
 const KIND_W = { inh: 0, bor: 1, lbor: 1, der: 2, via: 2, cal: 3, cmp: 4, aff: 9 };
 const parent = new Int32Array(N).fill(-1);
 const cross = [];
+let backwards = 0, affixRoots = 0;
 for (let i = 0; i < N; i++) {
-  const up = (recs.get(keys[i]).up || []).filter((u) => idx.has(u[0]));
+  // a source is never younger than what came from it: a "parent" from a later stage (an Old
+  // French form above a Proto-Indo-European root) is a mis-joined citation, so it's dropped
+  const all = (recs.get(keys[i]).up || []).filter((u) => idx.has(u[0]));
+  const up = all.filter((u) => year[idx.get(u[0])] <= year[i] + 150);
+  backwards += all.length - up.length;
+  // an affix (-tis, -ālis, com-) is a building block, not a descendant: it heads its own family,
+  // so a shared ending never chains unrelated roots together; its links stay as cross-links
+  const t = recs.get(keys[i]).t || "";
+  if (/^\*?[-‐]|[-‐]$/.test(t.trim())) { for (const u of up) cross.push(i, idx.get(u[0])); affixRoots++; continue; }
   if (!up.length) continue;
   let best = 0;
   for (let j = 1; j < up.length; j++) if ((KIND_W[up[j][1]] ?? 5) < (KIND_W[up[best][1]] ?? 5)) best = j;
@@ -130,6 +139,7 @@ for (let i = 0; i < N; i++) { // break cycles
   const seen = new Set([i]); let x = parent[i];
   while (x >= 0) { if (seen.has(x)) { parent[i] = -1; break; } seen.add(x); x = parent[x]; }
 }
+process.stderr.write(`dropped ${backwards} links that ran backwards in time; ${affixRoots} affixes stand as their own roots\n`);
 const kids = Array.from({ length: N }, () => []);
 for (let i = 0; i < N; i++) if (parent[i] >= 0) kids[parent[i]].push(i);
 const linked = new Uint8Array(N);
