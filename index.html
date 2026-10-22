@@ -37,8 +37,12 @@
       document.addEventListener("focusout", recheck);
     })();
   </script>
-  <meta name="theme-color" content="#1b1712" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#f1e7cf" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1c2541" />
+  <script>
+    /* the chosen look is applied before first paint, so the page never flashes another one */
+    (function () { var l = "planisphere"; try { l = localStorage.getItem("rootwork.look") || l; } catch (e) {}
+      document.documentElement.setAttribute("data-look", l); })();
+  </script>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Rootwork" />
@@ -46,11 +50,16 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Rootwork — visual etymology</title>
-  <link rel="stylesheet" href="styles.css?v=145" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Libre+Caslon+Display&amp;family=IM+Fell+English:ital@0;1&amp;family=IM+Fell+English+SC&amp;family=Overpass:ital,wght@0,400;0,600;0,700;1,600&amp;family=Overpass+Mono:wght@400;600&amp;family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display+SC:wght@400;700&amp;family=Tinos:ital,wght@0,400;0,700;1,400&amp;family=Arimo:wght@400;700&amp;family=Cousine&amp;display=swap" />
+  <link rel="stylesheet" href="styles.css?v=147" />
+  <link rel="stylesheet" href="looks.css?v=4" />
 </head>
 <body>
   <div class="map" id="map" aria-label="Map of English etymology"></div>
   <div class="app">
+    <div class="ns-title" id="nsTitle" aria-hidden="true">Netscape - [Rootwork]</div>
     <header class="topbar">
       <div class="lens" role="tablist" aria-label="View">
         <button class="lens-btn on" data-lens="descent" role="tab" aria-selected="true">Descent</button>
@@ -91,6 +100,7 @@
       Back to quiz
     </button>
 
+    <div class="wander-note" id="wanderNote" role="status" hidden></div>
     <svg class="leader" id="leader" aria-hidden="true"><line id="leaderLine" x1="0" y1="0" x2="0" y2="0"/><circle id="leaderDot" r="3"/></svg>
     <div class="callout" id="callout" hidden></div>
     <main class="content" id="content">
@@ -113,6 +123,9 @@
     <section class="quiz" id="quiz" hidden aria-label="Vocabulary quiz"></section>
 
     <div class="dock-fade" aria-hidden="true"></div>
+    <div class="acts" id="acts" hidden role="menu" aria-label="Actions"></div>
+    <button class="orb" id="orb" type="button" aria-label="Actions" aria-haspopup="menu"></button>
+    <div class="ns-status" id="nsStatus" aria-hidden="true"><span class="ns-well ns-key"><svg viewBox="0 0 14 12" width="14" height="12"><circle cx="4" cy="6" r="3" fill="none" stroke="#808080" stroke-width="1.5"/><path d="M7 6 H11 M10 6 V9 M8.5 3 L9.5 9" stroke="#808080" stroke-width="1.5"/></svg></span><span class="ns-well ns-msg" id="nsMsg">Document: Done</span><span class="ns-well ns-prog"></span></div>
     <footer class="dock">
       <div class="recent" id="recent" hidden aria-label="Recent searches"></div>
       <ul class="suggest" id="suggest" hidden aria-label="Suggestions"></ul>
@@ -137,6 +150,8 @@
           </button>
         </div>
         <form id="searchForm" class="search" autocomplete="off">
+          <div class="qshow" id="qShow" aria-hidden="true"></div>
+          <div class="qcap" id="qCap" aria-live="polite"></div>
           <input
             id="wordInput"
             class="search-input"
@@ -184,7 +199,7 @@
   <script defer src="data.js?v=62"></script>
   <script defer src="engine.js?v=61"></script>
   <script defer src="etym-parse.js?v=4"></script>
-  <script defer src="graph.js?v=8"></script>
-  <script defer src="app.js?v=160"></script>
+  <script defer src="graph.js?v=10"></script>
+  <script defer src="app.js?v=164"></script>
 </body>
 </html>

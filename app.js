@@ -739,7 +739,8 @@
     headWrap.appendChild(coordRow);
     // the headword plain, on one line; the split lives in the Breakdown card
     const wordEl = el("div", "entry-word");
-    wordEl.appendChild(el("span", "ew-part", word));
+    // Ortelius letters what is large in spaced capitals, with V for U, as the plate does
+    wordEl.appendChild(el("span", "ew-part", lookName === "ortelius" ? word.toUpperCase().replace(/U/g, "V") : word));
     headWrap.appendChild(wordEl);
     entryEl.appendChild(headWrap);
     fitLine(wordEl, 52, 30);
@@ -1840,6 +1841,8 @@
     suggestToken++; // a fetch still in flight must not reopen the list after a search
     suggestEl.hidden = true; suggestEl.innerHTML = "";
     if (window.RootMap && RootMap.ping) RootMap.ping(-1);
+    if (window.RootMap && RootMap.setMarks) RootMap.setMarks(null);
+    const qc = $("qCap"); if (qc) qc.textContent = "";
   }
   function onType() {
     const v = input.value.trim().toLowerCase();
@@ -1892,7 +1895,6 @@
         const dot = el("span", "sug-dot"); dot.style.background = RootMap.colorOf(root.fam);
         dot.title = root.family;
         b.insertBefore(dot, b.firstChild);
-        if (!suggestEl.children.length) RootMap.ping(mi);
         b.addEventListener("pointerenter", function () { RootMap.ping(mi); });
         b.addEventListener("focus", function () { RootMap.ping(mi); });
       }
@@ -1903,6 +1905,7 @@
       suggestEl.appendChild(li);
     });
     suggestEl.hidden = false;
+    if (typeof noteMatches === "function") noteMatches(items.map(function (it) { return it.w; }));
   }
 
   // ---------- events ----------
@@ -1923,7 +1926,8 @@
   input.addEventListener("blur", function () { setTimeout(function () {
     setTyping(false); hideSuggest(); hideRecent();
     // fold back into a circle if a card is up
-    if (appShell && appShell.dataset && appShell.dataset.dock === "open") appShell.dataset.dock = sheetState === "home" ? "full" : "compact";
+    if (appShell && appShell.dataset && appShell.dataset.dock === "open") appShell.dataset.dock = "compact";
+    const qs = $("qShow"); if (qs) qs.textContent = "";
   }, 150); });
   if (navHome) navHome.addEventListener("click", function () { stepOut(); });
   if (navBack) navBack.addEventListener("click", goBack);
@@ -2086,7 +2090,7 @@
     const cardH = calloutEl && !calloutEl.hidden ? calloutEl.offsetHeight : 260;
     const bottomInset = st === "full" ? 0 : st === "callout" ? cardH + 24 : h;
     // the dock is a full search bar only on the open map; over any card it folds into circles
-    if (appShell && appShell.dataset && appShell.dataset.dock !== "open") appShell.dataset.dock = st === "home" ? "full" : "compact";
+    if (appShell && appShell.dataset && appShell.dataset.dock !== "open") appShell.dataset.dock = "compact";
     if (window.RootMap && RootMap.setInsets) RootMap.setInsets({ top: MAP_TOP, bottom: bottomInset });
     if (calloutEl) {
       const show = st === "callout" && calloutFor >= 0;
@@ -2094,6 +2098,12 @@
       if (show) {
         placeCallout();
         if (window.RootMap && RootMap.setInsets) RootMap.setInsets({ top: MAP_TOP, bottom: calloutEl.offsetHeight + 24 });
+      }
+      // the planisphere's window sits above whatever is open below it: the card, or the turned-over sheet
+      if (typeof placePlate === "function") {
+        if (show) placePlate(calloutEl.offsetHeight || 300);
+        else if (st === "peek" || st === "mini") placePlate(h - 30);
+        else if (st !== "callout" && st !== "hidden" && window.RootMap && RootMap.setPlate) RootMap.setPlate(null);
       }
     }
   }
@@ -2152,7 +2162,7 @@
     if (inf.isWord) run(inf.label); else run("@" + i);
   }
   if (mapEl && window.RootMap && typeof mapEl.appendChild === "function") {
-    RootMap.init(mapEl, { onTap: onMapTap, onDraw: function () { onMapDraw(); } });
+    RootMap.init(mapEl, { onTap: onMapTap, onDraw: function () { onMapDraw(); }, onInteract: function (on) { exploring(on); } });
     RootMap.ready.then(function () { setSheet(sheetState); applyLens(); });
   }
 
@@ -2163,6 +2173,7 @@
     sheetState = "hidden";
     if (appShell && appShell.dataset) appShell.dataset.sheet = "hidden";
     if (window.RootMap) RootMap.setInsets({ top: MAP_TOP, bottom: sheetHeight("peek") }); // frame for where the sheet will be
+    if (nextSheet === "callout" || !nextSheet) placePlate(300); // the planisphere's window, for the flight to frame
   }
   // this session's walk across the map, drawn as a faint trail
   const walk = [];
@@ -2223,6 +2234,7 @@
       const inf = RootMap.info(c);
       const t = el(inf.isWord && k === chain.length - 1 ? "b" : "i", null, inf.label);
       t.style.color = inf.isWord && k === chain.length - 1 ? "" : RootMap.colorOf(inf.fam);
+      if (t.style.setProperty) t.style.setProperty("--fam", RootMap.colorOf(inf.fam));
       t.title = inf.lang;
       box.appendChild(t);
     });
@@ -2230,9 +2242,14 @@
   }
   function calloutActs(i, d, lensable) {
     const acts = el("div", "co-acts");
-    const read = el("button", "co-act primary", "Open"); read.type = "button";
+    const read = el("button", "co-act primary", lookUI().open); read.type = "button";
     read.addEventListener("click", function (e) { e.stopPropagation(); setSheet("peek"); });
     acts.appendChild(read);
+    if (lookName === "netscape" && lensable && currentWord) {
+      const bm = el("button", "co-act", isSaved(currentWord) ? "Bookmarked" : "Add Bookmark"); bm.type = "button";
+      bm.addEventListener("click", function (e) { e.stopPropagation(); toggleSaved(currentWord); bm.textContent = isSaved(currentWord) ? "Bookmarked" : "Add Bookmark"; });
+      acts.appendChild(bm);
+    }
     if (lensable && d && d.dbl && d.dbl.length) {
       const b = el("button", "co-act", d.dbl.length + (d.dbl.length > 1 ? " doublets" : " doublet")); b.type = "button";
       b.addEventListener("click", function (e) { e.stopPropagation(); const lb = document.querySelector('.lens-btn[data-lens="doublets"]'); if (lb) lb.click(); });
@@ -2252,6 +2269,7 @@
     if (!calloutEl || !window.RootMap) return;
     const i = RootMap.find(word);
     if (i < 0) { calloutFor = -1; return; }
+    lastRec = rec;
     const d = await RootMap.details(i);
     const coords = el("div", "co-coords");
     wordCoords(word, rec).forEach(function (b, k) {
@@ -2268,7 +2286,7 @@
     const def = p0 ? el("div", "co-def", p0.g) : null;
     openCallout(i, [coords, head, def, calloutChain(i), calloutActs(i, d, true)]);
     fitLine(cw, 30, 20);
-    if (sheetState === "callout") { calloutEl.hidden = false; placeCallout(); }
+    if (sheetState === "callout") setSheet("callout");
   }
   function showNodeCallout(i, d) {
     if (!calloutEl) return;
@@ -2317,6 +2335,210 @@
     // first open: a beat on the whole map, then fly somewhere real
     RootMap.ready.then(function () { setTimeout(function () { if (!currentWord && !mapWord) randomStart(); }, 900); });
   }
+
+
+  // ---------- looks: five interfaces, each traced to one real source ----------
+  // The map side of each look lives in graph.js (RootMap.setLook); this is the chrome:
+  // the orb, its action panel, the words each source would use, search, and the plate.
+  var LOOK_UI = {
+    priestley: { name: "Priestley", sub: "A New Chart of History, 1769", theme: "light", meta: "#f1e8d3", open: "The description",
+      head: "Explanation", acts: [["Search", "Search the index", "find a word"], ["Wander", "Wander", "a neighbour"], ["Step out", "Step out", "the family"], ["Back", "Back", "the last word"], ["Menu", "Contents", "and settings"]],
+      found: function (n, m) { return "An index of " + n + " name" + (n === 1 ? "" : "s") + " · " + m + " upon this chart"; }, q: function (t) { return t.toUpperCase(); } },
+    ortelius: { name: "Ortelius", sub: "Typus Orbis Terrarum, 1570", theme: "light", meta: "#ecdfbf", open: "Read the text",
+      acts: [["Search", "Search"], ["Wander", "Wander"], ["Step out", "Step out"], ["Back", "Back"], ["Menu", "Contents"]],
+      found: function (n, m) { return n + " place" + (n === 1 ? "" : "s") + " so called; " + m + " upon this land"; }, q: function (t) { return t.toUpperCase().replace(/U/g, "V"); } },
+    blueprint: { name: "Blueprint", sub: "Clydebank shipyard, 1930s", theme: "dark", meta: "#14457f", open: "Open drawing →",
+      acts: [["Search", "Search", "S"], ["Wander", "Wander", "W"], ["Step out", "Step out", "O"], ["Back", "Back", "B"], ["Menu", "Menu", "C"]],
+      found: function (n, m) { return "Found " + n + " · " + m + " on this sheet"; }, q: function (t) { return t.toUpperCase(); } },
+    planisphere: { name: "Planisphere", sub: "Philip's, 32 Fleet Street", theme: "dark", meta: "#1c2541", open: "Turn it over",
+      acts: [["Search", "Search"], ["Wander", "Wander"], ["Step out", "Step out"], ["Back", "Back"], ["Menu", "Contents"]],
+      found: function (n, m) { return n + " star" + (n === 1 ? "" : "s") + " of that name · " + m + " in the window"; }, q: function (t) { return t; } },
+    netscape: { name: "Netscape", sub: "Navigator 1.1, 1995", theme: "light", meta: "#c0c0c0", open: "Open Entry",
+      acts: [["Back", "Back"], ["Step out", "Home"], ["Search", "Find"], ["Wander", "What's Cool!"], ["Menu", "Options"]],
+      found: function (n, m) { return n + " document" + (n === 1 ? "" : "s") + " found · " + m + " on this map"; }, q: function (t) { return t; } },
+  };
+  var LOOK_ORDER = ["priestley", "ortelius", "blueprint", "planisphere", "netscape"];
+  var lookName = "planisphere";
+  try { var storedLook = localStorage.getItem("rootwork.look"); if (LOOK_UI[storedLook]) lookName = storedLook; } catch (e) {}
+  function lookUI() { return LOOK_UI[lookName]; }
+  const orbEl = $("orb"), actsEl = $("acts"), nsMsg = $("nsMsg"), nsTitle = $("nsTitle"), noteBar = $("wanderNote");
+  const qShow = $("qShow"), qCap = $("qCap");
+  const ORB_ART = {
+    priestley: '<span class="orb-hand">☞</span>',
+    ortelius: '<svg viewBox="-2 -1 64 62" width="60" height="58" aria-hidden="true"><g class="orb-cloud">' +
+      [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(function (a) { var t = a * Math.PI / 180; return '<circle cx="' + (30 + 25 * Math.cos(t)).toFixed(1) + '" cy="' + (30 + 19 * Math.sin(t)).toFixed(1) + '" r="6"/>'; }).join("") +
+      '</g><ellipse class="orb-sea" cx="30" cy="30" rx="22" ry="16"/><path class="orb-land" d="M21 32 q4 -8 10 -4 t8 -2 q2 8 -6 10 t-12 -4z"/></svg>',
+    blueprint: '<svg viewBox="0 0 56 56" width="58" height="58" aria-hidden="true"><circle cx="28" cy="28" r="25" class="bb"/><line x1="5" y1="28" x2="51" y2="28"/><text x="28" y="22" class="bt">A</text><text x="28" y="43" class="bn">5</text></svg>',
+    planisphere: "",
+    netscape: '<svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true"><rect width="44" height="44" fill="#000"/><path d="M4 8 L18 16" stroke="#fff"/><path d="M26 36 L40 30" stroke="#99ccff"/><rect x="17" y="15" width="2" height="2" fill="#fff"/><rect x="39" y="29" width="2" height="2" fill="#fff"/><text x="22" y="31" text-anchor="middle" font-family="Tinos, Times New Roman, serif" font-weight="700" font-size="24" fill="#fff">R</text><path d="M8 40 h28" stroke="#3399cc"/></svg>',
+  };
+  const NS_ICON = { Back: "M14 4 L6 11 L14 18 Z", Forward: "M8 4 L16 11 L8 18 Z", "Step out": "M3 11 L11 4 L19 11 M5 10 V19 H17 V10",
+    Search: "M5 5 H13 V13 H5 Z M12 12 L18 18", Wander: "M11 2 L13 8 H19 L14 12 L16 18 L11 14 L6 18 L8 12 L3 8 H9 Z", Menu: "M4 6 H18 M4 11 H18 M4 16 H18" };
+  function buildActs() {
+    if (!actsEl) return;
+    const ui = lookUI();
+    actsEl.innerHTML = "";
+    actsEl.className = "acts acts-" + lookName;
+    if (ui.head) actsEl.appendChild(el("div", "acts-head", ui.head));
+    ui.acts.forEach(function (a) {
+      const b = el("button", "act"); b.type = "button"; b.dataset.act = a[0];
+      if (lookName === "blueprint") b.innerHTML = '<span class="act-name">' + escapeHtml(a[1]) + '</span><svg viewBox="0 0 56 56" width="50" height="50" aria-hidden="true"><circle cx="28" cy="28" r="25" class="bb"/><line x1="5" y1="28" x2="51" y2="28"/><text x="28" y="22" class="bt">' + a[2] + '</text><text x="28" y="43" class="bn">' + (ui.acts.indexOf(a) + 1) + "</text></svg>";
+      else if (lookName === "netscape") b.innerHTML = '<svg viewBox="0 0 22 22" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true"><path d="' + NS_ICON[a[0]] + '"/></svg><span>' + escapeHtml(a[1]) + "</span>";
+      else { b.appendChild(el("span", "act-name", a[1])); if (a[2]) b.appendChild(el("i", "act-note", a[2])); }
+      actsEl.appendChild(b);
+    });
+  }
+  function applyLook(name, save) {
+    if (!LOOK_UI[name]) return;
+    lookName = name;
+    const ui = lookUI();
+    document.documentElement.setAttribute("data-look", name);
+    document.documentElement.setAttribute("data-theme", ui.theme);
+    const tc = document.querySelector && document.querySelector('meta[name="theme-color"]');
+    if (tc && tc.setAttribute) tc.setAttribute("content", ui.meta);
+    if (orbEl) orbEl.innerHTML = ORB_ART[name];
+    buildActs();
+    if (window.RootMap && RootMap.setLook) RootMap.setLook(name);
+    if (save) { try { localStorage.setItem("rootwork.look", name); } catch (e) {} }
+    if (qShow) qShow.textContent = ui.q(input.value || "");
+    if (qShow && qShow.dataset) qShow.dataset.ph = name === "blueprint" ? "" : name === "netscape" ? "" : "";
+    if (typeof window.dispatchEvent === "function" && typeof Event === "function") window.dispatchEvent(new Event("resize")); // the map's frame differs by look
+    if (calloutFor >= 0 && currentWord) showWordCallout(currentWord, lastRec);
+    setSheet(sheetState);
+  }
+  var lastRec = null;
+
+  // the orb: tap to open its panel, or press, slide to an action and let go
+  function actsOpen(on) {
+    if (!actsEl) return;
+    actsEl.hidden = !on;
+    if (orbEl && orbEl.classList) orbEl.classList.toggle("on", on);
+    if (appShell && appShell.classList) appShell.classList.toggle("acts-open", on);
+    if (on) say(lookName === "netscape" ? "" : null);
+  }
+  function doAct(name) {
+    actsOpen(false);
+    if (name === "Search") openSearch();
+    else if (name === "Wander") wander();
+    else if (name === "Step out") stepOut();
+    else if (name === "Back") goBack();
+    else if (name === "Menu") { const kb = $("mapKeyBtn"); if (kb) kb.click(); }
+  }
+  if (orbEl && typeof orbEl.addEventListener === "function") {
+    let press = null;
+    orbEl.addEventListener("pointerdown", function (e) {
+      press = { x: e.clientX, y: e.clientY, was: actsEl && !actsEl.hidden, moved: false };
+      try { orbEl.setPointerCapture(e.pointerId); } catch (err) {}
+      if (!press.was) actsOpen(true);
+    });
+    orbEl.addEventListener("pointermove", function (e) {
+      if (!press) return;
+      if (Math.abs(e.clientX - press.x) + Math.abs(e.clientY - press.y) > 10) press.moved = true;
+      const t = document.elementFromPoint(e.clientX, e.clientY), b = t && t.closest && t.closest(".act");
+      actsEl.querySelectorAll(".act").forEach(function (x) { x.classList.toggle("hot", x === b); });
+    });
+    const up = function (e) {
+      if (!press) return;
+      const p = press; press = null;
+      if (p.moved) {
+        const t = document.elementFromPoint(e.clientX, e.clientY), b = t && t.closest && t.closest(".act");
+        if (b) { doAct(b.dataset.act); return; }
+        actsOpen(false); return;
+      }
+      if (p.was) actsOpen(false); // a tap on an open orb closes it
+    };
+    orbEl.addEventListener("pointerup", up);
+    orbEl.addEventListener("pointercancel", function () { press = null; });
+  }
+  if (actsEl && typeof actsEl.addEventListener === "function") {
+    actsEl.addEventListener("click", function (e) { const b = e.target.closest(".act"); if (b) doAct(b.dataset.act); });
+    document.addEventListener("pointerdown", function (e) { if (!actsEl.hidden && !e.target.closest("#acts, #orb")) actsOpen(false); });
+  }
+  // a line of news in the look's own voice (Netscape's status bar; elsewhere a quiet banner)
+  let sayT = 0;
+  function say(msg) {
+    if (lookName === "netscape") { if (nsMsg) nsMsg.textContent = msg || "Document: Done"; return; }
+    if (!noteBar) return;
+    clearTimeout(sayT);
+    if (!msg) { noteBar.hidden = true; return; }
+    noteBar.textContent = msg; noteBar.hidden = false;
+    sayT = setTimeout(function () { noteBar.hidden = true; }, 4200);
+  }
+
+  // search: what you type is lettered in place, and the matches light up where they live
+  function openSearch() {
+    if (appShell && appShell.dataset) appShell.dataset.dock = "open";
+    input.value = ""; if (qShow) qShow.textContent = ""; if (qCap) qCap.textContent = "";
+    input.focus();
+  }
+  if (input && typeof input.addEventListener === "function") {
+    input.addEventListener("input", function () { if (qShow) qShow.textContent = lookUI().q(input.value); if (!input.value && qCap) qCap.textContent = ""; });
+  }
+  function noteMatches(list) {
+    if (!window.RootMap || !RootMap.loaded()) return;
+    const idx = list.map(function (w) { return RootMap.find(w); }).filter(function (i) { return i >= 0; });
+    RootMap.setMarks(idx);
+    const Wd = window.innerWidth || 400, Hd = (window.innerHeight || 800) * 0.62;
+    const inView = idx.filter(function (i) { const p = RootMap.screenOf(i); return p && p[0] > 0 && p[0] < Wd && p[1] > MAP_TOP && p[1] < Hd; }).length;
+    if (qCap) qCap.textContent = list.length ? lookUI().found(list.length, inView) : "";
+    if (lookName === "netscape" && nsMsg) nsMsg.textContent = list.length ? "rootwork://" + list[0] : "Document: Done";
+  }
+
+  // wander: one meaningful hop — a word that shares an ancestor with this one, and why
+  function wander() {
+    if (!window.RootMap || !RootMap.loaded() || !mapWord) { randomStart(); return; }
+    const i = mapWord[0] === "@" ? Number(mapWord.slice(1)) : RootMap.find(mapWord);
+    if (i < 0) { randomStart(); return; }
+    const here = RootMap.info(i).label.toLowerCase();
+    const anc = RootMap.lineage(i).slice(0, 4);
+    for (let k = 0; k < anc.length; k++) {
+      const seen = {}, pool = [];
+      (function walk(n, depth) {
+        RootMap.children(n).forEach(function (c) {
+          if (seen[c]) return; seen[c] = 1;
+          const inf = RootMap.info(c);
+          if (inf.isWord && inf.label.toLowerCase() !== here && c !== i) pool.push(c);
+          else if (depth < 2) walk(c, depth + 1);
+        });
+      })(anc[k], 0);
+      if (pool.length) {
+        const pick = pool[Math.floor(Math.random() * pool.length)], a = RootMap.info(anc[k]);
+        const msg = RootMap.info(pick).label + " also comes from " + a.lang + " " + a.label;
+        nextSheet = "callout";
+        run(RootMap.info(pick).label);
+        setTimeout(function () { say(lookName === "netscape" ? "What's Cool!: " + msg : msg); }, 400);
+        return;
+      }
+    }
+    randomStart();
+  }
+
+  // while you pan and pinch, everything that isn't the map steps aside
+  var exploreT = 0;
+  function exploring(on) {
+    clearTimeout(exploreT);
+    if (on) {
+      if (appShell && appShell.classList) appShell.classList.add("exploring");
+      actsOpen(false);
+      if (window.RootMap && RootMap.showPlate) RootMap.showPlate(false);
+    } else {
+      exploreT = setTimeout(function () {
+        if (appShell && appShell.classList) appShell.classList.remove("exploring");
+        if (window.RootMap && RootMap.showPlate) RootMap.showPlate(/^(callout|peek|mini)$/.test(sheetState) && lookName === "planisphere");
+      }, 900);
+    }
+  }
+
+  // the planisphere's window sits between the top bar and the card
+  function placePlate(cardH) {
+    if (!window.RootMap || !RootMap.setPlate) return;
+    if (lookName !== "planisphere") { RootMap.setPlate(null); return; }
+    const Wd = window.innerWidth || 390, Hd = window.innerHeight || 800;
+    const top = MAP_TOP + 24, bottom = Hd - cardH - 30;
+    const ry = Math.max(80, (bottom - top) / 2), rx = Math.max(80, Math.min(Wd / 2 - 34, ry * 1.08));
+    RootMap.setPlate({ x: Wd / 2, y: top + ry, rx: rx, ry: ry });
+  }
+  applyLook(lookName, false);
 
   // ---- the doublet hunt: one source reached English twice; find the other road ----
   // Played in the sheet with the map above it: answering flies the fork.
@@ -2597,20 +2819,20 @@
       const n = typeof getSaved === "function" ? getSaved().length : 0;
       go.appendChild(act("★ Saved" + (n ? " (" + n + ")" : ""), function () { if (typeof openSavedWords === "function") openSavedWords(); }));
       keyEl.appendChild(go);
-      // theme
-      h("Theme");
-      const seg = el("div", "menu-seg");
-      const cur = storedTheme() || "auto";
-      [["auto", "Auto"], ["light", "Light"], ["dark", "Dark"]].forEach(function (o) {
-        const b = el("button", "menu-seg-b" + (cur === o[0] ? " on" : ""), o[1]); b.type = "button";
+      // the look: five interfaces, each after one real source
+      h("Look");
+      const looks = el("div", "menu-looks");
+      LOOK_ORDER.forEach(function (k) {
+        const ui = LOOK_UI[k];
+        const b = el("button", "menu-look" + (k === lookName ? " on" : "")); b.type = "button"; b.dataset.look = k;
+        b.appendChild(el("span", "ml-name", ui.name)); b.appendChild(el("span", "ml-sub", ui.sub));
         b.addEventListener("click", function () {
-          try { if (o[0] === "auto") localStorage.removeItem("rootwork.theme"); else localStorage.setItem("rootwork.theme", o[0]); } catch (e) {}
-          applyTheme(o[0] === "auto" ? null : o[0]);
-          seg.querySelectorAll(".menu-seg-b").forEach(function (x) { x.classList.toggle("on", x === b); });
+          applyLook(k, true);
+          looks.querySelectorAll(".menu-look").forEach(function (x) { x.classList.toggle("on", x === b); });
         });
-        seg.appendChild(b);
+        looks.appendChild(b);
       });
-      keyEl.appendChild(seg);
+      keyEl.appendChild(looks);
       // how to read it
       const det = el("details", "menu-key");
       det.appendChild(el("summary", null, "How to read the map"));

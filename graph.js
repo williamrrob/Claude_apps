@@ -33,7 +33,50 @@
   const LIGHT = ["#3a2f20", "#7a6648", "#2f6ea8", "#b0482c", "#6a4fb0", "#a5780e", "#2e8a5c", "#a6457a", "#b0631d",
     "#4f7f6c", "#8a7a1c", "#1f8a90", "#5f7f22", "#9a4a36", "#3c62b0", "#8a5a2a", "#4f8f62", "#6b645a"];
   const hex = (h) => [parseInt(h.slice(1, 3), 16) / 255, parseInt(h.slice(3, 5), 16) / 255, parseInt(h.slice(5, 7), 16) / 255];
+  // ---- looks: each is drawn from one real source, and every mark on the map follows it --------
+  // rgb strings are "r,g,b"; pal is the per-family colour (index = info.families)
+  const PASTEL = ["#f1e8d3", "#e2c27a", "#9cb8d6", "#e3a291", "#c4b0de", "#ead07a", "#a9c79a", "#e0a9c4", "#e9b27e",
+    "#b2cbbf", "#d9cc8a", "#9fd0d2", "#c6d699", "#e0aa98", "#a9bde6", "#d8b08a", "#b9dcc0", "#c9c3b9"];
+  const HANDCOL = ["#2a2016", "#d2ad4b", "#7f9ab3", "#c0705f", "#9a86b8", "#d2ad4b", "#7f9a5a", "#c47c96", "#d6955a",
+    "#86a598", "#bfae5a", "#6fa8a8", "#9fb06a", "#c08a70", "#7f95c4", "#b88a5a", "#8fb29a", "#9a9286"];
+  const WEBSAFE = ["#ffffff", "#ffcc66", "#66ccff", "#ff9966", "#cc99ff", "#ffff66", "#66ff99", "#ff99cc", "#ff9933",
+    "#99cccc", "#cccc66", "#33ffff", "#ccff66", "#ff6666", "#9999ff", "#cc9966", "#99ffcc", "#cccccc"];
+  const LOOKS = {
+    // Joseph Priestley, A New Chart of History (1769): engraved in one ink, hand-washed families
+    priestley: { dark: false, ink: "43,33,25", halo: "rgba(241,232,211,0.92)", pal: PASTEL, shape: 1, outline: "43,33,25",
+      lineRGB: "43,33,25", lineA: 0.55, litRGB: "43,33,25", ringRGB: "43,33,25", ringA: 0.34, years: "scale",
+      font: "'Libre Caslon Text', Caslon, Georgia, serif", wordColor: null, ancInk: true, you: "93,130,172", here: "93,130,172",
+      focusMark: "double", wash: true, regionCaps: true },
+    // Abraham Ortelius, Typus Orbis Terrarum (1570): stippled sea, hand-coloured boundaries, spaced capitals
+    ortelius: { dark: false, paper: "#ecdfbf", ink: "42,32,22", halo: "rgba(236,223,191,0.94)", pal: HANDCOL, shape: 1, outline: "42,32,22",
+      dotColor: (i) => (G.lang[i] === 0 ? [0.165, 0.125, 0.086] : [0.925, 0.875, 0.75]),
+      lineRGB: "42,32,22", lineA: 0.6, litRGB: "42,32,22", ringRGB: "42,32,22", ringA: 0.45, ringDouble: true, years: "roman",
+      font: "'IM Fell English', Georgia, serif", ancInk: true, you: "192,112,95", here: "192,112,95",
+      focusMark: "circle", stipple: true, lands: true, headCaps: true, regionCaps: true },
+    // a 1930s Clydebank shipyard blueprint: white line on Prussian blue, chain lines, red pencil
+    blueprint: { dark: true, ink: "238,244,251", halo: "rgba(20,69,127,0.92)", pal: null, shape: 1, outline: "238,244,251",
+      dotColor: (i) => (G.lang[i] === 0 ? [0.93, 0.955, 0.985] : [0.078, 0.27, 0.5]),
+      lineRGB: "238,244,251", lineA: 0.55, litRGB: "238,244,251", ringRGB: "238,244,251", ringA: 0.5, ringDash: [14, 3, 2, 3], years: "dim",
+      font: "'Overpass', 'Arial Narrow', sans-serif", weight: 600, caps: true, ancInk: true, you: "255,107,79", here: "255,107,79", hereDash: [6, 4],
+      focusMark: "cloud", regionCaps: true },
+    // Philip's Planisphere (George Philip & Son): a printed star disc under a gilt morocco overlay
+    planisphere: { dark: false, ink: "30,26,22", halo: "rgba(235,227,205,0.94)", pal: null, shape: 2, outline: "30,26,22",
+      dotColor: () => [0.118, 0.102, 0.086],
+      lineRGB: "30,26,22", lineA: 0.4, litRGB: "184,50,42", ringRGB: "30,26,22", ringA: 0.3, years: "left",
+      font: "'Old Standard TT', 'Times New Roman', serif", ancInk: true, litAncRGB: "184,50,42", you: "184,50,42", here: "184,50,42", hereDash: [2, 3],
+      focusMark: "circle", plate: true, rivet: true },
+    // Netscape Navigator 1.1 (1995): a linked image map on a starfield; links, visited links, <BLINK>
+    netscape: { dark: true, ink: "255,255,255", halo: "rgba(0,0,0,0.9)", pal: WEBSAFE, shape: 3, outline: "0,0,0",
+      lineRGB: "51,153,204", lineA: 0.9, litRGB: "255,255,0", ringRGB: "51,102,153", ringA: 1, years: "left", yearFont: "'Cousine', 'Courier New', monospace",
+      font: "'Tinos', 'Times New Roman', serif", wordColor: (i) => (visited.has(i) ? "255,153,255" : "0,255,255"), ancRGB: "255,153,51", underline: true,
+      you: "255,255,0", here: "255,255,0", hereDash: [4, 2], focusMark: "square", blink: true },
+  };
+  let LOOK = LOOKS.planisphere;
+  const visited = new Set();
+  const rgbOf = (c) => Math.round(c[0] * 255) + "," + Math.round(c[1] * 255) + "," + Math.round(c[2] * 255);
+  const hexToRgbStr = (h) => parseInt(h.slice(1, 3), 16) + "," + parseInt(h.slice(3, 5), 16) + "," + parseInt(h.slice(5, 7), 16);
   function isDark() {
+    if (LOOK) return LOOK.dark;
     const t = document.documentElement.getAttribute("data-theme");
     if (t === "dark") return true;
     if (t === "light") return false;
@@ -42,7 +85,7 @@
 
   const RM = {};
   let G = null;           // data
-  let gl, glc, lab, ctx;  // canvases
+  let gl, glc, lab, ctx, und;  // canvases (und: the look's ground, under the GL layer)
   let W = 0, H = 0;
   const cam = { x: 0, y: 0, s: 0.1 };
   const insets = { top: 0, bottom: 0 };
@@ -52,6 +95,8 @@
   let dirty = true, anim = null;
   let globalGeo = null, globalPairs = null;
   let ping = -1;
+  let marks = null; // search matches lit where they live
+  let onInteract = null;
   let labelHits = []; // [x0,y0,x1,y1,idx] of labels drawn this frame
   let trail = null;
   let onTap = null, onDraw = null;
@@ -126,12 +171,16 @@
       vc = c;
     }`;
   const FS_PT = `
-    precision mediump float; varying vec3 vc; uniform float a;
+    precision mediump float; varying vec3 vc; uniform float a; uniform float shape; uniform vec3 oc;
     void main(){
-      vec2 d = gl_PointCoord - 0.5; float r = length(d);
-      float e = smoothstep(0.5, 0.36, r);
+      vec2 d = gl_PointCoord - 0.5; float r = length(d); float e; vec3 col = vc;
+      if (shape < 0.5) { e = smoothstep(0.5, 0.36, r); }
+      else if (shape < 1.5) { e = smoothstep(0.5, 0.42, r); col = mix(vc, oc, smoothstep(0.27, 0.36, r)); }
+      else if (shape < 2.5) { vec2 q = abs(d); float m = max(q.x, q.y); float ray = min(q.x, q.y);
+        e = (ray < 0.05 + 0.3 * (0.5 - m) && m < 0.5) ? 1.0 : 0.0; e = max(e, smoothstep(0.18, 0.12, r)); }
+      else { e = 1.0; }
       if (e <= 0.0) discard;
-      gl_FragColor = vec4(vc * e * a, e * a);
+      gl_FragColor = vec4(col * e * a, e * a);
     }`;
   const VS_LN = `
     attribute vec2 p; attribute vec3 c;
@@ -159,12 +208,12 @@
   function buf(data) { const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW); return b; }
 
   function buildBuffers() {
-    const N = G.N, pal = (isDark() ? DARK : LIGHT).map(hex);
+    const N = G.N, pal = (LOOK.pal || (isDark() ? DARK : LIGHT)).map(hex);
     G.pal = pal;
     const col = new Float32Array(N * 3), sz = new Float32Array(N);
     const dustStart = G.info.dust ? G.info.dust.inner : Infinity;
     for (let i = 0; i < N; i++) {
-      const c = pal[G.meta[i * 2]];
+      const c = LOOK.dotColor ? LOOK.dotColor(i) : pal[G.meta[i * 2]];
       // headwords with no recorded ancestry ("dust") sit quietly in the outer band
       const r = Math.hypot(G.xy[i * 2], G.xy[i * 2 + 1]);
       const dim = r >= dustStart - 1 ? 0.45 : 1;
@@ -180,13 +229,16 @@
     for (let i = 0; i < N; i++) {
       const p = G.parent[i]; if (p < 0) continue;
       lp[j * 4] = G.xy[i * 2]; lp[j * 4 + 1] = G.xy[i * 2 + 1]; lp[j * 4 + 2] = G.xy[p * 2]; lp[j * 4 + 3] = G.xy[p * 2 + 1];
-      for (let t = 0; t < 2; t++) { lc[j * 6 + t * 3] = col[i * 3]; lc[j * 6 + t * 3 + 1] = col[i * 3 + 1]; lc[j * 6 + t * 3 + 2] = col[i * 3 + 2]; }
+      const lr = LOOK.lineRGB ? LOOK.lineRGB.split(",").map((v) => v / 255) : [col[i * 3], col[i * 3 + 1], col[i * 3 + 2]];
+      for (let t = 0; t < 2; t++) { lc[j * 6 + t * 3] = lr[0]; lc[j * 6 + t * 3 + 1] = lr[1]; lc[j * 6 + t * 3 + 2] = lr[2]; }
       j++;
     }
     B.lpos = buf(lp); B.lcol = buf(lc); B.lcount = m * 2;
     dirty = true;
   }
 
+  function dotRGB(i) { return LOOK.dotColor ? LOOK.dotColor(i) : G.pal[G.meta[i * 2]]; }
+  function segRGB(i) { return LOOK.lineRGB ? LOOK.lineRGB.split(",").map((v) => v / 255) : G.pal[G.meta[i * 2]]; }
   // dynamic overlay geometry (focus lineage / lens) rebuilt on change
   function dynLines(segs) { // segs: [[a,b,r,g,b]...] by node index
     const p = new Float32Array(segs.length * 4), c = new Float32Array(segs.length * 6);
@@ -207,7 +259,7 @@
     // edges
     gl.useProgram(P_LN.p);
     gl.uniform2f(P_LN.u.ctr, ctr[0], ctr[1]); gl.uniform1f(P_LN.u.s, cam.s); gl.uniform2f(P_LN.u.res, W, H);
-    const ea = Math.min(0.42, Math.max(0.05, 0.03 + cam.s * 0.05)) * dim;
+    const ea = Math.min(LOOK.lineA != null ? LOOK.lineA : 0.42, Math.max(0.05, 0.03 + cam.s * 0.05)) * dim;
     gl.uniform1f(P_LN.u.a, ea);
     gl.bindBuffer(gl.ARRAY_BUFFER, B.lpos); gl.enableVertexAttribArray(P_LN.a.p); gl.vertexAttribPointer(P_LN.a.p, 2, gl.FLOAT, false, 0, 0);
     gl.bindBuffer(gl.ARRAY_BUFFER, B.lcol); gl.enableVertexAttribArray(P_LN.a.c); gl.vertexAttribPointer(P_LN.a.c, 3, gl.FLOAT, false, 0, 0);
@@ -216,6 +268,7 @@
     gl.useProgram(P_PT.p);
     gl.uniform2f(P_PT.u.ctr, ctr[0], ctr[1]); gl.uniform1f(P_PT.u.s, cam.s); gl.uniform2f(P_PT.u.res, W, H);
     gl.uniform1f(P_PT.u.k, Math.max(0.9, Math.min(7, cam.s * 0.3))); gl.uniform1f(P_PT.u.dpr, DPR);
+    gl.uniform1f(P_PT.u.shape, LOOK.shape || 0); const oc = (LOOK.outline || "0,0,0").split(",").map((v) => v / 255); gl.uniform3f(P_PT.u.oc, oc[0], oc[1], oc[2]);
     // at reading distance unlabeled dots recede; the label pass redraws named dots at full strength
     gl.uniform1f(P_PT.u.a, (focus ? 0.6 : 1) * (cam.s >= READ_ZOOM ? 0.32 : 1));
     gl.bindBuffer(gl.ARRAY_BUFFER, B.pos); gl.enableVertexAttribArray(P_PT.a.p); gl.vertexAttribPointer(P_PT.a.p, 2, gl.FLOAT, false, 0, 0);
@@ -250,25 +303,143 @@
       gl.bindBuffer(gl.ARRAY_BUFFER, focus.geo.ps); gl.vertexAttribPointer(P_PT.a.sz, 1, gl.FLOAT, false, 0, 0);
       gl.drawArrays(gl.POINTS, 0, focus.geo.np);
     }
+    drawUnder(ctr);
     drawLabels(ctr);
   }
 
   // ---- labels (no overlaps: a screen-space occupancy grid) -----------------------
   const FONT = '"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif';
   function eraLabel(y) { return y <= 0 ? (y === 0 ? "AD 1" : -y + " BC") : y >= 2000 ? "today" : String(y); }
+  const ROMAN = (n) => { const t = [[1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"], [90, "XC"], [50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]]; let s = ""; for (const [v, r] of t) while (n >= v) { s += r; n -= v; } return s; };
+  function yearText(y) {
+    if (LOOK.years === "roman") return y >= 2000 ? "Hodie" : y <= 0 ? (y === 0 ? "Anno Domini" : ROMAN(-y) + " ante Christum") : "Anno " + ROMAN(y) + ".";
+    if (LOOK.caps) return eraLabel(y).toUpperCase();
+    return eraLabel(y);
+  }
+  const vForU = (t) => t.toUpperCase().replace(/U/g, "V");
   const T = (y) => -Math.log(2400 - Math.min(y, 2000));
+  // text that follows a circle (map lettering along a ring), ending at angle a1
+  function arcText(text, cx, cy, r, a1, font, fill) {
+    ctx.save(); ctx.font = font; ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+    let a = a1; const chars = [...text].reverse();
+    for (const ch of chars) {
+      const w = ctx.measureText(ch).width; a -= w / 2 / r;
+      ctx.save(); ctx.translate(cx + r * Math.cos(a), cy + r * Math.sin(a)); ctx.rotate(a + Math.PI / 2);
+      ctx.lineWidth = 3; ctx.strokeStyle = LOOK.halo; ctx.strokeText(ch, 0, 0); ctx.fillStyle = fill; ctx.fillText(ch, 0, 0);
+      ctx.restore(); a -= w / 2 / r;
+    }
+    ctx.restore();
+  }
+  // a dot in the look's shape (canvas twin of the GL point shader)
+  function drawDot(x, y, r, rgb, alpha) {
+    const sh = LOOK.shape || 0;
+    ctx.fillStyle = `rgba(${rgb},${alpha})`;
+    if (sh === 3) { ctx.fillRect(x - r, y - r, 2 * r, 2 * r); return; }
+    if (sh === 2) {
+      ctx.beginPath(); const R = r * 1.5, q = r * 0.32;
+      ctx.moveTo(x, y - R); ctx.lineTo(x + q, y - q); ctx.lineTo(x + R, y); ctx.lineTo(x + q, y + q); ctx.lineTo(x, y + R); ctx.lineTo(x - q, y + q); ctx.lineTo(x - R, y); ctx.lineTo(x - q, y - q); ctx.closePath(); ctx.fill(); return;
+    }
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+    if (sh === 1) { ctx.strokeStyle = `rgba(${LOOK.outline},${alpha})`; ctx.lineWidth = 0.8; ctx.stroke(); }
+  }
+  // revision cloud (red pencil)
+  function cloud(x, y, r, color) {
+    const n = Math.max(8, Math.round(r / 2.6)); ctx.beginPath();
+    for (let i = 0; i < n; i++) { const a0 = (i / n) * 2 * Math.PI, a1 = ((i + 1) / n) * 2 * Math.PI, am = (a0 + a1) / 2;
+      ctx.arc(x + r * Math.cos(am), y + r * Math.sin(am), r * Math.PI / n, am - Math.PI / 2 - 0.5, am + Math.PI / 2 + 0.5); }
+    ctx.strokeStyle = color; ctx.lineWidth = 1.3; ctx.stroke();
+  }
+  function youMark(x, y, size, kind) {
+    const you = LOOK.you;
+    ctx.save(); ctx.setLineDash([]);
+    if (kind === "cloud") cloud(x, y, size + 4, `rgba(${you},0.95)`);
+    else if (kind === "square") { ctx.strokeStyle = `rgba(${you},1)`; ctx.lineWidth = 1; ctx.strokeRect(x - size, y - size, size * 2, size * 2); }
+    else if (kind === "double") { ctx.strokeStyle = `rgba(${LOOK.ink},0.95)`; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(x, y, size, 0, 7); ctx.stroke(); ctx.lineWidth = 0.6; ctx.beginPath(); ctx.arc(x, y, size + 3, 0, 7); ctx.stroke(); }
+    else { ctx.strokeStyle = `rgba(${you},0.95)`; ctx.lineWidth = 1.8; ctx.beginPath(); ctx.arc(x, y, size, 0, 7); ctx.stroke(); }
+    ctx.restore();
+  }
+  // under the GL layer: the look's ground (Ortelius's stippled sea and coloured lands, Priestley's washes)
+  function drawUnder(ctr) {
+    if (!und) return;
+    const uc = und.getContext("2d");
+    uc.setTransform(DPR, 0, 0, DPR, 0, 0); uc.clearRect(0, 0, W, H);
+    if (!LOOK.stipple && !LOOK.wash) return;
+    const sx = (x) => (x - ctr[0]) * cam.s + W / 2, sy = (y) => (y - ctr[1]) * cam.s + H / 2;
+    if (LOOK.stipple) {
+      if (!drawUnder.pat) { const pc = document.createElement("canvas"); pc.width = pc.height = 14; const p = pc.getContext("2d"); p.fillStyle = `rgba(${LOOK.ink},0.42)`; p.beginPath(); p.arc(3, 3, 1, 0, 7); p.fill(); p.beginPath(); p.arc(10, 9.5, 0.9, 0, 7); p.fill(); drawUnder.pat = uc.createPattern(pc, "repeat"); }
+      uc.fillStyle = drawUnder.pat; uc.fillRect(0, 0, W, H);
+    }
+    let n = 0;
+    for (const t of G.trees) {
+      const R = t.R * cam.s; if (R < 14) continue;
+      const cx = sx(t.x), cy = sy(t.y);
+      if (cx + R < 0 || cx - R > W || cy + R < 0 || cy - R > H) continue;
+      if (++n > 400) break;
+      const c = G.pal[G.meta[t.root * 2]], rgb = rgbOf(c);
+      if (LOOK.stipple) { // a land: paper over the sea, a hand-coloured band inside a dotted shore
+        uc.fillStyle = LOOK.paper || "#ecdfbf";
+        uc.beginPath(); uc.arc(cx, cy, R, 0, 7); uc.fill();
+        uc.strokeStyle = `rgba(${rgb},0.5)`; uc.lineWidth = Math.min(9, R * 0.08); uc.beginPath(); uc.arc(cx, cy, R - uc.lineWidth / 2, 0, 7); uc.stroke();
+        uc.setLineDash([1, 2.5]); uc.strokeStyle = `rgba(${LOOK.ink},0.7)`; uc.lineWidth = 0.9; uc.beginPath(); uc.arc(cx, cy, R, 0, 7); uc.stroke(); uc.setLineDash([]);
+      } else { // a watercolour wash laid over the family's territory
+        const g = uc.createRadialGradient(cx, cy, R * 0.2, cx, cy, R * 1.04);
+        g.addColorStop(0, `rgba(${rgb},0.24)`); g.addColorStop(0.85, `rgba(${rgb},0.18)`); g.addColorStop(1, `rgba(${rgb},0)`);
+        uc.fillStyle = g; uc.beginPath(); uc.arc(cx, cy, R * 1.04, 0, 7); uc.fill();
+      }
+    }
+  }
+  // the planisphere's overlay: leather everywhere but an oval window, gilt-tooled, with the
+  // neighbouring families named round the rim where they lie
+  let plate = null, plateA = 0, plateWant = 0;
+  function drawPlate(sx, sy) {
+    if (!LOOK.plate || !plate) return;
+    plateA += (plateWant - plateA) * 0.22; if (Math.abs(plateWant - plateA) > 0.01) dirty = true; else plateA = plateWant;
+    if (plateA < 0.02) return;
+    const { x, y, rx, ry } = plate;
+    ctx.save(); ctx.globalAlpha = plateA;
+    ctx.beginPath(); ctx.rect(0, 0, W, H); ctx.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2);
+    ctx.fillStyle = "#1c2541"; ctx.fill("evenodd");
+    const gilt = "rgba(209,173,91,1)";
+    ctx.strokeStyle = "#0e1426"; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(x, y, rx + 1, ry + 1, 0, 0, 7); ctx.stroke();
+    ctx.strokeStyle = gilt; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.ellipse(x, y, rx + 6, ry + 6, 0, 0, 7); ctx.stroke();
+    ctx.lineWidth = 0.5; ctx.beginPath(); ctx.ellipse(x, y, rx + 10, ry + 10, 0, 0, 7); ctx.stroke();
+    ctx.lineWidth = 1.2; ctx.strokeRect(9, 9, W - 18, H - 18); ctx.lineWidth = 0.5; ctx.strokeRect(13, 13, W - 26, H - 26);
+    // what lies beyond the window: the nearest other families, named in gilt on their side
+    if (focus) {
+      const t = G.treeOf.get(focus.root);
+      if (t) {
+        const near = [];
+        for (const u of G.trees) { if (u === t) continue; const d = Math.hypot(u.x - t.x, u.y - t.y); near.push([d, u]); }
+        near.sort((a, b) => a[0] - b[0]);
+        const used = [];
+        ctx.font = "11px 'Playfair Display SC', 'Playfair Display', Georgia, serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+        for (const [, u] of near) {
+          if (used.length >= 3) break;
+          const a = Math.atan2(u.y - t.y, u.x - t.x);
+          if (used.some((b) => Math.abs(Math.atan2(Math.sin(a - b), Math.cos(a - b))) < 0.9)) continue;
+          used.push(a);
+          const nx = x + (rx + 24) * Math.cos(a), ny = y + (ry + 24) * Math.sin(a);
+          if (nx < 30 || nx > W - 30 || ny < 30 || ny > H - 30) continue;
+          ctx.fillStyle = gilt; ctx.beginPath(); ctx.arc(x + (rx + 12) * Math.cos(a), y + (ry + 12) * Math.sin(a), 2, 0, 7); ctx.fill();
+          ctx.fillText(G.labels[u.root], nx, ny);
+        }
+      }
+    }
+    ctx.restore();
+  }
   function drawLabels(ctr) {
-    const dark = isDark();
+    const dark = isDark(), L = LOOK;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     ctx.clearRect(0, 0, W, H);
     const sx = (x) => (x - ctr[0]) * cam.s + W / 2, sy = (y) => (y - ctr[1]) * cam.s + H / 2;
-    const ink = dark ? "236,224,204" : "44,36,24";
+    const ink = L.ink;
+    const fam = L.font || FONT, wgt = L.weight || 500;
     const occ = new Map(); const CELL = 16;
     const free = (x0, y0, x1, y1) => {
       for (let gx = Math.floor(x0 / CELL); gx <= Math.floor(x1 / CELL); gx++)
         for (let gy = Math.floor(y0 / CELL); gy <= Math.floor(y1 / CELL); gy++) {
-          const L = occ.get(gx * 4096 + gy); if (!L) continue;
-          for (const r of L) if (r[0] < x1 && r[2] > x0 && r[1] < y1 && r[3] > y0) return false;
+          const Lc = occ.get(gx * 4096 + gy); if (!Lc) continue;
+          for (const r of Lc) if (r[0] < x1 && r[2] > x0 && r[1] < y1 && r[3] > y0) return false;
         }
       return true;
     };
@@ -276,61 +447,57 @@
       const r = [x0, y0, x1, y1];
       for (let gx = Math.floor(x0 / CELL); gx <= Math.floor(x1 / CELL); gx++)
         for (let gy = Math.floor(y0 / CELL); gy <= Math.floor(y1 / CELL); gy++) {
-          const k = gx * 4096 + gy; let L = occ.get(k); if (!L) occ.set(k, (L = [])); L.push(r);
+          const k = gx * 4096 + gy; let Lc = occ.get(k); if (!Lc) occ.set(k, (Lc = [])); Lc.push(r);
         }
     };
+    // with the plate down, only what shows through the window is lettered
+    const inWindow = (x, y) => !(L.plate && plate && plateA > 0.5) || ((x - plate.x) / plate.rx) ** 2 + ((y - plate.y) / plate.ry) ** 2 < 0.92;
     // block UI-covered strips so labels never hide under the sheet / bar
     take(-1000, -1000, W + 1000, insets.top); take(-1000, H - insets.bottom, W + 1000, H + 1000);
     if (focus) { const fx = sx(G.xy[focus.idx * 2]), fy = sy(G.xy[focus.idx * 2 + 1]); take(fx - 12, fy - 12, fx + 12, fy + 12); }
-    // your walk this session: faint dashes between the points you've stood on
-    if (trail && trail.length > 1) {
+    // your walk this session: faint dashes between the points you've stood on (Netscape shows it as visited links instead)
+    if (trail && trail.length > 1 && !L.wordColor) {
       ctx.save();
       ctx.setLineDash([3, 5]); ctx.lineWidth = 1.2;
       ctx.strokeStyle = `rgba(${ink},0.32)`;
       ctx.beginPath();
       trail.forEach((i, k) => { const x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]); if (k) ctx.lineTo(x, y); else ctx.moveTo(x, y); });
       ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.fillStyle = `rgba(${ink},0.45)`;
-      trail.forEach((i) => { const x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]); ctx.beginPath(); ctx.arc(x, y, 2.2, 0, Math.PI * 2); ctx.fill(); });
       ctx.restore();
     }
-    // "you are here" in time: the ring through the node you're on, in its colour, named with
-    // its language and era. During a trace it rides outward with the tracer.
-    let hereR = -1;
-    if (focus && OPT.hereRing) {
-      const t = G.treeOf ? G.treeOf.get(focus.root) : null;
-      if (t) {
-        const i = focus.idx, cx = sx(t.x), cy = sy(t.y), x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
-        const r = Math.hypot(x - cx, y - cy);
-        if (r > 10) {
-          hereR = r;
-          const c = G.pal[G.meta[i * 2]], rgb = Math.round(c[0] * 255) + "," + Math.round(c[1] * 255) + "," + Math.round(c[2] * 255);
-          ctx.strokeStyle = `rgba(${rgb},0.6)`; ctx.lineWidth = 1.5;
-          ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
-          const lang = G.info.langs[G.lang[i]], yr = G.info.eras[G.lang[i]];
-          const L = lang + " · " + (yr >= 1990 ? "today" : "c. " + eraLabel(yr));
-          ctx.font = "600 11px " + FONT; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
-          const tw = ctx.measureText(L).width;
-          // on the ring, on the side away from the node, so it never fights the node's own label
-          // somewhere on the ring, on screen, as far round from the node as fits
-          const a0 = Math.atan2(y - cy, x - cx), spots = [];
-          for (let k = 0; k <= 12; k++) for (const sg of k ? [1, -1] : [1]) {
-            const ang = a0 + Math.PI + sg * k * Math.PI / 12, px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
-            spots.push([px - tw / 2, py + (Math.sin(ang) > 0 ? 13 : -3)]);
-          }
-          for (const [tx, ty] of spots) {
-            if (tx < 6 || tx + tw > W - 6 || !free(tx - 3, ty - 12, tx + tw + 3, ty + 1)) continue;
-            take(tx - 3, ty - 12, tx + tw + 3, ty + 1);
-            ctx.lineWidth = 3; ctx.strokeStyle = dark ? "rgba(17,15,12,0.85)" : "rgba(241,231,207,0.9)"; ctx.lineJoin = "round";
-            ctx.strokeText(L, tx, ty); ctx.fillStyle = `rgba(${rgb},0.95)`; ctx.fillText(L, tx, ty); break;
-          }
+    // the family you're in: its centre, and the ring through the node you're on
+    let hereR = -1, homeT = null;
+    if (focus) homeT = G.treeOf.get(focus.root) || null;
+    if (focus && OPT.hereRing && homeT) {
+      const t = homeT, i = focus.idx, cx = sx(t.x), cy = sy(t.y), x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
+      const r = Math.hypot(x - cx, y - cy);
+      if (r > 10) {
+        hereR = r;
+        ctx.save();
+        ctx.strokeStyle = `rgba(${L.here},0.75)`; ctx.lineWidth = 1.4; ctx.setLineDash(L.hereDash || []);
+        ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]);
+        const lang = G.info.langs[G.lang[i]], yr = G.info.eras[G.lang[i]];
+        let txt = lang + " · " + (yr >= 1990 ? "today" : "c. " + eraLabel(yr));
+        if (L.caps || L.regionCaps) txt = txt.toUpperCase();
+        ctx.font = `600 ${L.regionCaps ? 10 : 11}px ${fam}`; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+        const tw = ctx.measureText(txt).width;
+        const a0 = Math.atan2(y - cy, x - cx), spots = [];
+        for (let k = 0; k <= 12; k++) for (const sg of k ? [1, -1] : [1]) {
+          const ang = a0 + Math.PI + sg * k * Math.PI / 12, px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
+          spots.push([px - tw / 2, py + (Math.sin(ang) > 0 ? 13 : -3)]);
         }
+        for (const [tx, ty] of spots) {
+          if (tx < 6 || tx + tw > W - 6 || !inWindow(tx + tw / 2, ty) || !free(tx - 3, ty - 12, tx + tw + 3, ty + 1)) continue;
+          take(tx - 3, ty - 12, tx + tw + 3, ty + 1);
+          ctx.lineWidth = 3; ctx.strokeStyle = L.halo; ctx.lineJoin = "round";
+          ctx.strokeText(txt, tx, ty); ctx.fillStyle = `rgba(${L.here},1)`; ctx.fillText(txt, tx, ty); break;
+        }
+        ctx.restore();
       }
     }
     // era rings of families big enough on screen (the axis of successions)
     if (cam.s > 1.2) {
-      ctx.lineWidth = 1; ctx.font = "10px " + FONT; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+      ctx.lineWidth = 1; ctx.textAlign = "left"; ctx.textBaseline = "bottom";
       const ERAS = [-2000, -1000, 0, 1000, 1500, 2000];
       // one rule: the family you're in (or, with nothing focused, the one nearest the
       // middle of the screen) always carries its years; every other family's rings stay bare
@@ -346,20 +513,58 @@
         let best = Infinity; const mx = W / 2, my = insets.top + (H - insets.top - insets.bottom) / 2;
         for (const [t, R, cx, cy] of vis) { const d = Math.hypot(cx - mx, cy - my) / R; if (d < best) { best = d; home = t.root; } }
       }
+      const ringRGB = L.ringRGB || ink;
       for (const [t, R, cx, cy] of vis) {
         const ry = G.info.eras[G.lang[t.root]];
         const strong = t.root === home;
+        const rings = [];
         for (const y of ERAS) {
           if (y <= ry + 50) continue;
           const r = t.scale * (T(y) - T(ry)) * cam.s; if (r < 18) continue;
-          ctx.strokeStyle = `rgba(${ink},${strong ? 0.16 : 0.07})`;
+          rings.push([y, r]);
+          ctx.save();
+          ctx.strokeStyle = `rgba(${ringRGB},${(L.ringA || 0.16) * (strong ? 1 : 0.45)})`; ctx.lineWidth = L.ringDouble ? 0.5 : 0.9;
+          ctx.setLineDash(L.ringDash || []);
           ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
-          if (strong && !(hereR > 0 && Math.abs(r - hereR) < 16)) { // above the centre, else below, else beside: the year is never silently dropped
-            const L = eraLabel(y), tw = ctx.measureText(L).width;
-            const spots = [[cx + 3, cy - r - 1], [cx + 3, cy + r + 12], [cx + r + 3, cy - 2], [cx - r - tw - 3, cy - 2]];
+          if (L.ringDouble) { ctx.beginPath(); ctx.arc(cx, cy, r + 2.5, 0, Math.PI * 2); ctx.stroke(); }
+          ctx.restore();
+        }
+        if (!strong) continue;
+        const near = (r) => hereR > 0 && Math.abs(r - hereR) < 16;
+        if (L.years === "roman") { // lettered along the ring, like the plate's tropics
+          for (const [y, r] of rings) if (!near(r) && y < 2000) arcText(yearText(y), cx, cy, r + 5, -Math.PI / 2 - 0.12, `italic 11px ${fam}`, `rgba(${ink},0.85)`);
+        } else if (L.years === "dim") { // an ordinate dimension measured out from the root
+          const a = Math.PI * 0.99, ux = Math.cos(a), uy = Math.sin(a), nx = -uy, ny = ux, far = rings.length ? rings[rings.length - 1][1] : 0;
+          ctx.save(); ctx.strokeStyle = `rgba(${ink},0.8)`; ctx.fillStyle = `rgba(${ink},0.9)`; ctx.lineWidth = 0.7;
+          ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + far * ux, cy + far * uy); ctx.stroke();
+          ctx.font = `9px 'Overpass Mono', monospace`; ctx.textAlign = "right"; ctx.textBaseline = "middle";
+          for (const [y, r] of rings) {
+            const x = cx + r * ux, yy = cy + r * uy;
+            ctx.beginPath(); ctx.moveTo(x, yy); ctx.lineTo(x - 7 * ux + 2.5 * nx, yy - 7 * uy + 2.5 * ny); ctx.lineTo(x - 7 * ux - 2.5 * nx, yy - 7 * uy - 2.5 * ny); ctx.closePath(); ctx.fill();
+            const tx = x + 7 * nx, ty = yy - 9;
+            if (free(tx - 34, ty - 6, tx + 2, ty + 6)) { take(tx - 34, ty - 6, tx + 2, ty + 6); ctx.fillText(yearText(y), tx, ty); }
+          }
+          ctx.restore();
+        } else if (L.years === "scale" && focus) { // a graduated rule along the line of descent, every century
+          const i = focus.idx, nx0 = sx(G.xy[i * 2]), ny0 = sy(G.xy[i * 2 + 1]);
+          const a = Math.atan2(ny0 - cy, nx0 - cx), ux = Math.cos(a), uy = Math.sin(a), px = -uy, py = ux;
+          ctx.save(); ctx.strokeStyle = `rgba(${ink},0.9)`; ctx.fillStyle = `rgba(${ink},1)`; ctx.font = `10px ${fam}`; ctx.textAlign = "right"; ctx.textBaseline = "middle";
+          for (let y = Math.ceil((ry + 50) / 100) * 100; y <= 2000; y += 100) {
+            const r = t.scale * (T(y) - T(ry)) * cam.s; if (r < 8) continue;
+            const big = y % 500 === 0, x = cx + r * ux, yy = cy + r * uy, len = big ? 7 : 4;
+            ctx.lineWidth = big ? 0.9 : 0.5; ctx.beginPath(); ctx.moveTo(x, yy); ctx.lineTo(x + len * px, yy + len * py); ctx.stroke();
+            if (big && y < 2000) { const tx = x + 10 * px, ty = yy + 10 * py; if (free(tx - 30, ty - 6, tx + 2, ty + 6)) { take(tx - 30, ty - 6, tx + 2, ty + 6); ctx.lineWidth = 3; ctx.strokeStyle = L.halo; ctx.strokeText(yearText(y), tx, ty); ctx.fillText(yearText(y), tx, ty); ctx.strokeStyle = `rgba(${ink},0.9)`; } }
+          }
+          ctx.restore();
+        } else if (L.years !== "scale") {
+          ctx.font = `10px ${L.yearFont || fam}`;
+          for (const [y, r] of rings) {
+            if (near(r)) continue;
+            const Lb = yearText(y), tw = ctx.measureText(Lb).width;
+            const spots = [[cx - tw - 6, cy - r - 2], [cx - tw - 6, cy + r + 12], [cx + r + 3, cy - 2], [cx - r - tw - 3, cy - 2]];
             for (const [tx, ty] of spots) {
-              if (!free(tx, ty - 11, tx + tw, ty)) continue;
-              take(tx, ty - 11, tx + tw, ty); ctx.fillStyle = `rgba(${ink},0.5)`; ctx.fillText(L, tx, ty); break;
+              if (!inWindow(tx, ty) || !free(tx, ty - 11, tx + tw, ty)) continue;
+              take(tx, ty - 11, tx + tw, ty); ctx.lineWidth = 3; ctx.strokeStyle = L.halo; ctx.strokeText(Lb, tx, ty); ctx.fillStyle = `rgba(${ink},0.7)`; ctx.fillText(Lb, tx, ty); break;
             }
           }
         }
@@ -370,13 +575,18 @@
       ctx.textAlign = "center"; ctx.textBaseline = "middle";
       for (const R of G.info.regions) {
         const fs = Math.max(11, Math.min(18, R.r * cam.s * 0.12));
-        ctx.font = "600 " + fs + "px " + FONT;
-        const x = sx(R.x), y = sy(R.y - R.r) - 4, w = ctx.measureText(R.name).width;
+        let name = R.name;
+        if (L.headCaps) name = vForU(name); else if (L.caps || L.regionCaps) name = name.toUpperCase();
+        ctx.font = (L.regionCaps ? "" : "600 ") + fs + "px " + fam;
+        if (ctx.letterSpacing !== undefined) ctx.letterSpacing = L.regionCaps ? fs * 0.3 + "px" : "0px";
+        const x = sx(R.x), y = sy(R.y - R.r) - 4, w = ctx.measureText(name).width;
         if (!free(x - w / 2, y - fs / 2, x + w / 2, y + fs / 2)) continue;
         take(x - w / 2 - 4, y - fs / 2, x + w / 2 + 4, y + fs / 2);
-        ctx.fillStyle = `rgba(${ink},${0.75 - Math.max(0, cam.s - 0.5)})`;
-        ctx.fillText(R.name, x, y);
+        ctx.lineWidth = 3; ctx.strokeStyle = L.halo; ctx.strokeText(name, x, y);
+        ctx.fillStyle = `rgba(${ink},${0.8 - Math.max(0, cam.s - 0.5)})`;
+        ctx.fillText(name, x, y);
       }
+      if (ctx.letterSpacing !== undefined) ctx.letterSpacing = "0px";
     }
     // node labels
     const minS = cam.s < 0.25 ? 190 : cam.s < 0.7 ? 100 : cam.s < 2 ? 40 : 0;
@@ -413,76 +623,99 @@
       if (seen.has(i)) continue; seen.add(i);
       const x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
       if (x < -40 || x > W + 40 || y < -20 || y > H + 20) continue;
+      if (!inWindow(x, y)) continue;
       const isLit = focus && focus.lit.has(i);
       if (focus && !OPT.otherFamilies && !isLit && G.tree && G.tree[i] !== G.tree[focus.idx]) continue;
       const isWord = G.lang[i] === 0;
       const big = isLit && i === focus.idx;
-      const fs = big ? 15 : isLit ? 12.5 : Math.min(13, 10.5 + G.meta[i * 2 + 1] / 70);
-      ctx.font = (big ? "700 " : isWord ? "500 " : "italic 500 ") + fs + "px " + FONT;
-      const txt = G.labels[i];
+      let fs = big ? 15 : isLit ? 12.5 : Math.min(13, 10.5 + G.meta[i * 2 + 1] / 70);
+      let txt = G.labels[i];
+      let spaced = 0;
+      if (big && L.headCaps) { txt = vForU(txt); fs = 22; spaced = 0.4; }
+      else if (L.caps) { txt = txt.toUpperCase(); fs = Math.max(9.5, fs - 1.5); }
+      ctx.font = (big ? "700 " : isWord ? wgt + " " : "italic " + wgt + " ") + fs + "px " + fam;
+      if (ctx.letterSpacing !== undefined) ctx.letterSpacing = spaced ? fs * spaced + "px" : "0px";
       const w = ctx.measureText(txt).width;
       const dot = Math.max(1, Math.min(34, (1 + G.meta[i * 2 + 1] / 40) * (isLit ? Math.max(2.4, Math.min(8, cam.s * 0.34)) : Math.max(0.9, Math.min(7, cam.s * 0.3)))));
       const pr = big ? Math.max(13, Math.min(17, dot) / 2 + 3) : Math.min(17, Math.max(2, dot)) / 2 + 3;
-      // try right, then left, then above
-      const spots = [[x + pr, y - fs / 2 - 1, x + pr + w, y + fs / 2 + 1], [x - pr - w, y - fs / 2 - 1, x - pr, y + fs / 2 + 1], [x - w / 2, y - pr - fs - 1, x + w / 2, y - pr]];
+      // try right, then left, then above (a lettered head goes above, spread over the land)
+      const spots = spaced ? [[x - w / 2, y - pr - fs - 6, x + w / 2, y - pr - 4]] : [[x + pr, y - fs / 2 - 1, x + pr + w, y + fs / 2 + 1], [x - pr - w, y - fs / 2 - 1, x - pr, y + fs / 2 + 1], [x - w / 2, y - pr - fs - 1, x + w / 2, y - pr]];
       let ok = null;
       const dr = Math.max(1.5, dot * 0.43); // a name never sits under another node's dot, and vice versa
       if (cam.s >= READ_ZOOM && !isLit && !free(x - dr, y - dr, x + dr, y + dr)) continue;
-      for (const s of spots) if (free(s[0], s[1], s[2], s[3])) { ok = s; break; }
+      for (const s of spots) if (free(s[0], s[1], s[2], s[3]) || (spaced && s === spots[0])) { ok = s; break; }
       if (!ok) continue;
       take(ok[0] - 2, ok[1], ok[2] + 2, ok[3]);
       take(x - pr, y - pr, x + pr, y + pr);
       labelHits.push([ok[0] - 4, ok[1] - 4, ok[2] + 4, ok[3] + 4, i]);
-      const c = G.pal[G.meta[i * 2]];
-      const a = focus && !isLit ? 0.55 : 1;
-      if (cam.s >= READ_ZOOM) { // a named dot at full strength (the GL layers dim the rest)
-        ctx.fillStyle = `rgba(${Math.round(c[0] * 255)},${Math.round(c[1] * 255)},${Math.round(c[2] * 255)},${isLit ? 1 : a})`;
-        ctx.beginPath(); ctx.arc(x, y, dr, 0, Math.PI * 2); ctx.fill();
-      }
-      texts.push([ctx.font, txt, ok[0], (ok[1] + ok[3]) / 2, isWord ? `rgba(${ink},${a})` : `rgba(${Math.round(c[0] * 255)},${Math.round(c[1] * 255)},${Math.round(c[2] * 255)},${a})`]);
+      const famRGB = rgbOf(G.pal[G.meta[i * 2]]);
+      const a = focus && !isLit ? 0.62 : 1;
+      if (cam.s >= READ_ZOOM) drawDot(x, y, dr, rgbOf(dotRGB(i)), isLit ? 1 : a); // a named dot at full strength
+      let colr;
+      if (isWord) colr = L.wordColor ? L.wordColor(i) : ink;
+      else colr = isLit && L.litAncRGB ? L.litAncRGB : L.ancRGB || (L.ancInk ? ink : famRGB);
+      if (big && !L.wordColor) colr = ink;
+      if (big && L.wordColor) colr = L.you;
+      texts.push([ctx.font, txt, ok[0], (ok[1] + ok[3]) / 2, `rgba(${colr},${a})`, L.underline && isWord, spaced ? fs * spaced : 0]);
       placed++;
       // up close the map reads like the dictionary: a one-line meaning under the label
       if ((!focus || OPT.glossFocused) && cam.s > GLOSS_ZOOM && placed < 60) {
         const g = glossOf(i);
         if (g) {
-          ctx.font = "italic 11px " + FONT;
+          ctx.font = "italic 11px " + fam;
           let gt = g.length > 54 ? g.slice(0, 52) + "…" : g;
           const gw = ctx.measureText(gt).width, gx = ok[0], gy = ok[3] + 2;
           if (free(gx, gy, gx + gw, gy + 13)) {
             take(gx, gy, gx + gw, gy + 13);
-            texts.push([ctx.font, gt, gx, gy + 6.5, `rgba(${ink},${0.62 * a})`]);
+            texts.push([ctx.font, gt, gx, gy + 6.5, `rgba(${ink},${0.62 * a})`, false, 0]);
           }
         }
       }
     }
     // a soft halo keeps text legible over dots and lines
-    ctx.lineWidth = 3; ctx.strokeStyle = dark ? "rgba(17,15,12,0.85)" : "rgba(241,231,207,0.9)"; ctx.lineJoin = "round";
-    for (const [f, t, x, y, col] of texts) { ctx.font = f; ctx.strokeText(t, x, y); ctx.fillStyle = col; ctx.fillText(t, x, y); }
-    if (ping >= 0) { // where a search suggestion lives (no camera move while typing)
-      const x = sx(G.xy[ping * 2]), y = sy(G.xy[ping * 2 + 1]);
-      const t = (performance.now() % 1400) / 1400;
-      const c = G.pal[G.meta[ping * 2]], rgb = Math.round(c[0] * 255) + "," + Math.round(c[1] * 255) + "," + Math.round(c[2] * 255);
+    ctx.lineWidth = 3; ctx.strokeStyle = L.halo; ctx.lineJoin = "round";
+    for (const [f, t, x, y, col, ul, ls] of texts) {
+      ctx.font = f; if (ctx.letterSpacing !== undefined) ctx.letterSpacing = ls ? ls + "px" : "0px";
+      ctx.strokeText(t, x, y); ctx.fillStyle = col; ctx.fillText(t, x, y);
+      if (ul) { const w = ctx.measureText(t).width; ctx.fillRect(x, y + 6, w, 1); }
+    }
+    if (ctx.letterSpacing !== undefined) ctx.letterSpacing = "0px";
+    // search matches: marked where they live (in the look's colour for you); off-screen ones point the way
+    const markList = (marks || []).slice(0, 12);
+    if (ping >= 0 && !markList.includes(ping)) markList.unshift(ping);
+    if (markList.length) {
       const top = insets.top + 10, bot = H - insets.bottom - 10;
-      if (x > 8 && x < W - 8 && y > top && y < bot) {
-        ctx.strokeStyle = `rgba(${rgb},${1 - t})`; ctx.lineWidth = 2;
-        ctx.beginPath(); ctx.arc(x, y, 6 + 22 * t, 0, Math.PI * 2); ctx.stroke();
-      } else {
-        // off-screen: a small arrow on the edge of the visible map, pointing at it
-        const cx = W / 2, cy = (top + bot) / 2, dx = x - cx, dy = y - cy;
-        const k = Math.min((W / 2 - 18) / Math.abs(dx || 1e-6), ((bot - top) / 2 - 18) / Math.abs(dy || 1e-6));
-        const ax = cx + dx * k, ay = cy + dy * k, ang = Math.atan2(dy, dx);
-        ctx.save(); ctx.translate(ax, ay); ctx.rotate(ang);
-        ctx.fillStyle = `rgba(${rgb},0.95)`;
-        ctx.beginPath(); ctx.moveTo(9, 0); ctx.lineTo(-6, -6); ctx.lineTo(-3, 0); ctx.lineTo(-6, 6); ctx.closePath(); ctx.fill();
-        ctx.restore();
+      const on = !L.blink || Math.floor(performance.now() / 500) % 2 === 0;
+      for (const m of markList) {
+        const x = sx(G.xy[m * 2]), y = sy(G.xy[m * 2 + 1]);
+        if (x > 8 && x < W - 8 && y > top && y < bot) {
+          if (L.blink) { if (on) { ctx.fillStyle = `rgba(${L.you},0.85)`; ctx.fillRect(x - 6, y - 6, 12, 12); } }
+          else if (L.focusMark === "cloud") youMark(x, y, 8, "cloud");
+          else { const t = (performance.now() % 1400) / 1400; ctx.strokeStyle = `rgba(${L.you},${m === ping ? 1 - t : 0.9})`; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, m === ping ? 6 + 18 * t : 10, 0, Math.PI * 2); ctx.stroke(); }
+        } else if (m === markList[0]) {
+          const cx = W / 2, cy = (top + bot) / 2, dx = x - cx, dy = y - cy;
+          const k = Math.min((W / 2 - 18) / Math.abs(dx || 1e-6), ((bot - top) / 2 - 18) / Math.abs(dy || 1e-6));
+          const ax = cx + dx * k, ay = cy + dy * k, ang = Math.atan2(dy, dx);
+          ctx.save(); ctx.translate(ax, ay); ctx.rotate(ang);
+          ctx.fillStyle = `rgba(${L.you},0.95)`;
+          ctx.beginPath(); ctx.moveTo(9, 0); ctx.lineTo(-6, -6); ctx.lineTo(-3, 0); ctx.lineTo(-6, 6); ctx.closePath(); ctx.fill();
+          ctx.restore();
+        }
       }
       dirty = true; // keep pulsing
     }
-    if (focus) { // ring around the node you are standing on
+    if (focus) { // the mark of where you are standing
       const i = focus.idx, x = sx(G.xy[i * 2]), y = sy(G.xy[i * 2 + 1]);
-      ctx.strokeStyle = `rgba(${ink},0.9)`; ctx.lineWidth = 1.6;
-      ctx.beginPath(); ctx.arc(x, y, 9, 0, Math.PI * 2); ctx.stroke();
+      youMark(x, y, L.focusMark === "square" ? 8 : 10, L.focusMark || "circle");
+      if (L.focusMark === "cloud") { ctx.save(); ctx.strokeStyle = `rgba(${L.you},1)`; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(x + 16, y - 10); ctx.lineTo(x + 23, y - 22); ctx.lineTo(x + 30, y - 10); ctx.closePath(); ctx.stroke(); ctx.restore(); }
+      // the family's root is the brass rivet the disc turns on
+      if (L.rivet && homeT) {
+        const rx = sx(homeT.x), ry = sy(homeT.y), g = ctx.createRadialGradient(rx - 2, ry - 2, 0.5, rx, ry, 7);
+        g.addColorStop(0, "#f6dc95"); g.addColorStop(0.55, "#c7963e"); g.addColorStop(1, "#7d5a1d");
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(rx, ry, 6.5, 0, 7); ctx.fill(); ctx.strokeStyle = "#5a3f12"; ctx.lineWidth = 0.6; ctx.stroke();
+      }
     }
+    drawPlate(sx, sy);
   }
 
   // glosses come from the per-node detail chunks; fetched on demand, drawn when they land
@@ -570,6 +803,7 @@
       if (pts.size === 2) {
         const [a, b] = [...pts.values()];
         pinch = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), s: cam.s, mid: [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], w: toWorld((a[0] + b[0]) / 2, (a[1] + b[1]) / 2) };
+        if (!moved && onInteract) onInteract(true);
         moved = true;
       }
     });
@@ -586,7 +820,7 @@
         dirty = true;
       } else if (start) {
         const dx = e.clientX - start.x, dy = e.clientY - start.y;
-        if (Math.abs(dx) + Math.abs(dy) > 6) moved = true;
+        if (Math.abs(dx) + Math.abs(dy) > 6) { if (!moved && onInteract) onInteract(true); moved = true; }
         cam.x = start.cx - dx / cam.s; cam.y = start.cy - dy / cam.s;
         dirty = true;
       }
@@ -595,6 +829,7 @@
       const was = pts.has(e.pointerId);
       pts.delete(e.pointerId);
       if (pts.size < 2) pinch = null;
+      if (pts.size === 0 && moved && onInteract) onInteract(false);
       if (pts.size === 1) { const [p] = [...pts.values()]; start = { x: p[0], y: p[1], cx: cam.x, cy: cam.y, t: performance.now() }; return; }
       if (was && start && !moved && performance.now() - start.t < 450 && e.type === "pointerup") {
         const r = lab.getBoundingClientRect();
@@ -604,8 +839,10 @@
       start = null;
     };
     lab.addEventListener("pointerup", up); lab.addEventListener("pointercancel", up);
+    let wheelT = 0;
     lab.addEventListener("wheel", (e) => {
       e.preventDefault();
+      if (onInteract) { if (!wheelT) onInteract(true); clearTimeout(wheelT); wheelT = setTimeout(() => { wheelT = 0; onInteract(false); }, 450); }
       const r = lab.getBoundingClientRect();
       const px = e.clientX - r.left, py = e.clientY - r.top;
       const before = toWorld(px, py);
@@ -624,7 +861,7 @@
   function resize() {
     const r = glc.parentElement.getBoundingClientRect();
     W = r.width; H = r.height;
-    for (const c of [glc, lab]) { c.width = Math.round(W * DPR); c.height = Math.round(H * DPR); c.style.width = W + "px"; c.style.height = H + "px"; }
+    for (const c of [und, glc, lab].filter(Boolean)) { c.width = Math.round(W * DPR); c.height = Math.round(H * DPR); c.style.width = W + "px"; c.style.height = H + "px"; }
     dirty = true;
   }
 
@@ -636,28 +873,28 @@
   function buildFocus(idx, extra) {
     const lit = new Set([idx]); const order = [idx];
     const segs = [];
-    const ink = isDark() ? [0.96, 0.92, 0.84] : [0.2, 0.16, 0.1];
+    const ink = LOOK.litRGB ? LOOK.litRGB.split(",").map((v) => v / 255) : isDark() ? [0.96, 0.92, 0.84] : [0.2, 0.16, 0.1];
     const add = (i) => { if (!lit.has(i)) { lit.add(i); order.push(i); } };
     // ancestors (every route), nearest first
     const q = [idx]; const seenA = new Set([idx]);
     while (q.length && seenA.size < 200) {
       const x = q.shift();
       for (const p of upAll(x)) {
-        segs.push([x, p, ...(G.parent[x] === p ? ink : G.pal[G.meta[p * 2]])]);
+        segs.push([x, p, ...(G.parent[x] === p ? ink : segRGB(p))]);
         if (!seenA.has(p)) { seenA.add(p); add(p); q.push(p); }
       }
     }
     // what grew out of it (one generation; more for ancestors)
     const kids = downAll(idx);
     const isWord = G.lang[idx] === 0;
-    for (const k of kids.slice(0, isWord ? 60 : 120)) { segs.push([k, idx, ...G.pal[G.meta[k * 2]]]); add(k); }
-    if (!isWord) for (const k of kids.slice(0, 40)) for (const g of downAll(k).slice(0, 20)) { segs.push([g, k, ...G.pal[G.meta[g * 2]]]); add(g); }
+    for (const k of kids.slice(0, isWord ? 60 : 120)) { segs.push([k, idx, ...segRGB(k)]); add(k); }
+    if (!isWord) for (const k of kids.slice(0, 40)) for (const g of downAll(k).slice(0, 20)) { segs.push([g, k, ...segRGB(g)]); add(g); }
     if (extra) for (const e of extra) { segs.push([e[0], e[1], ...e[2]]); add(e[0]); add(e[1]); }
     let root = idx; while (G.parent[root] >= 0) root = G.parent[root];
     const L = dynLines(segs);
     const pts = order.map((i) => i);
     const pp = new Float32Array(pts.length * 2), pc = new Float32Array(pts.length * 3), ps = new Float32Array(pts.length);
-    pts.forEach((i, k) => { pp[k * 2] = G.xy[i * 2]; pp[k * 2 + 1] = G.xy[i * 2 + 1]; const c = G.pal[G.meta[i * 2]]; pc[k * 3] = c[0]; pc[k * 3 + 1] = c[1]; pc[k * 3 + 2] = c[2]; ps[k] = G.meta[i * 2 + 1] + (i === idx ? 60 : 0); });
+    pts.forEach((i, k) => { pp[k * 2] = G.xy[i * 2]; pp[k * 2 + 1] = G.xy[i * 2 + 1]; const c = dotRGB(i); pc[k * 3] = c[0]; pc[k * 3 + 1] = c[1]; pc[k * 3 + 2] = c[2]; ps[k] = G.meta[i * 2 + 1] + (i === idx ? 60 : 0); });
     const geo = { bp: buf(L.p), bc: buf(L.c), n: L.n, pp: buf(pp), pc: buf(pc), ps: buf(ps), np: pts.length };
     return { idx, lit, order, geo, root };
   }
@@ -667,13 +904,13 @@
   // ancestor down to the word, then settle on the word. Any touch skips ahead.
   let traceToken = 0;
   function pathFocus(list) {
-    const ink = isDark() ? [0.96, 0.92, 0.84] : [0.2, 0.16, 0.1];
+    const ink = LOOK.litRGB ? LOOK.litRGB.split(",").map((v) => v / 255) : isDark() ? [0.96, 0.92, 0.84] : [0.2, 0.16, 0.1];
     const segs = [];
     for (let k = 1; k < list.length; k++) segs.push([list[k], list[k - 1], ...ink]);
     const head = list[list.length - 1];
     const L = dynLines(segs);
     const pp = new Float32Array(list.length * 2), pc = new Float32Array(list.length * 3), ps = new Float32Array(list.length);
-    list.forEach((i, k) => { pp[k * 2] = G.xy[i * 2]; pp[k * 2 + 1] = G.xy[i * 2 + 1]; const c = G.pal[G.meta[i * 2]]; pc[k * 3] = c[0]; pc[k * 3 + 1] = c[1]; pc[k * 3 + 2] = c[2]; ps[k] = G.meta[i * 2 + 1] + (i === head ? 60 : 20); });
+    list.forEach((i, k) => { pp[k * 2] = G.xy[i * 2]; pp[k * 2 + 1] = G.xy[i * 2 + 1]; const c = dotRGB(i); pc[k * 3] = c[0]; pc[k * 3 + 1] = c[1]; pc[k * 3 + 2] = c[2]; ps[k] = G.meta[i * 2 + 1] + (i === head ? 60 : 20); });
     const order = list.slice().reverse();
     return { idx: head, lit: new Set(list), order, root: list[0], geo: { bp: buf(L.p), bc: buf(L.c), n: L.n, pp: buf(pp), pc: buf(pc), ps: buf(ps), np: list.length }, tracing: true };
   }
@@ -711,6 +948,8 @@
   RM.init = function (el, opts) {
     onTap = opts && opts.onTap;
     onDraw = opts && opts.onDraw;
+    onInteract = opts && opts.onInteract;
+    und = document.createElement("canvas"); und.className = "map-under"; el.appendChild(und);
     glc = document.createElement("canvas"); glc.className = "map-gl";
     lab = document.createElement("canvas"); lab.className = "map-labels";
     el.appendChild(glc); el.appendChild(lab);
@@ -739,6 +978,16 @@
     if (!(o && o.fromTrace)) { traceToken++; traceTarget = -1; } // a plain focus supersedes a running trace
     focus = buildFocus(idx, null);
     focus.extra = null;
+    if ((!o || o.fly !== false) && LOOK.plate && plate) {
+      const t = G.treeOf.get(focus.root);
+      if (t) {
+        const d = Math.hypot(G.xy[idx * 2] - t.x, G.xy[idx * 2 + 1] - t.y);
+        const s = Math.max(0.3, Math.min(40, (Math.min(plate.rx, plate.ry) * 0.8) / Math.max(d, t.R * 0.35)));
+        const x = t.x - (plate.x - W / 2) / s, y = t.y - (plate.y - H / 2) / s - (insets.bottom - insets.top) / 2 / s;
+        dirty = true;
+        return flyTo(x, y, s, o && o.dur);
+      }
+    }
     if (!o || o.fly !== false) {
       // frame the node with its lineage: zoom so the nearest ancestors fit
       const anc = RM.lineage(idx).slice(0, 4);
@@ -805,8 +1054,20 @@
     return { idx: i, label: G.labels[i], lang: G.info.langs[G.lang[i]], family: G.info.families[G.meta[i * 2]], fam: G.meta[i * 2],
       year: G.info.eras[G.lang[i]], parent: G.parent[i], isWord: G.lang[i] === 0, size: G.meta[i * 2 + 1] };
   };
-  RM.colorOf = function (fam) { const c = (isDark() ? DARK : LIGHT)[fam]; return c; };
-  RM.setTrail = function (list) { trail = list && list.slice(); dirty = true; };
+  RM.colorOf = function (fam) { return (LOOK.pal || (isDark() ? DARK : LIGHT))[fam]; };
+  RM.setTrail = function (list) { trail = list && list.slice(); visited.clear(); (trail || []).forEach((i) => visited.add(i)); dirty = true; };
+  RM.setMarks = function (list) { marks = list && list.length ? list.slice() : null; dirty = true; };
+  // the planisphere's window (screen px): {x, y, rx, ry}; show(false) lifts the plate while you explore
+  RM.setPlate = function (p) { if (p) plate = p; plateWant = p ? 1 : 0; dirty = true; };
+  RM._plate = function () { return { plate, plateA, plateWant, look: LOOK && LOOK.plate }; };
+  RM.showPlate = function (on) { plateWant = on && plate ? 1 : 0; dirty = true; };
+  RM.lookNames = function () { return Object.keys(LOOKS); };
+  RM.setLook = function (name) {
+    LOOK = LOOKS[name] || LOOKS.planisphere; drawUnder.pat = null;
+    if (!LOOK.plate) plateWant = 0;
+    if (G && B.pos) { buildBuffers(); if (focus) focus = buildFocus(focus.idx, focus.extra); }
+    dirty = true;
+  };
   RM.ping = function (i) { ping = i == null ? -1 : i; dirty = true; };
   RM.starts = function () { return G ? G.info.starts || [] : []; };
   RM.families = function () { return G ? G.info.families : []; };
