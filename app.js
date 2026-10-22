@@ -2536,7 +2536,9 @@
     const Wd = window.innerWidth || 390, Hd = window.innerHeight || 800;
     const top = MAP_TOP + 24, bottom = Hd - cardH - 30;
     const ry = Math.max(80, (bottom - top) / 2), rx = Math.max(80, Math.min(Wd / 2 - 34, ry * 1.08));
-    RootMap.setPlate({ x: Wd / 2, y: top + ry, rx: rx, ry: ry });
+    let sat = 0, sab = 0;
+    try { const cs = getComputedStyle(document.documentElement); sat = parseFloat(cs.getPropertyValue("--sat")) || 0; sab = parseFloat(cs.getPropertyValue("--sab")) || 0; } catch (e) {}
+    RootMap.setPlate({ x: Wd / 2, y: top + ry, rx: rx, ry: ry, top: sat, bottom: sab });
   }
   applyLook(lookName, false);
 
@@ -2874,6 +2876,11 @@
     const chain = [i].concat(RootMap.lineage(i));
     if (chain.length < 2) return null;
     const ds = await Promise.all(chain.map(function (c) { return RootMap.details(c); }));
+    const engYear = await Promise.all(chain.map(function (c) {
+      const inf = RootMap.info(c);
+      if (inf.lang !== "English") return null;
+      return Promise.resolve(getWord(inf.label)).then(function (r) { return r && r.e ? extractYear(r.e) : null; }).catch(function () { return null; });
+    }));
     if (token !== runToken) return null;
     const out = [];
     const card = { appendChild: function (x) { out.push(x); } };
@@ -2887,7 +2894,11 @@
         const up = (d.up || []).find(function (u) { return u[0] === chain[k + 1]; });
         body.appendChild(el("span", "lin-kind", KIND_TXT[up ? up[1] : "der"] || "became"));
       }
-      const era = langEra(inf.lang); if (era) body.appendChild(el("span", "lin-era", era));
+      // a language's period says when that language was spoken, not when this word appeared:
+      // English (today's) gets a date only when the word's own etymology gives one
+      let era = langEra(inf.lang);
+      if (inf.lang === "English") { era = engYear[k] || ""; }
+      if (era) body.appendChild(el("span", "lin-era", era));
       body.appendChild(el("span", "lin-lang", inf.lang));
       body.appendChild(el("span", "lin-term", inf.label));
       if (d.g) body.appendChild(el("span", "lin-gloss", "“" + firstSense(d.g) + "”"));

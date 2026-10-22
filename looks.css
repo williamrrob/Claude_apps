@@ -10,6 +10,7 @@
    ===================================================================== */
 
 /* ---------- shared structure (every look) ---------- */
+:root { --sat: env(safe-area-inset-top); --sab: env(safe-area-inset-bottom); }
 :root[data-look] { --glass-sheen: linear-gradient(transparent, transparent); --glass-blur: none; --glass-hi: 0 0 0 transparent; }
 :root[data-look] .map canvas.map-under { pointer-events: none; }
 /* the dock is gone: the orb is the way in, and search opens from it */
@@ -337,20 +338,22 @@
 :root[data-look="planisphere"] .co-def { font-style: italic; font-size: 16px; color: var(--ink); opacity: 1; }
 :root[data-look="planisphere"] .co-chain { justify-content: center; font-style: italic; opacity: .7; }
 :root[data-look="planisphere"] .co-chain i, :root[data-look="planisphere"] .co-chain b { color: var(--ink) !important; font-weight: 400; }
-/* tooled panels: gilt fillet, a second fillet outside, pressed into the leather */
+/* tooled panels: a gilt fillet with a second fillet tooled just inside it, pressed into the leather
+   (both inside the box, so panels never crowd or clip their neighbours) */
 :root[data-look="planisphere"] .co-act, :root[data-look="planisphere"] .menu-act, :root[data-look="planisphere"] .home-act, :root[data-look="planisphere"] .lin-part, :root[data-look="planisphere"] .desc-chip,
 :root[data-look="planisphere"] .hunt-opt, :root[data-look="planisphere"] .menu-look, :root[data-look="planisphere"] .lens-btn, :root[data-look="planisphere"] .act, :root[data-look="planisphere"] .related-chip, :root[data-look="planisphere"] .icon-toggle {
-  border: 1px solid #d1ad5b; outline: 1px solid rgba(209,173,91,.5); outline-offset: 3px; border-radius: 0;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,.55); background: rgba(0,0,0,.18); color: #d1ad5b;
-  font-family: "Playfair Display SC", var(--font); letter-spacing: .16em; font-size: 14px;
+  border: 1px solid #d1ad5b; outline: 0; border-radius: 0; box-sizing: border-box;
+  box-shadow: inset 0 0 0 3px #1c2541, inset 0 0 0 4px rgba(209,173,91,.5), inset 0 3px 6px rgba(0,0,0,.55); background: rgba(0,0,0,.18); color: #d1ad5b;
+  font-family: "Playfair Display SC", var(--font); letter-spacing: .1em; font-size: 14px; white-space: nowrap; line-height: 1;
 }
-:root[data-look="planisphere"] .co-act { height: 46px; flex: 0 1 260px; }
+:root[data-look="planisphere"] .co-act { height: 46px; flex: 1 1 0; min-width: 0; padding: 0 10px; overflow: hidden; text-overflow: ellipsis; }
 :root[data-look="planisphere"] .callout .co-acts { justify-content: center; margin-top: 10px; }
 :root[data-look="planisphere"] .co-act.primary, :root[data-look="planisphere"] .lens-btn.on, :root[data-look="planisphere"] .menu-look.on, :root[data-look="planisphere"] .act.hot, :root[data-look="planisphere"] .act:active {
-  color: #f1d68e; border-color: #e7c46e; outline-color: rgba(184,50,42,.75); font-weight: 400; background: rgba(0,0,0,.18);
+  color: #f1d68e; border-color: #e7c46e; font-weight: 400; background: rgba(0,0,0,.18);
+  box-shadow: inset 0 0 0 3px #1c2541, inset 0 0 0 4px rgba(184,50,42,.9), inset 0 3px 6px rgba(0,0,0,.55);
 }
-:root[data-look="planisphere"] .lens { border: 0; background: none; box-shadow: none; padding: 4px; gap: 10px; }
-:root[data-look="planisphere"] .lens-btn { padding: 6px 10px; font-size: 12px; }
+:root[data-look="planisphere"] .lens { border: 0; background: none; box-shadow: none; padding: 0; gap: 6px; }
+:root[data-look="planisphere"] .lens-btn { padding: 0 12px; height: 38px; font-size: 13px; }
 :root[data-look="planisphere"] .icon-toggle { border-radius: 0; }
 /* the orb: the brass hanging ring */
 :root[data-look="planisphere"] .orb { border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f6dc95, #c7963e 55%, #7d5a1d); box-shadow: 0 3px 6px rgba(0,0,0,.6); }
@@ -413,21 +416,21 @@
     radial-gradient(circle at 22px 30px, #fff 1.1px, transparent 1.4px) 0 0 / 64px 64px,
     radial-gradient(circle at 55px 40px, #999 .6px, transparent 1px) 0 0 / 64px 64px,
     radial-gradient(circle at 12px 52px, #fff .6px, transparent 1px) 0 0 / 64px 64px, #000;
-  inset: 26px 8px 26px 8px; border: 2px solid #0000ee;
+  inset: calc(26px + env(safe-area-inset-top)) 8px calc(26px + env(safe-area-inset-bottom)) 8px; border: 2px solid #0000ee;
 }
-:root[data-look="netscape"] .ns-title { display: flex; align-items: center; position: fixed; z-index: 9; top: 0; left: 0; right: 0; height: 22px; padding: 0 0 0 28px; background: #000080; color: #fff; font: bold 12px var(--sans); }
+:root[data-look="netscape"] .ns-title { display: flex; align-items: center; position: fixed; z-index: 9; top: env(safe-area-inset-top); left: 0; right: 0; height: 22px; padding: 0 0 0 28px; background: #000080; color: #fff; font: bold 12px var(--sans); }
 :root[data-look="netscape"] .ns-title::before { content: ""; position: absolute; left: 4px; top: 4px; width: 14px; height: 14px; background: #c0c0c0; border: 2px solid; border-color: var(--out); box-sizing: border-box; }
-:root[data-look="netscape"] .ns-status { display: flex; align-items: center; gap: 4px; position: fixed; z-index: 9; left: 0; right: 0; bottom: 0; height: 24px; padding: 2px 4px; background: #c0c0c0; border-top: 1px solid #fff; box-sizing: border-box; font: 11px var(--sans); }
+:root[data-look="netscape"] .ns-status { display: flex; align-items: center; gap: 4px; position: fixed; z-index: 9; left: 0; right: 0; bottom: env(safe-area-inset-bottom); height: 24px; padding: 2px 4px; background: #c0c0c0; border-top: 1px solid #fff; box-sizing: border-box; font: 11px var(--sans); }
 :root[data-look="netscape"] .ns-well { height: 18px; display: flex; align-items: center; padding: 0 5px; border: 2px solid; border-color: var(--in); box-sizing: border-box; white-space: nowrap; overflow: hidden; }
 :root[data-look="netscape"] .ns-key { width: 22px; padding: 0; justify-content: center; }
 :root[data-look="netscape"] .ns-msg { flex: 1; }
 :root[data-look="netscape"] .ns-prog { width: 70px; }
-:root[data-look="netscape"] .topbar { padding-top: 30px; }
+:root[data-look="netscape"] .topbar { padding-top: calc(30px + env(safe-area-inset-top)); }
 :root[data-look="netscape"] .callout, :root[data-look="netscape"] .content, :root[data-look="netscape"] .map-key, :root[data-look="netscape"] .app[data-dock="open"] .suggest, :root[data-look="netscape"] .app[data-dock="open"] .search {
   background: #c0c0c0; border: 0; border-radius: 0; box-shadow: none; color: #000;
 }
-:root[data-look="netscape"] .app[data-sheet="callout"] .callout { bottom: 24px; padding: 8px 12px 12px; gap: 4px; border-top: 2px solid #fff; }
-:root[data-look="netscape"] .content { bottom: 24px; border-top: 2px solid #fff; }
+:root[data-look="netscape"] .app[data-sheet="callout"] .callout { bottom: calc(24px + env(safe-area-inset-bottom)); padding: 8px 12px 12px; gap: 4px; border-top: 2px solid #fff; }
+:root[data-look="netscape"] .content { bottom: calc(24px + env(safe-area-inset-bottom)); border-top: 2px solid #fff; }
 :root[data-look="netscape"] .map-key { border: 2px solid; border-color: var(--out); box-shadow: 1px 1px 0 #000; }
 :root[data-look="netscape"] .co-coords, :root[data-look="netscape"] .entry-coords, :root[data-look="netscape"] .co-lang, :root[data-look="netscape"] .node-lang { font: 13px var(--font); text-transform: none; letter-spacing: 0; color: #000; }
 :root[data-look="netscape"] .co-coords .ec-dot, :root[data-look="netscape"] .entry-coords .ec-dot { display: none; }
@@ -453,12 +456,12 @@
 :root[data-look="netscape"] .lens { border: 0; background: none; box-shadow: none; padding: 0; gap: 2px; }
 :root[data-look="netscape"] .icon-toggle { width: 30px; height: 30px; padding: 0; }
 /* the orb is the throbber, top right as Netscape kept it */
-:root[data-look="netscape"] .orb { top: 30px; bottom: auto; right: 12px; width: 48px; height: 48px; background: #000; border: 2px solid; border-color: var(--in); box-sizing: border-box; padding: 0; }
+:root[data-look="netscape"] .orb { top: calc(30px + env(safe-area-inset-top)); bottom: auto; right: 12px; width: 48px; height: 48px; background: #000; border: 2px solid; border-color: var(--in); box-sizing: border-box; padding: 0; }
 :root[data-look="netscape"] .orb.on { outline: 1px dotted #000; outline-offset: 2px; }
 :root[data-look="netscape"] .topbar { padding-right: 70px; }
 :root[data-look="netscape"] .map-key-btn { display: none; }
 /* its panel is the toolbar, dropped beneath the title bar */
-:root[data-look="netscape"] .acts { top: 22px; bottom: auto; left: 0; right: 0; flex-direction: row; flex-wrap: wrap; gap: 2px; padding: 4px 66px 6px 4px; background: #c0c0c0; border-bottom: 1px solid #808080; min-width: 0; }
+:root[data-look="netscape"] .acts { top: calc(22px + env(safe-area-inset-top)); bottom: auto; left: 0; right: 0; flex-direction: row; flex-wrap: wrap; gap: 2px; padding: 4px 66px 6px 4px; background: #c0c0c0; border-bottom: 1px solid #808080; min-width: 0; }
 :root[data-look="netscape"] .act { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 54px; height: 46px; background: #c0c0c0; border: 2px solid; border-color: var(--out); box-sizing: border-box; font: 10px var(--sans); color: #000; padding: 0; }
 :root[data-look="netscape"] .act[data-act="Wander"] { width: auto; padding: 0 8px; font-weight: bold; }
 :root[data-look="netscape"] .act svg path { fill: none; stroke: #000; stroke-width: 1.2; }
@@ -466,7 +469,7 @@
 :root[data-look="netscape"] .act[data-act="Wander"] svg path { fill: #ffcc00; }
 :root[data-look="netscape"] .act.hot, :root[data-look="netscape"] .act:active { border-color: var(--in); background: #b0b0b0; }
 /* search: typed big on the page, like an <H1>; the results are a <UL> of links */
-:root[data-look="netscape"] .app[data-dock="open"] .dock { top: 28px; }
+:root[data-look="netscape"] .app[data-dock="open"] .dock { top: calc(28px + env(safe-area-inset-top)); }
 :root[data-look="netscape"] .qshow { font: bold 44px var(--font); color: #000; }
 :root[data-look="netscape"] .qcap { font: 14px var(--font); color: #000; }
 :root[data-look="netscape"] .suggest { padding: 4px 4px 4px 28px; list-style: disc; gap: 0; display: block; }
@@ -481,3 +484,98 @@
 :root[data-look="ortelius"] .app[data-dock="open"] .search { background: radial-gradient(ellipse at 50% 55%, #ecdfbf 55%, rgba(236,223,191,0) 72%); padding: 8px 0 12px; }
 :root[data-look="ortelius"] .app.acts-open::after, :root[data-look="priestley"] .app.acts-open::after { content: ""; position: fixed; inset: 0; background: rgba(236,223,191,.6); z-index: 7; pointer-events: none; }
 :root[data-look="priestley"] .app.acts-open::after { background: rgba(241,232,211,.6); }
+
+/* the look's colour runs to the very top and bottom of the screen: Safari tints its status bar
+   and toolbar from fixed strips at the edges, so each look gives them its own chrome colour */
+.edge { display: none; }
+:root[data-look] .edge { display: block; position: fixed; left: 0; right: 0; z-index: 10; pointer-events: none; background: var(--edge, var(--bg)); }
+:root[data-look] .edge-top { top: 0; height: max(env(safe-area-inset-top), 2px); }
+:root[data-look] .edge-bot { bottom: 0; height: max(env(safe-area-inset-bottom), 2px); }
+:root[data-look="priestley"] { --edge: #f1e8d3; }
+:root[data-look="ortelius"] { --edge: #ecdfbf; }
+:root[data-look="blueprint"] { --edge: #14457f; }
+:root[data-look="planisphere"] { --edge: #1c2541; }
+:root[data-look="netscape"] .edge-top { background: #000080; }
+:root[data-look="netscape"] .edge-bot { background: #c0c0c0; }
+:root[data-look="planisphere"] html, :root[data-look="planisphere"] { background: #1c2541; }
+:root[data-look="blueprint"] { background: #14457f; }
+:root[data-look="netscape"] { background: #c0c0c0; }
+
+/* =====================================================================
+   Inside the entry: breakdown, senses and the line of descent, redrawn per source
+   (the coloured side bars, pill dots and "shows up as" chrome were the old app's)
+   ===================================================================== */
+:root[data-look] .bd.stacked .bp-vline { display: none; }
+:root[data-look] .bd.stacked .bp { border-top: var(--rowrule, .6px solid var(--ink)); }
+:root[data-look] .bd.stacked .bp:first-child { border-top: 0; }
+:root[data-look] .bd.stacked .bp-inner, :root[data-look] .bd.stacked .bp:first-child .bp-inner { padding: 8px 2px; }
+:root[data-look] .sense .num { font-weight: 400; }
+/* the handle never sits over the text: it carries the sheet's own ground */
+:root[data-look="priestley"] .sheet-grip { background: var(--laid), #f1e8d3; }
+:root[data-look="ortelius"] .sheet-grip { background: #ecdfbf; }
+:root[data-look="blueprint"] .sheet-grip { background: var(--weave), #eceee6; }
+:root[data-look="planisphere"] .content .sheet-grip { background: #ebe3cd; }
+:root[data-look="netscape"] .sheet-grip { background: #c0c0c0; }
+:root[data-look] .minihead { box-shadow: none; }
+
+/* Priestley: the parts are rows of the Description's table; a morpheme carries its family's wash */
+:root[data-look="priestley"] .bp .mw { color: var(--ink); font-weight: 700; padding: 0 3px; background: color-mix(in srgb, var(--c) 30%, transparent); }
+:root[data-look="priestley"] .bp-origin { font-weight: 400; letter-spacing: .18em; font-size: 9.5px; color: var(--ink); }
+:root[data-look="priestley"] .sense .num::after { content: "."; }
+:root[data-look="priestley"] .sense .pos, :root[data-look="priestley"] .entry-pos { color: var(--muted); }
+:root[data-look="priestley"] .lin-rail::before { background: var(--ink); width: .8px; left: 6.5px; }
+:root[data-look="priestley"] .lin-dot { border: .8px solid var(--ink); background: color-mix(in srgb, currentColor 0%, #f1e8d3) !important; }
+:root[data-look="priestley"] .lin-here .lin-dot { box-shadow: 0 0 0 2.5px #f1e8d3, 0 0 0 3.3px var(--ink); }
+:root[data-look="priestley"] .lin-kind, :root[data-look="priestley"] .lin-era { font-style: italic; letter-spacing: 0; }
+
+/* Ortelius: the parts are lettered entries under thin rules; shores are dotted, places are rings */
+:root[data-look="ortelius"] .bp .mw { color: var(--ink); font-weight: 400; font-size: 24px; }
+:root[data-look="ortelius"] .bp[data-kind="prefix"] .mw, :root[data-look="ortelius"] .bp[data-kind="root"] .mw { color: #a85c4c; }
+:root[data-look="ortelius"] .bp-origin { font-family: "IM Fell English SC", var(--font); font-weight: 400; text-transform: none; letter-spacing: .1em; font-size: 13px; }
+:root[data-look="ortelius"] .bp .gl { font-style: italic; }
+:root[data-look="ortelius"] .lin-rail::before { background: none; border-left: 1px dotted var(--ink); width: 0; }
+:root[data-look="ortelius"] .lin-dot { background: #ecdfbf !important; border: 1px solid var(--ink); }
+:root[data-look="ortelius"] .lin-here .lin-dot { background: var(--ink) !important; }
+:root[data-look="ortelius"] .sense .num { font-family: "IM Fell English SC", var(--font); }
+
+/* Blueprint: the parts are the PARTS LIST — numbered items in ruled cells */
+:root[data-look="blueprint"] { --rowrule: .8px solid var(--ink); }
+:root[data-look="blueprint"] .bd.stacked { border: 1.6px solid var(--ink); counter-reset: item; }
+:root[data-look="blueprint"] .bd.stacked .bp { counter-increment: item; }
+:root[data-look="blueprint"] .bd.stacked .bp-main::before { content: counter(item); font: 12px "Overpass Mono", monospace; width: 22px; flex: none; padding-top: 4px; }
+:root[data-look="blueprint"] .bp .mw { color: var(--ink); text-transform: uppercase; font-size: 18px; }
+:root[data-look="blueprint"] .bp .gl { text-transform: uppercase; font-size: 12.5px; font-weight: 600; }
+:root[data-look="blueprint"] .bp .appears { font-style: normal; text-transform: uppercase; font-size: 10px; }
+:root[data-look="blueprint"] .sense .num { font-family: "Overpass Mono", monospace; }
+:root[data-look="blueprint"] .sense .num::after { content: "."; }
+:root[data-look="blueprint"] .sense .pos { color: var(--ink); font-style: normal; text-transform: uppercase; }
+:root[data-look="blueprint"] .lin-rail::before { background: var(--ink); width: 1px; }
+:root[data-look="blueprint"] .lin-dot { background: #eceee6 !important; border: 1.2px solid var(--ink); }
+:root[data-look="blueprint"] .lin-here .lin-dot { border-color: var(--red); box-shadow: 0 0 0 2px #eceee6, 0 0 0 3.2px var(--red); }
+:root[data-look="blueprint"] .lin-era { font-family: "Overpass Mono", monospace; font-style: normal; }
+:root[data-look="blueprint"] .lin-term, :root[data-look="blueprint"] .lin-lang, :root[data-look="blueprint"] .lin-kind { text-transform: uppercase; }
+
+/* Planisphere (the printed reverse): parts set as a printed list, the descent drawn as stars */
+:root[data-look="planisphere"] .content .bp .mw { color: #1e1a16; }
+:root[data-look="planisphere"] .content .bp-origin { font-family: "Playfair Display SC", var(--font); font-weight: 400; text-transform: none; letter-spacing: .1em; }
+:root[data-look="planisphere"] .content .lin-rail::before { background: #b8322a; width: 1px; }
+:root[data-look="planisphere"] .content .lin-dot { background: #1e1a16 !important; border-radius: 0; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); width: 12px; height: 12px; left: .5px; top: calc(50% - 6px); }
+:root[data-look="planisphere"] .content .lin-here .lin-dot { background: #b8322a !important; }
+:root[data-look="planisphere"] .content .lin-term { color: #b8322a; }
+:root[data-look="planisphere"] .content .lin-here .lin-term { color: #1e1a16; }
+
+/* Netscape: the parts are a <TABLE BORDER>; morphemes and older forms are links; bullets are square */
+:root[data-look="netscape"] { --rowrule: 0; }
+:root[data-look="netscape"] .bd.stacked { border: 2px solid; border-color: #808080 #fff #fff #808080; padding: 2px; gap: 2px; }
+:root[data-look="netscape"] .bd.stacked .bp { border: 2px solid; border-color: #fff #808080 #808080 #fff; }
+:root[data-look="netscape"] .bd.stacked .bp-inner, :root[data-look="netscape"] .bd.stacked .bp:first-child .bp-inner { padding: 4px 6px; }
+:root[data-look="netscape"] .bp .mw { color: #0000ee; text-decoration: underline; font-weight: 400; font-size: 20px; }
+:root[data-look="netscape"] .bp-origin { font: 11px "Arimo", Arial, sans-serif; text-transform: none; letter-spacing: 0; color: #000; }
+:root[data-look="netscape"] .bp .appears { color: #404040; }
+:root[data-look="netscape"] .sense .num { font-weight: 700; color: #000; }
+:root[data-look="netscape"] .sense .num::after { content: "."; }
+:root[data-look="netscape"] .sense .pos { color: #000; }
+:root[data-look="netscape"] .lin-rail::before { display: none; }
+:root[data-look="netscape"] .lin-dot { border-radius: 0; background: #000 !important; width: 6px; height: 6px; left: 4px; top: calc(50% - 3px); }
+:root[data-look="netscape"] .lin-term { color: #0000ee; text-decoration: underline; }
+:root[data-look="netscape"] .lin-here .lin-term { color: #000; text-decoration: none; font-weight: 700; }

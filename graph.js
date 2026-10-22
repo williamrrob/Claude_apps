@@ -24,7 +24,7 @@
  */
 (function () {
   "use strict";
-  const V = "3";
+  const V = "4";
   const DPR = Math.min(2, window.devicePixelRatio || 1);
 
   // ---- palettes (index = family in info.families) -----------------------------
@@ -403,7 +403,8 @@
     ctx.strokeStyle = "#0e1426"; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(x, y, rx + 1, ry + 1, 0, 0, 7); ctx.stroke();
     ctx.strokeStyle = gilt; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.ellipse(x, y, rx + 6, ry + 6, 0, 0, 7); ctx.stroke();
     ctx.lineWidth = 0.5; ctx.beginPath(); ctx.ellipse(x, y, rx + 10, ry + 10, 0, 0, 7); ctx.stroke();
-    ctx.lineWidth = 1.2; ctx.strokeRect(9, 9, W - 18, H - 18); ctx.lineWidth = 0.5; ctx.strokeRect(13, 13, W - 26, H - 26);
+    const ft = (plate.top || 0) + 9, fb = H - (plate.bottom || 0) - 9;
+    ctx.lineWidth = 1.2; ctx.strokeRect(9, ft, W - 18, fb - ft); ctx.lineWidth = 0.5; ctx.strokeRect(13, ft + 4, W - 26, fb - ft - 8);
     // what lies beyond the window: the nearest other families, named in gilt on their side
     if (focus) {
       const t = G.treeOf.get(focus.root);

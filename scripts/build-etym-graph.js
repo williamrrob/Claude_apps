@@ -80,6 +80,10 @@ function link(child, parent, kind) {
   const n = nodes.get(child);
   if (!n.up.has(parent)) n.up.set(parent, kind);
 }
+// A step Wiktionary names only by language ("Proto-Indo-European *", root not given) is not a
+// form: dropping it keeps unrelated words from being joined under one empty node.
+const realStep = (st) => st && typeof st.t === "string" && P.fold(st.t).replace(/[*\-–‐\s()]/g, "").length > 0;
+const realOnly = (arr) => (arr || []).filter((st) => (st && st.p ? (st.p = st.p.filter(realStep)).length : realStep(st)));
 const mainComp = (p) => { const r = p.filter((c) => !c.aff); return (r.length ? r[r.length - 1] : p[p.length - 1]); };
 
 // Preferred source: Wiktionary's structured templates (scripts/import-kaikki-etym.js).
@@ -87,7 +91,7 @@ const mainComp = (p) => { const r = p.filter((c) => !c.aff); return (r.length ? 
 const KE = path.join(ROOT, "vendor-data", "kaikki-etym.jsonl");
 const kaikki = new Map();
 if (fs.existsSync(KE)) {
-  for (const line of fs.readFileSync(KE, "utf8").split("\n")) { if (line) { const r = JSON.parse(line); kaikki.set(r.w, r); } }
+  for (const line of fs.readFileSync(KE, "utf8").split("\n")) { if (line) { const r = JSON.parse(line); r.ch = realOnly(r.ch); kaikki.set(r.w, r); } }
   process.stderr.write(`structured etymologies: ${kaikki.size}\n`);
 }
 const isAffix = (t) => /^-|-$/.test(t);
@@ -102,7 +106,7 @@ for (const { word, ety } of allRows) {
     fromTemplates++;
     const me = node("English", word);
     nodes.get(me).hw = 1;
-    for (const p of kr.pa || []) {
+    for (const p of (kr.pa || []).filter((t) => realStep(typeof t === "string" ? { t } : t))) {
       const pk = node("English", p.t, p.g);
       if (headwords.has(p.t)) nodes.get(pk).hw = 1;
       link(me, pk, isAffix(p.t) ? "aff" : "cmp");
@@ -129,7 +133,7 @@ for (const { word, ety } of allRows) {
     // the entry's own prose sometimes names steps its templates don't (incredible:
     // "… from in- + crēdibilis, from crēdō"); continue from the last templated form
     if (ety && kr.ch && kr.ch.length) {
-      const pc = P.parse(word, ety).chain;
+      const pc = realOnly(P.parse(word, ety).chain);
       const last = kr.ch[kr.ch.length - 1];
       const at = pc.findIndex((stp) => !stp.p && P.fold(stp.t) === P.fold(last.t));
       if (at >= 0 && at < pc.length - 1) {
@@ -159,7 +163,7 @@ for (const { word, ety } of allRows) {
   }
   // ancestry chain
   let cur = me;
-  for (const step of o.chain) {
+  for (const step of realOnly(o.chain)) {
     if (step.p) {
       for (const c of step.p) link(cur, node(c.l, c.t, c.g, c.tr), c.aff ? "aff" : "cmp");
       const m = mainComp(step.p);
@@ -183,6 +187,8 @@ if (fs.existsSync(KA)) {
   for (const line of fs.readFileSync(KA, "utf8").split("\n")) {
     if (!line) continue;
     const r = JSON.parse(line);
+    if (!realStep(r)) continue;
+    r.ch = realOnly(r.ch);
     const k = keyOf(r.l, r.t);
     if (!anc.has(k)) anc.set(k, r); // first lemma entry for a spelling wins
   }
@@ -201,7 +207,7 @@ if (fs.existsSync(KA)) {
     if (r.hom) n.hom = r.hom;
     if (n.up.size || depth >= 6) continue;
     let cur = k, child = null, grew = false;
-    for (const p of r.pa || []) { const pk = node(r.l, p); link(k, pk, isAffix(p) ? "aff" : "cmp"); q.push([pk, depth + 1]); grew = true; }
+    for (const p of (r.pa || []).filter((t) => realStep({ t }))) { const pk = node(r.l, p); link(k, pk, isAffix(p) ? "aff" : "cmp"); q.push([pk, depth + 1]); grew = true; }
     for (const st of r.ch || []) {
       const nk = node(st.l, st.t, st.g);
       if ((st.j === "+" || st.j === "&") && child) { link(child, nk, st.j === "+" ? (isAffix(st.t) ? "aff" : "cmp") : st.k || "der"); q.push([nk, depth + 1]); continue; }
