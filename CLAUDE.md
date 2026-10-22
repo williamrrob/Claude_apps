@@ -14,6 +14,18 @@ dot; tapping it or pinching in opens the entry sheet. Geometry: radius from a
 family's centre = time (log years-before-present), adjacency = relation,
 dot size = number of English descendants.
 
+**Five looks, each traced to one real source** (menu → Look; saved as
+`rootwork.look`): `priestley` (Priestley, *A New Chart of History*, 1769),
+`ortelius` (*Typus Orbis Terrarum*, 1570), `blueprint` (1930s Clydebank shipyard
+blueprint + linen tracing), `planisphere` (Philip's Planisphere — oval window in a
+gilt morocco plate, root = brass rivet, entry = the printed reverse), `netscape`
+(Navigator 1.1, 1995). Map half: `LOOKS` in graph.js (ink, dot shape, ring/year
+style, washes/stipple, plate). Chrome half: `LOOK_UI` in app.js (words, orb art,
+action panel) + `looks.css` (all component styles, scoped `:root[data-look=…]`).
+Rule when changing a look: every element must come from its source — don't mix
+materials between looks. The orb opens the action panel (tap, or press-slide-
+release); search letters the query in place and marks matches on the map.
+
 **One source: Wiktionary.** Everything etymological comes from it:
 - `vendor-data/` (gitignored, regenerable): `kaikki-en.jsonl.gz` (English dump),
   `raw-wiktextract-data.jsonl.gz` (all languages), and the extracts below.
