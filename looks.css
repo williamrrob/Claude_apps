@@ -367,7 +367,7 @@
   background: radial-gradient(circle at 18% 22%, rgba(140,90,40,.16) 0 3px, transparent 6px), radial-gradient(circle at 76% 64%, rgba(140,90,40,.12) 0 4px, transparent 8px), #ebe3cd;
   color: #1e1a16; border: 10px solid #1c2541; border-bottom: 0; border-radius: 0; box-shadow: 0 0 0 1px #d1ad5b inset;
   --ink: #1e1a16; --muted: #6b6253; --bd: rgba(30,26,22,.4); --panel: #ebe3cd; --field: transparent; --suffix: #1e1a16; --prefix: #b8322a; --prefix-ink: #b8322a; --root: #1e1a16;
-  font-family: "Old Standard TT", "Times New Roman", serif;
+  font-family: "Libre Caslon Text", "Times New Roman", serif;
 }
 :root[data-look="planisphere"] .app[data-sheet="peek"] .content, :root[data-look="planisphere"] .app[data-sheet="full"] .content { animation: turnover .55s var(--ease); }
 @keyframes turnover { 0% { transform: perspective(900px) rotateY(80deg); opacity: .3; } 100% { transform: none; opacity: 1; } }
@@ -639,3 +639,12 @@
 :root[data-look="netscape"] .pron .resp { font-weight: 400; color: #000; }
 :root[data-look="netscape"] .save-btn::after { content: "Add Bookmark"; font: 12px "Arimo", Arial, sans-serif; color: #000; background: #c0c0c0; border: 2px solid; border-color: #fff #808080 #808080 #fff; box-shadow: inset -1px -1px 0 #000; padding: 3px 10px; display: inline-block; }
 :root[data-look="netscape"] .save-btn.saved::after { content: "Bookmarked"; border-color: #808080 #fff #fff #808080; box-shadow: inset 1px 1px 0 #000; }
+
+/* every control takes its look's face — never the browser's Arial */
+button, input, select, textarea, .alpha-tab, .save-btn { font-family: inherit; }
+
+/* each step of a history says, in a plain sentence, what happened */
+.lin-kind { font-size: 13.5px !important; letter-spacing: 0 !important; text-transform: none !important; font-style: normal; color: var(--muted); line-height: 1.35; margin-bottom: 3px; }
+:root[data-look="netscape"] .lin-kind { color: #000; font-family: "Tinos", "Times New Roman", serif; font-size: 14px !important; }
+:root[data-look="blueprint"] .lin-kind { font: 600 11px/1.35 var(--font) !important; text-transform: uppercase !important; letter-spacing: .04em !important; }
+:root[data-look="priestley"] .lin-kind, :root[data-look="ortelius"] .lin-kind { font-style: italic; }

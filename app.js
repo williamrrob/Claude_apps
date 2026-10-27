@@ -2910,6 +2910,21 @@
     rows.forEach(function (r) { card.appendChild(r); });
     return card;
   }
+  // one plain sentence per step: what happened, from what, into what
+  function whatHappened(kind, from, to, others) {
+    const mid = others.length ? " (alongside " + others.join(" and ") + ")" : "";
+    const t = {
+      inh: "Passed down from " + from + " into " + to + mid + ".",
+      bor: "Borrowed from " + from + " into " + to + mid + ".",
+      lbor: "Taken from " + from + " into " + to + " by scholars, from the written language" + mid + ".",
+      der: "Became, in " + to + ", what was " + from + mid + ".",
+      via: "Passed from " + from + " into " + to + mid + ".",
+      cal: "Translated piece by piece from " + from + " into " + to + mid + ".",
+      cmp: "Built in " + to + " out of " + from + mid + ".",
+      aff: "Built in " + to + " out of " + from + mid + "."
+    };
+    return t[kind] || t.der;
+  }
   async function lineageRows(i, token) {
     const chain = [i].concat(RootMap.lineage(i));
     if (chain.length < 2) return null;
@@ -2930,7 +2945,9 @@
       const body = el("div", "lin-body");
       if (k < chain.length - 1) {
         const up = (d.up || []).find(function (u) { return u[0] === chain[k + 1]; });
-        body.appendChild(el("span", "lin-kind", KIND_TXT[up ? up[1] : "der"] || "became"));
+        body.appendChild(el("span", "lin-kind", whatHappened(up ? up[1] : "der", RootMap.info(chain[k + 1]).lang, inf.lang, (d.up || []).filter(function (u) { return u[0] !== chain[k + 1]; }).map(function (u) { return RootMap.info(u[0]).label; }))));
+      } else {
+        body.appendChild(el("span", "lin-kind", "The oldest form this entry can be traced to."));
       }
       // a language's period says when that language was spoken, not when this word appeared:
       // English (today's) gets a date only when the word's own etymology gives one
