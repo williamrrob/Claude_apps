@@ -2228,7 +2228,7 @@
     traceCapT = setTimeout(function () { showTraceCap(""); }, 7000); // a cancelled trace clears itself
   }
   function showTraceCap(line, era, count) {
-    if (lookName === "netscape") { if (nsMsg) nsMsg.textContent = line ? (era ? era + " · " : "") + line : "Document: Done"; return; }
+    if (lookName === "netscape" && nsMsg) nsMsg.textContent = line ? (era ? era + " · " : "") + line : "Document: Done"; // and the dialog below
     if (!traceCap) return;
     if (!line) { traceCap.classList.remove("on"); return; }
     traceCap.innerHTML = "";

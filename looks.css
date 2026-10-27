@@ -598,4 +598,44 @@
 :root[data-look="planisphere"] .trace-cap { background: var(--grain), #1c2541; color: #d1ad5b; border: 1px solid #d1ad5b; box-shadow: inset 0 0 0 3px #1c2541, inset 0 0 0 4px rgba(209,173,91,.5); }
 :root[data-look="planisphere"] .trace-cap .tc-era { font-family: "Playfair Display SC", var(--font); text-transform: none; letter-spacing: .12em; }
 :root[data-look="planisphere"] .trace-cap .tc-line { font-style: italic; }
-:root[data-look="netscape"] .trace-cap { display: none; }
+/* Netscape narrates the trace in a Windows 3.1 dialog: navy title bar, grey bevelled body */
+:root[data-look="netscape"] .trace-cap { top: calc(env(safe-area-inset-top) + 84px); left: 50%; right: auto; width: min(360px, calc(100vw - 40px)); transform: translate(-50%, -4px);
+  padding: 22px 12px 10px; background: #c0c0c0; color: #000; border: 2px solid; border-color: #fff #808080 #808080 #fff; box-shadow: 1px 1px 0 #000; align-items: flex-start; text-align: left; }
+:root[data-look="netscape"] .trace-cap.on { transform: translate(-50%, 0); }
+:root[data-look="netscape"] .trace-cap::before { content: "Rootwork — History"; position: absolute; left: 0; right: 0; top: 0; height: 18px; padding-left: 6px; background: #000080; color: #fff; font: bold 11px "Arimo", Arial, sans-serif; display: flex; align-items: center; }
+:root[data-look="netscape"] .trace-cap .tc-era { font: 11px "Arimo", Arial, sans-serif; text-transform: none; letter-spacing: 0; opacity: 1; color: #404040; }
+:root[data-look="netscape"] .trace-cap .tc-line { font: 16px "Tinos", "Times New Roman", serif; }
+
+/* =====================================================================
+   Leftovers redrawn: the pronunciation line and the save mark, per source
+   ===================================================================== */
+:root[data-look] .pron .ipa { border-bottom: 0; }
+:root[data-look] .pron .pdot { display: none; }
+:root[data-look] .pron .resp .spk-ico { display: none; }
+:root[data-look] .save-btn { font-size: 0 !important; width: auto; height: auto; padding: 0; background: none; border: 0; box-shadow: none; cursor: pointer; }
+:root[data-look] .save-btn::after { font-size: 12px; }
+/* Priestley: "/min/ — meen" set in italic between dashes; the save mark is a margin label */
+:root[data-look="priestley"] .pron { gap: 10px; font-style: italic; }
+:root[data-look="priestley"] .pron .resp { font-weight: 400; font-style: normal; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+:root[data-look="priestley"] .pron .resp::before { content: "— "; letter-spacing: 0; }
+:root[data-look="priestley"] .save-btn::after { content: "Mark"; font-family: var(--font); text-transform: uppercase; letter-spacing: .18em; font-size: 10px; border: .8px solid var(--ink); padding: 4px 8px; color: var(--ink); }
+:root[data-look="priestley"] .save-btn.saved::after { content: "Marked"; background: var(--you); }
+/* Ortelius: italic, as the plate letters small things */
+:root[data-look="ortelius"] .pron, :root[data-look="ortelius"] .pron .resp { font-style: italic; font-weight: 400; color: var(--muted); }
+:root[data-look="ortelius"] .save-btn::after { content: "note it"; font-family: "IM Fell English SC", var(--font); letter-spacing: .1em; font-size: 14px; color: var(--ink); border-bottom: 1px solid var(--ink); }
+:root[data-look="ortelius"] .save-btn.saved::after { content: "noted"; color: #a85c4c; border-color: #a85c4c; }
+/* Blueprint: a PRON. cell in mono; saving is a revision stamp */
+:root[data-look="blueprint"] .pron { justify-content: flex-start; font-family: "Overpass Mono", monospace; font-size: 13px; border: .8px solid var(--ink); padding: 5px 8px; }
+:root[data-look="blueprint"] .pron::before { content: "PRON."; font: 600 8.5px "Overpass", sans-serif; letter-spacing: .08em; color: var(--muted); }
+:root[data-look="blueprint"] .pron .resp { font-weight: 600; text-transform: uppercase; font-family: "Overpass", sans-serif; }
+:root[data-look="blueprint"] .save-btn::after { content: "SAVE"; font: 700 10px "Overpass", sans-serif; letter-spacing: .08em; border: .8px solid var(--ink); padding: 4px 7px; color: var(--ink); }
+:root[data-look="blueprint"] .save-btn.saved::after { content: "△ SAVED"; color: #c8352a; border-color: #c8352a; }
+/* Planisphere (the printed reverse): pronunciation in the explanation's italic; the mark is a printed ✦ */
+:root[data-look="planisphere"] .content .pron, :root[data-look="planisphere"] .content .pron .resp { font-style: italic; font-weight: 400; color: #6b6253; }
+:root[data-look="planisphere"] .content .save-btn::after { content: "✧"; font-size: 20px; color: #1e1a16; }
+:root[data-look="planisphere"] .content .save-btn.saved::after { content: "✦"; color: #b8322a; }
+/* Netscape: <TT>/min/</TT> and plain text; saving is the Add Bookmark button */
+:root[data-look="netscape"] .pron .ipa { font-family: "Cousine", "Courier New", monospace; color: #000; }
+:root[data-look="netscape"] .pron .resp { font-weight: 400; color: #000; }
+:root[data-look="netscape"] .save-btn::after { content: "Add Bookmark"; font: 12px "Arimo", Arial, sans-serif; color: #000; background: #c0c0c0; border: 2px solid; border-color: #fff #808080 #808080 #fff; box-shadow: inset -1px -1px 0 #000; padding: 3px 10px; display: inline-block; }
+:root[data-look="netscape"] .save-btn.saved::after { content: "Bookmarked"; border-color: #808080 #fff #fff #808080; box-shadow: inset 1px 1px 0 #000; }
