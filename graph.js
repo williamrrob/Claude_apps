@@ -593,6 +593,7 @@
     // node labels
     const minS = cam.s < 0.25 ? 190 : cam.s < 0.7 ? 100 : cam.s < 2 ? 40 : 0;
     const cand = [];
+    const famT = focus && G.tree ? G.tree[focus.idx] : -1; // the family you're in is lettered in full, however small its words
     const lit = focus ? focus.order : [];
     for (const i of lit) cand.push(i);
     const wx0 = ctr[0] - W / 2 / cam.s, wx1 = ctr[0] + W / 2 / cam.s, wy0 = ctr[1] - H / 2 / cam.s, wy1 = ctr[1] + H / 2 / cam.s;
@@ -603,9 +604,10 @@
       const cy0 = Math.max(0, Math.floor((wy0 - G.gy0) / G.cell)), cy1 = Math.min(G.gh - 1, Math.floor((wy1 - G.gy0) / G.cell));
       for (let gy = cy0; gy <= cy1; gy++) for (let gx = cx0; gx <= cx1; gx++) {
         const c = gx + gy * G.gw;
-        for (let k = G.cellStart[c]; k < G.cellStart[c + 1]; k++) { const i = G.cellItems[k]; if (G.meta[i * 2 + 1] >= minS) pool.push(i); }
+        for (let k = G.cellStart[c]; k < G.cellStart[c + 1]; k++) { const i = G.cellItems[k]; if (G.meta[i * 2 + 1] >= minS || (famT >= 0 && G.tree && G.tree[i] === famT)) pool.push(i); }
       }
-      pool.sort((a, b) => G.meta[b * 2 + 1] - G.meta[a * 2 + 1]);
+      const fb = (i) => (famT >= 0 && G.tree[i] === famT ? 1e6 : 0) + G.meta[i * 2 + 1];
+      pool.sort((a, b) => fb(b) - fb(a));
       for (const i of pool) cand.push(i);
     } else {
       for (let k = 0, got = 0; k < G.bySize.length && got < 1500; k++) {
@@ -614,7 +616,8 @@
         if (x > wx0 && x < wx1 && y > wy0 && y < wy1) { cand.push(i); got++; }
       }
     }
-    const max = W < 500 ? 90 : 170;
+    const max = W < 500 ? 140 : 320;
+    const FS = W >= 1100 ? 1.3 : W >= 700 ? 1.15 : 1; // roomy screens letter bigger
     let placed = 0;
     labelHits = [];
     const seen = new Set();
@@ -630,7 +633,7 @@
       if (focus && !OPT.otherFamilies && !isLit && G.tree && G.tree[i] !== G.tree[focus.idx]) continue;
       const isWord = G.lang[i] === 0;
       const big = isLit && i === focus.idx;
-      let fs = big ? 15 : isLit ? 12.5 : Math.min(13, 10.5 + G.meta[i * 2 + 1] / 70);
+      let fs = big ? 15 : (isLit ? 12.5 : Math.min(13, 10.5 + G.meta[i * 2 + 1] / 70)) * FS;
       let txt = G.labels[i];
       let spaced = 0;
       if (big && L.headCaps) { txt = vForU(txt); fs = 22; spaced = 0.4; }
